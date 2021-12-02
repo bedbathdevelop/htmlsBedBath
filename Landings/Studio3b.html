@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio 3B</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #746c60;
+        --input-gray: #d4d3d3;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --studio-3d: #faf1e8;
+        --font-parrafo: 300 18px/ 1 Effra, Helvetica, Arial, sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      section {
+        margin-top: 60px !important;
+      }
+      #category {
+        margin-top: 0 !important;
+      }
+      .wrap__mainbanner {
+        width: 100%;
+        height: 800px;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+      }
+      .description {
+        margin-top: -15px;
+      }
+      .wrap__category {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: -20px;
+      }
+      .wrap__category__item {
+        overflow: hidden;
+      }
+      .wrap__category__item .description p {
+        color: #000;
+        font: var(--font-parrafo);
+        line-height: 1;
+      }
+      .wrap__category__item .description h3 {
+        color: var(--txt-gray) !important;
+        font-family: var(--font-bedbath);
+      }
+      .wrap__second__bloque {
+        overflow: hidden;
+        background-color: #fff;
+        padding: 20px 0;
+      }
+      .wrap__bloque {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+      }
+      .bg--studio3d {
+        background-color: var(--studio-3d);
+      }
+      .wrap__bloque__item p {
+        font-size: 14px;
+        width: 80%;
+        font: var(--font-parrafo);
+        margin-left: 10px;
+      }
+      .wrap__bloque__item__title {
+        width: 70%;
+        margin: 40px 0;
+      }
+      .wrap__bloque .wrap__bloque__item {
+        flex: 0 0 40%;
+        position: relative;
+      }
+      .wrap__bloque .wrap__bloque__item:nth-child(1) {
+        text-align: left;
+        padding: 40px;
+      }
+      .wrap__bloque .wrap__bloque__item:nth-child(2) {
+        text-align: left;
+      }
+      .img__bloque {
+        width: 35%;
+        right: 12%;
+        margin-top: -40px;
+        position: absolute;
+      }
+      .btn__call__to {
+        background-color: #fff;
+        width: 170px !important;
+        text-align: center;
+        padding: 10px;
+        border: 2px solid var(--azul-bbb-button);
+        border-radius: 5px;
+        color: var(--azul-bbb-button);
+        font-weight: 900 !important;
+        margin-top: 20px;
+      }
+      .btn__call__to:hover {
+        background-color: var(--azul-bbb-button);
+        border: 2px solid var(--azul-bbb-strong);
+        color: #fff;
+      }
+      .img__bloque_big {
+        width: 100%;
+      }
+      .wrap__bloque__item__blog {
+        color: #000;
+        margin-top: 10px !important;
+        width: 100% !important;
+      }
+      .wrap__section {
+        overflow: hidden;
+        text-align: center;
+        padding: 40px;
+      }
+      .wrap__section h2 {
+        color: var(--txt-gray) !important;
+        font-size: 4rem;
+      }
+      .wrap__section p {
+        color: var(--txt-gray);
+        font-family: var(--font-bedbath);
+      }
+      .wrap__three__block__section {
+        overflow: hidden;
+        width: 100%;
+      }
+      .wrap__three__block {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 20px;
+        padding: 40px;
+      }
+      .wrap__three__block__item {
+        overflow: hidden;
+      }
+      .padding__zero {
+        padding: 0 !important;
+      }
+      .margin__left20 {
+        margin-left: 40px !important;
+      }
+      .item__cincuenta {
+        flex: 0 0 50% !important;
+      }
+      .mg__top__50 {
+        margin-top: 50px;
+      }
+      .txt__describe {
+        color: #606060 !important;
+        font-family: var(--primary-font) !important;
+        font-size: 1.8rem;
+      }
+      #explora {
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+      .position {
+        overflow: hidden;
+        position: absolute;
+        z-index: 1;
+        bottom: 10%;
+        right: 42%;
+        left: 42%;
+      }
+      #video {
+        margin-top: 0 !important;
+      }
+      /*Zoom Animation*/
+      #containerimgd {
+        display: inline-block;
+        margin: 0px;
+        overflow: hidden;
+        position: relative;
+        padding: 5px;
+      }
+      #containerimgd img {
+        display: block;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      #containerimgd:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+
+      @media (max-width: 767px) {
+        .wrap__mainbanner {
+          height: 250px;
+        }
+        #category {
+          overflow-x: scroll;
+          width: 100%;
+        }
+        .wrap__category {
+          width: 1100px;
+          flex-wrap: wrap;
+          margin-top: 20px;
+        }
+        .wrap__bloque {
+          flex-wrap: wrap;
+        }
+        .wrap__bloque .wrap__bloque__item:nth-child(1) {
+          padding: 10px;
+        }
+        .wrap__bloque__item__title {
+          width: 100%;
+        }
+        .wrap__bloque .wrap__bloque__item {
+          flex: 0 0 100%;
+        }
+        .img__bloque {
+          margin-top: -530px;
+          width: 90%;
+          right: 20px;
+        }
+        .wrap__second__bloque {
+          margin-top: 250px;
+        }
+        .wrap__bloque__item__title {
+          margin: 40px 0 20px 0;
+        }
+        .txt__describe {
+          font-size: 1.8rem;
+        }
+        .wrap__section {
+          padding: 40px 20px;
+        }
+        .wrap__three__block__section {
+          overflow-x: scroll;
+        }
+        .wrap__three__block {
+          width: 700px;
+        }
+        .item__cincuenta {
+          flex: 0 0 100% !important;
+        }
+        .wrap__category__item {
+          flex: 0 0 300px;
+        }
+        .wrap__three__block__item {
+          flex: 0 0 200px;
+        }
+        .wrap__three__block {
+          bottom: -15%;
+          right: 20%;
+          left: 22%;
+        }
+        .btn__call__to {
+          padding: 5px 10px;
+        }
+        #explora {
+          height: 150px;
+        }
+        .position {
+          right: 22%;
+          left: 23%;
+        }
+        .mg__top__50 {
+          margin-top: -50px;
+        }
+        .wrap__section h2 {
+          font-size: 3rem;
+        }
+        section {
+          margin-top: 40px !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner principal -->
+    <section id="video">
+      <div class="wrap__mainbanner">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/Studio3bfinallv2_video_desktop_5.gif?rand=1637190968"
+        />
+      </div>
+    </section>
+
+    <!-- Categorías -->
+    <section id="category">
+      <div class="wrap__category">
+        <div class="wrap__category__item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/decoracion.jpg?rand=1637172182
+                "
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/decoracion.jpg?rand=1637172182
+                "
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/decoracion.jpg?rand=1637172182"
+                alt="Flowers"
+                style="width: auto"
+              />
+            </picture>
+            <div class="description">
+              <h3>decoración</h3>
+              <p>estilos modernos para todos</p>
+            </div>
+          </a>
+        </div>
+        <div class="wrap__category__item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/recamara.html"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/ropa-de-cama.jpg?rand=1637172182
+                "
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/ropa-de-cama.jpg?rand=1637172182
+                "
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/ropa-de-cama.jpg?rand=1637172182"
+                alt="recámara"
+                style="width: auto"
+              />
+            </picture>
+            <div class="description">
+              <h3>ropa de cama</h3>
+              <p>capas de tonos y texturas en tendencia</p>
+            </div>
+          </a>
+        </div>
+        <div class="wrap__category__item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/bano.html"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/bano.jpg?rand=1637172182
+                "
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/bano.jpg?rand=1637172182
+                "
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/bano.jpg?rand=1637172182"
+                alt="Baño"
+                style="width: auto"
+              />
+            </picture>
+            <div class="description">
+              <h3>baño</h3>
+              <p>diseños que inspiran, precios que atraen</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Da vida a tu estética moderna -->
+    <section>
+      <div class="wrap__second__bloque">
+        <div class="wrap__bloque bg--studio3d">
+          <div class="wrap__bloque__item">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/texto-da-vida-a-.png?rand=1637172182"
+              alt="Studio 3D Bed Bath and Beyond"
+              class="wrap__bloque__item__title"
+            />
+            <p>
+              Entra a Studio3B, donde hacemos fácil crear un espacio que puedas
+              sentir como propio. Un lugar que se sienta con estilo, accesible
+              y, sobre todo, como un hogar.
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+              target="_self"
+            >
+              <p class="btn__call__to">comprar ahora</p>
+            </a>
+          </div>
+          <div class="wrap__bloque__item"></div>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+            target="_self"
+          >
+            <picture>
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-deco-3b-1240x834.jpg?rand=1637172182
+                "
+                class="img__bloque"
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-deco-3b-1240x834.jpg?rand=1637172182
+                "
+                class="img__bloque"
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-deco-3b-1240x834.jpg?rand=1637172182"
+                alt="Flowers"
+                class="img__bloque"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cojines decorativos 
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+        target="_self"
+      >
+        <picture id="containerimgd">
+          <source
+            media="(min-width:650px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/cojines-decorativos-chambray_1.jpg?rand=1637172182
+            "
+          />
+          <source
+            media="(min-width:465px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/cojines-decorativos-chambray_1.jpg?rand=1637172182
+            "
+          />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/cojines-decorativos-chambray_1.jpg?rand=1637172182"
+            alt="Cojines decorativos"
+          />
+        </picture>
+      </a>
+    </section>-->
+
+    <!-- Evoluciona tu decoración -->
+    <section>
+      <div class="wrap__bloque padding__zero">
+        <div class="wrap__bloque__item item__cincuenta padding__zero">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-deco-3b-1240x834-1.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-deco-3b-1240x834-1.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-deco-3b-1240x834-1.jpg?rand=1637172182"
+                alt="Flowers"
+                class="img__bloque_big"
+              />
+            </picture>
+          </a>
+        </div>
+        <div class="wrap__bloque__item item__cincuenta margin__left20">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/texto-evoluciona-tu-deco.png?rand=1637172182"
+            alt="Studio 3D Bed Bath and Beyond"
+            class="wrap__bloque__item__title"
+          />
+          <p>
+            Diseños bien seleccionados a precios accesibles que evocan un estilo
+            intencional y amigable.
+          </p>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+            target="_self"
+          >
+            <p class="btn__call__to">compra decoración</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ropa de cama-->
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/recamara.html"
+        target="_self"
+      >
+        <picture id="containerimgd">
+          <source
+            media="(min-width:650px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/ropa-de-cama_2.jpg?rand=1637172182
+            "
+          />
+          <source
+            media="(min-width:465px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/ropa-de-cama_2.jpg?rand=1637172182
+            "
+          />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/ropa-de-cama_2.jpg?rand=16371721822"
+            alt="ropa de cama"
+          />
+        </picture>
+      </a>
+    </section>
+
+    <!-- Evoluciona tu decoración -->
+    <section>
+      <div class="wrap__bloque">
+        <div
+          class="wrap__bloque__item item__cincuenta padding__zero mg__top__50"
+        >
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/texto-crea-un-refuio.png?rand=1637172182"
+            alt="Studio 3D Bed Bath and Beyond"
+            class="wrap__bloque__item__title"
+          />
+          <p>
+            Imprime calidez y elegancia a tu habitación con capas de estampados,
+            tonos y texturas en tendencia.
+          </p>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/recamara.html"
+            target="_self"
+          >
+            <p class="btn__call__to">compra cama</p>
+          </a>
+        </div>
+        <div class="wrap__bloque__item item__cincuenta padding__zero">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/la-lista-de-deseos-de-studio-3b-de-jeremiah-brent"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-cama-3b-1240x834-.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-cama-3b-1240x834-.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-cama-3b-1240x834-.jpg?rand=1637172182"
+                alt="Flowers"
+                class="img__bloque_big"
+              />
+            </picture>
+
+            <p class="wrap__bloque__item__blog">
+              ¡Alerta de tendencia! Nuestros amigos diseñadores en
+              <b>Decorist</b> nos comparten las tendencias de la temporada,
+              desde tonos intensos hasta patchwork.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Accesorios para baño -->
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/bano.html"
+        target="_self"
+      >
+        <picture id="containerimgd">
+          <source
+            media="(min-width:650px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/accesorios-de-bano.jpg?rand=1637172182
+            "
+          />
+          <source
+            media="(min-width:465px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/accesorios-de-bano.jpg?rand=1637172182
+            "
+          />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/accesorios-de-bano.jpg?rand=1637172182"
+            alt="Accesorios para baño Stuido 3D"
+          />
+        </picture>
+      </a>
+    </section>
+
+    <!-- Un baño repleto -->
+    <section>
+      <div class="wrap__bloque">
+        <div class="wrap__bloque__item item__cincuenta padding__zero">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/bano.html"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/accesorios-para-bano.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/accesorios-para-bano.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/accesorios-para-bano.jpg?rand=1637172182"
+                alt="Flowers"
+                class="img__bloque_big"
+              />
+            </picture>
+          </a>
+        </div>
+        <div class="wrap__bloque__item item__cincuenta margin__left20">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/texto-un-bano-repleto-de.png?rand=1637172182"
+            alt="Studio 3D Bed Bath and Beyond"
+            class="wrap__bloque__item__title"
+          />
+          <p>
+            Da a tus básicos de cuidado personal un atractivo espacio con
+            accesorios de diferentes materiales y diseños elegantes.
+          </p>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/bano.html"
+            target="_self"
+          >
+            <p class="btn__call__to">compra baño</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Descubre la versatilidad -->
+    <section>
+      <div class="wrap__section bg--studio3d">
+        <h2>Descubre la versatilidad sin perder lo chic</h2>
+        <p class="txt__describe">
+          Diseñadas para cualquier habitación, estas piezas decorativas son al
+          mismo tiempo inteligentes, atractivas y funcionales.
+        </p>
+
+        <div class="wrap__three__block__section">
+          <div class="wrap__three__block">
+            <div class="wrap__three__block__item">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/muebles.html"
+                target="_self"
+              >
+                <picture id="containerimgd">
+                  <source
+                    media="(min-width:650px)"
+                    srcset="
+                      https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/bancos.jpg?rand=1637172182
+                    "
+                  />
+                  <source
+                    media="(min-width:465px)"
+                    srcset="
+                      https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/bancos.jpg?rand=1637172182
+                    "
+                  />
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/bancos.jpg?rand=1637172182"
+                    alt="recámara"
+                    style="width: auto"
+                  />
+                </picture>
+                <p class="subtitle">bancos</p>
+              </a>
+            </div>
+            <div class="wrap__three__block__item">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/muebles.html"
+                target="_self"
+              >
+                <picture id="containerimgd">
+                  <source
+                    media="(min-width:650px)"
+                    srcset="
+                      https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/carritos-de-bar.jpg?rand=1637172182
+                    "
+                  />
+                  <source
+                    media="(min-width:465px)"
+                    srcset="
+                      https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/carritos-de-bar.jpg?rand=1637172182
+                    "
+                  />
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/carritos-de-bar.jpg?rand=1637172182"
+                    alt="recámara"
+                    style="width: auto"
+                  />
+                </picture>
+                <p class="subtitle">carritos bar</p>
+              </a>
+            </div>
+            <div class="wrap__three__block__item">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/muebles.html"
+                target="_self"
+              >
+                <picture id="containerimgd">
+                  <source
+                    media="(min-width:650px)"
+                    srcset="
+                      https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/tocadores.jpg?rand=1637172182
+                    "
+                  />
+                  <source
+                    media="(min-width:465px)"
+                    srcset="
+                      https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/tocadores.jpg?rand=1637172182
+                    "
+                  />
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/tocadores.jpg?rand=1637172182"
+                    alt="recámara"
+                    style="width: auto"
+                  />
+                </picture>
+                <p class="subtitle">tocadores</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Prueba nuestro 
+    <section>
+      <div class="wrap__bloque">
+        <div class="wrap__bloque__item item__cincuenta padding__zero">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/texto-prueba-nuestro-dise.png?rand=1637172182"
+            alt="Studio 3D Bed Bath and Beyond"
+            class="wrap__bloque__item__title"
+          />
+          <p>
+            Usa nuestra nueva herramienta interactiva de <b>Decorist</b> para
+            dar vida a tu estética moderna
+          </p>
+          <a href="" target="_self">
+            <p class="btn__call__to">Diseña tu espacio</p>
+          </a>
+        </div>
+        <div class="wrap__bloque__item item__cincuenta padding__zero">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b/decoracion.html"
+            target="_self"
+          >
+            <picture id="containerimgd">
+              <source
+                media="(min-width:650px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-recamara-3b-1240x834-.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <source
+                media="(min-width:465px)"
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-recamara-3b-1240x834-.jpg?rand=1637172182
+                "
+                class="img__bloque_big"
+              />
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/landing-recamara-3b-1240x834-.jpg?rand=1637172182"
+                alt="diseñador de cuartos 3D"
+                class="img__bloque_big"
+              />
+            </picture>
+          </a>
+        </div>
+      </div>
+    </section>-->
+
+    <!-- Explora la nueva colección -->
+    <section id="explora">
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/studio-3b.html"
+        target="_self"
+      >
+        <picture>
+          <source
+            media="(min-width:650px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/studio-3b-sin-calljpg.jpg?rand=1637189723
+            "
+          />
+          <source
+            media="(min-width:465px)"
+            srcset="
+              https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/studio-3b-sin-calljpg.jpg?rand=1637189723
+            "
+          />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/studio3b/studio-3b-sin-calljpg.jpg?rand=1637189723"
+            alt="Accesorios para baño Stuido 3D"
+          />
+        </picture>
+        <p class="btn__call__to position">conoce toda la línea</p>
+      </a>
+    </section>
+  </body>
+</html>

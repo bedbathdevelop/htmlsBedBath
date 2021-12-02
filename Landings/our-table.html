@@ -1,0 +1,1660 @@
+<!DOCTYPE html>
+  <style>
+      @import url(//db.onlinewebfonts.com/c/696b6059e226c5660dc1c6b4003c93c2?family=Typewriter-Serial+DB);
+      @font-face {font-family: "Typewriter-Serial DB"; src: url("//db.onlinewebfonts.com/t/696b6059e226c5660dc1c6b4003c93c2.eot"); src: url("//db.onlinewebfonts.com/t/696b6059e226c5660dc1c6b4003c93c2.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/696b6059e226c5660dc1c6b4003c93c2.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/696b6059e226c5660dc1c6b4003c93c2.woff") format("woff"), url("//db.onlinewebfonts.com/t/696b6059e226c5660dc1c6b4003c93c2.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/696b6059e226c5660dc1c6b4003c93c2.svg#Typewriter-Serial DB") format("svg"); }
+    a {
+      text-decoration: none;
+    }
+    section {
+      margin-bottom: 16px;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Typewriter-Serial DB" !important;
+    }
+    p,
+    a {
+      font-family: "Effra", "Montserrat-Regular", "Helvetica", Arial, sans-serif;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .txt-white {
+      color: #fff !important;
+    }
+    .txt-gray {
+      color: #484a46;
+    }
+    .title-our {
+      color: #002854;
+      font-size: 28px;
+      font-weight: 900px;
+    }
+    .align-left {
+      text-align: left;
+    }
+    .align-center {
+        text-align: center;
+        justify-content: center;
+        margin: 20px auto;
+    }
+    .title-font {
+      color: #d39325 !important;
+      width: 100%;
+      padding-top: 1rem;
+      padding-bottom: 0rem;
+      text-align: center;
+      font-family: "Typewriter-Serial DB" !important;
+      font-weight: 900;
+      font-size: 42px;
+    }
+    .title-letter-special{
+      font-family: "Typewriter-Serial DB" !important;
+      font-weight: 900;
+      font-size: 4rem;
+    }
+    .flex-container {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+    .text-description {
+      font-size: 18px;
+      color: #000;
+      line-height: 1;
+    }
+    .text-description-blog {
+      color: #fff;
+      padding: 0 40px;
+      position: absolute;
+      z-index: 0;
+      bottom: 4%;
+      right: 2%;
+      text-align: center;
+      width: 550px;
+      font-size: 16px;
+      line-height: 1;
+    }
+    .color-ourtable {
+      color: #d39325;
+    }
+    .container-subtitles {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      text-align: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    .container-subtitles p{
+        font-size: 22px;
+        line-height: 1;
+    }
+    .container-desc-post{
+        overflow: hidden;
+        color:#002854;
+        text-align: left;
+    }
+    .container-desc-post p{
+      font-size: 18px;
+      line-height: 1;
+    }
+    .container-desc-post h3{
+        color:#002854;
+        font-weight: 900;
+        font-size: 22px;
+    }
+    .subtitle-simple {
+      color: #d39325 !important;
+      font-size: 4.5rem;
+      font-family: "Typewriter-Serial DB" !important;
+      font-weight: 900 !important;
+      text-align: center;
+    }
+    .btn-block-blog {
+      border: 2px solid #117dcf;
+      color: #117dcf;
+      background-color: #fff;
+      width: 250px;
+      text-align: center;
+      padding: 10px 5px;
+      font-weight: 900;
+      border-radius: 5px;
+      margin: 50px auto;
+      font-size: 18px !important;
+
+    }
+    .btn-block-blog:hover {
+      color: #fff;
+      background-color: #117dcf;
+    }
+    .btn-block {
+      border: 2px solid #117dcf;
+      color: #fff;
+      background-color: #117dcf;
+      width: 200px;
+      text-align: center;
+      padding: 10px 25px;
+      font-weight: 900;
+      border-radius: 5px;
+      margin-top: 40px;
+      font-size: 16px !important;
+    }
+
+    .btn-block:hover {
+      color: #117dcf;
+      background-color: #fff;
+    }
+    .img-center {
+      overflow: hidden;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+    }
+    .container-description {
+      overflow: hidden;
+      padding: 90px 50px;
+    }
+
+    .col-50 {
+      padding: 10px;
+      width: 50%;
+      overflow: hidden;
+    }
+    .col-30 {
+      width: 30%;
+    }
+    .square {
+      border: 5px solid #1a4e8a;
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+    }
+
+    .square h2 {
+      width: 120%;
+      text-align: center;
+      font-weight: bolder;
+      color: #1a4e8a;
+      font-size: 25px;
+    }
+    .square span {
+      width: 30%;
+      padding: 10px;
+    }
+    .text-square {
+      padding-top: 1rem;
+      padding-bottom: 0.5rem;
+      width: 100%;
+      text-align: center;
+    }
+    .text-square p {
+      font-size: 18px;
+      color: #000;
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .ourtablevideo{
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      padding-top: 2%;
+    }
+    .call-to {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .banner-top h4 {
+      color: #fff;
+      margin: 60px 0;
+      font-size: 60px;
+    }
+    .banner-top span {
+      background: #fff;
+      color: #1a4e8a;
+      padding: 0 10px;
+    }
+    .p-center {
+      font-size: 14px;
+      line-height: 14px;
+      padding: 2em;
+      text-align: center;
+    }
+    .figure {
+      position: relative;
+    }
+    .figure::before {
+      position: absolute;
+      top: 0;
+      left: -115%;
+      z-index: 2;
+      display: block;
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: -webkit-linear-gradient(
+        left,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 100%
+      );
+      -webkit-transform: skewX(-25deg);
+      transform: skewX(-25deg);
+    }
+    .figure:hover::before {
+      -webkit-animation: shine 0.5s;
+      animation: shine 0.5s;
+    }
+    @-webkit-keyframes shine {
+      100% {
+        left: 25%;
+      }
+    }
+    @keyframes shine {
+      100% {
+        left: 25%;
+      }
+    }
+    #hotSpots {
+      position: relative;
+    }
+
+    .photo-banner {
+      position: relative;
+      width: 100%;
+      height: 495px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .col-40 {
+      background: rgba(255, 255, 255, 0.6);
+      width: 40%;
+      padding: 1.5%;
+      position: absolute;
+      bottom: 2.5rem;
+    }
+    .col-40.right {
+      right: 1em;
+    }
+    .col-40.left {
+      left: 1em;
+    }
+    .col-40.bottom {
+      top: 90%;
+    }
+    .col-40.top {
+      top: 1em;
+    }
+    .size-img {
+      width: 450px;
+      height: auto;
+    }
+    .col-40.center {
+      left: 50%;
+      margin-left: -25%;
+    }
+    .center-elements {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .button-blue {
+      box-shadow: none;
+      color: #fff;
+      border-color: #1377c9;
+      border-style: none;
+      background-color: #1377c9;
+      text-decoration: none;
+      width: auto;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .content-color {
+      padding: 0px;
+    }
+    .content-inline-flex {
+      display: inline-flex;
+      width: 100%;
+    }
+    .product-card {
+      margin: 5px;
+    }
+    .card-col-50 {
+      width: 50%;
+    }
+    .col-25 {
+      width: 25%;
+    }
+    .product-p-bold {
+      padding: 0 0 0 1em;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: left;
+      min-width: 100%;
+      color: #002855;
+      padding-bottom: 0;
+    }
+    .card-description {
+      padding: 0 0 0 1em;
+      text-align: left;
+      min-width: 100%;
+      color: #000;
+    }
+    .list-grid {
+      padding: 1em 0;
+      list-style: none;
+      display: inline-flex;
+      min-width: 100%;
+      justify-content: center;
+    }
+    .list-grid .col-2 {
+      min-width: 16.6666%;
+      text-align: center;
+    }
+    .list-grid .col-2 .items-center {
+      border: 2px solid #fff;
+      border-radius: 0%;
+    }
+    .list-grid .col-2:hover .items-center {
+      border: 2px solid #d39325;
+    }
+    .slider {
+      font-size: 15px;
+      text-align: center;
+    }
+    body .slider {
+      max-width: 1200px;
+      margin: 0 auto 0px auto;
+    }
+    .slider-for {
+      font-size: 15px;
+      text-align: center;
+    }
+    .categoriestitle {
+      width: 100%;
+      text-align: center;
+      color: #002854;
+      font-weight: 600;
+      font-size: 20px;
+    }
+    .wrap-two-columns {
+      overflow: hidden;
+      width: 100%;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      flex-wrap: nowrap;
+    }
+    .img-two-columns {
+      width: 600px !important;
+    }
+    .item-two-columns {
+      padding: 0 10px;
+    }
+    .img-rouned {
+      border-radius: 0%;
+    }
+    .column {
+      flex-direction: column;
+    }
+    .center-text-elements {
+      color: #1a4e8a;
+      font-size: 34px;
+      line-height: 1em;
+      font-family: "Montserrat-Bold", Arial, sans-serif;
+    }
+    .first-section {
+      margin-top: 0;
+      padding-top: 0px;
+    }
+    .banner-img {
+      position: relative;
+    }
+    .banner-img-over {
+      position: absolute;
+      z-index: 2;
+      top: -20px;
+      left: 40px;
+      width: 60%;
+    }
+    .banner-img-right {
+      position: absolute;
+      z-index: 2;
+      top: -20px;
+      right: 0;
+      width: 60%;
+    }
+    .banner-img.desktop {
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+    .banner-img.mobile {
+      display: none;
+      position: relative;
+    }
+    #containerimg {
+      display: inline-block;
+      margin: 5px;
+      overflow: hidden;
+    }
+    .item-category p{
+        font-size: 18px;
+    }
+    #containerimg img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+      width: 200px;
+      height: 200px;
+    }
+    #containerimg:hover img {
+      transform: scale(1.05);
+      transform-origin: 50% 50%;
+    }
+    .container-block-img {
+      position: relative;
+    }
+    .col-both {
+      width: 50%;
+      float: left;
+    }
+    .container-slide {
+      padding: 15% 5%;
+      margin-left: 20%;
+    }
+    .container-slide-right {
+      padding: 15% 5%;
+      margin-right: 20%;
+    }
+    .img-80 {
+      width: 85%;
+    }
+    .mg-left-10 {
+      margin-left: 10%;
+    }
+
+    .btn-bb {
+      padding: 12px;
+      width: 200px;
+      background-color: #fff;
+      text-align: center;
+      border: 2px solid #1377c9;
+      box-shadow: none;
+      text-decoration: none;
+      color: #1377c9;
+      border-radius: 5px;
+      font-weight: 900;
+    }
+    .btn-bb:hover {
+      background-color: #1377c9;
+      color: #fff;
+    }
+    .leyenda {
+      text-align: center;
+      margin-top: 5%;
+      padding: 0 5%;
+      width: 100%;
+    }
+
+    /*Commnent Shape*/
+    div.comment {
+      width: 290px;
+      height: 230px;
+      position: absolute;
+      padding: 15px;
+      overflow: hidden;
+      z-index: 3;
+    }
+
+    div.comment div.chat {
+      width: 290px;
+      height: 230px;
+      background: #fff;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+    }
+    .img-comment {
+      width: 200px;
+      height: auto;
+      margin-top: 50%;
+    }
+
+    .shape-hs-a {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-color: #fffefe transparent transparent transparent;
+      border-width: 15px;
+      position: absolute;
+      top: -10px;
+      right: 25px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(180deg);
+    }
+    /*youtube*/
+    .video-container {
+      width: 50%;
+      height: 500px;
+      overflow: hidden;
+      position: relative;
+      margin-left: 25%;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0px;;
+      width: 100%;
+      height: 500px;
+    }
+    .video-foreground {
+      pointer-events: none;
+    }
+
+    .shape-hs-f {
+      content: "";
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-color: #fff transparent transparent transparent;
+      border-width: 15px;
+      position: absolute;
+      top: 150px;
+      right: -15px;
+      -webkit-transform: rotate(135deg);
+      -moz-transform: rotate(135deg);
+      -ms-transform: rotate(135deg);
+      -o-transform: rotate(135deg);
+      transform: rotate(-90deg);
+    }
+
+    /*HotSpots*/
+    .hiddendiv {
+      display: none;
+    }
+    .showdiv {
+      display: block;
+    }
+    .titlehs {
+      font: 600 14px/1.2 Effra, Helvetica, Arial, sans-serif;
+      margin-top: 40px;
+    }
+    .fonthaven {
+      font: 300 14px/1.2 Effra, Helvetica, Arial, sans-serif;
+    }
+    .fonthavenprice {
+      font: 900 16px/1.25 Termina Headline, sans-serif;
+      margin: 10% 0;
+    }
+    .colorblue {
+      color: #1377c9;
+    }
+    .detailslink {
+      font-size: 17px;
+      padding: 1px 40px;
+      border: 2px solid #1377c9;
+      font-weight: 400 !important;
+    }
+    .detailslink:hover {
+      color: #fff;
+      background-color: #1377c9;
+    }
+
+
+    /*Candel*/
+
+    .candel {
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background-color: rgb(255, 255, 215, 0.55);
+      border: 1px solid rgb(255, 255, 215, 0.55);
+      border-radius: 50%;
+      animation: fader 1s ease infinite;
+      transition: all 0.2s;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: sans-serif;
+      color: #555;
+      cursor: pointer;
+    }
+    .container-post{
+        margin: 0 20px;
+        padding: 30px 0;
+    }
+    .candel::after {
+      content: "";
+      width: 5px;
+      height: 10px;
+      border-radius: 50%;
+      display: block;
+      margin: -21px auto 0 3px;
+      transition: all 0.2s;
+    }
+    .candel:visited {
+      content: "X";
+    }
+    #cd-a {
+      top: 50%;
+      left: 50%;
+    }
+    #cd-b {
+      top: 32%;
+      left: 44%;
+    }
+    #cd-c {
+      top: 25%;
+      left: 68%;
+    }
+    #cd-d {
+      top: 35%;
+      left: 18%;
+    }
+    #cd-e {
+      top: 71%;
+      right: 8%;
+    }
+    #cd-f {
+      top: 35%;
+      right: 28%;
+    }
+    #cd-g {
+      top: 65%;
+      left: 18%;
+    }
+    #cd-h {
+      top: 51%;
+      left: 68%;
+    }
+    /*---------------*/
+    /***** Roxy *****/
+    /*---------------*/
+
+    .grid {
+      position: relative;
+      margin: 0 auto;
+      padding: 1em 0 4em;
+      max-width: 1000px;
+      list-style: none;
+      text-align: center;
+    }
+
+    /* Common style */
+    .grid figure {
+      position: relative;
+      float: left;
+      overflow: hidden;
+      width: 610px;
+      height: auto;
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      z-index: 1;
+      top: 40px;
+    }
+
+    .grid-right {
+      right: -120px;
+    }
+
+    .grid-left {
+      left: -180px;
+    }
+    .grid figure img {
+      position: relative;
+      display: block;
+      opacity: 1;
+      width: 90%;
+    }
+
+    .grid figure figcaption {
+      padding: 2em;
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 12px;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .grid figure figcaption::before,
+    .grid figure figcaption::after {
+      pointer-events: none;
+    }
+
+    .grid figure figcaption,
+    .grid figure figcaption > a {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 98%;
+      height: 92%;
+    }
+
+    /* Anchor will cover the whole item by default */
+    /* For some effects it will show as a button */
+    .grid figure figcaption > a {
+      z-index: 1000;
+      text-indent: 200%;
+      white-space: nowrap;
+      font-size: 0;
+      opacity: 0;
+    }
+
+    .grid figure h2 {
+      word-spacing: -0.15em;
+      font-weight: 300;
+    }
+
+    .grid figure h2 span {
+      font-weight: 800;
+    }
+
+    .grid figure h2,
+    .grid figure p {
+      margin: 0;
+    }
+
+    .grid figure p {
+      letter-spacing: 1px;
+      font-size: 68.5%;
+    }
+
+    .effect-roxy:hover {
+      background: -webkit-linear-gradient(45deg, #d39325 0%, #daeaf4 100%);
+      background: linear-gradient(45deg, #d39325 0%, #daeaf4 100%);
+    }
+
+    .effect-roxy img {
+      max-width: none;
+      width: -webkit-calc(100% + 60px);
+      width: calc(100% + 60px);
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-50px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+
+    .effect-roxy .sim-es {
+      max-width: none;
+      width: -webkit-calc(100% + 60px);
+      width: calc(100% + 60px);
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-50px, 0, 0);
+      transform: translate3d(-20px, 0, 0);
+    }
+
+    .effect-roxy figcaption::before {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      bottom: 30px;
+      left: 30px;
+      /*border: 1px solid #fff;*/
+      content: "";
+      opacity: 1;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-20px, 0, 0);
+      transform: translate3d(-20px, 0, 0);
+    }
+
+    .effect-roxy figcaption {
+      padding: 3em;
+      text-align: left;
+    }
+
+    .effect-roxy h2 {
+      padding: 30% 0 10px 0;
+    }
+
+    .effect-roxy p {
+      opacity: 0;
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-10px, 0, 0);
+      transform: translate3d(-10px, 0, 0);
+    }
+
+    .effect-roxy:hover img {
+      opacity: 0.7;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+    .effect-roxy:hover .sim-es {
+      max-width: none;
+      width: -webkit-calc(100% + 60px);
+      width: calc(100% + 60px);
+      -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+      transition: opacity 0.35s, transform 0.35s;
+      -webkit-transform: translate3d(-50px, 0, 0);
+      transform: translate3d(-20px, 0, 0);
+    }
+
+    .effect-roxy:hover figcaption::before,
+    .effect-roxy:hover p {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);
+    }
+
+    .container-img {
+      position: relative;
+      width: 100%;
+    }
+    .overlay {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 100%;
+      width: 100%;
+      opacity: 0;
+      transition: 0.5s ease;
+      background-color: rgb(255, 255, 255, 0.2);
+    }
+    .container-img:hover .overlay {
+      opacity: 1;
+    }
+    .btn-text {
+      color: white;
+      font-size: 20px;
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #6f746d;
+      font-size: 30px;
+      font-weight: 600;
+    }
+    .zooom-animation {
+      background-repeat: no-repeat;
+    }
+    .container-readblog {
+      width: 100%;
+      text-align: left;
+    }
+    .container-blog {
+      width: 100%;
+      height: auto;
+      overflow: hidden;
+      position: relative;
+    }
+    .inside-blog {
+      width: 100%;
+      height: 400px;
+      overflow: hidden;
+      display: flex;
+      position: relative;
+    }
+    .wrap-desc-recipes {
+      padding: 20px;
+      width: 400px;
+      height: 397px;
+    }
+    .wrap-desc-recipes h2 {
+      color: #002854;
+      font-size: 32px;
+      font-weight: 900;
+    }
+    .wrap-desc-recipes p {
+      font-size: 18px;
+      line-height: 1;
+    }
+    .bg-ourtable {
+      background-color: #d39325;
+    }
+    .simple-image {
+      width: 550px;
+      left: 50px;
+      height: auto;
+      position: absolute;
+      top: -40px;
+      z-index: 1;
+      display: block;
+    }
+    img:nth-child(2),
+    img:nth-child(3) {
+      -webkit-clip-path: circle(0% at 110% 50%);
+      clip-path: circle(0% at 110% 50%);
+    }
+
+    a:hover img:nth-child(2),
+    a:hover img:nth-child(3) {
+      -webkit-clip-path: circle(150% at 110% 50%);
+      clip-path: circle(150% at 110% 50%);
+    }
+
+    a:hover img:nth-child(2) {
+      transition-delay: 0s;
+      transition-duration: 2s;
+    }
+
+    a:hover img:nth-child(3) {
+      transition-delay: 1s;
+      transition-duration: 3s;
+    }
+    @media (max-width: 991px) {
+      .simple-image {
+        width: 95%;
+        left: 10px;
+      }
+      .td-mobile {
+        width: 320px !important;
+        padding: 2%;
+        display: block;
+        text-align: center;
+      }
+      .comment-blog {
+        font-size: 5vw !important;
+        line-height: 1 !important;
+      }
+      /*hotspots*/
+      #hs-a {
+        top: 20%;
+        left: 10%;
+      }
+      #hs-aprice {
+        top: 5%;
+        left: 0%;
+      }
+      #hs-bprice {
+        top: 5%;
+        left: 0%;
+      }
+      #hs-cprice {
+        top: 5%;
+        left: 0%;
+      }
+      #hs-dprice {
+        top: 5%;
+        left: 0%;
+      }
+      #hs-eprice {
+        top: 5%;
+        left: 0%;
+      }
+      #hs-fprice {
+        top: 5%;
+        left: 0%;
+      }
+      #hs-f {
+        top: 47%;
+        left: 25%;
+      }
+      #hs-b {
+        top: 18%;
+        left: 20%;
+      }
+      #hs-c {
+        top: 10%;
+        left: 48%;
+      }
+      #hs-d {
+        top: 30%;
+        left: 45%;
+      }
+
+      .fonthaven {
+        font-size: 20px !important;
+      }
+      .fonthavenprice {
+        font-size: 20px !important;
+        margin: 2%;
+      }
+      div.comment {
+        width: 320px;
+        height: 400px;
+      }
+      div.comment div.chat {
+        width: 320px;
+        height: 400px;
+      }
+      .titlehs {
+        font-size: 15px;
+        line-height: 1;
+        margin-top: 2px;
+        padding: 0 5%;
+      }
+      .categoriestitle {
+        font-size: 26px;
+      }
+      .cms-home .page-main {
+        padding: 0;
+      }
+      section {
+        margin-left: -10px;
+        margin-right: -10px;
+      }
+      .banner-img.desktop {
+        display: none;
+      }
+      .banner-img.mobile {
+        display: block !important;
+      }
+      .first-section {
+        padding-top: 0px;
+      }
+      .first-section .col-50 {
+        width: 90%;
+      }
+      .title-font {
+        font-size: 30px;
+        font-family: "Typewriter-Serial DB" !important;
+      }
+      .content-inline-flex.column-m,
+      .flex-container.column-m {
+        flex-direction: column;
+      }
+      .m-block .content-inline-flex {
+        display: inline-block;
+      }
+      .m-block .content-inline-flex .product-card.col-25 {
+        width: 47%;
+        float: left;
+      }
+      .product-p-bold {
+        padding: 8px;
+        font-size: 14px;
+      }
+      .card-description {
+        padding: 0 0 0 8px;
+      }
+      .banner-top {
+        height: 70vh;
+      }
+      .banner-top .white-bkg {
+        margin-top: 30%;
+      }
+      .photo-banner {
+        background-size: cover;
+      }
+      .col-40.right,
+      .col-40.left {
+        left: auto;
+        right: auto;
+        width: 80%;
+      }
+      .photo-banner {
+        display: flex;
+        justify-content: center;
+      }
+      .list-grid {
+        display: inline-block;
+      }
+      .col-2 {
+        float: left;
+        width: 32.5%;
+        min-height: 180px;
+        font-size: 2px;
+      }
+      .scrolled {
+        display: flex !important;
+        flex-flow: row;
+        overflow-x: auto;
+        margin-left: 0.5%;
+      }
+      .scrolled.four {
+        width: 990px;
+        overflow: scroll;
+      }
+      .scrolled.three {
+        width: 730px;
+        overflow: scroll;
+      }
+      .conten-scroll {
+        overflow: auto;
+      }
+      .scrolled .product-card {
+        max-width: 240px;
+      }
+      .col-both {
+        width: 100%;
+      }
+      .banner-img-over {
+        top: -20px;
+        left: 8%;
+        width: 100%;
+      }
+      .container-slide {
+        margin-left: 5%;
+        margin-top: 45%;
+      }
+      .btn-bb {
+        padding: 12px;
+        width: 250px;
+        font-weight: 900;
+        font-size: 16px;
+      }
+      .leyenda {
+        text-align: center;
+        padding: 0 5%;
+        width: 95%;
+      }
+      .container-readblog {
+        width: 100%;
+        margin-top: -2%;
+        text-align: left;
+      }
+      .img-comment {
+        width: 150px;
+        margin: 5% 25%;
+      }
+      .col-50 {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+      }
+      .subtitle-simple {
+        padding: 0 5%;
+      }
+      .btn-block-blog {
+        margin: 20px 45px;
+      }
+      .img-center {
+        margin: 0;
+      }
+      .inside-blog {
+        display: block;
+        height: 280px;
+        margin-top: 150px;
+        line-height: 1;
+      }
+      .container-description {
+        padding: 50px 15px;
+      }
+      .container-description h2 {
+        color: #1a4e8a !important;
+        font-size: 30px;
+      }
+      .text-description-blog {
+        color: #fff;
+        padding: 0 40px;
+        position: absolute;
+        z-index: 0;
+        bottom: 2%;
+        left: 0;
+        text-align: center;
+        width: 83%;
+        font-size: 18px;
+        line-height: 1;
+      }
+      .grid figure {
+        width: 100%;
+        height: auto;
+        left: 0;
+      }
+    }
+    @media (max-width: 767px) {
+      /*hotspots*/
+      #hs-a {
+        top: 20%;
+        left: 10%;
+      }
+      .square span {
+        width: 40%;
+        padding: 0;
+      }
+      .col-both {
+        width: 100%;
+      }
+      .banner-img-over {
+        top: -20px;
+        left: auto;
+        width: 100%;
+      }
+      .container-readblog {
+        width: 100%;
+        margin-top: -2%;
+        text-align: left;
+      }
+      .btn-block-blog {
+        width: 250px;
+      }
+      .video-container {
+        width: 110%;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+        margin-left: 0;
+      }
+      .video-container iframe {
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 90%;
+        height: 250px;
+        background: #fff;
+      }
+    }
+
+    /*Animations*/
+    @keyframes shrink {
+      0% {
+        background-size: 110% 110%;
+      }
+      100% {
+        background-size: 100% 100%;
+      }
+    }
+    @keyframes fader {
+      50% {
+        border-color: rgb(255, 255, 255, 0.2);
+      }
+      100% {
+        border-color: rgb(255, 255, 255, 1);
+      }
+    }
+
+    /*our table*/
+    .wrap-category {
+      display: flex;
+      text-align: center;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /*Zoom Animation*/
+    #containerimg {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    #containerimg img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+      width: 185px;
+      height: 185px;
+    }
+    #containerimg:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+
+    #instagramfeed{
+      position: flex;
+      text-align: center;
+      justify-content: center;
+    }
+    @media (max-width: 991px) { 
+      .container-subtitles p {
+          font-size: 18px;
+          line-height: 1;
+          padding:10px;
+      }
+      .subtitle-simple{
+          font-size: 32px;
+      }
+      .btn-block{
+          margin-top: 50px auto;
+          width: 80%;
+      }
+      .wrap-desc-recipes {
+          width: 100%;
+          height: 300px;
+          margin-top: -10px;
+      }
+      .wrap-two-columns {
+          flex-wrap: wrap;
+      }
+      .title-letter-special {
+        font-size: 30px;
+        text-align: center;
+        line-height: 1;
+      }
+      .img-two-columns{
+        width: 100% !important;
+      }
+      .container-description h2{
+        text-align: left;
+      }
+      .mg-t-50{
+        padding: 10px 15px !important;
+      }
+      .item-category p{
+        font-size: 14px;
+      }
+      #containerimg img {
+        width: 150px;
+        height: 150px;
+      }
+      .container-desc-post p {
+        line-height: 1;
+        text-align: center;
+      }
+      .video-container {
+        width: 110%;
+        height: 250px;
+        overflow: hidden;
+        position: relative;
+        margin-left: 0;
+      }
+    }
+  </style>
+
+
+
+  <body>
+    <section style="background:#d2900a;">
+      <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table.html" target="_self">
+        <div class="banner-img figure ourtablevideo">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/landing2.gif?rand=1625244613" alt="ourtable Bed Bath and Beyond">
+          </div>
+      </a>
+    </section>
+
+
+    <!-- CATEGORIAS-->
+    <section>
+      <p class="subtitle-simple title-letter-special">Comienza con comida. Termina con amor.</p>
+      <div class="wrap-category">
+        <div class="item-category">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-1-Cookware.jpg?rand=1624916941"
+                alt="Our Table™ Bed Bath & Beyond"
+              />
+            </div>
+          </a>
+          <p>baterías</p>
+        </div>
+        <div class="item-category">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/accesorios-para-hornear.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-2-Bakeware.jpg?rand=1624916941"
+                alt="Our Table™ Bed Bath & Beyond"
+              />
+            </div>
+          </a>
+          <p>accesorios para hornear</p>
+        </div>
+        <div class="item-category">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/mesa.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-3-Dinnerware.jpg?rand=1624916941"
+                alt="oOur Table™ Bed Bath & Beyond"
+              />
+            </div>
+          </a>
+          <p>mesa</p>
+        </div>
+        <div class="item-category">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/manteleria.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-4-TableLinens_1_.jpg?rand=1624916941"
+                alt="Our Table™ Bed Bath & Beyond"
+              />
+            </div>
+          </a>
+          <p>mantelería</p>
+        </div>
+        <div class="item-category">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/utensilios-de-cocina.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-5-KitchenTools.jpg?rand=1624916941"
+                alt="Our Table™ Bed Bath & Beyond"
+              />
+            </div>
+          </a>
+          <p>utensilios</p>
+        </div>
+        <div id="containerimg" class="item-category">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/textiles-de-cocina.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-6-KitchenLinens.jpg?rand=1624916941"
+                alt="Our Table™ Bed Bath & Beyond"
+              />
+            </div>
+          </a>
+          <p>textiles</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Todos a la mesa -->
+    <section>
+      <div class="container-blog">
+        <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/mesa.html" target="_self">
+          <div class="grid">
+            <figure class="effect-roxy grid-right">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C04-2V2-ComeTogether-Image.jpg?rand=1624916941"
+                alt="Our Table™ Bed Bath & Beyond"
+              />
+            </figure>
+          </div>
+        </a>
+        <div class="inside-blog bg-ourtable">
+          <div class="col-50 txt-white">
+            <div class="container-description">
+              <h2 class="title-our title-letter-special">Todos a la mesa</h2>
+              <p class="text-description">
+                Esta bella y accesible colección fue creada para que todos podamos compartir más comidas juntos, de nuestra mesa a la tuya.  
+              </p>
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/mesa.html" target="_self">
+                <p class="btn-block">explora la colección</p>
+              </a>
+            </div>
+          </div>
+          <div class="col-50"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image sartén -->
+    <div style="height: 50px"></div>
+
+    <section class="section-space">
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html"
+        target="_self"
+      >
+        <div class="banner-img desktop figure">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/sarten-landing.jpg?rand=1625244613"
+            alt="Our Table™ Bed Bath & Beyond"
+          />
+        </div>
+        <div class="banner-img mobile" style="display: none">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/sarten-landing.jpg?rand=1625244613"
+            alt="Our Table™ Bed Bath & Beyond"
+          />
+        </div>
+      </a>
+    </section>
+
+    <!-- Cocina Confort-->
+    <section class="section-space">
+      <div class="container-subtitles">
+        <h2 class="subtitle-simple title-letter-special">Cocina para tener confort</h2>
+        <p>
+          No importa qué cocines en ellas, estas ollas siempre lucirán hermosas.
+        </p>
+        <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html" target="_self">
+          <p class="btn-block-blog">compra baterías de cocina</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Two Columns Hornea con amor -->
+    <section class="section-space">
+      <div class="wrap-two-columns">
+        <div class="item-flex-two">
+          <figure class="effect-roxy">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/charolas-landing.jpg?rand=1625244613"
+              alt="Our Table™ Bed Bath & Beyond"
+              class="img-two-columns"
+            />
+          </figure>
+        </div>
+        <div class="item-flex-two">
+          <div class="container-description mg-t-50 align-left">
+            <h2 class="color-ourtable title-letter-special">Hornea con amor</h2>
+            <p class="text-description">
+              Desde la amada receta de tu abuela hasta un platillo que recién
+              descubriste, nuestros sets para hornear son atemporales y crean
+              magia culinaria.
+            </p>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/accesorios-para-hornear.html" target="_self">
+              <p class="btn-block">compra sets de horneado</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/mesa.html" target="_self">
+        <div
+          class="banner-img desktop img-center figure"
+          style="text-align: center"
+        >
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/vajilla-landon-landing.jpg?rand=1625244613"
+            alt="Our Table™ Bed Bath & Beyond"
+          />
+        </div>
+        <div class="banner-img img-center mobile figure" style="display: none">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/vajilla-landon-landing.jpg?rand=1625244613"
+            alt="Our Table™ Bed Bath & Beyond"
+          />
+        </div>
+      </a>
+    </section>
+
+    <!-- TEXTO 2-->
+    <section>
+      <div class="container-subtitles">
+        <h2 class="subtitle-simple title-letter-special">Comparte la alegría</h2>
+        <p>
+          Hechos en cálida y atractiva cerámica, nuestros platos y tazones
+          propician las reuniones diarias.
+        </p>
+        <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/mesa.html" target="_self">
+          <p class="btn-block-blog">compra vajillas</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CATEGORIA 3-->
+    <section>
+      <div class="wrap-two-columns">
+        <div class="item-flex-two">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/gift1.gif?rand=1624975838"
+            alt="Our Table™ Bed Bath & Beyond"
+          />
+        </div>
+        <div class="item-flex-two bg-ourtable align-left wrap-desc-recipes">
+          <h2 class="title-letter-special">Nuestras recetas favoritas</h2>
+          <p>
+            Hemos reunido platillos inspirados en todo el mundo de chefs
+            locales, cocineros en casa y nuestro equipo local.
+          </p>
+          <a href="https://www.bedbathandbeyond.com.mx/recetas" target="_self">
+            <p class="btn-block">ver recetas</p>
+          </a>
+        </div>
+        <div class="item-flex-two">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/gift2.gif?rand=1624975838"
+            alt="Our Table™ Bed Bath & Beyond"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Share Redes Sociales -->
+    <section>
+      <div class="container-subtitles">
+        <p>
+          ¿Qué hay en tu mesa? Comparte lo que estás cocinando en redes sociales
+          y usa el hashtag <a href="https://www.instagram.com/bedbathandbeyondmexico/" target="_blank"><span style="color:#1a4e8a;font-weight: 900;">#FromOurTable</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Prepara con facilidad -->
+    <section>
+        <div class="wrap-two-columns">
+            <div class="item-flex-two">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/utensilios-de-cocina.html" target="_self">
+                <div class="container-post">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/cuchillo-landing.jpg?rand=1625244613"   alt="Our Table™ Bed Bath & Beyond">
+                    <div class="container-desc-post">
+                        <h3 class="title-letter-special">Prepara con facilidad</h3>
+                        <p>Cuchillos y utensilios probados y garantizados que trasladan cualquier idea al plato. </p>
+                    </div>
+                </div>
+              </a>
+            </div>
+            <div class="item-flex-two">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/textiles-de-cocina.html" target="_self">
+                <div class="container-post">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/toallas-landing.jpg?rand=1625244613"   alt="Our Table™ Bed Bath & Beyond">
+                    <div class="container-desc-post">
+                        <h3 class="title-letter-special">Limpio y en orden </h3>
+                        <p>Textiles de cocina con diseños casuales y elegantes.</p>
+                    </div>
+                </div>
+              </a>
+            </div>
+        </div>
+    </section>
+
+        <!-- Description  -->
+        <section>
+            <div class="wrap-two-columns bg-ourtable">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table.html" target="_self">
+                <div class="item-flex-two">
+                    <div class="container-post">
+                        <div class="container-desc-post">
+                            <h2 class="title-letter-special">Explora nuestra nueva colección Our Table</h2>
+                                <p class="btn-block align-center">compra ahora </p>
+                        </div>
+                    </div>
+                </div>
+              </a>
+            </div>  
+        </section>
+
+    <!-- Video -->
+    <section>
+      <div class="video-container">   
+          <iframe width="50%" height="800" src="https://www.youtube.com/embed/SLOhOstFJ-k?playlist=SLOhOstFJ-k&loop=1;rel=0&autoplay=1&controls=0&showinfo=0&mute=1" title="OurTable" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                   
+      </div>               
+    </section>
+  </body>
+</html>

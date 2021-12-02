@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Venta especial banamex</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --citi-azul: #066daf;
+        --citi-rojo: #e0222d;
+      }
+      #beneficios {
+        overflow: hidden;
+        text-align: center;
+        display: block;
+      }
+      .citi-des {
+        font-size: 2.7rem;
+        padding: 0 30px;
+      }
+      .citi-des span {
+        color: var(--citi-azul);
+        font-family: var(--font-bedbath);
+      }
+      #comofunciona {
+        margin-top: 40px;
+        text-align: center;
+      }
+      .title--benefit {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        position: relative;
+      }
+      .title--benefit span {
+        color: var(--citi-azul);
+      }
+      .high {
+        font-weight: 900;
+        color: var(--azul-bbb-medio);
+      }
+      .wrap--beneficio {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+      }
+      .wrap--beneficio .item--beneficio {
+        background-color: #fff;
+        border-color: #fff;
+        box-shadow: 0 3px 6px rgb(130 167 217 / 32%);
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-weight: 300;
+        width: 20%;
+        margin: 2%;
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+      }
+      .wrap--beneficio .item--beneficio img {
+        width: 25px;
+        height: 25px;
+      }
+      .wrap--beneficio .item--beneficio p {
+        padding: 0 5px;
+        font-size: 1.2vw;
+      }
+      .wrap--describe {
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-template-areas:
+          "banner itema itemb"
+          "banner itemc itemd";
+      }
+      .item--describe {
+        text-align: left;
+        justify-content: left;
+        padding: 10px;
+      }
+      .item--describe h3 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+      }
+      .item--describe p {
+        font-size: 18px;
+        line-height: 1;
+      }
+      .item--describe:nth-child(1) {
+        grid-area: banner;
+        overflow: hidden;
+        justify-content: center !important;
+        text-align: center im !important;
+      }
+      .item--describe:nth-child(1) img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+      .item--describe:nth-child(2) {
+        grid-area: itema;
+        padding: 10x 40px !important;
+      }
+      .item--describe:nth-child(3) {
+        grid-area: itemb;
+        padding: 10x 40px !important;
+      }
+      .item--describe:nth-child(4) {
+        grid-area: itemc;
+        padding: 10x 40px !important;
+      }
+      .item--describe:nth-child(5) {
+        grid-area: itemd;
+        padding: 10x 40px !important;
+      }
+      .ben--citi {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: -10px;
+        right: 20%;
+      }
+      .terminos {
+        font-size: 1rem;
+        text-align: center;
+      }
+      @media (max-width: 991px) {
+        .wrap--beneficio .item--beneficio p {
+          font-size: 2vw;
+        }
+        .wrap--beneficio .item--beneficio img {
+          width: 20px;
+          height: 20px;
+        }
+        .wrap--describe {
+          grid-template-areas:
+            "banner banner"
+            "itema itemb"
+            "itemc itemd";
+        }
+        .item--describe:nth-child(1) {
+          justify-content: center;
+          display: flex;
+        }
+        .item--describe h3 {
+          font-size: 14px;
+        }
+        .ben--citi {
+          top: 30px;
+          right: 10%;
+        }
+        .wrap--beneficio .item--beneficio {
+          width: 30%;
+        }
+        .wrap--beneficio .item--beneficio p {
+          font-size: 3vw;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Como funciona?-->
+    <section id="beneficios">
+      <h2 class="title--benefit">
+        <span>Tu primera compra en Bed Bath & Beyond</span> ¡tiene descuento!<br />
+        <!-- citibanamex
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/citibanamex-movil-logo.png?rand=1630682325"
+          class="ben--citi"
+        />-->
+      </h2>
+      <p class="citi-des">
+        Paga con Tarjetas Citibanamex en tienda o en línea y disfruta de un
+        <span>15%</span> de descuento con el código <span>CITI15</span>, además
+        de hasta 13 meses sin intereses.
+      </p>
+      <div class="wrap--beneficio">
+        <div class="item--beneficio">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/credit-cards-payment.png?rand=1630679582"
+            alt="meses sin interes Bed Bath and Beyond"
+          />
+          <p>9,12 y 13 meses sin intereses</p>
+        </div>
+        <div class="item--beneficio">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/money.png?rand=1630679582"
+            alt="meses sin interes Bed Bath and Beyond"
+          />
+          <p>mínimo de compra <b>$2,500</b></p>
+        </div>
+        <div class="item--beneficio">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calendar.png?rand=1630679582"
+            alt="meses sin interes Bed Bath and Beyond"
+          />
+          <p>del 6 al 30 de septiembre</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- descripción?-->
+    <section id="comofunciona">
+      <h2>¿Cómo funciona?</h2>
+      <div class="wrap--describe">
+        <div class="item--describe">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/muebles/240591216_214092257347491_6846076021127427623_n.jpeg?rand=1630527066"
+            alt=""
+          />
+        </div>
+        <div class="item--describe">
+          <h3>Inicia sesión</h3>
+          <p>inicia sesión con tu cuenta o como invitado</p>
+        </div>
+        <div class="item--describe">
+          <h3>Selecciona tus productos</h3>
+          <p>
+            agrega productos a tu carrito y acumula un mínimo de compra
+            <span class="high">$1,500</span> para 3 y 6 meses sin intereses y
+            <span class="high">$2,500</span> para 9, 12 y 13 meses.
+          </p>
+        </div>
+        <div class="item--describe">
+          <h3>Ingresa tus datos bancarios</h3>
+          <p>
+            elige tus mensualidades antes de realizar el pago, el
+            tarjetahabiente deberá ingresar el código
+            <span class="high">CITI15</span> al finalizar su carrito de compra y
+            el descuento se verá reflejado automáticamente
+          </p>
+        </div>
+        <div class="item--describe">
+          <h3>Consulta detalles</h3>
+          <p>
+            descuento válido para una sola compra. No aplica con otros cupones.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <p class="terminos">
+        Promoción válida en tiendas físicas <span>Bed Bath and Beyond</span> y
+        en
+        <a href="https://www.bedbathandbeyond.com.mx/" target="_self"
+          >bedbathandbeyond.com.mx </a
+        >en exclusiva para tarjetahabientes Citibanamex. Monto mínimo de compra
+        $1,500 para 3 y 6 meses sin intereses y $2,500 para 9, 12 y 13 meses.
+        Descuento válido para una sola compra. No aplica con otros cupones. Para
+        hacer válido el descuento en la tienda en línea de Bed Bath and Beyond,
+        el tarjetahabiente deberá ingresar el código CITI15 al finalizar su
+        carrito de compra y el descuento se verá reflejado automáticamente. El
+        descuento no aplica en costos de envío. Para hacer válida la promoción
+        en tiendas físicas, el tarjetahabiente deberá presentar este correo y
+        mencionar el código el descuento CITI15. Vigencia del 6 al 30 de
+        septiembre de 2021.
+      </p>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    .page-title-wrapper {
+			display: none !important;
+		}
+    .wrap-title{
+        text-align: center;
+        line-height: 1;
+    }
+    #carrousel_big{
+        margin-top: 50px;
+    }
+    .wrap-title h2{
+        font-size: 4rem;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif;
+        color: #1a4e8a !important;
+    }
+    .wrap-title h3{
+        font-size: 2rem;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif;
+        color: #002854;
+    }
+    .wrap-title p{
+        color:#fe5629;
+        font-size: 2.5rem;
+        font-weight: 900;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        margin-top: -5px;
+    }
+    .wrap-slide {
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        padding: 5px;
+        margin: 50px 0px 0px;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+    .item-category{
+        height: auto;
+    }
+    .container-image-m{
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+    }
+    .phone-notifications{
+        width: 80px !important;
+        height: auto;
+    }
+    .item-category p {
+        color: #1a4e8a;
+        font-weight: 900;
+        font-size: 20px;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif;
+    }
+    .container-image-m img {
+        width: 250px;
+        height: 250px;
+        border: 4px solid #fff;
+        border-radius: 50%;
+    }
+    .title-main {
+        color: #1a4e8a;
+        font-weight: 900;
+        font-size: 18px;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif;
+    }
+    #steps{
+        margin-top: 20px;
+    }
+            /*Zoom Animation*/
+    #containerimgc {
+      display: inline-block;
+      margin: 0px;
+      overflow: hidden;
+      position: relative;
+    }
+    #containerimgc img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+    }
+    #containerimgc:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+    .wrap-steps{
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        margin: 50px 0;
+        justify-content: center;
+        text-align: center;
+    }
+    .step-item{
+        border: 5px solid #1a4e8a;
+        color: #1a4e8a;
+        font-weight: 900;
+        display: flex;
+        margin: 5px 1px;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        font-size: 14px;
+        line-height: 1;
+        margin: 7px;
+    }
+    .step-item img {
+        width: 50px;
+    }
+    .step-item div:nth-child(1){
+        width: 200px;
+        text-align: left;
+    }
+    .step-item div:nth-child(2){
+        background-color: #daeaf4;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+    .step-item{
+        border: 5px solid #1a4e8a;
+        padding: 10px 20px;
+        color: #1a4e8a;
+        font-weight: 900;
+        display: flex;
+        margin: 5px 1px;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        font-size: 14px;
+    }
+    .step-itemb {
+        border: 5px solid #1a4e8a;
+        padding: 10px;
+        width: 70%;
+    }
+    .step-itemb img {
+        width: 50px;
+    }
+    .step-itemb div:nth-child(1){
+        width: 80%;
+        text-align: left;
+        font-size: 22px;
+    }
+    .step-itemb div:nth-child(2){
+        background-color: #daeaf4;
+        padding: 10px;
+        width: 70px;
+        height: 70px;
+        border-radius: 50%;
+        position: absolute;
+        right: 18%;
+        top: 5px;
+    }
+    .wrap-quenecesitas{
+        overflow: hidden;
+        background-color: #f2f2f2;
+        padding: 40px 20%;
+    }
+    .title-second{
+        overflow: hidden;
+        display: flex;
+        color:  #1a4e8a;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        font-size: 3rem;
+        line-height: 1;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+    }
+    .title-second img {
+        width: 100px;
+        height: 100px;
+    }
+    .title-second p{
+        margin-left: 20px;
+    }
+    .item-desc{
+        overflow: hidden;
+        font-size: 3rem;
+        display: flex;
+        line-height: 1;
+        position: relative;
+        font-weight: 900;
+    }
+    .mini-text{
+        font-size:16px;
+        color: #fe5629;
+        font-style: italic;
+    }
+    .btn-login {
+        background-color: #117dcf;
+        color: #fff;
+        margin-left: 150px;
+        padding: 10px 0;
+        border-radius: 5px;
+        font-size: 18px;
+        width: 300px;
+        text-align: center;
+        height: 25px;
+        position: absolute;
+        right: 0;
+    }
+    .btn-login:hover{
+        background-color:#fff;
+        color: #117dcf;
+        border:2px solid #117dcf;
+    }
+    #genera {
+        margin-top: 40px;
+    }
+    .higlight{
+        font-size: 32px;
+    } 
+    .wrap-need{
+        overflow: hidden;
+        text-align: center;
+        color:  #000;
+        font-size: 2rem;
+        display:flex;
+        justify-content: center;
+        position: relative;
+        padding: 10px 300px;
+    }
+    .wrap-needb{
+        overflow: hidden;
+        text-align: center;
+        font-size: 0.6rem;
+        display:flex;
+        justify-content: center;
+        position: relative;
+        padding: 20px 20px;
+        margin-top: 40px;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        color: #1a4e8a;
+    }
+
+        .container_slide_cards {
+            width: 100%;
+            max-width: calc(200px * 4 + 30px * 4 + 30px);
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slider {
+            width: 100%; /* card * 4 + margin * 4 */
+            position: relative;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            justify-content: flex-start;
+            overflow: hidden;
+        }
+        .slides { 
+            display: flex;
+            flex-shrink: 0;
+            transition: all 0.5s;
+            overflow-X: hidden;
+        }
+        .slides .slide {
+            flex-basis: 1;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 350px;
+            margin-right: 15px;
+            margin-left: 15px;
+            border-radius: 10px;
+            font-size: 50px;
+            text-align: center;
+        }
+
+        .slider .btn-prev,
+        .slider .btn-next{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: white;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(17,17,17,.15);
+            cursor: pointer;
+        }
+        .slider .btn-prev{
+            left: 0px;
+        }
+        .slider .btn-next{
+            right: 40px;
+        }
+        .slider .btn-prev:after,
+        .slider .btn-next:after{
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid red;
+            border-right: 1px solid red;
+        }
+        .slider .btn-prev:after{
+            left: 50%;
+            top: 50%;
+            transform-origin: top right;
+            transform: rotate(-135deg) translate(100%, -100%);
+        }
+        .slider .btn-next:after{
+            left: 50%;
+            top: 50%;
+            transform-origin: top right;
+            transform: rotate(45deg) translate(-25%, 50%);
+        }
+        #categorias{
+            margin-top: 40px;
+        }
+        .titles-cat {
+            overflow: hidden;
+            width: 100%;
+            text-align: center;
+            color: #1a4e8a;
+            font-size: 2rem;
+            line-height: 1;
+            font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        }
+        .titles-cat h2 {
+            color: #1a4e8a !important
+        }
+        /*Flexbox*/
+        .content-flex{
+            display: flex;
+            -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            padding: 0px;
+            margin: 0px;
+            justify-content: center;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        .col-2-flex{
+            margin: 10px; 
+        }
+        .content-inline-flex {
+        display: inline-flex;
+        width: 100%;
+        }
+
+        .items-center{
+            width: 140px;
+            height: 140px;
+            transition: 0.3s;
+            position: relative;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            border: 2px solid transparent;
+        }
+        .items-center:hover{
+            border: 2px solid  #1a4e8a;
+
+        }
+        .img-rouned {
+            width: 140px;
+            height: 140px;
+        }
+        .wrap-banner{
+            background-color: rgb(242, 242, 242);
+            display: flex;
+            height: 189px;
+            margin-top: 40px;
+        }
+        .item-banner {
+            width: 50%;
+            position: relative;
+            text-align: center;
+        }
+        .item-banner img {
+            width: 100%;
+        }
+        .question{
+            color: #1a4e8a;
+            font-weight: 900;
+            position: absolute;
+            font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+            top: 10%;
+            left: 8%;
+            font-size: 4rem;
+            line-height: 1;
+        }
+        .wrap-product{
+            overflow: hidden;
+            background-color: #fff;
+            padding: 0 10px;
+        }
+        .wrap-product img{
+            width: 150px;
+            height: 150px;
+        }
+        .wrap-product .text{
+            font-size: 16px;
+            text-align: center;
+        }
+        .btn-ver{
+            background-color: #117dcf;
+            color: #fff;
+            font-size: 15px;
+            padding: 10px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        }
+
+        /*accordion*/
+        .accordion {
+            background-color: #fff;
+            color: #444;
+            cursor: pointer;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+            text-align: left;
+            padding: 12px 20px;
+            border-bottom:2px solid  #1a4e8a;
+        }
+
+        /*.panel {
+            padding: 0 18px;
+            display: none;
+            background-color: white;
+            overflow: hidden;
+        }*/
+
+        .wrap-desc-mesa{
+            margin-top: 50px;
+        }
+        .info-inside{
+            font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+            margin-top: -20px;
+        }
+        /*Shine Animation*/
+    .shine {
+      animation-name: glitter;
+      animation-iteration-count: infinite;
+    }
+
+    .star-1 {
+      transform-origin: 102.14px 87.09px;
+      animation-duration: 3.5s;
+    }
+
+    .star-2 {
+      transform-origin: 219.47px 205.7px;
+      animation-duration: 4s;
+    }
+
+    .star-3 {
+      transform-origin: 404.11px 35.05px;
+      animation-duration: 2.5s;
+    }
+
+    .star-4 {
+      transform-origin: 54.43px 393.81px;
+      animation-duration: 2.5s;
+    }
+
+    .star-5 {
+      transform-origin: 374.42px 271.34px;
+      animation-duration: 3s;
+    }
+
+    @keyframes glitter {
+      0% {
+        -webkit-transform: scale(0.3) rotate(0deg);
+        opacity: 0;
+      }
+      50% {
+        -webkit-transform: scale(0.8) rotate(360deg);
+        opacity: 0.7;
+      }
+      100% {
+        -webkit-transform: scale(0.3) rotate(0deg);
+        opacity: 0;
+      }
+    }
+    #shine_animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .list__reset {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    .carrousel__container {
+      overflow: hidden;
+      height: auto;
+      position: relative;
+    }
+
+    .carrousel__list {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .buttons__list {
+      display: flex;
+    }
+
+    .carrousel__list__item {
+      color: white;
+      width: 100%;
+      flex-grow: 0;
+      height: auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+    }
+    .carrousel__list__item div {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+    #nextbed__btn {
+      position: absolute;
+      right: 10%;
+    }
+    #prevbed__btn {
+      position: absolute;
+      left: 10%;
+    }
+    #nextbed__btn,
+    #prevbed__btn {
+      border: 0;
+      top: 45%;
+      border-radius: 50%;
+      background: transparent;
+    }
+    #nextbed__btn img,
+    #prevbed__btn img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .img_slide_m {
+      width: 80%;
+    }
+  /*Responsive */
+  @media (max-width: 991px) {
+        .container-image-m{
+            width: 150px;
+            height: 150px; 
+        }
+        .item-category p{
+            font-size: 14px;
+        }
+        .container-image-m img{
+            width: 150px;
+            height: 150px;
+        }
+        .wrap-title p{
+            font-size: 2.1rem;
+        }
+        .wrap-title h2 {
+            line-height: 1;
+        }
+        .wrap-steps {
+            flex-wrap: wrap;
+        }
+        .title-second p {
+            margin-left: 0px;
+            font-size: 20px;
+        }
+        .title-second img {
+            width: 50px;
+            height: 50px;
+            margin-top: 20px;
+        }
+        .item-desc{
+            height: 150px;
+        }
+        .btn-login{
+            top: 110px;
+            width: 200px;
+            padding: 4px 0;
+        }
+        .wrap-quenecesitas{
+            padding: 40px 10%;
+        }
+        .step-itemb div:nth-child(1) {
+            width: 80%;
+            text-align: left;
+            font-size: 18px;
+        }
+        .step-itemb div:nth-child(2){
+            right: 10%;
+            top: 2%;
+        }
+        .img_slide_m{
+            width: 100%;
+            height: 300px;
+        }
+        #nextbed__btn, #prevbed__btn{
+            top:85%;
+        }
+        .slider .btn-next{
+            right: 30px;
+        }
+        .question{
+            font-size: 2rem;
+            margin-top: 10px;
+        }
+        .wrap-banner{
+            display: block;
+        }
+        .item-banner{
+            width: 100%;
+        }
+        .item-banner img {
+            width: 100%;
+            margin-top: 50px;
+        }
+        .wrap-need {
+            padding: 10px 30px;
+        }
+    }
+</style>
+<script>
+    window.onload=function() {
+        class Carrousel {
+        constructor(
+          carrouselListEl,
+          arrowLeftBtnEl,
+          arrowRightBtnEl,
+          autoPlay = false,
+          time
+        ) {
+          this.carrouselListEl = carrouselListEl;
+          this.arrowLeftBtnEl = arrowLeftBtnEl;
+          this.arrowRightBtnEl = arrowRightBtnEl;
+          this.autoPlay = autoPlay;
+          this.time = time;
+          this.itemCount = 0;
+          this.setCarrouselWidth = this.setCarrouselWidth(
+            this.getNumberOfListItems()
+          );
+          this.applyArrowsFunctionality = this.applyArrowsFunctionality();
+          this.autoPlayInterval;
+          this.applyAutoSlide = this.applyAutoSlide();
+        }
+
+        getNumberOfListItems() {
+          if (this.carrouselListEl !== null)
+            return this.carrouselListEl.childElementCount;
+        }
+
+        setCarrouselWidth(numberOfListItems) {
+          if (this.carrouselListEl !== null)
+            this.carrouselListEl.style.width = numberOfListItems * 100 + "%";
+        }
+
+        moveList() {
+          this.carrouselListEl.style.transition = "transform .45s ease";
+          this.carrouselListEl.style.transform =
+            "translateX(" +
+            -1 * this.itemCount * (100 / this.getNumberOfListItems()) +
+            "%)";
+        }
+
+        forwards() {
+          this.itemCount++;
+          if (this.itemCount > this.getNumberOfListItems() - 1) {
+            this.itemCount = 0;
+          }
+          this.moveList();
+        }
+
+        backwards() {
+          this.itemCount--;
+          if (this.itemCount < 0) {
+            this.itemCount = this.getNumberOfListItems() - 1;
+          }
+          this.moveList();
+        }
+
+        applyArrowsFunctionality() {
+          if (this.arrowLeftBtnEl !== null) {
+            this.arrowLeftBtnEl.addEventListener("click", () => {
+              this.backwards();
+            });
+          }
+
+          if (this.arrowRightBtnEl !== null) {
+            this.arrowRightBtnEl.addEventListener("click", () => {
+              this.forwards();
+            });
+          }
+        }
+
+        autoSlide() {
+          this.autoPlayInterval = setInterval(
+            this.forwards.bind(this),
+            this.time
+          );
+        }
+
+        stopAutoSlide() {
+          clearInterval(this.autoPlayInterval);
+        }
+
+        applyAutoSlide() {
+          if (this.autoPlay === true) {
+            this.autoSlide();
+
+            this.carrouselListEl.addEventListener("mouseenter", () => {
+              this.stopAutoSlide();
+            });
+
+            this.carrouselListEl.addEventListener("mouseleave", () => {
+              this.autoSlide();
+            });
+          }
+        }
+      }
+
+      const carrouselList = document.getElementById("carrousel__list"),
+        prevBtn = document.getElementById("prevbed__btn"),
+        nextBtn = document.getElementById("nextbed__btn"),
+        carr = new Carrousel(carrouselList, prevBtn, nextBtn, true, 9000);
+
+        //Carrusel estatico
+        const carousel = document.querySelector('.slider');
+        const slider = document.querySelector('.slides');
+
+        const next = document.querySelector('.btn-next');
+        const prev = document.querySelector('.btn-prev');
+        let direction;
+
+        next.addEventListener('click', function() {
+        direction = -1;
+        slider.style.transform = 'translate(-230px)';  
+        });
+
+        prev.addEventListener('click', function() { 
+        direction = 1;
+        slider.style.transform = 'translate(230px)';  
+        });
+
+        slider.addEventListener('transitionend', function() {
+        // get the last element and append it to the front
+
+        if (direction === 1) {
+            slider.prepend(slider.lastElementChild);
+        } else {
+            slider.appendChild(slider.firstElementChild);
+        }
+
+        slider.style.transition = 'none';
+        slider.style.transform = 'translate(0)';
+        setTimeout(() => {
+            slider.style.transition = 'all 0.5s ease';
+        })
+        slider.stopPropagation();
+        }, false);
+
+        //Acordion
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+            panel.style.display = "none";
+            } else {
+            panel.style.display = "block";
+            }
+        });
+        }
+    }
+</script>
+
+</head>
+<body>
+    <section>
+        <div class="wrap-title">
+            <h1>mesa de regalos</h1>
+            <div class="info-inside">
+                <p>en línea y en tienda</p>
+                <p style="color:#fe5629">¡Crea tu Mesa de Regalos y celebra a lo grande!</p>
+            </div>
+        </div>
+    </section>
+<!-- Category-->
+    <section>
+        <div class="wrap-slide">
+            <div class="item-category">
+                    <div id="containerimgc" class="container-image-m">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/boda_1.jpg?rand=1625755452" alt="boda mesa de regalos bed bath & beyond">
+                        <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+                            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+                            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+                            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+                            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+                            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+                            <!--<circle class="cls-2" cx="404.11" cy="35.05" r="3.5"/><circle class="cls-2" cx="374.42" cy="271.34" r="3.5"/><circle class="cls-2" cx="219.47" cy="205.7" r="3.5"/><circle class="cls-2" cx="102.14" cy="87.09" r="3.5"/><circle class="cls-2" cx="54.43" cy="393.81" r="3.5"/>-->
+                            </g>
+                        </svg>
+                    </div>
+                    <p>boda</p>
+            </div>
+            <div class="item-category">
+                    <div id="containerimgc" class="container-image-m">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/cumpleanos.jpg?rand=1625755452" alt="cumpleaños mesa de regalos bed bath & beyond">
+                        <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+                            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+                            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+                            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+                            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+                            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+                            <!--<circle class="cls-2" cx="404.11" cy="35.05" r="3.5"/><circle class="cls-2" cx="374.42" cy="271.34" r="3.5"/><circle class="cls-2" cx="219.47" cy="205.7" r="3.5"/><circle class="cls-2" cx="102.14" cy="87.09" r="3.5"/><circle class="cls-2" cx="54.43" cy="393.81" r="3.5"/>-->
+                            </g>
+                        </svg>
+                    </div>
+                    <p>cumpleaños</p>
+            </div>
+            <div class="item-category">
+                    <div id="containerimgc" class="container-image-m">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/openhouse.jpg?rand=1625755452" alt="openhouse mesa de regalos bed bath & beyond">
+                        <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+                            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+                            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+                            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+                            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+                            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+                            <!--<circle class="cls-2" cx="404.11" cy="35.05" r="3.5"/><circle class="cls-2" cx="374.42" cy="271.34" r="3.5"/><circle class="cls-2" cx="219.47" cy="205.7" r="3.5"/><circle class="cls-2" cx="102.14" cy="87.09" r="3.5"/><circle class="cls-2" cx="54.43" cy="393.81" r="3.5"/>-->
+                            </g>
+                        </svg>
+                    </div>
+                    <p>open House</p>
+            </div>
+            <div class="item-category">
+                    <div id="containerimgc" class="container-image-m">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/otros.jpg?rand=1625755452" alt="otros mesa de regalos bed bath & beyond">
+                        <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+                            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+                            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+                            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+                            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+                            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+                            <!--<circle class="cls-2" cx="404.11" cy="35.05" r="3.5"/><circle class="cls-2" cx="374.42" cy="271.34" r="3.5"/><circle class="cls-2" cx="219.47" cy="205.7" r="3.5"/><circle class="cls-2" cx="102.14" cy="87.09" r="3.5"/><circle class="cls-2" cx="54.43" cy="393.81" r="3.5"/>-->
+                            </g>
+                        </svg>
+                    </div>
+                    <p>otro</p>
+            </div>
+        </div>
+    </section>
+
+    <!--Pasos-->
+    <section>
+        <div id="steps" class="wrap-title">
+            <h2>todo lo que amas, en un solo lugar</h2>
+            <p>abrir tu mesa de regalos es muy rápido y sencillo</p>
+        </div>
+        <div class="wrap-steps">
+            <div class="step-item">
+                <div><span class="higlight">1.</span> Regístrate y selecciona el tipo de evento para tu Mesa de Regalo</div>
+                <div id="#hexagon"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/pc.png?rand=1623256848" alt=""/></div>
+            </div>
+            <div class="step-item">
+                <div><span class="higlight">2.</span> Elige los productos que más te gusten</div>
+                <div id="#hexagon"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/search.png?rand=1623257526" alt=""/></div>
+            </div>
+            <div class="step-item">
+                <div><span class="higlight">3.</span> Comparte con todos tus invitados tu Mesa de Regalo</div>
+                <div id="#hexagon"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/smartphone_1_.png?rand=1623257526" alt=""/></div>
+            </div>
+            <div class="step-item">
+                <div><span class="higlight">4.</span> Recibe y disfruta de tus regalos y bonificación en Tarjeta de Regalo</div>
+                <div id="#hexagon"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/gifts.png?rand=1623257526" alt=""/></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- evento -->
+    <section id="genera">
+        <div class="wrap-quenecesitas">
+            <div class="title-second">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/gifts.png?rand=1623257526" />
+                <p>hemos creado una mesa de regalos para consentirte e inspirarte...</p>
+            </div>
+            <div class="wrap-desc-mesa">
+                <div class="item-desc">
+                    <div>
+                        <p class="title-main">¿Quieres crear un evento?</p>
+                        <p class="mini-text">Es rápido y sencillo te brindamos la asesoria que necesitas. </p>
+                    </div>
+                    <a href="https://www.bedbathandbeyond.com.mx/customer/account/login/referer/aHR0cHM6Ly93d3cuYmVkYmF0aGFuZGJleW9uZC5jb20ubXgvZ2lmdHIvcmVnaXN0cnkvbmV3Lw%2C%2C/" target="_self">
+                        <p class="btn-login">registrate</p>
+                    </a>
+                </div>
+            </div>
+            <div class="wrap-desc-mesa">
+                <div class="item-desc">
+                    <div>
+                        <p class="title-main">¿Eres el festejado?</p>
+                        <p class="mini-text">Puedes seleccionar tus productos favoritos. </p>
+                    </div>
+                    <a href="https://www.bedbathandbeyond.com.mx/customer/account/login/referer/aHR0cHM6Ly93d3cuYmVkYmF0aGFuZGJleW9uZC5jb20ubXgvZ2lmdHIvcmVnaXN0cnkvaW5kZXgv/" target="_self">
+                        <p class="btn-login">ver regalos</p>
+                    </a>
+                </div>
+            </div>
+            <div class="wrap-desc-mesa">
+                <div class="item-desc">
+                    <div>
+                        <p class="title-main">¿Buscas un evento?</p>
+                        <p class="mini-text">Selecciona las diferentes opciones que tenemos para ti.</p>
+                    </div>
+                    <a href="https://www.bedbathandbeyond.com.mx/giftr/search/result" target="_self">
+                        <p class="btn-login">buscar mesa</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slider Beneficios -->
+    <section id="carrousel_big">
+        <div class="carrousel__container">
+          <ul class="list__reset carrousel__list" id="carrousel__list">
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/portada-slide-beneficios.jpg?rand=1625756429"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/1.jpg?rand=1625756429"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/2-3.jpg?rand=1626653067"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/4-5.jpg?rand=1626653067"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/6-7.jpg?rand=1626653067"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/8-9.jpg?rand=1626653067"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+            <li class="carrousel__list__item bg1">
+                <div>
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/10-11.jpg?rand=1626653067"
+                    alt=""
+                    class="img_slide_m"
+                  />
+                </div>
+            </li>
+          </ul>
+          <button id="prevbed__btn">
+              
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/left-arrow_2__1.png?rand=1625668693"
+              class="arrow_special"
+            />
+          </button>
+          <button id="nextbed__btn">
+              
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/right-arrow_1__1.png?rand=1625668693"
+              class="arrow_special"
+            />
+          </button>
+        </div>
+      </section>
+    <!-- ideas para regalar-->
+    <section id="genera">
+        <div class="title-second">
+            <p>ideas para regalar</p>
+        </div>
+        <div class="wrap-need">
+            Puedes indicar qué productos quieres que se entreguen al terminar tu evento y cuáles deseas tener lo antes posible.
+        </div>
+
+        <div>
+            <div class="container_slide_cards">
+            <div id="carrusel" class="slider">
+                <div id="carrusel-slides" class="slides">
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/procesador-de-alimentos-de-metal-nutribulletr-900-series.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/46103048.jpg?$imagePLP$&hei=300&wid=260" />
+                            <p class="text">Procesador de alimentos de metal NutriBullet® 900 Series</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/parrilla-para-interiores-ninjar-foodi-4-en-1.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69733143.jpg?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Parrilla para interiores Ninja® Foodi 4 en 1</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/licuadora-ninjar-intelli-sensetm-blender-duor.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/65846803.png?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Licuadora Ninja® Intelli-Sense™ Blender Duo®</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/edredon-individual-de-poliester-reversible-color-blanco-coco.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-11-02-11-03_22143644217_3?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Edredón individual de poliéster reversible color blanco coco</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/toallas-faciales-de-algodon-clean-start-lisas-color-beige.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/810055634880_imageset?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Toallas faciales de algodón Clean Start lisas color beige</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/rebajas-beyond/20-de-descuento/recamara/set-de-edredon-king-de-poliester-kayser-reversible-color-ocre-8-piezas.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-08-13-12-34_kayser-threequarter_imageset?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Set de edredón king de poliéster Kayser reversible color ocre, 8 piezas</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/caja-extra-chica-de-madera-uggr-color-cafe.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/22107285200263m?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Caja extra chica de madera UGG® color café</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/espejo-de-piso-de-1-89-m-x-82-7-cm-en-plata.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7501131827168.jpg?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Espejo de piso de 1.89 m x 82.7 cm en plata</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/juego-banca-2-bancos-otomanes-color-gris-69579389.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800233426_imageset?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Juego de banca con 2 bancos otomanes color gris</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="https://www.bedbathandbeyond.com.mx/toallas-desechables-de-papel-boston-international-con-letra-b-16-piezas.html" target="_self">
+                        <div class="wrap-product">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/36028241647783p?$imagePLP$&hei=700&wid=700" />
+                            <p class="text">Toallas desechables de papel Boston International con letra "B", 16 piezas</p>
+                            <p class="btn-ver"> ver producto</p>
+                        </div>
+                    </a>
+                </div>
+                </div>
+                <button class="btn-prev">
+                <button class="btn-next">
+            </div>
+            </div>
+        </div>
+
+        <div class="wrap-needb"> 
+            <div class="step-itemb">
+                <div>Recibe notificaciones al momento de que tus invitados elijan un regalo para ti.</div>
+                <div id="#hexagon">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/smartphone_1_.png?rand=1623257526" alt="" class="phone-notifications"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías-->
+
+    <section id="categorias">
+        <div>
+            <div class="titles-cat">
+                <h2>encuentra en cada categoría</h2>
+                <p style="color:#fe5629;">el regalo perfecto</p>
+            </div>
+            <div class="content-flex">
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/recamara.jpg?rand=1625755452">
+                                </div>
+                                <p class="categoriestitle">recámara</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/cocina.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">cocina</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/bano.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">baño</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/decoracion.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">decoración</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/cuidado-personal.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">cuidado personal</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/tecnologia.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">tecnología</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/mascotas-y-viajes.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">mascotas, viajes y más</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/muebles/muebles-para-el-hogar.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/muebles.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">muebles</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/organizacion-y-limp.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">organización y limpieza</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/mesa.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/mesa.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">mesa</p>
+                            </div>
+                        </a>
+                      </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/limpieza/aspiradoras.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/aspiradoras.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">aspiradoras</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-2-flex">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores.html">
+                            <div class="inner-anchor-flex">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/exteriorews.jpg?rand=1625756429">
+                                </div>
+                                <p class="categoriestitle">jardines y exteriores</p>
+                            </div>
+                        </a>
+                    </div>
+            </div>
+        </div>
+    </section> 
+
+
+
+    <!-- Banner
+
+    <section id="eleccion">
+        <div class="wrap-banner">
+            <div class="item-banner">
+                <p class="question">Preguntas frecuentes</p>
+            </div>
+            <div class="item-banner"> <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/boda.jpg?rand=1625088746" /></div>
+        </div>
+    </section>
+
+    <section>
+        <button class="accordion">What is a wedding registry? <span class="btn-click"></span></button>
+        <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">What is a wedding registry? <span class="btn-click"></span></button>
+        <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">What is a wedding registry?  <span class="btn-click"></span></button>
+        <div class="panel">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </section>-->
+</body>
+</html>

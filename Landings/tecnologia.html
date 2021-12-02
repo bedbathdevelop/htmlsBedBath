@@ -1,0 +1,2111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tecnología</title>
+</head>
+
+<style>
+          :root {
+          --azul-bbb-strong: #002854;
+          --azul-bbb-medio: #1a4e8a;
+          --azul-bbb-claro: #daeaf4;
+          --azul-bbb-button: #147bd1;
+          --aniversario-azul: #1a4c8a;
+          --bg-gray: #f2f2f2;
+          --txt-gray: #595959;
+          --input-gray: #d4d3d3;
+          --rojo: #f52b42;
+          --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+          --primary-font: Effra,Helvetica,Arial,sans-serif;
+          --secondary-font: Termina Headline,sans-serif;
+        }
+    a {
+        text-decoration: none;
+    }
+    section {
+        margin-bottom: 16px;
+    }
+
+    h1,h2,h3,h4,h5 {
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+    }
+    p,a {
+    font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    .txt-white {
+        color: #fff !important;
+    }
+    .txt-gray {
+        color: #484a46;
+    }
+    .txt-red{
+        color: #da0000;
+    }
+    .title-font {
+        color:#002855;
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 0rem;
+        text-align: center;
+        font-family: var(--font-bedbath)
+    }
+    .title-fontb {
+        color:#002855;
+        width: 100%;
+        padding-bottom: 0rem;
+        text-align: center;
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        font-size: 45px;
+    }
+    .title-fontc{
+        color:#002855;
+        width: 100%;
+        padding-bottom: 0rem;
+        text-align: center;
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        font-size: 30px;
+        padding-top:25px;
+    }
+    .flex-container{
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .square {
+        border: 5px solid #1a4e8a;
+        display: inline-flex; 
+        width: 100%; 
+        align-items: center;
+    }
+
+    .square h2 {
+        width:120%;
+        text-align: center;
+        font-weight: bolder;
+        color: #1a4e8a;
+        font-size: 25px;
+    }
+    .square span {
+        width: 30%;
+        padding: 10px;
+    }
+    .text-square {
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+        width: 100%;
+        text-align: center;
+    }
+    .btn-minibanner{
+        font-size: 14px;
+        text-align: center;
+        font-weight: 600;
+    }
+    .text-square p {
+        font-size: 18px;
+        color: #000;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .call-to {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .banner-top h4 {
+        color: #fff;
+        margin: 60px 0;
+        font-size: 60px;
+    }
+    .banner-top span {
+        background: #fff;
+        color:#1a4e8a;
+        padding: 0 10px;
+    }
+    .p-center {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 2em;
+        text-align: center;
+    }
+    .description-text{
+        font-size: 16px;
+        text-align: center;
+        color: var(--azul-bbb-medio) !important;
+        line-height: 1;
+        font-weight: 600;
+        font-family: var(--secondary-font);
+        padding: 0 15px;
+    }
+    .figure {
+        position: relative;
+    }
+    .figure::before {
+        position: absolute;
+        top: 0;
+        left: -115%;
+        z-index: 2;
+        display: block;
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+        background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+        -webkit-transform: skewX(-25deg);
+        transform: skewX(-25deg);
+    }
+    .figure:hover::before {
+        -webkit-animation: shine .5s;
+        animation: shine .5s;
+    }
+    @-webkit-keyframes shine {
+        100% {
+            left: 25%;
+        }
+    }
+    @keyframes shine {
+        100% {
+            left: 25%;
+        }
+    }
+    #hotSpots {
+        position: relative;
+    }
+
+    .photo-banner {
+        position: relative;
+        width:100%;
+        height: 495px;
+        background-size: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .col-40 {
+        background:rgba(255,255,255,0.6);
+        width: 40%;
+        padding: 1.5%;
+        position: absolute;
+        bottom: 2.5rem;
+    }
+    .col-40.right {
+        right: 1em;
+    }
+    .col-40.left {
+        left: 1em;
+    }
+    .col-40.bottom {
+        top: 90%;
+    }
+    .col-40.top {
+        top: 1em;
+    }
+    .col-40.center {
+        left: 50%;
+        margin-left: -25%;
+    }
+    .center-elements {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;    
+    }
+    .button-blue {
+        box-shadow: none;
+        color: #fff;
+        border-color: #1377c9;
+        border-style: none;
+        background-color: #1377c9;
+        text-decoration: none;
+        width: auto;
+        padding: 10px; 
+        border-radius: 5px;
+    }
+    .content-color {
+        padding: 0px;
+    }
+    .content-inline-flex {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+    }
+    .product-card {
+        margin: 5px;
+    }
+    .card-col-50 {
+        width: 50%;
+    }
+    .col-25 {
+        width: 25%;
+    }
+    .product-p-bold {
+        padding: 0 0 0 1em;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: left;
+        min-width: 100%;
+        color: #002855;
+        padding-bottom: 0;
+    }
+    .card-description{
+        padding: 0 0 0 1em;
+        text-align: left;
+        min-width: 100%;
+        color: #000;
+    }
+    .container-img {
+        position: relative;
+        width: 100%;
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 97%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+        background-color: rgb(0, 0, 0, 0.63);
+    }
+    .container-img:hover .overlay {
+        opacity: 1;
+    }
+    .inner-anchorb{
+        width: 100%;
+        margin: 0 10px;
+    }
+    .list-grid {
+        padding: 1em 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        text-align: center;
+    }
+    .list-grid .col-2 {
+        text-align: center;
+    }
+    .list-grid .col-2 .items-center {
+        border: 2px solid #fff;
+        border-radius: 50%;
+        width: 180px;
+        height: 180px;
+    }
+    .list-grid .col-2:hover .items-center {
+        border: 2px solid #1377c9;
+    }
+    .slider {
+        font-size: 15px;
+        text-align: center;
+    }
+    body .slider {
+        max-width: 1200px;
+        margin: 0 auto 0px auto;
+    }
+    .slider-for {
+        font-size: 15px;
+        text-align: center;
+    }
+    .categoriestitle {
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
+        color: var(--azul-bbb-medio);
+        line-height: 1;
+        font-size: 1.8rem;
+    }
+    .img-rouned{
+        border-radius: 50%;
+    }
+    .column{
+        flex-direction: column;
+    }
+    .center-text-elements{
+        color: #1A4E8A;
+        font-size: 34px;
+        line-height: 1em;
+        font-family: 'Montserrat-Bold',Arial, sans-serif;
+    }
+    .first-section {
+        margin-top: 0;
+        padding-top: 0px;
+    }
+    .banner-img {
+        position: relative;
+    }
+    .banner-img-over {
+        position: absolute;
+        z-index: 2;
+        top: -20px;
+        left: 40px;
+        width: 60%;
+    }
+    .post_instagram{
+        border: 2px solid #1a4e8a;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background-color: #fff;
+        color: #1a4e8a;
+        width: 150px;
+        padding: 2%;
+        border-radius: 4px;
+        text-align: center;
+        margin: 40% 20%;
+    }
+    .post_instagram:hover {
+        background-color: #1a4e8a;
+        color: #fff;
+    }
+
+    .banner-img-right {
+        position: absolute;
+        z-index: 2;
+        top: -20px;
+        right: 0;
+        width: 60%;
+    }
+    .img-ins{
+        padding: 5%;
+    }
+    .banner-img.desktop {
+        display: flex;
+    }
+    .banner-img.mobile {
+        display: none;
+        position: relative;
+    }
+    /*zoom out*/
+    #containerimg {
+        display: inline-block;
+        margin: 5px;
+        overflow: hidden;  
+        position: relative;
+    }
+    #containerimg img {
+        display: block;
+        transition: transform 1s;   /* smoother zoom */
+    }
+    #containerimg:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+    }
+    /*zoom out*/
+    #cardimgwhite {
+        display: inline-block;
+        margin: 5px;
+        overflow: hidden;  
+        position: relative;
+    }
+    #cardimgwhite img {
+        display: block;
+        transform:scale(1);
+        -ms-transform:scale(1); 
+        -moz-transform:scale(1);  
+        -webkit-transform:scale(1); 
+        -o-transform:scale(1); 
+        -webkit-transition: all 500ms ease-in-out; 
+        -moz-transition: all 500ms ease-in-out; 
+        -ms-transition: all 500ms ease-in-out; 
+        -o-transition: all 500ms ease-in-out;
+    }
+    #cardimgwhite:hover img {
+        transform:scale(0.99);
+        -ms-transform:scale(0.99);
+        -moz-transform:scale(0.99);
+        -webkit-transform:scale(0.99);
+        -o-transform:scale(0.99); 
+    }
+    /*zoom in*/
+    #imgzoomin {
+        overflow: hidden;  
+        position: relative;
+    }
+    #imgzoomin img {
+      width: 400px;
+        display: block;
+        transform:scale(1);
+        -ms-transform:scale(1); 
+        -moz-transform:scale(1);  
+        -webkit-transform:scale(1); 
+        -o-transform:scale(1); 
+        -webkit-transition: all 500ms ease-in-out; 
+        -moz-transition: all 500ms ease-in-out; 
+        -ms-transition: all 500ms ease-in-out; 
+        -o-transition: all 500ms ease-in-out;
+    }
+    #imgzoomin:hover img {
+        transform:scale(0.98);
+        -ms-transform:scale(0.98);
+        -moz-transform:scale(0.98);
+        -webkit-transform:scale(0.98);
+        -o-transform:scale(0.98); 
+    }
+    .container-block-img {
+        position: relative;
+    }
+    .col-both {
+        width: 50%;
+        float: left;
+    }
+    .container-slide {
+        padding: 15% 5%;
+        margin-left: 20%;
+    }
+    .container-slide-right {
+        padding: 15% 5%;
+        margin-right: 20%;
+    }
+    .img-80{
+        width: 85%;
+    }
+    .mg-left-10 {
+        margin-left: 10%;
+    }
+
+    .btn-bb {
+        padding: 12px;
+        width: 200px;
+        background-color: #fff;
+        text-align: center;
+        border: 2px solid #1377c9;
+        box-shadow: none;
+        text-decoration: none;
+        color: #1377c9;
+        border-radius: 5px;
+        font-weight: 900;
+    }
+    .btn-bb:hover {
+        background-color: #1377c9;
+        color: #fff;
+    }
+    .leyenda {
+        text-align: center;
+        margin-top: 5%;    
+        padding: 0 5%; 
+        width: 100%;
+    }
+    .parrafo-context {
+        background-color: #daeaf4;
+        padding: 15px 5px;
+        font-size: 1rem;
+        overflow: hidden;
+        height: 40px;
+        text-align: center;
+        color: var(--azul-bbb-medio);
+        line-height: 1;
+        font-weight: 600;
+        font-family: var(--secondary-font);
+    }
+    /*Commnent Shape*/
+    div.comment {
+        width: 290px;
+        height: 200px;
+        position: absolute;
+        padding: 15px;
+        overflow: hidden;
+        z-index: 3;
+    }
+
+    div.comment div.chat {
+        width: 290px;
+        height: 200px;
+        background: #fff;
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+        -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+        box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+    }
+    .img-comment {
+        width: 400px;
+        height: auto;
+        margin-top: 10%;
+    }
+
+    .shape-hs-a{
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: #fffefe transparent transparent transparent;
+        border-width: 15px;
+        position: absolute;
+        top: 150px;
+        left: -15px;
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+    }
+    .shape-hs-c{
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: #fffefe transparent transparent transparent;
+        border-width: 15px;
+        position: absolute;
+        bottom: -10px;
+        left: 200px;
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    .imgslide{
+        width: 80%;
+        margin-left: 50px;
+        margin-top: 50px;
+    }
+    .shape-hs-b{
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: #fffefe transparent transparent transparent;
+        border-width: 15px;
+        position: absolute;
+        bottom: -10px;
+        left: 185px;
+        -webkit-transform: rotate(360deg);
+        -moz-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        -o-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+    .shape-hs-e{
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: #fffefe transparent transparent transparent;
+        border-width: 15px;
+        position: absolute;
+        top: 180px;
+        right: -10px;
+        -webkit-transform: rotate(270deg);
+        -moz-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+    .shape-hs-f{
+        content: '';
+        width: 0px;
+        height: 0px;
+        border-style: solid;
+        border-color: #fff transparent transparent transparent;
+        border-width: 15px;
+        position: absolute;
+        top: 150px;
+        right: -15px;
+        -webkit-transform: rotate(135deg);
+        -moz-transform: rotate(135deg);
+        -ms-transform: rotate(135deg);
+        -o-transform: rotate(135deg);
+        transform: rotate(-90deg);
+    }
+
+
+
+    /*HotSpots*/
+    .hiddendiv {display: none; }
+    .showdiv { display: block;}
+    .titlehs {
+        font: 600 14px/1.2 Effra,Helvetica,Arial,sans-serif;
+    }
+    .fonthaven {
+        font: 300 14px/1.2 Effra,Helvetica,Arial,sans-serif;
+    }
+    .fonthavenprice {
+        font: 900 16px/1.25 Termina Headline,sans-serif;
+        margin:10% 0;
+    }
+    .colorblue {
+        color:#1377c9;
+    }
+    .detailslink {
+        font-size: 17px;
+        padding: 1px 40px;
+        border: 2px solid #1377c9;
+        font-weight: 400 !important;
+    }
+    .detailslink:hover{
+        color:#fff;
+        background-color: #1377c9;
+    }
+    .hotspot_button {
+        position: absolute;
+        background-color: rgb(255, 255, 255, 0.8);
+        padding: 4px 5px;
+        border: 6px solid #1a4e8a;
+        animation: fader 5s linear infinite;
+        transition: all 0.1s;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: #1a4e8a;
+        cursor: pointer;
+        height: 20px;
+        border-radius: 5px;
+    }
+    .hotspot_button::after {
+        content: "";
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: block;
+        background-color: transparent;
+        transition: all 0.1s;
+    }
+    .hotspot_button:hover {
+        border: 6px solid #daeaf4;
+        color: #117dcf;
+    }
+    .submini{
+        color:#1a4e8a !important;
+        font-size: 1.4rem !important;
+        padding: 0 10px;
+    }
+    #hs-aprice {
+        top: 52%;
+        left: 225px;
+        display: none;
+    }
+    #hs-bprice {
+        top: 150px;
+        left:405px;
+        display: none;
+    }
+    #hs-cprice {
+        top: 10%;
+        left: 180px;
+        display: none;
+    }
+    .col-cat-home{
+      flex-basis: 25%;
+    }
+    .container-text{
+        color: #1a4e8a;
+        width: 400px;
+        margin-top: 100px;
+        font-size: 1.4rem;
+        font-weight: 900;
+        background: var(--azul-bbb-claro);
+        padding: 10px;
+    }
+    .container-text p {
+                        font-size: 2.4rem;
+                        line-height: 1;
+                    }
+
+    .btn-linea{
+        background-color: #117dcf;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .btn-linea:hover {
+        background-color: #fff;
+        color: #117dcf;
+        border: 2px solid #117dcf;
+    }
+    #hs-fprice {
+        top: 49%;
+        left: 30%;
+        display: none;
+    }
+    #hs-dprice {
+        top: 29%;
+        left: 54%;
+        display: none;
+    }
+    #hs-eprice {
+        top: 50%;
+        right: 4%;
+        display: none;
+    }
+    #hs-a {
+        top:90%;
+        left:25%;
+    }
+    #hs-a:hover +  #hs-aprice {
+        display: block 
+    }
+    #hs-b {
+        top: 62%;
+        left: 38%;
+    }
+    #hs-b:hover +  #hs-bprice {
+        display: block;
+    }
+    #hs-c {
+        top: 15%;
+        left: 42%;
+    }
+    #hs-c:hover +  #hs-cprice {
+        display: block;
+    }
+    #hs-d {
+        top: 70%;
+        left: 77%;
+    }
+    #hs-d:hover +  #hs-dprice {
+        display: block;
+    }
+    #hs-e {
+        top: 38%;
+        right: 14%;
+    }
+    #hs-e:hover +  #hs-eprice {
+        display: block;
+    }
+    #hs-f {
+        top: 60%;
+        left: 80%;
+    }
+    #hs-f:hover +  #hs-fprice {
+        display: block;
+    }
+    .hotspot_button:hover {
+        animation-play-state: paused;
+        color: #fff;
+    }
+    .link-blog{
+        font-weight: 900;
+    } 
+    .link-blog:hover{
+        color: #6f746d;
+    }  
+    .hotspot_button:hover::after {
+        content: ""
+    }
+    .close {
+        position: absolute;
+        top:22px;
+        right:22px;
+        z-index: 2;
+        font-weight: 900;
+        cursor: pointer;
+        width: 20px;
+        color: #1377c9;
+        text-align: center;
+        font-size: 10px;
+        padding: 4px;
+        font-size: 20px;
+        font-weight: 900;
+    }
+    .close:hover {
+        color: #fff;
+    }
+    
+    /*Candel*/
+
+    .candel {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        background-color: rgb(255, 255, 215, 0.55);
+        border: 1px solid rgb(255, 255, 215, 0.55);
+        border-radius: 50%;
+        animation: fader 1s ease infinite;
+        transition: all 0.2s;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: #555;
+        cursor: pointer;
+    }
+    .candel::after {
+        content: "";
+        width: 5px;
+        height: 10px;
+        border-radius: 50%;
+        display: block;
+        margin: -21px auto 0 3px;
+        transition: all 0.2s;
+    }
+    .candel:visited {
+        content: "X";
+    }
+    #cd-a {
+        top: 50%;
+        left: 50%;
+    }
+    #cd-b {
+        top: 32%;
+        left: 44%;
+    }
+    #cd-c {
+        top: 25%;
+        left: 68%;
+    }
+    #cd-d {
+        top: 35%;
+        left: 18%;
+    }
+    #cd-e {
+        top: 71%;
+        right: 8%;
+    }
+    #cd-f {
+        top: 35%;
+        right: 28%;
+    }
+    #cd-g {
+        top: 65%;
+        left: 18%;
+    }
+    #cd-h {
+        top: 51%;
+        left: 68%;
+    }
+
+    .btn-text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color:#6f746d;
+        font-size: 30px;
+        font-weight:600;
+    }
+    .zooom-animation {
+        background-repeat: no-repeat;
+    }
+    .container-readblog {
+        width: 100%;
+        text-align: left;
+    }
+    @media (max-width: 991px) {
+        .description-text{
+            font-size: 18px;
+            padding: 0 50px;
+        }
+        .mobilefont{
+            font-size: 15px;
+        }
+        .carrousel-products{
+            height: 860px;
+        }
+        .td-mobile {
+            width: 60% !important;
+            padding: 2%;
+            display: block;
+            text-align: center;
+        }
+        .comment-blog {
+            font-size: 5vw !important;
+            line-height: 1 !important;
+        }
+
+        /*hotspots*/
+        #hs-a {
+            top: 20%;
+            left: 10%;
+        }
+        #hs-aprice{
+            top:85%;
+            left:13%;
+        }
+        #hs-bprice{
+            top:85%;
+            left:13%;
+        }
+        #hs-cprice{
+            top:85%;
+            left:13%;
+        }
+        #hs-dprice{
+            top:85%;
+            left:13%;
+        }
+        #hs-f {
+            top: 47%;
+            left: 25%;
+        }
+        #hs-b {
+            top: 18%;
+            left: 20%;
+        }
+        #hs-c {
+            top: 10%;
+            left: 48%;
+        }
+        #hs-d {
+            top: 30%;
+            left: 45%;
+        }
+        .fonthaven{
+            font-size: 20px !important;
+        }
+        .fonthavenprice {
+            font-size: 20px !important;
+            margin:2%;
+        }
+        div.comment{
+            width: 100%;
+            height: 250px; 
+        }
+        div.comment div.chat {
+            width: 60%;
+            height: 250px; 
+        }
+        .titlehs {
+            font-size: 15px;
+            line-height: 1;
+            margin-top: 2px;
+            padding: 0 5%;
+        }
+        .categoriestitle {
+            font-size: 15px;
+        }
+        .cms-home .page-main {
+            padding: 0;
+        }
+        section {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        .banner-img.desktop {
+            display: none;
+        }
+        .banner-img.mobile{
+            display: block!important;
+        }
+        .first-section {
+            padding-top: 0px;
+        }
+        .first-section .col-50 {
+            width: 90%;
+        }
+        .title-font {
+            font-size: 30px;
+        }
+        .content-inline-flex.column-m,
+        .flex-container.column-m {
+            flex-direction: column;
+        }
+        .m-block .content-inline-flex {
+            display: inline-block;
+        }
+        .m-block .content-inline-flex .product-card.col-25{
+            width: 47%;
+            float: left;
+        }
+        .product-p-bold {
+            padding: 8px;
+            font-size: 14px;
+        }
+        .card-description{
+            padding: 0 0 0 8px;
+        }
+        .banner-top {
+            height: 70vh;
+        }
+        .banner-top .white-bkg{
+            margin-top: 30%;
+        }
+        .photo-banner{
+            background-size: cover;
+        }
+        .col-40.right,
+        .col-40.left {
+            left: auto;
+            right: auto;
+            width: 80%;
+        }
+        .photo-banner {
+            display: flex;
+            justify-content: center;
+        }
+        .list-grid {
+            display: inline-block;
+            padding: 0 10px;
+        }
+        .col-2 {
+            float: left;
+            width: 45%;
+            height: 200px;
+            font-size: 2px;
+        }
+        .scrolled {
+            display: flex!important;
+            flex-flow: row;
+            overflow-x: auto;
+            margin-left: 0.5%;
+        }
+        .scrolled.four {
+            width: 990px;
+            overflow: scroll;
+        }
+        .scrolled.three {
+            width: 730px;
+            overflow: scroll;
+        }
+        .conten-scroll {
+            overflow: auto;
+        }
+        .scrolled .product-card {
+            max-width: 240px;
+        }
+        .col-both {
+            width: 100%;
+        }
+        .banner-img-over {
+            top: -20px;
+            left: 8%;
+            width: 100%;
+            
+        }
+        .container-slide{
+            margin-left: 5%;
+            margin-top: 45%;
+        }
+        .btn-bb {
+            padding: 12px;
+            width: 250px;
+            font-weight: 900;
+            font-size: 16px;
+        }
+        .leyenda {
+            text-align: center;
+            padding: 0 5%; 
+            width: 95%;
+        }
+        .container-readblog {
+            width: 100%;
+            margin-top: -2%;
+            text-align: left;
+        }
+        .img-comment {
+            width: 70px;
+            margin: 2% 25%;
+        }
+        .container-star{
+            text-align: center;
+            justify-content: center;
+        }
+    }
+    @media (max-width: 767px) {
+        /*hotspots*/
+
+        .square span{
+            width: 40%;
+            padding: 0;
+        }
+        .col-both {
+            width: 100%;
+        }
+        .banner-img-over {
+            top: -20px;
+            left: auto;
+            width: 100%;
+        }
+        .container-readblog {
+            width: 100%;
+            margin-top: -2%;
+            text-align: left;
+        }
+    }
+
+    /*Animations*/
+    @keyframes shrink {
+        0% {
+            background-size: 110% 110%;
+        }
+        100% {
+            background-size: 100% 100%;
+        }
+    }
+    @keyframes fader {
+        50% {
+            border-color: #1a4e8a
+        }
+        100% {
+            border-color: #daeaf4;
+        }
+    }
+
+    /*Categories*/
+    .container-categories{
+        padding: 0 40px;
+    }
+
+    .container-categories-ins{
+        padding: 10px 80px;
+    }
+    /*Disccount*/
+    .discount-container {
+        position: absolute;
+        top:10px;
+        left:10px;
+        color:#fff;
+        text-align: center;
+        font-weight: 900;
+        background-color: #ef2539;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        z-index: 4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+    }
+        /*
+        ==============================================
+        pulse
+        ==============================================
+        */
+
+        .pulse{
+            animation-name: pulse;
+            -webkit-animation-name: pulse;	
+
+            animation-duration: 3s;	
+            -webkit-animation-duration: 3s;
+
+            animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.9);	
+            }
+            50% {
+                transform: scale(1);
+            }	
+            100% {
+                transform: scale(0.9);	
+            }			
+        }
+
+        @-webkit-keyframes pulse {
+            0% {
+                -webkit-transform: scale(0.95);	
+            }
+            50% {
+                -webkit-transform: scale(1);
+            }	
+            100% {
+                -webkit-transform: scale(0.95);
+            }			
+        }
+
+        /*Products Carrousel*/
+        .carrousel-products {
+            width: 100%;
+            margin: auto;
+            height: 500px;
+            overflow:hidden;
+            text-align: center;
+            line-height: 1;
+        }
+        .carousel-price {
+            font: 300 25px/0.5 Effra,Helvetica,Arial,sans-serif;
+            text-align: center;
+            font-weight: 900;
+            color: #000;
+        }
+        .carousel-des {
+            font-size: 1.5rem;
+            line-height: 1;
+            font-family:Effra,Helvetica,Arial,sans-serif ;
+            color: #000;
+            padding: 0 5%;
+        }
+        .carosuel-raiting {
+            color:#1377C9;
+            margin-top: 2%;
+            font-size: 22px;
+        }
+        /*Star component*/
+        .item-start {
+            width: 25%;
+            height: 200px;
+            float: left;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 1s all;
+            /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+        }
+        .cont {
+            position: absolute;
+            width: 1100px;
+            margin-top: 190px;
+        }
+        .tapa {
+            width: 100%;
+            transition: .9s all;
+            margin-top: -40px;
+        }
+        .item-start img {
+            width: 50%;
+            margin-top: 20px;
+            height: 260px;
+        }
+        .item-start:hover {
+            margin-top: -5px;
+        }
+
+        .container-star {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            margin: 0 auto;
+            text-align: left;
+            justify-content: left;
+        }
+        .clip-star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            float: left;
+        }
+        .num-star {
+            font-size: 15px;
+            float: left;
+            margin-left: 2%;
+        }
+        .mobile-slider {
+            display: none;
+            }
+
+        /*Mini Banner*/
+        .minibanner-container{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            text-align: center;
+            background-color: #daeaf4;
+            text-align: left;
+        }
+            /*Banner Container Two Columns*/
+            .banner-container{
+                width: 100%;
+                height: auto;
+                overflow: hidden;
+                text-align: center;
+                background-color: #daeaf4;
+            }
+
+            /*Grid Columnas*/
+            .col-70 {
+                float: left;
+                width: 70%;
+            }
+            .col-65 {
+                float: left;
+                width: 65%;
+            }
+            .col-30 {
+                float: left;
+                width: 30%;
+            }
+            .col-35 {
+                float: left;
+                width: 35%;
+            }
+            .col-50 {
+                padding:10px; 
+                width: 50%;
+            }
+            .col-48 {
+                width: 48%;
+                float: left;
+                padding: 0 1%
+            }
+            .col-40b {
+                width: 48%;
+                float: left;
+                padding: 0 1%
+            }
+            .col-60 {
+                float: left;
+                width: 65%;
+            }
+            .banner-text{
+                    line-height: 1;
+                    padding: 5% 2% 0;
+                }
+                .button-bed{
+                    background-color: #117dcf;
+                    color: #fff;
+                    width: 200px;
+                    height: auto;
+                    text-align: center;
+                    padding: 5%;
+                    border-radius: 5px;
+                    -webkit-box-shadow: -1px 0px 2px 0px rgba(0,0,0,0.75);
+                    -moz-box-shadow: -1px 0px 2px 0px rgba(0,0,0,0.75);
+                    box-shadow: -1px 0px 2px 0px rgba(0,0,0,0.75);
+                }
+                .button-bed:hover {
+                    background-color:  #002854;
+                }
+                .component-twoelements{
+                    padding-bottom: 2%;
+                    height: 500px;
+                }
+                .container-card-big{
+                    background-color: #fff;
+                    padding: 4%;
+                }
+                .container-card-big p{
+                    line-height: 1;
+                }
+                .container-card-big p:nth-child(1){
+                    line-height: 0;
+                    font-size: 22px;
+                    font-weight: 600;
+                    color:#1A4E8A;
+                }
+                /*MiniBanner Text Move*/
+                .content-minitxt {
+                    overflow: hidden;
+                    font-size: 35px;
+                    margin-top: 3%;
+                    color: #1A4E8A;
+                }  
+                .content__container {
+                    font-weight: 600;
+                    overflow: hidden;
+                    height: 40px;
+                    padding: 0 40px;
+                }
+                .content__container:before {
+                    left: 0;
+                }
+
+                .content__container:after {
+                    position: absolute;
+                    right: 0;
+                }
+
+                .content__container:after, .content__container:before {
+                    position: absolute;
+                    top: 0;
+                    
+                    color: #16a085;
+                    font-size: 42px;
+                    line-height: 40px;
+                    
+                    -webkit-animation-name: opacity;
+                    -webkit-animation-duration: 2s;
+                    -webkit-animation-iteration-count: infinite;
+                    animation-name: opacity;
+                    animation-duration: 2s;
+                    animation-iteration-count: infinite;
+                }
+
+                .content__container__text {
+                    display: inline;
+                    float: left;
+                    margin: 0;
+                }
+
+                .content__container__list {
+                    margin-top: 0;
+                    padding-left: 220px;
+                    text-align: left;
+                    list-style: none;
+                    
+                    -webkit-animation-name: change;
+                    -webkit-animation-duration: 10s;
+                    -webkit-animation-iteration-count: infinite;
+                    animation-name: change;
+                    animation-duration: 10s;
+                    animation-iteration-count: infinite;
+                }
+                .content__container__list__item {
+                    line-height: 2px;
+                    padding: 4% 0;
+                }
+
+
+                    @-webkit-keyframes opacity {
+                    0%, 100% {opacity:0;}
+                    50% {opacity:1;}
+                    }
+
+                    @-webkit-keyframes change {
+                    0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+                    16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+                    33.32%,45.98% {transform:translate3d(0,-50%,0);}
+                    49.98%,62.64% {transform:translate3d(0,-75%,0);}
+                    66.64%,79.3% {transform:translate3d(0,-50%,0);}
+                    83.3%,95.96% {transform:translate3d(0,-25%,0);}
+                    }
+
+                    @-o-keyframes opacity {
+                    0%, 100% {opacity:0;}
+                    50% {opacity:1;}
+                    }
+
+                    @-o-keyframes change {
+                    0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+                    16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+                    33.32%,45.98% {transform:translate3d(0,-50%,0);}
+                    49.98%,62.64% {transform:translate3d(0,-75%,0);}
+                    66.64%,79.3% {transform:translate3d(0,-50%,0);}
+                    83.3%,95.96% {transform:translate3d(0,-25%,0);}
+                    }
+
+                    @-moz-keyframes opacity {
+                    0%, 100% {opacity:0;}
+                    50% {opacity:1;}
+                    }
+
+                    @-moz-keyframes change {
+                    0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+                    16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+                    33.32%,45.98% {transform:translate3d(0,-50%,0);}
+                    49.98%,62.64% {transform:translate3d(0,-75%,0);}
+                    66.64%,79.3% {transform:translate3d(0,-50%,0);}
+                    83.3%,95.96% {transform:translate3d(0,-25%,0);}
+                    }
+
+                    @keyframes opacity {
+                    0%, 100% {opacity:0;}
+                    50% {opacity:1;}
+                    }
+
+                    @keyframes change {
+                    0%, 12.66%, 100% {transform:translate3d(0,0,0);}
+                    16.66%, 29.32% {transform:translate3d(0,-25%,0);}
+                    33.32%,45.98% {transform:translate3d(0,-50%,0);}
+                    49.98%,62.64% {transform:translate3d(0,-75%,0);}
+                    66.64%,79.3% {transform:translate3d(0,-50%,0);}
+                    83.3%,95.96% {transform:translate3d(0,-25%,0);}
+                    }
+
+                    /*Component Card Image White*/
+                    #cardimgwhite{
+                        display: inline-block;
+                        margin: 5px;
+                        overflow: hidden;
+                        position: relative;
+                        line-height: 0.5
+                    }
+                    .title-cardswhite {
+                        width: 100%;
+                        text-align: center;
+                        padding-top: 5px;
+                        color: #000;
+                        font-weight: 300;
+                        line-height: 1;
+                        margin-top: 10%;
+                    }
+                /*Fin Component Card Image White*/
+
+                /*new hotspot*/
+                .img_log {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    position: absolute;
+                    top: -10px;
+                    left: -35px;                    
+                }
+
+                /*Fin MiniBanner Text Move*/
+                @media (max-width: 991px) {
+                    .content__container__list__item {
+                        line-height: 28px; 
+                        padding: 2% 0;
+                    }
+                    .content__container__list {
+                        margin-top: 0;
+                        padding-left: 170px; 
+                    } 
+                    .title-fontc{
+                        padding-top: 40px !important;
+                    }
+                    .content__container{
+                        font-size: 20px;
+                    }
+                    .col-70 {
+                        width: 100%;
+                    }
+                    .col-65 {
+                        width: 100%;
+                    }
+                    .col-30 {
+                        width: 100%;
+                    }
+                    .col-35{
+                        width: 100%;
+                        margin-top: 2%;
+                    }
+                    .col-48{
+                        width: 100%;
+                    }
+
+                    /*Banner Text*/
+                    .banner-text {
+                        line-height: 1;
+                        padding: 5% 10%;
+                    }
+                    .banner-text:nth-child(3){
+                        font-size: 15px;
+                    }
+                    .button-bed{
+                        padding: 3%;
+                    }
+                    .shape-hs-a,
+                    .shape-hs-b,
+                    .shape-hs-c,
+                    .shape-hs-e,
+                    .shape-hs-f{
+                        top: -10px;
+                        right: 50px;
+                        transform: rotate(180deg);
+                    }
+                    #hs-e {
+                        top: 75%;
+                        left: 84%;
+                    }
+                    .list-grid .col-2 .items-center {
+                        width: 160px;
+                        height: 160px;
+                    }
+                    .categoriestitle{
+                        font-size: 18px;
+                    }
+                    .list-grid .col-2{
+                        justify-content: center;
+                        display: flex;
+                        text-align: center;
+                    }
+                    .item-start {
+                        width: 50%;
+                        height: 200px;
+                        overflow: hidden;
+                    }
+                    .carrousel-products{
+                        height: auto;
+                        padding-bottom: 50px;
+                    }
+                    .title-fontb{
+                        font-size: 35px;
+                    }
+                    .title-cardswhite{
+                        font-size: 18px;
+                    }
+                    .col-cat-home{
+                      
+                    }
+                    .item-start img {
+                        margin-top: 20px;
+                        height: auto;
+                        width: 100px;
+                    }
+                    .container-categories{
+                        padding: 0 10px;
+                    }
+                    #hs-e{
+                        top: 45%;
+                        left: 65%;
+                    }
+                    #hs-c {
+                        top: 40%;
+                        left: 18%;
+                    }
+                    #hs-b {
+                        top: 78%;
+                        left: 85%;
+                    }
+                    #hs-a {
+                        top: 80%;
+                        left: 30%;
+                    }
+                    #hs-eprice,
+                    #hs-aprice,
+                    #hs-bprice,
+                    #hs-cprice{
+                        top: 98%;
+                        left: 10%;
+                    }
+                    .container-categories-ins{
+                        padding: 10px 20px;
+                    }
+                    .hash-inst{
+                        font-size: 18px;
+                    } 
+                    .imgslide{
+                        width: 60%;
+                        margin-left: 80px;
+                        margin-top: 50px;
+                        text-align: center;
+                    }
+                    .container-text{
+                        margin-top: 10px;
+                        padding: 20px;
+                        width: 90%;
+                    }
+        
+                    #hs-b {
+                        top: 8%;
+                        left: 55%;
+                    }
+                    .submini{
+                        font-size: 1.8rem !important;
+                    }
+                    .hotspot_button{
+                        height: 16px;
+                        font-size: 10px;
+                        line-height: 1;
+                    }
+                    .component-twoelements{
+                        height: auto;
+                    }
+                    .img_log{
+                        width: 40px;
+                        height: 40px;
+                    }
+                    .container-star{
+                        text-align: center;
+                        justify-content: center;
+                    }
+                    .content-inline-flex{
+                        padding: 0 20px;
+                    }
+                    #containerimg img{
+                        width: 90%;
+                    }
+                    #containerimg{
+                        display: flex;
+                        margin: 30px;
+                        overflow: hidden;
+                        position: relative;
+                        text-align: center;
+                        justify-content: center
+                    }
+                    #imgzoomin img{
+                        width: 300px;
+                    }
+                    .parrafo-context {
+                        height: 70px;
+                    }
+                }
+
+    </style>
+
+<header>
+    <script>
+        function showHotSpot(value) {
+            var name = value +'price';
+            var element = document.getElementById(name);
+            /*var hotspot = document.getElementById(value);*/
+    
+             if (element.classList[1]){
+                 if( element.classList[1] === 'hiddendiv') {
+                    element.classList.remove("hiddendiv");
+                    element.classList.add("showdiv")
+                    /*hotspot.innerHTML = "x";*/
+                 }
+                 else {
+                    element.classList.remove("showdiv");
+                    element.classList.add("hiddendiv");
+                    /*hotspot.innerHTML = "";*/
+                 }
+             }
+         
+        }
+        function closeHotSpot(value) {
+            var name = value;
+            var element = document.getElementById(name);
+            /*var hotspot = document.getElementById(value);*/
+    
+             if (element.classList[1]){
+                    element.classList.remove("showdiv");
+                    element.classList.add("hiddendiv");
+                    /*hotspot.innerHTML = "";*/
+             }
+         
+        }
+    </script>
+</header>
+   
+<html>
+    <body>
+        <section class="first-section">
+         <!-- HOTSPOTS -->
+         <section>
+            <section id="hotSpots">
+                <div class="banner-img"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/smart_home_3.jpg?rand=1633719791" alt="tecnologia BedBathandBeyond">
+                </div>
+        </section>
+        <!-- Categorias Circle-->
+        <section>
+            <div>
+                <h2 class="title-fontc">
+                    <span> categorías</span>
+                </h2>
+                <div class="content-inline-flex column">
+                    <ul class="list-grid">
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente.html">
+                                <div class="inner-anchorb">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt="decoración de jardín y exteriores BedBath & Beyond"
+                                        src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69688983_6.jpg?$imagePLP$&hei=700&wid=700">
+                                    </div>
+                                    <p class="categoriestitle">hogar inteligente</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/iluminacion-y-energia.html">
+                                <div class="inner-anchorb">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt="asadores y parrillas Bed Bath & Beyond"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/iluminacion.jpg?rand=1633642440">
+                                    </div>
+                                    <p class="categoriestitle">iluminación y energía</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores.html">
+                                <div class="inner-anchorb">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=" Bed Bath & Beyond"
+                                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69686595_8.jpg?$imagePLP$&hei=700&wid=700">
+                                    </div>
+                                    <p class="categoriestitle">calefacción y ventilación</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/entretenimiento.html">
+                                <div class="inner-anchorb">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2021-02-01-18-27_843479147056_6?$imagePLP$&hei=700&wid=700">
+                                    </div>
+                                    <p class="categoriestitle">entretenimiento</p>
+                                </div>
+                            </a>
+                        </li>
+
+
+
+                    </ul>
+                </div>
+            </div>
+        </section>  
+
+        <!-- CATEGORIES CARDS -->
+        <section>
+            <div style="background-color: #f1f1f1;" class="container-categories">
+            <h2 class="title-fontc"> ¿Cómo hacer mi casa inteligente?
+            </h2>
+            <div class="content-inline-flex bg-naranja pd-2">
+                <ul class="list-grid">
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/foco-led-de-plastico-rgb-sterenr-controlado-por-wi-fi.html">
+                            <div class="inner-anchor">
+                                <div id="containerimg" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/foco.jpg?rand=1633645240"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/foco.jpg?rand=1633645240"
+                                    alt="cuidado facial Bed Bath & Beyond">
+                                </div>
+                                <p style="text-align: center;line-height: 1;font-weight: 600;" class="description-text">
+                                  decora con luz multicolor tus espacios controlando todo con tu smartphone desde donde estés.
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente/alarmas-y-camaras-de-seguridad.html">
+                            <div class="inner-anchor">
+                                <div id="containerimg" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/camera.jpg?rand=1633644952"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/camera.jpg?rand=1633644952"
+                                    alt="spa Bed Bath & Beyond">
+                                </div>
+                                <p style="text-align: center;line-height: 1;font-weight: 600;" class="description-text">
+                                  cámaras de seguridad y vigilancia en el hogar
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/localizador-de-llaves-magnetico-de-plastico-sharper-imager-color-negro.html">
+                            <div class="inner-anchor">
+                                <div id="containerimg" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/keys.jpg?rand=1633645542"
+                                    src="https://www.bedbathandbeyond.com.mx/media/keys.jpg?rand=1633645542"
+                                    alt="cubrebocas Bed Bath & Beyond">
+                                </div>
+                                <p style="text-align: center;line-height: 1;font-weight: 600;" class="description-text">
+                                  localizador Sharper Image, no volverás a extraviar las llaves de tu automóvil
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente.html">
+                            <div class="inner-anchor">
+                                <div id="containerimg" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/D_NQ_NP_718435-MLM28506832037_102018-O.jpeg?rand=1633644355"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/D_NQ_NP_718435-MLM28506832037_102018-O.jpeg?rand=1633644355"
+                                    alt="limpieza Bed Bath & Beyond">
+                                </div>
+                                <p style="text-align: center;line-height: 1;font-weight: 600;" class="description-text">
+                                asegura tu casa cada vez que estás fuera
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </section>
+
+
+         <!-- Products carrousel-->
+         <section>
+            <div class="carrousel-products desktop-slider">
+                <h2 class="title-font">
+                    <span>top accesorios para electrónicos</span>
+                </h2>
+               <div class="tapa" id="move">
+                 <div class="item-start">
+                   <a href="https://www.bedbathandbeyond.com.mx/cojin-de-poliester-para-tablet-uggr-classic.html" target="_self">
+                     <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-05-19-13-56_UGG_BTC20_Pouf_Snow_Silo?$imagePLP$&hei=300&wid=260">
+                     <p class="carousel-des">Cojín de poliéster para tablet UGG® Classic</p>
+                     <p class="carousel-des">SKU# 69517812</p>
+                     <div class="container-star">
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star disable"></div>
+                       <div class="num-star">400</div>
+                     </div>
+                   </a>
+                 </div>
+                 <div class="item-start">
+                   <a href="https://www.bedbathandbeyond.com.mx/escritorio-portatil-de-poliester-uggr-coco-color-azul-marino.html" target="_self">
+                     <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-11-15-19_coco_lap_desk_front_sil_imageset?$imagePLP$&hei=700&wid=700">
+                     <p class="carousel-des">Escritorio portátil de poliéster UGG® Coco color azul marino</p>
+                     <p class="carousel-des">SKU# 69687834</p>
+                     <div class="container-star">
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star disable"></div>
+                       <div class="num-star">400</div>
+                     </div>
+                   </a>
+                 </div>
+                 <div class="item-start">
+                   <a href="https://www.bedbathandbeyond.com.mx/escritorio-portatil-de-lujo-lapgearr-con-inclinacion-en-marmol.html" target="_self">
+                     <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/159163464279091p__1?$imagePLP$&hei=700&wid=700">
+                     <p class="carousel-des">Escritorio portátil de lujo LapGear® con inclinación en mármol</p>
+                     <div class="container-star">
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="clip-star active"></div>
+                       <div class="num-star">500</div>
+                     </div>
+                   </a>
+                 </div>
+                 <div class="item-start">
+                    <a href="https://www.bedbathandbeyond.com.mx/cojin-para-tablet-de-espuma-as-seen-on-tv-pillow-pad-color-gris.html" target="_self">
+                      <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/lf_283737767753857p?$imagePLP$&hei=700&wid=700">
+                      <p class="carousel-des">Cojín para tablet de espuma As Seen on TV Pillow Pad color gris</p>
+                      <div class="container-star">
+                        <div class="clip-star active"></div>
+                        <div class="clip-star active"></div>
+                        <div class="clip-star active"></div>
+                        <div class="clip-star active"></div>
+                        <div class="clip-star active"></div>
+                        <div class="num-star">500</div>
+                      </div>
+                    </a>
+                  </div>
+               </div>
+             </div>
+           </section>
+
+
+        <!-- SOLO EN BB&B-->
+        <section>
+            <div class="component-twoelements" style="background-color:var(--azul-bbb-claro);overflow:hidden">
+                <div style="background: url(https://www.bedbathandbeyond.com.mx/media/pexels-milo-textures-2768398.jpg?rand=1633647363);height: 600px; background-repeat:no-repeat;background-size: contain; background-attachment: fixed;">
+                        <div>
+                                <div class="container-slideimg">
+                                    <div id="imgzoomin" class="div-imgslide col-48">
+                                        <a href="" target="_self">
+                                            <img class="imgslide" src="https://www.bedbathandbeyond.com.mx/media/bodd-removebg-preview.png?rand=1633647150" title="Foto14" alt="Foto14">
+                                        </a>
+                                    </div>
+                                    <div id="imgzoomin" class="div-imgslide col-48">
+                                            <div class="container-text">
+                                                <h2>Bocinas bluetooth</h2>
+                                                <p class="desc-bc">Disfruta de una calidad de sonido increíble gracias bocina bluetooth inalambrica. Disfruta de tu música, películas, juegos y reuniones.</p>
+                                                <a href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/entretenimiento/bocinas-y-audifonos.html" target="_self"> 
+                                                    <p class="btn-linea">ver todo</p>
+                                                </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            </div>
+        </section>
+
+        <!-- CARDS COMPONENT CARD WHITE-->
+        <section>
+            <div  class="container-categories">
+            <h2 class="title-fontc">
+                <span>categorías destacadas </span>
+            </h2>
+            <div class="content-inline-flex bg-naranja pd-2">
+                <ul class="list-grid">
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/cuidado-del-cabello/peines-y-cepillos.html">
+                            <div class="inner-anchor">
+                                <div id="cardimgwhite" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/purificador_c.jpg?rand=1633715381"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/purificador_c.jpg?rand=1633715381"
+                                    alt="Bed Bath & Beyond">
+
+                                    <div class="parrafo-context">
+                                        <p style="text-align: center;color: #000;line-height:1;" class="submini">
+                                            Asegúrate de que el aire que respiras dentro de tu hogar esté libre de gérmenes y aromas desagradables
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/calefactor-de-halogeno-rca-con-3-niveles-de-potencia.html">
+                            <div class="inner-anchor">
+                                <div id="cardimgwhite" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/purificador_2.jpg?rand=1633715381"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/purificador_2.jpg?rand=1633715381"
+                                    alt="electrodomesticos Bed Bath & Beyond">
+
+                                    <div class="parrafo-context">
+                                        <p style="text-align: center;color: #000;line-height:1;" class="submini">
+                                            Logra un ambiente más cómodo y saludable.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/calefactor-de-halogeno-rca-con-3-niveles-de-potencia.html">
+                            <div class="inner-anchor">
+                                <div id="cardimgwhite" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calefactor.jpg?rand=1633718270"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calefactor.jpg?rand=1633718270"
+                                    alt="Cama Bed Bath & Beyond">
+
+                                    <div class="parrafo-context">
+                                        <p style="text-align: center;color: #000;line-height:1;"  class="submini">                                   
+                                            ¿Te imaginas poder sentir el confort del calor solar en el momento que quieras?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-cat-home">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/calentador-de-ceramica-hce840bmx-heat-genioustm-honeywell.html">
+                            <div class="inner-anchor">
+                                <div id="cardimgwhite" class="txt-center">
+                                    <img class="cat-home-img" alt="haven"
+                                    srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calefactor_2.jpg?rand=1633718968"
+                                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calefactor_2.jpg?rand=1633718968"
+                                    alt="limpieza Bed Bath & Beyond">
+                                    <div class="parrafo-context">
+                                        <p style="text-align: center;color: #000;line-height:1;" class="submini">
+                                            Cualquier habitación en tu casa, tu piso o hasta tu espacio personal estarán a una agradable temperatura
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            </div>
+        </section>
+
+                <!-- MINI BANNER CON MOVIENTO -->
+                <section>
+                    <a href="https://www.bedbathandbeyond.com.mx/blog" target="_self">
+                        <div class="minibanner-container figure"> 
+                            <div class="col-65 banner-text-mini">
+                                <div class="content-minitxt">
+                                    <div class="content__container">
+                                        <p class="content__container__text">
+                                        Beyond Blog &nbsp;
+                                        </p>
+                                        
+                                        <ul class="content__container__list">
+                                        <li class="content__container__list__item">ideas !</li>
+                                        <li class="content__container__list__item">inspiración !</li>
+                                        <li class="content__container__list__item">decoración !</li>
+                                        <li class="content__container__list__item">&nbsp;</li>
+                                        </ul>
+                                    </div>
+            
+                                    <div class="btn-minibanner">
+                                        ver más <span>➝</span>
+                                    </div>
+                                </div>
+                            </div>  
+                            <div class="col-35">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Dise_o_sin_t_tulo_23_.jpg?rand=1626113294?" alt="Aliados Bed Bath & Beyond">
+                            </div>
+                        </div> 
+                    </a>
+                </section>
+
+
+           
+    </body>
+</html>

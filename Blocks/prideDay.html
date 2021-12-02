@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+    <style>
+      .page-title-wrapper {
+        display: none !important;
+      }
+      .wrap-pride {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .container_pride {
+        width: 100%;
+        height: 150px;
+      }
+      .container_pride .color {
+        height: 20px;
+      }
+      .color div {
+        height: 20px;
+        width: 0;
+      }
+      .red {
+        background: #f25774;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+      }
+
+      .orange {
+        background: #ffb65b;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.1s;
+      }
+
+      .yellow {
+        background: #fdda74;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.2s;
+      }
+
+      .green {
+        background: #4cbe5d;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.3s;
+      }
+
+      .blue {
+        background: #4080ff;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.4s;
+      }
+
+      .purple {
+        background: #7b64c0;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes slide {
+        10% {
+          width: 0;
+          float: left;
+        }
+        37% {
+          width: 100%;
+          float: left;
+        }
+        63% {
+          width: 100%;
+          float: right;
+        }
+        90% {
+          width: 0;
+          float: right;
+        }
+      }
+      #categorias {
+        overflow: hidden;
+        position: relative;
+        margin-top: -27px;
+      }
+      .flex-container {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        overflow: hidden;
+      }
+      .flex-item {
+        color: #000;
+        font-size: 30px;
+        text-align: center;
+        /*box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.25);*/
+        font-size: 15px;
+        margin: 5px 1px;
+        height: 150px;
+        width: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+      }
+      .circle-item{
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+        border: 1px solid #1a4e8a;
+      }
+      .circle-item:hover {
+        border: 2px solid #1a4e8a;
+      }
+      .circle-item img {
+        height: 100px;
+        width: 100px;
+        border-radius: 50%;
+      }
+      #categoryPride {
+        position: absolute;
+        top: 0;
+      }
+
+      @media (max-width: 991px) { 
+        #categoryPride {
+          position: absolute;
+          top: 0;
+          overflow: scroll;
+        }
+        .circle-item{
+          width: 60px;
+          height: 60px;
+        }
+        .flex-item{
+          width: 80px;
+          height: 80px;
+          font-size: 10px;
+          margin: 5px 1px;
+        }
+        .circle-item img{
+          width: 60px;
+          height: 60px;
+        }
+        #categorias{
+          margin-top: -10px;
+        }
+        #categorias{
+          height: 260px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+        <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day.html" target="_self">
+          <div class="wrap-pride">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-pride-25jun.jpg?rand=1624490543"
+              alt="Pride BedBathandBeyond"
+            />
+        </a>
+      </div>
+    </section>
+    <section id="categorias">
+      <div class="container_pride">
+        <div class="color">
+          <div class="red"></div>
+        </div>
+        <div class="color">
+          <div class="orange"></div>
+        </div>
+        <div class="color">
+          <div class="yellow"></div>
+        </div>
+        <div class="color">
+          <div class="green"></div>
+        </div>
+        <div class="color">
+          <div class="blue"></div>
+        </div>
+        <div class="color">
+          <div class="purple"></div>
+        </div>
+      </div>
+      <div id="categoryPride" class="flex-container">
+        <div class="flex-item">
+          <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/bano.html" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-2%20bath?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>baño</p>
+          </a>
+        </div>
+        <div class="flex-item">
+          <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/cocina.html" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-3%20kitchen?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>cocina</p>
+          </a>
+        </div>
+        <div class="flex-item">
+          <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/cuidado-personal.html" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-13%20health%20and%20beauty?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>cuidado personal</p>
+          </a>
+        </div>
+        <div class="flex-item">
+          <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/decoracion.html" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>decoración</p>
+          </a>
+        </div>
+        <div class="flex-item">
+          <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/muebles.html" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>muebles</p>
+          </a>
+        </div>
+        <div class="flex-item">
+          <a href="" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-5%20storage%20and%20cleaning?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>organización y limpieza</p>
+          </a>
+        </div>
+        <div class="flex-item">
+          <a href="" target="_self">
+            <div class="circle-item">
+                  <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-1%20bedding?$content$&wid=150&hei=150" alt="pride day BedBathandBeyond">
+            </div>
+            <p>recámara</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

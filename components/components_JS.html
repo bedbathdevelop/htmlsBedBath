@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components</title>
+    <style>
+      body {
+        margin: 0 auto;
+        padding: 0 auto;
+      }
+      .wrap-cat {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .item-cat {
+        overflow: hidden;
+      }
+      .item-cat p {
+        border: 1px solid #1a4e8a;
+        background-color: #daeaf4;
+        padding: 5px 10px;
+        border-radius: 10px;
+        color: #1a4e8a;
+        font-weight: 900;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      .disable {
+        opacity: 0.4;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h2>Woman</h2>
+      <div id="app"></div>
+    </main>
+    <script>
+      const $app = document.getElementById("app");
+
+      const Avatar = (params) => {
+        console.log(params.id);
+        const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`;
+
+        return `<picture>
+            <img src="${src}" />
+            <em>${params.name}</em>
+        </picture>
+        `;
+      };
+
+      $app.innerHTML += Avatar({ id: 5, name: "Andrea" });
+      $app.innerHTML += Avatar({ id: 6, name: "Manuela" });
+
+      $app.querySelectorAll("img").forEach((img) => {
+        img.addEventListener("click", () => {
+          img.classList.toggle("disable");
+        });
+      });
+    </script>
+  </body>
+</html>

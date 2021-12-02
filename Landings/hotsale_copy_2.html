@@ -1,0 +1,1863 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        /*Basic*/
+        a {
+            text-decoration: none;
+        }
+        section {
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        img {
+            max-width: 100%;
+        }
+        h1,h2,h3,h4,h5 {
+            font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        }
+        p,a {
+            font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+        }
+        a:hover{
+            text-decoration: none;
+        }
+
+        /*Colores*/
+        .txt-bluestr { 
+            color:#002854;
+        }
+        .txt-white {
+            color: #fff !important;
+        }
+        .txt-gray {
+            color: #484a46;
+        }
+        .txt-bluemed {
+            color: #1a4e8a;
+        }
+        .txt-bluelight {
+            color: #daeaf4;
+        }
+        .btn-blue {
+            background-color:  #117dcf;
+            color:#fff;
+        } 
+        .bg-blue{
+            background-color: #8b8f92;
+        }
+        .bg-gray-l{
+            background-color: #dfe3e6;
+        }
+        .bg-bluestr{
+            background-color: #002854;
+        }
+        /*Columnas*/
+        .flex-container {
+            display: flex;
+            flex-direction: row;
+        }
+        .col {
+            overflow: hidden;
+            padding: 5px;
+        }
+        ._100 {
+            width: 100%;
+        }
+        ._20 {
+            width: 18.6%;
+            float: left;
+        }
+        ._30 {
+            width: 31.6%;
+            float: left;
+        }
+        ._50 {
+            width: 50%;
+            float: left;
+        }
+        /*padding*/
+        .pd_5 {
+            padding: 5px;
+        }
+
+
+        /*margin*/
+        .mg_5 {
+            margin: 0 5px;
+        }
+        .mg_3 {
+            margin: 0 3px;
+        }
+        .hotsaleimg{
+            position: absolute;
+            z-index: 1;
+            top: 10px;
+            right: 10px;
+            width: 200px;
+            height: auto;
+        }
+        /*Slide Promo*/
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+            height: auto;
+            color: #000;
+        }
+        /*Carrousel*/
+        .carousel {
+            position: relative;
+            width: 80%;
+            height: auto; 
+            margin: 0 auto;
+        }
+
+        .carousel-content {
+            position: relative;
+            overflow: hidden;
+            transition: width .4s;
+            height: 500px;
+        }
+
+        .slide {
+            height: 100%;
+            position: absolute;
+            z-index: 1;
+            transition: left .4s cubic-bezier(.47,.13,.15,.89);
+        }
+        .title-font {
+            color:#002855;
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            font: Termina Headline,sans-serif;
+            text-align: center;
+            font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+            font-size: 40px;
+        }
+        .nav {
+            position: absolute;
+            top: 50%;
+            margin-top: -10px;
+            background-color: rgba(150,150,150,.3);
+            width: 20px;
+            height: 20px;
+            z-index: 2;
+            cursor: pointer;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            color: white;
+            -webkit-user-select: none;
+        }
+
+        .nav-left {
+            left: -25px;
+        }
+
+        .nav-right {
+            right: -25px;
+        }
+
+        .carousel-arrow-icon-left {
+            margin-left: 5px;
+            margin-top: 2px;
+        }
+
+        .carousel-arrow-icon-right {
+            margin-left: 7px;
+            margin-top: 2px;
+        }
+            /*cards*/
+        .card {
+            position: relative;
+            width: 320px;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 30px;
+            transition: 0.4s;
+        }
+
+        .card::before {
+            content: "";
+            position: absolute;
+            background: white;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 50px;
+            border-radius: 10px;
+            transform: skewx(15deg);
+            transition: 0.4s;
+        }
+        .discount-flag{
+            position: absolute;
+            top: 40%;
+            left: 10%;
+            background-color: rgba(218,234,244,0.8);
+            color: #002854;
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            font-size: 25px;
+            line-height: 1;
+            font-weight: 600;
+            text-align: center;
+        }
+        .card::after {
+            content: "";
+            position: absolute;
+            background: white;
+            width: 50%;
+            height: 100%;
+            top: 0;
+            left: 50px;
+            border-radius: 10px;
+            transform: skewx(15deg);
+            transition: 0.4s;
+            filter: blur(30px);
+        }
+        .container--envio{
+            background-color: #daeaf4;
+            padding: 2%;
+            font-weight: 900;
+        }
+
+        .card span {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .card span::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .card:hover span::before {
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+            left: 50px;
+            top: -50px;
+            animation: swing 2s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card span::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .card:hover span::after {
+            width: 100px;
+            height: 100px;
+            opacity: 1;
+            right: 50px;
+            bottom: -50px;
+            animation: swing 2s ease-in-out infinite;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            animation-delay: -1s;
+        }
+
+        .content-card {
+            z-index: 1;
+            position: relative;
+            left: 0;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            padding: 20px 50px;
+            transition: 0.4s;
+            color: white;
+            width: 100%;
+            height: 300px;
+        }
+
+        .card:hover .content-card {
+            left: -25px;
+            padding: 40px 50px;
+        }
+
+        .card h2 {
+            font-size: 1.9em;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            font-size: 0.95em;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .card a {
+            display: inline-block;
+            text-decoration: none;
+            background: white;
+            color: #222;
+            font-size: 1.1em;
+            font-weight: 500;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        @keyframes swing {
+            0% {
+            transform: translatey(10px);
+            }
+
+            50% {
+            transform: translatey(-10px);
+            }
+
+            100% {
+            transform: translatey(10px);
+            }
+        }
+
+        /*Slider Promotion*/
+        .slides_brand_img{
+            position: relative;
+            display: none;
+        }
+
+        .cont-text-slide{
+            position: absolute;
+            z-index: 1;
+            top:30%;
+            left:10%;
+            font-size: 25px;
+            color: #fff;
+            overflow: hidden;
+            line-height: 1;
+        }
+
+        .btn_general{
+            background-color:#117dcf;
+            color: #fff;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 23px;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+            position: absolute;
+            z-index: 1;
+            top: 70%;
+            right: 28%;
+            left: 28%;
+        }  
+        .btn_general:hover {
+            background-color: #002854;
+            border: 2px solid  #002854;
+            color: #fff;
+        }
+
+        .btn_slide{
+            background-color:#117dcf;
+            color: #fff;
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 23px;
+            width: 200px;
+            text-align: center;
+            border-radius: 5px;
+        }  
+        .btn_slide:hover {
+            background-color: #002854;
+            color: #fff;
+        }
+        /*Promos colores*/
+        .prom_green {
+            background-color:#019945;
+        }
+        .prom_blue {
+            background-color:#05619c;
+        }
+        .prom_red {
+            background-color: #e2272c;
+        }
+        .prom_yellow {
+            background-color: #fa9423;
+        }
+        .prom_purple {
+            background-color: #4d2972;
+        }
+
+        /*hover images*/
+        .img-hover{
+            position: relative;
+        }
+        .txt-float{
+            position: absolute;
+            bottom: 30%;
+            right: 20%;
+            color: #1a4e8a;
+            font-size: 35px;
+            line-height: 1;
+            font-weight: 900;
+            /*background-color: #daeaf4;*/
+            padding: 5px 15px;
+            text-align:right;
+        }
+        .txt-high{
+            font-size: 30px;
+        }
+        .ctr-prom{
+            display: none;
+        }
+
+        /*
+            ==============================================
+            slideRight
+            ==============================================
+            */
+
+
+            .slideRight{
+                animation-name: slideRight;
+                -webkit-animation-name: slideRight;	
+
+                animation-duration: 1s;	
+                -webkit-animation-duration: 1s;
+
+                animation-timing-function: ease-in-out;	
+                -webkit-animation-timing-function: ease-in-out;		
+
+                visibility: visible !important;	
+            }
+
+            @keyframes slideRight {
+                0% {
+                    transform: translateX(-150%);
+                }			
+                100% {
+                    transform: translateX(0%);
+                }	
+            }
+
+            @-webkit-keyframes slideRight {
+                0% {
+                    -webkit-transform: translateX(-150%);
+                }			
+                100% {
+                    -webkit-transform: translateX(0%);
+                }
+            } 
+            /*
+                ==============================================
+                slideDown
+                ==============================================
+                */
+
+
+                .slideDown{
+                    animation-name: slideDown;
+                    -webkit-animation-name: slideDown;	
+
+                    animation-duration: 1s;	
+                    -webkit-animation-duration: 1s;
+
+                    animation-timing-function: ease;	
+                    -webkit-animation-timing-function: ease;	
+
+                    visibility: visible !important;						
+                }
+
+                @keyframes slideDown {
+                    0% {
+                        transform: translateY(-100%);
+                    }			
+                    100% {
+                        transform: translateY(0%);
+                    }		
+                }
+
+                @-webkit-keyframes slideDown {
+                    0% {
+                        -webkit-transform: translateY(-100%);
+                    }			
+                    100% {
+                        -webkit-transform: translateY(0%);
+                    }	
+                }
+                /*
+                    ==============================================
+                    slideUp
+                    ==============================================
+                    */
+
+
+                    .slideUp{
+                        animation-name: slideUp;
+                        -webkit-animation-name: slideUp;	
+
+                        animation-duration: 1s;	
+                        -webkit-animation-duration: 1s;
+
+                        animation-timing-function: ease;	
+                        -webkit-animation-timing-function: ease;
+
+                        visibility: visible !important;			
+                    }
+
+                    @keyframes slideUp {
+                        0% {
+                            transform: translateY(100%);
+                        }			
+                        100% {
+                            transform: translateY(0%);
+                        }	
+                        }
+
+                        @-webkit-keyframes slideUp {
+                            0% {
+                                -webkit-transform: translateY(100%);
+                            }			
+                            100% {
+                                -webkit-transform: translateY(0%);
+                            }	
+                        }
+
+                /*Disccount Cirlce*/
+                .discount-container {
+                    position: absolute;
+                    top:10px;
+                    left:10px;
+                    color:#fff;
+                    text-align: center;
+                    font-weight: 900;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    z-index: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 35px;
+                }
+                .txt-disccount{
+                    font-size: 10px;
+                    font-weight: 600;
+                    line-height: 1;
+                }
+                .num_discount{
+                    font-size: 25px;
+                    font-weight: 900;
+                }
+                .num_discount_b{
+                    font-size: 55px;
+                    font-weight: 900;
+                }
+                /*Disccount Cirlce*/
+                .discount-containerb {
+                    position: absolute;
+                    top:30px;
+                    left:110px;
+                    color:#fff;
+                    text-align: center;
+                    font-weight: 900;
+                    width: 120px;
+                    height: 120px;
+                    border-radius: 50%;
+                    z-index: 4;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 35px;
+                }
+                 /*Products Carrousel*/
+                 .carrousel-products {
+                    width: 100%;
+                    margin: auto;
+                    height: 450px;
+                    overflow:hidden;
+                    text-align: center;
+                    line-height: 1;
+                }
+                .carousel-price {
+                    font: 300 25px/0.5 Effra,Helvetica,Arial,sans-serif;
+                    text-align: center;
+                    font-weight: 900;
+                    color: #000;
+                }
+                .carousel-des {
+                    font-size: 12px;
+                    line-height: 1;
+                    font-family:Effra,Helvetica,Arial,sans-serif ;
+                    color: #000;
+                    padding: 0 5%;
+                }
+                .carosuel-raiting {
+                    color:#1377C9;
+                    margin-top: 2%;
+                    font-size: 22px;
+                }
+
+                /*Star component*/
+                .item-start {
+                    height: auto;
+                    float: left;
+                    color: #fff;
+                    font-size: 40px;
+                    text-align: center;
+                    padding-top: 30px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: 1s all;
+                    overflow: hidden;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+                }
+                .cont {
+                    position: absolute;
+                    width: 1100px;
+                    margin-top: 190px;
+                }
+                .tapa {
+                    width: 100%;
+                    transition: .9s all;
+                    margin-top: -40px;
+                }
+                .item-start img {
+                    width: 50%;
+                    margin-top: 20px;
+                    height: 120px;
+                }
+                .item-start:hover {
+                    margin-top: -5px;
+                }
+
+                .container-star {
+                    width: 100%;
+                    overflow: hidden;
+                    display: flex;
+                    margin: 0 auto;
+                    text-align: center;
+                    justify-content: center;
+                }
+                .btn-prod{
+                    background-color:#117dcf;
+                    color: #fff;
+                    text-align: center;
+                    padding: 4px;
+                    margin: 22px 28%;
+                    font-size: 13px;
+                    width: 100px;
+                    text-align: center;
+                    border-radius: 5px;
+                }
+                
+                .btn-banner{
+                    background-color:#117dcf;
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px 5px;
+                    font-size: 23px;
+                    width: 200px;
+                    text-align: center;
+                    border-radius: 5px;
+                    position: absolute;
+                    z-index: 1;
+                    top: 80%;
+                    right: 270px;
+                }
+                .btn-banner:hover{ 
+                    background-color: #002854;
+                }
+                .clip-star {
+                    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                    display: inline-block;
+                    height: 20px;
+                    width: 20px;
+                    float: left;
+                }
+    
+                .disable {
+                    background: rgb(237, 237, 237);
+                }
+
+                .num-star {
+                    font-size: 15px;
+                    float: left;
+                    margin-left: 2%;
+                }
+                /*Shine Animation*/
+                .shine {
+                    animation-name: glitter;
+                    animation-iteration-count: infinite;
+                
+                }
+
+                .star-1 {
+                    transform-origin: 102.14px 87.09px;
+                    animation-duration: 3.5s;
+                }
+
+                .star-2 {
+                    transform-origin: 219.47px 205.7px;
+                    animation-duration: 4s;
+                }
+
+                .star-3 {
+                    transform-origin: 404.11px 35.05px;
+                    animation-duration: 2.5s;
+                }
+
+                .star-4 {
+                    transform-origin: 54.43px 393.81px;
+                    animation-duration: 2.5s;
+                }
+
+                .star-5 {
+                    transform-origin: 374.42px 271.34px;
+                    animation-duration: 3s;
+                }
+
+                @keyframes glitter {
+                0% {
+                    -webkit-transform: scale(0.3) rotate(0deg);
+                    opacity: 0;
+                }
+                50% {
+                    -webkit-transform: scale(.8) rotate(360deg);
+                    opacity: .7;
+                }
+                100% {
+                    -webkit-transform: scale(0.3) rotate(0deg);
+                    opacity: 0;
+                }
+                }
+                #shine_animation{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                /*Carrousel Products*/
+                .slider--prod {
+                    background: white;
+                    height: 400px;
+                    margin: auto;
+                    overflow:hidden;
+                    position: relative;
+                    width: 100%;
+                }
+
+                .slider--prod:before,
+                .slider--prod:after{
+                        content: "";
+                        height: 100px;
+                        position: absolute;
+                        width: 200px;
+                        z-index: 2;
+                }
+
+                .slider--prod::after{
+                        right: 0;
+                        top: 0;
+                        transform: rotateZ(180deg);
+                    }
+
+                .slider--prod::before{
+                        left: 0;
+                        top: 0;
+                    }
+                    
+                .slide--track {
+                    animation: scroll 40s linear infinite;
+                    display: flex;
+                    width: calc(250px * 14);
+                }
+                .enable{
+                    background:#194e8a;
+                }
+                /*.slide--track:hover {
+                    animation: scroll 0s linear infinite;
+                    display: flex;
+                    width: calc(250px * 14);
+                }*/
+                
+                .slide--card {
+                    height: 100px;
+                    width: 250px;
+                }
+
+                @keyframes scroll {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(calc(-250px * 7))}
+                    }
+
+
+                /*
+                    ==============================================
+                    pulse
+                    ==============================================
+                    */
+
+                    .pulse{
+                        animation-name: pulse;
+                        -webkit-animation-name: pulse;	
+
+                        animation-duration: 3s;	
+                        -webkit-animation-duration: 3s;
+
+                        animation-iteration-count: infinite;
+                        -webkit-animation-iteration-count: infinite;
+                    }
+
+                    @keyframes pulse {
+                        0% {
+                            transform: scale(0.9);	
+                        }
+                        50% {
+                            transform: scale(1);
+                        }	
+                        100% {
+                            transform: scale(0.9);	
+                        }			
+                    }
+
+                    @-webkit-keyframes pulse {
+                        0% {
+                            -webkit-transform: scale(0.95);	
+                        }
+                        50% {
+                            -webkit-transform: scale(1);
+                        }	
+                        100% {
+                            -webkit-transform: scale(0.95);
+                        }			
+                    }
+                /*countdonw*/
+                .iconsale{
+                    width: 30px;
+                    height: auto;
+                }
+                .container--timer{
+                    color: #002854;
+                    margin: 0 auto;
+                    text-align: center;
+                    line-height: 1;
+                    overflow: hidden;
+                    text-align: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0px;
+                }
+                .ofertitle{
+                    margin: 0 20px;
+                }
+                .daydiv{
+                    width: 8%;
+                    float: left;
+                    font-size: 18px;
+                    font-weight: 900;
+                    background: #daeaf4;
+                    padding: 10px 5px;
+                    margin: 1px;
+                }
+                .daydiv span {
+                    font-weight: 900;
+                }
+                .timer--complete {
+                    overflow: hidden;
+                    width: 100%;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                .message {
+                    font-size: 4rem;
+                    display: none;
+                    padding: 1rem;
+                }
+
+                    .emoji {
+                    padding: 0 .25rem;
+                    }
+
+                    @media all and (max-width: 768px) {
+
+                    }
+                    /*recomendation popup*/
+                    .center-text{
+                        text-align: center;
+                    }
+                    .recomedation-container{
+                        width: 250px;
+                        height: 120px;
+                        bottom: 10px;
+                        left: 10px;
+                        position: fixed;
+                        border-radius: 5px;
+                        z-index: 1;
+                        background-color: #fff;
+                        padding: 5px 15px;
+                        overflow: hidden;
+                        text-align: left;
+                        -webkit-box-shadow: 0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+                        -moz-box-shadow:    0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+                        box-shadow:         0px 0px 5px 0px rgba(50, 50, 50, 0.75);
+                        display: none;
+                    }
+                    .btn_prod_ver{
+                        background-color:#117dcf;
+                        color: #fff;
+                        text-align: center;
+                        padding: 3px 5px;
+                        font-size: 13px;
+                        text-align: center;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                    .btn_prod_ver:hover {
+                        background-color:#002854;
+                    }
+                    .col-re{
+                        float: left;
+                        width: 50%;
+                        height: auto;
+                        font-size: 13px;
+                        color: #002854;
+                    }
+                    .img-re{
+                        width: 80px;
+                        text-align: center;
+                    }
+                    #hotsalesection{
+                        position: relative;
+                    }
+                    .disablepopup{
+                        display: none;
+                    }
+                    
+                    .displayactive{
+                        display: block !important;
+                    }
+        /* Responsive layout - makes a one column-layout instead of two-column layout */
+        @media (max-width: 800px) {
+            .flex-container {
+                flex-direction: column;
+            }
+            ._100, ._50, ._30 {
+                width: 100%;
+                margin: 12px 2px;
+            }
+        }
+        @media (max-width: 991px) {
+                .ofertitle {
+                    margin: 0 10px;
+                    font-size: 14px;
+                }
+                .daydiv {
+                    width: 15%;
+                    float: left;
+                    font-size: 14px;
+                    font-weight: 900;
+                    background: #daeaf4;
+                    padding: 10px 5px;
+                    margin: 1px;
+                }
+                .slideshow-container {
+                    max-width: 100%;
+                    position: relative;
+                    margin: auto;
+                    height: 300px;
+                    color: #000;
+                    background: #263c99;
+                }
+                .hotsaleimg{
+                    position: absolute;
+                    z-index: 1;
+                    top: 200px;
+                    right: 50px;
+                    width: 80px;
+                    height: auto;
+                }
+                .cont-text-slide {
+                    position: absolute;
+                    z-index: 1;
+                    top: 30%;
+                    left: 10%;
+                    font-size: 25px;
+                    color: #fff;
+                    overflow: hidden;
+                    line-height: 1;
+                    width: 180px;
+                }
+                .title-font{
+                    font-size: 30px;
+                }
+                .iconsale{
+                    display: none;
+                }
+        }
+    </style>  
+    <script>
+        window.onload = function() {
+            var slideIndex = 1;
+                showSlides(slideIndex);
+    
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+    
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+    
+            function showSlides() {
+                var i;
+                var slides = document.getElementsByClassName("slides_brand_img");
+                var dots = document.getElementsByClassName("dot");
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";  
+                    /*if(i === 1 ) {
+                        console.log("1,", slides[i]) 
+                        slides[i].className.add("active");
+                    }*/
+                }
+                slideIndex++;
+                
+                if (slideIndex > slides.length) {slideIndex = 1}    
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex-1].style.display = "block";  
+                dots[slideIndex-1].className += " active";
+                setTimeout(showSlides, 4000); // Change image every 2 seconds
+            }
+    
+            /*Popup*/
+            //Popuprecomendations CGR
+            var prod = document.getElementById("poprecomendations");
+            var prod2 = document.getElementById("poprecomendationsb");
+            var prod3 = document.getElementById("poprecomendationsc");
+            var recomendations = document.getElementsByClassName("recomedation-container");
+            console.log("prod",recomendations)
+            
+            showPop();
+            function showPop() {
+                setTimeout(function(){ prod.classList.add("displayactive") 
+                removeTimeout();
+            }, 1000);
+            }
+            function showPop2() {
+                setTimeout(function(){ prod2.classList.add("displayactive") 
+                removeTimeout2();
+            }, 1000);
+            }
+            function removeTimeout2(){
+                setTimeout(function(){ prod2.classList.remove("displayactive") }, 4000);
+                setTimeout(function(){  showPop3()}, 8000);
+            }
+    
+            function removeTimeout(){
+                setTimeout(function(){ prod.classList.remove("displayactive") }, 4000);
+                setTimeout(function(){  showPop2()}, 8000);
+            }
+            function showPop3() {
+                setTimeout(function(){ prod3.classList.add("displayactive") 
+                removeTimeout3();
+            }, 1000);
+            function removeTimeout3(){
+                setTimeout(function(){ prod3.classList.remove("displayactive") }, 4000);
+            }
+            }
+        }
+    </script>
+
+
+<body>
+<div id="hotsalesection">
+<!-- Count offer -->
+<section>
+    <div class="container--timer">
+        <div class="timer--complete">
+            <h3 class="ofertitle"><span>Siguiente oferta <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/hotsale/coupon_1_.png?rand=1620916177" class="iconsale"/></span></h3>
+            <div class="daydiv"><span id="days"></span><br>días</div>
+            <div class="daydiv"><span id="hours"></span><br>horas</div>
+            <div class="daydiv"><span id="minutes"></span><br>minutos</div>
+            <div class="daydiv"><span id="seconds"></span><br>segundos</div>
+        </div>
+        <div class="message">
+            <div id="contentcomment">
+                <span class="emoji">:)</span>
+                <span class="emoji">:)</span>
+                <span class="emoji">:)</span>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Promocion del día -->
+    <section>
+        <div id="promoDay" class="row">
+            
+            <div class="slideshow-container">
+                <div class="slides_brand_img fade" >
+                    <img src="https://mcstaging.bedbathandbeyond.com.mx/media/wysiwyg/slider-1_1.jpeg?rand=1620679568">
+                    <img src="https://assets.hotsale.com.mx/public/hotsale-mx/imgs/hot-sale-2021.svg" class="hotsaleimg pulse" alt="hotsale Bed Bath & Beyond" />
+                    <div class="cont-text-slide">
+                        <p class="slideDown title-banner">CONOCE NUESTRA OFERTA FLASH</p>
+                        <p class="slideRight subtitle-banner">¡Las mejores oferta un solo lugar!</p>
+                        <a href="" target="_self">
+                            <p class="btn_slide slideUp"> ver oferta </p>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="slides_brand_img fade">
+                    <img src="https://mcstaging.bedbathandbeyond.com.mx/media/wysiwyg/slider-3_3.jpeg?rand=1620679674">
+                    <img src="https://assets.hotsale.com.mx/public/hotsale-mx/imgs/hot-sale-2021.svg" class="hotsaleimg pulse" alt="hotsale Bed Bath & Beyond" />
+                    <div class="cont-text-slide">
+                        <p class="slideDown title-banner">¡DA CLICK Y CONOCE TODO!</p>
+                        <p class="slideRight subtitle-banner">¡Todas las ofertas de HOT SALE aquí!</p>
+                        <a href="" target="_self">
+                            <p class="btn_slide slideUp"> ver oferta </p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center">
+                <span class="dot"></span> 
+                <span class="dot"></span> 
+            </div>
+        </div>
+    </section>
+
+    <!-- Promocion del día -->
+    <section>
+        <div id="promoDay">
+            <div class="colb _30 mg_5 img-hover" style="height: 250px;">
+                <a href="" target="_blank">
+                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C04-2v3-OB-Welcome-DSK?$content$&wid=720&hei=486" alt="hotsale bed bath and beyond"/>
+                    <!-- Discount -->
+                    <div class="discount-container prom_red pulse">
+                        <p class="txt-disccount">
+                            descuentos
+                            <br><span class="num_discount">-10% <br>al -30%</span>
+                        </p>
+                    </div>
+                    <p class="txt-float"><span class="txt-high">increíbles</span><br>promociones</p>
+                    <div class="btn_general">ver más</div>
+                </a>
+            </div>
+            <div class="colb _30 mg_5 img-hover" style="height: 250px;">
+                <a href="" target="_blank">
+                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C04-2v3-OB-Welcome-DSK?$content$&wid=720&hei=486" alt="hotsale bed bath and beyond"/>
+                    <div class="discount-container prom_red pulse">
+                        <p class="txt-disccount">
+                            varios
+                            <br><span class="num_discount_b">%</span>
+                        </p>
+                    </div>
+                    <p class="txt-float"><span class="txt-high">marcas</span><br>exclusivas</p>
+                    <div class="btn_general"> ver más</div>
+                </a>
+            </div>
+            <div class="colb _30 mg_5 img-hover" style="height: 250px;">
+                <a href="" target="_blank">
+                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C04-2v3-OB-Welcome-DSK?$content$&wid=720&hei=486" alt="hotsale bed bath and beyond"/>
+                    <div class="discount-container prom_red pulse">
+                        <p class="txt-disccount">
+                            varios
+                            <br><span class="num_discount_b">%</span>
+                        </p>
+                    </div>
+                    <p class="txt-float"><span class="txt-high">categorías</span><br>exclusivas</p>
+                    <div class="btn_general"> ver más</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!--- Promocion 13 meses -->
+    <section>
+        <div class="container--envio"> 
+            Envío gratis...
+        </div>
+    </section>
+
+    <!-- TOP PRODUCTS % -->
+    <section>
+        <h2 class="title-font">
+            <span>top productos <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/discount.png?rand=1620921592" width="40px" alt="hotsale"/></span>
+        </h2>
+
+        <div class="slider--prod">
+            <div class="slide--track">
+                <!-- Product 1 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/set-contenedores-alimentos-oxo-good-grips-pop-20-piezas-68853907.html" target="_self">
+                            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/316282268853907p?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$4,999.00</p>
+                            <p class="carousel-des">Set de contenedores para alimentos OXO Good Grips® POP, 20 piezas</p>
+                            <p class="carousel-des">SKU#:68853907</p>
+                            <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                        </a>
+                        </div>
+                </div>
+                <div class="slide--card">
+                    <!-- Product 2 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/set-de-contenedores-rubbermaidr-brilliancetm-22-piezas.html" target="_self">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/93386047067240p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$1,039.00</p>
+                            <p class="carousel-des">Set de contenedores Rubbermaid® Brilliance™, 22 piezas</p>
+                            <p class="carousel-des">SKU#:47067240</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 4 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/zapatera-de-metal-madera-de-3-niveles.html" target="_self">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/8891214891005p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$739.00</p>
+                        <p class="carousel-des">Zapatera de metal/madera de 3 niveles</p>
+                        <p class="carousel-des">SKU#:14891005</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/bolsa-reutilizable-para-alimentos-68996314.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/314923668996314p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$499.00</p>
+                        <p class="carousel-des">Bolsa reutilizable para alimentos Stasher de 1.65 L</p>
+                        <p class="carousel-des">SKU#:68996314</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/escurridor-platos-simplehuman-compact-color-gris-69581126.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-05-28-04-44_838810021751_imageset?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$1,699.00</p>
+                            <p class="carousel-des">Escurridor para platos simplehuman® Compact color gris</p>
+                            <p class="carousel-des">SKU#:69581126</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                        <!-- Product 3 -->
+                        <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/set-contenedores-alimentos-oxo-good-grips-pop-6-piezas-blanco-69536208.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/378106669536208p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$1,229.00</p>
+                            <p class="carousel-des">Set de contenedores para alimentos OXO Good Grips® POP, 6 piezas en blanco</p>
+                            <p class="carousel-des">SKU#:69536208</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slide--card">
+                        <!-- Product 3 -->
+                        <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/organizador-chico-e-z-do-de-tela-texturizada-en-gris.html" target="_self">
+                            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-05-14-23-39_20753185175_3_imageset?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$219.00</p>
+                            <p class="carousel-des">Organizador chico E-Z Do de tela texturizada en gris</p>
+                            <p class="carousel-des">SKU#:64577418</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/contenedor-de-plastico-grande-idesignr-para-ba-o.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/145536663072655p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$469.00</p>
+                            <p class="carousel-des">Contenedor de plástico grande iDesign® para baño</p>
+                            <p class="carousel-des">SKU#:63072655</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/set-de-contenedores-para-alimentos-pop-good-gripsr-oxo-10-piezas.html" target="_self">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/171272664811529p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$2,879.00</p>
+                            <p class="carousel-des">Set de contenedores para alimentos, POP Good Grips® OXO 10 piezas</p>
+                            <p class="carousel-des">SKU#:64811529</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/name.html" target="_self">
+                            <img src="http://s7d1.scene7.com/is/image/BedBathandBeyond/2020-08-07-18-46_stsul01_su_mega_clear_1_imageset?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$669.00</p>
+                            <p class="carousel-des">Bolsa de almacenamiento de alimentos reutilizable Stasher 3.07 L</p>
+                            <p class="carousel-des">SKU#:69616370</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/especiero-olde-thompsonr-giratorio-con-20-frascos.html" target="_self">
+                            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/21248257162.jpg?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$2,599.00</p>
+                            <p class="carousel-des">Especiero Olde Thompson®, giratorio con 20 frascos</p>
+                            <p class="carousel-des">SKU#:47065598</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-oggitm-set-de-5.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/3954513572526p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$579.00</p>
+                            <p class="carousel-des">Contenedores de acrílico Oggi™, Set de 5</p>
+                            <p class="carousel-des">SKU#:13572526</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   <!-- Promocion del día -->
+   <section>
+    <div id="promoDay">
+        <div class="colb _30 mg_5 img-hover" style="height: 340px;">
+            <a href="" target="_blank">
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW11-FY21-0510-WEB-LP-HomeOffice-C15-12-2?$content$&wid=450" alt="hotsale bed bath and beyond"/>
+                <!-- Discount -->
+                <div class="discount-flag">
+                    <span style="font-size: 35px;font-weight: 900;">Compra 1 </span>
+                    <br>llevate el segundo 
+                    <br>con el <span style="color:#e2272c">50%</span>
+                </div>
+            </a>
+        </div>
+        <div class="colb _30 mg_5 img-hover" style="height: 340px;">
+            <a href="" target="_blank">
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW11-FY21-0510-WEB-LP-HomeOffice-C15-12-2?$content$&wid=450" alt="hotsale bed bath and beyond"/>
+                <!-- Discount -->
+                <div class="discount-flag">
+                    <span style="font-size: 35px;font-weight: 900;">Regalos </span>
+                    <br>exclusivos
+                    <br>con<span style="color:#e2272c">%</span>
+                </div>
+            </a>
+        </div>
+        <div class="colb _30 mg_5 img-hover" style="height: 340px;">
+            <a href="" target="_blank">
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW11-FY21-0510-WEB-LP-HomeOffice-C15-12-2?$content$&wid=450" alt="hotsale bed bath and beyond"/>
+                <!-- Discount -->
+                <div class="discount-flag">
+                    <span style="font-size: 35px;font-weight: 900;">Productos</span>
+                    <br> con más 
+                    <br>del <span style="color:#e2272c">50%</span>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+            
+
+<!-- TOP PRODUCTS % -->
+    <section>
+        <h2 class="title-font">
+            <span>top productos <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/discount.png?rand=1620921592" width="40px" alt="hotsale"/></span>
+        </h2>
+
+        <div class="slider--prod">
+            <div class="slide--track">
+                <!-- Product 1 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/set-contenedores-alimentos-oxo-good-grips-pop-20-piezas-68853907.html" target="_self">
+                            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/316282268853907p?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$4,999.00</p>
+                            <p class="carousel-des">Set de contenedores para alimentos OXO Good Grips® POP, 20 piezas</p>
+                            <p class="carousel-des">SKU#:68853907</p>
+                            <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                        </a>
+                        </div>
+                </div>
+                <div class="slide--card">
+                    <!-- Product 2 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/set-de-contenedores-rubbermaidr-brilliancetm-22-piezas.html" target="_self">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/93386047067240p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$1,039.00</p>
+                            <p class="carousel-des">Set de contenedores Rubbermaid® Brilliance™, 22 piezas</p>
+                            <p class="carousel-des">SKU#:47067240</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 4 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/zapatera-de-metal-madera-de-3-niveles.html" target="_self">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/8891214891005p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$739.00</p>
+                        <p class="carousel-des">Zapatera de metal/madera de 3 niveles</p>
+                        <p class="carousel-des">SKU#:14891005</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/bolsa-reutilizable-para-alimentos-68996314.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/314923668996314p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$499.00</p>
+                        <p class="carousel-des">Bolsa reutilizable para alimentos Stasher de 1.65 L</p>
+                        <p class="carousel-des">SKU#:68996314</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/escurridor-platos-simplehuman-compact-color-gris-69581126.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-05-28-04-44_838810021751_imageset?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$1,699.00</p>
+                            <p class="carousel-des">Escurridor para platos simplehuman® Compact color gris</p>
+                            <p class="carousel-des">SKU#:69581126</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                        <!-- Product 3 -->
+                        <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/set-contenedores-alimentos-oxo-good-grips-pop-6-piezas-blanco-69536208.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/378106669536208p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$1,229.00</p>
+                            <p class="carousel-des">Set de contenedores para alimentos OXO Good Grips® POP, 6 piezas en blanco</p>
+                            <p class="carousel-des">SKU#:69536208</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slide--card">
+                        <!-- Product 3 -->
+                        <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/organizador-chico-e-z-do-de-tela-texturizada-en-gris.html" target="_self">
+                            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-05-14-23-39_20753185175_3_imageset?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$219.00</p>
+                            <p class="carousel-des">Organizador chico E-Z Do de tela texturizada en gris</p>
+                            <p class="carousel-des">SKU#:64577418</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/contenedor-de-plastico-grande-idesignr-para-ba-o.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/145536663072655p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$469.00</p>
+                            <p class="carousel-des">Contenedor de plástico grande iDesign® para baño</p>
+                            <p class="carousel-des">SKU#:63072655</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/set-de-contenedores-para-alimentos-pop-good-gripsr-oxo-10-piezas.html" target="_self">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/171272664811529p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$2,879.00</p>
+                            <p class="carousel-des">Set de contenedores para alimentos, POP Good Grips® OXO 10 piezas</p>
+                            <p class="carousel-des">SKU#:64811529</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/name.html" target="_self">
+                            <img src="http://s7d1.scene7.com/is/image/BedBathandBeyond/2020-08-07-18-46_stsul01_su_mega_clear_1_imageset?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$669.00</p>
+                            <p class="carousel-des">Bolsa de almacenamiento de alimentos reutilizable Stasher 3.07 L</p>
+                            <p class="carousel-des">SKU#:69616370</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/especiero-olde-thompsonr-giratorio-con-20-frascos.html" target="_self">
+                            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/21248257162.jpg?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$2,599.00</p>
+                            <p class="carousel-des">Especiero Olde Thompson®, giratorio con 20 frascos</p>
+                            <p class="carousel-des">SKU#:47065598</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <div id="heart"></div>
+                            <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-oggitm-set-de-5.html" target="_self">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/3954513572526p?$imagePLP$&hei=700&wid=700">
+                            <p class="carousel-price">$579.00</p>
+                            <p class="carousel-des">Contenedores de acrílico Oggi™, Set de 5</p>
+                            <p class="carousel-des">SKU#:13572526</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="btn-prod">ver ahora</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--- Promocion 13 meses -->
+<section>
+    <div class="banner-img desktop"> 
+        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/MSI-desktop-citibanamex-ab.jpg?rand=1620761856" alt="13 meses sin intereses  Bed Bath & Beyond">
+    </div>
+    <div class="banner-img mobile figure" style="display: none;"> 
+        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/msi-mobile-citibanamex-ab.jpg?rand=1620761856" alt="13 meses sin intereses  Bed Bath & Beyond">
+    </div>
+</section>
+    <!-- POPUP RECOMENDATIONS-->
+    <div id="poprecomendations" class="recomedation-container">
+        <a href="https://www.bedbathandbeyond.com.mx/set-de-contenedores-para-alimentos-pop-good-gripsr-oxo-10-piezas.html" target="_blank">
+        <div class="col-re">
+            <p><b> Compraron 3 sets de contenedores</b></p>
+            <p> para alimentos, POP Good Grips® OXO 10 piezas</p>
+        </div>
+        <div class="col-re center-text">
+            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/171272664811529p?$imagePLP$&hei=700&wid=700" class="img-re"/>
+            <div class="btn_prod_ver">ver producto</div>
+        </div>
+        </a>
+    </div>
+    <div id="poprecomendationsb" class="recomedation-container">
+        <a href="https://www.bedbathandbeyond.com.mx/bolsa-reutilizable-para-alimentos-68996314.html" target="_blank">
+        <div class="col-re">
+            <p><b> Compraron 5 bolsas</b></p>
+            <p> reutilizable para alimentos Stasher de 1.65 L</p>
+        </div>
+        <div class="col-re center-text">
+            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/314923668996314p?$imagePLP$&hei=700&wid=700" class="img-re"/>
+            <div class="btn_prod_ver">ver producto</div>
+        </div>
+        </a>
+    </div>
+    <div id="poprecomendationsc" class="recomedation-container">
+        <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-oggitm-set-de-5.html" target="_blank">
+        <div class="col-re">
+            <p><b> Compraron 1 contenedor:</b></p>
+            <p>de acrílico Oggi™, Set de 5</p>
+        </div>
+        <div class="col-re center-text">
+            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/3954513572526p?$imagePLP$&hei=700&wid=700" class="img-re"/>
+            <div class="btn_prod_ver">ver producto</div>
+        </div>
+        </a>
+    </div>
+</div>
+</body>
+
+</html>

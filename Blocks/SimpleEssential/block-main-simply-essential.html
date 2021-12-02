@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+	<style>
+        
+    .page-title-wrapper {
+			display: none !important;
+		}
+    .container-simple{
+        position: relative;
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+    }
+    .circle-inside{
+        width: 90px;
+        height: 90px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 7px;
+    }
+
+    .text-inside {
+        text-align: center;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        font-size: 29px;
+        color: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 25px;
+        left: -5px;
+        font-weight: 900;
+    }
+    .text-inside-mini{
+        font-size: 11px;
+        color: #fff;
+        position: absolute;
+        z-index: 1;
+        text-align: center;
+        display: flex;
+        top: 10px;
+        left: 25px;
+    }
+    .bg-verde-circle{
+        background: rgb(45,144,72);
+        border: 2px solid rgb(45,144,72) im !important;
+    }
+               /*Shine Animation*/
+               .shine {
+                    animation-name: glitter;
+                    animation-iteration-count: infinite;
+                
+                }
+
+                .star-1 {
+                    transform-origin: 102.14px 87.09px;
+                    animation-duration: 3.5s;
+                }
+
+                .star-2 {
+                    transform-origin: 219.47px 205.7px;
+                    animation-duration: 4s;
+                }
+
+                .star-3 {
+                    transform-origin: 404.11px 35.05px;
+                    animation-duration: 2.5s;
+                }
+
+                .star-4 {
+                    transform-origin: 54.43px 393.81px;
+                    animation-duration: 2.5s;
+                }
+
+                .star-5 {
+                    transform-origin: 374.42px 271.34px;
+                    animation-duration: 3s;
+                }
+
+                @keyframes glitter {
+                0% {
+                    -webkit-transform: scale(0.3) rotate(0deg);
+                    opacity: 0;
+                }
+                50% {
+                    -webkit-transform: scale(.8) rotate(360deg);
+                    opacity: .7;
+                }
+                100% {
+                    -webkit-transform: scale(0.3) rotate(0deg);
+                    opacity: 0;
+                }
+                }
+                #shine_animation{
+                    position: absolute;
+                    top: 0;
+                    left: 40%;
+                }
+    .stage {
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        position: absolute;
+        bottom:  120px;
+        left: 80px;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+    }
+  .wrapper-co {
+      position: relative;
+      color: #fff;
+      font-size: 2.5rem;
+      letter-spacing: 0.25rem;
+      padding-top: 0.65rem;
+      padding-left: 0.5rem;
+      padding-right: 0.36rem;
+      padding-bottom: 0.2rem;
+      font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+  }
+  .text-arrow {
+    line-height: 1;
+  }
+/*inicia Banner*/
+.container-banner{
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+.container-text{
+  background-color:  #1a4e8a;
+  width: 100%;
+  height: 244px;
+  color: #fff;
+  line-height: 1;
+  padding: 40px 10px 0 20px;
+  font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+}
+.container-text p:nth-child(1){
+  font-size: 16px;
+  font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+}
+.container-text p:nth-child(2){
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 1;
+  font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+}
+.container-text p:nth-child(3){
+  font-size: 46px;
+  font-weight: 900;
+  line-height: 0.5;
+  font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+}
+.container-text p:nth-child(4){
+  font-size: 16px;
+  margin-top: 30px;
+  font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+}
+.col-40 {
+  width: 33%;
+  float: left;
+}
+.col-60 {
+  width: 64%;
+  float: left;
+}
+/*Fin Banner*/
+.container-btn-bed{
+    position: relative;
+}
+.btn-bed{
+    width: 100px;
+    position: absolute;
+    top:-35px;
+    right:0;
+    text-align: center;
+}
+.img-arrow{
+    width: 40px;
+}
+
+  .list-grid {
+      padding: 1em 0;
+      list-style: none;
+      display: inline-flex;
+      min-width: 100%;
+      justify-content: space-evenly;
+  }
+        .list-grid .col-2 {
+        min-width: 10.6666%;
+          text-align: center;
+        height: auto;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        }
+        .list-grid .col-2 .items-center {
+            width: 110px;
+            height: 110px; 
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            position: relative;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            border: 1px solid #1a4e8a;
+        }
+        .title-font{
+            text-align: center;
+            font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif;
+            color:#1a4e8a;
+            margin-top: -10px;
+            margin-bottom: 60px;
+            font-size: 32px;
+        }
+        .list-grid .col-2:hover .items-center {
+            border: 3px solid #002854;
+        }
+
+		.img-rouned {
+			position: absolute;
+			z-index: 1;
+			border-radius: 50%;
+			top: 0px;
+			left: 0px;
+			width: 110px;
+			height: 110px;
+		}
+        /*Disccount Cirlce*/
+        .discount-container {
+            position: absolute;
+            top:25px;
+            left:10px;
+            color:#fff;
+            text-align: center;
+            font-weight: 900;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 45px;
+        }
+		.discount-container:hover {
+			color: #002854;
+		}
+        .txt-disccount{
+            font-size: 15px;
+            font-weight: 600;
+            line-height: 1;
+        }
+        .num_discount{
+            font-size: 50px;
+            font-weight: 900;
+        }
+        .num_discount_b{
+            font-size: 55px;
+		}
+		#containerimg img {
+			display: block;
+			transition: transform .4s;   /* smoother zoom */
+            width: 90px;
+            height: 90px;
+		}
+		#containerimg:hover img {
+			transform: scale(0.9);
+			transform-origin: 50% 50%;
+		}
+		.high-num{
+			font-size: 50px;
+			font-weight: 900;
+            color: #fff;
+            text-shadow: 4px 4px 0px #000, 10px 12px 0px rgba(0,0,0,0.15);
+		}
+		@media (max-width: 991px) {
+            .text-inside-mini {
+                    font-size: 8px;
+                    color: #fff;
+                    position: absolute;
+                    z-index: 1;
+                    text-align: center;
+                    display: flex;
+                    top: 10px;
+                    left: 15px;
+                    line-height: 1;
+                }
+			.list-grid {
+				display: inline-block;
+			}
+			.col-2 {
+				float: left;
+				width: 33%;
+				min-height: 120px;
+			}
+			.list-grid .col-2 .items-center {
+				width: 80px;
+				height: 80px;
+			}
+			.img-rouned {
+				position: absolute;
+				z-index: 1;
+				border-radius: 50%;
+				top: 4px;
+				left: 4px;
+				width: 90px;
+				height: 90px;
+			}
+			.list-grid {
+				display: inline-block;
+			}
+			.col-2 {
+				float: left;
+				width: 33%;
+				min-height: 180px;
+			}
+			.img-rouned {
+				position: absolute;
+				z-index: 1;
+				border-radius: 50%;
+				top: 4px;
+				left: 4px;
+				width: 90px;
+				height: 90px;
+			}
+			.title-main-banner{
+				font-size: 30px;
+				line-height: 1.06;
+				letter-spacing: -0.02em;
+				margin-top: -130px;
+				color: #fff !important;
+			}
+			.high-num{
+				font-size: 35px;
+			}
+
+			.num_discount {
+				font-size: 35px; 
+			}
+			.txt-disccount {
+				font-size: 12px;
+			}
+			.discount-container{
+				top: 25px;
+				left: 10px;
+			}
+			.col-2{
+				min-height: 120px;
+			}
+      .circle-inside {
+        width: 60px;
+        height: 60px;
+      }
+      .text-inside {
+        width: 100px;
+        font-size: 21px;
+        color: #fff;
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        left: -20px;
+        font-weight: 900;
+      }
+      .btn-bed {
+        top:-50px;
+      }
+
+      .col-40 {
+          width: 100%;
+      }
+      .col-60 {
+        width: 100%;
+      }
+      .container-text {
+          width: 90%;
+          height: 180px;
+          color: #fff;
+          line-height: 1;
+          padding: 10px 20px;
+      }
+      #shine_animation {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .list-grid {
+      margin-left: 0;
+    }
+    #containerimg img {
+        width: 60px;
+        height: 60px;
+    }
+
+		}
+    </style>  
+ 
+
+
+    <body>
+<!-- Main Banner -->
+    <section>
+      <div class="container-banner">
+        <div class="col-40 bg-blue-strong container-text">
+           <p>Presentamos</p>
+           <p>Simply</p>
+           <p>Essential.</p>
+           <p>Básicos de uso diario para cocina, cama y baño a un precio impresionante.</p>
+        </div>
+        <div class="col-60">
+          <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/block.jpg?rand=1622907976" alt="simply Essential Bed Bath and Beyond" />
+          <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+            </g>
+        </svg>
+        </div>
+      </div>
+    </section>
+<!-- Categorias descuentos -->
+<section>
+    <div id="categorycard" class="content-inline-flex column">
+        <ul class="list-grid">
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/bano.html" target="_self">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center bg-azul-circle">
+                            <div class="circle-inside">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-09-04-35_444800408961_imageset?$imagePLP$&hei=700&wid=700" alt="" class="img-circle">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="title-circle">baño</p>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/cocina.html" target="_self">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center bg-rojo-circle">
+                            <div class="circle-inside">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-03-01-44_444800401351photo1_imageset?$imagePLP$&hei=300&wid=260" alt="" class="img-circle">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="title-circle">cocina</p>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/recamara.html" target="_self">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center bg-naranja-circle">
+                            <div class="circle-inside">
+                              <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_36144925469401m_imageset?$imagePLP$&hei=300&wid=260" alt="" class="img-circle">
+                            </div>
+                        </div>
+                    </div>
+                    <p class="title-circle">recámara</p>
+                </a>
+            </li>
+            <li class="col-2">
+              <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/muebles.html" target="_self">
+                  <div class="inner-anchor">
+                      <div id="containerimg" class="items-center bg-naranja-circle">
+                          <div class="circle-inside">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-12-07-11-46_444800406011jpg_imageset?$imagePLP$&hei=300&wid=260" alt="" class="img-circle">
+                          </div>
+                      </div>
+                  </div>
+                  <p class="title-circle">muebles</p>
+              </a>
+          </li>
+          <li class="col-2">
+            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/decoracion.html" target="_self">
+                <div class="inner-anchor">
+                    <div id="containerimg" class="items-center bg-naranja-circle">
+                        <div class="circle-inside">
+                          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2021-04-16-14-50_444800388072_imageset?$imagePLP$&hei=300&wid=260" alt="" class="img-circle">
+                        </div>
+                    </div>
+                </div>
+                <p class="title-circle">decoración</p>
+            </a>
+        </li>
+        <li class="col-2">
+          <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/organizacion-y-limpieza.html" target="_self">
+              <div class="inner-anchor">
+                  <div id="containerimg" class="items-center bg-naranja-circle">
+                      <div class="circle-inside">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-10-13-34_444800424428_imageset?$imagePLP$&hei=300&wid=260" alt="" class="img-circle">
+                      </div>
+                  </div>
+              </div>
+              <p class="title-circle">organización y limpieza</p>
+          </a>
+      </li>
+        </ul>
+    </div> 
+</section>
+
+
+    </body>
+</html>

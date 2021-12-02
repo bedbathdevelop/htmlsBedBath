@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+    .page-main>.page-title-wrapper .page-title{
+        display: none;
+    }
+    .container_card{
+        border: 3px solid #2c7bbe;
+        overflow: hidden;
+        border-radius: 5px;
+        width: 100%;
+        height: auto;
+    }
+    h4 {
+        color: #2c7bbe;
+    }
+    .col-80{
+        width: 70%;
+        height: auto;
+        overflow: hidden;
+        float: left;
+    }
+    .col-20 {
+        width: 25%;
+        height: auto;
+        overflow: hidden;
+        float: left;
+    }
+    .banner_inside{
+        width: 100%;
+        height: 50px;
+        overflow: hidden;
+        background-color: #1a4e8a;
+        position: relative;
+    }
+    .banner_inside > div {
+        text-align: left;
+        padding: 2px 10px;
+    }
+    .container_banner{
+        overflow: hidden;
+        width: 100%;
+        height: 180px;
+    }
+    .container_text_inside{
+        padding: 5px 20px;
+        font-size: 14px;
+    }
+    .trapecio {
+        width: 60%;
+        height: 0px;
+        border-right: 60px solid transparent;
+        border-left: 60px solid transparent;
+        border-top: 100px solid #428bca;
+    }
+    .txt-marron {
+        color:#fff;
+    }
+    .txt-blue {
+        color: #1a4e8a;
+    }
+    .title_banner{
+        position: absolute;
+        z-index: 1;
+        top: 0px;
+        left: 40px;
+        font-weight: 900;
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        font-size: 25px;
+    }
+    .mini-title{
+        font-size: 10px;
+        color:#fff;
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 30%;
+        font-weight: 900;
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        font-size: 14px;
+    }
+    .slider_img{
+        width: 300px;
+        height: auto;
+    }
+    #slideshow {
+      overflow: hidden;
+      height: 200px;
+      width: 200px;
+      margin: 0 auto;
+    }
+
+    .slide-wrapper {
+      width: 2912px;
+      -webkit-animation: slide 18s ease infinite;
+      overflow: hidden;
+    }
+
+    .slide {
+      float: left;
+      height: 510px;
+      width: 728px;
+    }
+    @-webkit-keyframes slide {
+      20% {
+        margin-left: 0px;
+      }
+      30% {
+        margin-left: -728px;
+      }
+      50% {
+        margin-left: -728px;
+      }
+      60% {
+        margin-left: -1456px;
+      }
+      70% {
+        margin-left: -1456px;
+      }
+      80% {
+        margin-left: -2184px;
+      }
+      90% {
+        margin-left: -2184px;
+      }
+    }
+       /*Responsive */
+     @media (max-width: 991px) {
+        .title_banner {
+            font-size: 20px;
+        }
+        .col-80{
+            width: 90%;
+        }
+        .col-20{
+            width: 100%;
+        }
+        .container_banner{
+            height: 480px;
+        }
+        .slider_img{
+            width: 400px;
+        }
+       }
+    </style>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+    </style>
+    <body>
+        <section>
+            <div class="container_card">
+                <div class="banner_inside">
+                    <div class="trapecio"></div>
+                    <p class="title_banner txt-marron">MESES SIN INTERESES</p>
+                    <p class="mini-title">solo en BB&<b>B</b></p>
+                </div>
+                <div class="container_banner">
+                    <div class="col-80 container_text_inside">
+                        <div>
+                            <ul>
+                                <li>Mínimo de compra <b>$1,500</b> - 3, 6 MSI</li>
+                                <li>Mínimo de compra <b>$2,500</b> - 3, 6, 9 y 12 MSI</li>
+                                <li>Las bancos participantes son <b>CITIBANAMEX, BBVA, AMERICAN EXPRESS, BANJERCITO, HSBC, BANBAJIO, INBURSA, BANORTE-IXE, SCOTIABANK, SANTANDER, BANREGIO, AFIRME, FAMSA, LIVERPOOL CRÉDITO (NO DEPARTAMENTAL), FALABELLA, INVEX, MIFEL, BANCO AZTECA </b>(Aplican restricciones - Consulta tu banco para detalles sobre tu tarjeta)</li>
+                                <li>vigencia del 9 al 13 de junio de 2021.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-20">
+                        <div class="slide-wrapper">
+                            <div class="slide">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancarias_2.jpeg?rand=1623783776" class="slider_img" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancarias_1.jpeg?rand=1623783776" class="slider_img" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancarias_2.jpeg?rand=1623783776" class="slider_img" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancarias_1.jpeg?rand=1623783776" class="slider_img" />
+                            </div>
+                            <div class="slide">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancarias_2.jpeg?rand=1623783776" class="slider_img" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>

@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>marcas</title>
+    <style>
+      .page-title-wrapper {
+        display: none !important;
+      }
+      a {
+        text-decoration: none;
+      }
+      #myUL {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+      #myUL li {
+        list-style: none;
+        list-style-type: none;
+        width: 200px;
+        height: 150px;
+        margin: 30px 10px;
+        border: 2px solid #147bd1;
+        padding: 12px;
+        position: relative;
+        border-radius: 5px;
+        -webkit-box-shadow: 2px 2px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 2px 2px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 2px 2px 5px 0px rgba(199, 199, 199, 1);
+      }
+
+      #myUL li p {
+        text-align: center;
+        color: #1a4e8a;
+        font-weight: 900;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif;
+        font-size: 15px;
+      }
+      #myUL li:hover {
+        border: 2px solid #147bd1;
+        background-color: #daeaf4;
+      }
+      #myUL li a p:hover {
+        color: #147bd1;
+      }
+      .img-brand {
+        width: 140px;
+        height: auto;
+      }
+      .wrap-brand {
+        width: 100%;
+        overflow: hidden;
+        height: auto;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-brand input {
+        border: 3px solid #1c5994 !important;
+        width: 300px !important;
+        padding: 20px !important;
+        text-align: center;
+        color: #117dcf !important;
+        border-radius: 5px !important;
+        font-size: 22px;
+        background: #daeaf4;
+      }
+      .wrap-brand p:nth-child(1) {
+        background: #f52b42;
+        width: 450px;
+        color: #fff;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif;
+        padding: 10px;
+        margin: 0 auto;
+        font-size: 30px;
+      }
+      .wrap-brand h2 {
+        color: #1a4e8a;
+        font-weight: 900;
+        font-size: 25px !important;
+        margin-top: -1px;
+      }
+      .wrap-busqueda {
+        display: block;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-busqueda p {
+        color: #1a4e8a;
+        font-size: 22px;
+      }
+      .marca-exclusiva {
+        background: #1c5994;
+        position: absolute;
+        top: -5px;
+        right: 0px;
+        width: 100px;
+        font-size: 9px !important;
+        text-align: left;
+        overflow: hidden;
+        padding: 4px;
+        color: #fff !important;
+      }
+      .tossing {
+        animation-name: tossing;
+        -webkit-animation-name: tossing;
+
+        animation-duration: 2.5s;
+        -webkit-animation-duration: 2.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes tossing {
+        0% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(4deg);
+        }
+        100% {
+          transform: rotate(-4deg);
+        }
+      }
+
+      @-webkit-keyframes tossing {
+        0% {
+          -webkit-transform: rotate(-4deg);
+        }
+        50% {
+          -webkit-transform: rotate(4deg);
+        }
+        100% {
+          -webkit-transform: rotate(-4deg);
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .wrap-brand p:nth-child(1) {
+          margin: 0 10px;
+          font-size: 20px;
+          width: auto;
+        }
+        #myUL li {
+          list-style: none;
+          list-style-type: none;
+          width: 100px;
+          height: auto;
+          margin: 5px;
+        }
+        #myUL {
+          margin-top: 20px;
+          margin-left: -39px;
+        }
+        #myUL li p {
+          font-size: 14px;
+          line-height: 1;
+        }
+        .marca-exclusiva {
+          top: 4px;
+          font-size: 8px !important;
+        }
+      }
+    </style>
+
+    <script>
+      function searchBrand() {
+        var input, filter, ul, li, a, i, txtValue;
+
+        input = document.getElementById("searchBrand");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("myUL");
+        li = ul.getElementsByTagName("li");
+
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          txtValue = a.textContent || a.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-brand">
+        <div class="wrap-busqueda">
+          <p>Localizador de marcas</p>
+          <h2>solo en BB&B</h2>
+          <p>Escribe el nombre de la marca a buscar</p>
+          <input
+            type="text"
+            id="searchBrand"
+            onkeyup="searchBrand()"
+            placeholder="marca"
+            title="buscar por marca"
+          />
+        </div>
+        <ul id="myUL">
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/ourtable.jpg?rand=1627495164"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle"></p>our table®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p>
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/Simply-essential.jpg?rand=1627495164"
+                alt="simply essential"
+                class="img-brand"
+              />
+              <p class="subtitle">simply essential®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/haven.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/haven.jpg?rand=1627501842"
+                alt="haven®"
+                class="img-brand"
+              />
+              <p class="subtitle">haven®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/nestwell.jpg?rand=1627501842"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">nestwell®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/wild-sage.jpg?rand=1627500746"
+                alt="wild sage"
+                class="img-brand"
+              />
+              <p class="subtitle">wild sage®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wamsutta.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/wamsutta.jpg?rand=1627495164"
+                alt="wamsutta®"
+                class="img-brand"
+              />
+              <p class="subtitle">wamsutta®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/bee-_-willow.jpg?rand=1627500746"
+                alt="bee willow"
+                class="img-brand"
+              />
+              <p class="subtitle">bee & willow®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/UGG.jpg?rand=1627495164"
+                alt="ugg"
+                class="img-brand"
+              />
+              <p class="subtitle">ugg®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/catalog/category/Screen_Shot_2021-08-10_at_8.46.00.png?rand=1628603725"
+                alt="squared away"
+                class="img-brand"
+              />
+              <p class="subtitle">squared away®</p>
+              <p class="marca-exclusiva tossing">marca exclusiva</p>
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/real-simple.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/real-simple.jpg?rand=1627656370"
+                alt="real simple"
+                class="img-brand"
+              />
+              <p class="subtitle">real simple®</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/salt.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/salt.jpg?rand=1627500746"
+                alt="salt"
+                class="img-brand"
+              />
+              <p class="subtitle">salt®</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/oxo-good-grips.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/oxxo.jpg?rand=1627500746"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">oxo good grips®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/jade-cook.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/jade-cook.jpg?rand=1627495164"
+                alt="jade cook"
+                class="img-brand"
+              />
+              <p class="subtitle">jade cook®</p></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/destination-summer.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/destination-summer-barrington.jpg?rand=1627502521"
+                alt="barrington®"
+                class="img-brand"
+              />
+              <p class="subtitle">destination summer®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/bialetti.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/bialetti.jpg?rand=1627500746"
+                alt="bialetti®"
+                class="img-brand"
+              />
+              <p class="subtitle">bialetti®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/cuisinart.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/cusinart.jpg?rand=1627500746"
+                alt="cuisinart®"
+                class="img-brand"
+              />
+              <p class="subtitle">cuisinart®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/oggi.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/oggi.jpg?rand=1627500746"
+                alt="oggi"
+                class="img-brand"
+              />
+              <p class="subtitle">oggi®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/conair.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/conair.jpg?rand=1627500746"
+                alt="conair"
+                class="img-brand"
+              />
+              <p class="subtitle">conair®</p></a
+            >
+          </li>
+
+          <!--<li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/dri-soft.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/dri-soft.jpg?rand=1627500746"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">dri-soft®</p></a
+            >
+          </li>-->
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/koblenz.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/koblenz.jpg?rand=1627495164"
+                alt="koblenz®"
+                class="img-brand"
+              />
+              <p class="subtitle">koblenz®</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/koblenz.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/koblenz.jpg?rand=1627495164"
+                alt="koblenz®"
+                class="img-brand"
+              />
+              <p class="subtitle">koblenz®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/oster.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/oster.jpg?rand=1627500746"
+                alt="oster®"
+                class="img-brand"
+              />
+              <p class="subtitle">oster®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/touchland.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/touchland.jpg?rand=1627500746"
+                alt="touchland®"
+                class="img-brand"
+              />
+              <p class="subtitle">touchland®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/xiaomi.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/xiaomi.jpg?rand=1627495164"
+                alt="xiaomi®"
+                class="img-brand"
+              />
+              <p class="subtitle">xiaomi®</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/dolce-gusto.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/Dolce-gusto.jpg?rand=1627500746"
+                alt="dolce gusto"
+                class="img-brand"
+              />
+              <p class="subtitle">dolce gusto®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/voltti.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/voltti.jpg?rand=1627500746"
+                alt="voltti®"
+                class="img-brand"
+              />
+              <p class="subtitle">voltti®</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/productos-medicos-infra.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/infra.jpg?rand=1627495164"
+                alt="infra®"
+                class="img-brand"
+              />
+              <p class="subtitle">productos médicos infra®</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/hobby-grill-productos.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/hobby-grill.jpg?rand=1627500746"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">hobby grill®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/orgtm.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/OEG.jpg?rand=1627500746"
+                alt="org"
+                class="img-brand"
+              />
+              <p class="subtitle">org®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/idesignr.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/Idesing.jpg?rand=1627500746"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">iDesign®</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/kitchenaidr.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/Kitchen-Aid.jpg?rand=1627501842"
+                alt="kitchen Aid"
+                class="img-brand"
+              />
+              <p class="subtitle">kitchen Aid®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/illy.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/illy.jpg?rand=1627495164"
+                alt="illy"
+                class="img-brand"
+              />
+              <p class="subtitle">illy®</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/simplehuman.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/simplehuman.jpg?rand=1627500746"
+                alt="simplehuman"
+                class="img-brand"
+              />
+              <p class="subtitle">simplehuman®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/ecostyle.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/ecostyle_.jpg?rand=1627501842"
+                alt="ecostyle®"
+                class="img-brand"
+              />
+              <p class="subtitle">ecostyle®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/chefman.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/chefman.jpg?rand=1627501842"
+                alt="chefman"
+                class="img-brand"
+              />
+              <p class="subtitle">chefman®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/riedel.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/riedel.jpg?rand=1627500746"
+                alt="riedel®"
+                class="img-brand"
+              />
+              <p class="subtitle">riedel®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/weber.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/weber.jpg?rand=1627495164"
+                alt="weber®"
+                class="img-brand"
+              />
+              <p class="subtitle">weber®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/ninja.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/NINJA.jpg?rand=1627500746"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">ninja®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/t-fal.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/t-fal.jpg?rand=1627495164"
+                alt="t-fal"
+                class="img-brand"
+              />
+              <p class="subtitle">t-fal</p></a
+            >
+          </li>
+
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/joseph-josephr.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/joseph-joseph.jpg?rand=1627500746"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">joseph joseph®</p></a
+            >
+          </li>
+
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/dyson.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/catalog/category/dyson.jpg?rand=1630517094"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">dyson®</p></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/victorinox.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/victorinox.jpg?rand=1633451120"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">victorinox®</p></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/master.png?rand=1634327483"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Nespresso.jpg?rand=1633451245"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">nespreso</p></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/masterchef.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/master.png?rand=1634327483"
+                alt="nestwell"
+                class="img-brand"
+              />
+              <p class="subtitle">Master Chef®</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/ecofiltro.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ecofiltro.jpg?rand=1634327483"
+                alt="Ecofiltro®"
+                class="img-brand"
+              />
+              <p class="subtitle">Ecofiltro®</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/lego.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/lego.jpg?rand=1634327483"
+                alt="Lego®"
+                class="img-brand"
+              />
+              <p class="subtitle">Lego®</p></a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/flavorstone.html"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/flavor.jpg?rand=1634327483"
+                alt="Flavor Stone"
+                class="img-brand"
+              />
+              <p class="subtitle">Flavor Stone®</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/casamia.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/catalog/category/CASAMIA-BBB.jpg"
+                alt="CasaMia®"
+                class="img-brand"
+              />
+              <p class="subtitle">CasaMia®</p></a
+            >
+          </li>
+          <li>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/nautica.html">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/catalog/category/lg_nautica-01.png"
+                alt="Nautica®"
+                class="img-brand"
+              />
+              <p class="subtitle">Nautica®</p></a
+            >
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banners grid</title>
+
+    <style>
+      .wrap-bannersBB {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 15% 15% 35% 35%;
+        grid-template-areas:
+          "banner1 banner1 banner2 banner2"
+          "banner3 banner3 banner3 banner4";
+      }
+
+      .item-bannerm:nth-child(1) {
+        grid-area: banner1;
+        text-align: center;
+        padding-top: 15px;
+      }
+      .item-bannerm:nth-child(1) img {
+        width: 350px;
+        text-align: center;
+      }
+      .item-bannerm:nth-child(2) img {
+        width: 900px;
+        padding-top: 30px;
+        justify-content: center;
+      }
+      .item-bannerm:nth-child(2) {
+        grid-area: banner2;
+        text-align: center;
+      }
+      .item-bannerm:nth-child(3) {
+        grid-area: banner3;
+        text-align: center;
+      }
+      .item-bannerm:nth-child(4) {
+        grid-area: banner4;
+        text-align: center;
+      }
+      .item-bannerm:nth-child(3) img {
+        width: 900px;
+        padding-top: 30px;
+        justify-content: center;
+      }
+      .item-bannerm:nth-child(4) img {
+        width: 350px;
+        padding-top: 10px;
+        justify-content: center;
+      }
+      .banner-move {
+        visibility: visible !important;
+        animation-fill-mode: forwards;
+        animation: bannerMove 8s ease infinite;
+        -webkit-animation: bannerMove 8s ease infinite;
+      }
+      .ban-img1 {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mobile-voltti-due-4-oct.jpg?rand=1633100884");
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+      }
+      .ban-img2 {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-cafe-1-oct.jpg?rand=1633100884");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 10px;
+        padding-top: 20%;
+        background-position: center;
+      }
+
+      .ban-img3 {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-nespresso-desk4-oct.jpg?rand=1633100884");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+      }
+
+      .ban-img4 {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mob-semana-vegetariana1-oct_1.jpg?rand=1633100884");
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+      }
+
+      @keyframes bannerMove {
+        0% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+        25% {
+          grid-template-areas:
+            "banner1 banner1 banner3 banner3"
+            "banner2 banner2 banner2 banner4";
+        }
+        50% {
+          grid-template-areas:
+            "banner4 banner4 banner3 banner3"
+            "banner2 banner2 banner2 banner1";
+        }
+        75% {
+          grid-template-areas:
+            "banner4 banner4 banner2 banner2"
+            "banner3 banner3 banner3 banner1";
+        }
+        100% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+      }
+      @-webkit-keyframes bannerMove {
+        0% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+        25% {
+          grid-template-areas:
+            "banner1 banner1 banner3 banner3"
+            "banner2 banner2 banner2 banner4";
+        }
+        50% {
+          grid-template-areas:
+            "banner4 banner4 banner3 banner3"
+            "banner2 banner2 banner2 banner1";
+        }
+        75% {
+          grid-template-areas:
+            "banner4 banner4 banner2 banner2"
+            "banner3 banner3 banner3 banner1";
+        }
+        100% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+      }
+      @media (max-width: 767px) {
+        .wrap-bannersBB {
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 50% 50%;
+          grid-template-areas:
+            "banner1 banner2"
+            "banner3 banner4";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="banners">
+      <div class="wrap-bannersBB banner-move">
+        <div class="item-bannerm">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/tienda/60-voltti.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mobile-voltti-due-4-oct.jpg?rand=1633100884"
+              alt=""
+            />
+          </a>
+        </div>
+        <div class="item-bannerm">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/tienda/dia-del-cafe.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-cafe-1-oct.jpg?rand=1633100884"
+              alt=""
+              class="desktop"
+            />
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mob-cafe-1-oct.jpg?rand=1633100884"
+              alt=""
+              class="mobile"
+            />
+          </a>
+        </div>
+        <div class="item-bannerm">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/nespresso.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-nespresso-desk4-oct.jpg?rand=1633100884"
+              alt=""
+              class="desktop"
+            />
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-nespresso-mob4-oct.jpg?rand=1633100884%22"
+              alt=""
+              class="mobile"
+            />
+          </a>
+        </div>
+        <div class="item-bannerm">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/tienda/semana-vegetariana.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mob-semana-vegetariana1-oct_1.jpg?rand=1633100884"
+              alt=""
+              class="desktop"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

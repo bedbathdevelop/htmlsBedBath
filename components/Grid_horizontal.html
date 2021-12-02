@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Horizontal</title>
+
+    <style>
+      .wrap-grid7 {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "bcocina bcocina itema"
+          "bcocina bcocina itemb"
+          "bcocina bcocina itemc"
+          "itemd iteme itemf";
+        grid-gap: 15px;
+      }
+      .item-grid7 {
+        overflow: hidden;
+      }
+      .item-grid7:nth-child(1) {
+        overflow: hidden;
+        grid-area: bcocina;
+        background-color: hotpink;
+        height: 420px;
+      }
+      .item-grid7:nth-child(2) {
+        overflow: hidden;
+        grid-area: itema;
+        background-color: hotpink;
+        height: 130px;
+      }
+      .item-grid7:nth-child(3) {
+        overflow: hidden;
+        grid-area: itemb;
+        background-color: hotpink;
+        height: 130px;
+      }
+      .item-grid7:nth-child(4) {
+        overflow: hidden;
+        grid-area: itemc;
+        background-color: hotpink;
+        height: 130px;
+      }
+      .item-grid7:nth-child(5) {
+        overflow: hidden;
+        grid-area: itemd;
+        background-color: hotpink;
+        height: 130px;
+      }
+      .item-grid7:nth-child(6) {
+        overflow: hidden;
+        grid-area: iteme;
+        background-color: hotpink;
+        height: 130px;
+      }
+      .item-grid7:nth-child(7) {
+        overflow: hidden;
+        grid-area: itemf;
+        background-color: hotpink;
+        height: 130px;
+      }
+      .item-grid7:nth-child(2) img {
+        width: 480px;
+        height: 130px;
+      }
+      @media (max-width: 767px) {
+        .wrap-grid7 {
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-areas:
+            "bcocina bcocina"
+            "bcocina bcocina"
+            "itema itemb"
+            "itemc itemd"
+            "iteme itemf";
+          grid-gap: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap-grid7">
+      <div class="item-grid7">
+        <img
+          src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2021-09-30-14-40-30-US_FW33_FY21_1011_1017_WEB_HP_C15_12_V1_2vsd?$content$&wid=945"
+        />
+      </div>
+      <div class="item-grid7">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/cocina-4-oct.jpg?rand=1633097574"
+        />
+      </div>
+      <div class="item-grid7">3</div>
+      <div class="item-grid7">4</div>
+      <div class="item-grid7">5</div>
+      <div class="item-grid7">6</div>
+      <div class="item-grid7">7</div>
+    </div>
+  </body>
+</html>

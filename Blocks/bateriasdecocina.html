@@ -1,0 +1,456 @@
+<style>
+  section {
+      margin-bottom: 16px;
+  }
+  img {
+      max-width: 100%;
+  }
+  h1,h2,h3,h4,h5 {
+      font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+  }
+  p,a {
+     font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+  }
+  a:hover{
+      text-decoration: none;
+  }
+  .title-font {
+      color:#002855;
+      width: 100%;
+      padding-top: 1rem;
+      padding-bottom: 0rem;
+      font: Termina Headline,sans-serif;
+      text-align: center;
+      font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+  }
+  .flex-container{
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+  }
+  .col-50 {
+      padding:10px;
+      width: 50%;
+  }
+  .col-30 {
+      width: 30%;
+  }
+  .square {
+      border: 5px solid #1a4e8a;
+      display: inline-flex;
+      width: 100%;
+      align-items: center;
+  }
+
+  .square h2 {
+      width:120%;
+      text-align: center;
+      font-weight: bolder;
+      color: #1a4e8a;
+      font-size: 25px;
+  }
+  .square span {
+      width: 30%;
+      padding: 10px;
+  }
+  .text-square {
+      padding-top: 1rem;
+      padding-bottom: .5rem;
+      width: 100%;
+      text-align: center;
+  }
+  .text-square p {
+      font-size: 18px;
+      color: #000;
+      text-align: center;
+      margin-bottom: 0;
+  }
+  .call-to {
+      font-weight: bold;
+      font-size: 18px;
+  }
+  .banner-top {
+      background: #ed2837;
+      display: flex;
+      flex-direction: column;
+      align-items: center;padding: 2em;
+  }
+  .white-bkg {
+      background: #fff;
+      color: #ed2837;
+      font-size: 20px;
+      padding: 0 10px;
+  }
+  .banner-top h4 {
+      color: #fff;
+      margin: 60px 0;
+      font-size: 60px;
+  }
+  .banner-top span {
+      background: #fff;
+      color:#1a4e8a;
+      padding: 0 10px;
+  }
+  .p-center {
+      font-size: 14px;
+      line-height: 14px;
+      padding: 2em;
+      text-align: center;
+  }
+  .photo-banner {
+      position: relative;
+      width:100%;
+      height: 495px;
+      background-size: 100%;
+      background-position: center;
+      background-repeat: no-repeat;
+  }
+  .col-40 {
+      background:rgba(255,255,255,0.6);
+      width: 40%;
+      padding: 1.5%;
+      position: absolute;
+      bottom: 2.5rem;
+  }
+  .col-40.right {
+      right: 1em;
+  }
+  .col-40.left {
+      left: 1em;
+  }
+  .col-40.bottom {
+      top: 90%;
+  }
+  .col-40.top {
+      top: 1em;
+  }
+  .col-40.center {
+      left: 50%;
+      margin-left: -25%;
+  }
+  .center-elements {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+  .button-blue {
+      box-shadow: none;
+      color: #fff;
+      border-color: #1377c9;
+      border-style: none;
+      background-color: #1377c9;
+      text-decoration: none;
+      width: auto;
+      padding: 10px;
+      border-radius: 5px;
+  }
+  .content-color {
+      padding: 0px;
+  }
+  .content-inline-flex {
+      display: inline-flex;
+      width: 100%;
+  }
+  .product-card {
+      background: #;
+      margin: 5px;
+  }
+  .card-col-50 {
+      width: 50%;
+  }
+  .col-25 {
+      width: 25%;
+  }
+  .img-mini{
+      width: 160px;
+      height: 160px;
+  }
+  .product-p-bold {
+      padding: 0 0 0 1em;
+      font-weight: bold;
+      font-size: 16px;
+      text-align: left;
+      min-width: 100%;
+      color: #002855;
+      padding-bottom: 0;
+  }
+  .card-description{
+      padding: 0 0 0 1em;
+      text-align: left;
+      min-width: 100%;
+      color: #000;
+  }
+  .list-grid {
+      padding: 1em 0;
+      list-style: none;
+      display: inline-flex;
+      min-width: 100%;
+      justify-content: center;
+  }
+  .list-grid .col-2 {
+      min-width: 16.6666%
+      text-align: center;
+  }
+  .list-grid .col-2 .items-center {
+      border: 2px solid #fff;
+      border-radius: 50%;
+  }
+  .list-grid .col-2:hover .items-center {
+      border: 2px solid #1377c9;
+  }
+  .slider {
+      font-size: 15px;
+      text-align: center;
+  }
+  body .slider {
+      max-width: 1200px;
+      margin: 0 auto 0px auto;
+  }
+  .slider-for {
+      font-size: 15px;
+      text-align: center;
+  }
+  .categoriestitle {
+      width: 100%;
+      text-align: center;
+      padding-top: 5px;
+      color: #000;
+      font-weight: 300;
+  }
+  .img-rouned{
+      border-radius: 50%;
+  }
+  .column{
+      flex-direction: column;
+  }
+  .center-text-elements{
+      color: #1A4E8A;
+      font-size: 34px;
+      line-height: 1em;
+      font-family: 'Montserrat-Bold',Arial, sans-serif;
+  }
+  .first-section {
+      margin-top: 0;
+      padding-top: 0px;
+  }
+  .banner-img.desktop {
+      display: flex;
+  }
+  .banner-img.mobile {
+      display: none;
+  }
+  @media (max-width: 991px) {
+      .cms-home .page-main {
+          padding: 0;
+      }
+      section {
+          margin-left: -10px;
+          margin-right: -10px;
+      }
+      .banner-img.desktop {
+          display: none;
+      }
+      .banner-img.mobile{
+          display: block!important;
+      }
+      .first-section {
+          padding-top: 0px;
+      }
+      .first-section .col-50 {
+          width: 90%;
+      }
+      .title-font {
+          font-size: 30px;
+      }
+      .content-inline-flex.column-m,
+      .flex-container.column-m {
+          flex-direction: column;
+      }
+      .m-block .content-inline-flex {
+          display: inline-block;
+      }
+      .m-block .content-inline-flex .product-card.col-25{
+          width: 47%;
+          float: left;
+      }
+      .product-p-bold {
+          padding: 8px;
+          font-size: 14px;
+      }
+      .card-description{
+          padding: 0 0 0 8px;
+      }
+      .banner-top {
+          height: 70vh;
+      }
+      .banner-top .white-bkg{
+          margin-top: 30%;
+      }
+      .photo-banner{
+          background-size: cover;
+      }
+      .col-40.right,
+      .col-40.left {
+          left: auto;
+          right: auto;
+          width: 80%;
+      }
+      .photo-banner {
+          display: flex;
+          justify-content: center;
+      }
+      .list-grid {
+          display: inline-block;
+      }
+      .col-2 {
+          float: left;
+          width: 33%;
+          min-height: 180px;
+      }
+      .scrolled {
+          display: flex!important;
+          flex-flow: row;
+          overflow-x: auto;
+          margin-left: 0.5%;
+      }
+      .scrolled.four {
+          width: 990px;
+          overflow: scroll;
+      }
+      .scrolled.three {
+          width: 730px;
+          overflow: scroll;
+      }
+      .conten-scroll {
+          overflow: auto;
+      }
+      .scrolled .product-card {
+          max-width: 240px;
+      }
+  }
+  @media (max-width: 767px) {
+      img {
+          width: 100%;
+      }
+      .square span{
+          width: 40%;
+          padding: 0;
+      }
+  }
+</style>
+<section class="first-section">
+  <div class="content-inline-flex">
+    <ul class="list-grid">
+      <li class="col-2">
+        <a
+          class="list-anchor"
+          href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/baterias-de-cocina/ollas.html"
+        >
+          <div class="inner-anchor">
+            <div class="items-center">
+              <img
+                class="img-rouned"
+                alt=""
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/ollas_y_sartenes.jpg?$content$&amp;wid=165&amp;hei=165 1x,
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/ollas_y_sartenes.jpg?$content$&amp;wid=330&amp;hei=330 2x
+                "
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/ollas_y_sartenes.jpg"
+              />
+            </div>
+            <p class="categoriestitle">ollas</p>
+          </div>
+        </a>
+      </li>
+      <li class="col-2">
+        <a
+          class="list-anchor"
+          href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/baterias-de-cocina/sartenes.html"
+        >
+          <div class="inner-anchor">
+            <div class="items-center">
+              <img
+                class="img-rouned img-mini"
+                alt=""
+                srcset="
+                  https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-08-14-11-16_gp_york_frypanset_8_10inch_imageset?$imagePLP$&hei=300&wid=260
+                "
+                src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-08-14-11-16_gp_york_frypanset_8_10inch_imageset?$imagePLP$&hei=160&wid=140"
+                class="StyledImageList-inline_77jqxN"
+              />
+            </div>
+            <p class="categoriestitle">sartenes</p>
+          </div>
+        </a>
+      </li>
+      <li class="col-2">
+        <a
+          class="list-anchor"
+          href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/baterias-de-cocina/sets-ollas-y-sartenes.html"
+        >
+          <div class="inner-anchor">
+            <div class="items-center">
+              <img
+                class="img-rouned"
+                alt=""
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/sets_de_cocina.jpg?$content$&amp;wid=165&amp;hei=165 1x,
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/sets_de_cocina.jpg?$content$&amp;wid=330&amp;hei=330 2x
+                "
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/sets_de_cocina.jpg"
+                class="StyledImageList-inline_77jqxN"
+              />
+            </div>
+            <p class="categoriestitle">sets</p>
+          </div>
+        </a>
+      </li>
+      <li class="col-2">
+        <a
+          class="list-anchor"
+          href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/baterias-de-cocina/especializados.html"
+        >
+          <div class="inner-anchor">
+            <div class="items-center">
+              <img
+                class="img-rouned"
+                alt=""
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/especializados_1_.jpg?$content$&amp;wid=165&amp;hei=165 1x,
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/especializados_1_.jpg?$content$&amp;wid=330&amp;hei=330 2x
+                "
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/especializados_1_.jpg"
+                class="StyledImageList-inline_77jqxN"
+              />
+            </div>
+            <p class="categoriestitle">especializados</p>
+          </div>
+        </a>
+      </li>
+      <li class="col-2">
+        <a
+          class="list-anchor"
+          href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/baterias-de-cocina/teteras.html"
+        >
+          <div class="inner-anchor">
+            <div class="items-center">
+              <img
+                class="img-rouned"
+                alt=""
+                srcset="
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/teteras.jpg?$content$&amp;wid=165&amp;hei=165 1x,
+                  https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/teteras.jpg?$content$&amp;wid=330&amp;hei=330 2x
+                "
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/teteras.jpg"
+                class="StyledImageList-inline_77jqxN"
+              />
+            </div>
+            <p class="categoriestitle">teteras</p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</section>

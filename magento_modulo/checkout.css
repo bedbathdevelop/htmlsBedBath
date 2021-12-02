@@ -1,0 +1,200 @@
+
+<style>
+/*checkout*/
+body a{
+    color: #147bd1;  
+}
+body .cart.main.actions button.action.update, body .cart.main.actions button.action.clear, body .cart.main.actions button#empty_cart_button {
+    border: 2px solid #147bd1;
+    color: #147bd1;
+}
+
+body .cart.table-wrapper #shopping-cart-table .cart.item .item-actions .action span {
+    color: #147bd1;
+}
+body .cart-summary #block-discount .title {
+    color: #147bd1;
+}
+body .cart-summary #block-giftcard .title {
+    color: #147bd1;
+}
+body .cart-top-shipping-section #block-shipping-top #co-shipping-method-forms .items.methods .item-options .label {
+    display: table;
+    color: #000;
+    font-weight: 900;
+    font-family: 'Effra-Regular';
+    -webkit-box-shadow: 3px 6px 5px -1px rgba(245,242,245,1);
+    -moz-box-shadow: 3px 6px 5px -1px rgba(245,242,245,1);
+    box-shadow: 3px 6px 5px -1px rgba(245,242,245,1);
+}
+body .opc-progress-bar .opc-progress-bar-item>span {
+    padding-top: 0;
+    padding-bottom: 50px;
+    font-size: 12px;
+    color: #1377c9;
+    font-weight: 900;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+}
+body .opc-progress-bar .opc-progress-bar-item._active>span:after {
+    background-color: #147bd1;
+    border-color: #b7b6b6;
+    color: #fff;
+}
+a.guest-link.guest-register{
+    color: #1377c9 !important;
+    font-weight: 900;
+    padding: 0 3px;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    text-decoration: underline;
+}
+a.guest-link.guest-login {
+    color: #1377c9;
+    font-weight: 900;
+    padding: 0 3px;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    text-decoration: underline;
+}
+#checkoutSteps .shipping-information-title{
+    color: #1a4e8a;
+    font-weight: 900;
+}
+
+#checkoutSteps .checkout-shipping-address .step-title, #checkoutSteps .shipping-information .ship-title{
+    color: #1a4e8a;
+    font-weight: 900;
+}
+.opc-block-summary>.title {
+    display: block;
+    font-weight: 900;
+    font-family: 'Effra-Bold';
+    color: #002854;
+}
+.guest-options h2 {
+    font-weight: 900;
+    font-family: 'Effra-Bold';
+}
+body .cart-top-shipping-section .top-shipping.title{
+    color: #002854;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    font-size: 20px !important;
+}
+body .opc-wrapper .shipping-address-item.selected-item:after {
+    background: #1a4e8a; 
+}
+body .opc-wrapper .shipping-address-item.selected-item {
+    border-color: #1a4e8a;
+}
+a.guest-link.guest-register{
+    color: #fff;
+}
+
+body .opc-wrapper{
+    border: 2px solid #cecbcb;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+.guest-options h2 strong {
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    font-size: 2.1rem !important;
+}
+.shipping-information .ship-title {
+    font-weight: 400;
+    font-size: 15px;
+    border-bottom: none !important;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    color: #002854;
+}
+body .shipping-secondary-person .sub {
+    color: #1a4e8a;
+    font-weight: 900;
+}
+.action-link{
+    color: #006bb4;
+}
+fieldset-estimate .field .label span{
+    font-weight: 900;
+    font-family: "Effra-Regular","Trebuchet MS",Arial,sans-serif;
+    color: #147bd1;
+    text-transform: uppercase;
+}
+body .cart-top-shipping-section #block-shipping-top #co-shipping-method-forms .items.methods .item-options .cont-shipping-method .shipping-code.first{
+    display: table;
+    color: #1a4e8a;
+    font-weight: 900;
+    font-family: 'Effra-Regular';
+}
+body .cart-top-shipping-section #block-shipping-top #co-shipping-method-forms .items .item-options a{
+    color: #147bd1;
+    font-weight: 900;
+    text-decoration: underline;
+}
+a.gotocart span hover {
+    text-decoration: underline;
+    color: #fff !important;
+}
+body .opc-progress-bar .opc-progress-bar-item._active>span:before {
+    border-color: #b7b6b6;
+    background: #b7b6b6;
+}
+body .opc-progress-bar .opc-progress-bar-item._active:before {
+    background: #b7b6b6;
+    border-color: #b7b6b6;
+}
+body .opc-wrapper span.title, body .opc-wrapper .shipping-information-title, body .opc-wrapper .step-title{
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    font-size: 18px !important;
+}
+body .opc-wrapper .shipping-information .ship-via .action-edit, body .opc-wrapper .shipping-information .ship-to .action-edit{
+    color:#147bd1;
+}
+.field._required label.label span {
+    font-weight: 900 !important;
+    font-family: "Effra-Regular","Trebuchet MS",Arial,sans-serif;
+    color: #000;
+    text-transform: uppercase;
+}
+body.checkout-index-index .opc-block-summary{
+    -webkit-box-shadow: 3px 6px 5px -1px rgb(245 242 245);
+    -moz-box-shadow: 3px 6px 5px -1px rgba(245,242,245,1);
+    box-shadow: 3px 6px 5px -1px rgb(245 242 245);
+}
+body .opc-wrapper span.title, body .opc-wrapper .shipping-information-title, body .opc-wrapper .step-title {
+    color: #1a4e8a;
+}
+.checkout-payment-method .payment-method-title .payment-icon{
+    display: inline-block;
+    margin-right: 2px;
+    vertical-align: middle;
+    width: 45px;
+}
+body .cart-summary #block-summary .label {
+    font-family: "Effra-Regular","Trebuchet MS",Arial,sans-serif;
+    font-weight: 600;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #147bd1;
+}
+body .cart-summary>.title{
+    color: #002855 !important;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    font-size: 18px !important;
+}
+body.checkout-index-index .page-header .header.content .gotocart:hover{
+    text-decoration: underline;
+    color: #fff !important;
+}
+body.checkout-index-index .opc-block-summary .title {
+    color: #002855 !important;
+    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    font-size: 18px !important;
+}
+
+
+body .opc-wrapper #shipping .form-shipping-address .fieldset>.field{ 
+    font-weight: 900 !important;
+    font-family: "Effra-Regular","Trebuchet MS",Arial,sans-serif;
+    color: #000;
+    text-transform: uppercase;
+}
+</style>

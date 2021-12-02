@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tecnología</title>
+  </head>
+
+  <style>
+    :root {
+      --azul-bbb-strong: #002854;
+      --azul-bbb-medio: #1a4e8a;
+      --azul-bbb-claro: #daeaf4;
+      --azul-bbb-button: #147bd1;
+      --aniversario-azul: #1a4c8a;
+      --bg-gray: #f2f2f2;
+      --txt-gray: #595959;
+      --input-gray: #d4d3d3;
+      --rojo: #f52b42;
+      --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+      --primary-font: Effra, Helvetica, Arial, sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    section {
+      margin-bottom: 16px;
+    }
+    .page-title-wrapper {
+		display: none !important;
+	}
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: var(--font-bedbath);
+      color: var(--azul-bbb-strong);
+    }
+    p,
+    a {
+      font-family: var(--primary-font);
+      font-weight: 200;
+      font-size: 1.8rem;
+      color: #000;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+
+
+      .wrap-banner {
+        overflow: hidden;
+        height: 450px;
+      }
+      .wrap-category {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+      .item-category {
+        width: 300px;
+        height: auto;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+      .item-category .item-insidecat {
+        overflow: hidden;
+        width: 190px;
+        height: 190px;
+        justify-content: center;
+        text-align: center;
+        border-radius: 50%;
+        border: 2px solid #fff;
+      }
+      .item-category .item-insidecat:hover {
+        border: 2px solid var(--azul-bbb-medio);
+      }
+      .zoom-img {
+        overflow: hidden;
+        position: relative;
+      }
+      .zoom-img img {
+        display: block;
+        transition: transform 1s; /* smoother zoom */
+      }
+      .zoom-img:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .circle--img {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .square--img {
+        width: 350px;
+        overflow: hidden;
+      }
+
+      .bg-tech {
+        background-color: #e9d1cb;
+      }
+      #story1 {
+        text-align: center;
+        padding: 20px 0;
+      }
+      .wrap-grid {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        padding: 20px 0;
+      }
+      .item-grid {
+        overflow: hidden;
+        width: 280px;
+        margin: 0 5px;
+      }
+      .wrap-products {
+        overflow: hidden;
+        height: auto;
+        text-align: center;
+        flex-wrap: wrap;
+        display: flex;
+        justify-content: center;
+      }
+      .item-product {
+        width: 200px;
+        overflow: hidden;
+        margin: 0 30px;
+        text-align: center;
+        justify-content: center;
+        transition: transform 1.5s;
+      }
+      .item-product:hover {
+        transform: translateY(-10%) scaleY(1.1);
+      }
+      .wrap-insideproduct p:nth-child(3) {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-size: 14px;
+      }
+      .wrap-insideproduct img {
+        width: 200px;
+      }
+      #productsWrap {
+        text-align: center;
+      }
+      .bg-bocina {
+        background: url("https://www.bedbathandbeyond.com.mx/media/pexels-milo-textures-2768398.jpg?rand=1633647363");
+        text-align: center;
+        position: relative;
+      }
+      .wrap-description {
+        background-color: var(--azul-bbb-claro);
+        padding: 10px;
+      }
+      .wrap-img {
+        overflow: hidden;
+        position: relative;
+      }
+      .wrap-tooltip {
+        background-color: var(--azul-bbb-claro);
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+        border-radius: 20px;
+        padding: 5px 40px;
+        position: absolute;
+        z-index: 1;
+      }
+      #tooltip1 {
+        top: 10%;
+        left: 20%;
+      }
+      #tooltip2 {
+        top: 50%;
+        left: 10%;
+      }
+      #tooltip3 {
+        top: 10%;
+        right: 20%;
+      }
+      #tooltip4 {
+        top: 50%;
+        right: 10%;
+      }
+
+      .floating {
+        animation-name: floating;
+        -webkit-animation-name: floating;
+
+        animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0%);
+        }
+        50% {
+          transform: translateY(8%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      @-webkit-keyframes floating {
+        0% {
+          -webkit-transform: translateY(0%);
+        }
+        50% {
+          -webkit-transform: translateY(8%);
+        }
+        100% {
+          -webkit-transform: translateY(0%);
+        }
+      }
+      .wrap-descriptionb {
+        background-color: rgba(218, 234, 244, 0.8);
+        padding: 20px;
+        margin-top: -10px;
+        height: 100px;
+      }
+      .btn-buy {
+        overflow: hidden;
+        position: absolute;
+        bottom: 10%;
+        left: 43%;
+        right: 43%;
+        background-color: var(--aniversario-azul);
+        color: #fff;
+        font-family: var(--primary-font);
+        font-weight: 400;
+        font-size: 1.8rem;
+        padding: 10px 0;
+        width: 200px;
+        border-radius: 10px;
+      }
+      .btn-buy:hover {
+        background-color: var(--azul-bbb-claro);
+        color: var(--azul-bbb-strong);
+      }
+      .banner--tech {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/tech.jpg?rand=1633976090");
+        background-size: cover;
+        position: relative;
+      }
+      .title-tech {
+        text-align: center;
+        position: absolute;
+        bottom: 32%;
+        left: 20%;
+        font-family: var(--font-bedbath);
+        font-size: 5rem;
+        width: 600px;
+        padding: 40px 10px;
+        background-color: rgba(218, 234, 244, 0.7);
+      }
+      .txt-tech{
+          margin-top: 10px;
+      }
+      @media (max-width: 991px) {
+        .item-category {
+          width: 150px;
+          margin: 0 10px;
+        }
+        .item-category .item-insidecat {
+          width: 150px;
+          height: 150px;
+        }
+        .item-grid {
+          width: 180px;
+        }
+        .square--img {
+          width: 170px;
+        }
+        .item-product {
+          width: 150px;
+        }
+        .wrap-insideproduct img {
+          width: 150px;
+        }
+        .btn-buy {
+          left: 23%;
+          right: 23%;
+        }
+        #tooltip1 {
+          top: 2%;
+          left: 10%;
+        }
+        #tooltip2 {
+          top: 13%;
+          left: 8%;
+        }
+        #tooltip3 {
+          top: 14%;
+          right: 4%;
+        }
+        #tooltip4 {
+          top: 2%;
+          right: 10%;
+        }
+        .wrap-descriptionb {
+          height: 160px;
+        }
+        .square--img {
+          width: 100%;
+        }
+        .circle--img{
+            width: 150px;
+            height: 150px;
+        }
+        .wrap-tooltip{
+            font-size: 12px;
+        }
+        .title-tech{
+            width: 100%;
+            left: 0;
+        }
+        .wrap-descriptionb{
+            padding: 20px 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- banner -->
+    <section>
+      <div class="wrap-banner banner--tech">
+        <h1 class="title-tech">tecnología</h1>
+      </div>
+    </section>
+
+    <!-- categorías -->
+    <section>
+      <div class="wrap-category">
+        <!-- item -->
+        <div class="item-category">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente.html"
+            target="_self"
+          >
+            <div class="item-insidecat">
+              <div class="zoom-img">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69688983_6.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="technology cat"
+                  class="circle--img"
+                />
+              </div>
+            </div>
+            <p>hogar inteligente</p>
+          </a>
+        </div>
+        <!-- item -->
+        <div class="item-category">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/iluminacion-y-energia.html"
+            target="_self"
+          >
+            <div class="item-insidecat">
+              <div class="zoom-img">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/iluminacion.jpg?rand=1633642440"
+                  alt="technology cat"
+                  class="circle--img"
+                />
+              </div>
+            </div>
+            <p>iluminación y energía</p>
+          </a>
+        </div>
+        <!-- item -->
+        <div class="item-category">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores.html"
+            target="_self"
+          >
+            <div class="item-insidecat">
+              <div class="zoom-img">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69686595_8.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="technology cat"
+                  class="circle--img"
+                />
+              </div>
+            </div>
+            <p>calefacción y ventilación</p>
+          </a>
+        </div>
+        <!-- item -->
+        <div class="item-category">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/entretenimiento.html"
+            target="_self"
+          >
+            <div class="item-insidecat">
+              <div class="zoom-img">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2021-02-01-18-27_843479147056_6?$imagePLP$&hei=700&wid=700"
+                  alt="technology cat"
+                  class="circle--img"
+                />
+              </div>
+            </div>
+            <p>entretenimiento</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story 1 -->
+    <section id="story1" class="bg-tech">
+      <h2>Cómo convertir tu hogar en una casa inteligente</h2>
+      <div class="wrap-grid">
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/foco-led-de-plastico-rgb-sterenr-controlado-por-wi-fi.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/foco.jpg?rand=1633645240"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="txt-tech">
+            Decora con luz multicolor tus espacios controlando todo con tu
+            smartphone desde donde estés
+          </p>
+        </div>
+
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente/alarmas-y-camaras-de-seguridad.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/camera.jpg?rand=1633644952"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="txt-tech">Cámaras de seguridad y vigilancia en el hogar</p>
+        </div>
+
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/localizador-de-llaves-magnetico-de-plastico-sharper-imager-color-negro.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/keys.jpg?rand=1633645542"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="txt-tech">
+            Localizador Sharper Image, no volverás a extraviar las llaves de tu
+            automóvil
+          </p>
+        </div>
+
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente/alarmas-y-camaras-de-seguridad.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/D_NQ_NP_718435-MLM28506832037_102018-O.jpeg?rand=1633644355"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="txt-tech">Asegura tu casa cada vez que estas fuera</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Products-->
+    <section id="productsWrap">
+      <h2>top accesorios para electrónicos</h2>
+      <div class="wrap-products">
+        <!-- Item product -->
+        <div class="item-product">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/cojin-de-poliester-para-tablet-uggr-classic.html"
+            target="_self"
+          >
+            <div class="wrap-insideproduct">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-05-19-13-56_UGG_BTC20_Pouf_Snow_Silo?$imagePLP$&hei=300&wid=260"
+                alt="BedBathandBeyond"
+              />
+              <p>Cojín de poliéster para tablet UGG® Classic</p>
+              <p>SKU# 69517812</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item product -->
+        <div class="item-product">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/escritorio-portatil-de-poliester-uggr-coco-color-azul-marino.html"
+            target="_self"
+          >
+            <div class="wrap-insideproduct">
+              <img
+                src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-11-15-19_coco_lap_desk_front_sil_imageset?$imagePLP$&hei=700&wid=700"
+                alt="BedBathandBeyond"
+              />
+              <p>
+                Escritorio portátil de poliéster UGG® Coco color azul marino
+              </p>
+              <p>SKU# 69687834</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item product -->
+        <div class="item-product">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/escritorio-portatil-de-lujo-lapgearr-con-inclinacion-en-marmol.html"
+            target="_self"
+          >
+            <div class="wrap-insideproduct">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/159163464279091p__1?$imagePLP$&hei=700&wid=700"
+                alt="BedBathandBeyond"
+              />
+              <p>
+                Escritorio portátil de lujo LapGear® con inclinación en mármol
+              </p>
+              <p>SKU# 64279091</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- Item product -->
+        <div class="item-product">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/cojin-para-tablet-de-espuma-as-seen-on-tv-pillow-pad-color-gris.html"
+            target="_self"
+          >
+            <div class="wrap-insideproduct">
+              <img
+                src="https://s7d2.scene7.com/is/image/BedBathandBeyond/lf_283737767753857p?$imagePLP$&hei=700&wid=700"
+                alt="BedBathandBeyond"
+              />
+              <p>
+                Cojín para tablet de espuma As Seen on TV Pillow Pad color gris
+              </p>
+              <p>SKU# 67753857</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- banner two -->
+    <section>
+      <div class="wrap-banne bg-bocina">
+        <a
+          href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/entretenimiento/bocinas-y-audifonos.html"
+          target="_self"
+        >
+          <div class="wrap-img">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/bodd-removebg-preview.png?rand=1633647150"
+              alt="BedBathandBeyond"
+            />
+            <p id="tooltip1" class="wrap-tooltip floating">música</p>
+            <p id="tooltip2" class="wrap-tooltip floating">juegos</p>
+            <p id="tooltip3" class="wrap-tooltip floating">peliculas</p>
+            <p id="tooltip4" class="wrap-tooltip floating">mucho más...</p>
+            <div class="btn-buy">ver más</div>
+          </div>
+          <div class="wrap-description">
+            <h2>Bocinas bluetooth</h2>
+            <p>Disfruta de una calidad de sonidos increíbles</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Story 2 -->
+    <section id="story1">
+      <h2>Categorías destacadas</h2>
+      <div class="wrap-grid">
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores/purificadores-de-aire.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/purificador_c.jpg?rand=1633715381"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="wrap-descriptionb">
+            Asegúrate de que el aire que respiras dentro de tu hogar esté libre
+            de gérmenes y aromas desagradables
+          </p>
+        </div>
+
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores/purificadores-de-aire.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/purificador_2.jpg?rand=1633715381"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="wrap-descriptionb">
+            Logra un ambiente más cómodo y saludable.
+          </p>
+        </div>
+
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores/calefactores.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calefactor.jpg?rand=1633718270"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="wrap-descriptionb">
+            ¿Te imaginas poder sentir el confort del calor solar en el momento
+            que quieras?
+          </p>
+        </div>
+
+        <!-- item-grid -->
+        <div class="item-grid">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores/calefactores.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/calefactor_2.jpg?rand=1633718968"
+                alt="Bed Bath and Beyond"
+                class="square--img"
+              />
+            </div>
+          </a>
+          <p class="wrap-descriptionb">
+            Cualquier habitación en tu casa, tu piso o hasta tu espacio personal
+            estarán a una agradable temperatura
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

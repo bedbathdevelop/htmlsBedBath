@@ -1,0 +1,1668 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aniversario</title>
+
+    <style>
+      :root {
+        --wild-sage-color: #706fae;
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f42634;
+        --aniversario-azul: #1a4c8a;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+      }
+      #dysonWrap{
+        text-align: center;
+        margin-top: 20px;
+      }
+      #dysonWrap h2{
+        color: var(--aniversario-azul);
+        font-family: var(--font-bedbath);
+      }
+      #dysonWrap h2 span.high-text{
+        color: var(--rojo);
+      }
+      #dysonWrap .leyenda{
+        font-size: 14px;
+      }
+      a {
+        text-decoration: none;
+      }
+      .desktop{
+        display: block;
+      }
+      .page-title-wrapper {
+        display: none !important;
+      }
+      .mobile {
+        display: none;
+      }
+      .wrap-banner {
+        height: 500px;
+        overflow: hidden;
+        background-color: var(--aniversario-azul);
+        background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/banner-desk-aniversario-19-ago.jpg?rand=1629405355');
+        background-size: contain;
+        width: 100%;
+        background-repeat: no-repeat;
+      }
+      .wrap-disccount {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        margin-top: -50px;
+      }
+      .container-disccount {
+        background-color: var(--rojo);
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        color: #fff;
+        font-family: var(--font-bedbath);
+        line-height: 1;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+      .container-disccount p {
+        line-height: 1;
+      }
+      .container-disccount p:nth-child(1) {
+        position: absolute;
+        top: 20px;
+        left: auto;
+        right: auto;
+      }
+      .container-disccount p:nth-child(2) {
+        position: absolute;
+        top: 50px;
+        left: auto;
+        right: auto;
+        font-size: 2.5em;
+      }
+
+      .container-disccount p:nth-child(3) {
+        position: absolute;
+        top: 90px;
+        left: auto;
+        right: auto;
+        font-size: 10px;
+      }
+      .item-disccount {
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        -webkit-box-shadow: 1px 3px 5px 0px rgba(120, 120, 120, 1);
+        -moz-box-shadow: 1px 3px 5px 0px rgba(120, 120, 120, 1);
+        box-shadow: 1px 3px 5px 0px rgba(120, 120, 120, 1);
+        transition: 0.7s;
+        border-radius: 50%;
+        margin: 5px;
+      }
+      .item-disccount:hover {
+        transform: scale(0.8);
+      }
+      section {
+        margin-bottom: 30px;
+      }
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
+      .wrap-categorias {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 49% 49%;
+      }
+      .item-cat-a {
+        overflow: hidden;
+        margin: 5px;
+        background-color: var(--aniversario-azul);
+        height: 200px;
+        text-align: center;
+        justify-content: center;
+        color: #fff;
+        font-family: var(--font-bedbath);
+      }
+      .item-cat-a h2 {
+        color: #fff;
+      }
+      .item-cat {
+        overflow: hidden;
+        margin: 5px;
+        background-color: var(--aniversario-azul);
+        height: 140px;
+        text-align: center;
+        justify-content: center;
+        font-family: var(--font-bedbath);
+      }
+      .item-cat h2 {
+        color: #fff;
+      }
+
+      .grid {
+        position: relative;
+        clear: both;
+        margin: 0 auto;
+        list-style: none;
+        text-align: center;
+        overflow: hidden;
+        height: 270px;
+      }
+
+      /* Common style */
+      .grid figure {
+        position: relative;
+        float: left;
+        overflow: hidden;
+        max-height: auto;
+        width: 100%;
+        height: auto;
+        background: var(--aniversario-azul);
+        text-align: center;
+        cursor: pointer;
+        margin: -5px 0px;
+      }
+
+      .grid figure img {
+        position: relative;
+        display: block;
+        min-height: 100%;
+        max-width: 100%;
+        opacity: 0.8;
+      }
+
+      .grid figure figcaption {
+        padding: 2em;
+        color: #fff;
+        text-transform: uppercase;
+        font-size: 1.25em;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      .grid figure figcaption::before,
+      .grid figure figcaption::after {
+        pointer-events: none;
+      }
+
+      .grid figure figcaption,
+      .grid figure figcaption > a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 90%;
+        height: auto;
+      }
+
+      /* Anchor will cover the whole item by default */
+      /* For some effects it will show as a button */
+      .grid figure figcaption > a {
+        z-index: 1000;
+        text-indent: 200%;
+        white-space: nowrap;
+        font-size: 0;
+        opacity: 0;
+      }
+
+      .grid figure h2 {
+        word-spacing: -0.15em;
+        font-weight: 300;
+      }
+
+      .grid figure h2 span {
+        font-weight: 800;
+      }
+
+      .grid figure h2,
+      .grid figure p {
+        margin: 0;
+      }
+
+      .grid figure p {
+        letter-spacing: 1px;
+        font-size: 68.5%;
+      }
+      /*-----------------*/
+      /***** Moses *****/
+      /*-----------------*/
+
+      figure.effect-moses img {
+        opacity: 0.9;
+        -webkit-transition: opacity 0.85s;
+        transition: opacity 0.35s;
+      }
+
+      figure.effect-moses h2,
+      figure.effect-moses p {
+        padding: 5px;
+        width: 20%;
+        height: 50%;
+        border: 3px solid #fff;
+        font-family: var(--font-bedbath);
+        text-transform: lowercase;
+        line-height: 1;
+      }
+
+      figure.effect-moses h2 {
+        padding: 80px 5px;
+        width: 40%;
+        height: 40px;
+        text-align: left;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(10px, 10px, 0);
+        transform: translate3d(10px, 10px, 0);
+        text-align: center;
+        margin-top: -15px;
+        margin-left: -15px;
+        display: none;
+      }
+
+      figure.effect-moses p {
+        float: right;
+        padding: 20px;
+        text-align: center;
+        opacity: 0;
+        -webkit-transition: opacity 0.95s, -webkit-transform 0.35s;
+        transition: opacity 0.95s, transform 0.35s;
+        -webkit-transform: translate3d(-80%, -80%, 0);
+        transform: translate3d(-80%, -80%, 0);
+        font-family: var(--font-bedbath);
+        background-color: #f42634;
+      }
+      figure.effect-moses p:hover {
+        background-color: var(--azul-bbb-button);
+      }
+
+      figure.effect-moses:hover h2 {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      figure.effect-moses:hover p {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      figure.effect-moses:hover img {
+        opacity: 0.6;
+      }
+
+      /*---------------*/
+      /***** Ming *****/
+      /*---------------*/
+
+      figure.effect-ming {
+        background: var(--aniversario-azul);
+      }
+
+      figure.effect-ming img {
+        opacity: 0.9; /*0.9*/
+        -webkit-transition: opacity 0.35s;
+        transition: opacity 0.35s;
+      }
+
+      figure.effect-ming figcaption::before {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        bottom: 30px;
+        left: 30px;
+        border: 2px solid #fff;
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.2);
+        content: "";
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: scale3d(1.4, 1.4, 1);
+        transform: scale3d(1.4, 1.4, 1);
+      }
+
+      figure.effect-ming h2 {
+        margin: 0 auto;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        color: #fff !important;
+        font-size: 20px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 200px;
+        padding: 5px 10px;
+        text-transform: lowercase;
+        background: var(--aniversario-azul);
+
+      }
+      .thickOutlined {
+          color: white;
+        }
+
+      figure.effect-ming p {
+        opacity: 0;
+        -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+        transition: opacity 0.35s, transform 0.35s;
+        -webkit-transform: scale(1.5);
+        transform: scale(1.5);
+        background-color: var(--rojo);
+        width: 150px;
+        font-size: 14px;
+        margin: 10px auto;
+      }
+
+      figure.effect-ming:hover h2 {
+        -webkit-transform: scale(0.9);
+        transform: scale(0.9);
+      }
+
+      figure.effect-ming:hover figcaption::before,
+      figure.effect-ming:hover p {
+        opacity: 1;
+        -webkit-transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1);
+      }
+
+      figure.effect-ming:hover figcaption {
+        background-color: rgba(58, 52, 42, 0);
+        height: 80px;
+      }
+
+      figure.effect-ming:hover img {
+        opacity: 0.4;
+      }
+
+      .leniotext {
+        fill: white;
+        font-family: "Roboto Mono", monospace;
+        font-size: 41px;
+      }
+      .cursor-type {
+        fill: #052733;
+        -webkit-animation: type 0.5s step-end infinite alternate,
+          moveRight 2s steps(4) alternate forwards;
+        animation: type 0.5s step-end infinite alternate,
+          moveRight 2s steps(4) alternate forwards;
+      }
+      @keyframes type {
+        50% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes borderanimation {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      .container {
+        margin: 0 auto;
+        max-width: 500px;
+        position: relative;
+        width: 100%;
+      }
+
+      .confeti #amarillo {
+        -webkit-animation: move 5s linear infinite;
+        animation: move 4s linear infinite;
+      }
+      .confeti #azul {
+        -webkit-animation: move -1s 5s linear infinite;
+        animation: move -1s 5s linear infinite;
+      }
+      .confeti #verde {
+        -webkit-animation: move -5s 5s linear infinite;
+        animation: move -2s 5s linear infinite;
+      }
+      .confeti #rojo {
+        -webkit-animation: move -3s 5s linear infinite;
+        animation: move -3s 5s linear infinite;
+      }
+      .confeti #amarillo2 {
+        -webkit-animation: move -4s 5s linear infinite;
+        animation: move -4s 5s linear infinite;
+      }
+      .confeti #azul2 {
+        -webkit-animation: move -2.5s 4s linear infinite;
+        animation: move -2.5s 4s linear infinite;
+      }
+      .confeti #verde2 {
+        -webkit-animation: move -1.5s 4.5s linear infinite;
+        animation: move -1.5s 4.5s linear infinite;
+      }
+      .confeti #rojo2 {
+        -webkit-animation: move 5s linear infinite;
+        animation: move 5s linear infinite;
+      }
+      .confeti #verde3 {
+        -webkit-animation: move -5s 2s linear infinite;
+        animation: move -5s s linear infinite;
+      }
+      .confeti #rojo3 {
+        -webkit-animation: move -3s 2s linear infinite;
+        animation: move -3s 2s linear infinite;
+      }
+      .confi {
+        transform: translate(-200px, -200px);
+      }
+      .confi2 {
+        transform: translate(-500px, -100px);
+      }
+      .confi3 {
+        transform: translate(150px, -300px);
+      }
+      @keyframes move {
+        to {
+          transform: translateY(1000px);
+        }
+      }
+
+      .play-music {
+        border: 1px solid #46cdcf;
+        border-radius: 4px;
+        color: #fffa96;
+        cursor: pointer;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 18px;
+        padding: 5px;
+        position: absolute;
+        bottom: 35px;
+        left: 25px;
+        min-width: 85px;
+        text-align: center;
+      }
+      .play-music:hover {
+        color: #46cdcf;
+      }
+      @keyframes shake {
+        from {
+          transform: translateX(-10px);
+        }
+        to {
+          transform: translateX(10px);
+        }
+      }
+
+      @keyframes shakeup {
+        from {
+          transform: translateY(-10px);
+        }
+        to {
+          transform: translateY(10px);
+        }
+      }
+
+      .st0,
+      .st1,
+      .st2,
+      .st3 {
+        fill: none;
+        stroke: #fa4659;
+        stroke-width: 10;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-miterlimit: 10;
+      }
+      .st1,
+      .st2,
+      .st3 {
+        stroke: #0081c6;
+      }
+      .st2,
+      .st3 {
+        stroke: var(--azul-bbb-strong);
+      }
+      .st3 {
+        stroke: #fff;
+      }
+
+      /*Slider*/
+      .clip-star {
+              clip-path: polygon(
+                50% 0%,
+                61% 35%,
+                98% 35%,
+                68% 57%,
+                79% 91%,
+                50% 70%,
+                21% 91%,
+                32% 57%,
+                2% 35%,
+                39% 35%
+              );
+              display: inline-block;
+              height: 12px;
+              width: 12px;
+              float: left;
+            }
+            .disable {
+              background: rgb(237, 237, 237);
+            }
+      
+            .star-1 {
+              transform-origin: 102.14px 87.09px;
+              animation-duration: 3.5s;
+            }
+      
+            .star-2 {
+              transform-origin: 219.47px 205.7px;
+              animation-duration: 4s;
+            }
+      
+            .star-3 {
+              transform-origin: 404.11px 35.05px;
+              animation-duration: 2.5s;
+            }
+      
+            .star-4 {
+              transform-origin: 54.43px 393.81px;
+              animation-duration: 2.5s;
+            }
+      
+            .star-5 {
+              transform-origin: 374.42px 271.34px;
+              animation-duration: 3s;
+            }
+            .enablestar {
+              background: rgb(255, 224, 0);
+            }
+      
+      
+              .container_slide_cards {
+                    width: 100%;
+                    max-width: calc(200px * 5 + 30px * 5 + 30px);
+                    margin: 20px auto;
+                    overflow: hidden;
+                }
+              .slider_mas_comprados {
+                  width: 100%; /* card * 4 + margin * 4 */
+                  position: relative;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  display: flex;
+                  justify-content: flex-start;
+                  overflow: hidden;
+                  height: 300px;
+              }
+              .slider_top {
+                  width: 100%; /* card * 4 + margin * 4 */
+                  position: relative;
+                  padding-left: 15px;
+                  padding-right: 15px;
+                  display: flex;
+                  justify-content: flex-start;
+                  overflow: hidden;
+                  height: 300px;
+              }
+                        
+              .slides_mas_comprados { 
+                  display: flex;
+                  flex-shrink: 0;
+                  transition: all 0.5s;
+                  overflow-X: hidden;
+              }
+              .slides_top { 
+                  display: flex;
+                  flex-shrink: 0;
+                  transition: all 0.5s;
+                  overflow-X: hidden;
+              }
+              .slides_mas_comprados .slide_mas_comprados {
+                  flex-basis: 1;
+                  flex-shrink: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 160px;
+                  height: 260px;
+                  margin: 0 5px;
+                  text-align: left;
+                  border: 1px solid #daeaf4;
+                  background-color: #fff;
+                  border-radius: 5px;
+                  padding: 15px;
+                  box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2), -0.2rem -0.2rem 0.2rem var(--white);
+              }
+              .slides_top .slide_top {
+                  flex-basis: 1;
+                  flex-shrink: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 160px;
+                  height: 260px;
+                  margin: 0 5px;
+                  text-align: left;
+                  border: 1px solid #daeaf4;
+                  background-color: #fff;
+                  border-radius: 5px;
+                  padding: 15px;
+                  box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2), -0.2rem -0.2rem 0.2rem var(--white);
+                  overflow: hidden;
+              }
+              .slides_top .slide_top:hover {
+                  border: 1px solid #117dcf;
+              }
+              .slides_mas_comprados .slide_mas_comprados:hover {
+                  border: 1px solid #117dcf;
+              }
+      
+              .slider_top .btn-prev,
+              .slider_top .btn-next{
+                  position: absolute;
+                  width: 40px;
+                  height: 40px;
+                  background: #117dcf;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  border-radius: 50%;
+                  cursor: pointer;
+                  z-index: 2;
+                  border: 1px solid #117dcf;
+              }
+                
+              .slider_mas_comprados .btn-prev_mc,
+              .slider_mas_comprados .btn-next_mc{
+                  position: absolute;
+                  width: 40px;
+                  height: 40px;
+                  background: #117dcf;
+                  top: 50%;
+                  transform: translateY(-50%);
+                  border-radius: 50%;
+                  cursor: pointer;
+                  z-index: 2;
+                  border: 1px solid #117dcf;
+              }
+              .slider_mas_comprados .btn-prev_mc{
+                  left: 0px;
+              }
+              .slider_top .btn-prev{
+                  left: 0px;
+              }
+              .slider_top .btn-next{
+                  right: 40px;
+              }
+              .slider_mas_comprados .btn-next_mc{
+                  right: 40px;
+              }
+              .slider_top .btn-prev:after,
+              .slider_top .btn-next:after{
+                  content: "";
+                  position: absolute;
+                  width: 10px;
+                  height: 10px;
+                  border-top: 1px solid #fff;
+                  border-right: 1px solid #fff;
+              }
+              .slider_mas_comprados .btn-prev_mc:after,
+              .slider_mas_comprados .btn-next_mc:after{
+                  content: "";
+                  position: absolute;
+                  width: 10px;
+                  height: 10px;
+                  border-top: 1px solid #fff;
+                  border-right: 1px solid #fff;
+              }
+              .slider_top .btn-prev:after{
+                  left: 50%;
+                  top: 50%;
+                  transform-origin: top right;
+                  transform: rotate(-135deg) translate(100%, -100%);
+              }
+              .slider_mas_comprados .btn-prev_mc:after{
+                  left: 50%;
+                  top: 50%;
+                  transform-origin: top right;
+                  transform: rotate(-135deg) translate(100%, -100%);
+              }
+              .slider_top .btn-next:after{
+                  left: 50%;
+                  top: 50%;
+                  transform-origin: top right;
+                  transform: rotate(45deg) translate(-25%, 50%);
+              }
+              .slider_mas_comprados .btn-next_mc:after{
+                  left: 50%;
+                  top: 50%;
+                  transform-origin: top right;
+                  transform: rotate(45deg) translate(-25%, 50%);
+              } 
+      
+            /*Rollover Image*/
+              .main-container {
+                width: 160px;
+                height: 160px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding-top: 25px;
+                background-color: #fff;
+              }
+              .main-container img {
+                  width: 160px;
+              }
+      
+              .main-container .hidden-child {
+                  visibility: hidden;
+                  position: absolute;
+                  top: 0;
+                  -webkit-transition: opacity 1s ease-in-out;
+                  -moz-transition: opacity 1s ease-in-out;
+                  -o-transition: opacity 1s ease-in-out;
+                  transition: opacity 1s ease-in-out; 
+                  background-color: #fff;
+                  height: 160px;
+              }
+      
+              .main-container:hover .hidden-child {
+                  visibility: visible;
+                  position: absolute;
+                  top: 0;
+              }
+              .wrap-cat-carrusel img {
+                width: 40px;
+                right: 0;
+              }
+              .wrap-cat-carrusel {
+                text-align: center;
+                margin-left: 50px;
+                margin-top: -10px;
+              }
+              .wrap-cat-carrusel p{
+                text-align: center;
+                justify-content: center;
+                color:var(--aniversario-azul);
+                font-weight: 900;
+                font-size: 11px;
+                margin-top: -5px;
+              }
+              .wrap-info-carrusel{
+                display: flex;
+                flex-wrap: wrap;
+                position: relative;
+              }
+              .wrap-info-carrusel div {
+                position: relative;
+              }
+              .btn_ir_compra {
+                background-color: var(--aniversario-azul);
+                color: #fff;
+                border-radius: 5px;
+                text-align: center;
+                padding: 5px 2px;
+                
+              }
+              .wrap-btn {
+                display: block;
+                text-align: center;
+              }
+              .call-product{
+                background-color: var(--aniversario-azul);
+                border: 3px solid var(--rojo);
+                color: #fff;
+                width: 250px;
+                font-family: var(--font-bedbath);
+                border-radius: 5px;
+                padding: 10px 20px;
+                margin: 0 auto;
+                font-size: 12px;
+                -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+              }
+              .call-product:hover {
+                background-color: var(--azul-bbb-button)
+              }
+              
+      @media (max-width: 767px) {
+        .desktop{
+          display: none;
+        }
+      .mobile {
+        display: block !important;
+      }
+        .wrap-banner {
+            height: 500px;
+            overflow: hidden;
+            background-color: var(--aniversario-azul);
+            background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/banner-mobile-aniversario-19-ago.jpg?rand=1629405355');
+            background-size: contain;
+            width: 100%;
+            background-repeat: no-repeat;
+        }
+        .container-disccount{
+            width: 100px;
+            height: 100px;
+        }
+        .item-disccount{
+            width: 100px;
+            height: 100px; 
+        }
+        .item-cat-a{
+            height: 70px;
+        }
+        .wrap-categorias {
+            display: grid;
+            overflow: hidden;
+        }
+        .item-cat{
+            height: 80px;
+        }
+        figure.effect-ming h2 {
+            -webkit-transition: -webkit-transform 0.35s;
+            transition: transform 0.35s;
+            color: #fff !important;
+            font-size: 10px;
+            background: var(--aniversario-azul);
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 100px;
+            padding: 2px;
+            text-transform: lowercase;
+            margin-left: 55px;
+            margin-top: 1px;
+        }
+        .item-cat{
+            height: 80px;
+        }
+        .container-disccount p:nth-child(2){
+            top: 40px;
+            font-size: 2em;
+        }
+        .container-disccount p:nth-child(3){
+            top: 70px;
+            font-size: 8px;
+        }
+        .mobile-m{
+            margin-top: 12px !important;
+        }
+      }
+    </style>
+    <script>
+        //Carrusel estatico
+        window.onload = function() {
+          const carousel = document.querySelector('.slider_top');
+          const slider = document.querySelector('.slides_top');
+      
+          const next = document.querySelector('.btn-next');
+          const prev = document.querySelector('.btn-prev');
+          let direction;
+
+          next.addEventListener('click', function() {
+            direction = -1;
+            slider.style.transform = 'translate(-190px)';  
+          });
+
+          prev.addEventListener('click', function() { 
+            direction = 1;
+            slider.style.transform = 'translate(190px)';  
+          });
+        }
+    </script>
+  </head>
+  <body>
+    <!-- Principal -->
+    <section id="bannerPrincial">
+      <!--desktop-->
+      <div class="wrap-banner desktop">
+        <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond.html" target="_self">
+        <div class="container">
+          <svg
+            id="newyear"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1080 1080"
+          >
+            <defs>
+              <filter id="filtro">
+                <feTurbulence
+                  type="turbulence"
+                  baseFrequency="0.001"
+                  numOctaves="9"
+                  result="turbulence"
+                />
+                <feDisplacementMap
+                  in2="turbulence"
+                  in="SourceGraphic"
+                  scale="30"
+                  xChannelSelector="R"
+                  yChannelSelector="B"
+                />
+              </filter>
+            </defs>
+            <g class="confeti">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+            <g class="confeti confi" x="-200" y="20">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+            <g class="confeti confi2" x="-200" y="20">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+            <g class="confeti confi3" x="-200" y="20">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+          </svg>
+        </div>
+      </div>
+      <!--Mobile-->
+      <div class="wrap-banner mobile">
+        <div class="container">
+          <svg
+            id="newyear"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 1080 1080"
+          >
+            <defs>
+              <filter id="filtro">
+                <feTurbulence
+                  type="turbulence"
+                  baseFrequency="0.001"
+                  numOctaves="9"
+                  result="turbulence"
+                />
+                <feDisplacementMap
+                  in2="turbulence"
+                  in="SourceGraphic"
+                  scale="30"
+                  xChannelSelector="R"
+                  yChannelSelector="B"
+                />
+              </filter>
+            </defs>
+            <g class="confeti">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+            <g class="confeti confi" x="-200" y="20">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+            <g class="confeti confi2" x="-200" y="20">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+            <g class="confeti confi3" x="-200" y="20">
+              <path id="rojo3" class="st0" d="M700.4 139.6L679 136" />
+              <path id="rojo2" class="st0" d="M879.9 130.4l-14.2-16.3" />
+              <path id="rojo" class="st0" d="M509.7 36.1l21.5-2.3" />
+              <path id="azul2" class="st1" d="M649.4 27.1l19.5-9.4" />
+              <path id="verde3" class="st2" d="M722.6 74.5L713.2 55" />
+              <path id="amarillo" class="st3" d="M791.9 37.9l20.4-7.3" />
+              <path id="azul" class="st1" d="M801.8 109.1l-17.1 13.3" />
+              <path id="verde2" class="st2" d="M523.2 128.1l16.3 14.2" />
+              <path id="verde" class="st2" d="M922.4 47.8l-18.8 10.8" />
+              <path id="amarillo2" class="st3" d="M612.7 80.7l-18.4 11.5" />
+            </g>
+          </svg>
+        </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Categorias -->
+    <section>
+      <div class="wrap-disccount">
+        <div class="item-disccount">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/aniversario-10-de-descuento.html" target="_self">
+            <div class="container-disccount">
+              <p>hasta</p>
+              <p class="num-disscount">10%</p>
+              <p>de descuento</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-disccount">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/productos-con-15-de-descuento.html" target="_self">
+            <div class="container-disccount">
+              <p>hasta</p>
+              <p class="num-disscount">15%</p>
+              <p>de descuento</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-disccount">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/productos-con-20-de-descuento.html" target="_self">
+            <div class="container-disccount">
+              <p>hasta</p>
+              <p class="num-disscount">20%</p>
+              <p>de descuento</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-disccount">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/productos-con-25-de-descuento.html" target="_self">
+            <div class="container-disccount">
+              <p>hasta</p>
+              <p class="num-disscount">25%</p>
+              <p>de descuento</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-disccount">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/productos-con-30-de-descuento.html" target="_self">
+            <div class="container-disccount">
+              <p>hasta</p>
+              <p class="num-disscount">30%</p>
+              <p>de descuento</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MSI -->
+    <section>
+        <div class="banner-img desktop">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/banner-desk-MSI-19-ago.jpg?rand=1629405355"
+            alt="Aniversario Bed Bath and Beyond"
+          />
+        </div>
+        <div class="banner-img mobile" style="display: none">
+          <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/banner-MSI-mobile-19-ago.jpg?rand=1629405355"
+          alt="Aniversario Bed Bath and Beyond">
+    </section>
+
+    <!-- Categorias -->
+    <section>
+      <div class="wrap-categorias">
+        <div class="item-cat-a">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/cocina.html" target="_self">
+            <div class="grid">
+              <figure class="effect-moses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-cocina-18-ago.jpg?rand=1629215788"
+                  alt="BedBathandBeyond"
+                />
+                <figcaption>
+                  <h2>cocina <span></span></h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat-a">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/recamara.html" target="_self">
+            <div class="grid">
+              <figure class="effect-moses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-cama2-18-ago.jpg?rand=1629215788"
+                  alt="img24"
+                />
+                <figcaption>
+                  <h2>recámara <span></span></h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat-a">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/ba-o.html" target="_self">
+            <div class="grid">
+              <figure class="effect-moses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-bano-18-ago.jpg?rand=1629215788"
+                  alt="img24"
+                />
+                <figcaption>
+                  <h2>baño <span></span></h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat-a">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/cuidado-personal.html" target="_self">
+            <div class="grid">
+              <figure class="effect-moses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-cuidado-personal-18-ago.jpg?rand=1629215788"
+                  alt="img24"
+                />
+                <figcaption>
+                  <h2>cuidado personal <span></span></h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bonificación -->
+    <section>
+        <div class="banner-img desktop">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/banner-giftcard-desk-18-ago.jpg?rand=1629217232"
+            alt="Aniversario Bed Bath and Beyond"
+          />
+        </div>
+        <div class="banner-img mobile" style="display: none">
+          <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/banner-giftcard-mob-18-ago_1.jpg?rand=1629230755"
+          alt="Aniversario Bed Bath and Beyond">
+        </div>
+    </section>
+
+    <!-- Categorias -->
+    <section>
+      <div class="wrap-categorias">
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/decoracion.html" target="_self">
+            <div class="grid">
+              <figure class="effect-ming">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-deco-18-ago.jpg?rand=1629215788"
+                  alt="bedbathandbeyond"
+                />
+                <figcaption>
+                  <h2 class="thickOutlined mobile-m">decoración</h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/organizacion-y-limpieza.html" target="_self">
+            <div class="grid">
+              <figure class="effect-ming">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-orga-y-limpieza-18-ago.jpg?rand=1629215788"
+                  alt="bedbathandbeyond"
+                />
+                <figcaption>
+                  <h2 class="thickOutlined">organización y limpieza</h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/jardines-y-exteriores.html" target="_self">
+            <div class="grid">
+              <figure class="effect-ming">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-jardin-y-exterior-18-ago.jpg?rand=1629215788"
+                  alt="bedbathandbeyond"
+                />
+                <figcaption>
+                  <h2 class="thickOutlined">jardines y exteriores</h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/tecnologia.html" target="_self">
+            <div class="grid">
+              <figure class="effect-ming">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-tecnologia-18-ago.jpg?rand=1629215788"
+                  alt="bedbathandbeyond"
+                />
+                <figcaption>
+                  <h2 class="thickOutlined mobile-m">tecnología</h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/alimentos-y-bebidas.html" target="_self">
+            <div class="grid">
+              <figure class="effect-ming">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-alimentos-y-bebidasl-18-ago.jpg?rand=1629215788"
+                  alt="bedbathandbeyond"
+                />
+                <figcaption>
+                  <h2 class="thickOutlined">alimentos y bebidas</h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/aniversario-beyond/mascotas-viajes-y-mas.html" target="_self">
+            <div class="grid">
+              <figure class="effect-ming">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/lan-viajesl-18-ago.jpg?rand=1629215788"
+                  alt="bedbathandbeyond"
+                />
+                <figcaption>
+                  <h2 class="thickOutlined">mascotas, viajes y más</h2>
+                  <p>ver ofertas</p>
+                </figcaption>
+              </figure>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dyson  -->
+    <section id="dysonWrap">
+      <h2>dyson ¡tiene un regalo <span class="high-text">SORPRESA</span> para ti!</h2>
+      <a href="https://www.bedbathandbeyond.com.mx/marcas/dyson.html" target="_self">
+        <div class="banner-img desktop">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/dyson-desktop-18-ago.jpg?rand=1629217232"
+            alt="Aniversario Bed Bath and Beyond"
+          />
+        </div>
+        <div class="banner-img mobile" style="display: none">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Aniversario/dyson-mobile-18-ago_1.jpg?rand=1629230755"
+            alt="Aniversario Bed Bath and Beyond"
+          />
+        </div>
+      </a>
+      <p class="leyenda">
+        Válido hasta el <b>05/09/2021</b>. Sujeto a disponibilidad o hasta agotar existencias. 
+        Limitado a un regalo por ticket de compra. Válido en productos participantes. <br>
+        <b>El regalo será adicionado al despachar tu pedido</b>.
+      </p>
+    </section>
+
+    <section>
+      <div class="wrap-btn">
+        <a href="" target="_self" >
+          <p class="call-product">ver todos los productos</p>
+        </a>
+      </div>
+    </section>
+    <!-- Dyson Slider -->
+
+<section>
+  <div class="container_slide_cards">
+      <div id="carrusel" class="slider_top">
+          <div id="carrusel-slides" class="slides_top">
+            <!-- Slide 1 -->
+                <div class="slide_top item_desc_carrusel">
+                    <a
+                    href="https://www.bedbathandbeyond.com.mx/purificador-de-aire-de-plastico-pure-hot-cool-link-hp03-dyson.html"
+                    target="_self"
+                    >
+                    <div class="container_bb">
+                        <div class="container_img_carrusel">
+                            <div class="main-container">
+                                <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685017.jpg?$imagePLP$&hei=700&wid=700"/>   
+                                <div class="hidden-child">
+                                  <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685227_4.jpg?$imagePLP$&hei=700&wid=700"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="wrap-info-carrusel">
+                          <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                          </div>
+                          <div class="wrap-cat-carrusel">
+                            <img
+                              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                            />
+                            <p>sorpresa</p>
+                          </div>
+                        </div>
+                        <div class="item_desc_carrusel">
+                          Purificador de aire de plástico Pure Hot+Cool Link HP03 Dyson
+                        </div>
+
+                        <div class="star_wrap"></div>
+                        <p class="btn_ir_compra">ver producto</p>
+                    </div>
+                    </a>
+                </div>
+
+            <!-- Slide 2 -->
+            <div class="slide_top item_desc_carrusel">
+              <a
+              href="https://www.bedbathandbeyond.com.mx/estuche-de-cuero-para-secadora-de-cabello-dyson-supersonic-65046876.html"
+              target="_self"
+              >
+              <div class="container_bb">
+                  <div class="container_img_carrusel">
+                      <div class="main-container">
+                          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/65046876.jpg?$imagePLP$&hei=700&wid=700"/>   
+                          <div class="hidden-child">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/65046876.jpg?$imagePLP$&hei=700&wid=700"/>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                    <div class="wrap-cat-carrusel">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                      />
+                      <p>sorpresa</p>
+                    </div>
+                  </div>
+                  <div class="item_desc_carrusel">
+                    Estuche de cuero para secadora de cabello Dyson® Supersonic
+                  </div>
+
+                  <div class="star_wrap"></div>
+                  <p class="btn_ir_compra">ver producto</p>
+              </div>
+              </a>
+          </div>
+
+
+            <!-- Slide 3 -->
+            <div class="slide_top item_desc_carrusel">
+              <a
+              href="https://www.bedbathandbeyond.com.mx/purificador-de-aire-de-plastico-pure-cool-link-tp03-dyson.html"
+              target="_self"
+              >
+              <div class="container_bb">
+                  <div class="container_img_carrusel">
+                      <div class="main-container">
+                          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685016.jpg?$imagePLP$&hei=700&wid=700"/>   
+                          <div class="hidden-child">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685016_2.jpg?$imagePLP$&hei=700&wid=700"/>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                    <div class="wrap-cat-carrusel">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                      />
+                      <p>sorpresa</p>
+                    </div>
+                  </div>
+                  <div class="item_desc_carrusel">
+                    Purificador de aire de plástico Pure Cool Link TP03 Dyson
+                  </div>
+
+                  <div class="star_wrap"></div>
+                  <p class="btn_ir_compra">ver producto</p>
+              </div>
+              </a>
+          </div>
+
+        <!-- Slide 4 -->
+        <div class="slide_top item_desc_carrusel">
+          <a
+          href="https://www.bedbathandbeyond.com.mx/aspiradora-dyson-cyclone-v10tm.html"
+          target="_self"
+          >
+          <div class="container_bb">
+              <div class="container_img_carrusel">
+                  <div class="main-container">
+                      <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685019.jpg?$imagePLP$&hei=700&wid=700"/>   
+                      <div class="hidden-child">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685019_1.jpg?$imagePLP$&hei=700&wid=700"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="wrap-info-carrusel">
+                <div class="container-star">
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star disable"></div>
+                </div>
+                <div class="wrap-cat-carrusel">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                  />
+                  <p>sorpresa</p>
+                </div>
+              </div>
+              <div class="item_desc_carrusel">
+                Aspiradora Dyson Cyclone V10™
+              </div>
+
+              <div class="star_wrap"></div>
+              <p class="btn_ir_compra">ver producto</p>
+          </div>
+          </a>
+      </div>
+
+
+          <!-- Slide 5 -->
+          <div class="slide_top item_desc_carrusel">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/purificador-de-aire-de-plastico-pure-hot-cool-link-hp03-dyson.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container_img_carrusel">
+                    <div class="main-container">
+                        <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685017_1.jpg?$imagePLP$&hei=700&wid=700"/>   
+                        <div class="hidden-child">
+                          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685017_2.jpg?$imagePLP$&hei=700&wid=700"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-info-carrusel">
+                  <div class="container-star">
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star disable"></div>
+                  </div>
+                  <div class="wrap-cat-carrusel">
+                    <img
+                      src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                    />
+                    <p>sorpresa</p>
+                  </div>
+                </div>
+                <div class="item_desc_carrusel">
+                  Purificador de aire de plástico Pure Hot+Cool Link HP03 Dyson
+                </div>
+
+                <div class="star_wrap"></div>
+                <p class="btn_ir_compra">ver producto</p>
+            </div>
+            </a>
+        </div>
+
+
+          <!-- Slide 5 -->
+          <div class="slide_top item_desc_carrusel">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/aspiradora-sin-cable-dyson-v11-outsize.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container_img_carrusel">
+                    <div class="main-container">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/367274669519711p?$imagePLP$&hei=700&wid=700"/>   
+                        <div class="hidden-child">
+                          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/367274669519711p?$imagePLP$&hei=700&wid=700"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-info-carrusel">
+                  <div class="container-star">
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star disable"></div>
+                  </div>
+                  <div class="wrap-cat-carrusel">
+                    <img
+                      src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                    />
+                    <p>sorpresa</p>
+                  </div>
+                </div>
+                <div class="item_desc_carrusel">
+                  Aspiradora sin cable Dyson V11 Outsize
+                </div>
+
+                <div class="star_wrap"></div>
+                <p class="btn_ir_compra">ver producto</p>
+            </div>
+            </a>
+        </div>
+
+
+
+          <!-- Slide 5 -->
+          <div class="slide_top item_desc_carrusel">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/alaciadora-cabello-dyson-corrale-69685227.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container_img_carrusel">
+                    <div class="main-container">
+                        <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685227.jpg?$imagePLP$&hei=700&wid=700"/>   
+                        <div class="hidden-child">
+                          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685227_1.jpg?$imagePLP$&hei=700&wid=700"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="wrap-info-carrusel">
+                  <div class="container-star">
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star disable"></div>
+                  </div>
+                  <div class="wrap-cat-carrusel">
+                    <img
+                      src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/surprise.png?rand=1629734322"
+                    />
+                    <p>sorpresa</p>
+                  </div>
+                </div>
+                <div class="item_desc_carrusel">
+                  Alaciadora para cabello Dyson Corrale
+                </div>
+
+                <div class="star_wrap"></div>
+                <p class="btn_ir_compra">ver producto</p>
+            </div>
+            </a>
+        </div>
+
+
+          </div>
+          <button class="btn-prev">
+          <button class="btn-next">
+      </div>
+  </div>
+</section>
+  </body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Autumn</title>
+    <style>
+      .wrap-grid-eight {
+        background-color: #E4D5B3;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "banner banner banner banner"
+          "img1 img2 img3 img4";
+        grid-gap: 10px;
+        overflow: hidden;
+        display: grid;
+        text-align: center;
+        justify-content: center;
+        padding: 10px;
+      }
+      .grid-item:nth-child(1) {
+        grid-area: banner;
+        text-align: center;
+        justify-content: center;
+      }
+      .grid-item:nth-child(2) {
+        grid-area: img1;
+      }
+      .grid-item:nth-child(3) {
+        grid-area: img2;
+      }
+      .grid-item:nth-child(4) {
+        grid-area: img3;
+      }
+      .grid-item:nth-child(5) {
+        grid-area: img4;
+      }
+      .img-bg {
+        overflow: hidden;
+      }
+      .img-bg img {
+        width: 100%;
+      }
+      .leaf {
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
+      .leaf div {
+        position: absolute;
+        display: block;
+      }
+      .leaf div:nth-child(1) {
+        left: 20%;
+        animation: fall 15s linear infinite;
+        animation-delay: -2s;
+      }
+      .leaf div:nth-child(2) {
+        left: 70%;
+        animation: fall 15s linear infinite;
+        animation-delay: -4s;
+      }
+      .leaf div:nth-child(3) {
+        left: 10%;
+        animation: fall 20s linear infinite;
+        animation-delay: -7s;
+      }
+      .leaf div:nth-child(4) {
+        left: 50%;
+        animation: fall 18s linear infinite;
+        animation-delay: -5s;
+      }
+      .leaf div:nth-child(5) {
+        left: 85%;
+        animation: fall 14s linear infinite;
+        animation-delay: -5s;
+      }
+      .leaf div:nth-child(6) {
+        left: 15%;
+        animation: fall 16s linear infinite;
+        animation-delay: -10s;
+      }
+      .leaf div:nth-child(7) {
+        left: 90%;
+        animation: fall 15s linear infinite;
+        animation-delay: -4s;
+      }
+
+      @keyframes fall {
+        0% {
+          opacity: 1;
+          top: -10%;
+          transform: translateX (20px) rotate(0deg);
+        }
+        20% {
+          opacity: 0.8;
+          transform: translateX (-20px) rotate(45deg);
+        }
+        40% {
+          transform: translateX (-20px) rotate(90deg);
+        }
+        60% {
+          transform: translateX (-20px) rotate(135deg);
+        }
+        80% {
+          transform: translateX (-20px) rotate(180deg);
+        }
+        100% {
+          top: 110%;
+          transform: translateX (-20px) rotate(225deg);
+        }
+      }
+      .leaf1 {
+        transform: rotateX(180deg);
+      }
+      .txt-aut{
+          color: #1a4e8a;
+          font-family:  "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;;
+        }
+        .img-bg{
+            overflow: hidden;
+            }
+        .img-bg img{
+          overflow: hidden;
+          transition: transform 0.5s; /* smoother zoom */
+        }
+        .img-bg:hover img {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+        .desktop {
+            display: block;
+        }
+        .mobile {
+            display: none;
+        }
+        /* iPAD Portrait */
+        @media only screen 
+            and (min-device-width: 768px) 
+            and (max-device-width: 1024px) 
+            and (orientation: portrait) 
+            and (-webkit-min-device-pixel-ratio: 1) {
+                .wrap-grid-eight {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                    grid-template-areas:
+                    "banner banner banner banner"
+                    "img1 img2 img3 img4";
+                }
+            }
+        @media (max-width: 767px) {
+            .wrap-grid-eight {
+                    grid-template-columns: 1fr 1fr;
+                    grid-template-areas:
+                    "banner banner"
+                    "img1 img2" 
+                    "img3 img4";
+                }
+                .grid-item:nth-child(2),
+                .grid-item:nth-child(3),
+                .grid-item:nth-child(4),
+                .grid-item:nth-child(5){
+                    width: 200px;
+                }
+                .desktop {
+                    display: none;
+                }
+                .mobile {
+                    display: block;
+                }
+                .txt-aut{
+                    font-size: 12px;
+                    margin-top: -1px;
+                }
+        }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-grid-eight">
+        <div class="grid-item">
+          <a href="" target="_self">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-october-24-sep.jpg?rand=1632416920"
+              alt="October Fest"
+              class="desktop"
+            />
+            <img
+            src="            https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mob-october-24-sep.jpg?rand=1632418422"
+            alt="October Fest"
+            class="mobile"
+          />
+
+        <div class="leaf">
+            <div><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Fall-Autumn-Leaves-Transparent-PNG.png" height="75px" width="75px"></img></div>
+             <div><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Autumn-Fall-Leaves-Pictures-Collage-PNG.png" height="75px" width="75px"></img></div>
+             <div><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Autumn-Fall-Leaves-Clip-Art-PNG.png" height="75px" width="75px" ></img></div>
+             <div><img  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Green-Leaves-PNG-File.png" height="75px" width="75px"></img></div>
+             <div><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Transparent-Autumn-Leaves-Falling-PNG.png" height="75px" width="75px"></img></div>
+             <div><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Realistic-Autumn-Fall-Leaves-PNG.png" height="75px" width="75px"></div>
+            <div><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/autumn_leaves_025.png" height="75px" width="75px"></div>
+        </div>
+        </a>
+        </div>
+        <div class="grid-item">
+          <a href="" target="_self">
+            <div class="img-bg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/basicos_cocina.jpg?rand=1632416920"
+                alt="octuber fest Bed Bath and Beyond"
+              />
+              <p class="txt-aut">basicos de cocina</p>
+            </div>
+          </a>
+        </div>
+        <div class="grid-item">
+          <a href="" target="_self">
+            <div class="img-bg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/electrodomesticos.jpg?rand=1632416920"
+                alt="octuber fest Bed Bath and Beyond"
+              />
+              <p class="txt-aut">electrodomesticos</p>
+            </div>
+          </a>
+        </div>
+        <div class="grid-item">
+          <a href="" target="_self">
+            <div class="img-bg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/jardin.jpeg?rand=1632416920"
+                alt="octuber fest Bed Bath and Beyond"
+              />
+              <p class="txt-aut">jardines y exteriores</p>
+            </div>
+          </a>
+        </div>
+        <div class="grid-item">
+          <a href="" target="_self">
+            <div class="img-bg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesaybar.jpeg?rand=1632418422"
+                alt="octuber fest Bed Bath and Beyond"
+              />
+              <p class="txt-aut">mesa y bar</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

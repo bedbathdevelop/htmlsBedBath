@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+        <style>
+            section {
+                margin-bottom: 16px;
+            }
+            img {
+                max-width: 100%;
+            }
+            h1,h2,h3,h4,h5 {
+                font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+            }
+            p,a {
+            font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+            }
+            a:hover{
+                text-decoration: none;
+            }
+            .title-font {
+                color:#002855;
+                width: 100%;
+                padding-top: 1rem;
+                padding-bottom: 0rem;
+                font: Termina Headline,sans-serif;
+                text-align: center;
+                font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+            }
+            .flex-container{
+                display: inline-flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+            }
+            .col-50 {
+                padding:10px; 
+                width: 50%;
+            }
+            .col-30 {
+                width: 30%;
+            }
+            .square {
+                border: 5px solid #1a4e8a;
+                display: inline-flex; 
+                width: 100%; 
+                align-items: center;
+            }
+
+            .square h2 {
+                width:100%;
+                text-align: center;
+                font-weight: bolder;
+                color: #1a4e8a;
+                font-size: 25px;
+            }
+            .square span {
+                width: 30%;
+                padding: 10px;
+            }
+            .text-square {
+                padding-top: 1rem;
+                padding-bottom: .5rem;
+                width: 100%;
+                text-align: center;
+            }
+            .text-square p {
+                font-size: 18px;
+                color: #000;
+                text-align: center;
+                margin-bottom: 0;
+            }
+            .container-banner-main{
+                width: 100%;
+                height: 500px;
+                display: flex;
+                text-align: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+            .container-banner-main img {
+                width: 80%;
+            }
+            .call-to {
+                font-weight: bold;
+                font-size: 18px;
+            }
+            .banner-top {
+                background: #ed2837;
+                display: flex;
+                flex-direction: column;
+                align-items: center;padding: 2em;
+            }
+            .white-bkg {
+                background: #fff; 
+                color: #ed2837;
+                font-size: 20px;
+                padding: 0 10px;
+            }
+            .banner-top h4 {
+                color: #fff;
+                margin: 60px 0;
+                font-size: 60px;
+            }
+            .banner-top span {
+                background: #fff;
+                color:#1a4e8a;
+                padding: 0 10px;
+            }
+            .p-center {
+                font-size: 14px;
+                line-height: 14px;
+                padding: 2em;
+                text-align: center;
+            }
+            .photo-banner {
+                position: relative;
+                width:100%;
+                height: 495px;
+                background-size: 100%; 
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+            .col-40 {
+                background:rgba(255,255,255,0.6);
+                width: 40%;
+                padding: 1.5%;
+                position: absolute;
+                bottom: 2.5rem;
+            }
+            .col-40.right {
+                right: 1em;
+            }
+            .col-40.left {
+                left: 1em;
+            }
+            .col-40.bottom {
+                top: 90%;
+            }
+            .col-40.top {
+                top: 1em;
+            }
+            .col-40.center {
+                left: 50%;
+                margin-left: -25%;
+            }
+            .center-elements {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;    
+            }
+            .button-blue {
+                box-shadow: none;
+                color: #fff;
+                border-color: #1377c9;
+                border-style: none;
+                background-color: #1377c9;
+                text-decoration: none;
+                width: auto;
+                padding: 10px; 
+                border-radius: 5px;
+            }
+            .content-color {
+                padding: 0px;
+            }
+            .content-inline-flex {
+                display: inline-flex;
+                width: 100%;
+            }
+            .product-card {
+                margin: 5px;
+            }
+            .card-col-50 {
+                width: 50%;
+            }
+            .col-25 {
+                width: 25%;
+            }
+            .product-p-bold {
+                padding: 0 0 0 1em;
+                font-weight: bold;
+                font-size: 16px;
+                text-align: left;
+                min-width: 100%;
+                color: #002855;
+                padding-bottom: 0;
+            }
+            .card-description{
+                padding: 0 0 0 1em;
+                text-align: left;
+                min-width: 100%;
+                color: #000;
+            }
+            .list-grid {
+                padding: 1em 0;
+                list-style: none;
+                display: inline-flex;
+                min-width: 100%;
+                justify-content: space-evenly;
+            }
+            .list-grid .col-2 {
+                min-width: 16.6666%;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .list-grid .col-2 .items-center {
+                border: 2px solid #fff;
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+            }
+            .list-grid .col-2:hover .items-center {
+                border: 4px solid #1377c9;
+            }
+            .slider {
+                font-size: 15px;
+                text-align: center;
+            }
+            body .slider {
+                max-width: 1200px;
+                margin: 0 auto 0px auto;
+            }
+            .slider-for {
+                font-size: 15px;
+                text-align: center;
+            }
+            .categoriestitle {
+                width: 100%;
+                text-align: center;
+                padding-top: 5px;
+                color: #000;
+                font-weight: 300;
+            }
+            .img-rouned{
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+            }
+            .column{
+                flex-direction: column;
+            }
+            .center-text-elements{
+                color: #1A4E8A;
+                font-size: 34px;
+                line-height: 1em;
+                font-family: 'Montserrat-Bold',Arial, sans-serif;
+            }
+            .first-section {
+                margin-top: 0;
+                padding-top: 0px;
+            }
+            .banner-img.desktop {
+                display: flex;
+            }
+            .banner-img.mobile {
+                display: none;
+            }
+            @media (max-width: 991px) {
+            .categoriestitle{
+                    font-size:10px !important;
+                }
+                body.catalog-category-view #maincontent .category-view .category-cms{
+                    max-width: 1200px;
+                    display: block !important; 
+                    width: 100%;
+                }
+                    .cms-home .page-main {
+                        padding: 0;
+                    }
+                    section {
+                        margin-left: -10px;
+                        margin-right: -10px;
+                    }
+                    .banner-img.desktop {
+                        display: none;
+                    }
+                    .banner-img.mobile{
+                        display: block!important;
+                    }
+                    .first-section {
+                        padding-top: 0px;
+                    }
+                    .first-section .col-50 {
+                        width: 90%;
+                    }
+                    .title-font {
+                        font-size: 30px;
+                    }
+                    .content-inline-flex.column-m,
+                    .flex-container.column-m {
+                        flex-direction: column;
+                    }
+                    .m-block .content-inline-flex {
+                        display: inline-block;
+                    }
+                    .m-block .content-inline-flex .product-card.col-25{
+                        width: 47%;
+                        float: left;
+                    }
+                    .product-p-bold {
+                        padding: 8px;
+                        font-size: 14px;
+                    }
+                    .card-description{
+                        padding: 0 0 0 8px;
+                    }
+                    .banner-top {
+                        height: 70vh;
+                    }
+                        .banner-top .white-bkg{
+                            margin-top: 30%;
+                        }
+                        .photo-banner{
+                            background-size: cover;
+                        }
+                        .col-40.right,
+                        .col-40.left {
+                            left: auto;
+                            right: auto;
+                            width: 80%;
+                        }
+                        .photo-banner {
+                            display: flex;
+                            justify-content: center;
+                        }
+                        .list-grid {
+                            display: inline-block;
+                        }
+                        .col-2 {
+                            float: left;
+                            width: 33%;
+                            min-height: 180px;
+                        }
+                        .scrolled {
+                            display: flex!important;
+                            flex-flow: row;
+                            overflow-x: auto;
+                            margin-left: 0.5%;
+                        }
+                        .scrolled.four {
+                            width: 990px;
+                            overflow: scroll;
+                        }
+                        .scrolled.three {
+                            width: 730px;
+                            overflow: scroll;
+                        }
+                        .conten-scroll {
+                            overflow: auto;
+                        }
+                        .scrolled .product-card {
+                            max-width: 240px;
+                        }
+                    }
+                    @media (max-width: 767px) {
+                        img {
+                            width: 100%;
+                        }
+                        .square span{
+                            width: 40%;
+                            padding: 0;
+                        }
+                    }
+
+                    /*Compare images*/
+                    .img-comp-container {
+                        position: relative;
+                        height: 600px; /*should be the same height as the images*/
+                        overflow: hidden;
+                    }
+
+                    .img-comp-img {
+                        position: absolute;
+                        width: auto;
+                        height: auto;
+                        overflow:hidden;
+                    }
+
+                    .img-comp-img img {
+                        display:block;
+                        vertical-align:middle;
+                    }
+
+                    .img-comp-slider {
+                        position: absolute;
+                        z-index:9;
+                        cursor: ew-resize;
+                        /*set the appearance of the slider:*/
+                        width: 40px;
+                        height: 40px;
+                        background-color: #2196F3;
+                        opacity: 0.7;
+                        border-radius: 50%;
+                    }
+
+                    /*compare image*/
+                    
+            </style>
+
+            <script>
+                /*compare images*/
+                window.onload = function(e) {
+                    initComparisons();
+                }
+
+                function initComparisons() {
+                    var x, i;
+                    x = document.getElementsByClassName("img-comp-overlay");
+                    console.log("entra",x.length,x)
+                    for (i = 0; i < x.length; i++) {
+                        compareImages(x[i]);
+                    }
+
+                    function compareImages(img) {
+                        console.log("compare",img)
+                        var slider, img, clicked = 0, w, h;
+                        /*get the width and height of the img element*/
+                        w = img.offsetWidth;
+                        h = img.offsetHeight;
+                        /*set the width of the img element to 50%:*/
+                        img.style.width = (w / 2) + "px";
+                        /*create slider:*/
+                        slider = document.createElement("DIV");
+                        slider.setAttribute("class", "img-comp-slider");
+                        /*insert slider*/
+                        img.parentElement.insertBefore(slider, img);
+                        /*position the slider in the middle:*/
+                        slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                        slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                        /*execute a function when the mouse button is pressed:*/
+                        slider.addEventListener("mousedown", slideReady);
+                        /*and another function when the mouse button is released:*/
+                        window.addEventListener("mouseup", slideFinish);
+                        /*or touched (for touch screens:*/
+                        slider.addEventListener("touchstart", slideReady);
+                        /*and released (for touch screens:*/
+                        window.addEventListener("touchend", slideFinish);
+                        function slideReady(e) {
+                        /*prevent any other actions that may occur when moving over the image:*/
+                        e.preventDefault();
+                        /*the slider is now clicked and ready to move:*/
+                        clicked = 1;
+                        /*execute a function when the slider is moved:*/
+                        window.addEventListener("mousemove", slideMove);
+                        window.addEventListener("touchmove", slideMove);
+                        }
+                        function slideFinish() {
+                        /*the slider is no longer clicked:*/
+                        clicked = 0;
+                        }
+                        function slideMove(e) {
+                        var pos;
+                        /*if the slider is no longer clicked, exit this function:*/
+                        if (clicked == 0) return false;
+                        /*get the cursor's x position:*/
+                        pos = getCursorPos(e)
+                        /*prevent the slider from being positioned outside the image:*/
+                        if (pos < 0) pos = 0;
+                        if (pos > w) pos = w;
+                        /*execute a function that will resize the overlay image according to the cursor:*/
+                        slide(pos);
+                        }
+                        function getCursorPos(e) {
+                        var a, x = 0;
+                        e = e || window.event;
+                        /*get the x positions of the image:*/
+                        a = img.getBoundingClientRect();
+                        /*calculate the cursor's x coordinate, relative to the image:*/
+                        x = e.pageX - a.left;
+                        /*consider any page scrolling:*/
+                        x = x - window.pageXOffset;
+                        return x;
+                        }
+                        function slide(x) {
+                        /*resize the image:*/
+                        img.style.width = x + "px";
+                        /*position the slider:*/
+                        slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                        }
+                    }
+                    }
+</script>
+            </script>
+
+
+    <body>
+        <section class="first-section">
+            <h1 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount">
+                <span class="base" data-ui-id="page-title-wrapper">Baño</span></h1>
+            <div class="slider slider-for">
+             <p>Envío <strong>GRATIS</strong> en pedidos mayores a <strong>$599</strong></p2>
+            </div>
+            <section>
+                <div class="content-inline-flex">
+                    <ul class="list-grid list-grid-reca">
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/accesorios-para-bano.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/US-FW28-FY20-0906-0912-WEB-Bath-C05-3-2.jpeg?rand=1621968169"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/US-FW28-FY20-0906-0912-WEB-Bath-C05-3-2.jpeg?rand=1621968169"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">accesorios para baño</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/tapetes-para-bano.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/bano/tapetes_bano.jpg"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/bano/tapetes_bano.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">tapetes para baño</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/toallas-para-bano.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/toallas.jpg?rand=1621975695"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/toallas.jpg?rand=1621975695"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">toallas baño</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/regadera-y-tina.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/cortinas.jpg"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/cortinas.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">regadera y tina</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/muebles-para-bano.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/muebles.jpg?rand=1621978456"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/muebles.jpg?rand=1621978456"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">muebles para baño</p>
+                                </div>
+                            </a>
+                        </li>      
+                      </ul>
+                 </div>
+            </section>
+            <!--MAIN BANNER-->
+            <section>
+
+                    <div class="img-comp-container">
+                        <div class="img-comp-img">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ban_o_after_1.jpg?rand=1623159046" width="1240" height="600">
+                        </div>
+                        <div class="img-comp-img img-comp-overlay">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ban_o_before.jpg?rand=1623159046" width="1240" height="600">
+                        </div>
+                    </div>
+
+            </section>
+            
+            <section>
+            <div class="content-color" style="background: rgb(228, 246, 255);">
+                <h2 class="title-font">
+                <span style="color: #ffffff;">Ropa de cama</span>
+                </h2>
+                <div class="conten-scroll">
+                    <div class="content-inline-flex scrolled four">
+                        <div class="product-card col-25">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/sabanas.html">
+                                <img src="/media//wysiwyg/Recamara/sabanas450x450.jpg"/>
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">sábanas</span></p>
+                                    <p class="card-description"><span style="color:#ffffff;"></span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card col-25">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/edredones.html">
+                            <img src="/media//wysiwyg/Recamara/edrdon450x450.jpg"/>
+                            <div class="card-info">
+                                <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">edredones</span></p>
+                                <p class="card-description"><span style="color:#ffffff;"></span></p>
+                            </div>
+                        </a>
+                        </div>
+                        <div class="product-card col-25">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/cobijas-frazadas-y-mantas.html">
+                            <img src="/media//wysiwyg/Recamara/cobijas-frazadas450x450.jpg"/>
+                            <div class="card-info">
+                                <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">cobijas, frazadas y mantas</span></p>
+                                <p class="card-description"><span style="color:#ffffff;"></span></p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="product-card col-25">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/sets-de-cama.html">
+                            <img src="/media//wysiwyg/Recamara/set-cama450x450.jpg"/>
+                            <div class="card-info">
+                                <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">sets de cama</span></p>
+                                <p class="card-description"><span style="color:#ffffff;"></span></p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-color" style="background: #4682b4;">
+                <div class="conten-scroll">
+                    <div class="content-inline-flex scrolled four">
+                    <div class="product-card col-25">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/cobertores-y-colchas.html">
+                        <img src="/media//wysiwyg/Recamara/cobertor-y-colche450x450.jpg"/>
+                        <div class="card-info">
+                        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">cobertores y colchas</span></p>
+                        <p class="card-description"><span style="color:#ffffff;"></span></p>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="product-card col-25">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/rodapies.html">
+                        <img src="/media//wysiwyg/Recamara/rodapie450x450.jpg"/>
+                        <div class="card-info">
+                        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">rodapies</span></p>
+                        <p class="card-description"><span style="color:#ffffff;"></span></p>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="product-card col-25">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/accesorios-de-cama.html">
+                        <img src="/media//wysiwyg/Recamara/accesorios-cama450x450.jpg"/>
+                        <div class="card-info">
+                        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">accesorios de cama</span></p>
+                        <p class="card-description"><span style="color:#ffffff;"></span></p>
+                        </div>
+                        </a>
+                    </div>
+                    <div class="product-card col-25">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/duvets.html">
+                        <img src="/media//wysiwyg/Recamara/duvets450x450.jpg"/>
+                        <div class="card-info">
+                        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">duvets</span></p>
+                        <p class="card-description"><span style="color:#ffffff;"></span></p>
+                        </div>
+                        </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            <section>
+                <div class="content-color" style="background: #4682b4;">
+                    <h2 class="title-font">
+                        <span><span style="color:#ffffff;">almohadas</span>
+                    </h2>
+                    <div class="content-inline-flex column-m">
+                        <div class="product-card card-col-50">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/almohadas/almohadas-especiales.html">
+                                <img class="holdImg"
+                                src="/media//wysiwyg/Recamara/almohada-especial580x200.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span style="color:#ffffff;">almohadas especiales</span></p>
+                                    <p class="card-description"><span style="color:#ffffff;"></span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-50">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/almohadas/almohadas.html">
+                                <img class="holdImg"
+                                src="/media//wysiwyg/Recamara/almohadas580x200.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span style="color:#ffffff;">almohadas</span></p>
+                                    <p class="card-description"><span style="color:#ffffff;"></span></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/cojines.html">
+            <div class="banner-img desktop"> 
+            <img src="/media//wysiwyg/Recamara/cojines1280x200.jpg">
+            </div>
+            <div class="banner-img mobile" style="display: none;"> 
+            <img src="/media/wysiwyg/Recamara/cojines714x200.jpg">
+            </div>
+            </a>
+            </section>
+            
+            <h2 class="title-font">
+                    <span>fundas y protectores</span>
+                </h2>
+                <div class="content-inline-flex">
+                    <ul class="list-grid">
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/fundas-y-protectores.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media//wysiwyg/Recamara/fundas-almohada314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media//wysiwyg/Recamara/fundas-almohada314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media//wysiwyg/Recamara/fundas-almohada314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">funda para almohadas</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/fundas-y-protectores/fundas-para-edredones.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media//wysiwyg/Recamara/fundas-edredones314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media//wysiwyg/Recamara/fundas-edredones314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media//wysiwyg/Recamara/fundas-edredones314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">fundas para edredones</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/fundas-y-protectores/fundas-para-cojines.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media//wysiwyg/Recamara/fundas-cojines314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media//wysiwyg/Recamara/fundas-cojines314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media//wysiwyg/Recamara/fundas-cojines314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">fundas para cojines</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/fundas-y-protectores/protectores-de-colchones.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media//wysiwyg/Recamara/protector-colchon314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media//wysiwyg/Recamara/protector-colchon314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media//wysiwyg/Recamara/protector-colchon314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">protectores de colchones</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/fundas-y-protectores/fundas-para-sillon-y-futon.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media//wysiwyg/Recamara/protector-sillon314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media//wysiwyg/Recamara/protector-sillon314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media//wysiwyg/Recamara/protector-sillon314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">fundas para sillón y futón</p>
+                                </div>
+                            </a>
+                        </li>       
+                      </ul>
+                 </div>
+            
+            <section>
+            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/colchonetas.html">
+            <div class="banner-img desktop"> 
+            <img src="/media//wysiwyg/Recamara/colchonetas1280x200.jpg">
+            </div>
+            <div class="banner-img mobile" style="display: none;"> 
+            <img src="/media/wysiwyg/Recamara/colchoneta714x200.jpg">
+            </div>
+            </a>
+            </section>
+            <section>
+            
+            </section>
+            <h2 class="title-font">
+                    <span>¿vas a dejar pasar este precio?</span>
+                </h2>
+                <div class="content-inline-flex">
+                    <ul class="list-grid">
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/menos-de-199.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media/wysiwyg/Bloque/menos-199-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-199-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media/wysiwyg/Bloque/menos-199-314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">menos de $199</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/menos-de-399.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media/wysiwyg/Bloque/menos-399-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-399-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media/wysiwyg/Bloque/menos-399-314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">menos de $399</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/menos-de-599.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media/wysiwyg/Bloque/menos-599-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-599-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media/wysiwyg/Bloque/menos-599-314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">menos de $599</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/menos-de-799.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media/wysiwyg/Bloque/menos-799-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-799-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media/wysiwyg/Bloque/menos-799-314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">menos de $799</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/menos-de-999.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media/wysiwyg/Bloque/menos-999-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-999-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media/wysiwyg/Bloque/menos-999-314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">menos de $999</p>
+                                </div>
+                            </a>
+                        </li>
+            <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-recamara.html">
+                                <div class="inner-anchor">
+                                    <div class="items-center">
+                                        <img class="img-rouned" alt=""
+                                        srcset="/media/wysiwyg/Bloque/zonaoutlet314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/zonaoutlet314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                        src="/media/wysiwyg/Bloque/zonaoutlet314x314.jpg"
+                                        class="StyledImageList-inline_77jqxN">
+                                    </div>
+                                    <p class="categoriestitle">Zona Outlet</p>
+                                </div>
+                            </a>
+                        </li>       
+                      </ul>
+                 </div>
+            </section>
+    </body>
+	
+</html>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>carrusel productos</title>
+
+    <style>
+      #slider_recamara h2{
+        color:#1A4E8A;
+        font-weight: 900;
+        margin-top: -20px;
+        font-size: 2rem;
+      }
+      #slider_recamara h3{
+        color:#da0000;;
+        font-weight: 900;
+      }
+      .wrap_carrusel_bb {
+        width: 2000px;
+        overflow: hidden;
+        display: flex;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        overflow-X: hidden;
+      }
+      .item_desc_carrusel {
+        font-size: 0.7rem;
+        line-height: 1.1;
+        padding: 1px 0;
+        color: #1a4e8a;
+        margin-top: 25px;
+      }
+      .item_desc_carrusel span {
+        color: #002854;
+      }
+      .item_carrusel_bb {
+        width: 200px;
+        height: 260px;
+        margin: 0 5px;
+        padding: 5px;
+        overflow: hidden;
+        border: 1px solid #daeaf4;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.2rem var(--white);
+      }
+      .bg_bb {
+        background-color: #daeaf4;
+        border: 3px solid #002854;
+        color: #002854;
+        line-height: 1;
+      }
+      .bg_item {
+        background-color: grey;
+      }
+      .btn_ir_compra {
+        width: 93%;
+        height: auto;
+        background: #117dcf;
+        color: #fff;
+        text-align: center;
+        padding: 6px 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.5rem var(--white);
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        border: 2px solid transparent;
+      }
+      .btn_ir_compra:hover {
+        background: #fff;
+        color: #117dcf;
+        border: 2px solid #117dcf;
+      }
+      .precio_carrusel {
+        text-align: center;
+        margin: 2px 0;
+        color: #002854;
+        font-weight: 600px;
+        font-size: 1.1rem;
+      }
+      .disccount {
+        color: #da0000;
+      }
+      .container_img_carrusel {
+        width: 100%;
+        height: 130px;
+        background-color: #daeaf4;
+        overflow: hidden;
+        position: relative;
+      }
+      .container_img_carrusel img {
+        width: 100%;
+        height: auto;
+      }
+      .item_carrusel_bb h3 {
+        font-size: 0.8rem;
+        color: #da0000;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .item_carrusel_bb h2 {
+        font-size: 1.8rem;
+        margin-top: -10px;
+        font-weight: 900;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      .wrap-info-carrusel {
+        padding: 5px 0 0 0;
+        position: relative;
+      }
+      .wrap-info-carrusel div {
+        width: 50%;
+        font-size: 10px;
+        float: left;
+        overflow: hidden;
+        height: 15px;
+      }
+      .wrap-cat-carrusel{
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+      }
+      .wrap-cat-carrusel img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          border: 1px solid  #1a4e8a;
+          position: absolute;
+          z-index: 1;
+          top: -18px;
+          right: 0;
+      }
+      .container-star {
+        overflow: hidden;
+        display: flex;
+        text-align: left;
+        justify-content: center;
+      }
+      .clip-star {
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        float: left;
+      }
+      .disable {
+        background: rgb(237, 237, 237);
+      }
+
+      .star-1 {
+        transform-origin: 102.14px 87.09px;
+        animation-duration: 3.5s;
+      }
+
+      .star-2 {
+        transform-origin: 219.47px 205.7px;
+        animation-duration: 4s;
+      }
+
+      .star-3 {
+        transform-origin: 404.11px 35.05px;
+        animation-duration: 2.5s;
+      }
+
+      .star-4 {
+        transform-origin: 54.43px 393.81px;
+        animation-duration: 2.5s;
+      }
+
+      .star-5 {
+        transform-origin: 374.42px 271.34px;
+        animation-duration: 3s;
+      }
+      .enablestar {
+        background: rgb(255, 224, 0);
+      }
+
+
+      .container_slide_cards {
+            width: 100%;
+            max-width: calc(200px * 5 + 30px * 5 + 30px);
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slider_top {
+            width: 100%; /* card * 4 + margin * 4 */
+            position: relative;
+            padding-left: 15px;
+            padding-right: 15px;
+            display: flex;
+            justify-content: flex-start;
+            overflow: scroll;
+            height: 300px;
+            animation: scroll 40s linear infinite;
+        }
+        .slides_top { 
+            display: flex;
+            flex-shrink: 0;
+            transition: all 0.5s;
+            overflow-X: hidden;
+        }
+        .slides_top .slide_top {
+            flex-basis: 1;
+            flex-shrink: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 160px;
+            height: 260px;
+            margin: 0 5px;
+            text-align: left;
+            border: 1px solid #daeaf4;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2), -0.2rem -0.2rem 0.2rem var(--white);
+        }
+        .slides_top .slide_top:hover {
+            border: 1px solid #117dcf;
+        }
+
+        .slider_top .btn-prev,
+        .slider_top .btn-next{
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background: #daeaf4;;
+            top: 50%;
+            transform: translateY(-50%);
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 2;
+            border: 1px solid #daeaf4;;
+        }
+        .slider_top .btn-prev{
+            left: 0px;
+        }
+        .slider_top .btn-next{
+            right: 40px;
+        }
+        .slider_top .btn-prev:after,
+        .slider_top .btn-next:after{
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-top: 1px solid #002854;
+            border-right: 1px solid #002854;
+        }
+        .slider_top .btn-prev:after{
+            left: 50%;
+            top: 50%;
+            transform-origin: top right;
+            transform: rotate(-135deg) translate(100%, -100%);
+        }
+        .slider_top .btn-next:after{
+            left: 50%;
+            top: 50%;
+            transform-origin: top right;
+            transform: rotate(45deg) translate(-25%, 50%);
+        }
+
+      /*Rollover Image*/
+      .main-container {
+        width: 160px;
+        height: 160px;
+        background-color: #ababab;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+        .main-container img {
+            width: 160px;
+            height: 160px;
+        }
+
+        .main-container .hidden-child {
+            visibility: hidden;
+            position: absolute;
+            bottom: 0;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out; 
+        }
+
+        .main-container:hover .hidden-child {
+            visibility: visible;
+            position: absolute;
+            bottom: 0;
+        }
+
+      @keyframes scroll {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-250px * 10))}
+      }
+
+    </style>
+
+    <script>
+        window.onload=function(){
+
+          //Carrusel estatico
+          const carousel = document.querySelector('.slider_top');
+          const slider = document.querySelector('.slides_top');
+
+          const next = document.querySelector('.btn-next');
+          const prev = document.querySelector('.btn-prev');
+          let direction;
+
+          next.addEventListener('click', function() {
+          direction = -1;
+          slider.style.transform = 'translate(-190px)';  
+          });
+
+          prev.addEventListener('click', function() { 
+          direction = 1;
+          slider.style.transform = 'translate(190px)';  
+          });
+
+          slider.addEventListener('transitionend', function() {
+          // get the last element and append it to the front
+
+          if (direction === 1) {
+              slider.prepend(slider.lastElementChild);
+          } else {
+              slider.appendChild(slider.firstElementChild);
+          }
+
+          slider.style.transition = 'none';
+          slider.style.transform = 'translate(0)';
+          setTimeout(() => {
+              slider.style.transition = 'all 0.5s ease';
+          })
+          slider.stopPropagation();
+          }, false);
+
+
+    }
+    </script>
+  </head>
+  <body>
+
+<!-- Slider -->
+    <section>
+        <div class="container_slide_cards">
+            <div id="slider_recamara">
+                <h3>productos descatados</h3>
+                <h2>recámara</h2>
+            </div>
+            <div id="carrusel" class="slider_top">
+                <div id="carrusel-slides" class="slides_top">
+        <!-- Slide 1 -->
+            <div class="slide_top item_desc_carrusel">
+              
+                <a
+                href="https://www.bedbathandbeyond.com.mx/set-de-sabanas-individuales-nestwell-de-algodon-pima-satinado-de-500-hilos-color-blanco-brillante-69635158.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container_img_carrusel">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800375638_imageset?$imagePLP$&hei=700&wid=700"/>   
+                            <div class="hidden-child">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800375638_imageset?$imagePLP$&hei=700&wid=700"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                    <div class="wrap-cat-carrusel">
+                        <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                        />
+                    </div>
+                    </div>
+                    <div class="item_desc_carrusel">
+                      Set de sábanas individuales de algodón NestWell™ de 500 hilos color blanco brillante
+                    </div>
+                    <div class="precio_carrusel">$1,800.00</div>
+                    <div class="star_wrap"></div>
+                    <p class="btn_ir_compra">ver producto</p>
+                </div>
+                </a>
+            </div>
+
+            <div class="slide_top item_desc_carrusel">
+              <a
+              href="https://www.bedbathandbeyond.com.mx/set-de-edredon-king-reversible-avery-uggr-a-cuadros-en-gris-carbon.html"
+              target="_self"
+            >
+              <div class="container_bb">
+                  <div class="container_img_carrusel">
+                      <div class="main-container">
+                          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-11-05-14-29_avery_charcoalplaid_comforterset_imageset?$imagePLP$&hei=700&wid=700"/>   
+                          <div class="hidden-child">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_29285255321070g__3?$imagePLP$&hei=700&wid=700"/>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                <div class="wrap-info-carrusel">
+                  <div class="container-star">
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star enablestar"></div>
+                    <div class="clip-star disable"></div>
+                  </div>
+                  <div class="wrap-cat-carrusel">
+                    <img
+                      src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                    />
+                  </div>
+                </div>
+                <div class="item_desc_carrusel">
+                 Set de edredón king de tela polar UGG® Avery a cuadros color gris
+                  carbón
+                </div>
+                <div class="precio_carrusel disccount">$2,113.30</div>
+                <div class="star_wrap"></div>
+                <p class="btn_ir_compra">ver producto</p>
+              </a>
+            </div>
+        <!-- Slide 2 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/set-de-sabanas-king-nestwell-de-algodon-pima-satinado-de-500-hilos-color-blanco-brillante-69635140.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800375638_imageset?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800375638_imageset?$imagePLP$&hei=700&wid=700"/>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Set de sábanas king de algodón NestWell™ de 500 hilos color blanco brillante
+                            carbón
+                          </div>
+                          <div class="precio_carrusel">$2,800.00</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    <div class="slide_top item_desc_carrusel">
+                      <a
+                      href="https://www.bedbathandbeyond.com.mx/set-de-edredon-king-courtland-en-azul-pizarra-oro-14-piezas.html"
+                      target="_self"
+                    >
+                      <div class="container_bb">
+                          <div class="container_img_carrusel">
+                              <div class="main-container">
+                                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/26499395313189m?$imagePLP$&hei=700&wid=700"/>   
+                                  <div class="hidden-child">
+                                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/26499395313189m__1?$imagePLP$&hei=700&wid=700"/>
+                                  </div>
+                              </div>
+                          </div>
+                        <div class="wrap-info-carrusel">
+                          <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                          <div class="wrap-cat-carrusel">
+                            <img
+                              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                            />
+                          </div>
+                        </div>
+                        <div class="item_desc_carrusel">
+                          Set de edredón king de poliéster Hallmart Collectibles Courtland color azul pizarra/oro, 14 piezas
+                        </div>
+                        <div class="precio_carrusel">$4,709.00</div>
+                        <div class="star_wrap"></div>
+                        <p class="btn_ir_compra">ver producto</p>
+                      </div>
+                    </a>
+                  </div>
+       <!-- Slide 3 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/fundas-para-almohadas-estandar-de-algodon-nestwelltm-color-gris-niebla-set-de-2.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-12-11-29_nw625tcegyptcharspc_imageset?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-12-11-29_nw625tcegyptcharspc_imageset?$imagePLP$&hei=700&wid=700"/>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Fundas para almohadas estándar de algodón Nestwell™ color gris niebla, Set de 2
+                          </div>
+                          <div class="precio_carrusel">$900.00</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+   <!-- Slide 4 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/edredon-matrimonial-queen-de-lyocell-tencelr-biosensetm-brookstoner-color-blanco.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/32696865375167m?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/32696865375167m?$imagePLP$&hei=700&wid=700"/>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Edredón matrimonial/queen de lyocell Tencel® BioSense™ Brookstone® color blanco
+                          </div>
+                          <div class="precio_carrusel">$4,769.00</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+
+               <!-- Slide 6 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/set-de-funda-para-edredon-king-de-algodon-sunham-home-fashions-de-450-hilos-color-blanco.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/11257303317893g?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/11257303317893g__2"/>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Set de funda para edredón king de algodón Sunham Home Fashions de 450 hilos color blanco
+                          </div>
+                          <div class="precio_carrusel disccount">$2,113.30</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+               <!-- Slide 7 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/set-de-edredon-king-damask-stripe-wamsuttar-500-hilos-en-blanco.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/1076340233243g?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/1076340233243g?$imagePLP$&hei=700&wid=700"/>
+                                    </div>
+                                </div>
+                            </div>  
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Set de edredón king de algodón Wamsutta® Damask Stripe de 500 hilos color blanco
+                          </div>
+                          <div class="precio_carrusel">$3,829.00</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+          <!-- Slide 8 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/set-colcha-matrimonial-queen-ugg-dawn-color-azul-oceano-69580628.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-21-10-34_ugg_dawn_quiltset_ocean_threequarter_imageset?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-21-10-34_ugg_dawn_quiltset_ocean_threequarter_imageset?$imagePLP$&hei=700&wid=700"/>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Set de colcha matrimonial/queen de algodón UGG® Dawn color azul océano
+                          </div>
+                          <div class="precio_carrusel disccount">$3,679.00</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+            <!-- Slide 9 -->
+                    <div class="slide_top item_desc_carrusel">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/set-de-edredon-king-uggr-devon-seersucker-color-gris.html"
+                        target="_self"
+                      >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-11-02-14-36_devontextured_graystripe_imageset?$imagePLP$&hei=700&wid=700"/>   
+                                    <div class="hidden-child">
+                                      <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-11-02-14-36_devontextured_graystripe_imageset?$imagePLP$&hei=700&wid=700"/>
+                                    </div>
+                                </div>
+                            </div>
+                          <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star enablestar"></div>
+                              <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                              <img
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/recamara.jpg?rand=1622223594"
+                              />
+                            </div>
+                          </div>
+                          <div class="item_desc_carrusel">
+                            Set de edredón king de poliéster UGG® Devon Seersucker color gris
+                          </div>
+                          <div class="precio_carrusel disccount">$2,519.30</div>
+                          <div class="star_wrap"></div>
+                          <p class="btn_ir_compra">ver producto</p>
+                        </div>
+                      </a>
+                    </div>
+
+                </div>
+            </div>
+              <button class="btn-prev">
+              <button class="btn-next">
+        </div>
+    </section>
+  </body>
+</html>

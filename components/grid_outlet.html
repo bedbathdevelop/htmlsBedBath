@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid Outlet</title>
+
+    <style>
+      :root {
+        --wild-sage-color: #706fae;
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+      }
+      a {
+        text-decoration: none;
+      }
+      .wrap-grid-outlet {
+        display: grid;
+        grid-template-areas:
+          "banner cata catb catc catd"
+          "banner cate catf catg cath"
+          "banner cati catj catk catl";
+        background-color: #fff;
+      }
+      .grid-outlet {
+        border: 2px solid var(--azul-bbb-claro);
+        text-align: center;
+        font-size: 35px;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        margin: 5px;
+        height: 90px;
+      }
+      .grid-outlet:hover{
+        border: 2px solid #da1623;
+      }
+      .grid-outlet:nth-child(1) {
+        grid-area: banner;
+        height: 300px;
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/outlet.gif?rand=1630077997");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        border-radius: 10px;
+        width: 200px !important;
+        background-color: #d41e3a !important;
+;
+      }
+      .bano--outlet {
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+        padding: 10px;
+        display: block;
+      }
+      .bano--outlet div {
+        width: 50%;
+        float: left;
+      }
+      .img-outlet {
+        width: 70px;
+        z-index: 1;
+      }
+      .desc-outlet {
+        font-weight: var(--font-bedbath);
+        font-size: 11px;
+        line-height: 1;
+        font-weight: 900;
+        text-align: left;
+        color: var(--azul-bbb-strong);
+      }
+      @media (max-width: 991px) {
+        .grid-outlet:nth-child(1) {
+          width: 200px !important;
+        }
+        .wrap-grid-outlet {
+          display: grid;
+          grid-template-areas:
+            "banner cata catb"
+            "banner cate catf"
+            "banner cati catj";
+          background-color: #fff;
+      }
+    }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div class="wrap-grid-outlet">
+        <div class="grid-outlet"></div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-cocina.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-3%20kitchen?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />cocina &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-recamara.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-1%20bedding?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />recámara &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-bano.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-2%20bath?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />baño  &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-organizacion-y-limpieza.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-5%20storage%20and%20cleaning?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />organización <br />y limpieza</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-decoracion.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />decoracion</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-tecnologia.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-202124%20smart%20home?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />tecnología</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-cuidado-personal.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-13%20health%20and%20beauty?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />cuidado personal</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-mascotas-viajes-y-mas.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-15%20more?$content$&wid=150&hei=150
+                "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />mascotas, viajes y más</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-jardines-y-exteriores.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-9%20outdoor?$content$&wid=150&hei=150
+              "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />jardines y exteriores</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-alimentos-y-bebidas.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-4%20dining?$content$&wid=150&hei=150
+              "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />alimentos y bebidas</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-muebles.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150
+              "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />muebles</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="grid-outlet">
+          <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-ni-os-y-bebes.html" target="_self">
+            <div class="bano--outlet">
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/nino2-3-7_baby.jpg?rand=1623426128
+            "
+                  class="img-outlet"
+                />
+              </div>
+              <div class="desc-outlet">
+                <h2>outlet <br />niños y bebes</h2>
+              </div>
+            </div>
+          </a>
+        </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

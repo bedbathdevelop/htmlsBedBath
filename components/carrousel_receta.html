@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Carrousel BedBath</title>
+    <link rel="stylesheet" href="styles/circular.css" />
+  </head>
+  <style>
+    .slider--prod {
+      background: white;
+      height: 400px;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      width: 50%;
+    }
+
+    .slider--prod:before,
+    .slider--prod:after {
+      content: "";
+      height: 100px;
+      position: absolute;
+      width: 200px;
+      z-index: 2;
+    }
+
+    .slider--prod::after {
+      right: 0;
+      top: 0;
+      transform: rotateZ(180deg);
+    }
+
+    .slider--prod::before {
+      left: 0;
+      top: 0;
+    }
+
+    .slide--track {
+      animation: scroll 8s linear infinite;
+      display: flex;
+      width: calc(250px * 5);
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(calc(-250px * 3));
+      }
+    }
+
+    .slide--card {
+      height: 100px;
+      width: 250px;
+    }
+    /*Star component*/
+    .item-start {
+      height: auto;
+      width: 200px;
+      float: left;
+      color: #fff;
+      font-size: 40px;
+      text-align: center;
+      padding-top: 30px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 1s all;
+      overflow: hidden;
+      display: flex;
+      text-align: center;
+      justify-content: center;
+      /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+    }
+    .item-start img {
+      width: 100px;
+    }
+    .carousel-price {
+      font: 300 20px/0.5 Effra, Helvetica, Arial, sans-serif;
+      text-align: center;
+      font-weight: 900;
+      color: #000;
+    }
+    .carousel-des {
+      width: 200px;
+      font-size: 12px;
+      line-height: 1;
+      font-family: Effra, Helvetica, Arial, sans-serif;
+      color: #000;
+      padding: 0 5%;
+    }
+    .carosuel-raiting {
+      color: #1377c9;
+      margin-top: 2%;
+      font-size: 22px;
+    }
+    .btn-prod {
+      background-color: #117dcf;
+      color: #fff;
+      text-align: center;
+      padding: 4px;
+      margin: 22px auto;
+      font-size: 13px;
+      width: 100px;
+      text-align: center;
+      border-radius: 5px;
+    }
+    .btn-prod:hover {
+      background-color: #fff;
+      color: #117dcf;
+      border: 2px solid #117dcf;
+    }
+    .container-star {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      margin: 0 auto;
+      text-align: center;
+      justify-content: center;
+    }
+    .clip-star {
+      clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+      );
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      float: left;
+    }
+
+    .disable {
+      background: rgb(237, 237, 237);
+    }
+
+    .num-star {
+      font-size: 15px;
+      float: left;
+      margin-left: 2%;
+    }
+    /*Shine Animation*/
+    .shine {
+      animation-name: glitter;
+      animation-iteration-count: infinite;
+    }
+
+    .star-1 {
+      transform-origin: 102.14px 87.09px;
+      animation-duration: 3.5s;
+    }
+
+    .star-2 {
+      transform-origin: 219.47px 205.7px;
+      animation-duration: 4s;
+    }
+
+    .star-3 {
+      transform-origin: 404.11px 35.05px;
+      animation-duration: 2.5s;
+    }
+
+    .star-4 {
+      transform-origin: 54.43px 393.81px;
+      animation-duration: 2.5s;
+    }
+
+    .star-5 {
+      transform-origin: 374.42px 271.34px;
+      animation-duration: 3s;
+    }
+    .enablestar {
+      background: #194e8a;
+    }
+  </style>
+
+  <body>
+    <section>
+      <div class="slider--prod">
+        <div class="slide--track">
+          <!-- Product 1 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/cernidor-de-acero-inoxidable-our-tabletm69648922.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-03-08-41_31219_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$200.00</p>
+                <p class="carousel-des">
+                  Cernidor de acero inoxidable Our Table™
+                </p>
+                <p class="carousel-des">SKU#:69648922</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/volteador-ranurado-our-table-de-nylon-color-negro-69649835.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800392185_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$80.00/p></p>
+                <p class="carousel-des">Volteador ranurado Our Table</p>
+                <p class="carousel-des">SKU#:69649835</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product  3-->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/batidor-our-table-de-alambre-de-acero-inoxidable-de-20-32-cm-69645172.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800392253_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$100.00</p>
+                <p class="carousel-des">Batidor Our Table de alambre</p>
+                <p class="carousel-des">SKU#:69645172</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product  4-->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/volteador-de-madera-our-table.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800389895_1_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$140.00</p>
+                <p class="carousel-des">Volteador de madera Our Table</p>
+                <p class="carousel-des">SKU#:69645161</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/esponja-de-silicon-our-table-color-rojo.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800394370_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$140.00</p>
+                <p class="carousel-des">
+                  Esponja de silicón Our Table color rojo
+                </p>
+                <p class="carousel-des">SKU#:69651134</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/agarradera-our-table-de-algodon-color-rojo-69660495.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d9.scene7.com/is/image/BedBathandBeyond/2021-01-13-12-31_075215455556_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$150.00</p>
+                <p class="carousel-des">Agarradera Our Table™ color rojo</p>
+                <p class="carousel-des">SKU#:69660495</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/our-table/trapos-de-cocina-our-table-de-doble-vista-color-rojo-4-piezas-69646224.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-11-11-49_844260067140_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price">$320.00</p>
+                <p class="carousel-des">
+                  Trapos de cocina Our Table color rojo
+                </p>
+                <p class="carousel-des">SKU#:69646224</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

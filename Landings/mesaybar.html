@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mesa y bar</title>
+    <style>
+      :root {
+        --wild-sage-color: #706fae;
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      .columns {
+        display: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      .page-title-wrapper {
+        display: none !important;
+      }
+      .wrap-mesa-main {
+        width: 100%;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "slider slider slider"
+          "image1 image2 image3";
+        grid-gap: 20px;
+      }
+      .slider-mesa {
+        width: 100%;
+        height: 400px;
+        overflow: hidden;
+        background-color: wheat;
+      }
+      .item-mesa {
+        text-align: center;
+        justify-content: center;
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+      }
+      .item-mesa p {
+        color: var(--azul-bbb-medio);
+        font-size: 20px;
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+      }
+      .item-mesa:nth-child(1) {
+        grid-area: slider;
+      }
+      .slider-mesa {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/US_FW29_FY21_0912_0918_WEB_L1_Dining_C01_17_1_DSK.jpg?rand=1632849907");
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+      }
+      .item-mesa:nth-child(2) {
+        grid-area: image1;
+      }
+      .item-mesa:nth-child(3) {
+        grid-area: image2;
+      }
+      .item-mesa:nth-child(4) {
+        grid-area: image3;
+      }
+      .wrap-describe {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.6);
+        top: 10%;
+        left: 10%;
+        width: 400px;
+        text-align: center;
+        padding: 30px;
+        justify-content: center;
+      }
+      .wrap-describe h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        font-size: 5rem;
+      }
+      #containerimgd img {
+        display: block;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      #containerimgd:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .wrap-describe p {
+        background-color: var(--aniversario-azul);
+        color: #fff;
+        font-weight: 600;
+        padding: 10px 0;
+        width: 200px;
+        border-radius: 10px;
+        margin: 0 auto;
+        font-size: 12px;
+        font-family: var(--font-bedbath);
+      }
+      .wrap-describe p:hover {
+        background-color: var(--azul-bbb-button);
+      }
+      .container-cat img {
+        width: 100%;
+      }
+      .wrap-shopbycat {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+      }
+      .item-shopbycat {
+        flex: 1 1;
+        margin: 5px 10px;
+      }
+      .wrap-img img {
+        width: 200px;
+      }
+      #shopCategory {
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+      }
+      #shopCategory h2 {
+        color: var(--azul-bbb-strong);
+        font-family: var(--font-bedbath);
+        margin-top: 60px;
+      }
+      .item-shopbycat p {
+        color: var(--azul-bbb-strong);
+        font-family: var(--font-bedbath);
+      }
+      .img-src img {
+        width: 100%;
+      }
+      .img-src p {
+        font-size: 14px;
+        font-family: var(--font-bedbath);
+      }
+      .wrap-only {
+        overflow: hidden;
+      }
+      #onlyBB {
+        overflow: hidden;
+      }
+      #onlyBB h2 {
+        text-align: center;
+        justify-content: center;
+        margin-top: 80px;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+      }
+      .wrap-only {
+        overflow: hidden;
+        display: flex;
+      }
+      .item-only {
+        text-align: center;
+        justify-content: center;
+        flex: 1 33%;
+        margin: 10px;
+      }
+      .img-src h3 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+      }
+      .wrap-subcat {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-subcat .item-subcat {
+        text-align: center;
+        justify-content: center;
+        overflow: hidden;
+        height: 250px;
+      }
+      .wrap-subcattop {
+        width: 190px;
+        height: 180px;
+        font-family: var(--font-bedbath);
+        font-size: 12px;
+      }
+      .wrap-img-b p {
+        font-size: 1.3rem;
+        font-family: var(--font-bedbath);
+      }
+      .wrap-subcattop img {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 1px solid transparent;
+      }
+      .wrap-subcattop img:hover {
+        border: 1px solid var(--aniversario-azul);
+      }
+      #topSubcat {
+        text-align: center;
+      }
+      #topSubcat h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+      }
+      .wrap-way {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-way .item-way {
+        text-align: center;
+        margin: 0 10px;
+      }
+      .wrap-img-b img {
+        width: 200px;
+      }
+      #masformas {
+        text-align: center;
+        justify-content: center;
+      }
+      #masformas h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+      }
+      .wrap-brands {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .item-brand img {
+        width: 240px;
+      }
+      #brand {
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+      }
+      #brand h2 {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        margin-top: 40px;
+      }
+      @media (max-width: 767px) {
+        .wrap-describe {
+          width: 100%;
+          top: 10%;
+          left: 0;
+          padding: 20px 0;
+        }
+        .wrap-describe h2 {
+          font-size: 2rem;
+        }
+        .item-shopbycat {
+          margin: 5px;
+          flex: 1 1;
+        }
+        .wrap-img img {
+          width: 150px;
+        }
+        .item-only {
+          margin: 10px 2px;
+        }
+        .img-src h3 {
+          font-size: 1.4rem;
+          text-align: center;
+        }
+        .wrap-subcat {
+          flex-wrap: wrap;
+        }
+        .wrap-subcattop img {
+          width: 100px;
+          height: 100px;
+        }
+        .wrap-subcattop {
+          width: 150px;
+          height: 150px;
+        }
+        .wrap-subcat .item-subcat {
+          height: auto;
+          padding: 0 10px;
+        }
+        .wrap-subcattop {
+          margin-top: 20px;
+          padding-bottom: 10px;
+        }
+        .wrap-way {
+          flex-wrap: wrap;
+        }
+        .wrap-way .item-way {
+          margin: 0 5px;
+        }
+        .wrap-img-b img {
+          width: 150px;
+        }
+        .wrap-brands {
+          flex-wrap: wrap;
+        }
+        .item-brand img {
+          width: 150px;
+          margin-top: 20px;
+        }
+        .container-cat img {
+          height: 110px;
+        }
+        .item-mesa p {
+          font-size: 14px;
+        }
+        .item-shopbycat {
+          margin: 5px;
+          flex: 1 100px;
+        }
+        .wrap-subcattop img {
+          width: 150px;
+          height: 150px;
+        }
+        .wrap-subcat .item-subcat {
+          height: 230px;
+        }
+        .img-src p {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-mesa-main">
+        <div class="item-mesa">
+          <div>
+            <div class="slider-mesa">
+              <div class="wrap-describe">
+                <h2>mesa y bar</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-mesa">
+          <div class="container-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/vajillas.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/US_FW29_FY21_0912_0918_WEB_L1_Dining_C15_12_V2_1.jpg?rand=1632849907"
+                alt=""
+              />
+              <p>vajillas</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-mesa">
+          <div class="container-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/US_FW29_FY21_0912_0918_WEB_L1_Dining_C15_12_V2_2.jpg?rand=1632849907"
+                alt=""
+              />
+              <p>servicio de mesa</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-mesa">
+          <div class="container-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/mesa/cuberteria.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/US_FW29_FY21_0912_0918_WEB_L1_Dining_C15_12_V2_3.jpg?rand=1632849907"
+                alt=""
+              />
+              <p>cubertería</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Shop by category-->
+    <section id="shopCategory">
+      <h2>comprar por categoría</h2>
+      <div class="wrap-shopbycat">
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/vajillas.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW29_FY21_0912_0918_WEB_L1_Dining_C15_12_V3_1?$content$&wid=468"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>vajillas</p>
+          </a>
+        </div>
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/copas-y-decantadores.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://s7d2.scene7.com/is/image/BedBathandBeyond/292266368216320p__1?$imagePLP$&hei=700&wid=700"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>copas y decantadores</p>
+          </a>
+        </div>
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/vasos-y-tarros.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/vasos.jpg?rand=1632848055"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>vasos y tarros</p>
+          </a>
+        </div>
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/cuberteria.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/US-FW44-FY20-1227-0102-WEB-Dining-C15-12-3.jpg?rand=1632849907"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>cubertería</p>
+          </a>
+        </div>
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa.jpg?rand=1632848390"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>servicio de mesa</p>
+          </a>
+        </div>
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/manteleria.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/servilletas_tela.jpg"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>mantelería</p>
+          </a>
+        </div>
+        <div class="item-shopbycat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/vinos-y-cervezas.html"
+            target="_self"
+          >
+            <div class="wrap-img">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW27_FY21_0829_0904_WEB_L1_Dining_C15_12_V3_8?$content$&wid=468"
+                alt="BedBathandBeyond"
+              />
+            </div>
+            <p>bar</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solo en BB-->
+    <section id="onlyBB">
+      <h2>solo en BB&B</h2>
+      <div class="wrap-only">
+        <!-- item BB -->
+        <div class="item-only">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/vajillas/vajillas-completas.html"
+            target="_self"
+          >
+            <div class="img-src">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/nuevo.jpg?rand=1632849570"
+                alt=""
+              />
+              <h3>diseños modernos</h3>
+              <p>Piezas elegantes para compartir momentos</p>
+            </div>
+          </a>
+        </div>
+        <!-- item BB -->
+        <div class="item-only">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/cocina.html"
+            target="_self"
+          >
+            <div class="img-src">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Dise_o_sin_t_tulo_36_.jpg?rand=1632849652"
+                alt=""
+              />
+              <h3>diseños básicos</h3>
+              <p>Todo lo esencial a precios increíbles</p>
+            </div>
+          </a>
+        </div>
+        <!-- item BB -->
+        <div class="item-only">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/our-table/manteleria.html"
+            target="_self"
+          >
+            <div class="img-src">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Dise_o_sin_t_tulo_35_.jpg?rand=1632849387"
+                alt=""
+              />
+              <h3>diseños eclécticos</h3>
+              <p>Patrones y colores vibrantes para animar la mesa</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Top Subcategorias -->
+    <section id="topSubcat">
+      <h2>top categorías</h2>
+      <div class="wrap-subcat">
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/vajillas/platos.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/platos.jpg?$content$&wid=330&hei=330"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>platos</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/cuberteria/sets.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/setsdecubiertos.jpg?$content$&wid=330&hei=330"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>set de cubiertos</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa/jarras.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/jarrasydispensadores.jpg?$content$&wid=330&hei=330"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>jarras y dispensadores</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa/saleros-y-pimenteros.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/salerosypimenteros.jpg?$content$&wid=330&hei=330"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>saleros y pimenteros</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/copas-y-decantadores/copas-para-martini.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/copasparamartini.jpg?$content$&wid=330&hei=330"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>copas para martini</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa/botaneros-y-salseras.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/46047842852957p?$imagePLP$&hei=300&wid=260"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>botaneros y salseras</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servicio de Mesa -->
+    <section id="topSubcat">
+      <h2>viste tu mesa</h2>
+      <div class="wrap-subcat">
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/manteleria/manteles-individuales.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/mantel_individual.jpg"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>manteles individuales</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/manteleria/manteles-rectangulares.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/mantel_ractangular.jpg"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>manteles rectangulares</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/manteleria/manteles-redondos.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/mantel_redondo.jpg"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>manteles redondos</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/manteleria/caminos-de-mesa.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/camino_de_mesa.jpg"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>caminos de mesa</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/manteleria/servilletas.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/servilletas_tela.jpg"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>servilletas</p>
+            </div>
+          </a>
+        </div>
+        <!-- subcategoria -->
+        <div class="item-subcat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/manteleria/protectores-de-mesa.html"
+            target="_self"
+          >
+            <div class="wrap-subcattop">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/protector_de_mesa.jpg"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>protectores de mesa</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- mas formas de comprar -->
+    <section id="masformas">
+      <h2>para toda ocasión</h2>
+      <div class="wrap-way">
+        <div class="item-way">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/vajillas/tazas.html"
+            target="_self"
+          >
+            <div class="wrap-img-b">
+              <img
+                src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-05-13-53_sorryfv_imageset?$imagePLP$&hei=700&wid=700"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>para regalar</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-way">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/vasos-y-tarros.html"
+            target="_self"
+          >
+            <div class="wrap-img-b">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69765984.jpg?$imagePLP$&hei=700&wid=700"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>para tus bebidas</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-way">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa/platones-y-charolas.html"
+            target="_self"
+          >
+            <div class="wrap-img-b">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/reuniones.jpg?rand=1632844249"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>para tus reuniones</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-way">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/mesa/copas-y-decantadores.html"
+            target="_self"
+          >
+            <div class="wrap-img-b">
+              <img
+                src="https://s7d2.scene7.com/is/image/BedBathandBeyond/31009435869p_imageset?$imagePLP$&hei=700&wid=700"
+                alt="mesa y bar BedBathandBeyond"
+              />
+              <p>para el brindis</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marcas destacadas -->
+
+    <section id="brand">
+      <h2>marcas destacadas</h2>
+      <div class="wrap-brands">
+        <div class="item-brand">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/cocina.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/simply.jpg?rand=1632845495"
+              alt="simply Essential Bed Bath and Beyond"
+            />
+          </a>
+        </div>
+        <div class="item-brand">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home/mesa.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/logo/bee-and-willow_logo_1.jpg?rand=1632845495"
+              alt="bee willow Bed Bath and Beyond"
+            />
+          </a>
+        </div>
+        <div class="item-brand">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/our-table/manteleria.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/our.jpg?rand=1632845495"
+              alt="our table Bed Bath and Beyond"
+            />
+          </a>
+        </div>
+        <div class="item-brand">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wild.jpg?rand=1632845495"
+              alt="wild sage Bed Bath and Beyond"
+            />
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

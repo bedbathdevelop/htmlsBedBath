@@ -1,0 +1,249 @@
+<style>
+  a {
+    text-decoration: none;
+  }
+  .controls {
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+
+  .controls:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .itemc {
+    width: 33.33%;
+    height: auto;
+    float: left;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s all;
+    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+  }
+  .cont {
+    position: absolute;
+    width: 1100px;
+    margin-top: 190px;
+  }
+  .tapa {
+    width: 100%;
+    transition: 0.9s all;
+  }
+  .itemc img {
+    width: 50%;
+    margin-top: 20px;
+  }
+  .itemc:hover {
+    margin-top: -5px;
+  }
+  .carrousel {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1;
+  }
+  .carousel-price {
+    font: 300 25px/0.5 Effra, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight: 900;
+    color: #000;
+  }
+  .carousel-des {
+    font-size: 12px;
+    line-height: 1;
+    font-family: Effra, Helvetica, Arial, sans-serif;
+    color: #000;
+    padding: 0 5%;
+  }
+  .carosuel-raiting {
+    color: #1377c9;
+    margin-top: 2%;
+    font-size: 22px;
+  }
+  /*Star component*/
+  .container-star {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .clip-star {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    float: left;
+  }
+  .active {
+    background: #1377c9;
+  }
+  .disable {
+    background: rgb(237, 237, 237);
+  }
+  .num-star {
+    font-size: 15px;
+    float: left;
+    margin-left: 2%;
+  }
+  .mobile-slider {
+    display: none;
+  }
+
+  #container {
+    width: 500px;
+    margin: auto !important;
+    display: block;
+    height: 500px;
+    position: relative;
+    list-style-type: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .product {
+    display: none;
+    background: #fff;
+    color: #fff;
+    padding: 20px;
+    width: 360px;
+    height: 360px;
+    top: 50px;
+    left: 50px;
+    position: absolute;
+    cursor: hand;
+  }
+  .rotate-left {
+    transform: rotate(30deg) scale(0.8);
+    transition: 1s;
+    margin-left: 400px;
+    cursor: e-resize;
+    opacity: 0;
+    z-index: 10;
+  }
+  .rotate-right {
+    transform: rotate(-30deg) scale(0.8);
+    transition: 1s;
+    opacity: 0;
+    margin-left: -400px;
+    cursor: w-resize;
+    z-index: 10;
+  }
+  @media (max-width: 991px) {
+    .itemc {
+      width: 100%;
+    }
+    .mobile-slider {
+      display: block;
+    }
+    .mobile-img {
+      margin: 0 20% !important;
+    }
+    .container-star {
+      margin: 0 25%;
+    }
+    .itemc img {
+      width: 30%;
+    }
+  }
+</style>
+
+<div class="carrousel desktop-slider">
+  <div class="tapa" id="move">
+    <div class="itemc">
+      <a
+        href="https://www.bedbathandbeyond.com.mx/espejo-antiempanante-con-led-blanco-69597639.html"
+        target="_self"
+      >
+        <img
+          src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-07-16-52_primary_zwtar20s_oblique_w_squeegee_imageset"
+        />
+        <p class="carousel-price">$1,170.00</p>
+        <p class="carousel-des">
+          Espejo antiempañante Haven™ con luces LED, 22.86 x 17.78 cm en blanco
+        </p>
+        <div class="container-star">
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star disable"></div>
+          <div class="clip-star disable"></div>
+          <div class="clip-star disable"></div>
+          <div class="num-star">80</div>
+        </div>
+      </a>
+    </div>
+    <div class="itemc">
+      <a
+        href="https://www.bedbathandbeyond.com.mx/cepillo-de-madera-haventm-de-teca-para-pies-2-en-1.html"
+        target="_self"
+      >
+        <img
+          src="https://s7d1.scene7.com/is/image/BedBathandBeyond/105082860436290p?$imagePLP$&hei=700&wid=700"
+        />
+        <p class="carousel-price">$ 400.00</p>
+        <p class="carousel-des">
+          Cepillo de madera Haven™ de teca para pies 2 en 1
+        </p>
+        <div class="container-star">
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star disable"></div>
+          <div class="num-star">300</div>
+        </div>
+      </a>
+    </div>
+    <div class="itemc">
+      <a
+        href="https://www.bedbathandbeyond.com.mx/tapete-bano-haven-wave-color-gris-niebla-69627619.html"
+        target="_self"
+      >
+        <img
+          src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-12-20-05_846756062219_1_imageset?$imagePLP$&hei=700&wid=700"
+        />
+        <p class="carousel-price">$ 500.00</p>
+        <p class="carousel-des">
+          Tapete para baño Haven™ Wave color gris niebla
+        </p>
+        <div class="container-star">
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star active"></div>
+          <div class="clip-star disable"></div>
+          <div class="num-star">450</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

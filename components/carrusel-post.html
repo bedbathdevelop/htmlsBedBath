@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrusel Home Post</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --squeared-away: #f79c7a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      a {
+        text-decoration: none;
+      }
+      .wrap-post-car {
+        overflow: hidden;
+        display: flex;
+        max-width: 1000px;
+        position: relative;
+        margin: auto;
+      }
+      .item--post {
+        overflow: hidden;
+        border: 1px solid #efefef;
+        height: auto;
+        margin: 10px 5px;
+        border-radius: 10px;
+        padding: 10px;
+        width: 300px;
+      }
+      .container-post {
+        overflow: hidden;
+        display: flex;
+        width: 100%;
+      }
+      .container-post div {
+        margin: 0 10px;
+        line-height: 1;
+      }
+      .container-post div:nth-child(2) {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+        font-size: 0.8rem;
+      }
+      .img--post {
+        overflow: hidden;
+      }
+      .img--post img {
+        width: 200px;
+      }
+    </style>
+
+    <script>
+      var slidePosition = 0;
+      var flag = 0;
+
+      window.onload = function () {
+        var backbtn = document.getElementById("back");
+        var nextbtn = document.getElementById("go");
+        var slides = document.getElementsByClassName("item--post");
+
+        sliderRun();
+
+        backbtn.addEventListener("click", function (event) {
+          if (slidePosition === 0) {
+            slidePosition = slides.length - 1;
+          } else {
+            slidePosition = slidePosition + 1;
+            console.log(slidePosition);
+          }
+          sliderRun(1);
+        });
+
+        nextbtn.addEventListener("click", function (event) {
+          slidePosition = slidePosition + 1;
+          sliderRun();
+        });
+
+        function sliderRun(flag) {
+          var i;
+          var b = slidePosition + 1;
+          var c = slidePosition + 2;
+
+          if (flag === 1) {
+            if (slidePosition === slides.length - 1) {
+              b = slidePosition - 4;
+              c = slidePosition - 3;
+            } else {
+              b = slidePosition - 4;
+              c = slidePosition - 3;
+            }
+
+            console.log("entro", slidePosition, b, c);
+          }
+
+          for (i = 0; i < slides.length; i++) {
+            if (i === slidePosition || i === b || i === c) {
+              slides[i].style.display = "block";
+            } else {
+              slides[i].style.display = "none";
+            }
+          }
+          //slidePosition++;
+
+          c === slides.length - 1 ? (slidePosition = 0) : slidePosition + 1;
+          /*setTimeout(sliderRun, 1000);*/
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <section class="wrap-post-car">
+      <div class="item--post">
+        <a href="" target="_self">
+          <div class="container-post">
+            <div class="img--post">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg"
+                alt=""
+              />
+            </div>
+            <div>0 Cómo lograr que tu cama parezca de revista</div>
+          </div>
+        </a>
+      </div>
+      <div class="item--post">
+        <a href="" target="_self">
+          <div class="container-post">
+            <div class="img--post">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg"
+                alt=""
+              />
+            </div>
+            <div>1 Cómo lograr que tu cama parezca de revista</div>
+          </div>
+        </a>
+      </div>
+      <div class="item--post">
+        <a href="" target="_self">
+          <div class="container-post">
+            <div class="img--post">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg"
+                alt=""
+              />
+            </div>
+            <div>2 Cómo lograr que tu cama parezca de revista</div>
+          </div>
+        </a>
+      </div>
+      <div class="item--post">
+        <a href="" target="_self">
+          <div class="container-post">
+            <div class="img--post">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg"
+                alt=""
+              />
+            </div>
+            <div>3 Cómo lograr que tu cama parezca de revista</div>
+          </div>
+        </a>
+      </div>
+      <div class="item--post">
+        <a href="" target="_self">
+          <div class="container-post">
+            <div class="img--post">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg"
+                alt=""
+              />
+            </div>
+            <div>4 Cómo lograr que tu cama parezca de revista</div>
+          </div>
+        </a>
+      </div>
+      <div class="item--post">
+        <a href="" target="_self">
+          <div class="container-post">
+            <div class="img--post">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg"
+                alt=""
+              />
+            </div>
+            <div>5 Cómo lograr que tu cama parezca de revista</div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <p id="back"><</p>
+    <p id="go">></p>
+  </body>
+</html>

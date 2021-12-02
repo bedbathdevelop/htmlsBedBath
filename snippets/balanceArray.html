@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    d
+  </body>
+  <script>
+    let arr = [1, 2, 3, 4, 6];
+
+    balancedSum(arr);
+
+    const pivot = balancedSum(arr);
+    console.log("pivot", pivot);
+    //console.log("Pivot is", pivot);
+    function balancedSum(arr) {
+      console.log(arr);
+      // Write your code here
+      let left_i = 0;
+      let right_i = arr.length - 1;
+
+      let right_sum = arr[right_i];
+      let left_sum = arr[left_i];
+
+      while (right_sum - left_sum != 2) {
+        if (left_sum <= right_sum) {
+          left_i++;
+          left_sum = left_sum + arr[left_i];
+          return left_sum;
+        } else {
+          right_i++;
+          right_sum = right_sum + arr[right_i];
+          return right_sum;
+        }
+
+        /*if (left_sum === right_sum) {
+          return left_i + 1;
+        } else {
+          return -1;
+        }*/
+      }
+    }
+  </script>
+</html>

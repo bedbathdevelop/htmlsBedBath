@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bloque Buen Fin</title>
+    <style>
+        :root {
+          --azul-bbb-strong: #002854;
+          --azul-bbb-medio: #1a4e8a;
+          --azul-bbb-claro: #daeaf4;
+          --azul-bbb-button: #147bd1;
+          --aniversario-azul: #1a4c8a;
+          --rojo: #e1191a;
+          --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+          --primary-font: Effra, Helvetica, Arial, sans-serif;
+          --secondary-font: Termina Headline, sans-serif;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+        .txt-category{
+          font: 300 1.6rem/1 Effra,Helvetica,Arial,sans-serif !important;
+          color:#000;
+          width: 100px;
+        }
+        .wrap-block {
+          display: block;
+          overflow: hidden;
+          height: auto;
+          position: relative;
+          height: 280px;
+          text-align: center;
+          justify-content: center;
+          display: flex;
+          background: url('https://www.bedbathandbeyond.com.mx/media/fondo-banner-desk-interno_1.jpg?rand=1635263849');
+          background-size: contain;
+          background-repeat: repeat;
+        }
+        .img-logo {
+          position: absolute;
+          width: 15%;
+          z-index: 1;
+          left: 5%;
+          top: 5%
+        }
+        .wrap-txtbn {
+          position: absolute;
+          bottom: 40px;
+          left: 20%;
+          color: #fff;
+          line-height: 1.2;
+          font-family: var(--font-bedbath);
+          text-align: left;
+          font-size: 2.4rem;
+        }
+        .wrap-btn{
+          position: relative;
+          overflow: hidden;
+          width: 100%;
+          height: 50px;
+        }
+        .wrap-btn p {
+          right: 10px;
+          position: absolute;
+          }
+          .page-title span.base{
+              font-size: 4rem;
+          }
+        .bg_red {
+          background: var(--rojo);
+          font-weight: 900;
+          padding: 0 10px;
+          text-align: left;
+          color: #fff !important;
+        }
+        .wrap-logo {
+          position: absolute;
+          top: 5%;
+          right: 2%;
+          color: #fff;
+        }
+        .wrap-logo .title-bb {
+          font-size: 3rem;
+           line-height: 1;
+        }
+        .title-bb span:nth-child(1){
+            font-family: var(--primary-font);
+            font-weight: 300;
+            font-size: 2.4rem;
+        }
+        .title-bb span:nth-child(2){
+            font-family: var(--font-bedbath);
+            font-weight: 900;
+            font-size: 2.7rem;
+        }
+        .register{
+            font-size: 14px !important;
+            margin-top: -100px;
+        }
+        .subtitle-bb{
+          position: relative;
+          top: -10px;
+          left: 70px;
+          font-family: var(--primary-font);
+        }
+        .wrap-cat{
+            overflow: hidden;
+            position: absolute;
+            z-index: 1;
+            color: #fff;
+            top: 10%;
+            left: auto;
+            right: auto;
+            font-family: var(--font-bedbath);
+            line-height: 1;
+            display: flex;
+        }
+        .wrap-cat .title-des{
+           z-index: 1;
+           background-color: var(--rojo);
+           padding: 0 10px;
+           font-size: 2.5rem;
+           margin-top: -10px;
+        }
+        .wrap-category{
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .item-cat{
+            overflow: hidden;
+            text-align: center;
+            justify-content: center;
+            margin: 0 5px;
+        }
+        .item-cat img {
+          height: auto;
+          width: 100px;
+          height: 100px;
+          box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+          border: 2px solid var(--azul-bbb-strong);
+        }
+        .page-title-wrapper {
+          z-index: 1;
+          padding: 0 10px !important;
+          font-size: 2.2rem !important;
+          margin-top: -10px !important;
+          position: absolute;
+          color: #fff !important;
+          left: 0;
+          right: 0;
+          margin-top: 60px !important;
+          width: 100%;
+          text-align: center;
+          justify-content: center;
+          overflow: hidden;
+        }
+        .page-title span.base {
+            color: #fff !important;
+        }
+        .wrap-cat .subtitle-des{
+           z-index: 1;
+           font-size: 2rem;
+        }
+  
+  
+  .slideDown{
+      animation-name: slideDown;
+      -webkit-animation-name: slideDown;	
+  
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+  
+      animation-timing-function: ease;	
+      -webkit-animation-timing-function: ease;	
+  
+      visibility: visible !important;						
+  }
+  
+  @keyframes slideDown {
+      0% {
+          transform: translateY(-100%);
+      }		
+      100% {
+          transform: translateY(0%);
+      }		
+  }
+  
+  @-webkit-keyframes slideDown {
+      0% {
+          -webkit-transform: translateY(-100%);
+      }
+          
+      100% {
+          -webkit-transform: translateY(0%);
+      }	
+  }
+  
+  .slideUp{
+      animation-name: slideUp;
+      -webkit-animation-name: slideUp;	
+  
+      animation-duration: 1s;	
+      -webkit-animation-duration: 1s;
+  
+      animation-timing-function: ease;	
+      -webkit-animation-timing-function: ease;
+  
+      visibility: visible !important;			
+  }
+  
+  @keyframes slideUp {
+      0% {
+          transform: translateY(100%);
+      }		
+      100% {
+          transform: translateY(0%);
+      }	
+  }
+  
+  @-webkit-keyframes slideUp {
+      0% {
+          -webkit-transform: translateY(100%);
+      }			
+      100% {
+          -webkit-transform: translateY(0%);
+      }	
+  }
+  
+  .hatch{
+      animation: hatch 2s  ease-in-out infinite;
+      -webkit-animation: hatch 2s  ease-in-out infinite;
+  
+      visibility: visible !important;		
+  }
+  
+  @keyframes hatch {
+      0% {
+          transform: rotate(0deg) scaleY(1);
+      }
+      20% {
+          transform: rotate(-2deg) scaleY(1.05);
+      }
+      35% {
+          transform: rotate(2deg) scaleY(1);
+      }
+      50% {
+          transform: rotate(-2deg);
+      }	
+      65% {
+          transform: rotate(1deg);
+      }	
+      80% {
+          transform: rotate(-1deg);
+      }		
+      100% {
+          transform: rotate(0deg);
+      }									
+  }
+  
+  @-webkit-keyframes hatch {
+      0% {
+          -webkit-transform: rotate(0deg) scaleY(1);
+      }
+      20% {
+          -webkit-transform: rotate(-2deg) scaleY(1.05);
+      }
+      35% {
+          -webkit-transform: rotate(2deg) scaleY(1);
+      }
+      50% {
+          -webkit-transform: rotate(-2deg);
+      }	
+      65% {
+          -webkit-transform: rotate(1deg);
+      }	
+      80% {
+          -webkit-transform: rotate(-1deg);
+      }		
+      100% {
+          -webkit-transform: rotate(0deg);
+      }		
+  }
+  
+  .wrap-inside-cat{
+      overflow: hidden;
+  }
+  
+  .img-cat{
+      width: 200px;
+  }
+  
+  @media (max-width: 767px) {
+      .img-logo{
+          width: 20%;
+      }
+      .wrap-txtbn{
+          left: 70%;
+          font-size: 1.2rem;
+      }
+      .wrap-logo .title-bb{
+          font-size: 1.2rem;
+      }
+      .subtitle-bb{
+          top: -10px;
+          left: 25px;
+          font-size: 1rem;
+      }
+      .wrap-cat .title-des{
+          font-size: 2rem;
+      }
+      .wrap-cat .subtitle-des{
+          font-size: 1rem;
+      }
+      .wrap-cat{
+          top: 25%;
+          left: 32%;
+      }
+      .wrap-cat p:nth-child(1){
+          width: 100px;
+          height: 100px;
+      }
+      .title-bb span:nth-child(1){
+          font-size: 1.2rem;
+      }
+      .title-bb span:nth-child(2){
+          font-size: 1.3rem;
+      }
+      .page-title-wrapper{
+          margin-top: 120px !important;
+          font-size: 3rem !important;
+          width: 90%;
+          left: 5%;
+          right: 0;
+      }
+      .wrap-block{
+          height: 230px;
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+      }
+      .page-title span.base{
+          color: #fff !important;
+          font-size: 2.2rem;
+      }
+      .wrap-btn a p img {
+          width: 40px;
+      }
+  }
+      .zoom{
+          overflow: hidden;
+          position: relative;
+      }
+      .zoom img {
+          display: block;
+          transition: transform 0.5s; /* smoother zoom */
+      }
+      .zoom:hover img {
+          transform: scale(1.1);
+          transform-origin: 50% 50%;
+        }
+  
+        .img-arrow{
+            width: 50px;
+        }
+        .text-preventa{
+            position: absolute;
+            top: 20px;
+            left: 5px;
+            color: #fff;
+            font-family: var(--font-bedbath);
+            z-index: 5;
+            background-color: var(--rojo);
+            padding: 5px 10px;
+            font-size: 3rem;
+            transform: rotate(350deg);
+        }
+        .wrap-bar-red{
+            position: absolute;
+            background-color: #fff;
+            width: 100%;
+            padding: 5px 0;
+            background-color: var(--rojo);
+            bottom: 0;
+        }
+        .wrap-bar-red p {
+            color: #fff;
+            font-family: var(--font-bedbath);
+            margin-top: 5px;
+        }
+        #container-category{
+            overflow: hidden;
+            margin-top: -20px;
+        }
+        .wrap-envio{
+            background-color: var(--azul-bbb-claro);
+            text-align: center;
+            justify-content: center;
+            padding: 2px 0;
+        }
+        .wrap-envio p {
+            font-weight: 900;
+            color: var(--azul-bbb-medio);
+            font-family: var(--font-bedbath);
+            font-size: 12px;
+            margin-top: 8px;
+        }
+  
+        .high-red{
+            background-color: #e1191a;
+            font-size: 6rem !important;
+        }
+        .text-antes{
+            position: absolute;
+            top: 10%;
+            left: 5%;
+            color: #fff;
+            font-family: var(--font-bedbath);
+            line-height: 1;
+        }
+        .text-antes p {
+            line-height: 1;
+            font-size: 3rem;
+        }
+        .page-main>.page-title-wrapper .page-title{
+            margin-top: 5%;
+            line-height: 1;
+        }
+        .preventa-txt{
+            background-color: var(--aniversario-azul);
+            position: absolute;
+            padding: 10px;
+            color: #fff;
+            font-family: var(--font-bedbath);
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+        .preventa-txt span {
+            color: var(--rojo);
+        }
+        .tossing{
+              animation-name: tossing;
+              -webkit-animation-name: tossing;	
+  
+              animation-duration: 2.5s;	
+              -webkit-animation-duration: 2.5s;
+  
+              animation-iteration-count: infinite;
+              -webkit-animation-iteration-count: infinite;
+          }
+  
+          @keyframes tossing {
+              0% {
+                  transform: rotate(-4deg);	
+              }
+              50% {
+                  transform: rotate(4deg);
+              }
+              100% {
+                  transform: rotate(-4deg);	
+              }						
+          }
+  
+          @-webkit-keyframes tossing {
+              0% {
+                  -webkit-transform: rotate(-4deg);	
+              }
+              50% {
+                  -webkit-transform: rotate(4deg);
+              }
+              100% {
+                  -webkit-transform: rotate(-4deg);	
+              }				
+          }
+        @media (max-width: 767px) {
+          .zoom{
+              height: auto;
+          }
+          .txt-category{
+              font: 300 12px/1.38 Effra,Helvetica,Arial,sans-serif !important;
+              color:#000;
+          }
+          #container-category{
+              width: 100%;
+              overflow-x: scroll;
+              margin-top: 0;
+          }
+          .wrap-category{
+              margin-top: 0;
+              width: 200%;
+              flex-wrap: nowrap;
+          }
+          .wrap-block{
+              height: 230px;
+          }
+          .wrap-txtbn {
+              bottom: 25%;
+          }
+          .item-cat{
+              margin: 0 2px;
+          }
+          .high-red{
+              font-size: 1.4rem !important;
+              padding: 2px 0;
+          }
+          .text-antes p{
+              font-size: 1.2rem;
+              line-height: 0.6;
+          }
+          .text-antes{
+              top: 2%;
+              left: 2%;
+          }
+          .page-main>.page-title-wrapper .page-title{
+              margin-top: 4%;
+          }
+          .preventa-txt{
+              margin-top: 40%;
+              font-size: 1.2rem;
+          }
+        }
+        .despues {
+            display: none !important;
+        }
+        .antes {
+            display: block !important;
+        }
+        .show {
+            display: block !important;
+        }
+        .hide {
+            display: none !important;
+        }
+        .wrap-circle-cat{
+            width: 100px;
+            height: 100px;
+            background-color: var(--rojo);
+            color: #fff;
+            border-radius: 50%;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            margin-top: -10px;
+        }
+        .wrap-circle-cat:hover {
+            background-color: var(--azul-bbb-medio);
+        }
+        .wrap-circle-cat p {
+            font-size: 3rem;
+            font-family: var(--font-bedbath);
+            padding-top: 25px;
+            margin-top: 15px;
+        }
+      </style>
+  </head>
+  <body>
+    <div class="wrap-envio">
+        <p>envíos gratis y hasta 18 msi</p>
+    </div>
+    <div class="wrap-block">
+        <div class="wrap-logo slideDown">
+          <p class="title-bb"><span>BED BATH & </span><span>BEYOND<span class="register">®</span</p>
+          <p class="subtitle-bb">El hogar que <b>tú</b> eliges</p>
+        </div>
+        <p class="preventa-txt tossing antes">preventa <span>exclusiva ONLINE</span></p>
+        <p class="preventa-txt tossing despues"> <span class="bg_red">el buen fin</span> que tú eliges</span></p>
+        <div class="text-antes slideUp antes">
+            <p>las mejores</p>
+            <p class="high-red">ofertas</p>
+            <p>del año</p>
+            <p>están aquí</p>
+        </div>
+        <picture id="despues">
+            <img
+            id="logoBF"
+            src="https://www.bedbathandbeyond.com.mx/media/logo_buen_fin_1.png?rand=1635263849"
+            alt=""
+            class="img-logo hatch despues"
+            />
+        </picture>
+      <div class="wrap-bar-red antes">
+          <p>solo HOY <b>9 de Noviembre</b></p>
+      </div>
+      <div  class="wrap-bar-red despues">
+        <p>Del 10 - 16 de Noviembre</b></p>
+    </div>
+    </div>
+    <!-- Btn -->
+    <div class="wrap-btn">
+        <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021.html" target="_self">
+            <p><img src="https://www.bedbathandbeyond.com.mx/media/back-arrow-l.png?rand=1635278653" alt="" class="img-arrow" /></p>
+        </a>
+    </div>
+    <!-- categorias -->
+    <section id="container-category">
+        <div class="wrap-category">
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/cocina.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69740557.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cocina" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">cocina</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/bano.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69618518.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond baño" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">baño</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/alimentos.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69618835.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond alimentos" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">alimentos</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/cuidado-personal.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/47128057_8.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">cuidado personal</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/decoracion.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/8436551848112.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">decoración</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/jardines-y-exteriores.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/67356102_1.jpeg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">jardines y exteriores</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/mascotas.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7501556487893_1.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">mascotas</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/mesa-y-bar.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69724368_1.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">mesa y bar</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/ninos-y-bebes.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69771609.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">niños y bebés</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/organizacion-y-limpieza.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69594253_2.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">organización y limpieza</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/recamara.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69724755.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">recámara</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/tecnologia.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/62937207.jpg?$imagePLP$&hei=300&wid=260" 
+                            alt="Bed Bath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">tecnología</p>
+                    </div>
+                </a>
+            </div>
+            <div class="item-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/viajes.html" target="_self">
+                    <div class="wrap-inside-cat">
+                        <p class="zoom">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69594253_2.jpg?$imagePLP$&hei=300&wid=260https://www.bedbathandbeyond.com.mx/media//nacionales/39052814563.jpg?$imagePLP$&hei=300&wid=260ath and Beyond cuidado personal" 
+                            class="img-cat"/>
+                        </p>
+                        <p class="txt-category">viajes</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+  </body>
+</html>

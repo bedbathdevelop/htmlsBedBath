@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tienda Otoño</title>
+  </head>
+  <body>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --squeared-away: #f79c7a;
+      }
+      a {
+        text-decoration: none;
+      }
+      .wrap-grid {
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        background-image: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/otonov2.jpg?rand=1634570927);
+        width: 100%;
+        height: 400px;
+        background-repeat: no-repeat;
+      }
+      .wrap-category {
+        overflow: hidden;
+        display: flex;
+        margin: 10px;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-cat {
+        width: 20%;
+        margin: 0 5px;
+        text-align: center;
+      }
+      .img-cat {
+        width: 100%;
+      }
+      .txt-cat {
+        font: 300 16px/1.38 Effra, Helvetica, Arial, sans-serif;
+        color: #000;
+      }
+      .wrap-describe {
+        background: rgba(255, 255, 255, 0.8);
+        width: 500px;
+        height: 180px;
+        position: absolute;
+        z-index: 1;
+        top: 15%;
+        left: 30%;
+        right: 40%;
+        padding: 5px;
+      }
+      .wrap-describe p {
+        font-size: 12px;
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+      }
+      .wrap-describe h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        font-size: 3.5rem;
+      }
+      .wrap-ourtable {
+        overflow: hidden;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "img1 img1 img2 img2"
+          "img3 img3 img2 img2";
+        grid-gap: 10px;
+        display: grid;
+        margin-top: 50px;
+      }
+
+      .item-ourtab {
+        overflow: hidden;
+      }
+      .item-ourtab:nth-child(1) {
+        height: 200px;
+        background-color: var(--ourtable);
+        grid-area: img1;
+      }
+      .item-ourtab:nth-child(2) {
+        height: 400px;
+        background-color: var(--ourtable);
+        grid-area: img2;
+      }
+      .item-ourtab:nth-child(3) {
+        height: 120px;
+        background-color: var(--ourtable);
+        grid-area: img3;
+        position: relative;
+        padding: 40px;
+      }
+      .item-ourtab:nth-child(3) h3 {
+        color: var(--azul-bbb-strong);
+        font-family: var(--font-bedbath);
+        font-size: 30px;
+      }
+      .wrap-cat-our {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin: 10px;
+      }
+      .item-cat-our {
+        width: 25%;
+        position: relative;
+        margin: 0 10px;
+      }
+      .ver-cat {
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 29%;
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+      }
+      .item-cat-our img {
+        width: 300px;
+      }
+      .wrap-cat-re {
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+        text-align: center;
+        margin: 10px;
+        flex-wrap: wrap;
+      }
+      .item-cat-re {
+        width: 31%;
+        height: auto;
+        overflow: hidden;
+        margin: 0 10px;
+      }
+      .item-cat-re img {
+        width: 100%;
+      }
+      .item-ourtab h3 {
+        color: var(--azul-bbb-medio);
+      }
+      .img-s {
+        width: 800px;
+      }
+      .space-lines {
+        height: 60px;
+      }
+      .wrap-ban-reca {
+        position: relative;
+        text-align: center;
+        justify-content: center;
+      }
+      .wrap-txt-complete {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.8);
+        top: 20%;
+        left: 35%;
+        right: 40%;
+        padding: 20px;
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        width: 400px;
+        font-size: 1.4rem;
+        text-align: center;
+        justify-content: center;
+      }
+      .btn-ver {
+        background: var(--azul-bbb-medio);
+        color: #fff;
+        font-size: 14px;
+        width: 200px;
+        padding: 10px;
+        border-radius: 5px;
+        margin: 0 auto;
+      }
+
+      /*Carrusel*/
+      .slides_mb {
+        display: flex;
+        flex-shrink: 0;
+        transition: all 0.5s;
+        overflow-x: hidden;
+      }
+      .slides_mb .slide_mb {
+        flex-basis: 1;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 260px;
+        margin: 0 5px;
+        text-align: left;
+        border: 1px solid #daeaf4;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.2rem var(--white);
+      }
+      .item_desc_carrusel {
+        font-size: 1.1rem;
+        line-height: 1.1;
+        padding: 1px 0;
+        color: #1a4e8a;
+        margin-top: 25px;
+      }
+      .item_desc_carrusel span {
+        color: #002854;
+      }
+      .item_carrusel_bb {
+        width: 200px;
+        height: 260px;
+        margin: 0 5px;
+        padding: 5px;
+        overflow: hidden;
+        border: 1px solid #daeaf4;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.2rem var(--white);
+      }
+      .bg_bb {
+        background-color: #daeaf4;
+        border: 3px solid #002854;
+        color: #002854;
+        line-height: 1;
+      }
+      .bg_item {
+        background-color: grey;
+      }
+      .btn_ir_compra {
+        width: 93%;
+        height: auto;
+        background: #117dcf;
+        color: #fff;
+        text-align: center;
+        padding: 6px 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.5rem var(--white);
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        border: 2px solid transparent;
+      }
+      .btn_ir_compra:hover {
+        background: #fff;
+        color: #117dcf;
+        border: 2px solid #117dcf;
+      }
+      .precio_carrusel {
+        text-align: center;
+        margin: 5px 0;
+        color: #002854;
+        font-weight: 600px;
+        font-size: 1.7rem;
+      }
+      .disccount {
+        color: #da0000;
+      }
+      .container_img_carrusel {
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        position: relative;
+      }
+      .container_img_carrusel img {
+        width: 100%;
+        height: auto;
+      }
+      .item_carrusel_bb h3 {
+        font-size: 0.8rem;
+        color: #da0000;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .item_carrusel_bb h2 {
+        font-size: 1.8rem;
+        margin-top: -10px;
+        font-weight: 900;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      .wrap-info-carrusel {
+        padding: 5px 0 0 0;
+        position: relative;
+      }
+      .wrap-info-carrusel div {
+        width: 50%;
+        font-size: 10px;
+        float: left;
+        overflow: hidden;
+        height: 15px;
+      }
+      .wrap-cat-carrusel {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .wrap-cat-carrusel img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 1px solid #1a4e8a;
+        position: absolute;
+        z-index: 1;
+        top: -18px;
+        right: 0;
+      }
+      .container-star {
+        overflow: hidden;
+        display: flex;
+        text-align: left;
+        justify-content: center;
+      }
+      .clip-star {
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        float: left;
+      }
+      .disable {
+        background: rgb(237, 237, 237);
+      }
+
+      .star-1 {
+        transform-origin: 102.14px 87.09px;
+        animation-duration: 3.5s;
+      }
+
+      .star-2 {
+        transform-origin: 219.47px 205.7px;
+        animation-duration: 4s;
+      }
+
+      .star-3 {
+        transform-origin: 404.11px 35.05px;
+        animation-duration: 2.5s;
+      }
+
+      .star-4 {
+        transform-origin: 54.43px 393.81px;
+        animation-duration: 2.5s;
+      }
+
+      .star-5 {
+        transform-origin: 374.42px 271.34px;
+        animation-duration: 3s;
+      }
+      .enablestar {
+        background: rgb(255, 224, 0);
+      }
+
+      .slider_mb .btn-next_mb,
+      .slider_mb .btn-prev_mb {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #117dcf;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        border: 1px solid #117dcf;
+      }
+      .slider_mas_comprados .btn-prev_mc,
+      .slider_mb .btn-prev_mb {
+        left: 0px;
+      }
+      .slider_top .btn-prev {
+        left: 0px;
+      }
+      .slider_top .btn-next {
+        right: 40px;
+      }
+      .slider_mas_comprados .btn-next_mc,
+      .slider_mb .btn-next_mb {
+        right: 40px;
+      }
+      .slider_top .btn-prev:after,
+      .slider_top .btn-next:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+       .btn-prev_mb:after,
+      .slider_mb .btn-next_mb:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+      .slider_top .btn-prev:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(-135deg) translate(100%, -100%);
+      }
+      .slider_mas_comprados .btn-prev_mc:after,
+      .slider_mb .btn-prev_mb:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(-135deg) translate(100%, -100%);
+      }
+      .slider_mas_comprados .btn-next_mc:after,
+      .slider_mb .btn-next_mb:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(45deg) translate(-25%, 50%);
+      }
+      .container_slide_cards {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .sarten-landing {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/sarten-landing.jpg?rand=1625244613');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      @media (max-width: 767px) {
+        .wrap-category {
+          flex-wrap: wrap;
+        }
+        .item-cat {
+          width: 30%;
+        }
+        .wrap-cat-our {
+          overflow: hidden;
+          flex-wrap: wrap;
+          margin: 20px 10px;
+        }
+        .item-cat-our {
+          width: 40%;
+          margin: 0 5px;
+        }
+        .item-cat-re {
+          width: 40%;
+        }
+        .item-cat-our img {
+          width: 100%;
+        }
+        .wrap-describe {
+          top: 15%;
+          left: 0;
+          width: 100%;
+        }
+        .item-ourtab:nth-child(2) {
+          height: 210px;
+        }
+        .item-ourtab:nth-child(1) {
+          height: 60px;
+        }
+        .item-ourtab:nth-child(3) {
+          padding: 10px;
+        }
+        .item-ourtab:nth-child(3) h3 {
+          font-size: 15px;
+        }
+        .ver-cat {
+          top: 20%;
+          left: 18%;
+          font-size: 2rem;
+        }
+        .wrap-txt-complete {
+          top: 10%;
+          left: 25%;
+          right: 0%;
+          padding: 5px;
+          width: 50%;
+        }
+        .wrap-txt-complete h2 {
+          font-size: 1.4rem;
+        }
+        .btn-ver{
+          width: 100px;
+          padding: 5px;
+        }
+      }
+    </style>
+
+    <script>
+      window.onload = () =>{ 
+        const carousel_mb = document.querySelector(".slider_mb");
+        const slider_mb = document.querySelector(".slides_mb");
+        const next_mb = document.querySelector(".btn-next_mb");
+        const prev_mb = document.querySelector(".btn-prev_mb");
+
+        let direction_mb;
+
+        next_mb.addEventListener("click", function () {
+          direction_mb = -1;
+          slider_mb.style.transform = "translate(-190px)";
+        });
+
+        prev_mb.addEventListener("click", function () {
+          direction_mb = 1;
+          slider_mb.style.transform = "translate(190px)";
+        });
+
+        slider_mb.addEventListener(
+          "transitionend",
+          function () {
+            if (direction_mb === 1) {
+              slider_mb.prepend(slider_mb.lastElementChild);
+            } else {
+              slider_mb.appendChild(slider_mb.firstElementChild);
+            }
+
+            slider_mb.style.transition = "none";
+            slider_mb.style.transform = "translate(0)";
+            setTimeout(() => {
+              slider_mb.style.transition = "all 0.5s ease";
+            });
+  
+          },
+          false
+        );
+      }
+    </script>
+    <body>
+      <!-- Jardin, Mesa y Bar -->
+      <section>
+        <div class="wrap-grid">
+          <div class="wrap-describe">
+            <p>OTOÑO BB&B</p>
+            <h2>Bienvenido a la temporada de tonos otoñales</h2>
+          </div>
+        </div>
+        <div class="wrap-category">
+          <div class="item-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/decoracion/follaje-artificial.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/71dkWq6znkL._AC_SX679_.jpg?rand=1634580487"
+                  alt="Bed Bath and Beyond"
+                  class="img-cat"
+                />
+              </div>
+            </a>
+            <p class="txt-cat">decoración</p>
+          </div>
+          <div class="item-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/tienda/mesa-oto-o.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C02_5_2?$content$&wid=272&hei=272"
+                  alt="Bed Bath and Beyond"
+                  class="img-cat"
+                />
+              </div>
+              <p class="txt-cat">mesa</p>
+            </a>
+          </div>
+          <div class="item-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/baterias-de-cocina/sartenes.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C02_5_3?$content$&wid=272&hei=272"
+                  alt="Bed Bath and Beyond"
+                  class="img-cat"
+                />
+              </div>
+              <p class="txt-cat">cocina</p>
+            </a>
+          </div>
+          <div class="item-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/decoracion-de-jardin-y-exteriores/iluminacion.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C02_5_4?$content$&wid=272&hei=272"
+                  alt="Bed Bath and Beyond"
+                  class="img-cat"
+                />
+              </div>
+              <p class="txt-cat">jardines y exteriores</p>
+            </a>
+          </div>
+          <div class="item-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/edredones.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C02_5_5?$content$&wid=272&hei=272"
+                  alt="Bed Bath and Beyond"
+                  class="img-cat"
+                />
+              </div>
+              <p class="txt-cat">recámara</p>
+            </a>
+          </div>
+          <div class="item-cat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/bano/accesorios-para-bano.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA_FW25_FY21_WEB_FallShop_C02_5_6?$content$&wid=272&hei=272"
+                  alt="Bed Bath and Beyond"
+                  class="img-cat"
+                />
+              </div>
+              <p class="txt-cat">baño</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="space-lines"></div>
+
+
+
+
+
+<!-- Slider -->
+<section>
+  <div class="container_slide_cards">
+      <div id="carrusel" class="slider_mb">
+        <div id="carrusel-slides" class="slides_mb">
+  <!-- Slide 1 -->
+      <div class="slide_mb item_desc_carrusel">
+          <a
+          href="https://www.bedbathandbeyond.com.mx/platos-entrada-forma-hoja-set-4-69718475.html"
+          target="_self"
+          >
+          <div class="container_bb">
+              <div class="container_img_carrusel">
+                  <div class="main-container">
+                      <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-04-02-09-46_f21hr23_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                      <div class="hidden-child">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-04-02-09-46_f21hr23_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                      </div>
+                  </div>
+              </div>
+              <div class="wrap-info-carrusel">
+              <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-cat-carrusel">
+                  <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                  loading="lazy"
+                  />
+              </div>
+              </div>
+              <div class="item_desc_carrusel">
+                Platos para entrada en forma de hoja, Set de 4
+              </div>
+              <div class="precio_carrusel">$659.00</div>
+              <div class="star_wrap"></div>
+              <p class="btn_ir_compra">ver producto</p>
+          </div>
+          </a>
+      </div>
+  
+      <div class="slide_mb item_desc_carrusel">
+        <a
+        href="https://www.bedbathandbeyond.com.mx/vajilla-de-ceramica-bee-willowtm-home-milbrook-color-moca-set-de-16-piezas.html"
+        target="_self"
+      >
+        <div class="container_bb">
+            <div class="container_img_carrusel">
+                <div class="main-container">
+                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/444800081348_3_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                    <div class="hidden-child">
+                      <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/444800081348_1?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                    </div>
+                </div>
+            </div>
+            </div>
+          <div class="wrap-info-carrusel">
+            <div class="container-star">
+              <div class="clip-star enablestar"></div>
+              <div class="clip-star enablestar"></div>
+              <div class="clip-star enablestar"></div>
+              <div class="clip-star enablestar"></div>
+              <div class="clip-star disable"></div>
+            </div>
+            <div class="wrap-cat-carrusel">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="item_desc_carrusel">
+            Vajilla de cerámica Bee & Willow™ Home Milbrook color moca, Set de 16 piezas
+          </div>
+          <div class="precio_carrusel">$2,109.00</div>
+          <div class="star_wrap"></div>
+          <p class="btn_ir_compra">ver producto</p>
+        </a>
+      </div>
+  
+  
+              <div class="slide_mb item_desc_carrusel">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/platon-ceramica-diseno-hoja-33-02-cm-color-verde-69718000.html"
+                target="_self"
+              >
+                <div class="container_bb">
+                    <div class="container_img_carrusel">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-30-01-01_f21hr18_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                              <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2021-03-30-01-02_f21hr18-2?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                  <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star enablestar"></div>
+                      <div class="clip-star disable"></div>
+                    </div>
+                    <div class="wrap-cat-carrusel">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                  <div class="item_desc_carrusel">
+                    Platón de cerámica con diseño de hoja de 33.02 cm color verde
+                  </div>
+                  <div class="precio_carrusel">$839.00</div>
+                  <div class="star_wrap"></div>
+                  <p class="btn_ir_compra">ver producto</p>
+                </div>
+              </a>
+            </div>
+                 <!-- Slide 6 -->
+                 <div class="slide_mb item_desc_carrusel">
+                  <a
+                  href="https://www.bedbathandbeyond.com.mx/refractario-rectangular-ceramica-diseno-otonal-3-4-l-69717999.html"
+                  target="_self"
+                >
+                  <div class="container_bb">
+                      <div class="container_img_carrusel">
+                          <div class="main-container">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-30-00-58_f21hr20front_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                              <div class="hidden-child">
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2021-03-30-00-57_f21hr20back?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                              </div>
+                          </div>
+                      </div>
+                    <div class="wrap-info-carrusel">
+                      <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                      </div>
+                      <div class="wrap-cat-carrusel">
+                        <img
+                          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    <div class="item_desc_carrusel">
+                      Refractario rectangular de cerámica con diseño otoñal de 3.4 L
+                    </div>
+                    <div class="precio_carrusel">$839.00</div>
+                    <div class="star_wrap"></div>
+                    <p class="btn_ir_compra">ver producto</p>
+                  </div>
+                </a>
+              </div>
+  
+  
+  <!-- Slide 4 -->
+  <div class="slide_mb item_desc_carrusel">
+  <a
+  href="https://www.bedbathandbeyond.com.mx/mantel-individual-de-algodon-rectangular-con-diseno-otonal-color-naranja-69720192.html"
+  target="_self"
+  >
+  <div class="container_bb">
+      <div class="container_img_carrusel">
+          <div class="main-container">
+              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-08-02-07-58_harvestplacemat_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+              <div class="hidden-child">
+                <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-08-02-07-58_harvestplacemat_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+              </div>
+          </div>
+      </div>
+    <div class="wrap-info-carrusel">
+      <div class="container-star">
+        <div class="clip-star enablestar"></div>
+        <div class="clip-star enablestar"></div>
+        <div class="clip-star enablestar"></div>
+        <div class="clip-star enablestar"></div>
+        <div class="clip-star disable"></div>
+      </div>
+      <div class="wrap-cat-carrusel">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+          loading="lazy"
+        />
+      </div>
+    </div>
+    <div class="item_desc_carrusel">
+      Mantel individual de algodón con diseño otoñal color naranja
+    </div>
+    <div class="precio_carrusel">$149.00</div>
+    <div class="star_wrap"></div>
+    <p class="btn_ir_compra">ver producto</p>
+  </div>
+  </a>
+  </div>
+  
+              
+  <!-- Slide 3 -->
+              <div class="slide_mb item_desc_carrusel">
+                  <a
+                  href="https://www.bedbathandbeyond.com.mx/tazon-servicio-ceramica-diseno-otonal-color-blanco-27-94-cm-69717998.html"
+                  target="_self"
+                >
+                  <div class="container_bb">
+                      <div class="container_img_carrusel">
+                          <div class="main-container">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-30-01-12_f21hr19side1_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                              <div class="hidden-child">
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2021-03-30-01-13_f21hr19side2?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                              </div>
+                          </div>
+                      </div>
+                    <div class="wrap-info-carrusel">
+                      <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                      </div>
+                      <div class="wrap-cat-carrusel">
+                        <img
+                          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                        />
+                      </div>
+                    </div>
+                    <div class="item_desc_carrusel">
+                      Tazón de servicio de cerámica con diseño otoñal color blanco de 27.94 cm
+                    </div>
+                    <div class="precio_carrusel">$839.00</div>
+                    <div class="star_wrap"></div>
+                    <p class="btn_ir_compra">ver producto</p>
+                  </div>
+                </a>
+              </div>       
+         <!-- Slide 7 -->
+              <div class="slide_mb item_desc_carrusel">
+                  <a
+                  href="https://www.bedbathandbeyond.com.mx/vajilla-de-ceramica-noritaker-colorwave-curve-color-arena-set-de-16-piezas.html"
+                  target="_self"
+                >
+                  <div class="container_bb">
+                      <div class="container_img_carrusel">
+                          <div class="main-container">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/244497267036301p?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                              <div class="hidden-child">
+                                <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/244497267036301p?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                              </div>
+                          </div>
+                      </div>  
+                    <div class="wrap-info-carrusel">
+                      <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                      </div>
+                      <div class="wrap-cat-carrusel">
+                        <img
+                          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    <div class="item_desc_carrusel">
+                      Vajilla de cerámica Noritake® Colorwave Curve color arena, Set de 16 piezas
+                    </div>
+                    <div class="precio_carrusel">$3,929.00</div>
+                    <div class="star_wrap"></div>
+                    <p class="btn_ir_compra">ver producto</p>
+                  </div>
+                </a>
+              </div>
+    <!-- Slide 8 -->
+              <div class="slide_mb item_desc_carrusel">
+                  <a
+                  href="https://www.bedbathandbeyond.com.mx/charola-rectangular-diseno-otonal-ceramica-2-piezas-69718476.html"
+                  target="_self"
+                >
+                  <div class="container_bb">
+                      <div class="container_img_carrusel">
+                          <div class="main-container">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-30-01-20_f21hr14_imageset?$imagePLP$&hei=700&wid=700" 
+                              loading="lazy"/>   
+                              <div class="hidden-child">
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/OT203760TTP_Env_028__ecom?$imagePLP$&hei=700&wid=700" 
+                                loading="lazy"/>
+                              </div>
+                          </div>
+                      </div>
+                    <div class="wrap-info-carrusel">
+                      <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                      </div>
+                      <div class="wrap-cat-carrusel">
+                        <img
+                          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    <div class="item_desc_carrusel">
+                      Charola rectangular con diseño otoñal de cerámica, 2 piezas
+                    </div>
+                    <div class="precio_carrusel">$999.00</div>
+                    <div class="star_wrap"></div>
+                    <p class="btn_ir_compra">ver producto</p>
+                  </div>
+                </a>
+              </div>
+      <!-- Slide 9 -->
+              <div class="slide_mb item_desc_carrusel">
+                  <a
+                  href="https://www.bedbathandbeyond.com.mx/vajilla-de-ceramica-wild-sage-lia-color-turquesa-naranja-16-piezas-69714320.html"
+                  target="_self"
+                >
+                  <div class="container_bb">
+                      <div class="container_img_carrusel">
+                          <div class="main-container">
+                              <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-26-00-03_su21ws06b_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                              <div class="hidden-child">
+                                <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-26-00-03_su21ws06b_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                              </div>
+                          </div>
+                      </div>
+                    <div class="wrap-info-carrusel">
+                      <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                      </div>
+                      <div class="wrap-cat-carrusel">
+                        <img
+                          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                    <div class="item_desc_carrusel">
+                      Vajilla de cerámica Wild Sage™ Lia color turquesa/naranja
+                    </div>
+                    <div class="precio_carrusel">$1,980.00</div>
+                    <div class="star_wrap"></div>
+                    <p class="btn_ir_compra">ver producto</p>
+                  </div>
+                </a>
+              </div>
+  
+                    <!-- Slide 9 -->
+                    <div class="slide_mb item_desc_carrusel">
+                      <a
+                      href="https://www.bedbathandbeyond.com.mx/vajilla-de-ceramica-bee-willow-tm-home-springfield-color-blanco-y-menta-set-de-12-piezas.html"
+                      target="_self"
+                    >
+                      <div class="container_bb">
+                          <div class="container_img_carrusel">
+                              <div class="main-container">
+                                  <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-22-02-45_bws21w05_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                  <div class="hidden-child">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-22-02-45_bws21w05_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                  </div>
+                              </div>
+                          </div>
+                        <div class="wrap-info-carrusel">
+                          <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                          <div class="wrap-cat-carrusel">
+                            <img
+                              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mesa.jpg?rand=1633123890"
+                              loading="lazy"
+                            />
+                          </div>
+                        </div>
+                        <div class="item_desc_carrusel">
+                          Vajilla de cerámica Bee & Willow ™ Home Springfield color blanco y menta, Set de 12 piezas
+                        </div>
+                        <div class="precio_carrusel disccount">$1,879.00</div>
+                        <div class="star_wrap"></div>
+                        <p class="btn_ir_compra">ver producto</p>
+                      </div>
+                    </a>
+                  </div>
+                            
+          </div>
+          <button class="btn-prev_mb">
+          <button class="btn-next_mb">
+      </div>
+  </div>
+  </section>
+
+  
+      <!-- Cocina Our Table -->
+      <section>
+        <div class="wrap-ourtable">
+          <div class="item-ourtab">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html"
+              target="_self"
+            >
+              <div class="sarten-landing">
+              </div>
+            </a>
+          </div>
+          <div class="item-ourtab">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/our-table/accesorios-para-hornear.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C04-2V2-ComeTogether-Image.jpg?rand=1624916941"
+                  alt="Bed Bath and Beyond Otoño"
+                  class="img-s"
+                />
+              </div>
+            </a>
+          </div>
+          <div class="item-ourtab">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/our-table.html"
+              target="_self"
+            >
+              <h3>
+                Este otoño, prepara tus platillos rápido y sencillo con Our
+                Table™
+              </h3>
+            </a>
+          </div>
+        </div>
+        <div class="wrap-cat-our">
+          <div class="item-cat-our">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/vajillas/tazas.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C12_15_1?$content$&wid=468"
+                  alt="Bed Bath and Beyond"
+                />
+              </div>
+              <p class="txt-cat">Despierta con tu bedida favorita</p>
+            </a>
+          </div>
+          <div class="item-cat-our">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C12_15_2?$content$&wid=468"
+                  alt="Bed Bath and Beyond"
+                />
+              </div>
+              <p class="txt-cat">
+                Cocina con Our Table™ para obtener el mejor sabor de los
+                alimentos
+              </p>
+            </a>
+          </div>
+          <div class="item-cat-our">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/our-table/accesorios-para-hornear.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW25_FY21_WEB_FallShop_C12_15_3?$content$&wid=468"
+                  alt="Bed Bath and Beyond"
+                />
+              </div>
+              <p class="txt-cat">Prepara deliciosos platillos</p>
+            </a>
+          </div>
+          <div class="item-cat-our">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/our-table.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cat.jpg?rand=1634573580"
+                  alt="Bed Bath and Beyond"
+                />
+              </div>
+              <h2 class="ver-cat">ver todo</h2>
+            </a>
+          </div>
+        </div>
+      </section>
+      <div class="space-lines"></div>
+      <!-- Recamara -->
+      <section>
+        <div class="wrap-ban-reca">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/recamaraotono.jpg?rand=1634574123"
+              alt=""
+            />
+            <div class="wrap-txt-complete">
+              <h2>Renueva tu cama para las frías noches de otoño.</h2>
+              <p class="btn-ver">ver más</p>
+            </div>
+          </a>
+        </div>
+        <div class="wrap-cat-re">
+          <div class="item-cat-re">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/cobertores-y-colchas.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/recamara/cobija.jpg"
+                  alt="recamara Bed Bah Otoño"
+                />
+              </div>
+            </a>
+            <p class="txt-cat">cobertores y colchas</p>
+          </div>
+          <div class="item-cat-re">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/sets-de-cama.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/recamara/set_ropa_de_cama.jpg"
+                  alt="recamara Bed Bah Otoño"
+                />
+              </div>
+            </a>
+            <p class="txt-cat">sets de cama</p>
+          </div>
+          <div class="item-cat-re">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/cobijas-frazadas-y-mantas.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/recamara/frazada.jpg"
+                  alt="recamara Bed Bah Otoño"
+                />
+              </div>
+            </a>
+            <p class="txt-cat">cobijas frazadas y mantas</p>
+          </div>
+        </div>
+      </section>
+    </body>
+  </body>
+</html>

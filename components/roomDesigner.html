@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Designer</title>
+  </head>
+  <style>
+    .module {
+      --x: 0px;
+      --y: 0px;
+      background-image: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/baseImage.png?rand=1627392418);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: var(--x) var(--y);
+      width: 1200px;
+      height: 800px;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+
+    body {
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(#666, #222);
+    }
+    .wrap-container-room {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 70% 30%;
+    }
+    .item-sidebar {
+      width: 30%;
+    }
+    .container-products {
+      display: flex;
+      overflow: hidden;
+    }
+    .bg_otro {
+      background-color: beige;
+    }
+  </style>
+
+  <script>
+    /*window.onload = function () {
+      const el = document.querySelector("#module");
+      console.log("e", el);
+      el.addEventListener("mousemove", (e) => {
+        el.style.setProperty("--x", -e.offsetX + "px");
+        el.style.setProperty("--y", -e.offsetY + "px");
+      });
+    };*/
+  </script>
+  <body>
+    <div class="wrap-container-room">
+      <div class="item-sidebar">
+        <div class="module" id="module"></div>
+      </div>
+      <div class="item-sidebar bg_otro">
+        <div class="container-products">
+          <div>
+            <img
+              src="https://www.decorist.com/static/finds/product_images/full_size/320850-1.eecab7b98f711ff9eaa226e97f5c6f22.png"
+            />
+          </div>
+          <div>
+            Wild Sage Patchwork Medallion 2-Piece Twin/Twin XL Quilt Set
+          </div>
+        </div>
+        <div class="container-products"></div>
+        <div class="container-products"></div>
+      </div>
+    </div>
+  </body>
+</html>

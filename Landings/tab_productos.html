@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <style>
+      :root {
+        --wild-sage-color: #706fae;
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f42634;
+        --aniversario-azul: #1a4c8a;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+      }
+      /*tabs*/
+      .tabs {
+        width: 100%;
+        float: none;
+        list-style: none;
+        position: relative;
+        margin: 0 0 0 10px;
+        text-align: left;
+        display: flex;
+        justify-content: center;
+      }
+      input[type="radio"] {
+        position: absolute;
+        top: 0;
+        left: -9999px;
+      }
+      label {
+        display: block;
+        padding: 14px 21px;
+        border-radius: 2px 2px 0 0;
+        font-size: 12px;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        text-transform: lowercase;
+        border-radius: 40px;
+        cursor: pointer;
+        position: relative;
+        top: 4px;
+        transition: all 0.2s ease-in-out;
+        border: 1px solid var(--azul-bbb-medio);
+        margin: 0 2px;
+      }
+      label :hover {
+        background: darken(var(--aniversario-azul), 10);
+      }
+      .tab-content {
+        z-index: 2;
+        display: none;
+        overflow: hidden;
+        width: 100%;
+        font-size: 17px;
+        line-height: 25px;
+        padding: 25px;
+        position: absolute;
+        top: 53px;
+        left: 0;
+        background: darken(var(--azul-bbb-button), 15);
+      }
+      [id^="tab"]:checked + label {
+        top: 0;
+        background: var(--azul-bbb-claro);
+      }
+      [id^="tab"]:checked ~ [id^="tab-content"] {
+        display: block;
+      }
+
+      .wrap-tabs-ecommerce {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+      }
+      /*Rollover Image*/
+      .img-container {
+        width: 160px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+        padding-top: 10px;
+      }
+      .img-container img {
+        width: 130px;
+        /*transition: all 10s ease-in;*/
+      }
+
+      .img-container .hidden-child {
+        visibility: hidden;
+        position: absolute;
+        top: 50px;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        background-color: #fff;
+        height: 160px;
+      }
+
+      .img-container:hover .hidden-child {
+        visibility: visible;
+        position: absolute;
+        top: 50px;
+        left: 0px;
+      }
+      .wrap-slider {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+      .slide--cat {
+        overflow: hidden;
+        width: 18%;
+        margin: 5px;
+        border: 1px solid var(--azul-bbb-medio);
+        border-radius: 10px;
+        position: relative;
+      }
+      .slide--cat:hover {
+        border: 1px solid var(--azul-bbb-button);
+      }
+      .slide--cat div {
+        width: 50%;
+        float: left;
+        line-height: 1;
+      }
+      .slide--cat:hover + .cat-btn {
+        background-color: var(--azul-bbb-button);
+      }
+      #bannerCategoria {
+        width: 100%;
+        height: 250px;
+        overflow: hidden;
+        border-radius: 10px;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        position: relative;
+      }
+      .wrap-ver {
+        position: absolute;
+        bottom: -20px;
+        left: 21%;
+        right: auto;
+        text-align: center;
+      }
+      .wrap-ver p {
+        background-color: var(--azul-bbb-button);
+        width: 150px;
+        text-align: center;
+        color: #fff;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      .wrap-ver p:hover {
+        background-color: var(--azul-bbb-medio);
+      }
+      .cat-grid {
+        color: var(--aniversario-azul);
+        font-family: var(--font-bedbath);
+        font-size: 10px;
+        margin-top: 10px;
+        margin-left: 10px;
+      }
+      .cat-desc {
+        color: #000;
+        font-size: 14px;
+        line-height: 1;
+        text-transform: lowercase;
+        margin-top: -5px;
+        padding: 0 10px;
+        height: 66px;
+      }
+      .cat-precio {
+        color: var(--azul-bbb-medio);
+        font-weight: 900;
+        padding: 0 10px;
+      }
+      .cat-btn {
+        background-color: #fff;
+        text-align: center;
+        color: var(--azul-bbb-button);
+        border-radius: 5px;
+        border: 2px solid var(--azul-bbb-button);
+        text-transform: lowercase;
+        padding: 4px 10px;
+        width: 60px;
+        margin-left: 10px;
+        font-size: 14px;
+      }
+      .cat-btn:hover {
+        background-color: var(--azul-bbb-button);
+        color: #fff;
+      }
+      .img-desc {
+        line-height: 1;
+      }
+      .border-our {
+        border: 2px solid var(--ourtable) !important;
+      }
+      .border-newstwell {
+        border: 2px solid var(--nestwell) !important;
+      }
+      .border-simply {
+        border: 2px solid var(--simply) !important;
+      }
+      .border-haven {
+        border: 2px solid var(--haven) !important;
+      }
+      .border-bee {
+        border: 2px solid var(--aniversario-azul) !important;
+      }
+      .border-ugg {
+        border: 2px solid var(--ugg) !important;
+      }
+      .bg-our {
+        background: var(--ourtable) !important;
+      }
+      .bg-nestwell {
+        background: var(--nestwell) !important;
+      }
+      .bg-simply {
+        background: var(--simply) !important;
+      }
+      .bg-haven {
+        background: var(--haven) !important;
+      }
+      .bg-bee {
+        background: var(--azul-bbb-claro) !important;
+      }
+      .bg-ugg {
+        background: var(--ugg) !important;
+      }
+      .wrap-ver {
+        width: 100%;
+        overflow: hidden;
+        height: 100px;
+      }
+      .txt-haven {
+        color: var(--haven);
+        font-weight: 900;
+      }
+      @media (max-width: 767px) {
+        .tab-content {
+          padding: 5px;
+          left: -20px;
+          overflow: auto;
+        }
+        label {
+          padding: 7px 21px;
+        }
+        .slide--cat {
+          width: 50%;
+        }
+        .slide--cat div {
+          width: 100%;
+        }
+        .img-container img {
+          width: 150px;
+        }
+        .wrap-slider {
+          flex-wrap: nowrap;
+          width: 1200px;
+        }
+        .cat-desc {
+          font-size: 16px;
+        }
+      }
+
+      .slide--cat .btn-tab {
+        width: 100% !important;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        opacity: 0;
+        transition: all 1s;
+      }
+      .slide--cat .btn-tab div {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--azul-bbb-button);
+        margin: 20% auto;
+      }
+      .slide--cat .btn-tab div img {
+        width: 25px;
+        height: 25px;
+        margin: 10px auto;
+      }
+      .slide--cat:hover .btn-tab {
+        background-color: rgba(218, 234, 244, 0.5);
+        opacity: 1;
+      }
+    </style>
+
+    <script>
+      const slide = [
+        {
+          id: 1,
+          name: "haven",
+          url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ba_haven.jpg?rand=1623168888",
+          link: "https://www.bedbathandbeyond.com.mx/marcas/haven.html",
+        },
+        {
+          id: 2,
+          name: "nestwell",
+          url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/nest-banner-bano.jpg?rand=1624632732",
+          link: "https://www.bedbathandbeyond.com.mx/marcas/nestwell.html",
+        },
+        {
+          id: 3,
+          name: "bee&willow",
+          url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano1.jpg?rand=1630000909",
+          link: "https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home.html",
+        },
+        {
+          id: 4,
+          name: "ugghome",
+          url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ugg-banner-bano.jpg?rand=1624632732",
+          link: "https://www.bedbathandbeyond.com.mx/marcas/ugg.html",
+        },
+        {
+          id: 5,
+          name: "simplyessential",
+          url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/SE2-bano.jpg?rand=1623168486",
+          link: "https://www.bedbathandbeyond.com.mx/marcas/simply-essential.html",
+        },
+        {
+          id: 6,
+          name: "ourtable",
+          url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-secciones-generales-our-table2.jpeg?rand=1626056952",
+          link: "https://www.bedbathandbeyond.com.mx/marcas/our-table.html",
+        },
+      ];
+      function changeSlide(brand) {
+        let img = document.getElementById("banner-brand");
+        let items = document.getElementsByClassName("slide--cat");
+        let link = document.getElementById("linkBrand");
+
+        slide.map((val, i) => {
+          if (brand === val.id) {
+            img.src = val.url;
+            link.href = val.link;
+          }
+        });
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <div id="bannerCategoria">
+        <img
+          id="banner-brand"
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ba_haven.jpg?rand=1623168888"
+          alt="baño"
+        />
+        <div class="wrap-ver">
+          <a
+            id="linkBrand"
+            href="https://www.bedbathandbeyond.com.mx/marcas/haven.html"
+            target="_self"
+          >
+            <p>ver catálogo</p>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="wrap-tabs-ecommerce">
+        <ul class="tabs" role="tablist">
+          <li>
+            <input type="radio" name="tabs" id="tab1" checked />
+            <label
+              for="tab1"
+              role="tab"
+              aria-selected="true"
+              aria-controls="panel1"
+              tabindex="0"
+              onclick="changeSlide(1)"
+              >Haven™️</label
+            >
+            <div
+              id="tab-content1"
+              class="tab-content"
+              role="tabpanel"
+              aria-labelledby="description"
+              aria-hidden="false"
+            >
+              <!-- Productos -->
+              <div class="wrap-slider">
+                <div class="slide--cat border-haven">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/mueble-ahorrador-de-espacio-de-bambu-para-ba-o-haventm-color-natural.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/202186465262467p?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-haven">Haven™</p>
+                      <p class="cat-desc">
+                        Mueble ahorrador de espacio de bambú para baño Haven™
+                        color natural
+                      </p>
+                      <p class="cat-precio">$4,570.00</p>
+                    </div>
+                    <div class="btn-tab">
+                      <div>
+                        <img
+                          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/lupa_rename.png?rand=1630074290"
+                          alt="ver"
+                        />
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-haven">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/contenedor-de-ceramica-para-ba-o-haventm-daylesford-color-gris-pomez.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-23-06-19_udb20204b-p_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-haven">Haven™</p>
+                      <p class="cat-desc">
+                        Contenedor de cerámica para baño Haven™ Daylesford color
+                        gris pómez
+                      </p>
+                      <p class="cat-precio discount">$500.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-haven">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/espejo-de-tocador-de-madera-haventm-eulo.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-09-14-02-39_wd81332_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-haven">Haven™</p>
+                      <p class="cat-desc">
+                        Espejo de tocador de madera Haven™ Eulo
+                      </p>
+                      <p class="cat-precio">$660.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-haven">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/set-de-organizadores-de-madera-haventm-apilables-4-piezas.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-22-07-53_wd20863_2_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-haven">Haven™</p>
+                      <p class="cat-desc">
+                        Set de organizadores de madera Haven™ apilables, 4
+                        piezas
+                      </p>
+                      <p class="cat-precio">$580.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-haven">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/marcas/haven/tollas/toallero-de-madera-de-acacia-haventm-tipo-escalera.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-12-03-04-38_haven_towel_rack_acacia_side_view_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-haven">Haven™</p>
+                      <p class="cat-desc">
+                        Toallero de madera de acacia Haven™ tipo escalera
+                      </p>
+                      <p class="cat-precio">$1,800.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Fin Productos -->
+            </div>
+          </li>
+
+          <li>
+            <input type="radio" name="tabs" id="tab2" />
+            <label
+              for="tab2"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel2"
+              tabindex="0"
+              onclick="changeSlide(2)"
+              >Nestwell™️</label
+            >
+            <div
+              id="tab-content2"
+              class="tab-content"
+              role="tabpanel"
+              aria-labelledby="specification"
+              aria-hidden="true"
+            >
+              <!-- Productos -->
+              <div class="wrap-slider">
+                <div class="slide--cat border-nestwell">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/tapete-de-poliester-para-ba-o-nestwelltm-color-cafe-oscuro.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-14-13-47_042694393686_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-nestwell">NestWell™</p>
+                      <p class="cat-desc">
+                        Tapete de poliéster para baño NestWell™ color café
+                        oscuro
+                      </p>
+                      <p class="cat-precio">$500.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-nestwell">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/set-de-sabanas-king-de-algodon-nestwelltm-a-rayas-color-rosa-claro.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444800376031_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-nestwell">NestWell™</p>
+                      <p class="cat-desc">
+                        Set de sábanas king de algodón NestWell™ a rayas color
+                        rosa claro
+                      </p>
+                      <p class="cat-precio">$2,800.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-nestwell">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/toalla-de-medio-ba-o-de-algodon-nestwelltm-color-lila.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/887719147000_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-nestwell">NestWell™</p>
+                      <p class="cat-desc">
+                        Toalla de medio baño de algodón Nestwell™ color lila
+                      </p>
+                      <p class="cat-precio">$320.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-nestwell">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/cubierta-de-poliester-reciclado-para-tapa-de-inodoro-nestwelltm-color-cromo.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-08-15-13_042694397356_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-nestwell">NestWell™</p>
+                      <p class="cat-desc">
+                        Cubierta de poliéster reciclado para tapa de inodoro
+                        Nestwell™ color cromo
+                      </p>
+                      <p class="cat-precio">$420.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-nestwell">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/cortina-de-ba-o-de-lino-nestwelltm-color-azul-neblina.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/6973079480872_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-nestwell">NestWell™</p>
+                      <p class="cat-desc">
+                        Cortina de baño de lino NestWell™ color azul neblina
+                      </p>
+                      <p class="cat-precio">$1,050.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Fin Productos -->
+            </div>
+          </li>
+
+          <li>
+            <input type="radio" name="tabs" id="tab3" />
+            <label
+              for="tab3"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel2"
+              tabindex="0"
+              onclick="changeSlide(3)"
+              >Bee & Willow™
+            </label>
+            <div
+              id="tab-content2"
+              class="tab-content"
+              role="tabpanel"
+              aria-labelledby="specification"
+              aria-hidden="true"
+            >
+              <!-- Productos -->
+              <div class="wrap-slider">
+                <div class="slide--cat border-bee">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/mesas-auxiliares-acoplables-bee-and-willow-home-color-natural-claro-69616618.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-21-06-21_bw_rd_nstg_tale_side_view_set_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-bee">bee & willow®</p>
+                      <p class="cat-desc">
+                        Mesas auxiliares acoplables Bee & Willow™ Home color
+                        natural claro
+                      </p>
+                      <p class="cat-precio">$2,439.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-bee">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/banco-con-cojin-en-hueso-69401091.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/334052369401091p?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-bee">bee & willow®</p>
+                      <p class="cat-desc">
+                        Banco con cojín Bee & Willow™ Home en hueso
+                      </p>
+                      <p class="cat-precio discount">$1,707.30</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-bee">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/frazada-matrimonial-queen-de-poliester-bee-willowtm-home.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-17-17-34_791551995524_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-bee">bee & willow®</p>
+                      <p class="cat-desc">
+                        Frazada matrimonial/queen de poliéster Bee & Willow™
+                        Home
+                      </p>
+                      <p class="cat-precio">$939.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-bee">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/cojin-decorativo-de-algodon-bee-willowtm-home-color-verde-azulado-menta.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-10-26-06-51_p2_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-bee">bee & willow®</p>
+                      <p class="cat-desc">
+                        Cojín decorativo de algodón Bee & Willow™ Home color
+                        verde azulado/menta
+                      </p>
+                      <p class="cat-precio">$539.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-bee">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/vaso-de-plastico-alto-bee-willowtm-home-fizzy-color-verde.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800324353?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-bee">bee & willow®</p>
+                      <p class="cat-desc">
+                        Vaso de plástico alto Bee & Willow™ Home Fizzy color
+                        verde
+                      </p>
+                      <p class="cat-precio">$89.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Fin Productos -->
+            </div>
+          </li>
+
+          <li>
+            <input type="radio" name="tabs" id="tab4" />
+            <label
+              for="tab4"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel2"
+              tabindex="0"
+              onclick="changeSlide(4)"
+              >UGG™️</label
+            >
+            <div
+              id="tab-content2"
+              class="tab-content"
+              role="tabpanel"
+              aria-labelledby="specification"
+              aria-hidden="true"
+            >
+              <!-- Productos -->
+              <div class="wrap-slider">
+                <div class="slide--cat border-ugg">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/bote-de-basura-de-algodon-plastico-uggr-napa-con-tejido-de-cuerda-color-gris-agave.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/181627064578958p?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-ugg">UGG™️</p>
+                      <p class="cat-desc">
+                        Bote de basura de algodón/plástico UGG® Napa con tejido
+                        de cuerda color gris agave
+                      </p>
+                      <p class="cat-precio">$739.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-ugg">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/jabonera-de-piedra-uggr-napa.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/181627464578972p?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-ugg">UGG™️</p>
+                      <p class="cat-desc">Jabonera de piedra UGG® Napa</p>
+                      <p class="cat-precio">$499.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-ugg">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/contenedor-de-algodon-uggr-kateri-colorblock-mediano-color-natural-azul-marino.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/301547868680039p?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-ugg">UGG™️</p>
+                      <p class="cat-desc">
+                        Contenedor de algodón UGG® Kateri Colorblock mediano
+                        color natural/azul marino
+                      </p>
+                      <p class="cat-precio discount">$419.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-ugg">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/dispensador-de-jabon-de-ceramica-uggr-simone-color-azul.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/368961969507654p?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-ugg">UGG™️</p>
+                      <p class="cat-desc">
+                        Dispensador de jabón de cerámica UGG® Simone color azul
+                      </p>
+                      <p class="cat-precio discount">$459.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-ugg">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/set-de-edredon-matrimonial-queen-devon-67362110.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/26886275317428g?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-ugg">UGG™️</p>
+                      <p class="cat-desc">
+                        Set de edredón matrimonial/queen de poliéster UGG® Devon
+                        reversible color gris carbón, 3 piezas
+                      </p>
+                      <p class="cat-precio discount">$2,849.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Fin Productos -->
+            </div>
+          </li>
+
+          <li>
+            <input type="radio" name="tabs" id="tab5" />
+            <label
+              for="tab5"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel2"
+              tabindex="0"
+              onclick="changeSlide(5)"
+              >Simply Essential™️</label
+            >
+            <div
+              id="tab-content2"
+              class="tab-content"
+              role="tabpanel"
+              aria-labelledby="specification"
+              aria-hidden="true"
+            >
+              <!-- Productos -->
+              <div class="wrap-slider">
+                <div class="slide--cat border-simply">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/utensilios-antiadherentes-para-hornear-de-acero-al-carbono-simply-essentialtm-set-de-5-pzas.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/BAKEWARE_15-ICON-5PC_METAL_BAKERS_063_ecom_ecom_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-simply">Simply Essential™️</p>
+                      <p class="cat-desc">
+                        Utensilios antiadherentes para hornear de acero al
+                        carbono Simply Essential™, Set de 5 pzas.
+                      </p>
+                      <p class="cat-precio">$500.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-simply">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/cortinas-blackout-de-poliester-simply-essentialtm-robinson-de-1-6-m-color-azul.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-18-12-59_serobinsld2pkblu63_1_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-simply">Simply Essential™️</p>
+                      <p class="cat-desc">
+                        Cortinas blackout de poliéster Simply Essential™
+                        Robinson de 1.6 m color azul
+                      </p>
+                      <p class="cat-precio">$740.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-simply">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/bote-de-basura-de-acero-inoxidable-simply-essentialtm-con-pedal.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-31-10-32_444800421717_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-simply">Simply Essential™️</p>
+                      <p class="cat-desc">
+                        Bote de basura de acero inoxidable Simply Essential™ con
+                        peda
+                      </p>
+                      <p class="cat-precio">$670.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-simply">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/organizador-de-polipropileno-simply-essentialtm-con-3-cajones-grandes-color-gris.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/444800402808_v2_imageset?$imagePLP$&hei=1000&wid=1000"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-simply">Simply Essential™️</p>
+                      <p class="cat-desc">
+                        Organizador de polipropileno Simply Essential™ con 3
+                        cajones grandes color gris
+                      </p>
+                      <p class="cat-precio">$500.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-simply">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/set-de-toallas-de-algodon-simply-essentialtm-color-arena-6-piezas.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/846756061809_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-simply">Simply Essential™️</p>
+                      <p class="cat-desc">
+                        Set de toallas de algodón Simply Essential™ color arena,
+                        6 piezas
+                      </p>
+                      <p class="cat-precio">$420.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Fin Productos -->
+            </div>
+          </li>
+
+          <li>
+            <input type="radio" name="tabs" id="tab6" />
+            <label
+              for="tab6"
+              role="tab"
+              aria-selected="false"
+              aria-controls="panel2"
+              tabindex="0"
+              onclick="changeSlide(6)"
+              >Our Table™️</label
+            >
+            <div
+              id="tab-content2"
+              class="tab-content"
+              role="tabpanel"
+              aria-labelledby="specification"
+              aria-hidden="true"
+            >
+              <!-- Productos -->
+              <div class="wrap-slider">
+                <div class="slide--cat border-our">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/trapos-de-cocina-our-tabletm-a-cuadros-color-arena.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2021-01-13-12-31_075215255637_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-our">Our Table™️</p>
+                      <p class="cat-desc">
+                        Trapos de cocina our table™ a cuadros color arena
+                      </p>
+                      <p class="cat-precio">$150.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-our">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/volteador-de-hierro-our-tabletm-color-rojo.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800394240_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-our">Our Table™️</p>
+                      <p class="cat-desc">
+                        Volteador de hierro Our Table™ color rojo
+                      </p>
+                      <p class="cat-precio">$170.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-our">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/popotes-de-silicon-our-tabletm-con-cepillo.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800384333_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid txt-our">Our Table™️</p>
+                      <p class="cat-desc">
+                        Popotes de silicón Our Table™ con cepillo
+                      </p>
+                      <p class="cat-precio">$150.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-our">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/batidor-de-silicon-our-tabletm-color-gris.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800393809_imageset?$imagePLP$&hei=700&wid=700"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid">Our Table™️</p>
+                      <p class="cat-desc">
+                        Batidor de silicón Our Table™ color gris
+                      </p>
+                      <p class="cat-precio">$170.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+                <div class="slide--cat border-our">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/salvamanteles-de-silicon-our-tabletm-color-rojo.html"
+                    target="_self"
+                  >
+                    <div class="img-container">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800393779_imageset?$imagePLP$&hei=1000&wid=1000"
+                      />
+                    </div>
+                    <div class="img-desc">
+                      <p class="cat-grid">Our Table™️</p>
+                      <p class="cat-desc">
+                        Salvamanteles de silicón Our Table™ color rojo
+                      </p>
+                      <p class="cat-precio">$170.00</p>
+                      <p class="cat-btn">ver más</p>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!-- Fin Productos -->
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </body>
+</html>

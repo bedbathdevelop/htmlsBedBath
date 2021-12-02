@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Not found</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --gray-filter: #636567;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+      }
+      .wrap-category {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        padding: 40px 0;
+      }
+      .item-cat {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+      .item-cat a p {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-size: 12px;
+      }
+      .alimentosimg {
+        width: 130px !important;
+        height: 130px !important;
+      }
+      .item-cat .container-cat {
+        width: 150px;
+        height: 150px;
+        text-align: center;
+        justify-content: center;
+        display: block;
+        border: 2px solid #fff;
+        border-radius: 50%;
+      }
+      .item-cat .container-cat:hover {
+        border: 2px solid var(--azul-bbb-medio);
+      }
+      .container-cat img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      .wrap-not {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+      }
+      #wrapper {
+        perspective: 800px;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        font-size: 4vw;
+      }
+
+      @media (min-width: 600px) {
+        #wrapper {
+          font-size: 7vw;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        #wrapper {
+          font-size: 2vw;
+        }
+      }
+
+      .scene {
+        position: absolute;
+        transform-style: preserve-3d;
+        transform: rotateX(-20deg) rotateY(-30deg) translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+      }
+
+      .box {
+        position: absolute;
+        transform-style: preserve-3d;
+        top: 50%;
+        left: 50%;
+        animation: movebox 5s forwards infinite ease-in-out;
+        width: 5em;
+        height: 4em;
+        margin: -2em 0 0 -2.5em;
+      }
+
+      .box > * {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #d7aa90;
+        position: absolute;
+        transform-origin: 0 0;
+      }
+
+      .face-1 {
+        width: 100%;
+        height: 100%;
+        transform: translateZ(2.5em);
+      }
+
+      .face-6:before,
+      .face-1:before,
+      .face-1:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 1em;
+        height: 0.3em;
+        background-color: #f3d3c7;
+        top: 0;
+        left: calc(50% - 0.5em);
+      }
+
+      .face-1:after {
+        top: auto;
+        bottom: 0;
+      }
+
+      .face-6:before {
+        height: 100%;
+      }
+
+      .face-2 {
+        width: 100%;
+        height: 100%;
+        left: 100%;
+        transform: translateZ(-2.5em) rotateY(180deg);
+      }
+
+      .face-3 {
+        transform: rotateY(-90deg) translateX(-50%);
+        width: 5em;
+        height: 4em;
+      }
+
+      .face-4 {
+        background-color: #bf9276;
+        transform: rotateY(90deg) translateX(-50%);
+        width: 5em;
+        height: 4em;
+        left: 100%;
+      }
+
+      .face-5 {
+        transform: rotateX(-90deg) translateY(-50%);
+        top: 100%;
+        width: 5em;
+        height: 5em;
+      }
+
+      .face-6 {
+        background-color: #e3ba9e;
+        transform: rotateX(90deg) translateY(-50%);
+        width: 5em;
+        height: 5em;
+      }
+
+      .hole {
+        width: 2.5em;
+        height: 0.8em;
+        border-radius: 1.25em;
+        background-color: black;
+        position: relative;
+        overflow: hidden;
+        will-change: transform;
+      }
+
+      .eyes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        font-size: 1.15em;
+        will-change: transform;
+        animation: move forwards infinite 5s ease-in-out;
+      }
+
+      .eye {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin: 0 0.1em;
+        background-color: white;
+        border-radius: 0.5em;
+        animation: blink forwards infinite 5s ease-in-out;
+      }
+
+      .eye:nth-last-child(n + 2),
+      .eye:nth-last-child(n + 2) ~ .eye {
+        width: 1em;
+        height: 1em;
+        font-size: 0.5em;
+      }
+
+      .pupil {
+        --pupil-size: 0.6em;
+        position: absolute;
+        content: " ";
+        width: var(--pupil-size);
+        height: var(--pupil-size);
+        border-radius: 50%;
+        background-color: black;
+        box-sizing: border-box;
+        transform: translateX(calc(0.5 * 0.3em + 0.05em))
+          translateY(calc(0.5 * 0.3em + 0.05em));
+      }
+
+      .pupil::before {
+        content: " ";
+        width: 0.25em;
+        height: 0.25em;
+        transform: translateX(-0.05em);
+        background-color: white;
+        display: block;
+        border-radius: 50%;
+      }
+
+      @keyframes blink {
+        0%,
+        2%,
+        60%,
+        62%,
+        67%,
+        69%,
+        100% {
+          transform: scaleX(1) scaleY(1);
+        }
+        1%,
+        61%,
+        68% {
+          transform: scaleX(1.3) scaleY(0.1);
+        }
+      }
+
+      @keyframes move {
+        0%,
+        70% {
+          transform: translateX(0);
+        }
+
+        50%,
+        65% {
+          transform: translateX(-10%);
+        }
+
+        5%,
+        45% {
+          transform: translateX(200%);
+        }
+      }
+
+      @keyframes movebox {
+        0%,
+        1%,
+        5%,
+        48%,
+        52% {
+          transform: rotate3d(0, 0, 0, 3deg);
+          transform-origin: bottom right;
+        }
+
+        48%,
+        52% {
+          transform: rotate3d(0, 0, 0, 3deg);
+          transform-origin: bottom left;
+        }
+
+        3% {
+          transform: rotate3d(0, 0.5, 1, 3deg);
+        }
+
+        50% {
+          transform: rotate3d(0, -0.5, -1, 3deg);
+        }
+      }
+
+      .item-not {
+        width: 35%;
+        height: 200px;
+        background-color: var(--azul-bbb-claro);
+        margin: 10px;
+        padding: 50px;
+      }
+      .item-not .contorno {
+        width: 100%;
+        height: 100%;
+        border: 15px solid var(--azul-bbb-medio);
+        background-color: #fff;
+      }
+      .title-not {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        padding-top: 30px;
+      }
+      #cat {
+        text-align: center;
+      }
+      @media (max-width: 767px) {
+        .item-not {
+          width: 100%;
+          height: 100px;
+        }
+        .title-not {
+          font-size: 13px;
+          padding-top: 10px;
+        }
+        .item-cat {
+          width: 100px;
+          height: 100px;
+        }
+        .item-cat .container-cat {
+          width: 100px;
+          height: 100px;
+        }
+        .container-cat img {
+          width: 100px;
+          height: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-not">
+        <div class="item-not">
+          <div class="contorno">
+            <div id="wrapper">
+              <div class="scene">
+                <div class="box">
+                  <div class="face-1">
+                    <div class="hole">
+                      <div class="eyes">
+                        <div class="eye">
+                          <div class="pupil"></div>
+                        </div>
+                        <div class="eye">
+                          <div class="pupil"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="face-2"></div>
+                  <div class="face-3"></div>
+                  <div class="face-4"></div>
+                  <div class="face-5"></div>
+                  <div class="face-6"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-not">
+          <div class="contorno">
+            <h2 class="title-not">
+              lo sentimos no pudimos encontrar la<br />
+              "palabra buscada"
+            </h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cat">
+      <h2 class="title-not">te invitamos a conocer nuestras categorías</h2>
+      <div class="wrap-category">
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/recamara.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/fundas-edredones314x314.jpg?$content$&wid=330&hei=330"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>recámara</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/kitchen10.jpg?rand=1606782832"
+                alt="cocina bedbathandbeyond"
+              />
+            </div>
+            <p>cocina</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/bano.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/FEO_BBB_Homepage_10.31_C02.jpeg?rand=1626205208"
+                alt="baño bedbathandbeyond"
+              />
+            </div>
+            <p>baño</p>
+          </a>
+        </div>
+
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/health-_-beauty10.jpg?rand=1606782832"
+                alt="cuidado-personal"
+              />
+            </div>
+            <p>cuidado personal</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/tecnologia.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69614469-2.jpg?$imagePLP$&hei=300&wid=260"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>tecnología</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/recamara.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/smart-home10.jpg?rand=1606782832"
+                alt="mascotas viajes y más bedbathandbeyond"
+              />
+            </div>
+            <p>mascotas viajes y más</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/furniture10.jpg?rand=1606782832"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>muebles</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/storage-_-org10.jpg?rand=1606782832"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>organización y limpieza</p>
+          </a>
+        </div>
+
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-10-29-03-05_444800351885-444800351908-444800351922_imageset"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>jardines y exteriores</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69618837.png?$imagePLP$&hei=300&wid=260"
+                alt="alimentos y bebidas bedbathandbeyond"
+                class="alimentosimg"
+              />
+            </div>
+            <p>alimentos y bebidas</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/liquidacion.html"
+            target="_self"
+          >
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/zona-outlet10.jpg?rand=1606782832"
+                alt="zona outlet bedbathandbeyond"
+              />
+            </div>
+            <p>zona outlet</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

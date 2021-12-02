@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<style>
+    a {
+        text-decoration: none;
+    }
+    section {
+        margin-bottom: 16px;
+    }
+    img {
+        max-width: 100%;
+    }
+    h1,h2,h3,h4,h5 {
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+    }
+    p,a {
+    font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+    }
+    a:hover{
+        text-decoration: none;
+    }
+    .txt-white {
+        color: #fff !important;
+    }
+    .txt-gray {
+        color: #484a46;
+    }
+    .title-font {
+        color:#002855;
+        width: 100%;
+        padding-top: 1rem;
+        padding-bottom: 0rem;
+        font: Termina Headline,sans-serif;
+        text-align: center;
+        font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+    }
+    .flex-container{
+        display: inline-flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+    }
+    .col-50 {
+        padding:10px; 
+        width: 50%;
+    }
+    .col-30 {
+        width: 30%;
+    }
+    .square {
+        border: 5px solid #1a4e8a;
+        display: inline-flex; 
+        width: 100%; 
+        align-items: center;
+    }
+
+    .square h2 {
+        width:120%;
+        text-align: center;
+        font-weight: bolder;
+        color: #1a4e8a;
+        font-size: 25px;
+    }
+    .square span {
+        width: 30%;
+        padding: 10px;
+    }
+    .text-square {
+        padding-top: 1rem;
+        padding-bottom: .5rem;
+        width: 100%;
+        text-align: center;
+    }
+    .text-square p {
+        font-size: 18px;
+        color: #000;
+        text-align: center;
+        margin-bottom: 0;
+    }
+    .call-to {
+        font-weight: bold;
+        font-size: 18px;
+    }
+    .banner-top {
+        background: #ed2837;
+        display: flex;
+        flex-direction: column;
+        align-items: center;padding: 2em;
+    }
+    .white-bkg {
+        background: #fff; 
+        color: #ed2837;
+        font-size: 20px;
+        padding: 0 10px;
+    }
+    .banner-top h4 {
+        color: #fff;
+        margin: 60px 0;
+        font-size: 60px;
+    }
+    .banner-top span {
+        background: #fff;
+        color:#1a4e8a;
+        padding: 0 10px;
+    }
+    .p-center {
+        font-size: 14px;
+        line-height: 14px;
+        padding: 2em;
+        text-align: center;
+    }
+    .photo-banner {
+        position: relative;
+        width:100%;
+        height: 495px;
+        background-size: 100%; 
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .col-40 {
+        background:rgba(255,255,255,0.6);
+        width: 40%;
+        padding: 1.5%;
+        position: absolute;
+        bottom: 2.5rem;
+    }
+    .col-40.right {
+        right: 1em;
+    }
+    .col-40.left {
+        left: 1em;
+    }
+    .col-40.bottom {
+        top: 90%;
+    }
+    .col-40.top {
+        top: 1em;
+    }
+    .col-40.center {
+        left: 50%;
+        margin-left: -25%;
+    }
+    .center-elements {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;    
+    }
+    .button-blue {
+        box-shadow: none;
+        color: #fff;
+        border-color: #1377c9;
+        border-style: none;
+        background-color: #1377c9;
+        text-decoration: none;
+        width: auto;
+        padding: 10px; 
+        border-radius: 5px;
+    }
+    .content-color {
+        padding: 0px;
+    }
+    .content-inline-flex {
+        display: inline-flex;
+        width: 100%;
+    }
+    .product-card {
+        margin: 5px;
+    }
+    .card-col-50 {
+        width: 50%;
+    }
+    .col-25 {
+        width: 25%;
+    }
+    .product-p-bold {
+        padding: 0 0 0 1em;
+        font-weight: bold;
+        font-size: 16px;
+        text-align: left;
+        min-width: 100%;
+        color: #002855;
+        padding-bottom: 0;
+    }
+    .card-description{
+        padding: 0 0 0 1em;
+        text-align: left;
+        min-width: 100%;
+        color: #000;
+    }
+    .list-grid {
+        padding: 1em 0;
+        list-style: none;
+        display: inline-flex;
+        min-width: 100%;
+        justify-content: center;
+    }
+    .list-grid .col-2 {
+        min-width: 16.6666%;
+        text-align: center;
+    }
+    .list-grid .col-2 .items-center {
+        border: 2px solid #fff;
+        border-radius: 0%;
+    }
+    .list-grid .col-2:hover .items-center {
+        border: 2px solid #1377c9;
+    }
+    .slider {
+        font-size: 15px;
+        text-align: center;
+    }
+    body .slider {
+        max-width: 1200px;
+        margin: 0 auto 0px auto;
+    }
+    .slider-for {
+        font-size: 15px;
+        text-align: center;
+    }
+    .categoriestitle {
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
+        color: #000;
+        font-weight: 300;
+    }
+    .img-rouned{
+        border-radius: 0%;
+    }
+    .column{
+        flex-direction: column;
+    }
+    .center-text-elements{
+        color: #1A4E8A;
+        font-size: 34px;
+        line-height: 1em;
+        font-family: 'Montserrat-Bold',Arial, sans-serif;
+    }
+    .first-section {
+        margin-top: 0;
+        padding-top: 0px;
+    }
+    .banner-img-over {
+        position: absolute;
+        z-index: 2;
+        top: -20px;
+        left: 40px;
+        width: 60%;
+    }
+    .banner-img-right {
+        position: absolute;
+        z-index: 2;
+        top: -20px;
+        right: 0;
+        width: 60%;
+    }
+    .banner-img.desktop {
+        display: flex;
+    }
+    .banner-img.mobile {
+        display: none;
+    }
+    #containerimg {
+        display: inline-block;
+        margin: 5px;
+        overflow: hidden;  
+    }
+    #containerimg img {
+        display: block;
+        transition: transform .5s;   /* smoother zoom */
+    }
+    #containerimg:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+    }
+    .container-block-img {
+        position: relative;
+    }
+    .col-both {
+        width: 50%;
+        float: left;
+    }
+    .container-slide {
+        padding: 15% 5%;
+        margin-left: 20%;
+    }
+    .container-slide-right {
+        padding: 15% 5%;
+        margin-right: 20%;
+    }
+    .img-80{
+        width: 85%;
+    }
+    .mg-left-10 {
+        margin-left: 10%;
+    }
+
+    .btn-bb {
+        padding: 12px;
+        width: 200px;
+        background-color: #fff;
+        text-align: center;
+        border: 2px solid #1377c9;
+        box-shadow: none;
+        text-decoration: none;
+        color: #1377c9;
+        border-radius: 5px;
+        font-weight: 900;
+    }
+    .btn-bb:hover {
+        background-color: #1377c9;
+        color: #fff;
+    }
+    .leyenda {
+        text-align: center;
+        margin-top: 5%; 
+        font-weight: 900;    
+        padding: 0 5%; 
+        width: 100%;
+    }
+
+    /*HotSpots*/
+    .hiddendiv {display: none; }
+    .showdiv { display: block;}
+    .container-hotspop {
+        background-color: #fff;
+        width: 260px;
+        position: absolute;
+        z-index: 2;
+        border-radius: 5px;
+        padding: 5px;
+
+    }
+    .titlehs {
+        font: 600 14px/1.2 Effra,Helvetica,Arial,sans-serif;
+    }
+    .fonthaven {
+        font: 300 14px/1.2 Effra,Helvetica,Arial,sans-serif;
+    }
+    .fonthavenprice {
+        font: 900 16px/1.25 Termina Headline,sans-serif;
+        margin-top: -10px;
+    }
+    .colorblue {
+        color:#1377c9;
+    }
+    .detailslink {
+        padding-bottom: 5px;
+    }
+    .detailslink:hover{
+        color:#72776f;
+    }
+    .hotspot {
+        position: absolute;
+        width: 30px;
+        height: 24px;
+        padding-top: 6px;
+        border: 3px solid rgb(255, 255, 255, 0.8);
+        border-radius: 50%;
+        animation: fader 2s ease infinite;
+        transition: all 0.2s;
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        font-family: sans-serif;
+        color: #555;
+        cursor: pointer;
+    }
+    .hotspot::after {
+        content: "";
+        width: 24px;
+        height: 24px;
+        background-color: #fff;
+        border-radius: 50%;
+        display: block;
+        margin: -21px auto 0 3px;
+        transition: all 0.2s;
+    }
+    #hs-a {
+        top: 50%;
+        left: 25%;
+    }
+    #hs-b {
+        top: 32%;
+        left: 44%;
+    }
+    #hs-c {
+        top: 25%;
+        left: 68%;
+    }
+    .hotspot:hover {
+        border-color: #fff !important;
+        animation-play-state: paused;
+        color: #fff;
+    }
+    .hotspot:hover::after {
+        background-color: #fff;
+    }
+
+    @media (max-width: 991px) {
+        .cms-home .page-main {
+            padding: 0;
+        }
+        section {
+            margin-left: -10px;
+            margin-right: -10px;
+        }
+        .banner-img.desktop {
+            display: none;
+        }
+        .banner-img.mobile{
+            display: block!important;
+        }
+        .first-section {
+            padding-top: 0px;
+        }
+        .first-section .col-50 {
+            width: 90%;
+        }
+        .title-font {
+            font-size: 30px;
+        }
+        .content-inline-flex.column-m,
+        .flex-container.column-m {
+            flex-direction: column;
+        }
+        .m-block .content-inline-flex {
+            display: inline-block;
+        }
+        .m-block .content-inline-flex .product-card.col-25{
+            width: 47%;
+            float: left;
+        }
+        .product-p-bold {
+            padding: 8px;
+            font-size: 14px;
+        }
+        .card-description{
+            padding: 0 0 0 8px;
+        }
+        .banner-top {
+            height: 70vh;
+        }
+        .banner-top .white-bkg{
+            margin-top: 30%;
+        }
+        .photo-banner{
+            background-size: cover;
+        }
+        .col-40.right,
+        .col-40.left {
+            left: auto;
+            right: auto;
+            width: 80%;
+        }
+        .photo-banner {
+            display: flex;
+            justify-content: center;
+        }
+        .list-grid {
+            display: inline-block;
+        }
+        .col-2 {
+            float: left;
+            width: 33%;
+            min-height: 180px;
+        }
+        .scrolled {
+            display: flex!important;
+            flex-flow: row;
+            overflow-x: auto;
+            margin-left: 0.5%;
+        }
+        .scrolled.four {
+            width: 990px;
+            overflow: scroll;
+        }
+        .scrolled.three {
+            width: 730px;
+            overflow: scroll;
+        }
+        .conten-scroll {
+            overflow: auto;
+        }
+        .scrolled .product-card {
+            max-width: 240px;
+        }
+        .col-both {
+            width: 100%;
+        }
+        .banner-img-over {
+            top: -20px;
+            left: 8%;
+            width: 100%;
+            
+        }
+        .container-slide{
+            margin-left: 5%;
+            margin-top: 45%;
+        }
+        .btn-bb {
+            padding: 12px;
+            width: 250px;
+            font-weight: 900;
+            font-size: 16px;
+        }
+        .leyenda {
+            text-align: center;
+            font-weight: 900;    
+            padding: 0 5%; 
+            width: 100%;
+        }
+    }
+    @media (max-width: 767px) {
+        img {
+            width: 100%;
+        }
+        .square span{
+            width: 40%;
+            padding: 0;
+        }
+        .col-both {
+            width: 100%;
+        }
+        .banner-img-over {
+            top: -20px;
+            left: auto;
+            width: 100%;
+        }
+    }
+
+    /*Animations*/
+    @keyframes fader {
+        50% {
+            border-color: rgb(255, 255, 255, 0.2);
+        }
+        100% {
+            border-color: rgb(255, 255, 255, 0.8);
+        }
+    }
+</style>
+
+<header>
+    <script>
+        function showHotSpot(value) {
+            console.log("hshs", value)
+        }
+    </script>
+</header>
+   
+<html>
+    <body>
+        <section class="first-section">
+            <!--VIDEO
+            <section>
+                <iframe width="100%" height="500px" src="https://www.youtube.com/embed/IbwefSZTkPc?autoplay=1&controls=0&loop=1&modestbranding=0&showinfo=0" title="Haven" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </section>-->
+            
+            <!-- CATEGORIAS-->
+                <div class="content-inline-flex">
+                    <ul class="list-grid">
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/toallas-para-bano/toallas-de-bano.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="items-center">
+                                        <img class="holdImg" alt="haven"
+                                        srcset="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272"
+                                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272g">
+                                    </div>
+                                    <p class="categoriestitle">toallas de algodón orgánico</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano/tapetes-para-bano.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="items-center">
+                                        <img class="holdImg" alt="haven"
+                                        srcset="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272"
+                                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272g">
+                                    </div>
+                                    <p class="categoriestitle">tapetes</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href=https://www.bedbathandbeyond.com.mx/marcas/nestwell/almohadas.html>
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="items-center">
+                                        <img class="holdImg" alt="haven"
+                                        srcset="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272"
+                                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272g">
+                                    </div>
+                                    <p class="categoriestitle">cortinas</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/edredones.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="items-center">
+                                        <img class="holdImg" alt="haven"
+                                        srcset="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272"
+                                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272g">
+                                    </div>
+                                    <p class="categoriestitle">batas y pantuflas</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/edredones.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="items-center">
+                                        <img class="holdImg" alt="haven"
+                                        srcset="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272"
+                                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272g">
+                                    </div>
+                                    <p class="categoriestitle">accesorios</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-2">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/edredones.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="items-center">
+                                        <img class="holdImg" alt="haven"
+                                        srcset="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272"
+                                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C02-5v2-CAT-1-DSKvds?$content$&wid=272&hei=272g">
+                                    </div>
+                                    <p class="categoriestitle">muebles</p>
+                                </div>
+                            </a>
+                        </li>
+   
+                    </ul>
+                </div>
+            </section>
+
+            <!-- BLOG1-->
+            <section>
+                <a href="">
+                    <div class="container-block-img">
+                        <div class="banner-img-over desktop"> 
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619" class="img-80">
+                        </div>
+                        <div style="background-color:#F3F1EF;overflow:hidden;">
+                            <div class="col-both"> 
+                                &nbsp;
+                            </div>
+                            <div class="col-both">
+                                <div class="container-slide">
+                                    <h2 style="text-align: left;font-style: italic;" class="txt-gray">Disfruta un oasis de serenidad</h2>
+                                    <p class="txt-gray">Considera esto una invitación a escapar. Recreando una experiencia de spa sin tener que salir de casa, Haven fue diseñado para darte un bien merecido tiempo para ti en un agradable ambiente apacible y renovador.</p>
+
+                                    <a href="">
+                                        <p class="btn-bb">explore the collection</p>
+                                    </a>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+
+                        <div style="background-color:#F3F1EF;overflow:hidden;">
+                            <div class="col-both"> 
+                                <p class="p-center leyenda" >Dormir es fundamental para la salud. Estos son nuestros consejos para un mejor descanso.<a href="https://www.bedbathandbeyond.com.mx/consejos-de-nuestra-experta-en-descanso"> Leer más </a></p>
+                            </div>
+                            <div class="col-both">                            
+                            </div>
+                        </div>
+                    </div>
+                </a>
+                </a>
+            </section>
+              <!-- >
+                
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html">
+                    <div class="banner-img desktop"> 
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619">
+                    </div>
+                </a>
+            <p class="p-center">Dormir es fundamental para la salud. Estos son nuestros consejos para un mejor descanso.<a href="https://www.bedbathandbeyond.com.mx/consejos-de-nuestra-experta-en-descanso"> Leer más</p>
+            </a>
+            </section> -->
+            <div style="height:50px"></div>
+           <!-- BLOG1-->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/la-base-para-dormir-mejor">
+                    <div style="text-align: center;"> 
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C01-18-OB-GraphicBanner-1-DSK?$content$&wid=1024">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C01-18-OB-GraphicBanner-1-DSK?$content$&wid=1024">
+                    </div>
+                </a>
+            </section>
+            <div style="height:50px"></div>
+            <!-- BLOG2-->
+            <section>
+                    <div class="container-block-img">
+                        <div style="background-color:rgb(141, 170, 153);overflow:hidden;">
+                            <div class="col-both">
+                                <div class="container-slide-right">
+                                    <h2 style="text-align: left;font-style: italic;" class="txt-white">Disfruta un oasis de serenidad</h2>
+                                    <p class="txt-white">Considera esto una invitación a escapar. Recreando una experiencia de spa sin tener que salir de casa, Haven fue diseñado para darte un bien merecido tiempo para ti en un agradable ambiente apacible y renovador.</p>
+                                    <br>
+                                    <a href="">
+                                        <p class="btn-bb">shop the room</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-both"> 
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="banner-img-right desktop"> 
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619" class="img-80 mg-left-10">
+                            <a class="hotspot" id="hs-a" onClick='showHotSpot("hsa")'>&nbsp;</a>
+                            <a class="hotspot" id="hs-b">&nbsp;</a>
+                            <a class="hotspot" id="hs-c">&nbsp;</a>
+                            <div class="container-hotspop" id="hs-a">
+                                <table>
+                                    <tr>
+                                        <td><img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619" width="60px" height="auto"></td>
+                                        <td style="padding: 0 5px;">
+                                            <h4  class="titlehs">Haven Acacia Wood Tub Tray</h4>
+                                            <p class="fonthaven" style="font-size:0.8vw;line-height:1;">Non - Member</p>
+                                            <p class="fonthavenprice" style="font-size:1.4vw;line-height:1;">$300.00</p>
+
+                                            <p class="fonthaven" style="font-size:0.8vw;line-height:1;">Beyond +</p>
+                                            <p class="fonthavenprice colorblue" style="font-size:1.4vw;line-height:1;">$300.00</p>
+
+                                            <a href="#" class="fonthavenprice colorblue detailslink" target="_self">See details</a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </section>
+
+            <div style="height:50px"></div>
+            
+            <!-- TOALLAS-->
+            <section>
+                <a href="">
+                    <div class="container-block-img">
+                        <div style="background-color: rgb(249, 245, 240);overflow:hidden;">
+                            <div class="col-both">
+                                <div class="container-slide-right">
+                                    <h2 style="text-align: left;font-style: italic;" class="txt-gray">Envuelvete en algodón 100% orgánico</h2>
+                                    <p class="txt-gray">Consiéntete con toallas superafelpadas con texturas relajantes y tonos naturales.</p>
+                                    <br><br>
+                                    <a href="">
+                                        <p class="btn-bb">shop organic cotton towels</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-both"> 
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="banner-img-right desktop"> 
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619" class="img-80 mg-left-10">
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <!-- SubTitles -->
+            <div style="height:50px"></div>
+            <section>
+                    <h2 class="title-font">
+                        <span style="color:#72776f;font-weight:900; font-style: italic;font-size: 24px;">Todo está en los detalles</span>
+                    </h2>
+                <p style="font-weight:600;font-size:1.4vw;text-align:center;color:#72776f;">Lleva el estilo de spa a tu hogar con la máxima suavidad y detalles de diseño.</p>
+            </section>
+            <div style="height:50px"></div>
+            <!-- Carousel -->
+            <section>
+                <div class="content-color" style="background: rgb(255, 255, 255);"> 
+                    <div class="content-inline-flex column-m">
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/sabanas/algodon-satinado.html">
+                                <img class="holdImg"
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/sabanas-1-estatico-5-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"></p>
+                                    <p class="card-description"></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/sabanas/percal-de-algodon.html">
+                                <img class="holdImg"
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/sabanas-2-5-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"></p>
+                                    <p class="card-description"></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/sabanas/algodon-organico.html">
+                                <img class="holdImg"
+                                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/sabanas-3-5-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400"
+                                alt="Haven" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"></p>
+                                    <p class="card-description"></p>
+                                </div>
+                               </a>
+                        </div>
+            </section>
+            <!-- Blog 2-->
+            <section>
+                <p style="font-size: 1.2vw;font-weight: 600; text-align: center;">Disfruta de una experiencia de spa en tu propio baño <br> <a href="https://www.bedbathandbeyond.com.mx/di-hola-a-nuestra-linea-de-sabanas-de-algodon-organico"> Conoce más</a></p>
+            </section>
+               
+            <div style="height:50px"></div>
+            <section>
+                <a href="">
+                    <div class="container-block-img">
+                        <div style="background-color:rgb(141, 170, 153);overflow:hidden;">
+                            <div class="col-both">
+                                <div class="container-slide-right">
+                                    <h2 style="text-align: left;font-style: italic;" class="txt-white">Elaborados para tu <br> tranquilidad, creados con <br> cuidado</h2>
+                                    <p class="txt-white">Muebles de madera cálida que recrean un ambiente sofisticado y atemporal.</p>
+                                   
+                                    <a href="">
+                                        <p class="btn-bb">shop furniture</p>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-both"> 
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="banner-img-right desktop"> 
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619" class="img-80 mg-left-10">
+                        </div>
+                    </div>
+                </a>
+            </section>
+            <div style="height:50px"></div>
+            <!-- ACCESORIOS DE BAÑO -->
+            <section>
+                <a href="">
+                    <div class="container-block-img">
+                        <div class="banner-img-over desktop"> 
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandCPlus-LP-C04-2v3-OB-Welcome-DSK?wid=920&hei=619" class="img-80">
+                        </div>
+                        <div style="background-color:#F3F1EF;overflow:hidden;">
+                            <div class="col-both"> 
+                                &nbsp;
+                            </div>
+                            <div class="col-both">
+                                <div class="container-slide">
+                                    <h2 style="text-align: left;font-style: italic;" class="txt-gray">Organízate con <br> estilo</h2>
+                                    <p class="txt-gray">Contenedores de vidrio y madera <br> que propician a un espacio <br>apacible.</p>
+                                    <br>
+                                    <a href="">
+                                        <p class="btn-bb">shop bath acessories</p>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </section>
+
+            <section>
+                <div style="text-align: center;">
+                    <h2 class="title-font">
+                        <span><span style="color:#72776f;font-weight:900; font-style: italic;font-size: 24px;">Conoce la nueva <br> colección de Haven</span>
+                    </h2> 
+                    <a href="">
+                        <p class="btn-bb" style="margin: auto;">shop the entire line</p>
+                    </a>
+                </div>
+            </section>
+
+            <div style="height:50px"></div>
+        <!-- 
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/ropa-de-cama.html">
+                    <div class="banner-img desktop"> 
+                        <img src="/media/wysiwyg/home-2/banner-cubrete-suavidad-landing-5-abn.jpg">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-cubrete-suavidad-tmobile-5-ab.jpg">
+                    </div>
+                </a>
+            </section>
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/ropa-de-cama.html">
+                    <div class="banner-img desktop"> 
+                        <img src="/media/wysiwyg/home-2/banner-landign-duvet-y-edredon.jpg">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-landign-duvet-y-edredon-mobile-5-ab.jpg">
+                    </div>
+                </a>
+            </section>
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell/ba-o.html">
+                    <div class="banner-img desktop"> 
+                        <img src="/media/wysiwyg/home-2/banner-landign-envuelvete.jpg">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-landing-envuelvete-mobile-5-ab.jpg">
+                    </div>
+                </a>
+                <p class="p-center">Convierte tu baño en un  espacio con estilo relajado.<a href="https://www.bedbathandbeyond.com.mx/reinventa-tu-ba-o"> Leer más </a></p>
+            </section>
+            <section>
+                <div class="content-color" style="background: rgb(255, 255, 255);"> 
+                    <div class="content-inline-flex column-m">
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/conoce-1-5-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"></p>
+                                    <p class="card-description"></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/conoce-2-5-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"></p>
+                                    <p class="card-description"></p>
+                                </div>
+                            </a>
+                        </div>
+            <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/conoce-3-5-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"></p>
+                                    <p class="card-description"></p>
+                                </div>
+                               </a>
+                               </div>
+            </section>
+             <h2 class="title-font">
+                        <span><span style="color:#9EAFBD;font-weight:600">Conoce la nueva colección<br>Nestwell</span>
+            </h2>     Blog 2-->            
+    </body>
+</html>

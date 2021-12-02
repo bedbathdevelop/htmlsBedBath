@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>carrousel Bed Bad</title>
+    <style>
+        h1 {
+            text-align: center;
+            font-family: var(--font-1);
+            font-size: 35px;
+            text-decoration: underline;
+            }
+
+            .slider-container {
+            display: block;
+            margin: 0 auto;
+            min-height: 390px;
+            height: 50%;
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            border-radius: 10px;
+            padding: 20px 10px 40px 10px;
+            overflow: hidden;
+            }
+
+            .slider-container .slide {
+            display: none;
+            height: 100%;
+            width: 100%;
+            margin: 0px auto;
+            background: white;
+            font-size: 40px;
+            font-family: var(--font-1);
+            text-align: center;
+            align-items: center;
+            }
+
+            .slider-container .slide img {
+            heigth: auto;
+            width: 100%;
+            }
+
+            .slider-container .active {
+            display: block;
+            }
+
+            .control-container {
+            display: inline-flex;
+            width: 100%;
+            }
+
+            .control-container button {
+            border: none;
+            border-radius: 50%;
+            background: white;
+            font-size: 20px;
+            height: 35px;
+            width: 35px;
+            outline: none;
+            }
+
+            .control-container button:hover {
+            background: #ccc;
+            }
+
+            .slide-indicator {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            }
+
+            .slide-indicator .indicator {
+            height: 20px;
+            width: 20px;
+            transition: background 0.5s ease;
+            background: #ccc;
+            margin: 5px;
+            display: inline-block;
+            border-radius: 50%;
+            }
+
+            .slide-indicator .indicator:hover {
+            background: darkgrey;
+            }
+
+            .slide-indicator .active {
+            background: grey;
+            }
+    </style>
+
+    <script>
+        window.onload = function() { 
+        let slides = document.querySelectorAll(".slide");
+        let indicator = document.querySelectorAll(".indicator");
+        let prev = document.querySelector(".prev");
+        let next = document.querySelector(".next");
+
+        let index = 0;
+
+        for (let i = 0; i < slides.length; i++) {
+        if (slides[i].classList.contains("active")) {
+            index = i
+        }
+        }
+
+        prev.onclick = prevSlide;
+        next.onclick = nextSlide;
+
+        indicator.forEach(x => {
+        x.onclick = display;
+        });
+
+        function display() {
+        let num;
+        for (let i = 0; i < indicator.length; i++) {
+            indicator[i].classList.remove("active");
+            slides[i].classList.remove("active");
+        }
+        this.classList.add("active");
+        for (let i =0; i < indicator.length; i++) {
+            if (indicator[i].classList.contains("active")) {
+            num = i;
+            }
+        }
+        slides[num].classList.add("active");
+        index = num;
+        }
+
+        function prevSlide() {
+        slides[index].classList.remove("active");
+        indicator[index].classList.remove("active");
+        index--;
+        console.log(index);
+        if (index < 0) {
+            index = slides.length - 1;
+        }
+        slides[index].classList.add("active");
+        indicator[index].classList.add("active");
+        }
+
+        function nextSlide() {
+        slides[index].classList.remove("active");
+        indicator[index].classList.remove("active");
+        index++;
+        console.log(index);
+        if (index == slides.length) {
+            index = 0;
+        }
+        console.log(index);
+        slides[index].classList.add("active");
+        indicator[index].classList.add("active");
+        }
+    }
+    </script>
+</head>
+<body>
+        <div class="slider-container">
+        <div class="slide active">
+            <img src="https://dummyimage.com/600x370/ccc/&text=Slide 1" alt="">
+        </div>
+        <div class="slide">
+            <img src="https://dummyimage.com/600x370/ccc/&text=Slide 2" alt="">
+        </div>
+        <div class="slide">
+            <img src="https://dummyimage.com/600x370/ccc/&text=Slide 3" alt="">
+        </div>
+        <div class="slide">
+            <img src="https://dummyimage.com/600x370/ccc/&text=Slide 4" alt="">
+        </div>
+        <div class="control-container">
+            <button class="prev">
+            atras
+            </button>
+            <div class="slide-indicator">
+                <span class="indicator active"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+                <span class="indicator"></span>
+            </div>
+            <button class="next">
+              next
+            </button>
+        </div>
+        </div>
+
+
+
+</body>
+</html>

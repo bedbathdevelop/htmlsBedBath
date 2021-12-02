@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bed Bath</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="search.css" />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div id="headerBb">
+        <div class="wrap-header">
+          <div class="item-header"></div>
+          <div class="item-header">
+            <div class="wrap-search">
+              <input
+                id="searchBB"
+                type="text"
+                placeholder="¿qué podemos ayudarte a encontrar?"
+                onclick="facetSearch()"
+              />
+              <div class="btn--search" onclick="searchValue()">	
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/lupa.png?rand=1628265766" />
+              </div>
+              <div id="closeHolder" class="btn--close-search" onclick="closeResultTab()">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/cancel.png?rand=1628265905" />
+              </div>
+            </div>
+            <!-- container placeholder-->
+            <div id="placeholder" class="placeholder-search">
+                <div id="searchNow" class="item-placeholder">
+                    <div>
+                        <h4>búsquedas recientes</h4>
+                        <p class="list-result"><span class="coincide">cortinas</span></p>
+                        <p class="list-result"><span class="coincide">cortinas</span> dos</p>
+                        <p class="list-result"><span class="coincide">cortinas</span> tres</p>
+                    </div>
+                    <div>
+                        <h4>categorías</h4>
+                        <p class="list-result"><span class="coincide">cortinas</span> de decoración </p>
+                        <p class="list-result">decoración</p>
+                        <p class="list-result">decoración</p>
+                    </div>
+                    <div>
+                        <h4>marcas</h4>
+                        <p class="list-result">Brookstone® Zadie</p>
+                        <p class="list-result">Simply Essential  <span>&#9733;</span></p>
+                        <p class="list-result">UGG <span>&#9733;</span></p>
+                    </div>
+                </div>
+                <div id="searchResultV" class="item-placeholder">
+                    <!-- placeholder result -->
+                    <div class="item-result-search">
+                        <a href="" target="_self">
+                            <div>
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                            </div>
+                            <div>
+                                <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                                <div class="search-price-bb">
+                                    <p class="disccount">$778.00</p>
+                                    <p class="nonprice">$1,039.00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item-result-search">
+                        <a href="" target="_self">
+                            <div>
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                            </div>
+                            <div>
+                                <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                                <div class="search-price-bb">
+                                    <p class="disccount">$778.00</p>
+                                    <p class="nonprice">$1,039.00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item-result-search">
+                        <a href="" target="_self">
+                            <div>
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                            </div>
+                            <div>
+                                <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                                <div class="search-price-bb">
+                                    <p class="disccount">$778.00</p>
+                                    <p class="nonprice">$1,039.00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="item-result-search">
+                        <a href="" target="_self">
+                            <div>
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                            </div>
+                            <div>
+                                <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                                <div class="search-price-bb">
+                                    <p class="disccount">$778.00</p>
+                                    <p class="nonprice">$1,039.00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-result-search">
+                        <a href="" target="_self">
+                            <div>
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                            </div>
+                            <div>
+                                <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                                <div class="search-price-bb">
+                                    <p class="disccount">$778.00</p>
+                                    <p class="nonprice">$1,039.00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="item-result-search">
+                        <a href="" target="_self">
+                            <div>
+                                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                            </div>
+                            <div>
+                                <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                                <div class="search-price-bb">
+                                    <p class="disccount">$778.00</p>
+                                    <p class="nonprice">$1,039.00</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- filters mobile -->
+    <section>
+      <div id="mobileFilter" class="mobile-filter pullDown">
+          <div class="title-filter-mb">
+            <div>Filtrar</div>
+            <div><p class="close-mb" onclick="closeFilter();">&#x2715</p></div>
+          </div>
+
+          <div class="item-filter">
+            <div
+            id="categoria_m"
+            class="checkbox-dropdown"
+            onClick="dropDownBB('categoria_m')"
+            >
+            categoría
+            <ul class="checkbox-dropdown-list">
+                <li onclick="triggerFilter('decoracion','categoria')">
+                  <input type="checkbox" id="recámara"/>
+                  <label for="recámara">recámara <span class="total-number">(89)</span></label>
+                </li>
+                <li >
+                  <input type="checkbox" id="baño" />
+                  <label for="baño">baño <span class="total-number">(89)</span></label>
+                </li>
+                <li>
+                    <input type="checkbox" id="cocina" />
+                    <label for="cocina">cocina <span class="total-number">(89)</span></label>
+                </li>
+            </ul>
+            </div>
+          </div>
+        
+      </div>
+    </section>
+
+    <!-- bloque -->
+    <section id="bloqueMagento">
+      <div class="wrap-bloque-bb">
+        <p>369 resultados para</p>
+        <h2>"result search"</h2>
+      </div>
+    </section>
+    <!-- PLP main -->
+    <main id="plpBb">
+      <!-- total -->
+      <section>
+        <div class="wrap-total">
+          <p class="item-total">Mostrando <span id="numtoshow"> </span> <span id="totalProducts">de 24</span> productos</p>
+          <p class="just-mobile">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/filtrar.png?rand=1628471862" alt="filer" onclick="enableFilter()"/>
+          </p>
+        </div>
+      </section>
+
+      <div class="line-medium"></div>
+
+    <!-- filter -->
+      <section id="filterPlp">
+        <div class="wrap-filter">
+          <div id="disableFilter"></div>
+            <div class="item-filter">
+                <div
+                id="categoria"
+                class="checkbox-dropdown"
+                onClick="dropDownBB('categoria')"
+                >
+                categoría
+                <ul class="checkbox-dropdown-list">
+                    <li onclick="triggerFilter('decoracion','categoria')">
+                      <input type="checkbox" id="recámara"/>
+                      <label for="recámara">recámara <span class="total-number">(89)</span></label>
+                    </li>
+                    <li >
+                      <input type="checkbox" id="baño" />
+                      <label for="baño">baño <span class="total-number">(89)</span></label>
+                    </li>
+                    <li>
+                        <input type="checkbox" id="cocina" />
+                        <label for="cocina">cocina <span class="total-number">(89)</span></label>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            <div class="item-filter">
+              <div
+              id="color"
+              class="checkbox-dropdown"
+              onClick="dropDownBB('color')"
+              >
+              color
+              <ul class="checkbox-dropdown-list">
+                  <li onclick="triggerFilter('azul','color')">
+                    <input type="checkbox" id="azul"/>
+                    <label for="azul">azul <span class="total-number">(89)</span></label>
+                  </li>
+                  <li onclick="triggerFilter('blanco','color')">
+                    <input type="checkbox" id="rojo" />
+                    <label for="rojo">blanco <span class="total-number">(89)</span></label>
+                  </li>
+                  <li onclick="triggerFilter('verde','color')">
+                      <input type="checkbox" id="verde" />
+                      <label for="verde">verde <span class="total-number">(89)</span></label>
+                  </li>
+              </ul>
+              </div>
+          </div>
+
+            <div class="item-filter">
+              <div
+              id="marca"
+              class="checkbox-dropdown"
+              onClick="dropDownBB('marca')"
+              >
+              marca
+              <ul class="checkbox-dropdown-list">
+                  <li onclick="triggerFilter('a','marca')">
+                    <input type="checkbox" id="a"/>
+                    <label for="a">a <span class="total-number">(89)</span></label>
+                  </li>
+                  <li onclick="triggerFilter('b','marca')">
+                    <input type="checkbox" id="b" />
+                    <label for="b">b <span class="total-number">(89)</span></label>
+                  </li>
+                  <li onclick="triggerFilter('c','marca')">
+                      <input type="checkbox" id="c" />
+                      <label for="c">c <span class="total-number">(89)</span></label>
+                  </li>
+              </ul>
+              </div>
+          </div>
+
+
+        </div>
+      </section>
+      <div id="backToUp"></div>
+      <!-- tabs filter -->
+      <section id="tabFilter">
+        <div id="availableFilter" class="wrap-tab-filter">
+          <div id="clearFilter" class="tab-filter clear-filter" onclick="cleanFilter()">limpiar filtros</div>
+        </div>
+      </section>
+
+      <!-- grid -->
+      <section id="gridPLP">
+        <div class="wrap-grid-plp">
+          <!-- item grid-->
+          <div id="0" class="item-grid-bb">
+            <p class="badge--bb only--bb">
+              <span>solo en BB&B</span>
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+              target="_self"
+            >
+              <div class="item-img-bb img-container">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                  alt=""
+                />
+                <div class="hidden-child">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                    alt=""
+                  />
+                  <p class="btn--quickview">vista rápida</p>
+                </div>
+
+                <div class="wrap-cat-icon">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="item-price-bb">
+                <p class="disccount">$778.00</p>
+                <p class="nonprice">$1,039.00</p>
+              </div>
+
+              <p class="item-des-bb">
+                Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                m color morado ciruela
+              </p>
+
+              <div class="item-raiting">
+                <div class="raiting">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+              </div>
+              <div class="item-color">
+                <p class="type--gray"></p>
+                <p class="type--brown"></p>
+                <p class="type--pink"></p>
+              </div>
+              <button>agregar a carrito</button>
+              <div class="item-details">
+                <p><span>&#10063;</span> compare</p>
+                <p><span>&hearts;</span>whislist</p>
+              </div>
+            </a>
+          </div>
+
+                    <!-- item grid-->
+                    <div id="1" class="item-grid-bb">
+                      <p class="badge--bb only--bb">
+                        <span>solo en BB&B</span>
+                      </p>
+                      <a
+                        href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+                        target="_self"
+                      >
+                        <div class="item-img-bb img-container">
+                          <img
+                            src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                            alt=""
+                          />
+                          <div class="hidden-child">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                              alt=""
+                            />
+                            <p class="btn--quickview">vista rápida</p>
+                          </div>
+          
+                          <div class="wrap-cat-icon">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+          
+                        <div class="item-price-bb">
+                          <p class="disccount">$778.00</p>
+                          <p class="nonprice">$1,039.00</p>
+                        </div>
+          
+                        <p class="item-des-bb">
+                          Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                          m color morado ciruela
+                        </p>
+          
+                        <div class="item-raiting">
+                          <div class="raiting">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                        </div>
+                        <div class="item-color">
+                          <p class="type--gray"></p>
+                          <p class="type--brown"></p>
+                          <p class="type--pink"></p>
+                        </div>
+                        <button>agregar a carrito</button>
+                        <div class="item-details">
+                          <p><span>&#10063;</span> compare</p>
+                          <p><span>&hearts;</span>whislist</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    
+
+        <!-- item grid-->
+          <div id="2" class="item-grid-bb">
+            <p class="badge--bb only--bb">
+              <span>solo en BB&B</span>
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+              target="_self"
+            >
+              <div class="item-img-bb img-container">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                  alt=""
+                />
+                <div class="hidden-child">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                    alt=""
+                  />
+                  <p class="btn--quickview">vista rápida</p>
+                </div>
+
+                <div class="wrap-cat-icon">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="item-price-bb">
+                <p class="disccount">$778.00</p>
+                <p class="nonprice">$1,039.00</p>
+              </div>
+
+              <p class="item-des-bb">
+                Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                m color morado ciruela
+              </p>
+
+              <div class="item-raiting">
+                <div class="raiting">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+              </div>
+              <div class="item-color">
+                <p class="type--gray"></p>
+                <p class="type--brown"></p>
+                <p class="type--pink"></p>
+              </div>
+              <button>agregar a carrito</button>
+              <div class="item-details">
+                <p><span>&#10063;</span> compare</p>
+                <p><span>&hearts;</span>whislist</p>
+              </div>
+            </a>
+          </div>
+
+
+                    <!-- item grid-->
+                    <div id="3" class="item-grid-bb">
+                      <p class="badge--bb only--bb">
+                        <span>solo en BB&B</span>
+                      </p>
+                      <a
+                        href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+                        target="_self"
+                      >
+                        <div class="item-img-bb img-container">
+                          <img
+                            src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                            alt=""
+                          />
+                          <div class="hidden-child">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                              alt=""
+                            />
+                            <p class="btn--quickview">vista rápida</p>
+                          </div>
+          
+                          <div class="wrap-cat-icon">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+          
+                        <div class="item-price-bb">
+                          <p class="disccount">$778.00</p>
+                          <p class="nonprice">$1,039.00</p>
+                        </div>
+          
+                        <p class="item-des-bb">
+                          Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                          m color morado ciruela
+                        </p>
+          
+                        <div class="item-raiting">
+                          <div class="raiting">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                        </div>
+                        <div class="item-color">
+                          <p class="type--gray"></p>
+                          <p class="type--brown"></p>
+                          <p class="type--pink"></p>
+                        </div>
+                        <button>agregar a carrito</button>
+                        <div class="item-details">
+                          <p><span>&#10063;</span> compare</p>
+                          <p><span>&hearts;</span>whislist</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    
+
+                              <!-- item grid-->
+          <div id="4" class="item-grid-bb">
+            <p class="badge--bb only--bb">
+              <span>solo en BB&B</span>
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+              target="_self"
+            >
+              <div class="item-img-bb img-container">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                  alt=""
+                />
+                <div class="hidden-child">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                    alt=""
+                  />
+                  <p class="btn--quickview">vista rápida</p>
+                </div>
+
+                <div class="wrap-cat-icon">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="item-price-bb">
+                <p class="disccount">$778.00</p>
+                <p class="nonprice">$1,039.00</p>
+              </div>
+
+              <p class="item-des-bb">
+                Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                m color morado ciruela
+              </p>
+
+              <div class="item-raiting">
+                <div class="raiting">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+              </div>
+              <div class="item-color">
+                <p class="type--gray"></p>
+                <p class="type--brown"></p>
+                <p class="type--pink"></p>
+              </div>
+              <button>agregar a carrito</button>
+              <div class="item-details">
+                <p><span>&#10063;</span> compare</p>
+                <p><span>&hearts;</span>whislist</p>
+              </div>
+            </a>
+          </div>
+
+
+
+                    <!-- item grid-->
+                    <div id="5" class="item-grid-bb">
+                      <p class="badge--bb only--bb">
+                        <span>solo en BB&B</span>
+                      </p>
+                      <a
+                        href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+                        target="_self"
+                      >
+                        <div class="item-img-bb img-container">
+                          <img
+                            src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                            alt=""
+                          />
+                          <div class="hidden-child">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                              alt=""
+                            />
+                            <p class="btn--quickview">vista rápida</p>
+                          </div>
+          
+                          <div class="wrap-cat-icon">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+          
+                        <div class="item-price-bb">
+                          <p class="disccount">$778.00</p>
+                          <p class="nonprice">$1,039.00</p>
+                        </div>
+          
+                        <p class="item-des-bb">
+                          Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                          m color morado ciruela
+                        </p>
+          
+                        <div class="item-raiting">
+                          <div class="raiting">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                        </div>
+                        <div class="item-color">
+                          <p class="type--gray"></p>
+                          <p class="type--brown"></p>
+                          <p class="type--pink"></p>
+                        </div>
+                        <button>agregar a carrito</button>
+                        <div class="item-details">
+                          <p><span>&#10063;</span> compare</p>
+                          <p><span>&hearts;</span>whislist</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    
+
+                              <!-- item grid-->
+          <div id="6" class="item-grid-bb">
+            <p class="badge--bb only--bb">
+              <span>solo en BB&B</span>
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+              target="_self"
+            >
+              <div class="item-img-bb img-container">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                  alt=""
+                />
+                <div class="hidden-child">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                    alt=""
+                  />
+                  <p class="btn--quickview">vista rápida</p>
+                </div>
+
+                <div class="wrap-cat-icon">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="item-price-bb">
+                <p class="disccount">$778.00</p>
+                <p class="nonprice">$1,039.00</p>
+              </div>
+
+              <p class="item-des-bb">
+                Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                m color morado ciruela
+              </p>
+
+              <div class="item-raiting">
+                <div class="raiting">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+              </div>
+              <div class="item-color">
+                <p class="type--gray"></p>
+                <p class="type--brown"></p>
+                <p class="type--pink"></p>
+              </div>
+              <button>agregar a carrito</button>
+              <div class="item-details">
+                <p><span>&#10063;</span> compare</p>
+                <p><span>&hearts;</span>whislist</p>
+              </div>
+            </a>
+          </div>
+
+
+
+                    <!-- item grid-->
+                    <div id="7" class="item-grid-bb">
+                      <p class="badge--bb only--bb">
+                        <span>solo en BB&B</span>
+                      </p>
+                      <a
+                        href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+                        target="_self"
+                      >
+                        <div class="item-img-bb img-container">
+                          <img
+                            src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                            alt=""
+                          />
+                          <div class="hidden-child">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                              alt=""
+                            />
+                            <p class="btn--quickview">vista rápida</p>
+                          </div>
+          
+                          <div class="wrap-cat-icon">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+          
+                        <div class="item-price-bb">
+                          <p class="disccount">$778.00</p>
+                          <p class="nonprice">$1,039.00</p>
+                        </div>
+          
+                        <p class="item-des-bb">
+                          Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                          m color morado ciruela
+                        </p>
+          
+                        <div class="item-raiting">
+                          <div class="raiting">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                        </div>
+                        <div class="item-color">
+                          <p class="type--gray"></p>
+                          <p class="type--brown"></p>
+                          <p class="type--pink"></p>
+                        </div>
+                        <button>agregar a carrito</button>
+                        <div class="item-details">
+                          <p><span>&#10063;</span> compare</p>
+                          <p><span>&hearts;</span>whislist</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    
+
+                              <!-- item grid-->
+          <div id="8" class="item-grid-bb">
+            <p class="badge--bb only--bb">
+              <span>solo en BB&B</span>
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+              target="_self"
+            >
+              <div class="item-img-bb img-container">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                  alt=""
+                />
+                <div class="hidden-child">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                    alt=""
+                  />
+                  <p class="btn--quickview">vista rápida</p>
+                </div>
+
+                <div class="wrap-cat-icon">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="item-price-bb">
+                <p class="disccount">$778.00</p>
+                <p class="nonprice">$1,039.00</p>
+              </div>
+
+              <p class="item-des-bb">
+                Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                m color morado ciruela
+              </p>
+
+              <div class="item-raiting">
+                <div class="raiting">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+              </div>
+              <div class="item-color">
+                <p class="type--gray"></p>
+                <p class="type--brown"></p>
+                <p class="type--pink"></p>
+              </div>
+              <button>agregar a carrito</button>
+              <div class="item-details">
+                <p><span>&#10063;</span> compare</p>
+                <p><span>&hearts;</span>whislist</p>
+              </div>
+            </a>
+          </div>
+
+
+
+                    <!-- item grid-->
+                    <div id="9" class="item-grid-bb">
+                      <p class="badge--bb only--bb">
+                        <span>solo en BB&B</span>
+                      </p>
+                      <a
+                        href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+                        target="_self"
+                      >
+                        <div class="item-img-bb img-container">
+                          <img
+                            src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                            alt=""
+                          />
+                          <div class="hidden-child">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                              alt=""
+                            />
+                            <p class="btn--quickview">vista rápida</p>
+                          </div>
+          
+                          <div class="wrap-cat-icon">
+                            <img
+                              src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+          
+                        <div class="item-price-bb">
+                          <p class="disccount">$778.00</p>
+                          <p class="nonprice">$1,039.00</p>
+                        </div>
+          
+                        <p class="item-des-bb">
+                          Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                          m color morado ciruela
+                        </p>
+          
+                        <div class="item-raiting">
+                          <div class="raiting">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                        </div>
+                        <div class="item-color">
+                          <p class="type--gray"></p>
+                          <p class="type--brown"></p>
+                          <p class="type--pink"></p>
+                        </div>
+                        <button>agregar a carrito</button>
+                        <div class="item-details">
+                          <p><span>&#10063;</span> compare</p>
+                          <p><span>&hearts;</span>whislist</p>
+                        </div>
+                      </a>
+                    </div>
+
+                    
+
+                              <!-- item grid-->
+          <div id="10" class="item-grid-bb">
+            <p class="badge--bb only--bb">
+              <span>solo en BB&B</span>
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/cortina-blackout-de-poliester-brookstoner-zadie-con-ojales-2-41-m-color-morado-ciruela.html"
+              target="_self"
+            >
+              <div class="item-img-bb img-container">
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260"
+                  alt=""
+                />
+                <div class="hidden-child">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/lf_33992135414086g__1?$imagePLP$&hei=700&wid=700"
+                    alt=""
+                  />
+                  <p class="btn--quickview">vista rápida</p>
+                </div>
+
+                <div class="wrap-cat-icon">
+                  <img
+                    src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150"
+                    alt=""
+                  />
+                </div>
+              </div>
+
+              <div class="item-price-bb">
+                <p class="disccount">$778.00</p>
+                <p class="nonprice">$1,039.00</p>
+              </div>
+
+              <p class="item-des-bb">
+                Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41
+                m color morado ciruela
+              </p>
+
+              <div class="item-raiting">
+                <div class="raiting">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+              </div>
+              <div class="item-color">
+                <p class="type--gray"></p>
+                <p class="type--brown"></p>
+                <p class="type--pink"></p>
+              </div>
+              <button>agregar a carrito</button>
+              <div class="item-details">
+                <p><span>&#10063;</span> compare</p>
+                <p><span>&hearts;</span>whislist</p>
+              </div>
+            </a>
+          </div>
+
+                 
+        </div>
+      </section>
+
+    <!-- Load -->
+    <div id="loadPlp">
+      <div id="loadD" class="loadplp">
+        <hr/><hr/><hr/><hr/>
+      </div>
+    </div>
+
+      <!-- Show More -->
+      <div id="showMore" onclick="showMoreResults()">
+        <p>Mostrar más resultados</p>
+      </div>
+
+<!-- Not Results -->
+   
+      <!-- total -->
+      <div class="line-medium"></div>
+      <section>
+        <div class="wrap-total">
+          <p>Mostrando <span id="numtoshowb"> </span>  de 369 productos</p>
+        </div>
+      </section>
+
+<!-- Go Up -->
+        <a href="#backToUp">
+          <div id="arrowUp"> 
+              <p>&#8593;</p>               
+          </div>
+        </a> 
+
+    </main>
+  </body>
+</html>

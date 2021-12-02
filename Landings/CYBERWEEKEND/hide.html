@@ -1,0 +1,21 @@
+<script>
+  //hide price 0
+  window.onload = function () {
+    //let values = document.getElementsByClassName("pricestandar");
+    let item = document.getElementsByClassName("item-grid-bb");
+
+    if (item) {
+      for (let i = 0; i < item.length; i++) {
+        let price = item[i].outerText;
+
+        if (price) {
+          let foundvalue = price.indexOf("$0");
+          console.log("foundvalue0", foundvalue);
+          if (foundvalue === 0) {
+            item[i].style.display = "none";
+          }
+        }
+      }
+    }
+  };
+</script>

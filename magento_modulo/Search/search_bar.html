@@ -1,0 +1,320 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bed Bath</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="search.css" />
+  <script src="main.js"></script>
+</head>
+<?php $results = $block->getResults(); ?>
+
+<!-- Header -->
+<header>
+  <div id="headerBb">
+    <div class="wrap-header">
+      <div class="item-header"></div>
+      <div class="item-header">
+        <div class="wrap-search">
+          <form action="<?php echo $block->getBaseUrl() ?>newsearch/result" method="GET">
+            <input id="searchBB" type="text" name="query" placeholder="¿qué podemos ayudarte a encontrar?" onclick="facetSearch()" />
+            <div class="btn--search" onclick="searchValue()">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/lupa.png?rand=1628265766" />
+            </div>
+            <div id="closeHolder" class="btn--close-search" onclick="closeResultTab()">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/cancel.png?rand=1628265905" />
+            </div>
+          </form>
+        </div>
+        <!-- container placeholder-->
+        <div id="placeholder" class="placeholder-search">
+          <div id="searchNow" class="item-placeholder">
+            <div>
+              <h4>recomendaciones</h4>
+              <p class="list-result"><span class="coincide">cortinas</span></p>
+              <p class="list-result"><span class="coincide">cortinas</span> dos</p>
+              <p class="list-result"><span class="coincide">cortinas</span> tres</p>
+            </div>
+            <div>
+              <h4>categorías</h4>
+              <p class="list-result"><span class="coincide">cortinas</span> de decoración </p>
+              <p class="list-result">decoración</p>
+              <p class="list-result">decoración</p>
+            </div>
+            <div>
+              <h4>marcas</h4>
+              <p class="list-result">Brookstone® Zadie</p>
+              <p class="list-result">Simply Essential <span>&#9733;</span></p>
+              <p class="list-result">UGG <span>&#9733;</span></p>
+            </div>
+          </div>
+          <div id="searchResultV" class="item-placeholder">
+            <!-- placeholder result -->
+            <div class="item-result-search">
+              <a href="" target="_self">
+                <div>
+                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                </div>
+                <div>
+                  <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                  <div class="search-price-bb">
+                    <p class="disccount">$778.00</p>
+                    <p class="nonprice">$1,039.00</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="item-result-search">
+              <a href="" target="_self">
+                <div>
+                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                </div>
+                <div>
+                  <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                  <div class="search-price-bb">
+                    <p class="disccount">$778.00</p>
+                    <p class="nonprice">$1,039.00</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="item-result-search">
+              <a href="" target="_self">
+                <div>
+                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                </div>
+                <div>
+                  <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                  <div class="search-price-bb">
+                    <p class="disccount">$778.00</p>
+                    <p class="nonprice">$1,039.00</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+
+            <div class="item-result-search">
+              <a href="" target="_self">
+                <div>
+                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                </div>
+                <div>
+                  <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                  <div class="search-price-bb">
+                    <p class="disccount">$778.00</p>
+                    <p class="nonprice">$1,039.00</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item-result-search">
+              <a href="" target="_self">
+                <div>
+                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                </div>
+                <div>
+                  <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                  <div class="search-price-bb">
+                    <p class="disccount">$778.00</p>
+                    <p class="nonprice">$1,039.00</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="item-result-search">
+              <a href="" target="_self">
+                <div>
+                  <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-01-12-44_751612055406_1_imageset?$imagePLP$&hei=300&wid=260" />
+                </div>
+                <div>
+                  <p> Cortina blackout de poliéster Brookstone® Zadie con ojales 2.41 m color morado ciruela</p>
+                  <div class="search-price-bb">
+                    <p class="disccount">$778.00</p>
+                    <p class="nonprice">$1,039.00</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- filters mobile -->
+
+<?php $facets = $results['placements'][0]['facets']; ?>
+<?php if (is_array($facets) && count($facets)) : ?>
+  <section>
+    <div id="mobileFilter" class="mobile-filter pullDown">
+      <div class="title-filter-mb">
+        <div>Filtrar</div>
+        <div>
+          <p class="close-mb" onclick="closeFilter();">&#x2715</p>
+        </div>
+      </div>
+      <div class="wrap-filter-mb">
+
+        <?php foreach ($facets as $keyFacet => $facet) : ?>
+
+          <?php if (in_array($facet['facet'], ['brand', 'categoryName'])) : ?>
+            <?php continue ?>
+          <?php endif ?>
+
+          <div class="item-filter-mb">
+            <h3><?php echo $facet['facet'] ?></h3>
+
+            <?php foreach ($facet['values'] as $keyValue => $value) : ?>
+                <?if (!empty($value['value'])) : ?>
+                  <input type="checkbox" id="facet_<?php echo $keyFacet ?>_value_<?php $keyValue?>" name="facet_<?php echo $keyFacet ?>_value_<?php $keyValue?>" value="<?php echo $value['value'] ?>">
+                  <label for="facet_<?php echo $keyFacet ?>_value_<?php $keyValue?>"><?php echo $value['value'] ?></label><br>
+                <?php endif ?>
+              <?php endforeach ?>
+          </div>
+
+        <?php endforeach ?>
+
+        <hr>
+      </div>
+    </div>
+  </section>
+<?php endif ?>
+
+<!-- bloque -->
+<section id="bloqueMagento">
+  <div class="wrap-bloque-bb">
+    <p><?php echo $results['placements'][0]['numFound'] ?> resultados para</p>
+    <h2>"<?php echo $block->getNombreDeBusqueda() ?>"</h2>
+  </div>
+</section>
+
+<div id="backToUp"></div>
+
+<!-- PLP main -->
+<main id="plpBb">
+
+  <!-- total -->
+  <section>
+    <div class="wrap-total">
+      <p class="item-total">Mostrando <span id="totalProducts"><?php echo $results['placements'][0]['numFound'] ?></span> productos</p>
+      <p class="just-mobile">
+        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/filtrar.png?rand=1628471862" alt="filer" onclick="enableFilter()" />
+      </p>
+    </div>
+  </section>
+
+  <div class="line-medium"></div>
+
+  <?php $facets = $results['placements'][0]['facets']; ?>
+  <?php if (is_array($facets) && count($facets)) : ?>
+    <!-- filter -->
+    <section id="filterPlp">
+      <div class="wrap-filter">
+
+        <?php foreach ($facets as $keyFacet => $facet) : ?>
+
+          <?php if (in_array($facet['facet'], ['brand', 'categoryName'])) : ?>
+            <?php continue ?>
+          <?php endif ?>
+
+          <div class="item-filter">
+            <div id="facet_<?php echo $keyFacet ?>" class="checkbox-dropdown" onClick="dropDownBB('facet_<?php echo $keyFacet ?>')">
+              <?php echo $facet['facet'] ?>
+              <ul class="checkbox-dropdown-list">
+
+                <?php foreach ($facet['values'] as $keyValue => $value) : ?>
+                  <?if (!empty($value['value'])) : ?>
+                    <li>
+                      <div class="check checkbox-rotate" onclick="triggerFilter('<?php echo $value['value'] ?>')">
+                        <label class="input-check check-lightBlue">
+                          <input type="checkbox" id="checkbox-2" />
+                          <span class="chk"></span>
+                        </label>
+                        <label for="facet_<?php echo $keyFacet ?>_value_<?php echo $keyValue?>" class="label" onclick="searchByFacet('<?php echo $facet['facet']?>', '<?php echo $value['value'] ?>')"><?php echo $value['value'] ?></label>
+                      </div>
+                    </li>
+                  <?php endif ?>
+                <?php endforeach ?>
+
+              </ul>
+            </div>
+          </div>
+
+        <?php endforeach ?>
+
+      </div>
+    </section>
+
+    <!-- tabs filter -->
+    <section id="tabFilter">
+      <div id="availableFilter" class="wrap-tab-filter">
+        <div id="clearFilter" class="tab-filter clear-filter" onclick="cleanFilter()">limpiar filtros</div>
+      </div>
+    </section>
+
+  <?php endif ?>
+
+  <!-- grid -->
+  <section id="gridPLP">
+    <div class="wrap-grid-plp">
+      <?php $products = $results['placements'][0]['docs'] ?>
+      <?php if (count($products)) : ?>
+
+        <?php foreach ($products as $product) : ?>
+          <!-- item grid-->
+          <div class="item-grid-bb">
+            <a href="<?php echo $product['clickUrl'] ?>" target="_self">
+              <div class="item-img-bb img-container">
+                <img src="<?php echo $product['imageId'] ?>" alt="" />
+                <div class="hidden-child">
+                  <?php if (array_key_exists('image_two_url', $product)) : ?>
+                    <img src="<?php echo $product['image_two_url'] ?>" alt="" />
+                  <?php endif ?>
+                </div>
+
+                <?php if (array_key_exists('imageCategory', $product)) : ?>
+                  <div class="wrap-cat-icon">
+                    <img src="<?php echo $product['imageCategory'] ?>" alt="" />
+                  </div>
+                <?php endif ?>
+              </div>
+
+              <div class="item-price-bb">
+
+              <?php if (array_key_exists('special_price', $product)) : ?>
+                <p class="pricestandar disccount"><?php echo $block->formatPrice($product['special_price']) ?></p>
+                <p class="nonprice"><?php echo $block->formatPrice($product['priceCents']) ?></p>
+              <?php else: ?>
+                <p class="pricestandar"><?php echo $block->formatPrice($product['priceCents']) ?></p>
+              <?php endif ?>
+              </div>
+
+              <p class="item-des-bb"><?php echo $product['name'] ?></p>
+
+              <button>agregar a carrito</button>
+            </a>
+          </div>
+        <?php endforeach ?>
+      <?php endif ?>
+    </div>
+    <div id="loadingSearch" class="loading">&#8230;</div>
+  </section>
+  <!-- total -->
+  <div class="line-medium"></div>
+  <section>
+    <div class="wrap-total">
+      <p>Mostrando <?php echo $results['placements'][0]['numFound'] ?> productos</p>
+    </div>
+  </section>
+
+  <!-- Go Up -->
+  <a href="#backToUp">
+    <div id="arrowUp">
+      <p>&#8593;</p>
+    </div>
+  </a>
+
+</main>

@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decoración</title>
+  </head>
+  <style>
+    :root {
+      --azul-bbb-strong: #002854;
+      --azul-bbb-medio: #1a4e8a;
+      --azul-bbb-claro: #daeaf4;
+      --azul-bbb-button: #147bd1;
+      --bg-gray: #f2f2f2;
+      --txt-gray: #595959;
+      --input-gray: #d4d3d3;
+      --gray-filter: #636567;
+      --rojo: #f52b42;
+      --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover{
+      text-decoration: none;
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    .wrap-sections {
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    h2 {
+      text-align: center;
+    }
+    .item-section {
+      width: 23%;
+      height: auto;
+      overflow: hidden;
+      margin: 20px 10px;
+      text-align: center;
+      justify-content: center;
+    }
+    .item-section p{
+      font-size: 16px;
+      font-weight: 900;
+      font-family: var(--font-bedbath);
+      color:var(--azul-bbb-medio);
+    }
+    .wrap-decoracion{
+      margin-top: 20px;
+      overflow: hidden;
+      text-align: center;
+    }
+    .wrap-decoracion h3{
+      color: var(--azul-bbb-medio);
+      font-family: var(--font-bedbath);
+      font-size: 1.8vw;
+    }
+    .wrap-decoracion p{
+      font-size: 1.4em;
+    }
+    #catRecommend {
+      overflow: hidden;
+    }
+    .container-cat {
+      width: 100%;
+      overflow: hidden;
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item-cat {
+      overflow: hidden;
+      margin: 10px;
+    }
+    .item-cat a p{
+      font-size: 18px;
+      width: 200px;
+    }
+
+    .item-cat div,
+    .item-cat div img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+
+    .item-cat div:hover {
+      border: 2px solid var(--azul-bbb-button);
+    }
+    .wrap-two-col{
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .item-two{
+      width: 48%;
+      overflow: hidden;
+      margin: 10px;
+    }
+    .item-two p{
+      font-family: var(--font-bedbath);
+      color: var(--azul-bbb-medio);
+      text-align: center;
+      margin: 10px;
+      font-size: 18px;
+    }
+    .wrap-products{
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .container-prod{
+      overflow: auto;
+    }
+    .item-product{
+      text-align: center;
+      overflow: hidden;
+      border: 1px solid var(--input-gray);
+      width: 16%;
+      height: 270px;
+      padding: 20px 10px;
+      border-radius: 10px;
+      margin: 10px;
+    }
+    .item-product div img{
+      width: 150px;
+    }
+    .item-desc{
+      font-size: 15px;
+      color: #000;
+      line-height: 1;
+      height: 60px;
+    }
+    .btn-product{
+      background-color: var(--azul-bbb-button);
+      color: #fff;
+      padding: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+      -moz-box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 5px -10px rgba(0,0,0,0.75);
+    }
+    .btn-product:hover{
+      background-color: #fff;
+      color: var(--azul-bbb-button);
+      border:3px solid var(--azul-bbb-button);
+    }
+    .wrap-grid{
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 33% 33% 33%;
+      border-radius: 5px;
+    }
+    .item-grid{
+      overflow: hidden;
+      text-align: center;
+      padding: 10px;
+    }
+    .item-grid img {
+      width: 100%;
+      border-radius: 5px;
+    }
+    .item-grid a p { 
+      color: var(--azul-bbb-medio);
+      font-size: 18px;
+      font-family: var(--font-bedbath);
+    }
+
+
+    .score {
+      font-family: monospace;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      letter-spacing: 0.25rem;
+      margin: 1rem;
+      position: relative;
+      transition: opacity 0.2s;
+      font-family: var(--font-bedbath);
+      color: var(--azul-bbb-medio);
+      }
+      #play-again-btn {
+        position: absolute;
+        top: -0.5rem;
+        left: 55%;
+        margin-left: -50px;
+        font-size: 1rem;
+        color: #fff;
+        background-color: var(--azul-bbb-button);
+        border: 2px solid var(--azul-bbb-medio); 
+        border-radius: 5px;
+        padding: 8px 10px;  
+        cursor: pointer;
+        display: none;
+        opacity: 0;
+        font-family: var(--font-bedbath);
+        transition: opacity 0.5s, transform 0.5s, background-color 0.2s;
+      }
+      #play-again-btn:hover {
+      background-color: var(--azul-bbb-medio);
+      }
+      #play-again-btn:active {
+      background-color: #555;
+      }
+      #play-again-btn.play-again-btn-entrance {
+      opacity: 1;
+      transform: translateX(6rem);
+      }
+      .draggable-items {
+        display: flex;
+        justify-content: center;
+        margin: 1rem 1rem 1.5rem 1rem;
+        transition: opacity 0.5s;
+      }
+      .draggable {
+          height: 10rem;
+          width: 10rem !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 4rem;
+          font-weight: bold;
+          margin: 0rem 1rem;
+          cursor: move;
+          transition: opacity 0.2s;
+      }
+      .draggable:hover {
+      opacity: 0.5;
+      }
+      .matching-pairs {
+        transition: opacity 0.5s;
+      }
+      .matching-pair {
+        height: 16rem;
+        width: 16rem;
+        margin: 1rem auto;
+      }
+      .matching-pair span {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        user-select: none;
+        background-color: transparent;
+      }
+      .label {
+        width: 15rem;
+        font-size: 2rem;
+      }
+      .droppable {
+        font-size: 4rem;
+        background-color: #fff;
+        border: 2px dashed var(--azul-bbb-button);
+        transition: 0.2s;
+      }
+      .droppable-hover {
+        /*background-color: #bee3f0;*/
+        transform: scale(1.1);
+      }
+      .dropped {
+        border-style: none;
+      }
+      .dragged {
+        user-select: none;
+        opacity: 0.1;
+        cursor: default;
+      }
+      .draggable.dragged:hover {
+        opacity: 0.1;
+      }
+
+      @media (max-width: 600px) {
+
+        html { font-size: 14px; }
+        #play-again-btn { top: -0.4rem; }
+        #play-again-btn.play-again-btn-entrance { transform: translateX(7rem); }
+      }
+
+      #bannerCat{
+        height: 600px;
+        background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/baseImage_decor.png?rand=1629899569');
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+      }
+      .img-real{
+        width: 10rem;
+        cursor: pointer;
+      }
+
+
+      #velab{
+        position: absolute;
+        right: 200px;
+        top: 350px;
+        height: 6rem !important;
+        width: 6rem !important;
+      }
+      #cojinb{
+        position: absolute;
+        left: 420px;
+        top: 270px;
+        height: 10rem !important;
+        width: 10rem !important;
+      }
+      #cortinab{
+        position: absolute;
+        left: 100px;
+        top: 180px;
+        height: 18rem !important;
+        width: 20rem !important;
+        z-index: 0;
+      }
+      #cuadrob{
+        position: absolute;
+        left: 600px;
+        top: 180px;
+        height: 12rem !important;
+        width: 12rem !important;
+      }
+      #sillonb{
+        position: absolute;
+        left: 10px;
+        top: 400px;
+        height: 16rem !important;
+        width: 25rem !important;
+
+      }
+      p.description{
+        font-size: 15px;
+        padding: 2px 10px;
+        text-align: center;
+        width:110px;
+        color: var(--azul-bbb-medio);
+        font-weight: 900;
+        line-height: 1;
+      }
+      .hotspot{
+        width: 200px;
+        height: 90px;
+        position: absolute;
+        display: none;
+        z-index: 9;
+      }
+      .sillonmove{
+        top:-100px
+      }
+      .cuadro_class:hover + #cuadroi{
+        display:  block !important;
+        left: 100px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid var(--azul-bbb-button);
+        top:0px;
+        overflow: hidden;
+        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+      }
+      .drop-thumb{
+        width: 60px;
+        margin-top: 10px;
+        margin-left: 5px;
+      }
+      .item-des{
+        width: 50%;
+        float: left;
+        text-align: left;
+      }
+      .item-des p {
+        font-size: 12px;
+        margin-top: 5px;
+        color: var(--azul-bbb-medio);
+        line-height: 1;
+      }
+      .sillon_class:hover + #silloni{
+        display:  block !important;
+        left: 200px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid var(--azul-bbb-button);
+        top:0px;
+        overflow: hidden;
+        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+      }
+      .cortina_class:hover + #cortinai{
+        display:  block !important;
+        left: 200px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid var(--azul-bbb-button);
+        top:0px;
+        overflow: hidden;
+        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+      }
+      .caja_class:hover + #cajai{
+        display:  block !important;
+        left: 60px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid var(--azul-bbb-button);
+        top:-100px;
+        overflow: hidden;
+        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+      }
+      .cojin_class:hover + #cojini{
+        display:  block !important;
+        left: 0px;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid var(--azul-bbb-button);
+        top:100px;
+        overflow: hidden;
+        -webkit-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        -moz-box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+        box-shadow: 10px 10px 5px -9px rgba(0,0,0,0.75);
+      }
+      #containerimg{
+        overflow: hidden;
+        position: relative;
+      }
+      #containerimg img {
+        display: block;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      #containerimg:hover img {
+        transform: scale(1.1);
+          transform-origin: 50% 50%;
+      }
+      @media (max-width: 767px) {
+        .item-section{
+          margin: 10px 10px;
+          font-size: 14px;
+          line-height: 1;
+          width: 35%;
+        }
+        .item-cat{
+          width: 100px;
+        }
+        .item-cat a p {
+            font-size: 14px;
+            width: 90px;
+            line-height: 1;
+        }
+        .item-two{
+          width: 90%;
+        }
+        .item-product{
+          width: 20%;
+        }
+        .item-desc{
+          font-size: 12px;
+          height: 50px;
+        }
+        .item-product{
+          height: auto;
+          padding: 10px 10px;
+          margin: 5px;
+        }
+        .btn-product{
+          margin-top: 20px;
+          font-size: 10px;
+        }
+        .item-grid a p {
+              color: var(--azul-bbb-medio);
+              font-size: 15px;
+              line-height: 1;
+              padding-top: 4px;
+          }
+          .container-prod{
+            overflow: hidden;
+            width: 90%;
+          }
+          .wrap-products{
+            flex-wrap: nowrap;    
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 400px;
+          }
+          .item-product{
+            width: 150px;
+            flex: 0 0 auto;
+          }
+          .item-cat div, .item-cat div img {
+            width: 90px;
+            height: 90px;
+          }
+          #bannerCat {
+            background-size: 400%;
+            height: 500px;
+            width: 95%;
+          }
+          .draggable{
+            width: 5rem !important;
+            height: 5rem;
+          }
+          .wrapper-thum{
+            width: 100px;
+            height: 150px;
+            flex: 0 0 auto;
+          }
+          p.description{
+            font-size: 12px;
+            padding: 2px 5px;
+            width: 90%;
+          }
+          #itemsm{
+            overflow: auto;
+          }
+          .draggable-items{
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            width: 350px;
+          }
+          #cortinab {
+            position: absolute;
+            left: 0px;
+            top: 150px;
+            height: 9rem !important;
+            width: 6rem !important;
+            z-index: 0;
+        }
+        #cajab {
+            position: absolute;
+            right: 30px;
+            top: 230px;
+            height: 4rem !important;
+            width: 4rem !important;
+        }
+        #sillonb {
+            position: absolute;
+            left: 10px;
+            top: 300px;
+            height: 10rem !important;
+            width: 10rem !important;
+        }
+        #cojinb {
+            position: absolute;
+            left: 120px;
+            top: 220px;
+            height: 4rem !important;
+            width: 4rem !important;
+        }
+        #cuadrob {
+            position: absolute;
+            left: 190px;
+            top: 180px;
+            height: 5rem !important;
+            width: 5rem !important;
+        }
+        #velab{
+          right: 20px;
+          top: 230px;
+          height: 3rem !important;
+          width: 3rem !important;
+        }
+        h2 {
+          font-size: 18px !important;
+        }
+        .wrap-grid{
+          grid-template-columns: repeat(2,50%);
+        }
+        .wrap-sections{
+          margin-left: -20px;
+        }
+      }
+  </style>
+
+  <script>
+    const brands = [
+      {
+        iconName: "cuadro",
+        brandName: "cuadro",
+        color: "#ff0000",
+        descripcion: "cuadro decorativo™",
+        precio:"200",
+        size: "10rem",
+        url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/69601418.png?rand=1630939319",
+        link: "https://www.bedbathandbeyond.com.mx/cuadro-decorativo-de-lienzo-dise-o-de-flores-blancas-de-78-74-cm.html"
+      },
+      {
+        iconName: "sillon",
+        brandName: "sillon",
+        color: "#fd5c63",
+        descripcion: "sillón Wild Sage™",
+        precio:"200",
+        size:"30rem",
+        class:"sillonmove",
+        url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/69669729.png?rand=1630939319",
+        link: "https://www.bedbathandbeyond.com.mx/newsearch/result/?q=69669729"
+      },
+      {
+        iconName: "cortina",
+        brandName: "cortina",
+        color: "#333333",
+        descripcion: "Cortina anti luz de poliéster Wild Sage™",
+        precio:"200",
+        size: "104rem",
+        url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/69665195.png?rand=1630939319",
+        link: "https://www.bedbathandbeyond.com.mx/cortina-anti-luz-de-poliester-wild-sagetm-valentina-de-2-13-m-color-violeta-glicina.html"
+      },
+      {
+        iconName: "vela",
+        brandName: "vela",
+        color: "#a4c639",
+        descripcion: "Vela votiva",
+        precio:"200",
+        size: "10rem",
+        url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/69632154.png?rand=1630939319",
+        link: "https://www.bedbathandbeyond.com.mx/vela-votiva-en-vaso-de-ceramica-o-o-by-olivia-olivertm-bohemian-teakwoodtm-de-255-14-g.html"
+      },
+      {
+        iconName: "cojin",
+        brandName: "cojin",
+        color: "#000000",
+        size: "10rem",
+        descripcion: "cojín Wild Sage™",
+        precio:"200",
+        url: "https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cojin.png?rand=1629899571",
+        link: "https://www.bedbathandbeyond.com.mx/cojin-decorativo-de-poliester-wild-sagetm-adele-color-jengibre.html"
+      },
+      
+    ];
+window.onload = function(){
+    let correct = 0;
+    let total = 0;
+    const totalDraggableItems = 5;
+    const totalMatchingPairs = 5; // Should be <= totalDraggableItems
+
+    const scoreSection = document.querySelector(".score");
+    const correctSpan = scoreSection.querySelector(".correct");
+    const totalSpan = scoreSection.querySelector(".total");
+    const playAgainBtn = scoreSection.querySelector("#play-again-btn");
+
+    const draggableItems = document.querySelector(".draggable-items");
+    const matchingPairs = document.querySelector(".matching-pairs");
+    let draggableElements;
+    let droppableElements;
+
+    initiateGame();
+
+    function initiateGame() {
+      const randomDraggableBrands = generateRandomItemsArray(totalDraggableItems, brands);
+      const randomDroppableBrands = totalMatchingPairs<totalDraggableItems ? generateRandomItemsArray(totalMatchingPairs, randomDraggableBrands) : randomDraggableBrands;
+      const alphabeticallySortedRandomDroppableBrands = [...randomDroppableBrands].sort((a,b) => a.brandName.toLowerCase().localeCompare(b.brandName.toLowerCase()));
+      
+      // Create "draggable-items" and append to DOM
+      for(let i=0; i<randomDraggableBrands.length; i++) {
+        draggableItems.insertAdjacentHTML("beforeend", `
+        <div class="wrapper-thum">
+          <img class="draggable img-thumb" src="${randomDraggableBrands[i].url}" draggable="true"  id="${randomDraggableBrands[i].iconName}" style="width:${randomDraggableBrands[i].size}" sizes="${randomDraggableBrands[i].link}" alt="${randomDraggableBrands[i].descripcion}"></img>
+          <p class="description">
+            ${randomDraggableBrands[i].descripcion}
+          </p>
+        </div>
+        `);
+    }
+    
+    // Create "matching-pairs" and append to DOM
+    for(let i=0; i<alphabeticallySortedRandomDroppableBrands.length; i++) {
+      matchingPairs.insertAdjacentHTML("beforeend", `
+        <div id="${alphabeticallySortedRandomDroppableBrands[i].iconName}b" class="matching-pair">
+          <span class="droppable" data-brand="${alphabeticallySortedRandomDroppableBrands[i].iconName}"></span>
+        </div>
+      `);
+    }
+    
+    draggableElements = document.querySelectorAll(".draggable");
+    droppableElements = document.querySelectorAll(".droppable");
+    
+    draggableElements.forEach(elem => {
+      elem.addEventListener("dragstart", dragStart);
+      // elem.addEventListener("drag", drag);
+      // elem.addEventListener("dragend", dragEnd);
+    });
+    
+    droppableElements.forEach(elem => {
+      elem.addEventListener("dragenter", dragEnter);
+      elem.addEventListener("dragover", dragOver);
+      elem.addEventListener("dragleave", dragLeave);
+      elem.addEventListener("drop", drop);
+    });
+}
+
+// Drag and Drop Functions
+
+//Events fired on the drag target
+
+function dragStart(event) {
+  event.dataTransfer.setData("text", event.target.id); // or "text/plain"
+}
+
+//Events fired on the drop target
+
+function dragEnter(event) {
+  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
+    event.target.classList.add("droppable-hover");
+  }
+}
+
+function dragOver(event) {
+  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
+    event.preventDefault();
+  }
+}
+
+function dragLeave(event) {
+  if(event.target.classList && event.target.classList.contains("droppable") && !event.target.classList.contains("dropped")) {
+    event.target.classList.remove("droppable-hover");
+  }
+}
+
+function drop(event) {
+  event.preventDefault();
+  event.target.classList.remove("droppable-hover");
+  const draggableElementBrand = event.dataTransfer.getData("text");
+  const droppableElementBrand = event.target.getAttribute("data-brand");
+  const isCorrectMatching = draggableElementBrand===droppableElementBrand;
+
+  total++;
+
+    const draggableElement = document.getElementById(draggableElementBrand);
+    console.log("match",draggableElement, draggableElement.sizes)
+    event.target.classList.add("dropped");
+    draggableElement.classList.add("dragged");
+    draggableElement.setAttribute("draggable", "false");
+    event.target.innerHTML = 
+    `
+      <a href="${draggableElement.sizes}" target="_self">
+        <img class="img-real ${draggableElement.id}_class" src="${draggableElement.src}" style="width: ${draggableElement.style.width};"></i>
+          <div id="${draggableElement.id}i" class="hotspot">
+            <div class="item-des">
+              <img src="${draggableElement.src}" class="drop-thumb"/>
+            </div>
+            <div class="item-des">
+              <p>${draggableElement.alt}</p>
+              <p>$250.00</p>
+            </div>
+          </div>
+      </a>`;
+    correct++;  
+  
+  scoreSection.style.opacity = 0;
+  setTimeout(() => {
+    correctSpan.textContent = correct;
+    totalSpan.textContent = total;
+    scoreSection.style.opacity = 1;
+  }, 200);
+  if(correct===Math.min(totalMatchingPairs, totalDraggableItems)) { // Game Over!!
+    playAgainBtn.style.display = "block";
+    setTimeout(() => {
+      playAgainBtn.classList.add("play-again-btn-entrance");
+    }, 200);
+  }
+}
+
+// Other Event Listeners
+playAgainBtn.addEventListener("click", playAgainBtnClick);
+  function playAgainBtnClick() {
+    playAgainBtn.classList.remove("play-again-btn-entrance");
+    correct = 0;
+    total = 0;
+    draggableItems.style.opacity = 0;
+    matchingPairs.style.opacity = 0;
+    setTimeout(() => {
+      scoreSection.style.opacity = 0;
+    }, 100);
+    setTimeout(() => {
+      playAgainBtn.style.display = "none";
+      while (draggableItems.firstChild) draggableItems.removeChild(draggableItems.firstChild);
+      while (matchingPairs.firstChild) matchingPairs.removeChild(matchingPairs.firstChild);
+      initiateGame();
+      correctSpan.textContent = correct;
+      totalSpan.textContent = total;
+      draggableItems.style.opacity = 1;
+      matchingPairs.style.opacity = 1;
+      scoreSection.style.opacity = 1;
+    }, 500);
+  }
+
+  // Auxiliary functions
+  function generateRandomItemsArray(n, originalArray) {
+    let res = [];
+    let clonedArray = [...originalArray];
+    if(n>clonedArray.length) n=clonedArray.length;
+    for(let i=1; i<=n; i++) {
+      const randomIndex = Math.floor(Math.random()*clonedArray.length);
+      res.push(clonedArray[randomIndex]);
+      clonedArray.splice(randomIndex, 1);
+    }
+    return res;
+  }
+}
+  </script>
+  <body>
+    <section>
+      <div class="wrap-decoracion">
+        <h3>Decora tu recámara</h3>
+        <p>Utiliza nuestra herramienta 3D para decorar la recámara de tus sueños, solo tienes que arrastrar los objetos en el espacio adecuado.</p>
+      </div>
+    </section>
+    <section id="bannerCat">
+      <div class="wrap-drag">
+      <section class="score">
+        <span class="correct">0</span>/<span class="total">0</span>
+        <button id="play-again-btn">Decorar de nuevo</button>
+      </section>
+      <section id="itemsm">
+        <div class="draggable-items"">
+
+        </div>
+      </section>
+      <section class="matching-pairs">
+      </section>
+
+      </div>
+    </section>
+
+    <section id="catRecommend">
+      <h2>decoración para tu cuarto</h2>
+      <div class="wrap-sections">
+        <div class="item-section">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cortinas-y-accesorios-para-ventanas.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-cortinas-deco-sept.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>cortinas</p>
+          </a>
+        </div>
+
+        <div class="item-section">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cojines.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-cojines-sept.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>cojines</p>
+          </a>
+        </div>
+
+        <div class="item-section">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/tapetes-para-el-hogar/tapetes-decorativos.html" target="_self">
+            <div id="containerimg">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-tapetes-decorat-sept.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>tapetes decorativos</p>
+          </a>
+        </div>
+
+        <div class="item-section">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cuadros-y-marcos/cuadros-decorativos.html" target="_self">
+          <div id="containerimg">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-cuadros-sept.jpg?rand=1630939319"
+              alt=""
+            />
+          </div>
+          <p>cuadros</p>
+        </div>
+      </a>
+      </div>
+    </section>
+
+    <section id="topCategory">
+      <h2>top categorías</h2>
+
+      <div class="container-cat">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cuadros-y-marcos.html" target="_self">
+          <div class="item-cat">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-deco-pared.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>decoración de pared</p>
+        </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cortinas-y-accesorios-para-ventanas.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-cortinas-y-acces.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>cortinas y accesorios para ventanas</p>
+            </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/tapetes-para-el-hogar.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-tapetes.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>tapetes para el hogar</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/follaje-artificial.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-follaje.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>follaje artificial</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/difusores-y-aceites-esenciales.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-catdifusor.jpg?rand=1630943347"
+                alt=""
+              />
+            </div>
+            <p>difusores y aceites esenciales</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cojines.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-cojin.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>cojines</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/iluminacion.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-iluminacion.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>iluminación</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/portarretratos.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-catportarretratos.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>portarretratos</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/floreros-y-macetas.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-maceta.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>floreros y macetas</p>
+          </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/velas-y-difusores.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-velas.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>velas</p>
+            </a>
+        </div>
+
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/otros-articulos-decorativos.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-otros.jpg?rand=1630939319"
+                alt=""
+              />
+            </div>
+            <p>otros artículos decorativos</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <h2>Solo en BB&B</h2>
+        <div class="wrap-two-col">
+          <div class="item-two">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/decoracion.html" target="_self">
+              <div id="containerimg">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/marcas-conoce-wild-sage.jpg?rand=1630939319" alt="" />
+              </div>
+              <p>Conoce Wild Sage™</p>
+              </a>
+          </div>
+          <div class="item-two">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential/decoracion.html">
+              <div id="containerimg">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/marcas-simplyessential.jpg?rand=1630939319" alt="" />
+              </div>
+              <p>Conoce Simply Essential™</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <h2>top products</h2>
+        <div class="container-prod">
+        <div class="wrap-products">
+          <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/cojin-de-algodon-wild-sagetm-elise-con-dise-o-de-arcoiris.html" target="_self">
+              <div>
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-12-17-01-19_444800401511_imageset?$imagePLP$&hei=700&wid=700" alt="" />
+              </div>
+              <div>
+                <p class="item-desc">Cojín de algodón Wild Sage™ Elise con diseño de arcoíris</p>
+                <p class="btn-product">ver más</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/difusor-de-ceramica-de-varillas-wild-sager-aroma-bamboo-leaf-blue-lotus-de-88-72-ml.html" target="_self">
+              <div>
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444800411787_imageset?$imagePLP$&hei=700&wid=700" alt="" />
+              </div>
+              <div>
+                <p class="item-desc">Difusor de cerámica de varillas Wild Sage® aroma Bamboo Leaf & Blue Lotus de 88.72 mL</p>
+                <p class="btn-product">ver más</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/cojin-de-poliester-wild-sagetm-con-dise-o-de-arcoiris.html" target="_self">
+              <div>
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2021-03-09-19-55__imageset?$imagePLP$&hei=700&wid=700" alt="" />
+              </div>
+              <div>
+                <p class="item-desc">Cojín de poliéster Wild Sage™ con diseño de arcoíris</p>
+                <p class="btn-product">ver más</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/cuadro-decorativo-de-lienzo-wild-sagetm-dise-o-de-planta.html" target="_self">
+              <div>
+                <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-12-02-17-32__20201109082509_imageset?$imagePLP$&hei=700&wid=700" alt="" />
+              </div>
+              <div>
+                <p class="item-desc">Cuadro decorativo de lienzo Wild Sage™ diseño de planta</p>
+                <p class="btn-product">ver más</p>
+              </div>
+            </a>
+          </div>
+
+          <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/cojin-decorativo-de-poliester-wild-sagetm-penelope-con-dise-o-de-retazos.html" target="_self">
+              <div>
+                <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444800402778_imageset?$imagePLP$&hei=700&wid=700" alt="" />
+              </div>
+              <div>
+                <p class="item-desc">Cojín decorativo de poliéster Wild Sage™ Penelope con diseño de retazos</p>
+                <p class="btn-product">ver más</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>otras formas para decorar tu espacio</h2>
+      <div class="wrap-grid">
+        <div class="item-grid"> 
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/velas-y-difusores/portavelas.html" target="_self">
+            <div id="containerimg">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/otras-formas-portavelas.jpg?rand=1630939319" alt="" />
+            </div>
+            <p>portavelas</p>
+          </a>
+        </div>
+
+        <div class="item-grid"> 
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/otros-articulos-decorativos.html" target="_self">
+            <div id="containerimg">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/otras-formas-articu-decorativos.jpg?rand=1630939319" alt="" />
+            </div>
+            <p>artículos decorativos</p>
+          </a>
+        </div>
+
+
+        <div class="item-grid"> 
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/tapetes-para-el-hogar/tapetes-decorativos.html" target="_self">
+            <div id="containerimg">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/otras-formas-tapetes-decorativos.jpg?rand=1630939319" alt="" />
+            </div>
+            <p>tapetes decorativos</p>
+          </a>
+        </div>
+
+
+        <div class="item-grid"> 
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/follaje-artificial.html" target="_self">
+            <div id="containerimg">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/otras-formas-follaje-artificial.jpg?rand=1630939319" alt="" />
+            </div>
+            <p>follaje artificial</p>
+          </a>
+        </div>
+
+
+
+        <div class="item-grid"> 
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/floreros-y-macetas.html" target="_self">
+            <div id="containerimg">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/otras-formas-macetas.jpg?rand=1630939319" alt="" />
+            </div>
+            <p>floreros y macetas</p>
+          </a>
+        </div>
+
+
+        <div class="item-grid"> 
+          <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/portarretratos.html" target="_self">
+            <div id="containerimg">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/otras-formas-portarretratos.jpg?rand=1630939319" alt="" />
+            </div>
+            <p>portarretratos</p>
+          </a>
+        </div>
+
+
+      </div>
+    </section>
+  </body>
+</html>

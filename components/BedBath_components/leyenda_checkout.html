@@ -1,0 +1,24 @@
+<script>
+  /*Mensaje Checkout*/
+  window.onload = function () {
+    let url = window.location;
+
+    if (url.pathname == "/checkout/") {
+      console.log("url2");
+    }
+    let leyenda = document.getElementsByClassName("checkout-agreement");
+    const envio = document.getElementsByClassName(
+      "shipping-information-content"
+    );
+    const opc = document.getElementsByClassName("opc-block-summary");
+
+    const paragraph = document.createElement("p");
+    const node = document.createTextNode(
+      "Nuestros pedidos están experimentando tiempos de entrega superiores a los esperados. Agradecemos tu comprensión."
+    );
+
+    paragraph.appendChild(node);
+    envio[0].appendChild(paragraph);
+    paragraph.style.color = "#147bd1";
+  };
+</script>

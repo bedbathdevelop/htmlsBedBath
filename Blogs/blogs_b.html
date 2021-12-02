@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .wrap-grid{
+            display: grid;
+            column-gap:1rem;
+            row-gap: 15px;
+            grid-auto-rows:22rem;/*row height*/ 
+            grid-auto-flow: dense;/*fill all*/
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem),1fr)); /*key to autofill any viewport responsive*/
+            margin: 0 120px;
+        }
+        .bg-purple{
+            background-color: #706FAE;
+        }
+        .slide_main {
+            grid-column: span 4;
+        }
+        .two_cards{
+            grid-column: span 2;
+        }
+        .img-main{
+            width: 60%;
+            background-color: #eee;
+            float:left;
+            height: 100%;
+        }
+        .desc-main{
+            width: 40%;
+            float:left;
+            height: 100%;
+            color: #fff;
+        }
+        .img-card{
+            width: 100%;
+            height: 70%;
+            background-color: #eee;
+        }
+        .desc-card{
+            width: 100%;
+            height: 30%;
+            padding: 20px;
+            color: #fff;
+        }
+        .img-size{
+            height: 350px;
+        }
+        .img-size-card{
+            height: 245px;
+        }
+    </style>
+
+<body>
+    <div class="wrap-grid">
+        <div class="card bg-purple slide_main">
+            <div class="desc-main">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,</div>
+            <div class="img-main">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/me_m_1.jpg?rand=1624644868" class="img-size" alt="" />
+            </div>
+        </div>
+        <div class="card bg-purple two_cards">
+            <div class="img-card"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/me_m_1.jpg?rand=1624644868" alt="" class="img-size-card"/></div>
+            <div class="desc-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="card bg-purple two_cards">
+            <div class="img-card">img</div>
+            <div class="desc-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="card bg-purple">
+            <div class="img-card">img</div>
+            <div class="desc-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="card bg-purple">
+            <div class="img-card">img</div>
+            <div class="desc-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="card bg-purple">
+            <div class="img-card">img</div>
+            <div class="desc-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+        <div class="card bg-purple">
+            <div class="img-card">img</div>
+            <div class="desc-card">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</div>
+        </div>
+    </div>
+</body>
+</html>

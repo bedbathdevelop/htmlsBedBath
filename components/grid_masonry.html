@@ -1,0 +1,165 @@
+<style>
+.container {
+  position: relative;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: minmax(100px, auto);
+  margin: 40px;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+}
+
+.container .box {
+  background-color: #daeaf4;
+  border:2px solid #1a4e8a;
+  display: grid;
+  font-size: 20px;
+  place-items: center;
+  text-align: center;
+  color: #fff;
+  transition: 0.5s;
+}
+/*
+.container .box:hover {
+  background: #e91e63;
+}*/
+
+.container .box img {
+  position: relative;
+  width: 100%;
+  margin-bottom: 0px;
+}
+
+.container .box:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 1;
+  height: 600px;
+}
+
+.container .box:nth-child(2) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(4) {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.container .box:nth-child(5) {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+figure.zoom2 {
+    background-position: 50% 50%;
+    position: relative;
+    width: 300px;
+    overflow: hidden;
+    cursor: zoom-in;
+    margin: 0;
+}
+figure.zoom2 img:hover {
+    opacity: 0;
+}
+    figure.zoom2 img {
+        transition: opacity .5s;
+        display: block;
+        width: 100%;
+    }
+figure.zoom1 {
+    background-position: 50% 50%;
+    position: relative;
+    width: 280px;
+    overflow: hidden;
+    cursor: zoom-in;
+    margin: 0;
+    }
+    figure.zoom1 img:hover {
+    opacity: 0;
+    }
+    figure.zoom1 img {
+        transition: opacity .5s;
+        display: block;
+        width: 100%;
+    }
+
+  figure.zoom {
+    background-position: 50% 50%;
+    position: relative;
+    width: 400px;
+    overflow: hidden;
+    cursor: zoom-in;
+    }
+    figure.zoom img:hover {
+    opacity: 0;
+    }
+    figure.zoom img {
+        transition: opacity .5s;
+        display: block;
+        width: 100%;
+    }
+
+
+@media (max-width: 991px) {
+  .container {
+    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    grid-template-rows: minmax(auto, auto);
+  }
+  .container .box {
+    grid-column: unset !important;
+    grid-row: unset !important;
+  }
+}
+
+</style>
+<script>
+/*Downloaded from https://www.codeseek.co/galulex/pure-js-image-zoom-eNZRVq */
+function zoom(e){
+  var zoomer = e.currentTarget;
+  e.offsetX ? offsetX = e.offsetX : offsetX = e.touches[0].pageX
+  e.offsetY ? offsetY = e.offsetY : offsetX = e.touches[0].pageX
+  x = offsetX/zoomer.offsetWidth*100
+  y = offsetY/zoomer.offsetHeight*100
+  zoomer.style.backgroundPosition = x + '% ' + y + '%';
+}
+</script>
+<div class="container">
+    <div class="box">
+      <div class="content">
+        <figure class="zoom" onmousemove="zoom(event)" style="background-image: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.27.50.png)">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.27.50.png" />
+        </figure>
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <figure class="zoom1" onmousemove="zoom(event)" style="background-image: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.28.01.png)">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.28.01.png" />
+        </figure>
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <figure class="zoom2" onmousemove="zoom(event)" style="background-image: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.27.46.png)">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.27.46.png" />
+        </figure>
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.28.04.png" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.28.14.png" alt="">
+      </div>
+    </div>
+    <div class="box">
+      <div class="content">
+        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Screen_Shot_2021-06-07_at_15.28.08.png" alt="">
+      </div>
+    </div>
+  </div>

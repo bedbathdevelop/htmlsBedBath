@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+    <style>
+      .wrap-pride {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .container_pride {
+        width: 100%;
+        height: 300px;
+      }
+      .container_pride .color {
+        height: 50px;
+      }
+      .color div {
+        height: 50px;
+        width: 0;
+      }
+      .btn-all{
+        background-color: #fff;
+        border: 3px solid #117dcf;
+        width: 200px;
+        color: #117dcf;
+        top: 65%;
+        left: 1.5%;
+        position: absolute;
+        text-align: center;
+        padding: 5px 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .btn-all:hover{
+        background-color: #117dcf;
+        border: 2px solid #117dcf;
+        color: #fff;
+      }
+      .red {
+        background: #f25774;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+      }
+
+      .orange {
+        background: #ffb65b;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.1s;
+      }
+
+      .yellow {
+        background: #fdda74;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.2s;
+      }
+
+      .green {
+        background: #4cbe5d;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.3s;
+      }
+
+      .blue {
+        background: #4080ff;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.4s;
+      }
+
+      .purple {
+        background: #7b64c0;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes slide {
+        10% {
+          width: 0;
+          float: left;
+        }
+        37% {
+          width: 100%;
+          float: left;
+        }
+        63% {
+          width: 100%;
+          float: right;
+        }
+        90% {
+          width: 0;
+          float: right;
+        }
+      }
+      #categorias {
+        overflow: hidden;
+        position: relative;
+        margin-top: -47px;
+      }
+      .grid-container {
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 5px;
+        text-align: center;
+      }
+      .grid-item {
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 2px 10px;
+        font-size: 30px;
+        text-align: center;
+        margin: 0 10px;
+        box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        -webkit-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.25);
+        -moz-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.25);
+      }
+      #categoryPride {
+        position: absolute;
+        top: 0;
+      }
+      .product-special {
+        background-color: #eee;
+        width: 320px;
+        height: 190px;
+      }
+      .subtitle-grid {
+        font-size: 14px;
+        color: #1a4e8a;
+        font-weight: 900;
+      }
+      .wrap-inside {
+        overflow: hidden;
+        width: 100%;
+        height: 200px;
+        display: grid;
+        grid-template-columns: auto auto;
+        padding: 5px;
+        text-align: center;
+      }
+      .grid-inside {
+        background-color: rgba(0, 164, 180, 0.05);
+        font-size: 30px;
+        text-align: center;
+        margin: 4px 20px;
+        width: 160px;
+        height: 90px;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+      }
+      .grid-insideb {
+        background-color: rgba(0, 164, 180, 0.05);
+        font-size: 30px;
+        text-align: center;
+        margin: 4px 20px;
+        width: 160px;
+        height: 180px;
+        background-size: cover !important;
+        background-repeat: no-repeat !important;
+      }
+      /*slide*/
+      .category-slide {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+      /* Next & previous buttons */
+      .prevpride,
+      .nextpride {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      /* Position the "next button" to the right */
+      .nextpride {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prevpride {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      /* On hover, add a black background color with a little bit see-through */
+      .prevpride:hover,
+      .nextpride:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+      .wrap-button{
+        overflow: hidden;
+        width: 100%;
+        padding: 0;
+        margin-top: -10px;
+      }
+      /* The dots/bullets/indicators */
+      .dotpride {
+        cursor: pointer;
+        height: 10px;
+        width: 10px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active,
+      .dotpride:hover {
+        background-color: #717171;
+      }
+      .pd-img{
+        height: 140px;
+      }
+      .descript-subtitle{
+        margin-top: -10px;
+      }
+      .price-subtitle{
+        font-weight: 900;
+      }
+      /* Fading animation */
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @-webkit-keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+      .img-slide-block{
+        height: 50px;
+        background-repeat: no-repeat !important;
+        background-size: 100% 100% !important;
+        margin-top: 5px;
+      }
+      .text-cat{
+        font-size: 14px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 2px;
+        position: absolute;
+        font-size: 12px;
+        color:#1a4e8a;
+      }
+      .text-catb{
+        font-size: 14px;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 2px;
+        position: absolute;
+        font-size: 12px;
+        bottom: 0;
+        width: 160px;
+        color:#1a4e8a;
+      }
+      .price-subtitle{
+        font-size: 14px;
+      }
+      .descript-subtitle{
+        font-size: 12px;
+      }
+      @media (max-width: 991px) { 
+        #categoryPride {
+          position: absolute;
+          top: 0;
+          overflow: scroll;
+        }
+      }
+    </style>
+    <script>
+      var slideIPride = 1;
+      window.onload = function () {
+        showSlidesPride(slideIPride);
+
+        function showSlidesPride(n) {
+          var slides = document.getElementsByClassName("slidesPride");
+          var dots = document.getElementsByClassName("dotpride");
+          var i;
+          if (n > slides.length) {
+            slideIPride = 1;
+          }
+          if (n < 1) {
+            slideIPride = slides.length;
+          }
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIPride - 1].style.display = "grid";
+          dots[slideIPride - 1].className += " active";
+        }
+      };
+
+      function showSlidesb(n) {
+        var slides = document.getElementsByClassName("slidesPride");
+        var dots = document.getElementsByClassName("dotpride");
+        var x;
+        if (n > slides.length) {
+          slideIPride = 1;
+        }
+        if (n < 1) {
+          slideIPride = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIPride - 1].style.display = "grid";
+        dots[slideIPride - 1].className += " active";
+      }
+
+      function plusSlides(n) {
+        showSlidesb((slideIPride += n));
+      }
+
+      function currentSlide(n) {
+        showSlidesb((slideIPride = n));
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+        <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day.html" target="_self">
+          <div class="wrap-pride">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-pride-25jun.jpg?rand=1624490543"
+              alt="Pride BedBathandBeyond"
+            />
+            <div class="btn-all"> ver todo</div>
+        </a>
+      </div>
+    </section>
+    <section id="categorias">
+      <div class="container_pride">
+        <div class="color">
+          <div class="red"></div>
+        </div>
+        <div class="color">
+          <div class="orange"></div>
+        </div>
+        <div class="color">
+          <div class="yellow"></div>
+        </div>
+        <div class="color">
+          <div class="green"></div>
+        </div>
+        <div class="color">
+          <div class="blue"></div>
+        </div>
+        <div class="color">
+          <div class="purple"></div>
+        </div>
+      </div>
+      <div id="categoryPride" class="grid-container">
+        <div id="productoDestacado" class="grid-item">
+          <div class="product-special">
+            <a href="https://www.bedbathandbeyond.com.mx/colcha-matrimonial-queen-de-lino-o-o-by-olivia-olivertm-wide-yard-dye-color-azul.html" target="_self">
+              <h4 class="subtitle-grid">producto destacado</h4>
+              <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/444600986003_imageset" class="pd-img">
+              <p class="price-subtitle text-red">$1,828.00</p>
+              <p class="descript-subtitle">Colcha matrimonial/queen de lino O&O by Olivia & Oliver™ Wide Yard Dye color azul</p>
+            </a>
+          </div>
+        </div>
+        <div id="productoCategory" class="grid-item">
+          <h4 class="subtitle-grid">por categoría</h4>
+          <div class="category-slide">
+            <div class="slidesPride wrap-inside">
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/bano.html" target="_self">
+                <div class="grid-inside" style="background: url(https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-06-01-14-37_diamondmatelasseroomshot_imageset);">
+                    <p class="text-cat">baño</p>
+                </div>
+              </a>
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/cocina.html" target="_self">
+                <div class="grid-inside" style="background: url(https://b3h2.scene7.com/is/image/BedBathandBeyond/272712465243510p);">
+                    <p class="text-cat">cocina</p>
+                </div>
+              </a>
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/cuidado-personal.html" target="_self">
+                <div class="grid-inside" style="background: url(https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-30-12-01_s890xas_imageset?$imagePLP$&hei=300&wid=260);">
+                    <p class="text-cat">cuidado personal</p>
+                </div>
+              </a>
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/decoracion.html" target="_self">
+                <div class="grid-inside" style="background: url(https://b3h2.scene7.com/is/image/BedBathandBeyond/22590795230129g);">
+                    <p class="text-cat">decoración</p>
+                </div>
+              </a>
+            </div>
+            <div class="slidesPride wrap-inside">
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/muebles.html" target="_self">
+                <div class="grid-inside" style="background: url(https://s7d2.scene7.com/is/image/BedBathandBeyond/149956861817753p_imageset);">
+                    <p class="text-cat">muebles</p>
+                </div>
+              </a>
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/organizacion-y-limpieza.html" target="_self">
+                <div class="grid-inside" style="background: url(https://s7d1.scene7.com/is/image/BedBathandBeyond/67050744748296p?$imagePLP$&hei=700&wid=700);">
+                    <p class="text-cat">organizacion y limpieza</p>
+                </div>
+              </a>
+              <a href="https://www.bedbathandbeyond.com.mx/tienda/pride-day/recamara.html" target="_self">
+                <div class="grid-inside" style="background: url(https://s7d2.scene7.com/is/image/BedBathandBeyond/444600986003_imageset);">
+                    <p class="text-cat">recámara</p>
+                </div>
+              </a>
+            </div>
+            <a class="prevpride" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="nextpride" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+          <div class="wrap-button" style="text-align: center">
+            <span class="dotpride" onclick="currentSlide(1)"></span>
+            <span class="dotpride" onclick="currentSlide(2)"></span>
+          </div>
+        </div>
+        <div id="prodcutoCasa" class="grid-item">
+          <h4 class="subtitle-grid">casa organizada</h4>
+          <div class="wrap-inside">
+            <a href="https://www.bedbathandbeyond.com.mx/organizador-de-poliester-org-para-closet-con-6-compartimentos-color-gris.html" target="_self">
+              <div class="grid-insideb" style="background: url(https://s7d2.scene7.com/is/image/BedBathandBeyond/72602744871925p?$imagePLP$&hei=700&wid=700);">
+                <p class="text-catb">Organizador de poliéster ORG para clóset con 6 compartimentos color gris</p>
+              </div>
+            </a>
+            <a href="https://www.bedbathandbeyond.com.mx/bandejas-para-joyas-de-madera-mdf-ampersandtm-set-de-3.html" target="_self">
+              <div class="grid-insideb" style="background: url(https://s7d1.scene7.com/is/image/BedBathandBeyond/12081016838012p?$imagePLP$&hei=700&wid=700);">
+                <p class="text-catb">Bandejas para joyas de madera MDF Ampersand™, Set de 3</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

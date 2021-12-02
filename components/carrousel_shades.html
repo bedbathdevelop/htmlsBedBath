@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Caompatible" content="ie=edge">
+
+    <!-- CSS Materialize -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+
+  <style>
+.tituloh1{
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 0;
+}
+.subtituloh2{
+  margin: 0;
+  display: inline;
+  font-size: 25px;
+  text-transform: uppercase;
+
+}
+.descripcion{ 
+  font-size: 18px;
+  margin: 7px 0;
+}
+.carousel .carousel-item{
+  background-size: cover;
+  background-position: center;
+  display: flex; 
+  flex-direction: column; 
+  justify-content: center;
+}
+.carousel .carousel-item img{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0; left: 0;
+  z-index:-1;
+  transition: .5s ease;
+  object-fit: cover;
+}
+.linea-division{
+  display: inline-flex;
+  justify-content: center;
+  width: 100%; height: 2px;
+   
+}
+.linea-division span{
+  width: 85%;
+  background-color: orange;
+}
+.indicadores{
+  background-color: blue;
+  color: white;
+}
+/*Clases de Materialize*/
+
+div.materialbox-caption {
+    bottom: 1.5rem;
+    left: 12rem ;
+    width: 50% ;
+    text-align: left;
+    padding: 0% 5%;
+    height: 50px;
+    z-index: 1000;
+    display: inline-block;
+    background-color: pink;
+    box-shadow: 5px 5px white;
+  font-size: 21px;
+  font-family: 'Dancing Script', cursive;
+}
+.carousel .carousel-item img{
+  border-radius: 15px;
+}
+  </style>
+
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+            //--- CAROUSEL---------------   
+            var elementosCarrousel = document.querySelectorAll('.carousel');
+            var instances = M.Carousel.init(elementosCarrousel, {
+            // ----Opciones    
+            duration: 150, //Duración de la transición en milisegundos. 
+            dist: -80, // Distacia de perspectiva (de profundidad) entre cada imagen. 
+            shift: 5, // Distancia entre cada imagen a los costados
+            padding: 5, //Distacia dentro
+            numVisible: 5, //Numero de lementos visibles
+            indicators: false, //Indicadores. Valor: boolean
+            noWrap: false //Desplazarse a partir del primer articulo/imagen
+            });
+        
+            // ---- MEDIA---------------
+            var media = document.querySelectorAll('.materialboxed');
+            var instancesMedia = M.Materialbox.init(media,{
+            inDuration: 450, // Duración de la transición de entrada
+            outDuration: 350 // Duración de la transición de salida
+            
+            });
+        });
+
+  </script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col s12 ">
+        <h1 class="white-text center-alig tituloh1">Marcas</h1>
+        <div class="carousel center">
+           <!--1-->
+          <div class="carousel-item">
+             <!--- <h2 class="white-dark subtituloh2">Haven</h2>
+              <div class= "linea-division">
+                <span></span>
+            </div>
+              <p class="white-text descripcion">nestwell</p>-->          
+              <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW6-FY21-0405-0409-WEB-Haven-Bath-C10-22-FLYOUT?$content$" class="materialboxed" alt="">
+          </div>
+          <!--2-->
+          <div class="carousel-item">
+            <!--- <h2 class="white-dark subtituloh2">Haven</h2>
+             <div class= "linea-division">
+               <span></span>
+           </div>
+             <p class="white-text descripcion">nestwell</p>-->          
+             <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW6-FY21-0405-0409-WEB-Haven-Bath-C10-22-FLYOUT?$content$" class="materialboxed" alt="">
+         </div>
+          <!--3-->
+          <div class="carousel-item">
+            <!--- <h2 class="white-dark subtituloh2">Haven</h2>
+             <div class= "linea-division">
+               <span></span>
+           </div>
+             <p class="white-text descripcion">nestwell</p>-->          
+             <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW6-FY21-0405-0409-WEB-Haven-Bath-C10-22-FLYOUT?$content$" class="materialboxed" alt="">
+         </div>
+           <!--4-->
+           <div class="carousel-item">
+            <!--- <h2 class="white-dark subtituloh2">Haven</h2>
+             <div class= "linea-division">
+               <span></span>
+           </div>
+             <p class="white-text descripcion">nestwell</p>-->          
+             <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW6-FY21-0405-0409-WEB-Haven-Bath-C10-22-FLYOUT?$content$" class="materialboxed" alt="">
+         </div>
+          <!--5-->
+          <div class="carousel-item">
+            <!--- <h2 class="white-dark subtituloh2">Haven</h2>
+             <div class= "linea-division">
+               <span></span>
+           </div>
+             <p class="white-text descripcion">nestwell</p>-->          
+             <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW6-FY21-0405-0409-WEB-Haven-Bath-C10-22-FLYOUT?$content$" class="materialboxed" alt="">
+         </div>
+          <!--6-->
+          <div class="carousel-item">
+            <!--- <h2 class="white-dark subtituloh2">Haven</h2>
+             <div class= "linea-division">
+               <span></span>
+           </div>
+             <p class="white-text descripcion">nestwell</p>-->          
+             <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW6-FY21-0405-0409-WEB-Haven-Bath-C10-22-FLYOUT?$content$" class="materialboxed" alt="">
+         </div>
+          
+      </div>
+      </div>
+    </div>
+  </div>
+    
+
+
+    <!-- JS Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</body>
+</html>

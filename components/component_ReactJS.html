@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React on HTML</title>
+    <meta charset="UTF-8" />
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script
+      src="https://unpkg.com/react@17/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <!-- Add JSX -->
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <style>
+      .wrap-imgs {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+      }
+      .item-img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 1px solid #000;
+        margin: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+    <script type="text/babel">
+      const $app = document.getElementById("app");
+      /*Just in case if you don`t use JSX
+      const h = React.createElement;*/
+
+      /*function*/
+      const Avatar = (params) => {
+        const src = `https://randomuser.me/api/portraits/women/${params.id}.jpg`;
+        return <img className="item-img" src={src} />;
+      };
+
+      ReactDOM.render(
+        <div className="wrap-imgs">
+          <Avatar id={10} />
+          <Avatar id={11} />
+        </div>,
+        $app
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Wild Sage</title>
+  </head>
+  <style>
+    :root {
+      --wild-sage-color: #706fae;
+      --azul-bbb-strong: #002854;
+      --azul-bbb-medio: #1a4e8a;
+      --azul-bbb-claro: #daeaf4;
+      --azul-bbb-button: #147bd1;
+      --bg-gray: #f2f2f2;
+      --txt-gray: #595959;
+      --input-gray: #d4d3d3;
+      --rojo: #f52b42;
+      --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+    }
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    p {
+      font-size: 18px;
+    }
+    @import url("https://fonts.googleapis.com/css2?family=Lora&display=swap");
+    #video {
+      width: 100%;
+      height: auto;
+      background-color: var(--wild-sage-color);
+      justify-self: center;
+      display: block;
+      text-align: center;
+    }
+    #video img {
+      justify-self: center;
+      text-align: center;
+    }
+    .desktop {
+      display: block;
+    }
+    .mobile {
+      display: none;
+    }
+    .grid-columns {
+      display: grid;
+      overflow: hidden;
+      grid-template-columns: repeat(auto-fill, minmax(min(100%, 33rem), 1fr));
+      padding-bottom: 50px;
+    }
+    .item-three-cl {
+      background-color: var(--wild-sage-color);
+      margin: 10px;
+      height: 500px;
+      text-align: center;
+      position: relative;
+    }
+    .item-three-cl p {
+      font-weight: 900;
+      font-size: 22px;
+      color: var(--wild-sage-color);
+      font-family: var(--wild-sage-color);
+      position: absolute;
+      bottom: -44px;
+      z-index: 2;
+      text-align: center;
+      left: 0;
+      right: 0;
+      font-family: var(--font-bedbath);
+    }
+    .item-three-cl .text-font {
+      font-size: 72px;
+      font-family: "Recoleta Regular";
+    }
+    .image-cover {
+      width: 100%;
+      height: 500px;
+      -webkit-transition: background 1s; /* For Safari 3.0 to 6.0 */
+      transition: background 1s; /* For modern browsers */
+    }
+    .image-cover:hover {
+      background: rgba(112, 111, 174, 0.5);
+    }
+    .one_image {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/categorias-landing-recamara_1.jpg?rand=1628718607");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .two_image {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/categorias-landing-deco_1.jpg?rand=1628718607");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .three_image {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/categorias-landing-bano_1.jpg?rand=1628718607");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .four_image {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-69661860_1.jpg?rand=1628781557");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .five_image {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-69691269_1.jpg?rand=1628781557");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .six_image {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-69669729_1.jpg?rand=1628781557");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .one_ed {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-edredones-landing-AD.jpg?rand=1628724155");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .two_ed {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-edredones-landing_B.jpg?rand=1628724155");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .three_ed {
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-edredones-landing_C.jpg?rand=1628724155");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    .space-down {
+      margin-bottom: 60px;
+    }
+
+    .wrap-wildsage {
+      background: var(--wild-sage-color);
+      height: 550px;
+      top: -100px;
+    }
+    .wrap-wildsage-b {
+      background: var(--wild-sage-color);
+      height: 380px;
+      top: -100px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .item-two {
+      width: 40%;
+      position: relative;
+    }
+    .text-white {
+      color: #fff !important;
+    }
+    .tip {
+      position: absolute;
+      bottom: 50px;
+      text-align: center;
+      width: 100%;
+      line-height: 1;
+      left: 0;
+    }
+    .wrap-text {
+      padding: 60px 60px;
+    }
+    .wrap-text-b {
+      overflow: hidden;
+      text-align: left;
+      padding: 0 100px;
+      margin-top: 90px;
+    }
+    .wrap-text-b h2 {
+      font-family: var(--font-bedbath);
+      color: var(--wild-sage-color) !important;
+      font-weight: 900 !important;
+      width: 300px;
+    }
+    .call-btn {
+      text-align: center;
+      width: 150px;
+      padding: 10px 10px;
+      background-color: #fff;
+      color: #06b0f0;
+      border: 3px solid #06b0f0;
+      border-radius: 5px;
+      -webkit-box-shadow: -1px 0px 5px 0px rgb(163 163 163);
+      -moz-box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      box-shadow: -1px 0px 5px 0px rgb(163 163 163);
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .call-btn:hover {
+      background-color: #06b0f0;
+      color: #fff;
+    }
+    .call-btn-b {
+      text-align: center;
+      width: 270px;
+      padding: 15px 10px;
+      background-color: #fff;
+      color: #06b0f0;
+      border: 2px solid #06b0f0;
+      border-radius: 5px;
+      -webkit-box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      -moz-box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      font-size: 14px;
+      margin: 0 auto;
+      font-family: var(--font-bedbath);
+    }
+    .call-btn-b:hover {
+      background-color: #06b0f0;
+      color: #fff;
+    }
+    .call-btn-blue {
+      text-align: center;
+      width: 150px;
+      padding: 15px 10px;
+      background-color: #147bd1;
+      color: #fff;
+      border: 2px solid #147bd1;
+      border-radius: 5px;
+      -webkit-box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      -moz-box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      font-size: 16px;
+      margin-top: 20px;
+    }
+    .call-btn-blue:hover {
+      background-color: #fff;
+      color: #147bd1;
+    }
+    .wrap-wildsage {
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 100px;
+      position: relative;
+      height: 450px;
+    }
+    .wrap-wildsage .item-two {
+      width: 40%;
+      padding: 40px;
+      position: relative;
+    }
+    .wrap-img {
+      display: flex;
+      position: relative;
+      margin-top: -600px;
+      text-align: right;
+      margin-left: 500px;
+    }
+    .wrap-img img:hover {
+      background: rgba(112, 111, 174, 0.5);
+    }
+    .wrap-img-b {
+      display: flex;
+      position: relative;
+      top: -420px;
+      text-align: right;
+      margin-left: 500px;
+    }
+    .pulse {
+      animation-name: pulse;
+      -webkit-animation-name: pulse;
+
+      animation-duration: 3s;
+      -webkit-animation-duration: 3s;
+
+      animation-iteration-count: infinite;
+      -webkit-animation-iteration-count: infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+      }
+      50% {
+        transform: scale(1.3);
+      }
+      100% {
+        transform: scale(0.9);
+      }
+    }
+
+    @-webkit-keyframes pulse {
+      0% {
+        -webkit-transform: scale(0.95);
+      }
+      50% {
+        -webkit-transform: scale(1);
+      }
+      100% {
+        -webkit-transform: scale(0.95);
+      }
+    }
+    .wrap-img img {
+      width: 40%;
+      margin: 0 10px;
+    }
+    .wrap-img-b img {
+      width: 40%;
+      margin: 0 10px;
+    }
+    #wildsage-info {
+      padding-top: 100px;
+    }
+    #wildsage-blog {
+      padding-top: 100px;
+      height: 400px;
+    }
+    .link-to {
+      text-decoration: underline;
+      color: #fff;
+      font-weight: 900;
+    }
+    .link-tb {
+      color: var(--wild-sage-color);
+      font-weight: 900;
+      text-decoration: underline;
+    }
+    .wrap-two-columns {
+      overflow: hidden;
+    }
+    .wrap-two-columns .item-b {
+      width: 50%;
+      text-align: left;
+    }
+    .wrap-two-columns .item-b img {
+      width: 100%;
+    }
+    .margin-section {
+      margin-top: 160px;
+      overflow: hidden;
+    }
+    .wrap-two-columns {
+      display: flex;
+      overflow: hidden;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .wrap-description {
+      overflow: hidden;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .wrap-description-b {
+      overflow: hidden;
+      text-align: center;
+      margin-top: -60px;
+    }
+    .wrap-description-b h2 {
+      color: var(--wild-sage-color) !important;
+      font-weight: 900 !important;
+      width: 400px;
+      margin: 30px auto !important;
+    }
+    .wrap-description h2 {
+      color: var(--wild-sage-color) !important;
+      font-weight: 900 !important;
+      width: 400px;
+      margin: 30px auto !important;
+    }
+    #sectionStudents {
+      background-color: var(--wild-sage-color);
+      padding: 20px;
+      margin-top: 80px;
+    }
+    .description-two {
+      text-align: center;
+      font-weight: 900;
+      color: var(--wild-sage-color);
+      margin: 20px 0;
+      font-size: 22px;
+      line-height: 1;
+    }
+    .description-two p {
+      font-size: 22px;
+    }
+    #bano {
+      text-align: center;
+      display: block;
+      justify-content: center;
+      margin: 100px auto;
+      padding: 0 80px;
+    }
+    #descriptionB {
+      margin: 0px auto;
+      padding: 0 80px;
+      position: relative;
+    }
+    .img-second {
+      width: 80% !important;
+    }
+    .wrap-subtitle {
+      font-size: 15px;
+      line-height: 1;
+    }
+    .wrap-subtitle-b {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .call-btn2 {
+      background-color: #06b0f0;
+      color: #fff;
+      width: 200px;
+      margin: 50px auto;
+      text-align: center;
+      border-radius: 5px;
+      padding: 10px;
+      font-weight: 900;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      webkit-box-shadow: -1px 0px 5px 0px rgb(163 163 163);
+      -moz-box-shadow: -1px 0px 5px 0px rgba(163, 163, 163, 1);
+      box-shadow: -1px 0px 5px 0px rgb(163 163 163);
+    }
+    .call-btn2:hover {
+      background-color: #fff;
+      color: #06b0f0;
+      border: 2px solid #06b0f0;
+    }
+    .img_wild {
+      width: 100px;
+      position: absolute;
+      bottom: 20px;
+      left: 20%;
+      z-index: 1;
+    }
+    .img_wild_b {
+      width: 80px;
+      position: absolute;
+      top: 40px;
+      right: 20%;
+      z-index: 1;
+    }
+    .hotspot {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background-color: rgb(255, 255, 255, 0.8);
+      padding: 4px;
+      border: 6px solid rgb(255, 255, 255, 0.3);
+      border-radius: 50%;
+      animation: fader 1s ease infinite;
+      transition: all 0.1s;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: sans-serif;
+      color: #555;
+      cursor: pointer;
+    }
+    .hotspot::after {
+      content: "";
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: block;
+      background-color: transparent;
+      transition: all 0.1s;
+    }
+    .hotspot:hover {
+      border: 8px solid rgb(255, 255, 255, 0.1);
+    }
+    #hs-a {
+      top: 200px;
+      left: 100px;
+    }
+    #hs-aprice {
+      top: 5%;
+      left: 6%;
+      display: none;
+    }
+    #hs-b {
+      top: 210px;
+      right: 250px;
+    }
+    #hs-bprice {
+      top: 5%;
+      right: 6%;
+      display: none;
+    }
+    .titlehs {
+      font-size: 13px;
+      color: var(--wild-sage-color) !important;
+    }
+    .btn_insider {
+      width: auto;
+      border: 3px solid var(--azul-bbb-button);
+      color: var(--azul-bbb-button);
+      text-align: center;
+      border-radius: 3px;
+      font-size: 12px;
+      padding: 5px 0;
+      font-weight: 900;
+    }
+    /*Commnent Shape*/
+    div.comment {
+      width: 290px;
+      height: auto;
+      position: absolute;
+      padding: 15px;
+      overflow: hidden;
+      z-index: 3;
+      text-align: left;
+    }
+    div.comment img {
+      width: auto;
+    }
+
+    div.comment div.chat {
+      width: 290px;
+      height: auto;
+      background: #fff;
+      -moz-border-radius: 10px;
+      -webkit-border-radius: 10px;
+      border-radius: 10px;
+      -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+      -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+      box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.25);
+      padding: 10px 0;
+    }
+    .img-comment {
+      width: 200px;
+      height: auto;
+    }
+
+    #hs-a:hover + #hs-aprice {
+      display: block;
+    }
+
+    #hs-b:hover + #hs-bprice {
+      display: block;
+    }
+
+    @keyframes fader {
+      50% {
+        border-color: rgb(255, 255, 255, 0.2);
+      }
+      100% {
+        border-color: rgb(255, 255, 255, 1);
+      }
+    }
+
+    /*Zoom Animation*/
+    #containerimgc {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    #containerimgc img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+    }
+    #containerimgc:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+    #bano {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    #bano img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+    }
+    #bano:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+    /*youtube*/
+    .video-container {
+      width: 100%;
+      height: 600px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-container iframe {
+      pointer-events: none;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: -60px;
+      left: 0;
+      width: 100%;
+      height: 800px;
+    }
+    .video-foreground {
+      pointer-events: none;
+    }
+    @media (max-width: 991px) {
+      .img_wild_b {
+        top: 0;
+        right: 0;
+      }
+      .desktop {
+        display: none;
+      }
+      .mobile {
+        display: block;
+      }
+      .video-container {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+      }
+      .grid-columns {
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        overflow-x: auto;
+        padding: 0 1rem 5rem 0;
+      }
+      .grid-columns .item-three-cl {
+        display: inline-block;
+        width: 60%;
+        flex: none;
+      }
+      .item-three-cl {
+        height: 300px;
+      }
+      .item-three-cl p {
+        bottom: -44px;
+      }
+      .wrap-wildsage .item-two {
+        width: 100%;
+      }
+      .wrap-two-columns .item-b {
+        width: 100%;
+      }
+      .margin-section {
+        margin-top: 360px;
+      }
+      .wrap-text {
+        padding: 20px 0px;
+        margin-top: 60px;
+      }
+      .wrap-text-b {
+        margin-top: 200px;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .call-btn-blue {
+        margin: 20px auto !important;
+      }
+      #bano {
+        margin: 40px auto;
+        padding: 0 10px;
+      }
+      #bano img {
+        width: 100%;
+      }
+      .item-two {
+        width: 100%;
+      }
+      .wrap-img-b {
+        margin-left: 40px;
+      }
+      .wrap-subtitle-b {
+        margin-top: 150x;
+      }
+      #descriptionB {
+        margin: 0px auto;
+        padding: 0px;
+        position: relative;
+        height: auto;
+        margin-top: 50px;
+      }
+      .img_wild {
+        width: 60px;
+        bottom: 120px;
+        left: 10px;
+      }
+      .img_wild_c {
+        bottom: 20px !important;
+      }
+      .call-btn2 {
+        padding: 5px;
+      }
+      .wrap-description h2 {
+        width: 95%;
+        margin-left: 5%;
+      }
+      .wrap-text-b h2 {
+        width: 100%;
+      }
+      .tip {
+        width: 95%;
+        line-height: 1;
+        left: 10px;
+      }
+      .wrap-img {
+        margin-top: -650px;
+        margin-left: 40px;
+      }
+      .call-btn {
+        margin: 20px auto;
+      }
+      .mobile-a {
+        margin-top: 0;
+      }
+      .wrap-description p {
+        padding: 10px 20px;
+      }
+      #hs-a {
+        top: 100px;
+        left: 80px;
+      }
+      #hs-b {
+        top: 110px;
+        right: 120px;
+      }
+      #hs-bprice {
+        top: 2%;
+      }
+      #hs-aprice {
+        top: 2%;
+      }
+      .video-foreground {
+        pointer-events: all;
+      }
+      .video-container iframe {
+        pointer-events: all;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  </style>
+  <body>
+    <!-- Wild Sage -->
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html"
+        target="_self"
+      >
+        <div id="video" class="video">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Wild_sage_landing.gif"
+          />
+        </div>
+      </a>
+    </section>
+    <!-- GRID 3 COLUMNS -->
+    <section>
+      <div class="grid-columns">
+        <div class="item-three-cl one_image">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/recamara.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+            <p>recámara</p>
+          </a>
+        </div>
+        <div class="item-three-cl two_image">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/decoracion.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+            <p>decoración</p>
+          </a>
+        </div>
+        <div class="item-three-cl three_image">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/bano.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+            <p>baño</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Banner Texto -->
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html"
+        target="_self"
+      >
+        <div id="descriptionB" class="banner-img figure">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/flower_c.png?rand=1628863927"
+            alt="wildsage"
+            class="img_wild_b pulse"
+          />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/banner-tu-espacio_1.jpeg?rand=1628787477"
+            alt="Wild Sage Bed Bath and Beyond"
+            class="desktop"
+          />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-mobile-tu-espacio.jpg?rand=1628863291"
+            alt="Wild Sage Bed Bath and Beyond"
+            class="mobile"
+          />
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html"
+            target="_self"
+          >
+            <p class="call-btn2">comprar ahora</p>
+          </a>
+        </div>
+      </a>
+    </section>
+
+    <!-- THREE COLUMNS -->
+    <section>
+      <div class="grid-columns">
+        <div class="item-three-cl one_ed">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/recamara.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+          </a>
+        </div>
+        <div class="item-three-cl two_ed">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/recamara.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+          </a>
+        </div>
+        <div class="item-three-cl three_ed">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/recamara.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO COLUMNS -->
+    <section id="wildsage-info">
+      <div class="wrap-wildsage">
+        <div class="item-two">
+          <div class="wrap-text">
+            <h2 class="text-white">
+              Mezcla, combina, <br />
+              hazlo tuyo
+            </h2>
+            <p class="text-white wrap-subtitle">
+              Distintos diseños llenos de personalidad que harán de tu cuarto tu
+              mejor refugio.
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/recamara.html"
+              target="_self"
+            >
+              <p class="call-btn">comprar cama</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-two">
+          <div class="text-white tip">
+            <p>Obtén ideas e inspírate para crear un dormitorio único</p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/crea-tu-propio-hogar-y-ve-a-la-universidad-mas-feliz"
+              target="_self"
+            >
+              <p class="link-to">Conoce más</p>
+            </a>
+          </div>
+        </div>
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/flower_A.png?rand=1628863927"
+          alt="wildsage"
+          class="img_wild pulse"
+        />
+      </div>
+      <div class="wrap-img">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/imagen1-para-html_1.jpg?rand=1628775144"
+          alt="wild sage bedbath and beyond"
+        />
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/imagen2-para-html_1.jpg?rand=1628775144"
+          alt="wild sage bedbath and beyond"
+        />
+
+        <!-- Hotspot A -->
+        <a
+          href="https://www.bedbathandbeyond.com.mx/marcas/haven/cortinas.html"
+          class="hotspot"
+          id="hs-a"
+          onClick='showHotSpot("hs-a")'
+        ></a>
+        <div id="hs-aprice" class="comment">
+          <div class="chat">
+            <table>
+              <tr>
+                <td class="td-mobile">
+                  <img
+                    src="https://s7d2.scene7.com/is/image/BedBathandBeyond/BBB_MRK_022321_FULL_Brand_D_BEDROOM_4_Femi_Garden_Lucia_Medallion_Gold_011_DAM1557_ecom?$imagePLP$&hei=700&wid=700"
+                    class="img-comment"
+                    alt="organic BedBathandBeyond"
+                  />
+                </td>
+                <td class="td-mobile" style="padding: 0 5px">
+                  <h4 class="titlehs">
+                    Juego de colcha matrimonial/queen de algodón Wild Sage™
+                    color violeta claro
+                  </h4>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="shape-hs-a"></div>
+        </div>
+
+        <!-- Hotspot B -->
+        <a
+          href="https://www.bedbathandbeyond.com.mx/juego-de-edredon-individual-wild-sagetm-sydney-de-poliester-color-gris.html"
+          class="hotspot"
+          id="hs-b"
+          onClick='showHotSpot("hs-b")'
+        ></a>
+        <div id="hs-bprice" class="comment">
+          <div class="chat">
+            <table>
+              <tr>
+                <td class="td-mobile">
+                  <img
+                    src="https://s7d1.scene7.com/is/image/BedBathandBeyond/WS20-8435-FAB-SydneyTuftedStripe_Grey_ecom_imageset?$imagePLP$&hei=700&wid=700"
+                    class="img-comment"
+                    alt="organic BedBathandBeyond"
+                  />
+                </td>
+                <td class="td-mobile" style="padding: 0 5px">
+                  <h4 class="titlehs">
+                    Juego de edredón individual Wild Sage™ Sydney de poliéster
+                    color gris
+                  </h4>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="shape-hs-b"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TWO COLUMNS -->
+    <section class="margin-section">
+      <div class="wrap-two-columns">
+        <div id="containerimgc" class="item-b">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-desbordando-ideas_1.jpg?rand=1628775144"
+            alt="wild sage"
+          />
+        </div>
+        <div class="item-b">
+          <div class="wrap-text-b mobile-a">
+            <h2>Desbordando grandes ideas</h2>
+            <p>
+              Lleva tu espacio más allá de lo básico con estas combinaciones de
+              decoración
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/decoracion.html"
+              target="_self"
+            >
+              <p class="call-btn-blue">compra decoración</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESCRIPTION -->
+    <section>
+      <div class="wrap-description">
+        <h2>Se trata de vivir siempre elegante y casual</h2>
+        <p>
+          Discretas, excéntricas o algo intermedio, tus vibras son siempre las
+          mejores vibras.
+        </p>
+        <a
+          href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/muebles.html"
+          target="_self"
+        >
+          <p class="call-btn-b">compra muebles decorativos</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- GRID 3 COLUMNS -->
+    <section>
+      <div id="sectionStudents" class="grid-columns">
+        <div class="item-three-cl four_image">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/cojin-decorativo-de-poliester-wild-sagetm-adele-color-amarillo.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+          </a>
+        </div>
+        <div class="item-three-cl five_image">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/mueble-organizador-de-acero-para-ba-o-wild-sagetm-3-niveles-color-dorado.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+          </a>
+        </div>
+        <div class="item-three-cl six_image">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/puf-wild-sagetm-color-iris.html"
+            target="_self"
+          >
+            <div class="image-cover"></div>
+          </a>
+        </div>
+      </div>
+      <div class="description-two">
+        <p>
+          Estudiantes reales nos muestran cómo los pequeños detalles añaden
+          personalidad.
+        </p>
+        <a
+          href="https://www.bedbathandbeyond.com.mx/todo-esta-en-los-detalles-wild-sage"
+          target="_self"
+        >
+          <p class="link-tb">Leer más</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Banner Baño -->
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/bano.html"
+        target="_self"
+      >
+        <div id="bano" class="banner-img figure">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-bano-landing.jpg?rand=1628781557"
+            alt="Wild Sage Bed Bath and Beyond"
+          />
+        </div>
+      </a>
+    </section>
+
+    <!-- DESCRIPTION -->
+    <section>
+      <div class="wrap-description-b">
+        <h2>Explora la nueva colección Wild Sage</h2>
+        <a
+          href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html"
+          target="_self"
+        >
+          <p class="call-btn-b">comprar ahora</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- TWO COLUMNS -->
+    <section id="wildsage-blog">
+      <div class="wrap-wildsage-b">
+        <div class="item-two">
+          <div class="wrap-text-b">
+            <p class="text-white wrap-subtitle-b">
+              ¡Conoce algunas de las ideas que nos da Nomena estudio, para
+              decorar tu cuarto!
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/crea-tu-propio-hogar-y-ve-a-la-universidad-mas-feliz"
+              target="_self"
+            >
+              <p class="call-btn">leer más</p>
+            </a>
+          </div>
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/flower_A.png?rand=1628863927"
+            alt="wildsage"
+            class="img_wild img_wild_c pulse"
+          />
+        </div>
+        <div class="item-two">
+          <div class="text-white tip"></div>
+        </div>
+      </div>
+      <div id="containerimgc" class="wrap-img-b">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-landing-conoce-ideas_1.jpg?rand=1628784040"
+          alt="wild sage bedbath and beyond"
+          class="img-second"
+        />
+      </div>
+    </section>
+  </body>
+</html>

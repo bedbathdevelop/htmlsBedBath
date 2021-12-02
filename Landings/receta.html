@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<header>
+  <style>
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: none;
+    }
+    .wrap-banner-receta {
+      height: 150px;
+      overflow: hidden;
+      width: 100%;
+      background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/vajilla-landon-landing.jpg?rand=1625244613");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      color: #002854;
+    }
+    .wrap-banner-receta div {
+      background-color: rgba(255, 255, 255, 0.4);
+      width: 400px;
+      height: 150px;
+      text-align: center;
+      line-height: 1;
+      margin-top: 60px;
+      font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+    }
+    .wrap-banner-receta div h2 {
+      font-size: 50px;
+    }
+
+    .hr-recipe {
+      width: 100%;
+      height: 30px;
+      background-color: #1a4e8a;
+    }
+    .titles {
+      font-size: 2rem;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .titles h2 {
+      color: #1a4e8a;
+    }
+    .titles p {
+      line-height: 1;
+      font-size: 22px;
+    }
+    .titles p:nth-child(2) {
+      font-weight: 900;
+      color: #1a4e8a;
+    }
+    .wrap-recipes {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+
+      -webkit-flex-flow: row wrap;
+      justify-content: space-around;
+      overflow: hidden;
+    }
+    .bg-ourtable {
+      background-color: #fff;
+    }
+    .item-recipe {
+      width: 300px;
+      height: 500px;
+      overflow: hidden;
+      margin: 10px;
+      box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+      border-radius: 5px;
+    }
+    .item-recipe img {
+      width: 300px;
+      height: 200px;
+    }
+    .recipe-information {
+      display: flex;
+      flex-flow: row;
+      overflow: hidden;
+      text-align: center;
+      justify-content: center;
+    }
+    .decription-recipe h3 {
+      color: #1a4e8a;
+      text-align: center;
+      font-weight: 900;
+    }
+    .recipe-information div {
+      width: 33.33%;
+    }
+    .item-information {
+      overflow: hidden;
+      position: relative;
+    }
+    .item-information img {
+      width: 30px;
+      height: 30px;
+    }
+    .item-information span {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      color: #ff4f87;
+      font-weight: 900;
+      font-size: 18px;
+    }
+    .item-information p {
+      line-height: 1;
+      font-weight: 900;
+      color: #002854;
+      margin-top: -2px;
+    }
+    .decription-recipe {
+      padding: 0 10px;
+    }
+    .mini-description {
+      padding: 10px;
+      line-height: 1;
+    }
+    .btn-recipe {
+      background-color: #117dcf;
+      color: #fff;
+      border: 2px solid #117dcf;
+      padding: 12px 5px;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      border-radius: 5px;
+      margin-top: 40px;
+    }
+    .btn-recipe:hover {
+      color: #117dcf;
+      background-color: #fff;
+    }
+    .font-bb {
+      font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      color: #1a4e8a;
+    }
+  </style>
+</header>
+
+<html>
+  <body>
+    <section>
+      <div class="wrap-banner-receta">
+        <div>
+          <h2>recetas</h2>
+          <p>solo en BB&B</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="hr-recipe"></div>
+
+    <section>
+      <div class="titles">
+        <p>
+          Déjate sorprender por la variedad de recetas que puedes preparar con
+          <span class="font-bb">Our Table™</span>.
+        </p>
+        <p class="font-bb">¡Conócelas aquí!</p>
+      </div>
+    </section>
+
+    <!-- Recetas -->
+    <section>
+      <div class="wrap-recipes">
+        <div class="item-recipe bg-ourtable">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/recetas/paydenuez"
+            target="_self"
+          >
+          <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/recetario-pay-nuez.jpg?rand=1625253009"
+        />
+            <div class="decription-recipe">
+              <h3>Pay de nuez con miel de maple</h3>
+              <hr />
+              <div class="recipe-information">
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/clock.png?rand=1625061172"
+                  />
+                  <span>50</span>
+                  <p>minutos</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/book.png?rand=1625061172"
+                  />
+                  <span>11</span>
+                  <p>ingredientes</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/user.png?rand=1625061172"
+                  />
+                  <span>4-6</span>
+                  <p>personas</p>
+                </div>
+              </div>
+              <div class="mini-description">
+                <p>
+                  ¡Sirve con una bola  de helado de vainilla y disfruta!     
+                </p>
+                <p class="btn-recipe">ver receta</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item-recipe bg-ourtable">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/recetas/estofado-de-res"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/recetario-estofado.jpg?rand=1625253009"
+            />
+            <div class="decription-recipe">
+              <h3>Estofado de Res</h3>
+              <hr />
+              <div class="recipe-information">
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/clock.png?rand=1625061172"
+                  />
+                  <span>50</span>
+                  <p>minutos</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/book.png?rand=1625061172"
+                  />
+                  <span>15</span>
+                  <p>ingredientes</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/user.png?rand=1625061172"
+                  />
+                  <span>4-6</span>
+                  <p>personas</p>
+                </div>
+              </div>
+              <div class="mini-description">
+                <p>
+                  Servir al gusto (yo lo sirvo en plato hondo con una hogaza de 
+                  pan rústico).
+                  
+                </p>
+                <p class="btn-recipe">ver receta</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item-recipe bg-ourtable">
+          <a
+            href="http://bedbathandbeyond.com.mx/recetas/panfrances"
+            target="_self"
+          >
+          <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/recetario-pan-frances.jpg?rand=1625253009"
+        />
+            <div class="decription-recipe">
+              <h3>Pan francés al horno</h3>
+              <hr />
+              <div class="recipe-information">
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/clock.png?rand=1625061172"
+                  />
+                  <span>40</span>
+                  <p>minutos</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/book.png?rand=1625061172"
+                  />
+                  <span>11</span>
+                  <p>ingredientes</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/user.png?rand=1625061172"
+                  />
+                  <span>2-4</span>
+                  <p>personas</p>
+                </div>
+              </div>
+              <div class="mini-description">
+                <p>
+                  Excelente desayuno acompañado 
+                  de un rico café o incluso como postre.                  
+                </p>
+                <p class="btn-recipe">ver receta</p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+   
+        <div class="item-recipe bg-ourtable">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/recetas/salmon-empapelado-al-horno"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/recetario-salmon.jpg?rand=1625253009"
+            />
+            <div class="decription-recipe">
+              <h3>Salmón empapelado al horno</h3>
+              <hr />
+              <div class="recipe-information">
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/clock.png?rand=1625061172"
+                  />
+                  <span>50</span>
+                  <p>minutos</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/book.png?rand=1625061172"
+                  />
+                  <span>10</span>
+                  <p>ingredientes</p>
+                </div>
+                <div class="item-information">
+                  <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/user.png?rand=1625061172"
+                  />
+                  <span>2-4</span>
+                  <p>personas</p>
+                </div>
+              </div>
+              <div class="mini-description">
+                <p>
+                  Puedes disfrutarlos con una rica besada o una pasta.
+                </p>
+                <p class="btn-recipe">ver receta</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

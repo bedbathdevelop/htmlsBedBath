@@ -1,0 +1,2808 @@
+<!DOCTYPE html>
+<header>
+    <style>
+        /*Colores*/
+        .bg-naranja {
+            background: rgb(238, 227, 212);
+        }
+        .active {
+            background:#194e8a;
+        }
+        .enable{
+            background:#194e8a;
+        }
+        .mobile{
+            display: none;
+        }
+        #homeMain {
+            margin-top: 50px;
+        }
+        .bg-verde {
+            background: #c5d3cb;
+        }
+        .bg-verde-strong {
+            background: #85ab97;
+        }
+        .bg-blue-light {
+            background-color: #dee9f7;
+            text-align: center;
+        }
+        .bg-blue-strong {
+            background-color: #235085;
+            text-align: center;
+        }
+        .txt-red {
+            color: #c00000;
+        }
+        .txt-blue{
+            color: #2d3d68;
+            padding: 20px 0;
+        }
+        .title-blue-bold {
+            color: #002855;
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .title-white-bold{
+            color: #fff;
+            font-size: 35px;
+            font-weight: 600;
+        }
+        .txt-white {
+            color: #fff;
+            padding:0 2%;
+        }
+        .txt-red:hover {
+            background-color: #c00000;
+            color: #fff;
+            padding: 0 2%;
+        }
+        .txt-blue {
+            color: #214f7a;
+        }
+        /*Home Categories*/
+        .cat-home-img {
+            width: 90%;
+        }
+        .bg-mom{
+            background-color: #F9F1F0;
+            overflow: hidden;
+        }
+        /*align*/
+        .txt-center {
+            text-align: center;
+        }
+        /*Columnas*/
+        .col-3 {
+            width: 33.33%;
+            text-align: center;
+        }
+        .banner-relajacion{
+            color: #fff;
+            text-align: center;
+            padding: 14px 0;
+        }
+        section {
+            margin-bottom: 16px;
+        }
+        img {
+            max-width: 100%;
+        }
+        h1,h2,h3,h4,h5 {
+            font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        }
+        p,a {
+           font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .title-font {
+            color:#002855;
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            font: Termina Headline,sans-serif;
+            text-align: center;
+            font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        }
+        .flex-container{
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .col-50 {
+            padding:10px; 
+            width: 50%;
+        }
+        .col-30 {
+            width: 30%;
+        }
+        .column-m{
+            margin-top: -29px;
+        }
+        .square {
+            border: 5px solid #1a4e8a;
+            display: inline-flex; 
+            width: 100%; 
+            height: 80px;
+            align-items: center;
+        }
+        
+        .square h2 {
+            width:120%;
+            text-align: center;
+            font-weight: bolder;
+            color: #1a4e8a;
+            font-size: 25px;
+        }
+        .square span {
+            width: 30%;
+            padding: 10px;
+        }
+        .text-square {
+            padding-top: 1rem;
+            padding-bottom: .5rem;
+            width: 100%;
+            text-align: center;
+        }
+        .text-square p {
+            font-size: 18px;
+            color: #000;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .call-to {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .banner-top {
+            background: #ed2837;
+            display: flex;
+            flex-direction: column;
+            align-items: center;padding: 2em;
+        }
+        .white-bkg {
+            background: #fff; 
+            color: #ed2837;
+            font-size: 20px;
+            padding: 0 10px;
+        }
+        .banner-top h4 {
+            color: #fff;
+            margin: 60px 0;
+            font-size: 60px;
+        }
+        .banner-top span {
+            background: #fff;
+            color:#1a4e8a;
+            padding: 0 10px;
+        }
+        .p-center {
+            font-size: 14px;
+            line-height: 14px;
+            padding: 2em;
+            text-align: center;
+        }
+        .photo-banner {
+            position: relative;
+            width:100%;
+            height: 495px;
+            background-size: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .container-slideimg{
+            width: 100%;
+            overflow: hidden;
+            padding: 2% 0;
+        }
+        .container-card-big{
+            line-height: 1;
+            font-size: 18px;
+        }
+        .col-48 {
+            width: 48%;
+            float: left;
+            padding: 0 1%
+        }
+        .col-40 {
+            background:rgba(255,255,255,0.6);
+            width: 40%;
+            padding: 1.5%;
+            position: absolute;
+            bottom: 2.5rem;
+        }
+        .col-40.right {
+            right: 1em;
+        }
+        .col-40.left {
+            left: 1em;
+        }
+        .col-40.bottom {
+            top: 90%;
+        }
+        .col-40.top {
+            top: 1em;
+        }
+        .col-40.center {
+            left: 50%;
+            margin-left: -25%;
+        }
+        .center-elements {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;    
+        }
+        .button-blue {
+            box-shadow: none;
+            color: #fff;
+            border-color: #1377c9;
+            border-style: none;
+            background-color: #1377c9;
+            text-decoration: none;
+            width: auto;
+            padding: 10px; 
+            border-radius: 5px;
+            width: 200px;
+        }
+        .button-blue:hover {
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(143,143,143,1);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(143,143,143,1);
+            box-shadow: 0px 0px 5px 0px rgba(143,143,143,1);
+        }
+        .content-color {
+            padding: 0px;
+        }
+        .content-inline-flex {
+            display: inline-flex;
+            width: 100%;
+        }
+        .content-inline-flexb {
+            display: inline-flex;
+            width: 100%;
+        }
+        .product-card {
+            margin: 5px;
+        }
+        .card-col-50 {
+            width: 50%;
+        }
+        .col-25 {
+            width: 25%;
+        }
+        .product-p-bold {
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            min-width: 100%;
+            color: #002855;
+            padding-bottom: 0;
+        }
+        .line-hr-bd{
+            border: 5px solid #1a4e8a;
+            width: 100%;
+            height: 3px;
+            background: #1a4e8a;
+            margin: 2% 0;
+        }
+        #promotion-mom{
+            margin-top: -20px;
+        }
+        .card-description{
+            padding: 0 0 0 1em;
+            text-align: left;
+            min-width: 100%;
+            color: #000;
+        }
+        .list-grid {
+            padding: 1em 0;
+            list-style: none;
+            display: inline-flex;
+            min-width: 100%;
+            justify-content: space-evenly;
+        }
+        .list-grid .col-2 {
+            min-width: 16.6666%;
+            text-align: center;
+        }
+        .list-grid .col-2 .items-center {
+            border: 2px solid #fff;
+            border-radius: 50%;
+            width: 140px;
+            height: 140px; 
+        }
+        .list-grid .col-2:hover .items-center {
+            border: 2px solid #1377c9;
+        }
+        .slider {
+            font-size: 15px;
+            text-align: center;
+        }
+        body .slider {
+            max-width: 1200px;
+            margin: 0 auto 0px auto;
+        }
+        .slider-for {
+            font-size: 15px;
+            text-align: center;
+        }
+        .categoriestitle {
+            width: 100%;
+            text-align: center;
+            color: #000;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        .img-rouned{
+            border-radius: 50%;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .center-text-elements{
+            color: #1A4E8A;
+            font-size: 34px;
+            line-height: 1em;
+            font-family: 'Montserrat-Bold',Arial, sans-serif;
+        }
+        .first-section {
+            margin-top: 0;
+            padding-top: 0px;
+        }
+        .banner-img.desktop {
+            display: flex;
+            position: relative;
+        }
+        .banner-img.mobile {
+            display: none;
+        }
+        .figure {
+            position: relative;
+        }
+        .figure::before {
+            position: absolute;
+            top: 0;
+            left: -115%;
+            z-index: 2;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+        }
+        .figure:hover::before {
+            -webkit-animation: shine .5s;
+            animation: shine .5s;
+        }
+        @-webkit-keyframes shine {
+            100% {
+                left: 25%;
+            }
+        }
+        @keyframes shine {
+            100% {
+                left: 25%;
+            }
+        }
+        /*banner home*/
+        .post-float{
+            width: 400px;
+            height: auto;
+            position: absolute;
+            top:15%;
+            left: 5%;
+            color: #002854;
+            line-height: 1;
+            overflow: hidden;
+        }
+        .txt-higlight{
+
+        }
+        .post-float p:nth-child(1) {
+            color: #ef2539;
+            font-size: 52px;
+            font-weight: 600;
+        }
+        .post-float p:nth-child(2) {
+            color: #002854;
+            font-size: 28px;
+            font-weight: 600;
+        }
+        .text-btn{
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+        @media (max-width: 991px) {
+            .mobile-height{
+                height: 380px;
+            }
+            .content-inline-flexb {
+                display: block;
+                width: 100%;
+            }
+            .categoriestitle {
+                font-size: 11px;
+            }
+            .categoriestitleb{
+                font-size: 18px;
+            }
+            .cms-home .page-main {
+                padding: 0;
+            }
+            .col-3{
+                width: 100%;
+            }
+            section {
+                margin-left:0px;
+                margin-right:0px;
+            }
+            .banner-img.desktop {
+                display: none;
+            }
+            .banner-img.mobile{
+                display: block!important;
+            }
+            .first-section {
+                padding-top: 0px;
+            }
+            .first-section .col-50 {
+                width: 90%;
+            }
+            .title-font {
+                font-size: 30px;
+            }
+            .content-inline-flex.column-m,
+            .flex-container.column-m {
+                flex-direction: column;
+            }
+            .m-block .content-inline-flex {
+                display: inline-block;
+            }
+            .m-block .content-inline-flex .product-card.col-25{
+                width: 47%;
+                float: left;
+            }
+            .square{
+                width: 97%;
+            }
+            .product-p-bold {
+                padding: 8px;
+                font-size: 14px;
+            }
+            .card-description{
+                padding: 0 0 0 8px;
+            }
+            .banner-top {
+                height: 70vh;
+            }
+            .banner-top .white-bkg{
+                margin-top: 30%;
+            }
+            .photo-banner {
+                background-size: cover;
+            }
+            .col-48 {
+                width: 100%;
+            }
+            .col-40.right,
+            .col-40.left {
+                left: auto;
+                right: auto;
+                width: 80%;
+            }
+            .photo-banner {
+                display: flex;
+                justify-content: center;
+            }
+            .list-grid {
+                display: inline-block;
+            }
+            .col-2 {
+                float: left;
+                width: 33%;
+                min-height: 180px;
+            }
+            .mobile{ 
+                display: none;
+            }
+            .col-cat-home {
+                float: left;
+                width: 28%;
+                min-height: 180px;
+                margin: 0 1%;
+            }
+            .scrolled {
+                display: flex!important;
+                flex-flow: row;
+                overflow-x: auto;
+                margin-left: 0.5%;
+            }
+            .scrolled.four {
+                width: 990px;
+                overflow: scroll;
+            }
+            .scrolled.three {
+                width: 730px;
+                overflow: scroll;
+            }
+            .conten-scroll {
+                overflow: auto;
+            }
+            .scrolled .product-card {
+                max-width: 240px;
+            }
+        }
+        @media (max-width: 767px) {
+            img {
+                width: 100%;
+            }
+            .square span{
+                width: 40%;
+                padding: 0;
+            }
+        }
+        /*Zoom Animation*/
+        #containerimg {
+            display: inline-block;
+            margin: 5px;
+            overflow: hidden;  
+        }
+        #containerimg img {
+            display: block;
+            transition: transform .5s;   /* smoother zoom */
+        }
+        #containerimg:hover img {
+            transform: scale(1.1);
+            transform-origin: 50% 50%;
+        }
+        /* KEYFRAMES */
+        @-webkit-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+        @-moz-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+        @keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+        @-webkit-keyframes sideWays { 
+            0% { 
+                margin-left:0px;
+            }
+            100% { 
+                margin-left:50px;
+            }
+        }
+        @-moz-keyframes sideWays { 
+            0% { 
+                margin-left:0px;
+            }
+            100% { 
+                margin-left:50px;
+            }
+        }
+        @keyframes sideWays { 
+            0% { 
+                margin-left:0px;
+            }
+            100% { 
+                margin-left:50px;
+            }
+        }
+    
+            figure.snip0019 {
+                color: #fff;
+                position: relative;
+                overflow: hidden;
+                margin: 10px auto;
+                width: 100%;
+                height: auto;
+                text-align: center;
+            }
+            figure.snip0019 * {
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            figure.snip0019 img {
+                opacity: 1;
+                width: 85%;
+                -webkit-transition: opacity 0.35s;
+                transition: opacity 0.35s;
+            }
+            figure.snip0020 img {
+                opacity: 1;
+                width: 90%;
+                height: 310px;
+                -webkit-transition: opacity 0.35s;
+                transition: opacity 0.35s;
+                margin: 5px;
+            }
+            figure.snip0019 figcaption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-align: left;
+            }
+            figure.snip0019 figcaption > div {
+                float: left;
+                height: 100%;
+                overflow: hidden;
+                width: 50%;
+                position: relative;
+            }
+            figure.snip0019 figcaption::before {
+                position: absolute;
+                top: 50%;
+                bottom: 50%;
+                left: 50%;
+                width: 2px;
+                content: '';
+                opacity: 0;
+                background-color: rgba(255, 255, 255, 0);
+                -webkit-transition: all 0.4s;
+                transition: all 0.4s;
+                -webkit-transition-delay: 0.6s;
+                transition-delay: 0.6s;
+            }
+            figure.snip0019 h2,
+            figure.snip0019 p {
+                margin: 0;
+                padding: 120% 5% 0 5%;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                left: 0;
+                -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+                transition: opacity 0.45s,-webkit-transform 0.45s,-moz-transform 0.45s,-o-transform 0.45s,transform 0.45s;
+            }
+            figure.snip0019 h2 {
+                text-align: right;
+                display: inline-block;
+                word-spacing: -0.1em;
+                font-weight: 600;
+                bottom: 0;
+                background: rgba(249,241,240,0.5);
+                -webkit-transform: translate3d(50%, 0%, 0);
+                transform: translate3d(50%, 0%, 0);
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+                font-size: 18px;
+            }
+            figure.snip0019 h2 span {
+                font-weight: 800;
+            }
+            figure.snip0019 p {
+                display: block;
+                bottom: 0;
+                text-align: left;
+                font-weight: 600;
+                top: 0%;
+                font-size: 27px;
+                color: #fff;
+                background: rgba(0, 0, 0, 0.1);
+                -webkit-transform: translate3d(-50%, 0%, 0);
+                transform: translate3d(-50%, 0%, 0);
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+                line-height: 1;
+            }
+            figure.snip0019 a {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                color: #ffffff;
+            }
+            figure.snip0019:hover img {
+                opacity: 0.7;
+            }
+            figure.snip0020:hover img {
+                opacity: 0.7;
+            }
+            figure.snip0019:hover figcaption h2,
+            figure.snip0019:hover figcaption p {
+                -webkit-transform: translate3d(0%, 0%, 0);
+                transform: translate3d(0%, 0%, 0);
+                -webkit-transition-delay: 0.3s;
+                transition-delay: 0.3s;
+            }
+            figure.snip0019:hover figcaption h2 {
+                opacity: 1;
+            }
+            figure.snip0019:hover figcaption p {
+                opacity: 1;
+            }
+            figure.snip0019:hover figcaption::before {
+                background: #ffffff;
+                top: 0px;
+                bottom: 0px;
+                opacity: 1;
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+             }
+             /*Animate text*/
+
+             .ml11 {
+                font-weight: 700;
+                font-size: 2.3em;
+                text-align: center;
+                padding-top: 2%;
+            }
+
+            .ml11 .text-wrapper {
+                position: relative;
+                display: inline-block;
+                padding-top: 0.1em;
+                padding-right: 0.05em;
+                padding-bottom: 0.15em;
+            }
+
+            .ml11 .line {
+                opacity: 0;
+                position: absolute;
+                left: 0;
+                height: 100%;
+                width: 3px;
+                background-color: #fff;
+                transform-origin: 0 50%;
+            }
+
+            .ml11 .line1 { 
+                top: 0; 
+                left: 0;
+            }
+
+            .ml11 .letter {
+                display: inline-block;
+                line-height: 1em;
+            }
+
+            /*Animations hr*/
+                .separator {
+                    margin-top: 5px;
+                    margin-bottom: 20px;
+                    border: 0;
+                }
+
+                .separator--line {
+                    border: 0;
+                    border-bottom: 3px solid #1a4e8a; 
+                    width: 0;
+                    animation: separator-width 1s ease-out forwards;
+                }
+                @keyframes separator-width {
+                    0% {
+                        width: 0;
+                    }
+                    100% {
+                        width: 100%;
+                    }
+                }
+                .separator--dots {
+                    overflow: visible;
+                    border: 0;
+                }
+                @keyframes dot-move-right {
+                    0% {
+                        left: 0;
+                    }
+                    100% {
+                        left: 32px;
+                    }
+                }
+                @keyframes dot-move-left {
+                    0% {
+                        left: 0;
+                    }
+                    100% {
+                        left: -32px;
+                    }
+                }
+                .separator--dotter {
+                    border: 0;
+                    border-bottom:  5px solid #1a4e8a;  
+                    width: 0;
+                    animation: separator-width 1.5s ease-out forwards infinite;
+                }
+                @media (max-width: 991px) {
+                 .cat-home-img {
+                   width: 100%;
+                 }
+                    .ml11 {
+                        font-size: 2em;
+                    }
+                    .col-cat-home{
+                        width: 31.3%;
+                        height: 200px;
+                    }
+                    .square h2 {
+                        font-size: 20px;
+                        padding: 0 2%;
+                    }
+                    .post-float{
+                        top:0;
+                    }
+                    .col-50 {
+                        width: 100%;
+                    }
+                    #homeMain{
+                        margin-top: 50px;
+                    }
+                }
+                /*Carrousel img*/
+                .slideshow-container-img,
+                .slideshow-container-prod {
+                    overflow: hidden;
+                    position: relative;
+                    z-index: 1;
+                    width: 100%;
+                    height: auto;
+                }
+
+                .slides-brand-img,
+                .slides-brand-img2,
+                .slides-brand-prod {
+                    max-width: 100%;
+                    position: relative;
+                    margin: auto;
+                    margin-right: calc(50% - 50vw);
+                    margin-left: calc(50% - 50vw);
+                    height: auto;
+                    color: #000;
+                    padding: 1.5% 0;
+                    cursor: pointer;
+                    display: none;
+                }
+                .activedot{
+                    background-color: #1a4e8a !important;
+                }
+
+                /*Carrousel Prod*/
+                /* Next & previous buttons */
+                .prev, .next {
+                    cursor: pointer;
+                    position: absolute;
+                    top: 50%;
+                    width: auto;
+                    padding: 16px;
+                    margin-top: -22px;
+                    color: #1a4e8a;
+                    font-weight: bold;
+                    font-size: 30px;
+                    transition: 0.6s ease;
+                    border-radius: 0 3px 3px 0;
+                    user-select: none;
+                }
+                /* The dots/bullets/indicators */
+                .dot-img {
+                    height: 10px;
+                    width: 10px;
+                    margin: 0 2px;
+                    background-color: #fff;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+                .dot-img2 {
+                    height: 10px;
+                    width: 10px;
+                    margin: 0 2px;
+                    background-color: #daeaf4;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+                /* The dots/bullets/indicators */
+                .product-d {
+                    height: 10px;
+                    width: 10px;
+                    margin: 40px 2px;
+                    background-color: #daeaf4;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                }
+                #carruselMobile{
+                    margin-top: -27px;
+                    padding: 25px 0;
+                }
+                /*Sticky Bar*/
+                .slideshow-container {
+                    overflow: hidden;
+                    position: fixed;
+                    top: 166px;
+                    left: 0;
+                    z-index: 2;
+                    width: 100%;
+                    height: auto;
+                }
+                .txt-white{
+                    color: #fff;
+                    font-size: 15px;
+                    padding:0;
+                    position: absolute;
+                    bottom: 12px;
+                    width: 100%;
+                    text-align: center;
+                }
+                .slides_brand_text {
+                    max-width: 100%;
+                    position: relative;
+                    margin: auto;
+                    margin-right: calc(50% - 50vw);
+                    margin-left: calc(50% - 50vw);
+                    height: auto;
+                    color: #000;
+                    padding: 1.5% 0;
+                    cursor: pointer;
+                    display: none;
+                }
+
+                /* Caption text */
+                .text {
+                    color: #000;
+                    font-size: 16px;
+                    padding:0;
+                    position: absolute;
+                    bottom: 12px;
+                    width: 100%;
+                    text-align: center;
+                }
+                /* The dots/bullets/indicators */
+                .dot {
+                    height: 10px;
+                    width: 10px;
+                    margin: 0 2px;
+                    background-color: #bbb;
+                    border-radius: 50%;
+                    display: inline-block;
+                    transition: background-color 0.6s ease;
+                    display: none;
+                }
+
+                /* Fading animation */
+                .fade {
+                    -webkit-animation-name: fade;
+                    -webkit-animation-duration: 1.5s;
+                    animation-name: fade;
+                    animation-duration: 1.5s;
+                }
+
+                .bg_azul {
+                    background-color: #EBF0FD;
+                }
+                .bg_rosa {
+                    background: #ee7676;
+                }
+
+                .slides_brand_text{
+                    color:#000;
+                }
+                .link-slide{
+                    font-size: 16px;
+                    cursor: pointer;
+                }
+                @-webkit-keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+                }
+
+                @keyframes fade {
+                from {opacity: .4} 
+                to {opacity: 1}
+                }
+
+                /* On smaller screens, decrease text size */
+                @media only screen and (max-width: 300px) {
+                    .text {font-size: 15px;margin-top: 5%;}
+                }
+
+                @media (max-width: 991px) { 
+                    .text {
+                        color: #000;
+                        font-size: 18px;
+                        margin-top: 5%;
+                    }
+                    .txt-white {
+                        color: #fff;
+                        font-size: 12px;
+                        padding: 0
+                    }
+                    .slides_brand_text{
+                        height: 20px;
+                    }
+                    .slideshow-container {
+                        top: 60px;
+                    }
+                    .slideshow-container{
+                        padding-top: 3%;
+                        background-color: #EBF0FD;
+                    }
+                }
+                
+                /*Products Carrousel*/
+                .carrousel-products {
+                    width: 100%;
+                    margin: auto;
+                    height: 450px;
+                    overflow:hidden;
+                    text-align: center;
+                    line-height: 1;
+                }
+                .carousel-price {
+                    font: 300 25px/0.5 Effra,Helvetica,Arial,sans-serif;
+                    text-align: center;
+                    font-weight: 900;
+                    color: #000;
+                }
+                .carousel-des {
+                    font-size: 12px;
+                    line-height: 1;
+                    font-family:Effra,Helvetica,Arial,sans-serif ;
+                    color: #000;
+                    padding: 0 5%;
+                }
+                .carosuel-raiting {
+                    color:#1377C9;
+                    margin-top: 2%;
+                    font-size: 22px;
+                }
+
+                /*Star component*/
+                .item-start {
+                    height: auto;
+                    float: left;
+                    color: #fff;
+                    font-size: 40px;
+                    text-align: center;
+                    padding-top: 30px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    transition: 1s all;
+                    overflow: hidden;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+                }
+                .cont {
+                    position: absolute;
+                    width: 1100px;
+                    margin-top: 190px;
+                }
+                .tapa {
+                    width: 100%;
+                    transition: .9s all;
+                    margin-top: -40px;
+                }
+                .item-start img {
+                    width: auto;
+                    margin-top: 20px;
+                    height: 120px;
+                }
+                .item-start:hover {
+                    margin-top: -5px;
+                }
+
+                .container-star {
+                    width: 100%;
+                    overflow: hidden;
+                    display: flex;
+                    margin: 0 auto;
+                    text-align: center;
+                    justify-content: center;
+                }
+                .btn-prod{
+                    background-color:#117dcf;
+                    color: #fff;
+                    text-align: center;
+                    padding: 4px;
+                    margin: 22px 28%;
+                    font-size: 13px;
+                    width: 100px;
+                    text-align: center;
+                    border-radius: 5px;
+                }
+                .btn-banner{
+                    background-color:#117dcf;
+                    color: #fff;
+                    text-align: center;
+                    padding: 10px 5px;
+                    font-size: 23px;
+                    width: 200px;
+                    text-align: center;
+                    border-radius: 5px;
+                    position: absolute;
+                    z-index: 1;
+                    top: 80%;
+                    right: 270px;
+                }
+                .btn-banner:hover{ 
+                    background-color: #002854;
+                }
+                .btn-banner_b{
+                    background-color: #117dcf;
+                    color: #fff;
+                    text-align: center;
+                    padding: 8px 5px;
+                    font-size: 23px;
+                    width: 300px;
+                    text-align: center;
+                    border-radius: 5px;
+                    position: absolute;
+                    z-index: 1;
+                    top: 85%;
+                    left: 55px;
+                    font-weight: 900;
+                }
+                .btn-banner_b:hover{ 
+                    background-color: #002854;
+                }
+                .clip-star {
+                    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+                    display: inline-block;
+                    height: 20px;
+                    width: 20px;
+                    float: left;
+                }
+    
+                .disable {
+                    background: rgb(237, 237, 237);
+                }
+
+                .num-star {
+                    font-size: 15px;
+                    float: left;
+                    margin-left: 2%;
+                }
+                                /*Shine Animation*/
+                .shine {
+                    animation-name: glitter;
+                    animation-iteration-count: infinite;
+                
+                }
+
+                .star-1 {
+                    transform-origin: 102.14px 87.09px;
+                    animation-duration: 3.5s;
+                }
+
+                .star-2 {
+                    transform-origin: 219.47px 205.7px;
+                    animation-duration: 4s;
+                }
+
+                .star-3 {
+                    transform-origin: 404.11px 35.05px;
+                    animation-duration: 2.5s;
+                }
+
+                .star-4 {
+                    transform-origin: 54.43px 393.81px;
+                    animation-duration: 2.5s;
+                }
+
+                .star-5 {
+                    transform-origin: 374.42px 271.34px;
+                    animation-duration: 3s;
+                }
+
+                @keyframes glitter {
+                0% {
+                    -webkit-transform: scale(0.3) rotate(0deg);
+                    opacity: 0;
+                }
+                50% {
+                    -webkit-transform: scale(.8) rotate(360deg);
+                    opacity: .7;
+                }
+                100% {
+                    -webkit-transform: scale(0.3) rotate(0deg);
+                    opacity: 0;
+                }
+                }
+                #shine_animation{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                /*Carrousel Products*/
+                .slider--prod {
+                    background: white;
+                    height: 400px;
+                    margin: auto;
+                    overflow:hidden;
+                    position: relative;
+                    width: 100%;
+                }
+
+                .slider--prod:before,
+                .slider--prod:after{
+                        content: "";
+                        height: 100px;
+                        position: absolute;
+                        width: 200px;
+                        z-index: 2;
+                }
+
+                .slider--prod::after{
+                        right: 0;
+                        top: 0;
+                        transform: rotateZ(180deg);
+                    }
+
+                .slider--prod::before{
+                        left: 0;
+                        top: 0;
+                    }
+                    
+                .slide--track {
+                    animation: scroll 40s linear infinite;
+                    display: flex;
+                    width: calc(250px * 14);
+                }
+                /*.slide--track:hover {
+                    animation: scroll 0s linear infinite;
+                    display: flex;
+                    width: calc(250px * 14);
+                }*/
+                
+                .slide--card {
+                    height: 100px;
+                    width: 250px;
+                }
+
+                @keyframes scroll {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(calc(-250px * 7))}
+                    }
+                .msi-img{
+                    height: 295px;
+                    width: auto;
+                }
+
+            @media (max-width: 991px) {
+                body .header .block-search .minisearch .field.search #search {
+                    margin: 60px 10px 10px 10px !important;
+                }
+                div.tit-collap.active{
+                    background:#fff !important;
+                }
+                .item-start {
+                    width: 100%;
+                    height: auto;
+                    overflow: hidden;
+                }
+                .carrousel-products{
+                    height: auto;
+                }
+                .list-grid .col-2 .items-center {
+                    border: 2px solid #fff;
+                    border-radius: 50%;
+                    width: 120px;
+                    height: 120px; 
+                }
+                div#containerimg.items-center-square{
+                    border: 2px solid #fff;
+                    width: 90px;
+                    height: 90px; 
+                }
+                .img-move{
+                    padding: 5px;
+                    width: 93%;
+                }
+                .nr-aliados{
+                    display: block;
+                    position: absolute;
+                    font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+                    font-weight: 600;
+                }
+                .desktop {
+                    display: none;
+                }
+                .mobile {
+                    display: block;
+                }
+                figure.snip0019 img{
+                    width: 95%;
+                }
+                .item-start img {
+                    height: 120px;
+                    width: auto;
+                }
+                .container-card-big{
+                    padding: 0 5px;
+                }
+                .slides-brand-img, 
+                .slides-brand-img2, 
+                .slides-brand-prod {
+                    padding: 15px;
+                }
+                .categoriestitle{
+                    font-size: 11px;
+                }
+                #carruselMobile{
+                    padding: 0;
+                }
+                .container-card-big p:nth-child(2) {
+                    font-size: 13px;
+                }
+                .btn-banner_b {
+                    padding: 13px 5px;
+                    font-size: 17px;
+                    width: 200px;
+                    top: 85%;
+                    left: 90px;
+                    font-weight: 900;
+                }
+
+            }
+
+            /*countdonw*/
+            .iconsale{
+                    width: 30px;
+                    height: auto;
+                }
+                .container--timer{
+                    color: #002854;
+                    margin: 0 auto;
+                    text-align: center;
+                    line-height: 1;
+                    overflow: hidden;
+                    text-align: center;
+                    justify-content: center;
+                    width: 100%;
+                    padding: 0px;
+                }
+                .ofertitle--main{
+                    margin: 33px 20px 0 20px;
+                    position: relative;
+                    overflow: hidden;
+                    display: block;
+                }
+                .ofertitle--main-m,
+                .ofertitle-m{
+                    display: none;
+                }
+                .ofertitle{
+                    margin: 12px 20px;
+                    position: relative;
+                    overflow: hidden;
+                    height: 50px;
+                    display: block;
+                }
+                .daydiv{
+                    width: 65px;
+                    height: auto;
+                    float: left;
+                    font-size: 35px;
+                    font-weight: 900;
+                    padding: 5px 5px;
+                    margin: 1px;
+                    text-align: center;
+                }
+                .daydiv span {
+                    font-weight: 900;
+                    font-size: 25px;
+                }
+                .timer--complete {
+                    overflow: hidden;
+                    width: 100%;
+                    display: flex;
+                    text-align: center;
+                    justify-content: center;
+                    position: relative;
+                }
+
+                .message {
+                    font-size: 4rem;
+                    display: none;
+                    padding: 1rem;
+                }
+
+                .emoji {
+                    padding: 0 .25rem;
+                }
+                .dots-clock{
+                    font-weight: 900;
+                    margin-top: 20px;
+                    font-size: 30px;
+                }
+                .num-high{
+                    font-weight: 900;
+                    background: #daeaf4;
+                    padding: 10px;
+                    margin: 2% 0;
+                }
+                .text-days{
+                    font-size: 12px;
+                }
+                .hotsaleimg{
+                    width: 80px;
+                    position:absolute;
+                    top: 0;
+                    left: 400px;
+                }
+
+        </style>
+
+<script>
+
+    //<!-- STICKY BAR -->
+    window.onload = function() {
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        /*var slideImgIndex = 1;
+        showSlidesImg(slideImgIndex);*/
+
+        var slideImgIndex2 = 1;
+        showSlidesImg2(slideImgIndex2);
+
+        var slideProdIndex = 1;
+        showSlidesProd(slideProdIndex);
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("slides_brand_text");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            slideIndex++;
+            
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 4000); // Change image every 2 seconds*/
+        }
+
+        /*function showSlidesImg() {
+            var x;
+            var slidesImg = document.getElementsByClassName("slides-brand-img");
+            var dots = document.getElementsByClassName("dot-img");
+            for (x = 0; x < slidesImg.length; x++) {
+                slidesImg[x].style.display = "none";  
+            }
+            slideImgIndex++;
+            
+            if (slideImgIndex > slidesImg.length) {slideImgIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activedot", "");
+            }
+            slidesImg[slideImgIndex-1].style.display = "block";  
+            dots[slideImgIndex-1].className += " activedot";
+            setTimeout(showSlidesImg, 2000); 
+        }*/
+
+
+        function showSlidesProd() {
+            var y;
+            var slidesProd = document.getElementsByClassName("slides-brand-prod");
+            var dotsprod = document.getElementsByClassName("product-d");
+            for (y = 0; y < slidesProd.length; y++) {
+                slidesProd[y].style.display = "none";  
+            }
+            slideProdIndex++;
+            
+            if (slideProdIndex > slidesProd.length) {slideProdIndex = 1}    
+            for (i = 0; i < dotsprod.length; i++) {
+                dotsprod[i].className = dotsprod[i].className.replace(" activedot", "");
+            }
+            slidesProd[slideProdIndex-1].style.display = "block";  
+            dotsprod[slideProdIndex-1].className += " activedot";
+            setTimeout(showSlidesProd, 3000); 
+        }
+
+        function showSlidesImg2() {
+            var l;
+            var slidesImg2 = document.getElementsByClassName("slides-brand-img2");
+            var dots = document.getElementsByClassName("dot-img2");
+            for (l = 0; l < slidesImg2.length; l++) {
+                slidesImg2[l].style.display = "none";  
+            }
+            slideImgIndex2++;
+            
+            if (slideImgIndex2 > slidesImg2.length) {slideImgIndex2 = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" activedot", "");
+            }
+            slidesImg2[slideImgIndex2-1].style.display = "block";  
+            dots[slideImgIndex2-1].className += " activedot";
+            setTimeout(showSlidesImg2, 2000); // Change image every 2 seconds*/
+        }
+    }
+    
+        document.addEventListener("click", function(event){
+            var elementSlide = event.target.id;
+            if (event.target.id === 'text-slide1') {
+                    document.getElementById(elementSlide).style.display = "none";
+                    document.getElementById('text-slide2').style.display = "block";
+                }
+                else if (event.target.id === 'text-slide2') {
+                    document.getElementById(elementSlide).style.display = "none";
+                    document.getElementById('text-slide3').style.display = "block";
+                }
+                else if (event.target.id === 'text-slide3') {
+                    document.getElementById(elementSlide).style.display = "none";
+                    document.getElementById('text-slide4').style.display = "block";
+                }
+                else if (event.target.id === 'text-slide4') {
+                    document.getElementById(elementSlide).style.display = "none";
+                    document.getElementById('text-slide1').style.display = "block";
+                }
+        })
+
+        document.addEventListener('scroll', function (event) { 
+
+           console.log("s",window.scrollY)
+            if ( screen.width > 768 ) 
+                {
+                    var sticky = document.getElementById('stickyBar');
+                        if( window.scrollY > 27 ) {
+                            sticky.style.top="57px";
+                        }
+                        else if (window.scrollY === 0 ) {
+                            sticky.style.top="167px";
+                        }
+                }
+        })
+    </script>
+
+    <!-- Oferta Counter -->
+<script>
+    (function () {
+        const second = 1000,
+                minute = second * 60,
+                hour = minute * 60,
+                day = hour * 24;
+
+        let birthday = "May 23, 2021 00:00:00",
+            countDown = new Date(birthday).getTime(),
+            x = setInterval(function() {    
+
+                let now = new Date().getTime(),
+                    distance = countDown - now;
+
+                document.getElementById("days").innerText = Math.floor(distance / (day)),
+                document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                //do something later when date is reached
+                if (distance < 0) {
+                let headline = document.getElementById("headline"),
+                    countdown = document.getElementById("countdown"),
+                    content = document.getElementById("contentcomment");
+
+                headline.innerText = "Oferta lista";
+                countdown.style.display = "none";
+                content.style.display = "block";
+
+                clearInterval(x);
+                }
+                //seconds
+            }, 0)
+        }());
+    </script>
+
+</header>
+   
+<html>
+    <body>
+<!-- STICKY BAR -->
+<section>
+    <div id="stickyBar" class="slideshow-container">
+        <div id="text-slide1" class="slides_brand_text bg_azul fade">
+                <div id="text-slide1" class="text">sigue cuidándote #QuédateEnCasa  <a href="https://www.bedbathandbeyond.com.mx/quedate-en-casa.html" target="_self" style="text-decoration:none"><span style="text-decoration: underline;">ver más </span></a></div>
+        </div>
+        <div id="text-slide2" class="slides_brand_text bg_azul fade">
+            <div id="text-slide2" class="text">envío GRATIS en pedidos mayores a $599 </div>
+        </div>
+
+        <div id="text-slide3" class="slides_brand_text bg_azul fade">
+            <div id="text-slide3" class="text">devoluciones GRATUITAS</div>
+        </div>
+    </div>
+
+    <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+    </div>
+</section>
+<!-- FIN STICKY BAR -->
+
+<!-- ENTREGA SEGURA Y CITA VIP -->
+<section id="homeMain">
+    <div class="flex-container column-m">
+        <div class="col-50">
+            <a href="https://www.bedbathandbeyond.com.mx/compra-en-linea-recoge-en-tienda">
+                <div class="square textarea" >
+                    <h2>¡entrega segura y sin contacto!</h2>
+                    <span>
+                        <img src="/media/wysiwyg/home-2/curbside.jpg" alt="compra en linea recoge en tienda Bed Bath & Beyond""/>
+                    </span>
+                </div>
+                <div class="text-square">
+                    <p>Compra en línea y recoge en tienda</p>
+                    <span class="call-to"><span style="color:#1377C9;font-weight:600">Consulta aquí</span></span>
+                </div>
+            </a>
+        </div>
+        <div class="col-50">
+            <a href="https://www.bedbathandbeyond.com.mx/seccion-de-compras-vip">
+                <div class="square">
+                    <h2>¡agenda tu cita VIP!</h2>
+                    <span>
+                        <img src="/media/wysiwyg/home-2/agenda-tu-cita.jpg" alt="agenda tu cita Bed Bath & Beyond"">
+                    </span>
+                </div>
+            <div class="text-square">
+                <p>Agenda tu cita</p>
+                <span class="call-to"><span style="color:#1377C9;font-weight:600">
+                Reserva aquí
+                </span>
+            </div>
+            </a>
+        </div>
+    </div>
+</section>
+<!--ZONA OUTLET-->
+<section>
+    <a href="https://www.bedbathandbeyond.com.mx/liquidacion.html">
+        <div class="banner-img desktop figure">
+            <img src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-outlet2_10_may.jpg" alt="Zona Outlet BedBathandBeyond">
+        </div>
+        <div class="banner-img mobile" style="display: none;"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-outlet2-mobile-10-may.jpg?rand=1620665115" alt="Zona Outlet BedBathandBeyond">
+        </div>
+    </a>
+</section>  
+<!-- HOTSALE -->
+<section>
+    <div class="container--timer">
+        <h3 class="ofertitle--main-m"><span style="margin-top: 25px;"><img src="https://assets.hotsale.com.mx/public/hotsale-mx/imgs/hot-sale-2021.svg" class="hotsaleimg pulse" alt="hotsale Bed Bath & Beyond" /> inicia en:</span></h3>
+        <div class="timer--complete">
+            <img src="https://assets.hotsale.com.mx/public/hotsale-mx/imgs/hot-sale-2021.svg" class="hotsaleimg pulse" alt="hotsale Bed Bath & Beyond" />
+            <h3 class="ofertitle--main"><span style="margin-top: 25px;"> inicia en:</span></h3>
+            <div class="daydiv"><p id="days" class="num-high"></p><p class="text-days">días</p></div> <span class="dots-clock">:</span>
+            <div class="daydiv"><p id="hours" class="num-high"></p><p class="text-days">horas</p></div> <span class="dots-clock">:</span>
+            <div class="daydiv"><p id="minutes" class="num-high"></p><p class="text-days">minutos</p></div><span class="dots-clock">:</span>
+            <div class="daydiv"><p id="seconds" class="num-high"></p><p class="text-days">segundos</p></div>
+        </div>
+        <div class="message">
+            <div id="contentcomment">
+                <span class="emoji">:)</span>
+                <span class="emoji">:)</span>
+                <span class="emoji">:)</span>
+            </div>
+        </div>
+    </div>
+</section>
+<!--HAVEN-->
+<section>
+    <a href="https://www.bedbathandbeyond.com.mx/haven">
+        <div class="banner-img desktop figure">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Haven/home/haven-top-bannerdesktop.jpg?rand=1620423757" alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+        </div>
+        <div class="banner-img mobile" style="display: none;"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Haven/home/banner-top-home-mobile-haven.jpg?rand=1620397002" alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+        </div>
+    </a>
+</section>     
+<!-- CATEGORIAS HAVEN-->
+<section>
+    <div class="content-inline-flex">
+        <ul class="list-grid">
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/haven/tollas.html">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center-square">
+                            <img class="holdImg" alt="haven"
+                            srcset="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-toallas-de-algodon.jpg"
+                            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-toallas-de-algodon.jpg" 
+                            alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+                        </div>
+                        <p class="categoriestitle">toallas de algodón orgánico</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/haven/tapetes.html">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center-square">
+                            <img class="holdImg" alt="haven"
+                            srcset="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-tapetes.jpg"
+                            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-tapetes.jpg" 
+                            alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+                        </div>
+                        <p class="categoriestitle">tapetes</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/haven/cortinas.html">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center-square">
+                            <img class="holdImg" alt="haven"
+                            srcset="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-cortinas.jpg"
+                            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-cortinas.jpg"
+                            alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+                        </div>
+                        <p class="categoriestitle">cortinas</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/haven/batas-y-pantunflas.html">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center-square">
+                            <img class="holdImg" alt="haven"
+                            srcset="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-batas-pantuflas.jpg"
+                            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-batas-pantuflas.jpg"
+                            alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+                        </div>
+                        <p class="categoriestitle">batas y pantuflas</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/haven/accesorios.html">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center-square">
+                            <img class="holdImg" alt="haven"
+                            srcset="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-accesorios.jpg"
+                            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-accesorios.jpg"
+                            alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+                        </div>
+                        <p class="categoriestitle">accesorios</p>
+                    </div>
+                </a>
+            </li>
+            <li class="col-2">
+                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/marcas/haven/muebles.html">
+                    <div class="inner-anchor">
+                        <div id="containerimg" class="items-center-square">
+                            <img class="holdImg" alt="haven"
+                            srcset="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-muebles.jpg"
+                            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-muebles.jpg"
+                            alt="Escapate spa Haven tranquilidad descanso BedBathandBeyond">
+                        </div>
+                        <p class="categoriestitle">muebles</p>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</section>
+<!-- HAVEN BLOG-->
+<section>
+    <div class="component-twoelements bg-verde-strong" style="overflow:hidden;height:auto;margin-top: -45px;">
+        <div>
+            <div>
+                <div class="container-slideimg">
+                    <div class="div-imgslide col-48" style="position: relative;">
+                        <a href="https://www.bedbathandbeyond.com.mx/transforma-tu-ba-o-con-haven" target="_self">
+                            <img class="img-move" src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Haven/blog/tu-ritual-diario.jpg?rand=1620397561" alt="Haven Ritual Diario">
+                            <div class="container-card-big">
+                                <p style="color: #fff;font-weight: 900;"> Tu ritual diario será perfecto</p>
+                                <p style="color: #fff;">Conoce toda nuestra colección que te ayudará a relajarte y recargar energías</p>
+                            </div>
+                        </a>
+                        <!-- Animation Candel-->
+                        <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+                            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+                            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+                            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+                            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+                            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+                            <!--<circle class="cls-2" cx="404.11" cy="35.05" r="3.5"/><circle class="cls-2" cx="374.42" cy="271.34" r="3.5"/><circle class="cls-2" cx="219.47" cy="205.7" r="3.5"/><circle class="cls-2" cx="102.14" cy="87.09" r="3.5"/><circle class="cls-2" cx="54.43" cy="393.81" r="3.5"/>-->
+                                </g>
+                        </svg>
+                    </div>
+                    <div  class="div-imgslide col-48" style="position: relative;">
+                        <a href="https://www.bedbathandbeyond.com.mx/lleva-el-spa-a-tu-hogar-con-haven" target="_self">  
+                            <img class="img-move" src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Haven/home/disfruta-spa-en-casa.jpg?rand=1620398178" alt="Haven Spa en casa">
+                            <div class="container-card-big">
+                                <p style="color: #fff;font-weight: 900;">Disfruta de un spa en casa</p>
+                                <p style="color: #fff;">Relajantes ideas para transformar tu baño en un oasis de serenidad</p>
+                            </div>
+                        </a>
+                        <!-- Animation Candel-->
+                        <svg id="shine_animation" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 439.16 448.24" width="300px"><defs><style>.cls-1{fill:#fff;}.cls-2{fill:red;}</style></defs><title>shine</title><g id="OBJECTS">
+                            <polygon class="cls-1 shine star-1" points="106.77 89.07 163.5 87.09 106.77 85.11 128.64 60.59 104.12 82.46 102.14 25.73 100.16 82.46 75.64 60.59 97.5 85.11 40.77 87.09 97.5 89.07 75.64 113.59 100.16 91.72 102.14 148.45 104.12 91.73 128.64 113.59 106.77 89.07"/>
+                            <polygon class="cls-1 shine star-2" points="224.25 207.06 263.15 205.7 224.62 204.36 243.03 193.17 222.85 202.47 233.02 182.72 220.83 200.93 219.47 162.02 218.13 200.56 206.94 182.15 216.24 202.32 196.49 192.16 214.7 204.34 175.79 205.7 214.33 207.05 195.92 218.24 216.09 208.94 205.93 228.69 218.12 210.47 219.47 249.38 220.82 210.85 232.01 229.25 222.71 209.08 242.46 219.25 224.25 207.06"/>
+                            <polygon class="cls-1 shine star-3" points="409.06 36.1 439.15 35.05 408.24 33.97 423 24.99 407.79 32 420.82 6.69 405.16 30.09 404.11 0 403.03 30.92 394.05 16.15 401.07 31.36 375.76 18.34 399.16 33.99 369.06 35.05 399.98 36.13 385.21 45.1 400.43 38.09 387.4 63.4 403.06 40 404.11 70.09 405.19 39.17 414.17 53.94 407.15 38.73 432.46 51.76 409.06 36.1"/>
+                            <polygon class="cls-1 shine star-4" points="62.12 395.44 108.85 393.81 60.84 392.13 83.77 378.19 60.14 389.09 80.38 349.78 56.06 386.12 54.43 339.38 52.75 387.4 38.81 364.47 49.7 388.1 10.39 367.86 46.74 392.18 0 393.81 48.01 395.49 25.08 409.43 48.71 398.54 28.48 437.84 52.79 401.5 54.43 448.24 56.1 400.23 70.04 423.16 59.15 399.53 98.46 419.76 62.12 395.44"/>
+                            <polygon class="cls-1 shine star-5" points="376.66 272.3 404.11 271.34 376.66 270.38 387.24 258.52 375.38 269.1 374.42 241.65 373.46 269.1 361.6 258.52 372.18 270.38 344.73 271.34 372.18 272.3 361.6 284.17 373.46 273.59 374.42 301.03 375.38 273.59 387.24 284.17 376.66 272.3"/>
+                            <!--<circle class="cls-2" cx="404.11" cy="35.05" r="3.5"/><circle class="cls-2" cx="374.42" cy="271.34" r="3.5"/><circle class="cls-2" cx="219.47" cy="205.7" r="3.5"/><circle class="cls-2" cx="102.14" cy="87.09" r="3.5"/><circle class="cls-2" cx="54.43" cy="393.81" r="3.5"/>-->
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+<!-- Banner Nestwell -->
+<section>
+    <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html">
+        <div class="banner-img desktop figure"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Nestwell/banner-top-nestwel-erika-zaba.jpg?rand=1620857695" alt="nestwell Erika Zaba Bed Bath & Beyond">
+            <div class="btn-banner_b">¡conoce la colección!</div>
+            
+        </div>
+        <div class="banner-img mobile figure" style="display: none;"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Nestwell/banner-top-mobile-nestwell-erika.jpg?rand=1620857695" alt="nestwell Erika Zaba Bed Bath & Beyond">
+            <div class="btn-banner_b">¡conoce la colección!</div>
+        </div>
+    </a>
+</section>
+
+<!-- TOP PRODUCTS ORGANIZATION -->
+<section>
+    <h2 class="title-font">
+        <span style="font-size: 40px;">top productos organización</span>
+    </h2>
+
+    <div class="slider--prod">
+        <div class="slide--track">
+            <!-- Product 1 -->
+            <div class="slide--card">
+                <div class="item-start">
+                    <div id="heart"></div>
+                    <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-para-alimentos-oxo-good-gripsr-pop-20-piezas.html" target="_self">
+                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/316282268853907p?$imagePLP$&hei=300&wid=260">
+                    <p class="carousel-price">$4,999.00</p>
+                    <p class="carousel-des">Set de contenedores para alimentos OXO Good Grips® POP, 20 piezas</p>
+                    <p class="carousel-des">SKU#:68853907</p>
+                    <div class="container-star">
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star disable"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                    <div class="btn-prod">ver ahora</div>
+                    </a>
+                </div>
+            </div>
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-tritan-para-alimentos-rubbermaidr-brilliancetm-22-piezas.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/93386047067240p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$1,039.00</p>
+                        <p class="carousel-des">Set de contenedores Rubbermaid® Brilliance™, 22 piezas</p>
+                        <p class="carousel-des">SKU#:47067240</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide--card">
+            <!-- Product 4 -->
+            <div class="slide--card">
+                <div class="item-start">
+                    <div id="heart"></div>
+                    <a href="https://www.bedbathandbeyond.com.mx/zapatera-de-metal-madera-de-3-niveles.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/8891214891005p?$imagePLP$&hei=700&wid=700">
+                    <p class="carousel-price">$739.00</p>
+                    <p class="carousel-des">Zapatera de metal/madera de 3 niveles</p>
+                    <p class="carousel-des">SKU#:14891005</p>
+                    <div class="container-star">
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                    <div class="btn-prod">ver ahora</div>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="slide--card">
+            <!-- Product 3 -->
+            <div class="slide--card">
+                <div class="item-start">
+                    <div id="heart"></div>
+                    <a href="https://www.bedbathandbeyond.com.mx/bolsa-reutilizable-para-alimentos-68996314.html" target="_self">
+                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/314923668996314p?$imagePLP$&hei=700&wid=700">
+                    <p class="carousel-price">$499.00</p>
+                    <p class="carousel-des">Bolsa reutilizable para alimentos Stasher de 1.65 L</p>
+                    <p class="carousel-des">SKU#:68996314</p>
+                    <div class="container-star">
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                    </div>
+                    <div class="btn-prod">ver ahora</div>
+                    </a>
+                </div>
+            </div>
+            </div>
+            <div class="slide--card">
+            <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/escurridor-para-trastes-de-acero-inoxidable-simplehumanr-compact-color-gris69581126.html" target="_self">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-05-28-04-44_838810021751_imageset?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$1,699.00</p>
+                        <p class="carousel-des">Escurridor para platos simplehuman® Compact color gris</p>
+                        <p class="carousel-des">SKU#:69581126</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-para-alimentos-oxo-good-gripsr-pop-color-blanco-6-piezas.html" target="_self">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/378106669536208p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$1,229.00</p>
+                        <p class="carousel-des">Set de contenedores para alimentos OXO Good Grips® POP, 6 piezas en blanco</p>
+                        <p class="carousel-des">SKU#:69536208</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/organizador-chico-e-z-do-de-tela-texturizada-en-gris.html" target="_self">
+                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-05-14-23-39_20753185175_3_imageset?$imagePLP$&hei=300&wid=260">
+                        <p class="carousel-price">$219.00</p>
+                        <p class="carousel-des">Organizador chico E-Z Do de tela texturizada en gris</p>
+                        <p class="carousel-des">SKU#:64577418</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/contenedor-de-plastico-para-ba-o-idesignr-grande.html" target="_self">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/145536663072655p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$469.00</p>
+                        <p class="carousel-des">Contenedor de plástico grande iDesign® para baño</p>
+                        <p class="carousel-des">SKU#:63072655</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-para-alimentos-oxo-good-gripsr-pop-10-piezas.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/171272664811529p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$2,879.00</p>
+                        <p class="carousel-des">Set de contenedores para alimentos, POP Good Grips® OXO 10 piezas</p>
+                        <p class="carousel-des">SKU#:64811529</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/bolsa-de-almacenamiento-de-alimentos-reutilizable-stasher-3-07-l-69616370.html" target="_self">
+                        <img src="http://s7d1.scene7.com/is/image/BedBathandBeyond/2020-08-07-18-46_stsul01_su_mega_clear_1_imageset?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$669.00</p>
+                        <p class="carousel-des">Bolsa de almacenamiento de alimentos reutilizable Stasher 3.07 L</p>
+                        <p class="carousel-des">SKU#:69616370</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/especiero-olde-thompsonr-giratorio-con-20-frascos.html" target="_self">
+                        <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/21248257162.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$2,599.00</p>
+                        <p class="carousel-des">Especiero Olde Thompson®, giratorio con 20 frascos</p>
+                        <p class="carousel-des">SKU#:47065598</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/contenedores-de-acrilico-oggitm-set-de-5.html" target="_self">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/3954513572526p?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$579.00</p>
+                        <p class="carousel-des">Contenedores de acrílico Oggi™, Set de 5</p>
+                        <p class="carousel-des">SKU#:13572526</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Promotions three columns -->
+<section id="promotions" class="bg-blue-strong" style="padding: 20px 0;">
+    <h2 class="title-font">
+        <span style="color: #fff;font-weight: 600;font-size:40px;">decoración para tu hogar</span>
+    </h2>
+    <div class="content-inline-flexb desktop">
+        <div class="col-3">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/muebles/muebles-para-el-hogar/sillas-bancos-y-sillones.html" target="_self">
+                <figure class="snip0020"> 
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancos-11-may.jpg?rand=1620748421" alt="Bancos y sillas Bed Bath & Beyond" />		
+                </figure>
+            </a>
+        </div>
+        <div class="col-3">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar/difusores-y-aceites-esenciales.html" target="_self">
+                <figure class="snip0020">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/difusores-11-may.jpg?rand=1620748421" alt="Difusores Bed Bath & Beyond" />		
+                </figure>
+            </a>	
+        </div>
+        <div class="col-3">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar/cortinas-y-accesorios-para-ventanas.html" target="_self">
+                <figure class="snip0020">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/cortinas-11-may.jpg?rand=1620748421" alt="Cortinas Bed Bath & Beyond" />		
+                </figure>
+            </a>	
+        </div>
+    </div>
+    
+    <!--- Carrousel mobile -->
+    <div id="carruselMobile" class="mobile">
+        <div class="slideshow-container-img mobile">
+            <div id="prod-slide4" class="slides-brand-prod">
+                <div class="col-3">
+                    <a href="https://www.bedbathandbeyond.com.mx/productos/muebles/muebles-para-el-hogar/sillas-bancos-y-sillones.html" target="_self">
+                        <figure class="snip0020"> 
+                            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bancos-11-may.jpg?rand=1620748421" alt="Bancos y sillas Bed Bath & Beyond" />		
+                        </figure>
+                    </a>
+                </div>
+            </div>
+            <div id="prod-slide5" class="slides-brand-prod">
+                <div class="col-3">
+                    <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar/difusores-y-aceites-esenciales.html" target="_self">
+                        <figure class="snip0020">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/difusores-11-may.jpg?rand=1620748421" alt="Difusores Bed Bath & Beyond" />		
+                        </figure>
+                    </a>	
+                </div>
+            </div>
+
+            <div id="prod-slide6" class="slides-brand-prod">
+                <div class="col-3">
+                    <a href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar/cortinas-y-accesorios-para-ventanas.html" target="_self">
+                        <figure class="snip0020">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/cortinas-11-may.jpg?rand=1620748421" alt="Cortinas Bed Bath & Beyond" />		
+                        </figure>
+                    </a>	
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align:center" class="mobile">
+            <span class="product-d"></span> 
+            <span class="product-d"></span> 
+            <span class="product-d"></span> 
+        </div>
+        </div>
+</section>
+<!-- Jardin-->
+<section>
+    <a href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/decoracion-de-jardin-y-exteriores.html">
+        <div class="banner-img desktop figure"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-outdoor-desk-11-may.jpg?rand=1620748421" alt="Jardines y exteriores Bed Bath & Beyond">
+            <div class="btn-banner">¡quiero ver más!</div>
+        </div>
+        <div class="banner-img mobile figure" style="display: none;"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mobile-outdoor-11-may.jpg?rand=1620748421" alt="Jardines y exterioresBed Bath & Beyond">
+        </div>
+    </a>
+</section>
+
+<!-- TOP PRODUCTS VENTILADORES -->
+<section>
+    <h2 class="title-font">
+        <span style="font-size: 40px;">ventiladores</span>
+    </h2>
+
+    <div class="slider--prod">
+        <div class="slide--track">
+            <!-- Product 1 -->
+            <div class="slide--card">
+                <div class="item-start">
+                    <div id="heart"></div>
+                    <a href="https://www.bedbathandbeyond.com.mx/aire-acondicionado-portatil-lg-de-14000-btus-color-negro-69686595.html" target="_self">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69686595_1.jpg?$imagePLP$&hei=700&wid=700">
+                    <p class="carousel-price">$12,999.00</p>
+                    <p class="carousel-des">Aire acondicionado portátil LG de 14000 BTUs</p>
+                    <p class="carousel-des">SKU#:69686595</p>
+                    <div class="container-star">
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star enable"></div>
+                        <div class="clip-star disable"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                    <div class="btn-prod">ver ahora</div>
+                    </a>
+                </div>
+            </div>
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/aire-acondicionado-portatil-lg-de-10200-btus-color-blanco-69686598.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69686598.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$8,999.00</p>
+                        <p class="carousel-des">Aire acondicionado portátil LG color blanco</p>
+                        <p class="carousel-des">SKU#:69686598</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/aire-acondicionado-portatil-carrier-de-12000-btus-69686596.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69686596.jpg?$imagePLP$&hei=700&wid=7000">
+                        <p class="carousel-price">$10,599.00</p>
+                        <p class="carousel-des">Aire acondicionado portátil Carrier</p>
+                        <p class="carousel-des">SKU#:69686596</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-pedestal-taurus-3-en-1-69645283.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69645283.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$1,799.00</p>
+                        <p class="carousel-des">Ventilador de pedestal Taurus 3 en 1 en blanco</p>
+                        <p class="carousel-des">SKU#:69645283</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-pedestal-taurus-69645282.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69645282.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$1,109.00</p>
+                        <p class="carousel-des">Ventilador de pedestal Taurus Turbo cycle en negro</p>
+                        <p class="carousel-des">SKU#:69645282</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-escritorio-taurus-69645281.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69645281.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$449.00</p>
+                        <p class="carousel-des">Ventilador de escritorio Taurus Oasis en negro</p>
+                        <p class="carousel-des">SKU#:69645281</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/mini-ventilador-taurus-69645279.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69645279.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$149.00</p>
+                        <p class="carousel-des">Mini ventilador Taurus de 2 velocidades en negro</p>
+                        <p class="carousel-des">SKU#:69645279</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-pedestal-silent-power-69645280.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69645280.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$899.00</p>
+                        <p class="carousel-des">Ventilador de pedestal Taurus Silent Power en negro</p>
+                        <p class="carousel-des">SKU#:69645280</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-circulador-de-aire-turbo-force-64754468.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/92926209001.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$679.00</p>
+                        <p class="carousel-des">Ventilador/Circulador de aire Honeywell® Turbo Force</p>
+                        <p class="carousel-des">SKU#:64754468</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-torre-quietset-honeywell-en-blanco.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/61071162.PNG?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$2,399.00</p>
+                        <p class="carousel-des">Ventilador de torre QuietSet Honeywell en blanco</p>
+                        <p class="carousel-des">SKU#:61071162</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-mesa-silencioso-honeywell-69648465.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69648465.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$1,499.00</p>
+                        <p class="carousel-des">Ventilador de mesa silencioso Honeywell®</p>
+                        <p class="carousel-des">SKU#:69648465</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="slide--card">
+                <!-- Product 2 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <div id="heart"></div>
+                        <a href="https://www.bedbathandbeyond.com.mx/ventilador-de-torre-honeywell-69648466.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69648466.jpg?$imagePLP$&hei=700&wid=700">
+                        <p class="carousel-price">$2,849.00</p>
+                        <p class="carousel-des">Ventilador de torre Honeywell®</p>
+                        <p class="carousel-des">SKU#:69648466</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        <div class="btn-prod">ver ahora</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Top productos descuentos-->
+<section>
+    <a href="https://www.bedbathandbeyond.com.mx/tienda/door-busters.html">
+        <div class="banner-img desktop figure"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-door-10-may.jpg?rand=1620665115" alt="Vas a dejar pasar este precio  Bed Bath & Beyond">
+        </div>
+        <div class="banner-img mobile figure" style="display: none;"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mobile-door-10-may.jpg?rand=1620665115" alt="Vas a dejar pasar este precio  Bed Bath & Beyond">
+        </div>
+    </a>
+</section>
+
+    <!-- Promotions three columns COVID, MAMA , ALIADOS-->
+    <section id="promotions">
+        <div class="content-inline-flexb desktop">
+            <div class="col-3">
+                <a href="https://www.bedbathandbeyond.com.mx/quedate-en-casa.html" target="_self">
+                    <figure class="snip0020"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/quedate-en-casa-10-may.jpg?rand=1620401546" alt="Seguir cuiadandote producto COVID Bed Bath & Beyond" />		
+                    </figure>
+                </a>
+            </div>
+            <div class="col-3">
+                <figure class="snip0020">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/citibanamex-17-may.jpg?rand=1621264354" alt="13 meses sin intereses" class="msi-img" />		
+                </figure>
+            </div>
+            <div class="col-3">
+                <a href="https://www.officemax.com.mx/" target="_self">
+                    <figure class="snip0020">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/omax-10-may.jpg?rand=1620401546" alt="nuestros aliados officemax Bed Bath & Beyond" />		
+                        <div class="nr-aliados"><p style="color:#1a4e8a;margin-top:-260px;font-weight:900;font-size:28px;text-align-last: center;">nuestros aliados</p></div>
+                    </figure>
+                </a>	
+            </div>
+        </div>
+        
+        <!--- Carrousel mobile -->
+        <div id="carruselMobile" class="mobile">
+            <div class="slideshow-container-img mobile">
+                <div id="img-slide1" class="slides-brand-img2">
+                    <div class="col-3">
+                        <a href="https://www.bedbathandbeyond.com.mx/quedate-en-casa.html" target="_self">
+                            <figure class="snip0020"> 
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/quedate-en-casa-10-may.jpg?rand=1620401546" alt="Seguir cuiadandote producto COVID Bed Bath & Beyond" />		
+                            </figure>
+                        </a>
+                    </div>
+                </div>
+                <div id="img-slide2" class="slides-brand-img2">
+                    <div class="col-3">
+                            <figure class="snip0020">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/citibanamex-17-may.jpg?rand=1621264354" alt="13 meses sin intereses" class="msi-img" />		
+                            </figure>
+                    </div>
+                </div>
+
+                <div id="img-slide3" class="slides-brand-img2">
+                    <div class="col-3">
+                        <a href="https://www.officemax.com.mx/" target="_self">
+                            <figure class="snip0020">
+                                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/omax-10-may.jpg?rand=1620401546" alt="nuestros aliados officemax Bed Bath & Beyond" />		
+                                <div class="nr-aliados">
+                                    <p style="color:#1a4e8a;margin-top:-260px;font-weight:600;font-size:28px;">nuestros aliados</p>
+                                </div>
+                            </figure>
+                        </a>	
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align:center" class="mobile">
+                <span class="dot-img2"></span> 
+                <span class="dot-img2"></span> 
+                <span class="dot-img2"></span> 
+            </div>
+            </div>
+    </section>
+
+    
+    <!--  Estamos para ayudarte -->
+    <section>
+        <h2 class="title-font">
+            <span>estamos para ayudarte</span>
+        </h2>
+    <div class="conten-scroll">
+        <div class="content-inline-flex scrolled three">
+            <div class="product-card col-33">
+                <a href="https://www.bedbathandbeyond.com.mx/mesa-de-regalos/mas-informacion.html">
+                <img class="holdImg"
+                    src="/media/wysiwyg/home-2/mesa-de-regalos.jpg"
+                    style="--aspect-height:400;--aspect-width:400" 
+                    alt="Estamos para ayudarte Bed Bath & Beyond"/>
+                <div class="card-info">
+                    <p class="product-p-bold">mesa de regalo</p>
+                    <p class="card-description">un regalo para cada ocasión</p>
+                </div>
+                </a>
+            </div>
+        <div class="product-card col-33">
+            <a href="https://www.bedbathandbeyond.com.mx/igualacion-de-precios">
+                <img class="holdImg"
+                src="/media/wysiwyg/home-2/igualamos-precio.jpg"
+                style="--aspect-height:400;--aspect-width:400" />
+            <div class="card-info">
+                <p class="product-p-bold">igualamos precio</p>
+                <p class="card-description">¿encontraste un precio más bajo? ¡te lo igualamos!</p>
+            </div>
+            </a>
+        </div>
+        <div class="product-card col-33">
+            <a href="https://www.bedbathandbeyond.com.mx/seccion-de-compras-vip">
+                <img class="holdImg"
+                src="/media/wysiwyg/home-2/whats.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                        <div class="card-info">
+                            <p class="product-p-bold">contáctanos por whatsapp</p>
+                            <p class="card-description">encúentra el número de tu tienda más cercana aquí</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Widget Barrillance Recomendado para ti -->           
+<div id="wbarrillance" class="widget-barilliance"></div>
+
+    <!-- Categorias -->
+    <section>
+        <div>
+            <h2 class="title-font">
+                <span>categorías</span>
+            </h2>
+            <div class="content-inline-flex column">
+                <ul class="list-grid">
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/Bedding.jpg">
+                                </div>
+                                <p class="categoriestitle">recámara</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/kitchen10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">cocina</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/bath10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">baño</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/decoracion-categorias.jpg">
+                                </div>
+                                <p class="categoriestitle">decoración</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/health-_-beauty10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">cuidado personal</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/Curtains-_-window.jpg">
+                                </div>
+                                <p class="categoriestitle">decoración del Hogar</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="list-grid">
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/smart-home10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">mascotas, viajes y más</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/muebles/muebles-para-el-hogar.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/furniture10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">muebles</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/storage-_-org10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">organización y limpieza</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/mesa.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/dinning10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">mesa</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/limpieza/aspiradoras.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/vacuums10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">aspiradoras</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/liquidacion.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    src="/media/wysiwyg/home-2/zona-outlet10.jpg?rand=1606782832">
+                                </div>
+                                <p class="categoriestitle">zona outlet</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>    
+    
+    <!--  widget-barilliance Visto Recientemente-->
+    <section> 
+        <div id="wbarrillanceb" class="widget-barillianceb"></div>
+        <div id="wbarrillancec" class="widget-barilliancec"></div>
+    </section>  
+    </body>
+</html>

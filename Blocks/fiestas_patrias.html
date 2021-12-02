@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        :root {
+          --wild-sage-color: #706fae;
+          --azul-bbb-strong: #002854;
+          --azul-bbb-medio: #1a4e8a;
+          --azul-bbb-claro: #daeaf4;
+          --azul-bbb-button: #147bd1;
+          --bg-gray: #f2f2f2;
+          --txt-gray: #595959;
+          --input-gray: #d4d3d3;
+          --rojo: #f42634;
+          --aniversario-azul: #1a4c8a;
+          --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        }
+        .page-title-wrapper {
+         background: #fff;
+        color: #fff !important;
+        font-size: 12px;
+        z-index: 1;
+        padding-top: 20px;
+        height: 40px;
+        }
+        .page-title-wrapper h1 {
+          font-size: 2em;
+        }
+        a {
+          text-decoration: none;
+        }
+        /*Aniversario*/
+        .wrap-banner {
+          height: 220px;
+          overflow: hidden;
+          background-color: var(--aniversario-azul);
+          background: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-fiestas-patrias-10-sep.jpg?rand=1631539441);
+          background-size: contain;
+          width: 100%;
+          background-repeat: no-repeat;
+          display: block;
+          position: relative;
+        }
+    
+        .container {
+          margin: 0 auto;
+          max-width: 500px;
+          position: relative;
+          width: 100%;
+        }
+    
+        .confeti #amarillo {
+          -webkit-animation: move 5s linear infinite;
+          animation: move 4s linear infinite;
+        }
+        .confeti #azul {
+          -webkit-animation: move -1s 5s linear infinite;
+          animation: move -1s 5s linear infinite;
+        }
+        .confeti #verde {
+          -webkit-animation: move -5s 5s linear infinite;
+          animation: move -2s 5s linear infinite;
+        }
+        .confeti #rojo {
+          -webkit-animation: move -3s 5s linear infinite;
+          animation: move -3s 5s linear infinite;
+        }
+        .confeti #amarillo2 {
+          -webkit-animation: move -4s 5s linear infinite;
+          animation: move -4s 5s linear infinite;
+        }
+        .confeti #azul2 {
+          -webkit-animation: move -2.5s 4s linear infinite;
+          animation: move -2.5s 4s linear infinite;
+        }
+        .confeti #verde2 {
+          -webkit-animation: move -1.5s 4.5s linear infinite;
+          animation: move -1.5s 4.5s linear infinite;
+        }
+        .confeti #rojo2 {
+          -webkit-animation: move 5s linear infinite;
+          animation: move 5s linear infinite;
+        }
+        .confeti #verde3 {
+          -webkit-animation: move -5s 2s linear infinite;
+          animation: move -5s s linear infinite;
+        }
+        .confeti #rojo3 {
+          -webkit-animation: move -3s 2s linear infinite;
+          animation: move -3s 2s linear infinite;
+        }
+        .confi {
+          transform: translate(-200px, -200px);
+        }
+        .confi2 {
+          transform: translate(-500px, -100px);
+        }
+        .confi3 {
+          transform: translate(150px, -300px);
+        }
+        @keyframes move {
+          to {
+            transform: translateY(1000px);
+          }
+        }
+    
+        @keyframes shake {
+          from {
+            transform: translateX(-10px);
+          }
+          to {
+            transform: translateX(10px);
+          }
+        }
+    
+        @keyframes shakeup {
+          from {
+            transform: translateY(-10px);
+          }
+          to {
+            transform: translateY(10px);
+          }
+        }
+    
+        .st0,
+        .st1,
+        .st2,
+        .st3 {
+          fill: none;
+          stroke: #fa4659;
+          stroke-width: 10;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-miterlimit: 10;
+        }
+        .st1,
+        .st2,
+        .st3 {
+          stroke: #0081c6;
+        }
+        .st2,
+        .st3 {
+          stroke: var(--azul-bbb-strong);
+        }
+        .st3 {
+          stroke: #fff;
+        }
+        .wrap-cat-aniversario {
+          overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+        }
+        .item-anive {
+          margin: 0;
+          padding: 0px;
+          text-align: center;
+          justify-content: center;
+          position: relative;
+          width: 30%;
+        }
+        .item-anive p {
+          margin-top: -5px;
+          font-family: var(--font-bedbath);
+          color: var(--aniversario-azul);
+          font-size: 0.8em;
+          font-weight: 900;
+        }
+        .wrap-img-an {
+          overflow: hidden;
+        }
+        .wrap-img-an img {
+          width: 250px;
+          height: auto;
+        }
+        .celebrate {
+          position: absolute;
+          z-index: 1;
+          bottom: 0;
+          right: 0;
+          width: 40px;
+        }
+        .celebrate_b {
+          position: absolute;
+          z-index: 1;
+          bottom: 0;
+          right: 0;
+          width: 40px;
+        }
+        .celebrate_c {
+          position: absolute;
+          z-index: 1;
+          bottom: 0;
+          right: 0;
+          width: 40px;
+        }
+        .wrap-img-an {
+          padding: 5px;
+          position: relative;
+          transition: 0.7s;
+        }
+        .wrap-img-an:hover {
+          transform: scale(0.8);
+        }
+        .wrap-disccount {
+          overflow: hidden;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          text-align: center;
+          justify-content: center;
+          margin-top: -10px;
+        }
+        .container-disccount {
+          background-color: var(--rojo);
+          width: 130px;
+          height: 130px;
+          border-radius: 50%;
+          color: #fff;
+          font-family: var(--font-bedbath);
+          line-height: 1;
+          position: relative;
+          text-align: center;
+          justify-content: center;
+          display: flex;
+        }
+        .container-disccount p {
+          line-height: 1;
+        }
+        .container-disccount p:nth-child(1) {
+          position: absolute;
+          top: 20px;
+          left: auto;
+          right: auto;
+        }
+        .container-disccount p:nth-child(2) {
+          position: absolute;
+          top: 50px;
+          left: auto;
+          right: auto;
+          font-size: 2.5em;
+        }
+    
+        .container-disccount p:nth-child(3) {
+          position: absolute;
+          top: 90px;
+          left: auto;
+          right: auto;
+          font-size: 10px;
+        }
+        .item-disccount {
+          width: 130px;
+          height: 130px;
+          text-align: center;
+          -webkit-box-shadow: 1px 3px 5px 0px rgba(120, 120, 120, 1);
+          -moz-box-shadow: 1px 3px 5px 0px rgba(120, 120, 120, 1);
+          box-shadow: 1px 3px 5px 0px rgba(120, 120, 120, 1);
+          transition: 0.7s;
+          border-radius: 50%;
+          margin: 5px;
+        }
+        .item-disccount:hover {
+          transform: scale(0.8);
+        }
+        .container-btn-bed {
+          position: relative;
+          height: 100px;
+        }
+        .btn-bed {
+          position: absolute;
+          right: 0;
+          z-index: 0;
+        }
+        .btn-bed img {
+          position: absolute;
+          right: 0;
+          z-index: 0;
+          width: 40px;
+        }
+        @media (max-width: 991px) {
+          .wrap-banner {
+            height: 80px;
+            background-size: contain;
+          }
+          .container-disccount {
+            width: 60px;
+            height: 60px;
+          }
+          .container-disccount p:nth-child(2) {
+            top: 30px;
+            font-size: 1em;
+          }
+          .item-disccount {
+            width: 60px;
+            height: 60px;
+            margin: 5px 0;
+          }
+          .page-title-wrapper {
+            font-size: 12px;
+            z-index: 1;
+            padding-top: 20px;
+            height: 50px;
+          }
+          .container-disccount p:nth-child(1) {
+            font-size: 8px;
+            top: 10px;
+          }
+          .container-disccount p:nth-child(2) {
+            top: 25px;
+            font-size: 1.2em;
+          }
+          .btn-bed img {
+            width: 30px;
+          }
+          .text-arrow {
+            font-size: 12px;
+          }
+          .item-anive {
+            width: 32%;
+          }
+          .wrap-img-an img {
+            width: 100px;
+            height: auto;
+          }
+          .item-anive p {
+            font-size: 0.6em;
+            line-height: 1;
+          }
+          .celebrate,
+          .celebrate_b,
+          .celebrate_c {
+            width: 25px;
+          }
+          .celebrate_b {
+            bottom: unset;
+          }
+        }
+      </style>
+<body>
+<!-- Principal -->
+<section id="bannerPrincial">
+    <!--desktop-->
+    <div class="wrap-banner desktop">
+      <div class="container"></div>
+    </div>
+  </section>
+
+  <!-- Categorias Aniversario -->
+  <section>
+    <div class="wrap-cat-aniversario">
+      <div class="item-anive">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/vive_m.png?rand=1631136915"
+          alt=""
+          class="celebrate pulse"
+        />
+        <a
+          href="https://www.bedbathandbeyond.com.mx/tienda/fiestas-patrias/cocina.html"
+          target="_self"
+        >
+          <div class="wrap-img-an">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/Dise_o_sin_t_tulo_4_.png?rand=1631146388"
+              alt="bedbathandbeyond"
+            />
+          </div>
+          <p>cocina</p>
+        </a>
+      </div>
+
+      <div class="item-anive">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/vive_m.png?rand=1631136915"
+          alt=""
+          class="celebrate_b pulse"
+        />
+        <a
+          href="https://www.bedbathandbeyond.com.mx/tienda/fiestas-patrias/organizacion.html"
+          target="_self"
+        >
+          <div class="wrap-img-an">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/Dise_o_sin_t_tulo_7_.png?rand=1631146495"
+              alt=" bedbathandbeyond"
+            />
+          </div>
+          <p>organización y limpieza</p>
+        </a>
+      </div>
+
+      <div class="item-anive">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/vive_m.png?rand=1631136915"
+          alt=""
+          class="celebrate_c pulse"
+        />
+        <a
+          href="https://www.bedbathandbeyond.com.mx/tienda/fiestas-patrias/jardines-y-exteriores.html"
+          target="_self"
+        >
+          <div class="wrap-img-an">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/Dise_o_sin_t_tulo_8_.png?rand=1631146495"
+              alt="bedbathandbeyond"
+            />
+          </div>
+          <p>jardines y exteriores</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</body>
+	
+</html>

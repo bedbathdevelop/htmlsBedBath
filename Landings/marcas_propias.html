@@ -1,0 +1,1614 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marcas Propias</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #92ad9f;
+        --nestwell: #8ba4b7;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #de9b3e;
+        --wildsage: #8288dc;
+        --bee-willow:#fbebdb;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --squeared-away: #f79c7a;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      .wrap-subtitle h3 {
+        text-align: center;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-size: 1.8vw;
+        padding: 0 100px;
+      }
+      .our-table {
+        background-color: var(--ourtable);
+      }
+      .haven {
+          background-color: var(--haven);
+          width: 100%;
+          padding: 80px 0;
+      }
+      .squared-away {
+        border: 10px solid var(--squeared-away);
+      }
+      .wild-sage {
+        background-color: var(--wildsage);
+        width: 100%;
+      }
+      .simply-essential{
+          background-color: var(--simply);
+          width: 100%;
+      }
+      .bee-willow{
+          background-color: var(--bee-willow);
+          width: 100%;
+          padding: 30px 0;
+      }
+      .wrap-categoria-main {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        position: relative;
+        padding: 40px 0;
+        margin-top: 60px;
+      }
+      .wrap-categoria-main .item-category {
+        width: 60%;
+        height: auto;
+        margin: 0 2px;
+        text-align: left;
+        justify-content: center;
+        position: relative;
+        padding: 40px 50px;
+      }
+      .txt-describe-b {
+        font-family: var(--font-bedbath);
+        line-height: 1.2;
+        font-size: 14px;
+        margin-top: 10px;
+        width: 400px;
+      }
+      .wrap-categoria .item-category .txt-describe {
+        font-family: var(--font-bedbath);
+        line-height: 1.2;
+        font-size: 15px;
+        padding: 0 300px 0 0;
+      }
+
+      .wrap-categoria .item-category:nth-child(1) img {
+        width: 200px;
+        text-align: left;
+        justify-content: left;
+        left: 10%;
+        top: 20%;
+      }
+      .img-float {
+        width: 50%;
+        position: absolute;
+        right: 5%;
+        top: -5px;
+        z-index: 1;
+      }
+      .img-wildsage {
+        width: 50%;
+        position: absolute;
+        left: 5%;
+        top: -5px;
+        z-index: 1;
+      }
+      .btn {
+        color: #fff;
+        background-color: var(--azul-bbb-button);
+        width: 200px;
+        text-align: center;
+        padding: 10px 20px;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      .btn:hover {
+        background-color: var(--azul-bbb-strong);
+      }
+
+      .wrap-alloptions {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        margin-top: -20px;
+      }
+      .img-our {
+        width: 200px;
+        height: 180px;
+      }
+      .item-alloptions {
+        flex: 1 1 auto;
+        margin: 0 10px;
+        overflow: hidden;
+      }
+      .height_our {
+        height: 240px;
+      }
+      .img-zoom {
+        position: relative;
+        transition: all;
+      }
+      .img-zoom img {
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      .img-zoom:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .squared-away-img {
+        margin-top: -80px;
+        width:250px !important;
+      }
+      .cat-wilsage {
+        width: 50% !important;
+        padding: 120px 250px !important;
+      }
+      .item-category .cat-wilsage .txt-describe-b{
+        padding: 0 !important;
+      }
+      .txt-white {
+        color: #fff;
+      }
+      .img-wild {
+        width: 500px;
+      }
+      .text-wildsage {
+        color: var(--wildsage);
+        font-family: var(--font-bedbath);
+      }
+      .text-our {
+        color: #000;
+        font-family: var(--font-bedbath);
+        margin-top: 10px;
+      }
+      .nestwell {
+        background-color: var(--nestwell);
+        padding: 40px 0;
+      }
+      .text-nestwell {
+        margin-top: 40px !important;
+      }
+      .slider_top{
+        width: 100%;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        height: 300px;
+      }
+      .slides-bb{
+        display: flex;
+        flex-shrink: 0;
+        transition: all 0.5s;
+        overflow-x: hidden;
+      }
+      .item-bb--slide{
+          overflow: hidden;
+          padding: 10px;
+          border: .5px solid #d6d6d6;
+          border-radius: 10px;
+          justify-content: center;
+          text-align: left;
+          margin: 0 5px;
+      }
+      .precio_carrusel{
+          color: #000;
+          font-weight: 900;
+          font-family: var(--font-bedbath);
+          font-size: 1.5rem;
+          margin-top: 10px;
+      }
+      .item_desc_carrusel
+      .container-img-slide .main-container img{
+        width: 120px;
+      }
+      .container-img-slide .hidden-child img{
+        width: 120px;
+      }
+     /*Rollover Image*/
+    .main-container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+        background-color: #fff;
+    }
+    .main-container img {
+        width: 160px;
+    }
+
+    .main-container .hidden-child {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        background-color: #fff;
+        height: 160px;
+    }
+  
+    .main-container:hover .hidden-child {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+    }
+    .item-bb--slide{
+        overflow: hidden;
+        width: 180px;
+    }
+    .item_desc_carrusel{
+        font-family: var(--primary-font);
+        font-size: 12px;
+        color:#000;
+        margin-top: 5px;
+        height: 30px;
+    }
+    .container-star {
+          width: 100%;
+          overflow: hidden;
+          display: flex;
+          margin: 20px auto;
+          text-align: left;
+          justify-content: left;
+        }
+        .clip-star {
+          clip-path: polygon(
+            50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%
+          );
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          float: left;
+        }
+        .enablestar {
+          background: #194e8a;
+        }
+        .slider-bb .btn-prev {
+          left: 0px;
+        }
+        .slider-bb.btn-next {
+          right: 0px;
+        }
+        .slider-bb .btn-prev,
+        .slider-bb .btn-next {
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          background: #f3f3f3;
+          top: 50%;
+          transform: translateY(-50%);
+          border-radius: 50%;
+          cursor: pointer;
+          z-index: 2;
+          border: 1px solid #e2e8f0;
+        }
+        .slider-bb .btn-prev:after,
+        .slider-bb .btn-next:after {
+          content: "";
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          border-top: 1px solid var(--haven);
+          border-right: 1px solid var(--haven);
+        }
+        .slider-bb .btn-prev:after {
+          left: 50%;
+          top: 50%;
+          transform-origin: top right;
+          transform: rotate(-135deg) translate(100%, -100%);
+        }
+        .slider-bb .btn-next:after {
+          left: 50%;
+          top: 50%;
+          transform-origin: top right;
+          transform: rotate(45deg) translate(-25%, 50%);
+        }
+
+        .slider-bb {
+          width: 97%; /* card * 4 + margin * 4 */
+          position: relative;
+          padding-left: 15px;
+          padding-right: 15px;
+          display: flex;
+          justify-content: flex-start;
+          overflow: hidden;
+          height: 300px;
+        }
+        .slider-bb .btn-prev {
+          left: 0px;
+        }
+        .slider-bb .btn-next {
+          right: 0px;
+        }
+        @media (max-width: 767px) {
+            .wrap-subtitle h3{
+                font-size: 3.5vw;
+                padding: 0 30px;
+            }
+            .wrap-categoria-main .item-category{
+                width: 100%;
+            }
+            .wrap-categoria-main .item-category{
+                margin: 200px 0 0 0 ;
+                padding: 10px;
+            }
+            .img-float {
+                width: 90%;
+                position: absolute;
+                right: 5%;
+                top: -5px;
+                z-index: 1;
+            }
+            .wrap-categoria .item-category .txt-describe{
+                padding: 10px 30px;
+            }
+            .wrap-alloptions{
+                flex-wrap: wrap;
+            }
+            .item-alloptions{
+                flex-basis: 100px;
+                height: 180px;
+            }
+            .img-our{
+                width: 120px;
+                height: auto;
+            }
+            .text-our{
+                font-size: 11px;
+                margin-top: 0;
+            }
+            .squared-away-img{
+                margin: 5% 25%;
+                width: 150px !important;
+            }
+            .precio_carrusel{
+                font-size: 0.8rem;
+            }
+            .haven{
+                padding: 0;
+            }
+            .mobile-square{
+              flex-basis: 100% !important;
+              height: auto !important;
+            }
+            .mobile-text{
+              font-size: 16px;
+              margin-top: -2px;
+            }
+            .nestwell{
+              padding: 0;
+            }
+            .cat-wilsage{
+              width: 95% !important;
+              padding: 0 30px 0 10px!important;
+              margin: 120px 0 80px 0 !important;
+            }
+            .cat-bewillow{
+              margin: 10px  0 !important;
+            }
+            .txt-describe-b{
+              width: 95%;
+            }
+            .wrap-categoria-main{
+              flex-wrap: wrap;
+            }
+            .logo-mobile{
+              margin: 5%;
+              width: 300px !important
+            }
+        }
+    </style>
+  </head>
+  <body>
+      <script>
+        window.onload =function(){
+          const carousel = document.querySelector(".slider-bb");
+          const slider = document.querySelector(".slides-bb");
+          const next = document.querySelector(".btn-next");
+          const prev = document.querySelector(".btn-prev");
+          
+          let direction;
+  
+          next.addEventListener("click", function () {
+            direction = -1;
+            slider.style.transform = "translate(-190px)";
+          });
+  
+          prev.addEventListener("click", function () {
+            direction = 1;
+            slider.style.transform = "translate(190px)";
+          });
+  
+          slider.addEventListener(
+            "transitionend",
+            function () {
+              // get the last element and append it to the front
+  
+              if (direction === 1) {
+                slider.prepend(slider.lastElementChild);
+              } else {
+                slider.appendChild(slider.firstElementChild);
+              }
+  
+              slider.style.transition = "none";
+              slider.style.transform = "translate(0)";
+              setTimeout(() => {
+                slider.style.transition = "all 0.5s ease";
+              });
+              slider.stopPropagation();
+            },
+            false
+          );
+
+          const carousela = document.querySelector(".slider-sim");
+          const slidera = document.querySelector(".slides-sim");
+          const nexta = document.querySelector(".btn-sim-next");
+          const preva = document.querySelector(".btn-sim-prev");
+          
+          let directiona;
+  
+          nexta.addEventListener("click", function () {
+            directiona = -1;
+            slidera.style.transform = "translate(-190px)";
+          });
+  
+          preva.addEventListener("click", function () {
+            directiona = 1;
+            slidera.style.transform = "translate(190px)";
+          });
+  
+          slidera.addEventListener(
+            "transitionend",
+            function () {
+              // get the last element and append it to the front
+  
+              if (directiona === 1) {
+                slidera.prepend(slidera.lastElementChild);
+              } else {
+                slidera.appendChild(slidera.firstElementChild);
+              }
+  
+              slidera.style.transition = "none";
+              slidera.style.transform = "translate(0)";
+              setTimeout(() => {
+                slidera.style.transition = "all 0.5s ease";
+              });
+              slidera.stopPropagation();
+            },
+            false
+          );
+        }
+      </script>
+    <!-- Subtitle -->
+    <section>
+      <div class="wrap-subtitle">
+        <h3>
+          nuestras nuevas marcas están hechas para hacer tu hogar más
+          feliz.
+        </h3>
+      </div>
+    </section>
+
+    <!-- OurTable -->
+    <section>
+      <div class="wrap-categoria-main">
+        <a href="https://www.bedbathandbeyond.com.mx/our-table" target="_self">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/charolas-landing.jpg?rand=1625244613"
+            alt="ourtable"
+            class="img-float"
+          />
+        </a>
+        <div class="wrap-categoria our-table">
+          <div class="item-category">
+            <a href="http://www.bedbathandbeyond.com.mx/our-table" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/Our_table_logo.png?rand=1632170677"
+                alt="logo_our"
+              />
+            </a>
+            <p class="txt-describe">
+              Nuestra nueva colección de cocina y mesa está hecha para que
+              compartas grandes momentos con quienes más quieres y tengas un
+              hogar más feliz
+            </p>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table.html" target="_self">
+              <p class="btn">comprar Our Table</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap-alloptions">
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-1-Cookware.jpg?rand=1624916941"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">baterías</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/accesorios-para-hornear.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-2-Bakeware.jpg?rand=1624916941"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">accesorios para hornear</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/mesa.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-3-Dinnerware.jpg?rand=1624916941"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">mesa</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/manteleria.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-4-TableLinens_1_.jpg?rand=1624916941"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">mantelería</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/utensilios-de-cocina.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-5-KitchenTools.jpg?rand=1624916941"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">utensilios</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/textiles-de-cocina.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/ourtable/US-BrandG-LP-C02-5-V2-CATEGORY-SQUARE-DSK-6-KitchenLinens.jpg?rand=1624916941"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">textiles</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Square Way -->
+    <section>
+      <div class="wrap-categoria-main">
+        <a href="https://www.bedbathandbeyond.com.mx/squared-away" target="_self">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/imagen-closet-acomoda-y-arregla.jpg?rand=1631715300"
+            alt="square away"
+            class="img-float squared-away"
+          />
+        </a>
+        <div class="wrap-categoria">
+          <div class="item-category">
+            <a href="https://www.bedbathandbeyond.com.mx/squared-away" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/logo_squared_away.png?rand=1631897873"
+                alt="square away"
+                class="squared-away-img"
+              />
+            </a>
+            <p class="txt-describe-b">
+              Artículos inteligentes y accesibles que te ayudarán a tener tu
+              hogar organizado, armonioso y feliz.
+            </p>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/squared-away.html" target="_self">
+              <p class="btn">comprar Squared Away</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap-alloptions">
+        <div class="item-alloptions mobile-square">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/closet.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/SA-home-orga-closet.jpg?rand=1631891377"
+                alt=""
+                class="img-square"
+              />
+              <p class="text-our mobile-text">organización para clóset</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions mobile-square">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/SA-home-solucion-almacenamiento.jpg?rand=1631891377"
+                alt=""
+                class="img-square"
+              />
+              <p class="text-our mobile-text">almacenamiento y organización</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions mobile-square">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/bano.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/SA-home-orga-bano.jpg?rand=1631891377"
+                alt=""
+                class="img-square"
+              />
+              <p class="text-our mobile-text">organización para baño</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions mobile-square">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/lavanderia.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/SA-home-orga-lavanderia.jpg?rand=1631892116"
+                alt=""
+                class="img-square"
+              />
+              <p class="text-our mobile-text">organización para lavandería</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wild Sage-->
+    <section>
+      <div class="wrap-categoria-main">
+        <a href="https://www.bedbathandbeyond.com.mx/wild-sage" target="_self">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C04-2-4_1.jpg?rand=1632241063"
+            alt="square away"
+            class="img-float img-wildsage"
+          />
+        </a>
+        <div class="wrap-categoria wild-sage">
+          <div class="item-category cat-wilsage"></div>
+        </div>
+        <div class="wrap-categoria wild-sage">
+          <div class="item-category cat-wilsage">
+            <a href="https://www.bedbathandbeyond.com.mx/wild-sage" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C04-2-3.jpg?rand=1632241371"
+                alt="square away"
+                class="squared-away-img logo-mobile"
+              />
+            </a>
+            <p class="txt-describe-b txt-white">
+              Distintos diseños llenos de personalidad que harán de tu casa tu mejor refugio.
+            </p>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage.html" target="_self">
+              <p class="btn">comprar Wild Sage</p>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="wrap-alloptions">
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/recamara.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/categorias-landing-recamara_1.jpg?rand=1628718607"
+                alt=""
+                class="img-wild"
+              />
+              <p class="text-wildsage">recámara</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/decoracion.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/categorias-landing-deco_1.jpg?rand=1628718607"
+                alt=""
+                class="img-wild"
+              />
+              <p class="text-wildsage">decoración</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/bano.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/categorias-landing-bano_1.jpg?rand=1628718607"
+                alt=""
+                class="img-wild"
+              />
+              <p class="text-wildsage">baño</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nestwell -->
+    <section>
+      <div class="wrap-categoria-main">
+        <a href="https://www.bedbathandbeyond.com.mx/nestwell" target="_self">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C04-2-6asd_1.jpg?rand=1632241371"
+            alt="ourtable"
+            class="img-float"
+          />
+        </a>
+        <div class="wrap-categoria nestwell">
+          <div class="item-category">
+            <a href="https://www.bedbathandbeyond.com.mx/nestwell" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C04-2-5asd.jpg?rand=1632243718"
+                alt="logo_our"
+              />
+            </a>
+            <p class="txt-describe txt-white text-nestwell">
+              Nuestra nueva colección para cama y baño te ayudará a dormir feliz
+              y cómodo a precios que amarás.
+            </p>
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/nestwell.html" target="_self">
+              <p class="btn">comprar Nestwell</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+        <div id="carruselBB" class="slider-bb">
+            <div id="carrusel-slides" class="slides-bb">
+                <!-- Slide 1 -->
+                    <div class="slide_top item-bb--slide">
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/edredon-king-de-algodon-wamsuttar-dream-zoner-ligero.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container-img-slide">
+                                <div class="main-container">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/NW_linen_blush_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                    <img src="" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="precio_carrusel">$3,150.00</div>
+                            <div class="item_desc_carrusel">
+                                Set de funda de lino para duvet matrimonial/queen NestWell™ Linen color rosa blush
+                            </div>
+                            <div class="wrap-info-carrusel">
+                                <div class="container-star">
+                                    <div class="clip-star enablestar"></div>
+                                    <div class="clip-star enablestar"></div>
+                                    <div class="clip-star enablestar"></div>
+                                    <div class="clip-star enablestar"></div>
+                                    <div class="clip-star disable"></div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/set-de-fundas-king-de-algodon-para-almohada-nestwelltm-a-rayas-color-rosa-claro.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800375522_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$900.00</div>
+                <div class="item_desc_carrusel">
+                    Set de fundas king de algodón para almohada Nestwell™ a rayas color rosa claro
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/almohada-estandar-queen-de-algodon-nestwelltm.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/81806607433_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$1,230.00</div>
+                <div class="item_desc_carrusel">
+                    Almohada estándar/queen de algodón NestWell™
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/sabana-de-cajon-individual-xl-de-algodon-satinado-nestwelltm-color-gris-azulado.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-12-29-01-35_nw400tcsateenfgrayqb?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$840.00</div>
+                <div class="item_desc_carrusel">
+                    Sábana de cajón individual XL de algodón satinado NestWell™ color gris azulado
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/protector-de-colchon-individual-de-algodon-nestwelltm-allergen-barrier.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-11-02-38_nestwellorganicmatressprotector_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$2,350.00</div>
+                <div class="item_desc_carrusel">
+                    Protector de colchón individual de algodón Nestwell™ Allergen Barrier
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/cubierta-de-poliester-para-tapa-de-inodoro-nestwelltm-color-azul-claro.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-14-13-47_042694392795_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$420.00</div>
+                <div class="item_desc_carrusel">
+                    Cubierta de poliéster para tapa de inodoro NestWell™ color azul claro
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/cubre-colchon-individual-de-algodon-nestwelltm-cotton-comfort-impermeable.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/81806610426_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$900.00</div>
+                <div class="item_desc_carrusel">
+                    Cubre colchón individual de algodón Nestwell™ Cotton Comfort impermeable
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/cobertor-individual-nestwelltm-supreme-softness-color-cafe-pardo.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-17-17-39_791551235262_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$1,000.00</div>
+                <div class="item_desc_carrusel">
+                    Cobertor individual NestWell™ Supreme Softness color café pardo
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+          <!-- Slide 1 -->
+          <div class="slide_top item-bb--slide">
+            <a
+            href="https://www.bedbathandbeyond.com.mx/set-de-colcha-matrimonial-queen-de-algodon-nestwelltm-a-rayas-color-blanco-coco.html"
+            target="_self"
+            >
+            <div class="container_bb">
+                <div class="container-img-slide">
+                    <div class="main-container">
+                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/69633770_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                        <div class="hidden-child">
+                        <img src="" loading="lazy"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="precio_carrusel">$3,680.00</div>
+                <div class="item_desc_carrusel">
+                    Set de colcha matrimonial/queen de algodón Nestwell™ a rayas color blanco coco
+                </div>
+                <div class="wrap-info-carrusel">
+                    <div class="container-star">
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star enablestar"></div>
+                        <div class="clip-star disable"></div>
+                    </div>
+                </div>
+            </div>
+            </a>
+        </div>
+  
+            </div>
+            <button class="btn-prev">
+            <button class="btn-next">
+        </div>
+    </section>
+
+
+    <!-- Simply Essential-->
+    <section>
+        <div class="wrap-categoria-main">
+          <a href="https://www.bedbathandbeyond.com.mx/simply-essential" target="_self">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/brand_2.jpg?rand=1622585210"
+              alt="square away"
+              class="img-float img-wildsage"
+            />
+          </a>
+          <div class="wrap-categoria simply-essential">
+            <div class="item-category cat-wilsage"></div>
+          </div>
+          <div class="wrap-categoria simply-essential">
+            <div class="item-category cat-wilsage">
+              <a href="https://www.bedbathandbeyond.com.mx/simply-essential" target="_self">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/simpli_Esse.jpg?rand=1632257771"
+                  alt="square away"
+                  class="squared-away-img logo-mobile"
+                />
+              </a>
+              <p class="txt-describe-b txt-white">
+                Esta colección está hecha para las tareas de todos los días, además de tener un gran diseño y excelentes precios.
+              </p>
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/simply-essential.html" target="_self">
+                <p class="btn">comprar Simply Essential</p>
+              </a>
+            </div>
+          </div>
+        </div>
+  
+ 
+        <section>
+            <div id="carruselBB" class="slider-bb slider-sim">
+                <div id="carrusel-slides" class="slides-bb slides-sim">
+                    <!-- Slide 1 -->
+                        <div class="slide_top item-bb--slide">
+                            <a
+                            href="https://www.bedbathandbeyond.com.mx/bolsa-grande-de-poliester-para-regadera-simply-essentialtm-color-negro.html"
+                            target="_self"
+                            >
+                            <div class="container_bb">
+                                <div class="container-img-slide">
+                                    <div class="main-container">
+                                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444800396701_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                        <div class="hidden-child">
+                                        <img src="" loading="lazy"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="precio_carrusel">$500.00</div>
+                                <div class="item_desc_carrusel">
+                                    Bolsa grande de poliéster para regadera Simply Essential™ color negro
+                                </div>
+                                <div class="wrap-info-carrusel">
+                                    <div class="container-star">
+                                        <div class="clip-star enablestar"></div>
+                                        <div class="clip-star enablestar"></div>
+                                        <div class="clip-star enablestar"></div>
+                                        <div class="clip-star enablestar"></div>
+                                        <div class="clip-star disable"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/organizador-de-metal-para-regadera-simply-essentialtm-color-blanco.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444800413866_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$500.00</div>
+                    <div class="item_desc_carrusel">
+                        Organizador de metal para regadera Simply Essential™ color blanco
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/cortinas-traslucidas-de-poliester-simply-essentialtm-plaid-con-ojales-de-2-13-m-color-gris.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-17-17-04_seplaidshr2pkmicrogry63_1_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$500.00</div>
+                    <div class="item_desc_carrusel">
+                        Cortinas traslúcidas de poliéster Simply Essential™ Plaid con ojales de 2.13 m color gris
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/zapatera-de-pcv-simply-essentialtm-para-puerta-con-24-compartimentos.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-04-13-00_2549w_1_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$400.00</div>
+                    <div class="item_desc_carrusel">
+                        Zapatera de PCV Simply Essential™ para puerta con 24 compartimentos
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/bolsa-protectora-de-pvc-para-sueteres-simply-essentialtm-transparente-set-de-2.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-04-13-00_3518_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$300.00</div>
+                    <div class="item_desc_carrusel">
+                        Bolsa protectora para suéteres Simply Essential™ de PVC transparente, Set de 2
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+    
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/organizador-simply-essentialtm-de-6-niveles-color-gris.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/SE20-4469-CLT_Main1_ecom?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$500.00</div>
+                    <div class="item_desc_carrusel">
+                        Organizador Simply Essential™ de 6 niveles color gris
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/bateria-de-cocina-de-aluminio-antiadherente-simply-essentialtm-12-pzas.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800384722_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$1,230.00</div>
+                    <div class="item_desc_carrusel">
+                        Batería de cocina de aluminio antiadherente Simply Essential™, 12 pzas
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+    
+              <!-- Slide 1 -->
+              <div class="slide_top item-bb--slide">
+                <a
+                href="https://www.bedbathandbeyond.com.mx/fundas-cubre-hombros-de-vinilo-transparentes-simply-essentialtm-set-de-3-pzas.html"
+                target="_self"
+                >
+                <div class="container_bb">
+                    <div class="container-img-slide">
+                        <div class="main-container">
+                            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-04-13-00_434w_1_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                            <div class="hidden-child">
+                            <img src="" loading="lazy"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="precio_carrusel">$220.00</div>
+                    <div class="item_desc_carrusel">
+                        Fundas cubre hombros de vinilo transparentes Simply Essential™, Set de 3
+                    </div>
+                    <div class="wrap-info-carrusel">
+                        <div class="container-star">
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star enablestar"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                    </div>
+                </div>
+                </a>
+            </div>
+
+      
+                </div>
+                <button class="btn-prev btn-sim-prev">
+                <button class="btn-next btn-sim-next">
+            </div>
+        </section>
+      </section>
+
+    <!-- Haven -->
+    <section>
+        <div class="wrap-categoria-main">
+          <a href="https://www.bedbathandbeyond.com.mx/haven" target="_self">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/haven.jpg?rand=1632259228"
+              alt="Haven™ Bed Bath and Beyond"
+              class="img-float"
+            />
+          </a>
+          <div class="wrap-categoria haven">
+            <div class="item-category">
+              <a href="https://www.bedbathandbeyond.com.mx/haven" target="_self">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/haven_logo.jpg?rand=1632259320"
+                  alt="Haven™ Bed Bath and Beyond"
+                />
+              </a>
+              <p class="txt-describe-b txt-white">
+                Elementos limpios y modernos para consentir a tu cuerpo y ayudarte a tener tranquilidad.
+              </p>
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven.html" target="_self">
+                <p class="btn">comprar Haven</p>
+              </a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="wrap-alloptions">
+          <div class="item-alloptions">
+            <div class="img-zoom">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/toallas.html" target="_self">
+                <img
+                  src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-toallas-de-algodon.jpg"
+                  class="img-our"
+                />
+                <p class="text-our">toallas de algodón orgánico</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-alloptions">
+            <div class="img-zoom">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/tapetes.html" target="_self">
+                <img
+                  src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-tapetes.jpg"
+                  alt=""
+                  class="img-our"
+                />
+                <p class="text-our">tapetes</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-alloptions">
+            <div class="img-zoom">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/cortinas.html" target="_self">
+                <img
+                  src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-cortinas.jpg"
+                  alt=""
+                  class="img-our"
+                />
+                <p class="text-our">cortinas</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-alloptions">
+            <div class="img-zoom">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/batas-y-pantunflas.html" target="_self">
+                <img
+                  src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-batas-pantuflas.jpg"
+                  alt=""
+                  class="img-our"
+                />
+                <p class="text-our">batas y pantuflas</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-alloptions">
+            <div class="img-zoom">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/accesorios.html" target="_self">
+                <img
+                  src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-accesorios.jpg"
+                  alt=""
+                  class="img-our"
+                />
+                <p class="text-our">accesorios</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-alloptions">
+            <div class="img-zoom">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/muebles.html" target="_self">
+                <img
+                  src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/Haven/landing/categorias-landing-muebles.jpg"
+                  alt=""
+                  class="img-our"
+                />
+                <p class="text-our">muebles</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+
+    <!-- Bee Willow-->
+    <section>
+        <div class="wrap-categoria-main">
+          <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home.html" target="_self">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C04-2-12_1.jpg?rand=1632259320"
+              alt="square away"
+              class="img-float img-wildsage"
+            />
+          </a>
+          <div class="wrap-categoria bee-willow">
+            <div class="item-category cat-wilsage"></div>
+          </div>
+          <div class="wrap-categoria bee-willow">
+            <div class="item-category cat-wilsage cat-bewillow">
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home.html" target="_self">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/bee_logo.jpg?rand=1632260345"
+                  alt="square away"
+                  class="squared-away-img logo-mobile"
+                />
+              </a>
+              <p class="txt-describe-b">
+                Carácter y encanto con muebles, decoración y más.
+              </p>
+              <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home.html" target="_self">
+                <p class="btn">comprar Bee Willow</p>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <div class="wrap-alloptions">
+        <div class="item-alloptions height_our">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home/cama.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C02-5-13_2.jpg?rand=1632260851"
+                alt="Haven™"
+                class="img-our"
+              />
+              <p class="text-our">cama</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home/mesa.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C02-5-15_2.jpg?rand=1632260851"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">mesa</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home/decoracion.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C02-5-16_2.jpg?rand=1632260851"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">decoración</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home/muebles.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C02-5-17_2.jpg?rand=1632260851"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">muebles</p>
+            </a>
+          </div>
+        </div>
+        <div class="item-alloptions">
+          <div class="img-zoom">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/bee-willow-home/bano.html" target="_self">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcaspropias/US-FY21-0531-WEB-OwnedBrandsLP-C02-5-14_2.jpg?rand=1632260851"
+                alt=""
+                class="img-our"
+              />
+              <p class="text-our">baño</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

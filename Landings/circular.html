@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <title>Circular</title>
+    <link rel="stylesheet" href="styles/circular.css" />
+</head>
+
+<script>
+            //<!-- STICKY BAR -->
+            window.onload = function() {
+                sliderCarrousel();
+
+                function sliderCarrousel(){
+                    /*Slider*/
+                    let x = 0;
+                    let p = -10;
+                    let m = 1;
+                    let doom = document.getElementsByClassName('itemslider');
+                    let confr = (doom.length - 3)*(-100);
+                    let confl = 0;
+                    //left
+                    document.getElementById("l").addEventListener("click", function(){
+                        console.log("left")
+                        x += 400;
+                        if (x > confl){x = confr - 400}else{
+                        document.getElementById("move").style.marginLeft = x + "px";}
+                    });
+                    //right
+                    document.getElementById("r").addEventListener("click", function(){
+                        x += -400;
+                        p += -10;
+                        if (x < confr){x = 400}else{
+                        document.getElementById("move").style.marginLeft = x + "px";}
+                    });
+                }
+            }
+</script>
+
+<body>
+
+    <section>
+        <div class="carrouselcategory">
+            <div class="tapa" id="move">
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-cocina.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/circular/diadelpadre6.jpeg?rand=1623690429">
+                     </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-recamara.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/circular/diadelpadre.jpeg?rand=1623690429">
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-bano.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-2%20bath?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet baño</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-organizacion-y-limpieza.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-5%20storage%20and%20cleaning?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet organización y limpieza</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-decoracion.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-12%20home%20decor?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet decoración</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-tecnologia.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-202124%20smart%20home?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet tecnología</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-cuidado-personal.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-13%20health%20and%20beauty?$content$&wid=150&hei=150">
+                        <p class="descripcat"> outlet cuidado personal</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-mascotas-viajes-y-mas.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-15%20more?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet mascotas, viajes y más</p>
+                        <p class="des-mini">hasta -50%</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-jardines-y-exteriores.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-9%20outdoor?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet jardines y exteriores</p>
+                        <p class="des-mini">hasta -50%</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-alimentos-y-bebidas.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-4%20dining?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet alimentos y bebidas</p>
+                        <p class="des-mini">hasta -50%</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-muebles.html" target="_self">
+                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150">
+                        <p class="descripcat">outlet muebles</p>
+                        <p class="des-mini">hasta -50%</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-ni-os-y-bebes.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/nino2-3-7_baby.jpg?rand=1623426128">
+                        <p class="descripcat">outlet niños y bebés</p>
+                        <p class="des-mini">hasta -50%</p>
+                    </a>
+                </div>
+                <div class="itemslider">
+                    <a href="https://www.bedbathandbeyond.com.mx/liquidacion/liquidacion-navidad.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/icono/nfl.jpg?rand=1623425902">
+                        <p class="descripcat">outlet navidad</p>
+                        <p class="des-mini">hasta -50%</p>
+                    </a>
+                </div>
+            </div>
+            <!-- controls -->
+            <div class="cont-controls">
+                <div class="left controls" id="l"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/left-arrow.png?rand=1621952785" alt=""></div>
+                <div class="right controls" id="r"><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/right-arrow.png?rand=1621952785" alt=""></div>
+            </div>
+        </div> 
+    </section>
+    
+</body>
+</html>

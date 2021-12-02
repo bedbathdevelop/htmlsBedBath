@@ -1,0 +1,4104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberweekend</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --cyberweekend-btn:#1d4d8c;
+        --font-cyberweekend:#aee7f6;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --squeared-away: #f79c7a;
+        --arrows: #f1f1f1;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+        font-size: 2rem;
+        text-align: center;
+      }
+      .page-title-wrapper {
+        display: none !important;
+      }
+      .slide_bank {
+        display: none;
+      }
+      .wrap-ban {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "banner banner banner banner"
+          "category1 category2 category3 category4";
+        grid-gap: 10px;
+      }
+      .item-ban {
+        text-align: center;
+        color: var(--azul-bbb-strong);
+        font-family: var(--font-bedbath);
+        padding: 5px 20px;
+        position: relative;
+      }
+      .item-ban:nth-child(1) {
+        grid-area: banner;
+        height: 410px;
+        background: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/background-gift-card-landing-desktop.jpg?rand=1637768613);
+        background-size: 100%;
+        background-repeat: no-repeat;
+        border: 1px solid #595959;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+      }
+      .item-ban:nth-child(2) {
+        grid-area: category1;
+        border: 2px solid var(--cyberweekend-btn);
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+      }
+      .item-ban:nth-child(3) {
+        background-size: cover;
+        border: 1px solid #595959;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+      }
+
+      .item-ban:nth-child(4) {
+        grid-area: category3;
+        border: 1px solid #595959;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+      }
+
+      .item-ban:nth-child(5) {
+        grid-area: category4;
+        border: 1px solid #595959;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+      }
+      .space-section {
+        margin-top: 60px;
+      }
+      #categorySection {
+        overflow: hidden;
+      }
+      .mini-ban {
+        height: 100px;
+        text-align: center;
+        background-color: var(--azul-bbb-claro);
+        border: 1px solid #595959;
+        border-radius: 8px;
+        -webkit-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+      }
+      .mini-ban2 {
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: center;
+      }
+      .text-banner {
+        position: absolute;
+        z-index: 1;
+        top: 10%;
+        left: 28%;
+        right: 28%;
+        font-family: var(--font-bedbath);
+        color: #fff;
+        font-size: 2rem;
+        padding: 5px 10px;
+        text-align: center;
+      }
+      .call-dyson {
+        background-color: var(--azul-bbb-button);
+        border-radius: 5px;
+        border: 1px solid var(--azul-bbb-button);
+        color: #fff;
+        position: absolute;
+        left: 38%;
+        right: 38%;
+        bottom: 2%;
+        padding: 5px 60px;
+        font-size: 1.6rem;
+        font-family: var(--font-bedbath);
+        width: 180px;
+      }
+      .call-dyson:hover {
+        background-color: var(--azul-bbb-strong);
+      }
+      .wrap-maincat {
+        overflow: hidden;
+        display: flex;
+        grid-gap: 5px;
+      }
+      .wrap-fifty {
+        overflow: hidden;
+        display: grid;
+        grid-column: 1fr 1fr;
+        grid-template-areas:
+          "option1 option2"
+          "option3 option4";
+        grid-gap: 5px;
+      }
+      .wrap-fifty div:nth-child(1) {
+        height: 90px;
+        background-color: violet;
+        grid-area: option1;
+      }
+      .wrap-fifty div:nth-child(2) {
+        height: 90px;
+        background-color: violet;
+        grid-area: option2;
+      }
+      .wrap-fifty div:nth-child(3) {
+        height: 90px;
+        background-color: violet;
+        grid-area: option3;
+      }
+      .wrap-fifty div:nth-child(4) {
+        height: 90px;
+        background-color: violet;
+        grid-area: option4;
+      }
+      .wrap-price {
+        overflow: hidden;
+        display: grid;
+        grid-column: 1fr 1fr;
+        grid-template-areas:
+          "price1 price2"
+          "price3 price4";
+        grid-gap: 5px;
+        text-align: center;
+        justify-content: center;
+        margin-top: -10px;
+        position: relative;
+      }
+      .wrap-price .item-circle {
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        color: #fff;
+      }
+      .wrap-price .item-circle:nth-child(1) {
+        background-color: var(--azul-bbb-button);
+        grid-area: price1;
+      }
+      .wrap-price .item-circle:nth-child(2) {
+        background-color: var(--azul-bbb-button);
+        grid-area: price2;
+      }
+      .wrap-price .item-circle:nth-child(3) {
+        background-color: var(--azul-bbb-button);
+        grid-area: price3;
+      }
+      .wrap-price .item-circle:nth-child(4) {
+        background-color: #d50505;
+        grid-area: price4;
+      }
+      .wrap-cat {
+        position: relative;
+      }
+      .circle-dbf {
+        position: absolute;
+        background-color: var(--rojo);
+        border: 2px solid var(--rojo);
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+        border-radius: 50%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 2px;
+      }
+      .circle-dbf p {
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+        font-size: 2rem;
+        margin-top: 40px;
+        color: #fff;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+      }
+      .circle-cat {
+        position: absolute;
+        background-color: var(--rojo);
+        border: 2px solid var(--rojo);
+        width: 70px;
+        height: 70px;
+        top: 0;
+        right: 0;
+        border-radius: 50%;
+        color: #fff;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        padding: 2px;
+      }
+      .circle-cat p {
+        font-size: 1.4rem;
+        line-height: 1;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 900;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        /*background-color: #147bd1;*/
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        position: absolute;
+        top: 45%;
+        left: 45%;
+        margin: -35px 0 0 -35px;
+      }
+      .name-cat {
+        position: absolute;
+        bottom: 10px;
+        background-color: var(--rojo);
+        border: 2px solid var(--rojo);
+        width: auto;
+        padding: 0 20px;
+        border-radius: 5px;
+        height: 20px;
+        color: #fff;
+        overflow: hidden;
+      }
+      .name-cat p {
+        font-size: 1.6rem;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: "Effra-Light";
+      }
+      .name-cateo {
+        position: absolute;
+        bottom: 10px;
+        background-color: var(--rojo);
+        border: 2px solid var(--rojo);
+        width: auto;
+        padding: 0 20px;
+        border-radius: 5px;
+        height: 20px;
+        color: #fff;
+        overflow: hidden;
+      }
+      .name-cateo p {
+        font-size: 1.6rem;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: "Effra-Light";
+      }
+      #buybyprice {
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        margin: 60px 0;
+      }
+      #buybyprice h2 {
+        font-size: 5rem;
+      }
+      .wrap-precio {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+      .item-price {
+        background-color: var(--cyberweekend-btn);
+        overflow: hidden;
+        width: 200px;
+        height: 200px;
+        color: var(--font-cyberweekend);
+        -webkit-box-shadow: 0px 1px 5px 0px rgb(199 199 199);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgb(199 199 199);
+        gap:10px;
+        flex-wrap: wrap;
+      }
+      .item-price:hover {
+        background-color: #1a4c8a;
+      }
+      .cn-price {
+        width: 180px;
+        height: 180px;
+        border: 2px solid #cbd2da;
+        color: var(--font-cyberweekend);
+        margin: 7px;
+      }
+      .item-price p {
+        color: #fff;
+        font-family: var(--font-bedbath);
+      }
+      .item-price p:nth-child(1) {
+        padding-top: 35px;
+        font-size: 17px;
+        color: var(--font-cyberweekend);
+      }
+      .item-price p:nth-child(2) {
+        font-size: 6.3rem;
+        margin-top: -10px;
+        color: var(--font-cyberweekend);
+      }
+      .item-price:hover{
+        background-color: var(--azul-bbb-button);
+      }
+      .txt-des {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+      }
+      .name-catf {
+        position: absolute;
+        bottom: 10px;
+        background-color: var(--rojo);
+        border: 2px solid var(--rojo);
+        width: auto;
+        padding: 0 20px;
+        border-radius: 5px;
+        height: 20px;
+        color: #fff;
+        overflow: hidden;
+      }
+      .name-catf p {
+        font-size: 1.6rem;
+        overflow: hidden;
+        white-space: nowrap;
+        font-family: "Effra-Light";
+      }
+      .num-price {
+        color: #fff;
+        font-family: var(--font-bedbath);
+        font-size: 2.4rem;
+        margin-top: -2px;
+      }
+      .right-c {
+        position: absolute;
+        right: 0;
+        top: 35%;
+      }
+      .left-c {
+        position: absolute;
+        left: 0;
+        top: 35%;
+      }
+      .main-img {
+        width: 200px;
+      }
+      .min-img {
+        width: 65px;
+        height: 58px;
+      }
+      .minitext {
+        color: #fff;
+        font-size: 0.6rem;
+        font-family: var(--font-bedbath);
+        margin-top: 20px;
+      }
+      .wrap--wholecat {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+      }
+      .wrap-disscount {
+        display: block;
+        text-align: center;
+        justify-content: center;
+      }
+      .wrap-minibanner {
+        overflow: hidden;
+        position: relative;
+        height: 210px;
+      }
+      .wrap-promo-bank {
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+      }
+      .arrow--s {
+        background-color: var(--arrows);
+        padding: 20px 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: var(--azul-bbb-medio);
+      }
+      .arrow--s:hover {
+        background-color: rgba(0, 0, 0, 0.24);
+      }
+      .prev--minbanner {
+        position: absolute;
+        left: 0;
+        top: 40%;
+        z-index: 1;
+      }
+      .next--minbanner {
+        position: absolute;
+        right: 0;
+        top: 40%;
+        cursor: pointer;
+        z-index: 1;
+      }
+      .item-wh {
+        padding: 10px;
+        text-align: center;
+        justify-content: center;
+        margin: 5px;
+        position: relative;
+      }
+      .btn-vertodo {
+        background-color: #147bd1;
+        text-align: center;
+        margin: 0px auto;
+        color: #fff;
+        font-family: var(--font-bedbath);
+        border: 2px solid var(--font-bedbath);
+        padding: 10px 20px 5px 20px;
+        border-radius: 5px;
+      }
+      .btn-vertodo:hover {
+        background-color: #1a4c8a;
+        border: 2px solid var(--rojo);
+      }
+      .sub-wh img {
+        width: 250px;
+      }
+      .wrap-name {
+        background: url(https://www.bedbathandbeyond.com.mx/media/wysiwyg/bloque_internob.jpg?rand=1637685829);
+        color: var(--font-cyberweekend) !important;
+        text-align: center;
+        padding: 30px 10px;
+        margin-top: 60px;
+        justify-content: center;
+        background-size: cover;
+      }
+      .wrap-name .txt-name {
+        font-family: var(--font-bedbath);
+        color: var(--font-cyberweekend) !important;
+        font-size: 5rem;
+      }
+      .container-catbf {
+        overflow: hidden;
+        width: 97%;
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+      }
+      .wrap-cat {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: all 0.5s;
+        overflow-x: hidden;
+      }
+      .item-cat {
+        width: 150px;
+        height: 150px;
+        margin: 20px 5px 0 5px;
+        text-align: center;
+        justify-content: center;
+        border-right: 1px solid var(--bg-gray);
+        position: relative;
+      }
+
+      .img-cat {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 2px solid transparent;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+      .item-ban {
+        overflow: hidden;
+      }
+
+      #cocina {
+        display: none;
+      }
+      .show {
+        display: flex !important;
+      }
+      .hide {
+        display: none !important;
+      }
+      .wrap-mb {
+        overflow: hidden;
+      }
+      .slide_min {
+        overflow: hidden;
+      }
+      .slide_min img {
+        width: 250px;
+      }
+      .slide_min {
+        display: none;
+      }
+      .wrap-mb {
+        overflow: hidden;
+        position: relative;
+      }
+
+      .slideshow-container {
+        width: auto;
+        position: relative;
+        margin: -10px;
+      }
+      .prev--mb,
+      .next--mb {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 10px;
+        margin-top: -22px;
+        color: #1a4e8a;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      .next--mb {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev--mb:hover,
+      .next--mb:hover {
+        background-color: rgba(0, 40, 84, 0.8);
+        color: #fff;
+      }
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+      .enablecat {
+        background-color: var(--azul-bbb-claro);
+      }
+      .whitearrow {
+        border-top: 15px solid var(--azul-bbb-button);
+      }
+      .bluecat {
+        border-bottom: 3px solid var(--azul-bbb-button);
+      }
+      .txt-cat {
+        margin-top: -10px;
+      }
+      .triangle_down {
+        width: 0;
+        height: 0;
+        right: 0;
+        left: 40%;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid #fff;
+        font-size: 0;
+        line-height: 0;
+        position: absolute;
+        bottom: 0;
+      }
+
+      .enable_arrow {
+        border-top: 15px solid var(--azul-bbb-button);
+      }
+
+      .dot--mb {
+        cursor: pointer;
+        height: 13px;
+        width: 13px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        display: none;
+      }
+      .bg_txt {
+        background-color: var(--azul-bbb-strong);
+        color: #fff;
+        padding: 10px;
+        margin-top: -3px;
+      }
+      .bg_txt:hover {
+        background-color: var(--azul-bbb-button);
+      }
+      .dot--mb:hover {
+        background-color: #494b55;
+      }
+      .slides_bf img {
+        width: 180px;
+      }
+      .wrap-btn-cat {
+        overflow: hidden;
+      }
+      .wrap-btn-cat p {
+        background-color: var(--cyberweekend-btn);
+        color: #fff;
+        padding: 10px 5px;
+        border-radius: 5px;
+        font-size: 14px;
+        border: 2px solid var(--azul-bbb-medio);
+        width: 80%;
+        margin: 0 20px;
+        font-size: 1.3rem;
+        font-family: "Termina-Bold";
+      }
+      .wrap-btn-cat p:hover {
+        border: 2px solid var(--bg-gray);
+      }
+      .circle--disccount {
+        background-color: var(--rojo);
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        text-align: center;
+        border-radius: 50%;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+      .wrap--cricle .txt-less {
+        color: #fff;
+        font-size: 2rem;
+        padding-top: 50px;
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+      }
+      .wrap--cricle h2 {
+        color: #fff !important;
+        font-size: 6.5rem;
+        margin-top: -20px;
+        font-family: var(--font-bedbath);
+      }
+      .wrap-otras-promos {
+        overflow: hidden;
+        display: flex;
+      }
+      .wrap__banner{
+        background: rgb(137,188,230);
+        background: linear-gradient(90deg, rgb(43 142 223) 0%, rgba(92,162,223,1) 50%, rgba(22,122,207,1) 100%);
+        width: 290px;
+        height: 290px;
+        position: relative;
+      }
+      .item-promos {
+        width: 50%;
+        margin: 30px 10px;
+      }
+      .item-promos img {
+        width: 100%;
+      }
+      .container-item {
+        overflow: hidden;
+        border-bottom: 4px solid #fff;
+        cursor: pointer;
+      }
+      .enablecat {
+        border-bottom: 4px solid var(--azul-bbb-button);
+      }
+      .container-item:hover {
+        background-color: var(--azul-bbb-claro);
+      }
+      /*Animaciones*/
+
+      .btn-next_mb,
+      .btn-prev_mb {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #117dcf;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        border: 1px solid #117dcf;
+      }
+      .btn-prev_mb {
+        left: 0;
+      }
+      .btn-next_mb {
+        right: 4%;
+      }
+      .btn-prev_mb:after,
+      .btn-next_mb:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+      .btn-prev:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(-135deg) translate(100%, -100%);
+      }
+      .btn-prev_mc:after,
+      .btn-prev_mb:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(-135deg) translate(100%, -100%);
+      }
+      .btn-next_mc:after,
+      .btn-next_mb:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(45deg) translate(-25%, 50%);
+      }
+
+      .mg-down {
+        height: 42px;
+        background: url("https://www.bedbathandbeyond.com.mx/media/fondo-banner-desk-interno_1.jpg?rand=1635263540");
+        background-repeat: repeat;
+        background-size: contain;
+        padding: 50% 20px;
+        width: 200px;
+        border: 2px solid var(--aniversario-azul);
+        position: relative;
+      }
+      .mg-down:hover {
+        background: var(--azul-bbb-button);
+      }
+      .mg-down p {
+        position: absolute;
+        z-index: 2;
+        margin-top: -100px;
+        width: 80%;
+        padding: 100px 0 80px;
+        border: 4px solid red;
+        color: #fff;
+        font-size: 2rem;
+      }
+      .mg-top {
+        margin-top: -20px;
+      }
+      .slideLeft {
+        animation-name: slideLeft;
+        -webkit-animation-name: slideLeft;
+
+        animation-duration: 1s;
+        -webkit-animation-duration: 1s;
+
+        animation-timing-function: ease-in-out;
+        -webkit-animation-timing-function: ease-in-out;
+
+        visibility: visible !important;
+      }
+      .wrap-enviogratis {
+        text-align: center;
+        overflow: hidden;
+        margin-bottom: 10px;
+        height: 50px;
+        position: relative;
+        justify-content: center;
+        background-color: var(--azul-bbb-claro);
+        -webkit-box-shadow: 0px 1px 5px 0px rgb(199 199 199);
+        -moz-box-shadow: 0px 1px 5px 0px rgba(199, 199, 199, 1);
+        box-shadow: 0px 1px 5px 0px rgb(199 199 199);
+      }
+      .wrap-enviogratis h2 {
+        font-size: 1rem;
+        padding: 15px;
+        position: absolute;
+        left: 35%;
+        top: -40%;
+        background-color: var(--azul-bbb-claro);
+        z-index: 1;
+        font-size: 1.5rem;
+      }
+
+      .slideRight {
+        animation: slideRight 5s infinite;
+        -webkit-animation: slideRight 5s infinite;
+        visibility: visible !important;
+      }
+
+      @keyframes slideRight {
+        0% {
+          transform: translateX(-200%);
+        }
+        100% {
+          transform: translateX(250%);
+        }
+      }
+
+      @-webkit-keyframes slideRight {
+        0% {
+          -webkit-transform: translateX(-200%);
+        }
+        100% {
+          -webkit-transform: translateX(250%);
+        }
+      }
+
+      @keyframes slideLeft {
+        0% {
+          transform: translateX(150%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      @-webkit-keyframes slideLeft {
+        0% {
+          -webkit-transform: translateX(150%);
+        }
+
+        100% {
+          -webkit-transform: translateX(0%);
+        }
+      }
+      .pulse {
+        animation-name: pulse;
+        -webkit-animation-name: pulse;
+
+        animation-duration: 2s;
+        -webkit-animation-duration: 2s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.9);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.9);
+          opacity: 0.7;
+        }
+      }
+
+      @-webkit-keyframes pulse {
+        0% {
+          -webkit-transform: scale(0.95);
+          opacity: 0.7;
+        }
+        50% {
+          -webkit-transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0.95);
+          opacity: 0.7;
+        }
+      }
+
+      svg {
+        width: 100%;
+        position: relative;
+      }
+      #namecategory {
+        color:#fff;
+        /*background-color: var(--rojo);*/
+        padding: 0 4px;
+      }
+      .cart {
+        animation-name: slidecart;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        transform: translateX(-2800px);
+      }
+
+      @keyframes slidecart {
+        0% {
+          transform: translateX(-3000px);
+        }
+        100% {
+          transform: translatex(3400px);
+        }
+      }
+
+      .bottom {
+        animation-name: slidelines;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        transform: translateX(-3000px);
+      }
+
+      .middle {
+        animation-name: slidelines;
+        animation-duration: 5s;
+        animation-delay: 0.1s;
+        animation-iteration-count: infinite;
+        transform: translateX(-3000px);
+      }
+
+      .high {
+        animation-name: slidelines;
+        animation-duration: 5s;
+        animation-delay: 0.2s;
+        animation-iteration-count: infinite;
+        transform: translateX(-3000px);
+      }
+
+      @keyframes slidelines {
+        0% {
+          transform: translateX(-3000px);
+        }
+        100% {
+          transform: translatex(3500px);
+        }
+      }
+
+      .cart2 {
+        position: absolute;
+        left: 0;
+        animation-name: slidecart2;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        transform: translateX(-400px);
+        top: 10px;
+      }
+
+      @keyframes slidecart2 {
+        0% {
+          transform: translateX(-400px);
+        }
+        25% {
+          transform: translateX(-400px);
+        }
+        100% {
+          transform: translateX(530px);
+        }
+      }
+      #high2 {
+        animation-name: slidelines2;
+        animation-duration: 5s;
+        animation-delay: 0.8s;
+        animation-iteration-count: infinite;
+        transform: translateX(-200px);
+      }
+
+      #middle2 {
+        animation-name: slidelines2;
+        animation-duration: 5s;
+        animation-delay: 0.4s;
+        animation-iteration-count: infinite;
+        transform: translateX(-200px);
+      }
+
+      #bottom2 {
+        animation-name: slidelines2;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        transform: translateX(-200px);
+      }
+
+      @keyframes slidelines2 {
+        0% {
+          transform: translateX(-200px);
+        }
+        25% {
+          transform: translateX(-200px);
+        }
+        50% {
+          transform: translateX(-200px);
+        }
+        100% {
+          transform: translatex(100px);
+        }
+      }
+
+      /*barra category*/
+      .carrusel-category {
+        overflow: hidden;
+        width: 100%;
+      }
+      .wrap-by-cat {
+        overflow: hidden;
+        width: 1500px;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+      }
+      .item-cat-brand {
+        overflow: hidden;
+        margin: 10px 5px;
+        padding: 2px 4px;
+        border: 1px solid var(--azul-bbb-medio);
+        border-radius: 10px;
+        width: auto;
+        height: 20px;
+        text-align: center;
+      }
+      .item-cat-brand:hover {
+        background-color: var(--aniversario-azul);
+        color: #fff;
+      }
+      .item-cat-brand .inside-cat-brand {
+        color: #000;
+        font-size: 14px;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .item-cat-brand:hover .inside-cat-brand {
+        color: #fff;
+      }
+      .diss-icon {
+        color: var(--rojo);
+        font-weight: 300;
+      }
+      .carrusel-category {
+        width: 100%;
+        height: auto;
+        position: relative;
+        /*overflow-x: scroll;*/
+        overflow: hidden;
+      }
+      .carrusel-category button {
+        position: absolute;
+        border-radius: 50%;
+        width: 20px;
+        height: auto;
+        border: transparent;
+        color: var(--aniversario-azul);
+        cursor: pointer;
+      }
+      .carrusel-category button:hover {
+        background-color: var(--azul-bbb-claro);
+      }
+      .carrusel-category button.btn-prev-cc {
+        left: 0;
+        top: 30%;
+      }
+      .carrusel-category button.btn-next-cc {
+        right: 0;
+        top: 30%;
+      }
+      .bg_red {
+        color: var(--rojo) !important;
+      }
+      .wrap-popup {
+        position: fixed;
+        width: 300px;
+        padding: 5px;
+        height: auto;
+        overflow: hidden;
+        bottom: 10px;
+        left: 10px;
+        border: 1px solid var(--azul-bbb-strong);
+        border-radius: 10px;
+        background-color: #fff;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        z-index: 9;
+      }
+      .inside-pop {
+        overflow: hidden;
+      }
+      .inside-pop .wrap-inside-pop {
+        overflow: hidden;
+        display: flex;
+      }
+      .wrap-inside-pop div:nth-child(1) {
+        width: 40%;
+      }
+      .wrap-inside-pop img {
+        width: 100px;
+        height: auto;
+      }
+      .wrap-texto {
+        overflow: hidden;
+        font-family: var(--font-bedbath);
+        text-align: left;
+        width: 50%;
+      }
+      .wrap-minibanner {
+        overflow: hidden;
+        position: relative;
+      }
+      .wrap-texto p {
+        font-size: 10px;
+        line-height: 1;
+        color: var(--azul-bbb-medio);
+      }
+      .hihgligthred {
+        color: var(--azul-bbb-button);
+        padding: 2px 5px;
+        margin-left: 15px;
+      }
+      .wrap-texto h2 {
+        font-size: 12px;
+        margin-top: -5px;
+      }
+      .btn-buy-product {
+        text-align: center;
+        background-color: var(--azul-bbb-button);
+        color: #fff !important;
+        padding: 2px 5px;
+        border-radius: 5px;
+        height: 16px;
+        font-family: var(--secondary-font);
+        font-size: 13px;
+      }
+      .btn-buy-product:hover {
+        background-color: var(--azul-bbb-strong);
+      }
+      .mini-leyenda {
+        font-size: 10px;
+        text-align: center;
+        color: red !important;
+        margin-top: -10px;
+      }
+      .wrap-popup {
+        display: none;
+      }
+      .showslide {
+        display: block !important;
+      }
+      .wrap-banks {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+      }
+      .item-bank {
+        overflow: hidden;
+        flex-basis: 49%;
+      }
+      .item-bank img {
+        width: 100%;
+      }
+      .prev--minbanner,
+      .next--minbanner {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 5px;
+        margin-top: -22px;
+        color: #1a4e8a;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+      .circle-discount {
+        background-color: var(--azul-bbb-medio);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      .floating {
+        animation-name: floating;
+        -webkit-animation-name: floating;
+
+        animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0%);
+        }
+        50% {
+          transform: translateY(8%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      @-webkit-keyframes floating {
+        0% {
+          -webkit-transform: translateY(0%);
+        }
+        50% {
+          -webkit-transform: translateY(8%);
+        }
+        100% {
+          -webkit-transform: translateY(0%);
+        }
+      }
+      @media (max-width: 767px) {
+        .wrap-popup {
+          width: 100%;
+        }
+        .item-bank {
+          width: 100%;
+        }
+        .item-wh {
+          width: 40%;
+        }
+        .btn-vertodo {
+          width: 100%;
+          margin-left: -20px;
+        }
+      }
+      .dropping-texts {
+        display: inline-block;
+        width: 50%;
+        text-align: left;
+        height: auto;
+        vertical-align: -2px;
+        color: #fff;
+        font-family: var(--font-bedbath);
+        margin-top: 12%;
+        margin-left: -20%;
+        font-size: 3.5rem;
+      }
+      .bg_cyber {
+        color: var(--font-cyberweekend) !important;
+      }
+      .dropping-texts > div {
+        font-size: 0px;
+        opacity: 0;
+        position: absolute;
+        /*antes buen fin*/
+        left: 10%;
+        /*despues buen fin
+    left: 10%;*/
+        font-weight: 300;
+      }
+      .dropping-texts > div:nth-child(1) {
+        width: 80%;
+        line-height: 1.5;
+        animation: roll 14s linear infinite 0s;
+        font-size: 3.5rem !important;
+      }
+      .dropping-texts > div:nth-child(2) {
+        animation: roll 14s linear infinite 4s;
+        width: 100%;
+        font-size: 5rem !important;
+        line-height: 1;
+      }
+      .dropping-texts > div:nth-child(3) {
+        animation: roll 14s linear infinite 8s;
+        width: 100%;
+        font-size: 5rem !important;
+        line-height: 1;
+      }
+      @keyframes roll {
+        0% {
+          opacity: 0;
+          margin-left: -0px;
+          margin-top: 0px;
+          transform: rotate(-25deg);
+        }
+        3% {
+          opacity: 1;
+          transform: rotate(0deg);
+        }
+        5% {
+          opacity: 1;
+          margin-left: 0px;
+          margin-top: 0px;
+        }
+        20% {
+          opacity: 1;
+          margin-left: 0px;
+          margin-top: 0px;
+          transform: rotate(0deg);
+        }
+        27% {
+          opacity: 0;
+          margin-left: 0px;
+          margin-top: 100px;
+        }
+        100% {
+          opacity: 0;
+          margin-left: 0px;
+          margin-top: 0px;
+          transform: rotate(15deg);
+        }
+      }
+
+      @media (max-width: 767px) {
+        .dropping-texts {
+          margin-top: 15%;
+          font-size: 3.5rem;
+        }
+        .dropping-texts > div:nth-child(1) {
+          font-size: 1.2rem !important;
+          line-height: 1;
+        }
+        .dropping-texts > div:nth-child(2) {
+          width: 60%;
+          font-size: 2rem !important;
+        }
+        .dropping-texts > div:nth-child(3) {
+          width: 60%;
+          font-size: 2rem !important;
+        }
+      }
+
+      .desktop {
+        display: block !important;
+      }
+      .mobile {
+        display: none !important;
+      }
+
+      @media (max-width: 767px) {
+        .wrap-promo-bank {
+          margin-top: 60px;
+        }
+        .wrap-name {
+          margin-top: 40px;
+        }
+        .text-banner {
+          font-size: 1.3rem;
+          right: 35px;
+          left: 40%;
+          padding: 10px 20px;
+          bottom: 40px;
+        }
+        .wrap-ban {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "banner banner"
+            "category1 category2"
+            "category3 category4";
+        }
+        .wrap-minibanner {
+          height: auto;
+        }
+        .circle--disccount {
+          width: 120px;
+          height: 120px;
+          margin-top: 20px;
+        }
+        .wrap-btn-cat p {
+          width: 90%;
+          margin: 0;
+          padding: 5px;
+        }
+        .wrap--cricle .txt-less {
+          font-size: 1.22rem;
+          padding-top: 30px;
+        }
+        .wrap--cricle h2 {
+          font-size: 4rem;
+          margin-top: -10px;
+        }
+        .wrap-enviogratis h2 {
+          left: 12%;
+          top: -20%;
+          padding: 1px;
+          font-size: 1.2rem;
+        }
+        .cart {
+          animation-duration: 20s;
+        }
+        .name-cat {
+          bottom: 10px;
+        }
+        .wrap-name .txt-name {
+          font-family: var(--font-bedbath);
+          font-size: 3rem;
+          line-height: 1;
+          padding: 20px 0;
+        }
+        .sub-wh img {
+          width: 160px;
+        }
+
+        .mg-down p {
+          font-size: 1.4rem;
+          margin-top: -65px;
+          margin-left: -10px;
+          padding: 50px 0 80px;
+        }
+        .wrap-precio {
+          flex-wrap: wrap;
+        }
+        .wrap-otras-promos {
+          flex-wrap: wrap;
+        }
+        .item-promos {
+          width: 100%;
+          margin: 20px 20px;
+          background: url(https://www.bedbathandbeyond.com.mx/media/fondo-banner-desk-interno_1.jpg?rand=1635263540);
+        }
+        .item-ban:nth-child(1) {
+          /*antes*/
+          background: url(https://www.bedbathandbeyond.com.mx/media/banner-preventa-mobile-gifcard.jpg?rand=1636397504);
+          /*despues
+        background: url(https://www.bedbathandbeyond.com.mx/media/banner-mobile-gifcardbf.jpg?rand=1636397504);*/
+          background-size: cover;
+          background-repeat: no-repeat;
+          height: 150px;
+        }
+        .call-dyson {
+          font-size: 1.5rem;
+          right: 0;
+          padding: 5px;
+          bottom: 0;
+        }
+        .circle-dbf {
+          width: 50px;
+          height: 50px;
+        }
+        .circle-cat {
+          width: 50px;
+          height: 50px;
+          font-size: 1rem !important;
+        }
+        .circle-cat p {
+          font-size: 1rem !important;
+        }
+        .txt-help {
+          font-size: 1.5rem;
+        }
+        .desktop {
+          display: none !important;
+        }
+        .mobile {
+          display: block !important;
+        }
+        .mg-down {
+          width: 70% !important;
+          padding: 50% 20px;
+        }
+        .carrusel-category button {
+          display: none !important;
+        }
+        .carrusel-category {
+          overflow-x: scroll !important;
+        }
+        .wrap-minibanner {
+          height: auto;
+        }
+        .txt-help {
+          font-size: 1.2rem;
+        }
+        .item-price {
+          width: 120px;
+          height: 120px;
+        }
+        .cn-price {
+          width: 110px;
+          height: 110px;
+          border: 2px solid var(--azul-bbb-medio);
+          border-radius: 50%;
+          margin: 3px;
+        }
+        .item-price p:nth-child(1) {
+          font-size: 15px;
+        }
+        .item-price p:nth-child(2) {
+          font-size: 3.4rem;
+        }
+        .item-price{
+            width: 130px;
+            height: 130px;
+        }
+      }
+      .slide--cat {
+        display: none;
+      }
+      .slide--disccount {
+        display: none;
+      }
+      .slide--fifty {
+        display: none;
+      }
+      .slide--ex {
+        display: none;
+      }
+
+      .antes {
+        display: block !important;
+      }
+      .despues {
+        display: none !important;
+      }
+      .wrap-title{
+        background: rgb(137,188,230);
+        background: linear-gradient(90deg, rgb(35 121 191) 0%, rgba(92,162,223,1) 50%, rgba(22,122,207,1) 100%);
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        margin-top: 40px;
+        padding: 20px 0;
+      }
+      .wrap-title p{
+        color:#fff;
+        font-family: var(--font-bedbath);
+        font-size: 4.5rem;
+      }
+      .btn-vercat{
+        background-color: var(--azul-bbb-button);
+        color: #fff;
+        width: 300px;
+        padding: 10px 0;
+        border-radius: 5px;
+        margin: 0px auto;
+        font-family: var(--font-bedbath);
+      }
+      .btn-vercat:hover{
+        background-color: var(--azul-bbb-medio);
+      }
+      .btn-vercat a {
+        color:#fff;
+        font-family: var(--secondary-font);
+      }
+      .leyenda__promo{
+        color: #fff;
+        font-family: var(--font-bedbath);
+        position: absolute;
+        top: 5%;
+        left: 10px;
+        padding: 2px 5px;
+        font-size: 2rem;
+        z-index: 2;
+        line-height: 1.1;
+        width: 70%;
+      }
+      .img_icon{
+        width:240px !important;
+        position: absolute;
+        top: 40px;
+        left: auto;
+        right: auto;
+        left: 5%;
+        z-index: 1;
+      }
+      .gift_regalo{
+        width:80px !important;
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 0;
+        display: none;
+      }
+      .gift_regalo_down{
+        width:120px !important;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        z-index: 0;
+        display: none;
+      }
+      .bg_red_d{
+        background:var(--rojo);
+        font-size:2.3rem;
+        line-height: 1.5;
+        padding: 0 10px;
+      }
+      .buddy{
+        position:absolute;
+        z-index:1;
+        width: 35%;
+        bottom: 0;
+      }
+      .img-bf {
+        width:38%;
+        bottom:0;
+        left: 10%;
+        position: absolute !important;
+      }
+
+  .slideUp{
+    animation-name: slideUp;
+    -webkit-animation-name: slideUp;	
+
+    animation-duration: 1s;	
+    -webkit-animation-duration: 1s;
+
+    animation-timing-function: ease;	
+    -webkit-animation-timing-function: ease;
+
+    visibility: visible !important;			
+  }
+
+    @keyframes slideUp {
+      0% {
+        transform: translateY(100%);
+      }		
+      100% {
+        transform: translateY(0%);
+      }	
+    }
+
+    @-webkit-keyframes slideUp {
+      0% {
+        -webkit-transform: translateY(100%);
+      }		
+      100% {
+        -webkit-transform: translateY(0%);
+      }	
+    }
+  </style>
+    <script>
+      let indexBanner = 1;
+      let indexDs = 1;
+      let indexFifty = 1;
+      let indexEx = 1;
+      let timer_mb;
+
+      function showMini(n) {
+        let slides_mb = document.getElementsByClassName("slide--cat");
+        let dots_mb = document.getElementsByClassName("dot--cat");
+        for (let l = 0; l < slides_mb.length; l++) {
+          slides_mb[l].style.display = "none";
+        }
+        indexBanner++;
+        if (indexBanner > slides_mb.length) {
+          indexBanner = 1;
+        }
+        for (i = 0; i < dots_mb.length; i++) {
+          dots_mb[i].className = dots_mb[i].className.replace(" active", "");
+        }
+        slides_mb[indexBanner - 1].style.display = "block";
+        dots_mb[indexBanner - 1].className += " active";
+        timer_mb = setTimeout(showMini, 3000);
+      }
+
+      function showDiscount(n) {
+        let slides_ds = document.getElementsByClassName("slide--disccount");
+        let dots_ds = document.getElementsByClassName("dot--disccount");
+        for (let l = 0; l < slides_ds.length; l++) {
+          slides_ds[l].style.display = "none";
+        }
+        indexDs++;
+        if (indexDs > slides_ds.length) {
+          indexDs = 1;
+        }
+        for (i = 0; i < dots_ds.length; i++) {
+          dots_ds[i].className = dots_ds[i].className.replace(" active", "");
+        }
+        slides_ds[indexDs - 1].style.display = "block";
+        dots_ds[indexDs - 1].className += " active";
+        timer_ds = setTimeout(showDiscount, 4000);
+      }
+
+      function showFifty(n) {
+        let slides_ft = document.getElementsByClassName("slide--fifty");
+        let dots_ft = document.getElementsByClassName("dot--fifty");
+        for (let l = 0; l < slides_ft.length; l++) {
+          slides_ft[l].style.display = "none";
+        }
+        indexFifty++;
+        if (indexFifty > slides_ft.length) {
+          indexFifty = 1;
+        }
+        for (i = 0; i < dots_ft.length; i++) {
+          dots_ft[i].className = dots_ft[i].className.replace(" active", "");
+        }
+        slides_ft[indexFifty - 1].style.display = "block";
+        dots_ft[indexFifty - 1].className += " active";
+        timer_ft = setTimeout(showFifty, 4500);
+      }
+
+      function showExclusive(n) {
+        let slides_ex = document.getElementsByClassName("slide--ex");
+        let dots_ex = document.getElementsByClassName("dot--ex");
+        for (let l = 0; l < slides_ex.length; l++) {
+          slides_ex[l].style.display = "none";
+        }
+        indexEx++;
+        if (indexEx > slides_ex.length) {
+          indexEx = 1;
+        }
+        for (i = 0; i < dots_ex.length; i++) {
+          dots_ex[i].className = dots_ex[i].className.replace(" active", "");
+        }
+        slides_ex[indexEx - 1].style.display = "block";
+        dots_ex[indexEx - 1].className += " active";
+        timer_ex = setTimeout(showExclusive, 4000);
+      }
+
+      function plusSlides(n, cat) {
+        if (cat === "cat") {
+          clearInterval(timer_mb);
+          showMini((indexBanner += n));
+        } else if (cat === "price") {
+          clearInterval(timer_ds);
+          showDiscount((indexDs += n));
+        } else if (cat === "fifty") {
+          clearInterval(timer_ft);
+          showFifty((indexFifty += n));
+        } else if (cat === "ex") {
+          clearInterval(timer_ex);
+          showExclusive((indexEx += n));
+        }
+      }
+
+      function currentSlide(n, cat) {
+        if (cat === "cat") {
+          clearInterval(timer_mb);
+          showMini((indexBanner -= n));
+        } else if (cat === "price") {
+          clearInterval(timer_ds);
+          showDiscount((indexDs -= n));
+        } else if (cat === "fifty") {
+          clearInterval(timer_ft);
+          showFifty((indexFifty -= n));
+        } else if (cat === "ex") {
+          clearInterval(timer_ex);
+          showExclusive((indexEx -= n));
+        }
+      }
+      function changeCategory(cat) {
+        let name = document.getElementById("namecategory");
+        name.innerHTML = cat;
+
+        let linkto = document.getElementById("link-to");
+
+        let classCurrent = document.getElementsByClassName("enablecat");
+        let currentArrow = document.getElementsByClassName("enable_arrow");
+
+        classCurrent ? classCurrent[0].classList.remove("enablecat") : "";
+        currentArrow ? currentArrow[0].classList.remove("enable_arrow") : "";
+
+        let currentCat = document.getElementById(cat);
+        let turnOnTab = document.getElementById(`tab-${cat}`);
+        let arrowTab = document.getElementById(`arrow-${cat}`);
+        let bloqueTab = document.getElementById(`bloque-${cat}`);
+
+        let bloqueCurrent = document.getElementsByClassName("show");
+
+        if (bloqueCurrent) {
+          bloqueCurrent[0].classList.add("hide");
+          bloqueCurrent[0].classList.remove("show");
+        }
+
+        turnOnTab.classList.add("enablecat");
+        arrowTab.classList.add("enable_arrow");
+        bloqueTab.classList.remove("hide");
+        bloqueTab.classList.add("show");
+
+        switch(cat) {
+          case 'cocina':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina.html';
+            break;
+          case 'recámara':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara.html';
+            break;
+          case 'baño':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/bano.html';
+            break;
+          case 'organización':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza.html';
+            break;
+          case 'alimentos':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas.html';
+            break;
+          case 'cuidado personal':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal.html';
+            break;
+          case 'decoración':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion.html';
+            break;
+          case 'jardines y exteriores':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/jardines-y-exteriores.html';
+            break;
+          case 'mascotas y viajes':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas.html';
+            break;
+          case 'tecnología':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia.html';
+            break;
+          case 'mesa y bar':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar.html';
+            break;
+          case 'niños y bebes':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/ninos-y-bebes.html';
+            break;
+          case 'muebles':
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/muebles.html';
+            break;
+          default:
+            linkto.href='https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina.html';
+        }
+      }
+
+      function promoBank() {
+        var i;
+        slides_mb = document.getElementsByClassName("slide_bank");
+        dots_mb = document.getElementsByClassName("dot--minbanner");
+        for (i = 0; i < slides_mb.length; i++) {
+          slides_mb[i].style.display = "none";
+        }
+        indexBanner++;
+        if (indexBanner > slides_mb.length) {
+          indexBanner = 1;
+        }
+        for (i = 0; i < dots_mb.length; i++) {
+          dots_mb[i].className = dots_mb[i].className.replace(" active", "");
+        }
+        slides_mb[indexBanner - 1].style.display = "block";
+        dots_mb[indexBanner - 1].className += " active";
+        timer_mb = setTimeout(promoBank, 2000);
+      }
+      window.onload = function () {
+        showMini();
+        showDiscount();
+        showFifty();
+        showExclusive();
+        /*promoBank(); Error cambiar*/
+        /*startMoveCarrusel();*/
+
+        chooseProduct();
+
+        const carousel_mb = document.querySelector(".slider_mb");
+        const slider_mb = document.querySelector(".slides_mb");
+        const next_mb = document.querySelector(".btn-next_mb");
+        const prev_mb = document.querySelector(".btn-prev_mb");
+
+        let direction_mb;
+
+        next_mb.addEventListener("click", function () {
+          direction_mb = -1;
+          slider_mb.style.transform = "translate(-190px)";
+        });
+
+        prev_mb.addEventListener("click", function () {
+          direction_mb = 1;
+          slider_mb.style.transform = "translate(190px)";
+        });
+
+        slider_mb.addEventListener(
+          "transitionend",
+          function () {
+            if (direction_mb === 1) {
+              slider_mb.prepend(slider_mb.lastElementChild);
+            } else {
+              slider_mb.appendChild(slider_mb.firstElementChild);
+            }
+
+            slider_mb.style.transition = "none";
+            slider_mb.style.transform = "translate(0)";
+            setTimeout(() => {
+              slider_mb.style.transition = "all 0.5s ease";
+            });
+          },
+          false
+        );
+
+        //Carruseles Automaticos
+        const carousel_cat = document.querySelector(".carrusel-category");
+        const slider_cat = document.querySelector(".wrap-by-cat");
+        const next_cat = document.querySelector(".btn-next-cc");
+        const prev_cat = document.querySelector(".btn-prev-cc");
+
+        let direction_cat;
+        let timer_enable;
+
+        next_cat.addEventListener("click", function () {
+          direction_cat = -1;
+          slider_cat.style.transform = "translate(-190px)";
+        });
+
+        prev_cat.addEventListener("click", function () {
+          direction_cat = 1;
+          slider_cat.style.transform = "translate(190px)";
+        });
+
+        slider_cat.addEventListener(
+          "transitionend",
+          function () {
+            if (direction_cat === 1) {
+              slider_cat.prepend(slider_cat.lastElementChild);
+            } else {
+              slider_cat.appendChild(slider_cat.firstElementChild);
+            }
+
+            slider_cat.style.transition = "none";
+            slider_cat.style.transform = "translate(0)";
+            setTimeout(() => {
+              slider_cat.style.transition = "all 0.5s ease";
+            });
+          },
+          false
+        );
+        //Automatic
+        function startMoveCarrusel() {
+          const slider_move = document.querySelector(".wrap-by-cat");
+          slider_move.style.transform = "translate(-190px)";
+          timer_enable = setTimeout(startMoveCarrusel, 4000);
+        }
+        let product;
+        function showProductsBuy(product) {
+          product.classList.add("showslide");
+          setTimeout(hideProductBuy, 4000, product);
+        }
+
+        function hideProductBuy(product) {
+          product.classList.remove("showslide");
+        }
+
+        function chooseProduct() {
+          let min, max, product, num;
+          const products = document.getElementsByClassName("wrap-inside-pop");
+          min = 1;
+          max = products.length;
+          product;
+          num = Math.floor(Math.random() * (max - min + 1)) + min;
+          product = document.getElementById(`product${num}`);
+          product ? showProductsBuy(product) : null;
+          let interval = setTimeout(chooseProduct, 8000);
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <!-- main section-->
+    <section>
+        <div class="wrap-enviogratis">
+          <h2 class="">envío gratis sin mínimo de compra</h2>
+          <path id="cart" class="cart" fill="#002854" d="M1439.681 518.326l-91.421-117.134-101.625-212.84c-31.63-65.709-97.951-107.747-170.803-107.951h-185.087v-48.976c0-17.346-14.285-31.426-31.63-31.426h-674.64c-17.346 0-31.426 14.081-31.426 31.63s14.081 31.63 31.63 31.63h643.010v353.033c0 17.346 14.081 31.63 31.63 31.63h445.679l78.973 100.808v269.366h-121.419c-16.937-95.299-107.747-158.967-203.045-142.029-72.443 12.856-129.173 69.586-142.029 142.029h-313.444c-16.937-95.299-107.747-158.967-203.045-142.029-72.443 12.856-129.173 69.586-142.029 142.029h-90.197c-17.346 0-31.63 14.081-31.63 31.63 0 17.346 14.081 31.63 31.63 31.63h90.401c17.754 95.299 109.583 157.947 204.678 140.193 71.219-13.264 126.725-68.974 140.193-140.193h312.628c17.754 95.299 109.583 157.947 204.678 140.193 71.219-13.264 126.725-68.974 140.193-140.193h121.623c34.895 0 63.056-28.161 63.056-63.056v-280.59c0-6.938-2.245-13.876-6.53-19.386zM890.745 385.071v-241.613h185.495c48.568 0 93.054 27.957 113.868 72.035l81.014 169.782h-380.378zM543.834 848.708c0 62.036-50.404 112.236-112.236 112.236-62.036 0-112.644-50.2-112.644-112.236s50.2-112.644 112.236-112.644c62.036 0 112.644 50.2 112.644 112.236 0 0.204 0 0.204 0 0.408zM1201.537 848.708c0 62.036-50.404 112.236-112.44 112.236s-112.44-50.404-112.44-112.44c0-62.036 50.404-112.44 112.44-112.44 62.24 0 112.44 50.404 112.44 112.644 0-0.204 0 0 0 0z"></path>
+          <path id="bottom" class="bottom" fill="#002854" d="M315.485 606.482c0-17.346-14.081-31.63-31.63-31.63h-173.456c-17.346 0-31.63 14.081-31.63 31.63s14.081 31.63 31.63 31.63h173.456c17.55-0.204 31.63-14.285 31.63-31.63z"></path>
+          <path id="middle" class="middle" fill="#002854" d="M425.884 417.11c0-17.346-14.081-31.63-31.63-31.63h-362.624c-17.346 0-31.63 14.081-31.63 31.63 0 17.346 14.081 31.63 31.63 31.63h362.828c17.346 0 31.426-14.285 31.426-31.63z"></path>
+          <path id="high" class="high" fill="#002854" d="M110.399 259.367h362.828c17.346 0 31.63-14.081 31.63-31.63s-14.081-31.63-31.63-31.63h-362.828c-17.346 0-31.63 14.081-31.63 31.63s14.285 31.63 31.63 31.63z"></path>
+          </svg><svg class="cart2" version="1.1" xmlns="http://www.w3.org/2000/svg" width="35px" height="35px" viewBox="0 0 1446 1024"
+          <title></title>
+          <g id="icomoon-ignore">
+          </g>
+          <path id="cart2" class="cart2" fill="#002854" d="M1439.681 518.326l-91.421-117.134-101.625-212.84c-31.63-65.709-97.951-107.747-170.803-107.951h-185.087v-48.976c0-17.346-14.285-31.426-31.63-31.426h-674.64c-17.346 0-31.426 14.081-31.426 31.63s14.081 31.63 31.63 31.63h643.010v353.033c0 17.346 14.081 31.63 31.63 31.63h445.679l78.973 100.808v269.366h-121.419c-16.937-95.299-107.747-158.967-203.045-142.029-72.443 12.856-129.173 69.586-142.029 142.029h-313.444c-16.937-95.299-107.747-158.967-203.045-142.029-72.443 12.856-129.173 69.586-142.029 142.029h-90.197c-17.346 0-31.63 14.081-31.63 31.63 0 17.346 14.081 31.63 31.63 31.63h90.401c17.754 95.299 109.583 157.947 204.678 140.193 71.219-13.264 126.725-68.974 140.193-140.193h312.628c17.754 95.299 109.583 157.947 204.678 140.193 71.219-13.264 126.725-68.974 140.193-140.193h121.623c34.895 0 63.056-28.161 63.056-63.056v-280.59c0-6.938-2.245-13.876-6.53-19.386zM890.745 385.071v-241.613h185.495c48.568 0 93.054 27.957 113.868 72.035l81.014 169.782h-380.378zM543.834 848.708c0 62.036-50.404 112.236-112.236 112.236-62.036 0-112.644-50.2-112.644-112.236s50.2-112.644 112.236-112.644c62.036 0 112.644 50.2 112.644 112.236 0 0.204 0 0.204 0 0.408zM1201.537 848.708c0 62.036-50.404 112.236-112.44 112.236s-112.44-50.404-112.44-112.44c0-62.036 50.404-112.44 112.44-112.44 62.24 0 112.44 50.404 112.44 112.644 0-0.204 0 0 0 0z"></path>
+          <path id="bottom2" class="bottom2" fill="#002854" d="M315.485 606.482c0-17.346-14.081-31.63-31.63-31.63h-173.456c-17.346 0-31.63 14.081-31.63 31.63s14.081 31.63 31.63 31.63h173.456c17.55-0.204 31.63-14.285 31.63-31.63z"></path>
+          <path id="middle2" class="middle2" fill="#002854" d="M425.884 417.11c0-17.346-14.081-31.63-31.63-31.63h-362.624c-17.346 0-31.63 14.081-31.63 31.63 0 17.346 14.081 31.63 31.63 31.63h362.828c17.346 0 31.426-14.285 31.426-31.63z"></path>
+          <path id="high2" class="high2" fill="#002854" d="M110.399 259.367h362.828c17.346 0 31.63-14.081 31.63-31.63s-14.081-31.63-31.63-31.63h-362.828c-17.346 0-31.63 14.081-31.63 31.63s14.285 31.63 31.63 31.63z"></path>
+        </div>
+      </section>
+  
+      <!-- POPUP MÁS COMPRADOS  -->
+            <div id="product1" class="wrap-popup">
+              <div class="inside-pop">
+                <a href="https://www.bedbathandbeyond.com.mx/procesador-de-alimentos-nutribullettm-color-gris-8-accesorios.html" target="_self">
+                  <div class="wrap-inside-pop">
+                    <div>
+                      <img src="https://mcprod.bedbathandbeyond.com.mx/media//nacionales/7502234766927.jpg?$imagePLP$&hei=300&wid=260" />
+                    </div>
+                    <div class="wrap-texto">
+                      <p>Compraron:</p>
+                      <h2><span class="hihgligthred">1</span>Procesador de alimentos Nutribullet™</h2>
+                      <p class="mini-leyenda">quedan pocas piezas</p>
+                      <p class="btn-buy-product">ver producto</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div id="product2" class="wrap-popup">
+              <div class="inside-pop">
+                <a href="https://www.bedbathandbeyond.com.mx/capsulas-de-cafe-au-lait-nescafe-dolce-gusto-16-piezas-67960996.html" target="_self">
+                  <div class="wrap-inside-pop">
+                    <div>
+                      <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/67960996.jpg?$imagePLP$&hei=300&wid=260" />
+                    </div>
+                    <div class="wrap-texto">
+                      <p>Compraron:</p>
+                      <h2><span class="hihgligthred">4</span> Cápsulas de café au lait Nescafé® Dolce Gusto®, 16 piezas</h2>
+                      <p class="mini-leyenda">quedan pocas piezas</p>
+                      <p class="btn-buy-product">ver producto</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div id="product3" class="wrap-popup">
+              <div class="inside-pop">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/categorias/bano.html" target="_self">
+                  <div class="wrap-inside-pop">
+                    <div>
+                      <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69618518.jpg?$imagePLP$&hei=300&wid=260" />
+                    </div>
+                    <div class="wrap-texto">
+                      <p>Compraron:</p>
+                      <h2><span class="hihgligthred">2</span> Toalla facial de algodón Nautica® Montford Sailor Knot color beige</h2>
+                      <p class="mini-leyenda">quedan pocas piezas</p>
+                      <p class="btn-buy-product">ver producto</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+        </div>
+        <div id="product4" class="wrap-popup">
+          <div class="inside-pop">
+            <a href="https://www.bedbathandbeyond.com.mx/horno-con-freidora-de-aire-instant-pot-vortex-plus-color-negro-69763406.html" target="_self">
+              <div class="wrap-inside-pop">
+                <div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69763406.jpg?$imagePLP$&hei=700&wid=700" />
+                </div>
+                <div class="wrap-texto">
+                  <p>Compraron:</p>
+                  <h2><span class="hihgligthred">1</span> Horno con freidora de aire Instant Pot®</h2>
+                  <p class="mini-leyenda">quedan pocas piezas</p>
+                  <p class="btn-buy-product">ver producto</p>
+                </div>
+              </div>
+            </a>
+          </div>
+    </div>
+    <div id="product5" class="wrap-popup">
+      <div class="inside-pop">
+        <a href="https://www.bedbathandbeyond.com.mx/depiladora-de-luz-pulsada-remington-ilight-essential-en-blanco-gris-69605529.html" target="_self">
+          <div class="wrap-inside-pop">
+            <div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69605529.jpg?$imagePLP$&hei=700&wid=700" />
+            </div>
+            <div class="wrap-texto">
+              <p>Compraron:</p>
+              <h2><span class="hihgligthred">1</span> Depiladora de luz pulsada Remington®</h2>
+              <p class="mini-leyenda">quedan pocas piezas</p>
+              <p class="btn-buy-product">ver producto</p>
+            </div>
+          </div>
+        </a>
+      </div>
+  </div>
+  <div id="product6" class="wrap-popup">
+    <div class="inside-pop">
+      <a href="https://www.bedbathandbeyond.com.mx/edredon-matrimonial-queen-de-poliester-saratogar.html" target="_self">
+        <div class="wrap-inside-pop">
+          <div>
+            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/61816800.jpg?$imagePLP$&hei=700&wid=700" />
+          </div>
+          <div class="wrap-texto">
+            <p>Compraron:</p>
+            <h2><span class="hihgligthred">1</span>Edredón matrimonial/queen de poliéster Saratoga®</h2>
+            <p class="mini-leyenda">quedan pocas piezas</p>
+            <p class="btn-buy-product">ver producto</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="product7" class="wrap-popup">
+    <div class="inside-pop">
+      <a href="https://www.bedbathandbeyond.com.mx/regadera-de-telefono-duschy-euromixr.html" target="_self">
+        <div class="wrap-inside-pop">
+          <div>
+            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7391398147914.jpg?$imagePLP$&hei=700&wid=700" />
+          </div>
+          <div class="wrap-texto">
+            <p>Compraron:</p>
+            <h2><span class="hihgligthred">2</span> Regadera de teléfono Duschy Euromix®</h2>
+            <p class="mini-leyenda">quedan pocas piezas</p>
+            <p class="btn-buy-product">ver producto</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="product8" class="wrap-popup">
+    <div class="inside-pop">
+      <a href="https://www.bedbathandbeyond.com.mx/almohada-estandar-de-espuma-de-poliuretano-ergo-shape-spring-airr.html" target="_self">
+        <div class="wrap-inside-pop">
+          <div>
+            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7502276326578.jpg?$imagePLP$&hei=700&wid=700" />
+          </div>
+          <div class="wrap-texto">
+            <p>Compraron:</p>
+            <h2><span class="hihgligthred">2</span>Almohada estándar de espuma de poliuretano Ergo shape Spring Air</h2>
+            <p class="mini-leyenda">quedan pocas piezas</p>
+            <p class="btn-buy-product">ver producto</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="product9" class="wrap-popup">
+    <div class="inside-pop">
+      <a href="https://www.bedbathandbeyond.com.mx/molino-automatico-de-acero-inoxidable-supreme-grind-cuisinartr.html" target="_self">
+        <div class="wrap-inside-pop">
+          <div>
+            <img src="https://mcprod.bedbathandbeyond.com.mx/media//nacionales/086279006691.jpg?$imagePLP$&hei=700&wid=700" />
+          </div>
+          <div class="wrap-texto">
+            <p>Compraron:</p>
+            <h2><span class="hihgligthred">1</span> Molino automático de acero inoxidable Supreme Grind Cuisinart®</h2>
+            <p class="mini-leyenda">quedan pocas piezas</p>
+            <p class="btn-buy-product">ver producto</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div id="product10" class="wrap-popup">
+    <div class="inside-pop">
+      <a href="https://www.bedbathandbeyond.com.mx/kit-de-corte-todo-en-uno-remingtonr-lithium-power.html" target="_self">
+        <div class="wrap-inside-pop">
+          <div>
+            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/74590536256.jpg?$imagePLP$&hei=700&wid=700" />
+          </div>
+          <div class="wrap-texto">
+            <p>Compraron:</p>
+            <h2><span class="hihgligthred">2</span> Kit de corte todo en uno Remington® Lithium Power</h2>
+            <p class="mini-leyenda">quedan pocas piezas</p>
+            <p class="btn-buy-product">ver producto</p>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+      
+      <!-- category tool tips -->
+      <section>
+      <div class="carrusel-category">
+        <div class="wrap-by-cat">
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> cocina</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara.html">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> recámara</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/bano.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> baño</p>
+              </div>
+            </a>
+          </div>
+          <!--<div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> alimentos</p>
+              </div>
+            </a>
+          </div>-->
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> cuidado personal</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> decoración</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/jardines-y-exteriores.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> jardines y exteriores</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> mascotas</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar.html">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> mesa y bar</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/ni-os-y-bebes.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> niños y bebés</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> organización y limpieza</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> tecnología</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/muebles.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> muebles</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-cat-brand">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal.html" target="_self">
+              <div class="inside-cat-brand">
+                <p><span class="diss-icon">%</span> cuidado personal</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <button class="btn-prev-cc"><</button>
+       <button class="btn-next-cc">></button>
+      </div>
+      </section>
+  
+      <!-- main section-->
+      <section id="mainBanner">
+        <div class="wrap-ban">
+          <div class="item-ban">
+            <div class="dropping-texts">
+              <div>en la compra de <span class="bg_cyber">$1,500</span> o más<span class="bg_cyber"> te bonificamos el 15%</span> en una tarjeta de regalo</div>
+              <div>envíos gratis y <span class="bg_cyber">hasta 18 msi</span> </div>
+              <div>hasta <span class="bg_cyber">50%</span>de descuento</div>
+            </div>
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/buddycw.png?rand=1637769280" 
+            alt="cyberweekend" class="buddy" />
+            <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/logo-horizontal-slogan_1.png?rand=1636480826"
+            alt="cyberweekend BedBathandBeyond"
+            class="img-bf slideUp"
+          />
+          </div>
+          <div class="item-ban">
+            <h3 class="txt-help">descuentos <br>por categoría<h3>
+              <div class="wrap-minibanner">
+              <!-- Categoría 1-->
+                <div class="slides_bf slide--cat">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                          <p>cocina</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cocina.jpg?rand=1635779272" 
+                        alt="Cocina Cyberweekend Bed Bath & Beyond" />
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <!-- Categoría 2-->
+                <div class="slides_bf slide--cat">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/bano.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>baño</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bano.jpg?rand=1635779272" 
+                        alt="Baño Cyberweekend Bed Bath & Beyond" />
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <!-- Categoría 3-->
+                <div class="slides_bf slide--cat">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>alimentos</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/alimentos.jpg?rand=1635779272" 
+                        alt="Alimentos Cyberweekend Bed Bath & Beyond" />
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+              <!-- Categoría 4-->
+              <div class="slides_bf slide--cat">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal.html
+                " target="_self">
+                  <div class="wrap-cat">
+                    <div class="circle-cat">
+                      <p>cuidado personal</p>
+                    </div>
+                    <picture>
+                      <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cuidado-personal.jpg?rand=1635779272" 
+                      alt="Cuidado Personal Cyberweekend Bed Bath & Beyond">
+                    </picture>  
+                  </div>
+                </a>
+              </div>
+              <!-- Categoría 5-->
+              <div class="slides_bf slide--cat">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion.html" target="_self">
+                  <div class="wrap-cat">
+                    <div class="circle-cat">
+                      <p>decoración</p>
+                    </div>
+                    <picture>
+                      <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/decoracion.jpg?rand=1635779272" 
+                      alt="Decoración Cyberweekend Bed Bath & Beyond" />
+                    </picture>  
+                  </div>
+                </a>
+              </div>
+              <!-- Categoría 6-->
+              <div class="slides_bf slide--cat">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/jardines-y-exteriores.html" target="_self">
+                  <div class="wrap-cat">
+                    <div class="circle-cat">
+                      <p>jardines y exteriores</p>
+                    </div>
+                    <picture>
+                      <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/outdoor.jpg?rand=1635779272" 
+                      alt="Jardines y Exteriores Cyberweekend Bed Bath & Beyond" />
+                    </picture>  
+                  </div>
+                </a>
+              </div>
+             <!-- Categoría 7-->
+             <div class="slides_bf slide--cat">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas.html" target="_self">
+                <div class="wrap-cat">
+                  <div class="circle-cat">
+                    <p>mascotas</p>
+                  </div>
+                  <picture>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/mascotas.jpg?rand=1635779272" 
+                    alt="Mascotas Cyberweekend Bed Bath & Beyond" />
+                  </picture>   
+                </div>
+              </a>
+            </div>
+            <!-- Categoría 8-->
+            <div class="slides_bf slide--cat">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar.html" target="_self">
+                <div class="wrap-cat">
+                  <div class="circle-cat">
+                    <p>mesa y bar</p>
+                  </div>
+                  <picture>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/mesa.jpg?rand=1635779272" 
+                    alt="Mesa y Bar Cyberweekend Bed Bath & Beyond" />
+                  </picture>   
+                </div>
+              </a>
+            </div>
+            <!-- Categoría 9-->
+            <div class="slides_bf slide--cat">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/ni-os-y-bebes.html" target="_self">
+                <div class="wrap-cat">
+                  <div class="circle-cat">
+                    <p>niños y bebés</p>
+                  </div>
+                  <picture>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes.jpg?rand=1635779272" 
+                    alt="Niños y Bebés Cyberweekend Bed Bath & Beyond" />
+                  </picture>  
+                </div>
+              </a>
+            </div>
+          <!-- Categoría 10-->
+          <div class="slides_bf slide--cat">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza.html" target="_self">
+              <div class="wrap-cat">
+                <div class="circle-cat">
+                  <p>organización y limpieza</p>
+                </div>
+                <picture>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/orga-y-limpieza.jpg?rand=1635779272" 
+                  alt="Organización y Limpieza Cyberweekend Bed Bath & Beyond" />
+                </picture>  
+              </div>
+            </a>
+          </div>
+          <!-- Categoría 12-->
+          <div class="slides_bf slide--cat">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara.html" target="_self">
+              <div class="wrap-cat">
+                <div class="circle-cat">
+                  <p>recámara</p>
+                </div>
+                <picture>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cama.jpg?rand=1635779272" 
+                  alt="Recámara Cyberweekend Bed Bath & Beyond" />
+                </picture>
+              </div>
+            </a>
+          </div>
+          <!-- Categoría 13-->
+          <div class="slides_bf slide--cat">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia.html" target="_self">
+              <div class="wrap-cat">
+                <div class="circle-cat">
+                  <p>tecnología</p>
+                </div>
+                <picture>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/tecnologia.jpg?rand=1635779272" 
+                  alt="Tecnología Cyberweekend Bed Bath & Beyond" />
+                </picture>
+              </div>
+            </a>
+          </div>
+
+  
+                <a class="prev--minbanner arrow--s" onclick="currentSlide(-1, 'cat')">&#10094;</a>
+                <a class="next--minbanner arrow--s" onclick="plusSlides(1, 'cat')">&#10095;</a>
+              </div>
+            
+              <!--    Putting in the click dots  -->
+              <div style="text-align: center">
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+                <span class="dot--cat"></span>
+              </div>
+  
+              <div class="wrap-btn-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias.html" target="_self">
+                  <p>ver todo</p>
+                </a>
+              </div>
+          </div>
+          <div class="item-ban">
+            <h3 class="txt-help">descuentos <br>del 10% al 60%</h3>
+            <div class="wrap-minibanner">
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/8-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>10%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-12-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>12%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-15-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>15%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-20-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>20%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-25-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>25%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-30-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>30%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-35-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>35%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-40-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>40%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-45-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>45%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="slides_bf slide--disccount slideLeft">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-60-de-descuento.html" target="_self">
+                  <div class="wrap-disscount">
+                    <div class="circle--disccount">
+                      <div class="wrap--cricle">
+                        <p class="txt-less">hasta el</p>
+                        <h2>60%</h2>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <a class="prev--minbanner arrow--s" onclick="currentSlide(-1, 'price')">&#10094;</a>
+              <a class="next--minbanner arrow--s" onclick="plusSlides(1, 'price')">&#10095;</a>
+            </div>
+          
+            <!--    Putting in the click dots  -->
+            <div style="text-align: center">
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+              <span class="dot--disccount"></span>
+            </div>
+  
+            <div class="wrap-btn-cat">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos.html" target="_self">
+                <p>ver todo</p>
+              </a>
+            </div>
+  
+          </div>
+          <div class="item-ban">
+            <h3 class="txt-help">descuentos hasta <br> -50%</h3>
+            <div>
+              <div class="wrap-minibanner">
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/cuidado-personal.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>cuidado personal</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-cuid-per.jpg?rand=1635779272" alt="Descuentos Cuidado Personal Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/mascotas.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>mascotas</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-mascotas.jpg?rand=1635779272" alt="Descuentos Baño Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/tecnologia.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>tecnología</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-tecnologia.jpg?rand=1635779272" alt="Descuentos Tecnología Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/decoracion.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>decoración</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-deco.jpg?rand=1635779272" alt="Descuentos decoración Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+  
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/organizacion.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>organización</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-orga-y-limpieza.jpg?rand=1635779272" alt="Descuentos Organización Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+  
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/recamara.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>recámara</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-cama.jpg?rand=1635779272" alt="Descuentos Baño Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/ba-o.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>baño</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-bano.jpg?rand=1635779272" alt="Descuentos Baño Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/cocina.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>cocina</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-cocina.jpg?rand=1635779272" alt="Descuentos Cocina Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/jardines.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>jardines y exteriores</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/50-exteriores.jpg?rand=1635779272" alt="Descuentos Baño Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/ni-os-y-bebes.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>nños y bebes</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/alimentos_1.jpg?rand=1635790078" alt="Descuentos Baño Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--fifty">
+                  <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento/navidad.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>navidad</p>
+                      </div>
+                      <picture>
+                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-30-11-29_884631191883_1?$imagePLP$&hei=700&wid=700" alt="Descuentos Baño Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+  
+                <a class="prev--minbanner arrow--s" onclick="currentSlide(-1, 'fifty')">&#10094;</a>
+                <a class="next--minbanner arrow--s" onclick="plusSlides(1, 'fifty')">&#10095;</a>
+              </div>
+            
+              <!--    Putting in the click dots  -->
+              <div style="text-align: center">
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+                <span class="dot--fifty"></span>
+              </div>
+  
+              <div class="wrap-btn-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/liquidacion/50-descuento.html" target="_self">
+                  <p>ver todo</p>
+                </a>
+              </div>
+  
+            </div>
+          </div>
+          <div class="item-ban">
+            <h3 class="txt-help">descuento <br> exclusivos online</h3>
+            <div>
+              <div class="wrap-minibanner">
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-15-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-15%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-cocina.jpg?rand=1635799388" alt="cocina descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-20-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-20%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-cuidado-personal.jpg?rand=1635799388" alt="cuidado personal descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-25-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-25%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-deco.jpg?rand=1635799388" alt="decoración descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-30-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-30%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-muebles.jpg?rand=1635799388" alt="muebles descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-35-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-35%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-tecnologia.jpg?rand=1635799388" alt="tecnología descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-40-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-40%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-exteriores.jpg?rand=1635799388" alt="jardines y exteriores descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                  <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-45-de-descuento.html" target="_self">
+                    <div class="wrap-cat">
+                      <div class="circle-cat">
+                        <p>-45%</p>
+                      </div>
+                      <picture>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-orga-limpieza.jpg?rand=1635799388" alt="organización y limpieza descuentos buen fin Bed Bath & Beyond">
+                      </picture>  
+                    </div>
+                  </a>
+                </div>
+                <div class="slides_bf slide--ex">
+                    <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online/hasta-60-de-descuento.html" target="_self">
+                      <div class="wrap-cat">
+                        <div class="circle-cat">
+                          <p>-60%</p>
+                        </div>
+                        <picture>
+                          <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/exc-orga-limpieza.jpg?rand=1635799388" alt="organización y limpieza descuentos buen fin Bed Bath & Beyond">
+                        </picture>  
+                      </div>
+                    </a>
+                  </div>
+                <a class="prev--minbanner arrow--s" onclick="currentSlide(-1, 'ex')">&#10094;</a>
+                <a class="next--minbanner arrow--s" onclick="plusSlides(1, 'ex')">&#10095;</a>
+  
+              </div>
+            
+              <!--    Putting in the click dots  -->
+              <div style="text-align: center">
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+                <span class="dot--ex"></span>
+              </div>
+  
+              <div class="wrap-btn-cat">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/exclusivos-online.html" target="_self">
+                  <p>ver todo</p>
+                </a>
+              </div>
+  
+            </div>
+        </div>
+      </section>
+  
+    <!-- Promos Bancarias preventa -->
+    <section class="space-section antes">
+      <div class="wrap-promo-bank">
+          <a href="https://www.bedbathandbeyond.com.mx/promos-bancarias" target="_self">
+            <div>
+              <picture>
+                <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/banner-MSI-mobile.jpg?rand=1637772146">
+                <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/cintillo-MSI.jpg?rand=1637772146">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/cintillo-MSI.jpg?rand=1637772146" alt="BedBathandBeyond">
+              </picture>   
+            </div>
+          </a>
+      </div>
+    </section>
+    <!-- Promos Bancarias buen fin -->
+    <section class="space-section despues">
+      <div class="wrap-promo-bank">
+        <div class="slide_bank">
+          <a href="https://www.bedbathandbeyond.com.mx/promociones-bancarias-buen-fin" target="_self">
+            <div>
+              <picture>
+                <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bannes-mobile-citibanamex.jpg?rand=1635786220">
+                <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/buen-fin-desk-citibanamex.jpg?rand=1635786856">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/buen-fin-desk-citibanamex.jpg?rand=1635786856" alt="BedBathandBeyond">
+              </picture>   
+            </div>
+          </a>
+        </div>
+        <div class="slide_bank">
+          <a href="https://www.bedbathandbeyond.com.mx/promociones-bancarias-buen-fin" target="_self">
+            <picture>
+              <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/buen-fin-mob-bbva-bf.jpg?rand=1635786856">
+              <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/buen-fin-desk-bbva-bf.jpg?rand=1635786856">
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/buen-fin-desk-bbva-bf.jpg?rand=1635786856" alt="BedBathandBeyond">
+            </picture>
+          </a>
+        </div>
+        <a class="prev--minbanner" onclick="currentSlide(-1)">&#10094;</a>
+        <a class="next--minbanner" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+    
+      <div style="text-align: center">
+        <span class="dot--minbanner"></span>
+        <span class="dot--minbanner"></span>
+      </div>
+    </section> 
+  
+  
+      <div class="wrap-name">
+        <a id="link-to" href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina.html" target="_self">
+        <p id="name" class="txt-name">descuentos <span id="namecategory">cocina</span></p>
+          <p class="btn-vercat">ver todo</p>
+        </a>
+      </div>
+      <!-- main section-->
+      <section id="categorySection">
+        <!-- wrap-cat -->
+      <div class="container-catbf slider_mb">
+        <div class="wrap-cat slides_mb">
+          <!--1.Recamara -->
+          <div class="item-cat" onclick="changeCategory('recámara')">
+            <div id="tab-recámara" class="container-item">
+                <img src="https://mcprod.bedbathandbeyond.com.mx/media//nacionales/7502253436955.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+                class="img-cat" />
+              <p class="txt-cat">recámara</p>
+              <div id="arrow-recámara" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--2.Baño -->
+          <div class="item-cat" onclick="changeCategory('baño')">
+            <div id="tab-baño" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69618518.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">baño</p>
+              <div id="arrow-baño"class="triangle_down"></div>
+            </div>
+          </div>
+        <!--3.cocina -->
+          <div class="item-cat" onclick="changeCategory('cocina')">
+            <div id="tab-cocina" class="container-item enablecat">
+              <img id="cocinaimg" src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69751697.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">cocina</p>
+              <div id="arrow-cocina" class="triangle_down enable_arrow"></div>
+            </div>
+          </div>
+        <!--4. organizacion -->
+          <div class="item-cat" onclick="changeCategory('organización')">
+            <div id="tab-organización" class="container-item">
+              <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7501955444602.png?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">organización</p>
+              <div id="arrow-organización" class="triangle_down"></div>
+            </div>
+          </div>
+        <!-- 5.alimentos -->
+          <div class="item-cat" onclick="changeCategory('alimentos')">
+            <div id="tab-alimentos" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/67960996.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">alimentos</p>
+              <div id="arrow-alimentos" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--6.cuidado -->
+          <div class="item-cat" onclick="changeCategory('cuidado personal')">
+            <div id="tab-cuidado personal" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/69714023.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">cuidado personal</p>
+              <div id="arrow-cuidado personal" class="triangle_down"></div>
+            </div>
+          </div>
+       <!--7.decoración -->
+        <div class="item-cat" onclick="changeCategory('decoración')">
+          <div id="tab-decoración" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69695738.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">decoración</p>
+              <div id="arrow-decoración" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--8.jardines y exteriores -->
+        <div class="item-cat" onclick="changeCategory('jardines y exteriores')">
+            <div id="tab-jardines y exteriores" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69710669.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">jardines y exteriores</p>
+              <div id="arrow-jardines y exteriores" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--9.mascotas y viaje -->
+        <div class="item-cat" onclick="changeCategory('mascotas y viajes')">
+            <div id="tab-mascotas y viajes" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69618198.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">mascotas y viajes</p>
+              <div id="arrow-mascotas y viajes" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--10.tecnología -->
+        <div class="item-cat" onclick="changeCategory('tecnología')">
+            <div id="tab-tecnología" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69688983.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">tecnología</p>
+              <div id="arrow-tecnología" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--11.mesa y bar -->
+          <div class="item-cat" onclick="changeCategory('mesa y bar')">
+            <div id="tab-mesa y bar" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69803179.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">mesa y bar</p>
+              <div id="arrow-mesa y bar" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--12.niños y bebes -->
+          <div class="item-cat" onclick="changeCategory('niños y bebes')">
+            <div id="tab-niños y bebes" class="container-item">
+              <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69774625.jpg?$imagePLP$&hei=300&wid=260" alt="" 
+              class="img-cat" />
+              <p class="txt-cat">niños y bebés</p>
+              <div id="arrow-niños y bebes" class="triangle_down"></div>
+            </div>
+          </div>
+        <!--13.muebles -->
+        <div class="item-cat" onclick="changeCategory('muebles')">
+        <div id="tab-muebles" class="container-item">
+            <img src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7501955440192.png?$imagePLP$&hei=300&wid=260" alt="" 
+            class="img-cat" />
+            <p class="txt-cat">muebles</p>
+            <div id="arrow-muebles" class="triangle_down"></div>
+        </div>
+        </div>
+        </div>
+          <button class="btn-prev_mb">
+          <button class="btn-next_mb">
+      </div>
+  
+      <!-- id="bloque-recámara" -->
+        <div id="bloque-recámara" class="wrap--wholecat hide">
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara/hasta-20-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>20%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/recamara.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara/hasta-25-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>25%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/recamara.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara/hasta-45-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>45%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/recamara.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/recamara/hasta-60-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>60%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/recamara.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+        </div>
+  
+      <!--id="bloque-baño" -->
+      <div id="bloque-baño" class="wrap--wholecat hide">
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/bano/hasta-10-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>10%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bano_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/bano/hasta-20-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>20%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bano_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/bano/hasta-30-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>30%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bano_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+      </div>
+  
+      <!--id="bloque-cocina" -->
+          <div id="bloque-cocina" class="wrap--wholecat show">
+            <!--item1-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-10-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>10%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/electrodom.jpg?rand=1635794457" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item2-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-12-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>12%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/baterias.jpg?rand=1635794457" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item3-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-15-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>15%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/utensilios.jpg?rand=1635794457" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item4-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-20-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>20%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/filtros-agua.jpg?rand=1635794457" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+          <!--item4-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-25-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>25%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/filtros-agua.jpg?rand=1635794457" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item4-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-30-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>30%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/filtros-agua.jpg?rand=1635794457" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+        <!--item4-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-35-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>35%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/filtros-agua.jpg?rand=1635794457" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item4-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cocina/hasta-40-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>40%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/filtros-agua.jpg?rand=1635794457" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+      </div>
+  
+      <!--id="bloque-organización" -->
+      <div id="bloque-organización" class="wrap--wholecat hide">
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza/hasta-10-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>10%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/organizacion.jpg?rand=1635799236" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item2-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza/hasta-15-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>15%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/limpieza.jpg?rand=1635799236" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item2-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza/hasta-20-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>20%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/limpieza.jpg?rand=1635799236" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item2-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza/hasta-25-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>25%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/limpieza.jpg?rand=1635799236" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item2-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/organización-y-limpieza/hasta-30-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>30%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/limpieza.jpg?rand=1635799236" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+      </div>
+  
+      <!--id="bloque-decoración" -->
+          <div id="bloque-decoración" class="wrap--wholecat hide">
+            <!--item1-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion/hasta-15-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>15%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/velas-difusores.jpg?rand=1635796549" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item2-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion/hasta-20-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>20%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/tapetes.jpg?rand=1635796549" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item3-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion/hasta-25-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>25%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/accesorios-decorativos.jpg?rand=1635796549" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item3-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/decoracion/hasta-25-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>25%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/accesorios-decorativos.jpg?rand=1635796549" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+          </div>
+  
+      <!--id="bloque-alimentos" -->
+        <div id="bloque-alimentos" class="wrap--wholecat hide">
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas/hasta-12-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>12%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/alimentos_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt"> ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas/hasta-20-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>20%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/alimentos_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt"> ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas/hasta-25-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>25%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/alimentos_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt"> ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/alimentos-y-bebidas/hasta-30-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>30%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/alimentos_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt"> ver descuentos</p>
+            </a>
+          </div>
+        </div>
+  
+      <!--id="bloque-cuidado personal" -->
+          <div id="bloque-cuidado personal" class="wrap--wholecat hide">
+            <!--item1-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal/hasta-15-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>15%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cuidado-cabello.jpg?rand=1635796412" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item2-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal/hasta-20-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>20%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cuidado-piel.jpg?rand=1635796412" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item3-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal/hasta-25-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>25%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/descanso.jpg?rand=1635796412" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+            <!--item4-->
+            <div class="item-wh">
+              <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal/hasta-30-de-descuento.html" target="_self">
+                <div class="sub-wh">
+                  <div class="circle-dbf floating">
+                    <p>30%</p>
+                  </div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/belleza.jpg?rand=1635796412" />
+                </div>
+                <p class="bg_txt">ver descuentos</p>
+              </a>
+            </div>
+              <!--item5-->
+              <div class="item-wh">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal/hasta-35-de-descuento.html" target="_self">
+                  <div class="sub-wh">
+                    <div class="circle-dbf floating">
+                      <p>35%</p>
+                    </div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/salud.jpg?rand=1635790078" />
+                  </div>
+                  <p class="bg_txt">ver descuentos</p>
+                </a>
+              </div>
+              <!--item5-->
+              <div class="item-wh">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/cuidado-personal/hasta-40-de-descuento.html" target="_self">
+                  <div class="sub-wh">
+                    <div class="circle-dbf floating">
+                      <p>40%</p>
+                    </div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/salud.jpg?rand=1635790078" />
+                  </div>
+                  <p class="bg_txt">ver descuentos</p>
+                </a>
+              </div>
+          </div>
+  
+    <!--id="jardines y exteriores" -->
+        <div id="bloque-jardines y exteriores" class="wrap--wholecat hide">
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/jardines-y-exteriores/hasta-15-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>15%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/jardines-y-exteriores.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/jardines-y-exteriores/hasta-25-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>25%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/jardines-y-exteriores.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+      <!--item1-->
+      <div class="item-wh">
+        <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/jardines-y-exteriores/hasta-30-de-descuento.html" target="_self">
+          <div class="sub-wh">
+            <div class="circle-dbf floating">
+              <p>30%</p>
+            </div>
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/jardines-y-exteriores.jpg?rand=1635790078" />
+          </div>
+          <p class="bg_txt">ver descuentos</p>
+        </a>
+      </div>
+    </div>
+      
+        <!--id="mascotas y viajes" -->
+        <div id="bloque-mascotas y viajes" class="wrap--wholecat hide">
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas/hasta-10-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>10%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/mascotas_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+  
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas/hasta-20-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>20%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/viajes_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas/hasta-25-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>25%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/viajes_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas/hasta-30-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>30%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/viajes_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mascotas-viajes-y-mas/hasta-35-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>35%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/viajes_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+        </div>
+  
+        <!--id="tecnologia" -->
+        <div id="bloque-tecnología" class="wrap--wholecat hide">
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia/hasta-20-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>20%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/tecnologia_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item2-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia/hasta-25-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>25%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/tecnologia_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item3-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia/hasta-30-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>30%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/tecnologia_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item3-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/tecnologia/hasta-35-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>35%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/tecnologia_1.jpg?rand=1635790078" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+        </div>
+  
+        <!--id="mesa y bar" -->
+        <div id="bloque-mesa y bar" class="wrap--wholecat hide">
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar/hasta-10-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>10%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/manteleria.jpg?rand=1635799107" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar/hasta-15-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>15%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/vasos.jpg?rand=1635799107" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar/hasta-20-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>20%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cubiertos.jpg?rand=1635799107" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar/hasta-25-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>25%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/servicio-mesa.jpg?rand=1635799107" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>          
+          <!--item1-->
+          <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/mesa-y-bar/hasta-30-de-descuento.html" target="_self">
+              <div class="sub-wh">
+                <div class="circle-dbf floating">
+                  <p>30%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/servicio-mesa.jpg?rand=1635799107" />
+              </div>
+              <p class="bg_txt">ver descuentos</p>
+            </a>
+          </div>
+        </div>
+  
+      <!--id="niños y bebes" -->
+      <div id="bloque-niños y bebes" class="wrap--wholecat hide">
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/ninos-y-bebes/hasta-20-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>20%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/ninos-y-bebes/hasta-25-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>25%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+        <!--item1-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/ninos-y-bebes/hasta-30-de-descuento.html" target="_self">
+            <div class="sub-wh">
+              <div class="circle-dbf floating">
+                <p>30%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver descuentos</p>
+          </a>
+        </div>
+      </div>
+
+
+    <!--id="muebles" -->
+    <div id="bloque-muebles" class="wrap--wholecat hide">
+        <!--item1-->
+        <div class="item-wh">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/muebles/hasta-10-de-descuento.html" target="_self">
+            <div class="sub-wh">
+                <div class="circle-dbf floating">
+                <p>10%</p>
+                </div>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes_1.jpg?rand=1635790078" />
+            </div>
+            <p class="bg_txt">ver todo</p>
+            </a>
+        </div>
+        <!--item2-->
+        <div class="item-wh">
+          <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/muebles/hasta-15-de-descuento.html" target="_self">
+          <div class="sub-wh">
+              <div class="circle-dbf floating">
+              <p>15%</p>
+              </div>
+              <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes_1.jpg?rand=1635790078" />
+          </div>
+          <p class="bg_txt">ver todo</p>
+          </a>
+      </div>
+      <!--item2-->
+      <div class="item-wh">
+        <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todas-las-categorias/muebles/hasta-20-de-descuento.html" target="_self">
+        <div class="sub-wh">
+            <div class="circle-dbf floating">
+            <p>20%</p>
+            </div>
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/ninos-y-bebes_1.jpg?rand=1635790078" />
+        </div>
+        <p class="bg_txt">ver todo</p>
+        </a>
+    </div>
+    </div>
+    </section>
+  
+          <!-- compra por precio -->
+          <section id="buybyprice">
+            <h2> compra por descuento </h2>
+            <div class="wrap-precio">
+            <!-- Item price -->
+              <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-10-de-descuento.html" target="_self">
+                  <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>10%</p>
+                  </div>
+                </a>
+              </div>
+              <!-- Item price -->
+              <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-12-de-descuento.html" target="_self">
+                  <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>12%</p>
+                  </div>
+                </a>
+              </div>
+              <!-- Item price -->
+              <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-15-de-descuento.html" target="_self">
+                  <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>15%</p>
+                  </div>
+                </a>
+              </div>
+      
+              <!-- Item price -->
+              <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-20-de-descuento.html" target="_self">
+                  <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>20%</p>
+                  </div>
+                </a>
+              </div>
+      
+              <!-- Item price -->
+              <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-25-de-descuento.html" target="_self">
+                  <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>25%</p>
+                  </div>
+                </a>
+              </div>
+      
+      
+              <!-- Item price -->
+              <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-30-de-descuento.html" target="_self">
+                  <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>30%</p>
+                  </div>
+                </a>
+              </div>
+
+            <!-- Item price -->
+            <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-35-de-descuento.html" target="_self">
+                    <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>35%</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item price -->
+            <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-40-de-descuento.html" target="_self">
+                    <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>40%</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Item price -->
+            <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-45-de-descuento.html" target="_self">
+                    <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>45%</p>
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- Item price -->
+            <div class="item-price">
+                <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/todos-los-descuentos/hasta-60-de-descuento.html" target="_self">
+                    <div class="cn-price">
+                    <p>hasta el</p>
+                    <p>60%</p>
+                    </div>
+                </a>
+            </div>
+            </div>
+          </section>
+  
+        <!-- Banks two colummns -->
+        <section class="space-section despues">
+          <div class="wrap-banks">
+            <div class="item-bank">
+              <a href="https://www.bedbathandbeyond.com.mx/paypal-buenfin" target="_self">
+                <picture>
+                  <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/banner-mobile-paypal-bf2.jpg?rand=1635786856">
+                  <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/banner-mobile-paypal-bf2.jpg?rand=1635786856">
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/banner-mobile-paypal-bf2.jpg?rand=1635786856" alt="BedBathandBeyond">
+                </picture>  
+              </a>
+            </div>
+            <div class="item-bank">
+              <a href="https://www.bedbathandbeyond.com.mx/promos-bancarias" target="_self">
+                <picture>
+                  <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bannes-mobile-msi_1.jpg?rand=1635786220">
+                  <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bannes-mobile-msi_1.jpg?rand=1635786220">
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bannes-mobile-msi_1.jpg?rand=1635786220" alt="BedBathandBeyond">
+                </picture>  
+              </a>
+            </div>
+          </div>
+        </section> 
+  
+         <!-- Dyson-->
+         <section class="space-section">
+          <div class="mini-ban2">
+            <a href="https://www.bedbathandbeyond.com.mx/buen-fin-2021/dyson.html" target="_self">
+              <picture>
+                <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/p_class_bg_txtver_descuentosp_2_.png?rand=1637621502">
+                <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/p_class_bg_txtver_descuentosp_2_.png?rand=1637621502">
+                <img src="https://www.bedbathandbeyond.com.mx/media/p_class_bg_txtver_descuentosp_2_.png?rand=1637621502" alt="BedBathandBeyond">
+              </picture>  
+               <p class="text-banner pulse">¡tiene un regalo<span id="namecategory"> SORPRESA</span> para ti! </span></p>
+              <p class="call-dyson">ver promoción</p>
+            </a>
+          </div>
+        </section>
+  
+     <!-- otras promos -->
+      <section>
+        <div class="wrap-title">
+          <p>ahorra con estas ofertas</p>
+        </div>
+        <div class="wrap-otras-promos">
+          <div class="item-promos">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/ahorra-o-nunca.html" target="_self">
+              <div class="wrap__banner">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/7502269728495-PhotoRoom.png?rand=1637615439" 
+                    alt="" 
+                    class="img_icon"/>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/Screen_Shot_2021-11-22_at_15.18.09-PhotoRoom.png?rand=1637615929" 
+                class="gift_regalo"/>
+                    <p class="leyenda__promo">ahorra o<span class="bg_red_d"> nunca</span></p>
+              </div>
+            </a>
+          </div>
+          <div class="item-promos">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/delonghi.html" target="_self">
+              <div class="wrap__banner">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/32978242101833p-PhotoRoom.png?rand=1637615439" 
+                    alt="" 
+                    class="img_icon"/>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/Screen_Shot_2021-11-22_at_15.18.09-PhotoRoom.png?rand=1637615929" 
+                    class="gift_regalo_down"/>
+                    <p class="leyenda__promo">descuentos
+                    <span class="bg_red_d">delongui</span></p>
+              </div>
+            </a>
+          </div>
+          <div class="item-promos">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/instant-pot.html" target="_self">
+              <div class="wrap__banner">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/Screen_Shot_2021-11-22_at_15.18.09-PhotoRoom.png?rand=1637615929" 
+                class="gift_regalo"/>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/69763406_2-PhotoRoom.png?rand=1637615439" 
+                    alt="" 
+                    class="img_icon"/>
+                    <p class="leyenda__promo">regalos
+                       <span class="bg_red_d">instant pot</span></p>
+              </div>
+            </a>
+          </div>
+          <div class="item-promos">
+            <a href="https://www.bedbathandbeyond.com.mx/cyberweekend/gibson.html" target="_self">
+              <div class="wrap__banner">
+                          <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/Screen_Shot_2021-11-22_at_15.18.09-PhotoRoom.png?rand=1637615929" 
+                class="gift_regalo_down"/>
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cw/69707524-PhotoRoom_1_.png?rand=1637615929" 
+                    alt="" 
+                    class="img_icon"/>
+                    <p class="leyenda__promo">descuentos
+                      <span class="bg_red_d">gibson</span></p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+  
+         <!-- carrusel productos -->
+      <section>
+        <div class="wrap-productos">
+          <div class="item-prod">
+            <a href="" target="_self">
+              <div class="wrap-itemprod"> 
+  
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+  </body>
+</html>

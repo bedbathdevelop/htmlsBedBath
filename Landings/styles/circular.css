@@ -1,0 +1,86 @@
+.carrouselcategory {
+  width: 100%;
+  margin: auto;
+  height: 250px;
+  overflow: hidden;
+}
+.controls:hover {
+  background-color: rgba(26, 78, 138, 0.5);
+}
+.des-mini {
+  font-size: 12px;
+  font-weight: 900;
+}
+.itemslider {
+  width: 120px;
+  height: 250px;
+  float: left;
+  margin-left: 15px;
+  margin-top: 20px;
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  padding-top: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 1s all;
+  overflow: hidden;
+  position: relative;
+  color: #1a4e8a;
+}
+.descripcat {
+  font-weight: 600px;
+  margin-top: -1px;
+  font-size: 16px;
+  line-height: 1;
+}
+.cont-controls {
+  position: absolute;
+  width: 92%;
+  margin-top: 120px;
+}
+.tapa {
+  width: 12000px; /* 	change if the size is >     12000  :) */
+  transition: 0.9s all;
+}
+.itemslider img {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #da1623;
+  border-radius: 50%;
+}
+.itemslider:hover img {
+  border: 4px solid #da1623;
+  transform: scale(0.9);
+  transform-origin: 50% 50%;
+}
+.item:hover {
+  margin-top: -5px;
+}
+.controls {
+  width: 22px;
+  height: 22px;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.controls img {
+  width: 20px;
+  height: auto;
+}
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+.carrouselcategory {
+  width: 100%;
+  margin: auto;
+  height: 300px;
+  overflow: hidden;
+}
+.controls:hover {
+  background-color: rgba(26, 78, 138, 0.5);
+}

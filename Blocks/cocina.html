@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cocina</title>
+    <style>
+      section {
+          margin-bottom: 16px;
+      }
+
+      h1,h2,h3,h4,h5 {
+          font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+      }
+      p,a {
+         font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+      }
+      a:hover{
+          text-decoration: none;
+      }
+      body.catalog-category-view #maincontent .columns, body.catalogsearch-result-index #maincontent .columns {
+          display: none;
+      }
+      .title-font {
+          color:#002855;
+          width: 100%;
+          padding-top: 1rem;
+          padding-bottom: 0rem;
+          font: Termina Headline,sans-serif;
+          text-align: center;
+          font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+      }
+      .flex-container{
+          display: inline-flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+      }
+      .col-50 {
+          padding:10px;
+          width: 50%;
+      }
+      .col-30 {
+          width: 30%;
+      }
+      .square {
+          border: 5px solid #1a4e8a;
+          display: inline-flex;
+          width: 100%;
+          align-items: center;
+      }
+
+      .square h2 {
+          width:100%;
+          text-align: center;
+          font-weight: bolder;
+          color: #1a4e8a;
+          font-size: 25px;
+      }
+      .square span {
+          width: 30%;
+          padding: 10px;
+      }
+      .text-square {
+          padding-top: 1rem;
+          padding-bottom: .5rem;
+          width: 100%;
+          text-align: center;
+      }
+      .text-square p {
+          font-size: 18px;
+          color: #000;
+          text-align: center;
+          margin-bottom: 0;
+      }
+      .call-to {
+          font-weight: bold;
+          font-size: 18px;
+      }
+      .banner-top {
+          background: #ed2837;
+          display: flex;
+          flex-direction: column;
+          align-items: center;padding: 2em;
+      }
+      .white-bkg {
+          background: #fff;
+          color: #ed2837;
+          font-size: 20px;
+          padding: 0 10px;
+      }
+      .banner-top h4 {
+          color: #fff;
+          margin: 60px 0;
+          font-size: 60px;
+      }
+      .banner-top span {
+          background: #fff;
+          color:#1a4e8a;
+          padding: 0 10px;
+      }
+      .p-center {
+          font-size: 14px;
+          line-height: 14px;
+          padding: 2em;
+          text-align: center;
+      }
+      .photo-banner {
+          position: relative;
+          width:100%;
+          height: 495px;
+          background-size: 100%;
+          background-position: center;
+          background-repeat: no-repeat;
+      }
+      .col-40 {
+          background:rgba(255,255,255,0.6);
+          width: 40%;
+          padding: 1.5%;
+          position: absolute;
+          bottom: 2.5rem;
+      }
+      .col-40.right {
+          right: 1em;
+      }
+      .col-40.left {
+          left: 1em;
+      }
+      .col-40.bottom {
+          top: 90%;
+      }
+      .col-40.top {
+          top: 1em;
+      }
+      .col-40.center {
+          left: 50%;
+          margin-left: -25%;
+      }
+      .center-elements {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+      }
+      .button-blue {
+          box-shadow: none;
+          color: #fff;
+          border-color: #1377c9;
+          border-style: none;
+          background-color: #1377c9;
+          text-decoration: none;
+          width: auto;
+          padding: 10px;
+          border-radius: 5px;
+      }
+      .content-color {
+          padding: 0px;
+      }
+      .content-inline-flex {
+          display: inline-flex;
+          width: 100%;
+      }
+      .product-card {
+          background: #;
+          margin: 5px;
+      }
+      .card-col-50 {
+          width: 50%;
+      }
+      .col-25 {
+          width: 25%;
+      }
+      .product-p-bold {
+          padding: 0 0 0 1em;
+          font-weight: bold;
+          font-size: 16px;
+          text-align: left;
+          min-width: 100%;
+          color: #002855;
+          padding-bottom: 0;
+      }
+      .card-description{
+          padding: 0 0 0 1em;
+          text-align: left;
+          min-width: 100%;
+          color: #000;
+      }
+      .list-grid {
+          padding: 1em 0;
+          list-style: none;
+          display: inline-flex;
+          min-width: 100%;
+          justify-content: space-evenly;
+      }
+      .list-grid .col-2 {
+          min-width: 16.6666%
+          text-align: center;
+      }
+      .list-grid .col-2 .items-center {
+          border: 2px solid #fff;
+          border-radius: 50%;
+      }
+      .list-grid .col-2:hover .items-center {
+          border: 2px solid #1377c9;
+      }
+      .slider {
+          font-size: 15px;
+          text-align: center;
+      }
+      body .slider {
+          max-width: 1200px;
+          margin: 0 auto 0px auto;
+      }
+      .slider-for {
+          font-size: 15px;
+          text-align: center;
+      }
+      .categoriestitle {
+          width: 100%;
+          text-align: center;
+          padding-top: 5px;
+          color: #000;
+          font-weight: 300;
+      }
+      .img-rouned{
+          border-radius: 50%;
+      }
+      .column{
+          flex-direction: column;
+      }
+      .center-text-elements{
+          color: #1A4E8A;
+          font-size: 34px;
+          line-height: 1em;
+          font-family: 'Montserrat-Bold',Arial, sans-serif;
+      }
+      .first-section {
+          margin-top: 0;
+          padding-top: 0px;
+      }
+      .banner-img.desktop {
+          display: flex;
+      }
+      .banner-img.mobile {
+          display: none;
+      }
+      @media (max-width: 991px) {
+          .cms-home .page-main {
+              padding: 0;
+          }
+          section {
+              margin-left: -10px;
+              margin-right: -10px;
+          }
+          .banner-img.desktop {
+              display: none;
+          }
+          .banner-img.mobile{
+              display: block!important;
+          }
+          .first-section {
+              padding-top: 0px;
+          }
+          .first-section .col-50 {
+              width: 90%;
+          }
+          .title-font {
+              font-size: 30px;
+          }
+          .content-inline-flex.column-m,
+          .flex-container.column-m {
+              flex-direction: column;
+          }
+          .m-block .content-inline-flex {
+              display: inline-block;
+          }
+          .m-block .content-inline-flex .product-card.col-25{
+              width: 47%;
+              float: left;
+          }
+          .product-p-bold {
+              padding: 8px;
+              font-size: 14px;
+          }
+          .card-description{
+              padding: 0 0 0 8px;
+          }
+          .banner-top {
+              height: 70vh;
+          }
+          .banner-top .white-bkg{
+              margin-top: 30%;
+          }
+          .photo-banner{
+              background-size: cover;
+          }
+          .col-40.right,
+          .col-40.left {
+              left: auto;
+              right: auto;
+              width: 80%;
+          }
+          .photo-banner {
+              display: flex;
+              justify-content: center;
+          }
+          .list-grid {
+              display: inline-block;
+          }
+          .col-2 {
+              float: left;
+              width: 33%;
+              min-height: 180px;
+          }
+          .scrolled {
+              display: flex!important;
+              flex-flow: row;
+              overflow-x: auto;
+              margin-left: 0.5%;
+          }
+          .scrolled.four {
+              width: 990px;
+              overflow: scroll;
+          }
+          .scrolled.three {
+              width: 730px;
+              overflow: scroll;
+          }
+          .conten-scroll {
+              overflow: auto;
+          }
+          .scrolled .product-card {
+              max-width: 240px;
+          }
+      }
+      @media (max-width: 767px) {
+          .square span{
+              width: 40%;
+              padding: 0;
+          }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="first-section">
+        <div class="slider slider-for">
+         <p>Envío <strong>GRATIS</strong> en pedidos mayores a <strong>$599</strong></p2>
+        </div>
+        <section>
+            <div class="content-inline-flex">
+                <ul class="list-grid">
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/utencilios-de-cocina.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/utensilios314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/utensilios314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/utensilios314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">utensilios</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/electrodomesticos.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/electrodom314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/electrodom314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/electrodom314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">electrodomésticos</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/baterias-de-cocina.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/baterias314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/baterias314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/baterias314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">baterías de cocina</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/organizacion-de-cocina.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/orgacocina314.jpg?$content$&amp;wid=165&amp;hei=165 1x, /media/wysiwyg/Bloque/orgacocina314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/orgacocina314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">organización</p>
+                            </div>
+                        </a>
+                    </li>
+        <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/filtros-y-botellas-para-agua.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/filtros-y-botellas-314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/filtros-y-botellas-314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/filtros-y-botellas-314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">filtros para agua</p>
+                            </div>
+                        </a>
+                    </li>       
+                  </ul>
+             </div>
+        </section>
+        <section>
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/electrodomesticos.html">
+        <div class="banner-img desktop"> 
+        <img src="/media/wysiwyg/Bloque/electrodomesticos1280x200.jpg">
+        </div>
+        <div class="banner-img mobile" style="display: none;"> 
+        <img src="/media/wysiwyg/Bloque/electrodommob.jpg">
+        </div>
+        </a>
+        </section>
+        <section>
+        <div class="content-color" style="background: #002855;">
+        <div class="conten-scroll">
+        <div class="content-inline-flex scrolled four">
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/electrodomesticos/procesadores-de-alimentos.html">
+        <img src="/media/wysiwyg/Bloque/procesador-alimentos450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">procesadores de alimentos</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/electrodomesticos/freidoras-y-vaporeras.html">
+        <img src="/media/wysiwyg/Bloque/freidoras-y-vaporeras450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">freidoras y vaporeras</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/electrodomesticos/licuadoras.html">
+        <img src="/media/wysiwyg/Bloque/licuadoras-450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">licuadoras</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/electrodomesticos/cafe-y-te.html">
+        <img src="/media/wysiwyg/Bloque/cafe-y-te-450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">café y té</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+        <section>
+        <section>
+        <div class="content-color" style="background: #002855;">
+        <h2 class="title-font">
+        <span style="color: #ffffff;">baterías de cocina</span>
+        </h2>
+        <div class="conten-scroll">
+        <div class="content-inline-flex scrolled four">
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/baterias-de-cocina/ollas-y-sartenes.html">
+        <img src="/media/wysiwyg/Bloque/ollas-y-sartenes450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#ffffff;">ollas y sartenes</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/baterias-de-cocina/sets-ollas-y-sartenes.html">
+        <img src="/media/wysiwyg/Bloque/sets-ollas-y-sartenes450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#ffffff;">set de ollas y sartenes</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/baterias-de-cocina/especializados.html">
+        <img src="/media/wysiwyg/Bloque/baterias-de-cocina-especializadoss450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#ffffff;">baterías de cocina especializados</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/baterias-de-cocina/teteras.html">
+        <img src="/media/wysiwyg/Bloque/teteras-450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#ffffff;">teteras</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        </div>
+        </div>
+        </div>
+        </section>
+        <section>
+            <h2 class="title-font">
+                <span>organización de cocina</span>
+            </h2>
+            <div class="content-inline-flex">
+                <ul class="list-grid">
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/organizacion-de-cocina/contenedores-de-alimentos.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/contenedores314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/contenedores314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/contenedores314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">contenedores</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/organizacion-de-cocina/organizadores-de-cocina.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/organizadores-de-cocina-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/organizadores-de-cocina-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/organizadores-de-cocina-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">organización</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/organizacion-de-cocina/dispensadores.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/dispensadores-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/dispensadores-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/dispensadores-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">dispensadores</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/organizacion-de-cocina/almacenamiento-y-limpieza.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/almacenamiento-y-limpieza314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/almacenamiento-y-limpieza314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/almacenamiento-y-limpieza314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">almacenamiento</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/organizacion-de-cocina/alacena.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/alacena314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/alacena314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/alacena314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">alacena</p>
+                            </div>
+                        </a>
+                    </li>
+        <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/organizacion-de-cocina/vinos-y-cervezas.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/vinos-y-cervezas314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/vinos-y-cervezas314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/vinos-y-cervezas314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">bar</p>
+                            </div>
+                        </a>
+                    </li>       
+                  </ul>
+             </div>
+        </section>
+        <a href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/utencilios-de-cocina.html">
+        <div class="banner-img desktop"> 
+        <img src="/media/wysiwyg/Bloque/utensilios1280.jpg">
+        </div>
+        <div class="banner-img mobile" style="display: none;"> 
+        <img src="/media/wysiwyg/Bloque/utensiliosmob.jpg">
+        </div>
+        </a>
+        </section>
+        <section>
+        <div class="content-color" style="background: #002855;">
+        <div class="conten-scroll">
+        <div class="content-inline-flex scrolled four">
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/utensilios-de-cocina/gadgets-de-cocina.html">
+        <img src="/media/wysiwyg/Bloque/gadgets-de-cocina450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">gadgets de cocina</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/utensilios-de-cocina/categoria-reposteria.html">
+        <img src="/media/wysiwyg/Bloque/reposter_a450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">repostería</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/utensilios-de-cocina/basicos-de-cocina.html">
+        <img src="/media/wysiwyg/Bloque/basicos-cocina450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">básicos de cocina</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        <div class="product-card col-25">
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/utensilios-de-cocina/basicos-de-cocina/cuchillos-bloques-y-afiladores.html">
+        <img src="/media/wysiwyg/Bloque/cuchillos-y-afiladores450x450.jpg"/>
+        <div class="card-info">
+        <p class="product-p-bold"><span style="color:#CB3234;"></span><span style="color:#ffffff;">cuchillos y afiladores</span></p>
+        <p class="card-description"><span style="color:#ffffff;"></span></p>
+        </div>
+        </a>
+        </div>
+        </div>
+        </div>
+         <div class="content-color" style="background: #002855;">
+                <div class="conten-scroll">
+                    <div class="content-inline-flex scrolled three">
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/utensilios-de-cocina/accesorios-de-cocina.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/Bloque/accesorios-cocina580x730.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span style="color:#ffffff;">accesorios de cocina</span></p>
+                                    <p class="card-description"><span style="color:#ffffff;"></span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/utensilios-de-cocina/basicos-de-cocina/ralladores-y-peladores.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/Bloque/cortadores-y-peladores580x730.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span style="color:#ffffff;">ralladores y peladores</span></p>
+                                    <p class="card-description"><span style="color:#ffffff;"></span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-33">
+                            <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/utensilios-de-cocina/basicos-de-cocina/tablas-para-picar.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/Bloque/tablas-para-picar580x730.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span style="color:#ffffff;">tablas para picar</span></p>
+                                    <p class="card-description"><span style="color:#ffffff;"></span></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/mesa.html">
+        <div class="banner-img desktop"> 
+        <img src="/media/wysiwyg/Bloque/mesa1280.jpg">
+        </div>
+        <div class="banner-img mobile" style="display: none;"> 
+        <img src="/media/wysiwyg/Bloque/mesamob.jpg">
+        </div>
+        </a>
+        </section>
+        <section>
+            <div class="content-color" style="background: #002855;">
+                <h2 class="title-font">
+                    <span><span style="color:#ffffff;">Filtros y botellas de agua</span>
+                </h2>
+                <div class="content-inline-flex column-m">
+                    <div class="product-card card-col-50">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/filtros-y-botellas-para-agua/filtros-de-agua.html">
+                            <img class="holdImg"
+                            src="/media/wysiwyg/Bloque/filtros-de-agua580x200.jpg"
+                            style="--aspect-height:400;--aspect-width:400" />
+                            <div class="card-info">
+                                <p class="product-p-bold"><span style="color:#ffffff;">filtros de agua</span></p>
+                                <p class="card-description"><span style="color:#ffffff;"></span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="product-card card-col-50">
+                        <a href="https://www.bedbathandbeyond.com.mx/productos/cocina/filtros-y-botellas-para-agua/thermos-y-botellas-para-agua.html">
+                            <img class="holdImg"
+                            src="/media/wysiwyg/Bloque/thermos-y-botellas580x200.jpg"
+                            style="--aspect-height:400;--aspect-width:400" />
+                            <div class="card-info">
+                                <p class="product-p-bold"><span style="color:#ffffff;">termos y botellas para agua</span></p>
+                                <p class="card-description"><span style="color:#ffffff;"></span></p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <h2 class="title-font">
+                <span>¿vas a dejar pasar este precio?</span>
+            </h2>
+            <div class="content-inline-flex">
+                <ul class="list-grid">
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/menos-de-199.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/menos-199-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-199-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/menos-199-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">menos de $199</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/menos-de-399.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/menos-399-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-399-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/menos-399-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">menos de $399</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/menos-de-599.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/menos-599-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-599-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/menos-599-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">menos de $599</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/menos-de-799.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/menos-799-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-799-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/menos-799-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">menos de $799</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/menos-de-999.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/menos-999-314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/menos-999-314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/menos-999-314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">menos de $999</p>
+                            </div>
+                        </a>
+                    </li>
+        <li class="col-2">
+                        <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/liquidacion/outlet-cocina.html">
+                            <div class="inner-anchor">
+                                <div class="items-center">
+                                    <img class="img-rouned" alt=""
+                                    srcset="/media/wysiwyg/Bloque/zonaoutlet314x314.jpg?$content$&amp;wid=165&amp;hei=165 1x,/media/wysiwyg/Bloque/zonaoutlet314x314.jpg?$content$&amp;wid=330&amp;hei=330 2x"
+                                    src="/media/wysiwyg/Bloque/zonaoutlet314x314.jpg"
+                                    class="StyledImageList-inline_77jqxN">
+                                </div>
+                                <p class="categoriestitle">Zona Outlet</p>
+                            </div>
+                        </a>
+                    </li>       
+                  </ul>
+             </div>
+        </section>
+  </body>
+</html>

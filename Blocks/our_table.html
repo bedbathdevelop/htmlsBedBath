@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .page-title-wrapper {
+			display: none !important;
+		}
+        #banner_header{
+            background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/marcas/Banner-conair.png?rand=1631122057');
+            width: 100%;
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .bg_blue{
+            background-color: #ea971e;
+        }
+        .category_contain{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            margin-top: 10px;
+            flex-flow: row;
+        }
+        .category_item{
+            width: 120px;
+            height: 160px;
+            margin: 0 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .category_item img {
+            width: 100px;
+            height: 100px;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            border: 2px solid #ea971e;
+        }
+           /*Zoom Animation*/
+    #containerimgc {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    #containerimgc img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+    }
+    #containerimgc:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+          /*Responsive */
+    @media (max-width: 767px) {
+        #banner_header{
+            background-size: contain;
+            height: 100px;
+        }
+    
+        .category_item {
+            width: 80px;
+            height: auto;
+            margin: 24px 2px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1
+        }
+        .category_item img {
+            width: 60px;
+            height: 60px;
+        } 
+    }
+    </style>   
+ 
+<body>
+    <section id="mainbanner">
+        <div id="banner_header"></div>
+    </section>
+    <section>
+        <div class="category_contain">
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/accesorios-para-hornear.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800384586_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>accesorios para hornear</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/baterias-de-cocina.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800385729_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>baterias de cocina</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/manteleria.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800393779_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>mantelería</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/textiles-de-cocina.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-27-19-32_844260067362_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>textiles de cocina</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/our-table/utensilios-de-cocina.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800384333_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>utensilios de cocina</p>
+                </a>
+            </div>           
+        </div>
+    </section>
+
+</body>
+	
+</html>

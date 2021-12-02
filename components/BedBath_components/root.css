@@ -1,0 +1,55 @@
+:root {
+  --azul-bbb-strong: #002854;
+  --azul-bbb-medio: #1a4e8a;
+  --azul-bbb-claro: #daeaf4;
+  --azul-bbb-button: #147bd1;
+  --aniversario-azul: #1a4c8a;
+  --cyberweekend-btn: #1d4d8c;
+  --color-cyberweekend: #aee7f6;
+  --bg-gray: #f2f2f2;
+  --txt-gray: #595959;
+  --input-gray: #d4d3d3;
+  --rojo: #f52b42;
+  --haven: #90a996;
+  --nestwell: #94adc1;
+  --simply: #1a4e8a;
+  --ugg: #b2bbc0;
+  --ourtable: #ea971e;
+  --wildsage: #706fae;
+  --squeared-away: #f79c7a;
+  --studio-3d: #faf1e8;
+  --gray-3d: #746c60;
+  --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+  --font-parrafo: 300 17px/ 1 Effra, Helvetica, Arial, sans-serif;
+  --primary-font: Effra, Helvetica, Arial, sans-serif;
+  --secondary-font: Termina Headline, sans-serif;
+}
+a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+a:link {
+  text-decoration: none;
+}
+p {
+  font-family: 300 17px/ 1 Effra, Helvetica, Arial, sans-serif !important;
+}
+
+/*categorias*/
+.--black {
+  color: #000 !important;
+}
+.--white {
+  color: #fff !important;
+}
+.--space__10{
+  margin: 10px 0;
+}
+.--space__20{
+  margin: 20px 0;
+}
+.--space__40{
+  margin: 40px 0;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .page-title-wrapper {
+			display: none !important;
+		}
+        #banner_header{
+            background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ba_haven.jpg?rand=1623168888');
+            width: 100%;
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .bg_blue{
+            background-color: #90a996;
+        }
+        .category_contain{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            margin-top: 10px;
+            flex-flow: row;
+        }
+        .category_item{
+            width: 120px;
+            height: 160px;
+            margin: 0 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .category_item img {
+            width: 100px;
+            height: 100px;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            border: 2px solid #90a996;
+        }
+           /*Zoom Animation*/
+    #containerimgc {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    #containerimgc img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+    }
+    #containerimgc:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+          /*Responsive */
+    @media (max-width: 767px) {
+        #banner_header{
+            background-size: contain;
+            height: 100px;
+        }
+    
+        .category_item {
+            width: 80px;
+            height: auto;
+            margin: 24px 2px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1
+        }
+        .category_item img {
+            width: 60px;
+            height: 60px;
+        } 
+    }
+    </style>   
+ 
+<body>
+    <section id="mainbanner">
+        <div id="banner_header"></div>
+    </section>
+    <section>
+        <div class="category_contain">
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/tollas.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-05-07-58_lunarbath_imageset" alt="" />
+                    <p>toallas</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/tapetes.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-21-15-55_884631199223?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>tapetes</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/cortinas.html" target="_self">
+                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-10-30-21-08_73161106386_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>cortinas</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/batas-y-pantunflas.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-03-15-56_846756061304_1_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>batas y pantunflas</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/accesorios.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-22-07-53_wd20863_2_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>accesorios</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/haven/muebles.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-19-17-36_216-1_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>muebles</p>
+                </a>
+            </div>
+           
+        </div>
+    </section>
+
+</body>
+	
+</html>

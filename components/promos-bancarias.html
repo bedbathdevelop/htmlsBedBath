@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meses sin Intereses</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --amarillo: #f4be40;
+      }
+      body
+        .page-wrapper
+        .page-header
+        .header
+        .block-search
+        .block.block-content
+        .minisearch
+        .field.search
+        .label {
+        position: absolute;
+        left: 65px;
+        top: 12px;
+      }
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
+      .wrap-paypal {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+      #funcionalidad {
+        overflow: hidden;
+        text-align: center;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        width: 100%;
+        height: auto;
+      }
+      #banner {
+        text-align: center;
+      }
+      #banner h2 {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+      }
+      .wrap-detalle {
+        text-align: left;
+        padding: 0px 20%;
+      }
+      .wrap-detalle h2 {
+        text-align: center;
+      }
+      .wrap-detalle .text-detail {
+        font-weight: 300;
+        font-size: 15px;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .wrap-detalle .text-detail span {
+        font-weight: 900;
+      }
+      .dot {
+        overflow: hidden;
+        height: auto;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .dot p:nth-child(2) {
+        padding: 10px 20px;
+        font-size: 1.4em;
+        width: 80%;
+        line-height: 1;
+      }
+      .dot p:nth-child(2) span {
+        font-weight: 900;
+      }
+      .circle-number {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        justify-content: center;
+        background-color: var(--azul-bbb-medio);
+        color: var(--amarillo);
+        font-size: 2.3em;
+      }
+      .wrap-bancos {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 60px;
+        padding: 0 20px;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-bancos .item-banco {
+        border: 1px solid #f2f2f2;
+        text-align: center;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        border-radius: 10px;
+        margin: 10px;
+        width: 23%;
+      }
+      #bancos {
+        margin-top: -50px;
+        text-align: center;
+      }
+      #bancos h2 {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+      }
+      .wrap-detail {
+        overflow: hidden;
+        padding: 20px 40px;
+        font-size: 1.2em;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .wrap-detail span {
+        font-weight: 900;
+        color: var(--font-bedbath);
+      }
+      .wrap-text-b {
+        margin-top: 20px;
+      }
+      .icon-banco-esp {
+        width: 250px;
+      }
+      /*Responsive */
+      @media (max-width: 991px) {
+        .desktop {
+          display: none;
+        }
+        .mobile {
+          display: block;
+        }
+        #banner h2 {
+          font-size: 1.8rem;
+        }
+        .wrap-detalle {
+          padding: 0px 30px;
+        }
+        .circle-number {
+          font-size: 1.4em;
+          width: 20px;
+          height: 20px;
+        }
+        .dot p:nth-child(2) {
+          padding: 5px;
+          font-size: 1.2em;
+          width: 100%;
+        }
+        #funcionalidad {
+          background-size: contain;
+        }
+        .wrap-bancos {
+          margin-left: -20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner -->
+    <section id="banner">
+      <div class="wrap-paypal">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/buen-fin-desk-msi_2.jpg?rand=1636050581"
+          alt=" bed bath and beyond"
+          class="desktop"
+        />
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/bannes-mobile-msi_2.jpg?rand=1636050581"
+          alt=" bed bath and beyond"
+          class="mobile"
+        />
+      </div>
+    </section>
+
+    <!-- como funciona -->
+    <section id="funcionalidad">
+      <div class="wrap-detalle">
+        <div class="wrap-text-b">
+          <div class="dot">
+            <p class="circle-number">*</p>
+            <p>
+              por compras mínimas de <span>1,500</span> aplican a
+              <span>3 y 6</span> meses sin intereses
+            </p>
+          </div>
+
+          <div class="dot">
+            <p class="circle-number">*</p>
+            <p>
+              por compras mínimas de <span>2,500</span> aplican a
+              <span>3,6,9,12 y 18</span> meses sin intereses
+            </p>
+          </div>
+
+          <div class="dot">
+            <p class="circle-number">*</p>
+            <p>
+              bancos participantes CITIBANAMEX, BBVA, AMERICAN EXPRESS,
+              BANJERCITO, HSBC, BANBAJIO, INBURSA,
+              BANORTE-IXE,SCOTIABANK,SANTANDER, BANREGIO, AFIRME,INVEX,LIVERPOL
+              CRÉDITO (no departamental), FALABELLA, INVEX, MIFEL,BANCO AZTECA
+              *APLICAN RESTRICCIONES-CONSULTA TU BANCO PARA DETALLES DE TU
+              TARJETA
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="linea"></div>
+      <div class="wrap-bancos"></div>
+    </section>
+
+    <!-- Bancos participantes -->
+    <section id="bancos">
+      <h2>Bancos participantes</h2>
+      <div class="wrap-bancos">
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/american-express.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banorte.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bbva.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/citi.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/hsbc.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/invex.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/santander.png?rand=1631052225"
+            alt="banco"
+          />
+        </div>
+
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/scotebank.png?rand=1631036280"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Grupo_Financiero_Inbursa_1.png?rand=1631631347"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/BancaMifel.png?rand=1631631214"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Banorte-Ixe.png?rand=1631631214"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banco-azteca-vector-logo.png?rand=1631631214"
+            alt="banco"
+          />
+          <br />
+          <br />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Banjercito_Logo.jpeg?rand=1631631214"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/BANREGIOsvg.png?rand=1631631214"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ban-bajio.png?rand=1631631214"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/afirme.png?rand=1631631214"
+            alt="banco"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/liverpool.png?rand=1636057378"
+            alt="banco"
+            class="icon-banco-esp"
+          />
+        </div>
+        <div class="item-banco">
+          <br />
+          <br />
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/falabella.png?rand=1636057378"
+            alt="banco"
+            class="icon-banco-esp"
+          />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

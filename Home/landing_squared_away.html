@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Squeared Away</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+        --squaredaway: #fa896a;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
+      .wrap-category {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-category {
+        width: 32.5%;
+        margin: 0 5px;
+      }
+      #category {
+        margin-top: 5px;
+        justify-content: center;
+        text-align: center;
+      }
+      .item-category {
+        text-align: center;
+        justify-content: center;
+      }
+      .color-text {
+        color: #fa896a !important;
+        font-size: 18px;
+        font-family: var(--font-bedbath);
+        margin-top: 20px;
+      }
+      .wrap-img {
+        display: block;
+        transition: transform 1s; /* smoother zoom */
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+      }
+      .wrap-img:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      #doble1 {
+        margin-top: 40px;
+      }
+      .wrap-doble {
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-doble {
+        width: 50%;
+      }
+      .item-doble p {
+        font-size: 18px;
+        padding: 0 20px 0 40px;
+      }
+      .item-doble img {
+        width: 100%;
+      }
+      .wrap-des h2 {
+        color: var(--squaredaway) !important;
+        font-family: var(--font-bedbath);
+        margin-left: 40px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .wrap-des {
+        text-align: left;
+        padding: 40px 80px 10px 20px;
+      }
+      .btn--comp-square {
+        color: #24b4f2;
+        border: 3px solid #24b4f2;
+        width: 200px;
+        text-align: center;
+        margin: 55px auto;
+        border-radius: 5px;
+        padding: 10px 0;
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+      }
+      .btn--comp-square:hover {
+        background-color: #24b4f2;
+        color: #fff;
+      }
+      .btn--comprar {
+        color: #24b4f2;
+        border: 3px solid #24b4f2;
+        width: 300px;
+        text-align: center;
+        margin: 30px auto;
+        border-radius: 5px;
+        padding: 10px 0 !important;
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+        font-size: 17px !important;
+      }
+      .btn--comprar:hover {
+        background-color: #24b4f2;
+        color: #fff;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+      }
+      .btn-leer {
+        color: #24b4f2;
+        font-weight: 900;
+        font-size: 18px;
+      }
+      /*Zoom Animation*/
+      #containerimgc {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+      }
+      #containerimgc img {
+        display: block;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      #containerimgc:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .wrap-texto {
+        text-align: center;
+        justify-content: center;
+      }
+      .wrap-texto h2 {
+        color: #fa896a !important;
+        font-family: var(--font-bedbath);
+        margin-top: 100px;
+      }
+      .wrap-texto p {
+        font-size: 19px;
+      }
+      .wrap-des p {
+        font-size: 19px;
+      }
+      .text-left {
+        text-align: left !important;
+      }
+      #bano {
+        margin-top: 40px;
+      }
+      #bannercompleto {
+        margin-top: 40px;
+      }
+      #marco {
+        border: 6px solid #fa896a;
+        margin-top: 40px;
+      }
+      .wrap-texto-b {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+      }
+      .item-square:nth-child(1) {
+        width: 25%;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-square:nth-child(2) {
+        width: 60%;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-square:nth-child(3) {
+        width: 25%;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-square img {
+        width: 150px;
+      }
+      .item-square h2 {
+        color: #fa896a !important;
+        font-family: var(--font-bedbath) !important;
+        font-size: 3vw;
+        padding-top: 35px;
+      }
+      #bannerdos {
+        margin-top: 40px;
+      }
+      .second-blog {
+        margin-top: 80px;
+      }
+      .wrap-hotspot {
+        overflow: hidden;
+        position: relative;
+      }
+      #textoa {
+        margin-bottom: 80px;
+        margin-top: -50px;
+      }
+
+      @media screen and (max-width: 767px) {
+        .color-text {
+          font-size: 12px;
+          margin-top: 0;
+        }
+        .item-category {
+          width: 30%;
+          margin: 0 2px;
+          margin-top: 0;
+        }
+        .item-doble {
+          width: 100%;
+        }
+        .wrap-des {
+          padding: 0px 20px 10px 20px;
+        }
+        .btn--comprar {
+          width: 80%;
+          padding: 10px 0 !important;
+        }
+        .item-square {
+          width: 100% !important;
+        }
+        .wrap-texto-b {
+          flex-wrap: wrap;
+        }
+        .item-square h2 {
+          font-size: 5vw !important;
+          padding: 0 !important;
+        }
+        .btn--comp-square {
+          width: 60%;
+          margin: 20px auto;
+        }
+      }
+      @media (max-width: 991px) {
+        .desktop {
+          display: none;
+        }
+        .mobile {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section id="banner">
+        <a
+          href="https://www.bedbathandbeyond.com.mx/marcas/squared-away.html"
+          target="_self"
+        >
+          <div class="wrap-main-banner wrap-img">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-landing-desktop-SA-principal.jpg?rand=1631658678"
+              class="desktop"
+            />
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-top-landing-mobile-sa.jpg?rand=1631658678"
+              class="mobile"
+            />
+          </div>
+        </a>
+      </section>
+
+      <section id="category">
+        <div class="wrap-category">
+          <div class="item-category">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/closet.html"
+              target="_self"
+            >
+              <div class="wrap-img">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/SA-lan-orga-closet.jpg?rand=1631659783"
+                  alt="squared away BedBathandBeyond"
+                />
+                <p class="color-text">organización para closet</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-category">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/bano.html"
+              target="_self"
+            >
+              <div class="wrap-img">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/SA-lan-orga-bano.jpg?rand=1631659783"
+                  alt="squared away BedBathandBeyond"
+                />
+                <p class="color-text">organización para baño</p>
+              </div>
+            </a>
+          </div>
+          <div class="item-category">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/lavanderia.html"
+              target="_self"
+            >
+              <div class="wrap-img">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/SA-lan-orga-lavanderia.jpg?rand=1631659783"
+                  alt="squared away BedBathandBeyond"
+                />
+                <p class="color-text">organización para lavandería</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Sección doble 1 -->
+      <section id="doble1">
+        <div class="wrap-doble">
+          <div id="containerimgc" class="item-doble">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-espacios-ordenados-landing.jpg?rand=1631659783"
+                alt="square away"
+              />
+            </a>
+          </div>
+          <div class="item-doble">
+            <div class="wrap-des">
+              <h2>Espacios ordenados para mentes despejadas</h2>
+              <p>
+                Un área bien ordenada es como una bocanada de aire fresco, un
+                pequeño placer que te ayuda a estar en paz, balanceado y feliz.
+                Squared Away es nuestra nueva y accesible colección diseñada con
+                inteligencia y elegancia para transformar tu hogar en un espacio
+                armonioso.
+              </p>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/squared-away.html"
+                target="_self"
+              >
+                <p class="btn--comprar">comprar ahora</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Sección doble 2 -->
+      <section id="doble1">
+        <div class="wrap-doble">
+          <div class="item-doble">
+            <div class="wrap-des second-blog">
+              <h2>Clóset: acomoda y arregla con estilo</h2>
+              <p>Ideas inteligentes para ayudarte a maximizar cada espacio.</p>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion.html"
+                target="_self"
+              >
+                <p class="btn--comprar">compra organización</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-doble">
+            <div id="containerimgc" class="wrap-hotspot">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion.html"
+                target="_self"
+              >
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/imagen-closet-acomoda-y-arregla.jpg?rand=1631715300"
+                  alt="square away"
+                />
+              </a>
+              <div id="hotspotA" class="hotspot-b">
+                <p class="circle-blank"></p>
+              </div>
+              <div id="hotspotB" class="hotspot-b">
+                <p class="circle-blank"></p>
+              </div>
+              <div id="hotspotC" class="hotspot-b">
+                <p class="circle-blank"></p>
+              </div>
+              <div id="hotspotD" class="hotspot-b">
+                <p class="circle-blank"></p>
+              </div>
+            </div>
+            <p>
+              Obtén consejos de almacenamiento y organización del experto Eryn
+              Donaldson.
+            </p>
+            <a
+              href="https://www.bedbathandbeyond.com.mx/hacks-de-organizacion-para-despejar-tu-hogar-y-tu-mente"
+              target="_self"
+            >
+              <p class="btn-leer">leer más</p>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Sección 3 columnas -->
+      <section id="bannerdos">
+        <div class="wrap-main-banner wrap-img">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-almacenamiento.jpg?rand=1631715300"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección texto -->
+      <section id="textoa">
+        <div class="wrap-texto">
+          <h2>Almacenamiento: cada cosa en su lugar</h2>
+          <p>Porque empezar a organizar se siente muy bien.</p>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion.html"
+            target="_self"
+          >
+            <p class="btn--comprar">compra organización</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección doble 3 -->
+      <section id="bano">
+        <div class="wrap-doble">
+          <div id="containerimgc" class="item-doble">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/bano.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-bano-lugar-para-todo.jpg?rand=1631715300"
+                alt="square away"
+              />
+            </a>
+          </div>
+          <div class="item-doble">
+            <div class="wrap-des text-left">
+              <h2>Baño: un lugar para todo</h2>
+              <p>Soluciones de ensueño para la vida real.</p>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/bano.html"
+                target="_self"
+              >
+                <p class="btn--comprar">comprar ahora</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Sección 4 columnas -->
+      <section id="bannercompleto">
+        <div class="wrap-main-banner wrap-img">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/lavanderia.html"
+            target="_self"
+          >
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-landing-lavanderia.jpg?rand=1631715300"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección texto -->
+      <section id="textoa">
+        <div class="wrap-texto">
+          <h2>Lavandería: junto, no revuelto</h2>
+          <p>Tan fácil y tan funcional que no perderás un calcetín de nuevo.</p>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/lavanderia.html"
+            target="_self"
+          >
+            <p class="btn--comprar">compra organización para lavandería</p>
+          </a>
+        </div>
+      </section>
+
+      <!-- Sección texto -->
+      <section id="marco">
+        <div class="wrap-texto-b">
+          <div class="item-square">
+            <img
+              src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/logo_squared_away.png?rand=1631717342"
+            />
+          </div>
+          <div class="item-square">
+            <h2>Conoce la colección</h2>
+          </div>
+          <div class="item-square">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/squared-away.html"
+              target="_self"
+            >
+              <p class="btn--comp-square">compra la colección completa</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

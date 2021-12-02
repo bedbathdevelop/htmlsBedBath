@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paypal</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --amarillo: #f4be40;
+      }
+      body .page-wrapper .page-header .header .block-search .block.block-content .minisearch .field.search .label{
+        position: absolute;
+        left: 65px;
+        top: 12px;
+      }
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
+      .wrap-paypal {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+      #funcionalidad {
+        overflow: hidden;
+        text-align: center;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        background: url("https://www.bedbathandbeyond.com.mx/media/background_paypal.png?rand=1631033595");
+
+        width: 100%;
+        height: auto;
+      }
+      #banner {
+        text-align: center;
+      }
+      #banner h2 {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+      }
+      .wrap-detalle {
+        text-align: left;
+        padding: 0px 20%;
+      }
+      .wrap-detalle h2 {
+          text-align: center;
+      }
+      .wrap-detalle .text-detail {
+        font-weight: 300;
+        font-size: 15px;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .wrap-detalle .text-detail span {
+        font-weight: 900;
+      }
+      .dot {
+        overflow: hidden;
+        height: auto;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .dot p:nth-child(2) {
+        padding: 10px 20px;
+        font-size: 1.4em;
+        width: 80%;
+        line-height: 1;
+      }
+      .dot p:nth-child(2) span {
+        font-weight: 900;
+      }
+      .circle-number {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        justify-content: center;
+        background-color: var(--azul-bbb-medio);
+        color: var(--amarillo);
+        font-size: 2.3em;
+      }
+      .wrap-bancos{
+          overflow: hidden;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 60px;
+          padding: 0 20px;
+          justify-content: center;
+          text-align: center;
+      }
+      .wrap-bancos .item-banco {
+          border:1px solid #f2f2f2;
+          text-align: center;
+          color: var(--azul-bbb-medio);
+          font-family: var(--font-bedbath);
+          border-radius: 10px;
+          margin: 10px;
+          width: 23%;
+      }
+      #bancos{
+          margin-top: 60px;
+          text-align: center;
+      }
+      #bancos h2 {
+          color:var(--azul-bbb-medio);
+          font-family: var(--font-bedbath);
+      }
+      .wrap-detail{
+          overflow:hidden;
+          padding: 20px 40px;
+          font-size: 1.2em;
+          font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .wrap-detail span {
+          font-weight: 900;
+          color: var(--font-bedbath);
+      }
+      .wrap-text-b {
+          margin-top: 20px;
+      }
+      /*Responsive */
+      @media (max-width: 991px) {
+        .desktop {
+          display: none;
+        }
+        .mobile {
+          display: block;
+        }
+        #banner h2{
+            font-size: 1.8rem;
+        }
+        .wrap-detalle{
+            padding: 0px 10%;
+        }
+        .circle-number{
+            font-size: 1.4em;
+        }
+        .dot p:nth-child(2){
+            padding: 0;
+            font-size: 1.2em;
+            width: 100%;
+        }
+        #funcionalidad{
+            background-size: contain;
+        }
+        .wrap-bancos{
+            margin-left: -20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner -->
+    <section id="banner">
+      <h2>Compra a meses sin intereses con PayPal ¡y gana!</h2>
+      <div class="wrap-paypal">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-paypal-septiembre.jpg?rand=1631033151"
+          alt="paypal bed bath and beyond"
+          class="desktop"
+        />
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mobile-paypal.jpg?rand=1631033151"
+          alt="paypal bed bath and beyond"
+          class="mobile"
+        />
+      </div>
+    </section>
+
+    <!-- como funciona -->
+    <section id="funcionalidad">
+      <h2>Mecánica de participación</h2>
+      <div class="wrap-detalle">
+        <h2>¡PayPal te da más con tu compra!</h2>
+        <div class="wrap-text-b">
+            <div class="dot">
+            <p class="circle-number">*</p>
+            <p>
+                Del <span>8 al 11 de septiembre de 2021</span>, en compras mínimas
+                de <span>$2,000</span> en nuestra tienda en línea, paga con PayPal a
+                meses sin intereses y obtén un cupón PayPal de <span>$200 MXN</span>
+            </p>
+            </div>
+
+            <div class="dot">
+            <p class="circle-number">*</p>
+            <p>
+                Además, <span>¡el envío es gratis sin mínimo de compra! </span>
+            </p>
+            </div>
+
+            <div class="dot">
+                <p class="circle-number">*</p>
+                <p>
+                    Y, si tu compra es con cualquiera de los bancos participantes,
+                    <span>¡el cupón PayPal será de $400 MXN en vez de $200 MXN!</span> </span>
+                </p>
+            </div>
+
+            <div class="dot">
+                <p class="circle-number">*</p>
+                <p>
+                    Limitado a la siguiente disponibilidad de cupones de $400 MXN por
+                    banco.
+                </p>
+            </div>
+          </div>
+      </div>
+      <div class="linea"></div>
+      <div class="wrap-bancos"></div>
+    </section>
+
+    <!-- Bancos participantes -->
+    <section id="bancos">
+        <h2>Bancos participantes</h2>
+        <div class="wrap-bancos">
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/american-express.png?rand=1631036280" alt="banco" />
+                <p>1,500 cupones</p>
+            </div>
+
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banorte.png?rand=1631036280" alt="banco" />
+                <p>1,270 cupones</p>
+            </div>
+
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bbva.png?rand=1631036280" alt="banco" />
+                <p>1,500 cupones</p>
+            </div>
+
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/citi.png?rand=1631036280" alt="banco" />
+                <p>4,000 cupones</p>
+            </div>
+
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/hsbc.png?rand=1631036280" alt="banco" />
+                <p>500 cupones</p>
+            </div>
+
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/invex.png?rand=1631036280" alt="banco" />
+                <p>150 cupones</p>
+            </div>
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/santander.png?rand=1631052225" alt="banco" />
+                <p>900 cupones</p>
+            </div>
+
+            <div class="item-banco">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/scotebank.png?rand=1631036280" alt="banco" />
+                <p>600 cupones</p>
+            </div>
+        </div>
+
+    </section>
+
+    <section>
+        <div class="wrap-detail">
+            <p>Recibirás un correo electrónico a la dirección proporcionada en tu cuenta PayPal a más tardar 10 días hábiles posteriores al 11 de septiembre de 2021 por cada compra elegible que hayas realizado. Cada correo electrónico contendrá un Cupón PayPal de $200 o $400 MXN, según corresponda, que deberás guardar en tu cuenta PayPal.
+            <p>Una vez guardado, el Cupón PayPal podrá ser redimido en una transacción en cualquier negocio.</p>
+            <p>El cupón, para ser aplicado, no tiene límite mínimo de compra. El cupón tiene una vigencia de 15 días a partir de recibir el correo electrónico que contenga el cupón. El número de cupones estará limitado a 3,100 cupones de $200 y 10,420 cupones de $400 según la cantidad de cupones disponibles por banco.</p>
+            <p>Si quieres saber más de la promoción Consulta Términos y Condiciones en: <span><a href="https://www.paypal.com/mx/webapps/mpp/campaigns/paypal-fest-2021" target="_blank">https://www.paypal.com/mx/webapps/mpp/campaigns/paypal-fest-2021</a></span></p>
+        </div>
+
+    </section>
+  </body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrusel Automatico</title>
+  </head>
+  <style>
+    .carousel {
+        position: relative;
+        width: 100%;
+    }
+    .carousel div {
+        overflow: hidden;
+        width: 100%;
+    }
+    .carousel div ul {
+        overflow: hidden;
+        position: relative;
+        width: 200%;
+    }
+    .carousel div ul  li {
+                overflow: hidden;
+                position: relative;
+                float: left;
+                width: 350px;
+    }
+    .carousel div ul li img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+            .carousel div ul   li + li {
+                margin-left: 30px;
+            }
+        li {
+            position: absolute;
+            top: 50%;
+            margin-top: -25px;
+        }
+            li &.prev {
+                left: 0;
+            }
+                li &.prev  button {
+                    &:after {
+                        content: '\276e';
+                    }
+                }
+            }
+            &.next {
+                right: 0;
+                button {
+                    &:after {
+                        content: '\276f';
+                    }
+                }
+            }
+            button {
+                overflow: hidden;
+                position: relative;
+                width: 50px;
+                height: 50px;
+                background-color: rgba(255, 255, 255, 0.8);
+                span {
+                    position: absolute;
+                    top: -100000px;
+                }
+                &:after {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: block;
+                    width: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 30px;
+                    color: #000;
+                }
+  </style>
+  <script>
+    var GBL = {
+      SPEED_FADE: 500,
+      SPEED_MOVE: 750,
+      SPEED_SCROLL: 1000,
+      SPEED_SLIDE: 350,
+    };
+
+    var CAROUSEL = {
+      actualItem: 1,
+      container: null,
+      hovered: false,
+      items: null,
+      itemWidth: 0,
+      itemsNumber: 0,
+      itemMargin: 0,
+      moving: false,
+      next: null,
+      time: 1000,
+      timeout: null,
+      visibles: 0,
+
+      init: function () {
+        CAROUSEL.container = $(".carousel ul");
+        CAROUSEL.items = CAROUSEL.container.find("li");
+        CAROUSEL.itemsNumber = CAROUSEL.items.length;
+        CAROUSEL.itemWidth = CAROUSEL.items.outerWidth();
+        CAROUSEL.itemMargin = parseInt(
+          CAROUSEL.items.last().css("margin-left")
+        );
+        CAROUSEL.container.css(
+          "width",
+          CAROUSEL.itemsNumber * (CAROUSEL.itemWidth + CAROUSEL.itemMargin)
+        );
+        CAROUSEL.visibles = Math.floor(
+          CAROUSEL.container.parent().width() / CAROUSEL.itemWidth
+        );
+        CAROUSEL.next = $(".carousel .next button");
+        CAROUSEL.limits();
+        $(".carousel ol button").on("click", function () {
+          CAROUSEL.move($(this).val());
+        });
+        $(".carousel").on("mouseover", function () {
+          CAROUSEL.hovered = true;
+          CAROUSEL.stop();
+        });
+        $(".carousel").on("mouseout", function () {
+          CAROUSEL.hovered = false;
+          CAROUSEL.automate();
+        });
+        CAROUSEL.automate();
+      },
+
+      automate: function () {
+        CAROUSEL.timeout = setTimeout(CAROUSEL.trigger, CAROUSEL.time);
+      },
+
+      stop: function () {
+        clearTimeout(CAROUSEL.timeout);
+      },
+
+      trigger: function () {
+        CAROUSEL.next.trigger("click");
+      },
+
+      limits: function () {
+        if (CAROUSEL.actualItem === 1) {
+          var cloned = CAROUSEL.container.find("li:last").clone();
+          CAROUSEL.container.prepend(cloned);
+          CAROUSEL.container.find("li:last").remove();
+          CAROUSEL.container.animate(
+            { left: "-=" + (CAROUSEL.itemWidth + CAROUSEL.itemMargin) },
+            0
+          );
+          CAROUSEL.actualItem++;
+        } else if (
+          CAROUSEL.actualItem ===
+          CAROUSEL.itemsNumber - CAROUSEL.visibles + 1
+        ) {
+          var cloned = CAROUSEL.container.find("li:first").clone();
+          CAROUSEL.container.append(cloned);
+          CAROUSEL.container.find("li:first").remove();
+          CAROUSEL.container.animate(
+            { left: "+=" + (CAROUSEL.itemWidth + CAROUSEL.itemMargin) },
+            0
+          );
+          CAROUSEL.actualItem--;
+        }
+      },
+
+      move: function (value) {
+        if (!CAROUSEL.moving) {
+          CAROUSEL.stop();
+          CAROUSEL.moving = true;
+          if (value === "prev") {
+            CAROUSEL.actualItem--;
+            CAROUSEL.container.animate(
+              { left: "+=" + (CAROUSEL.itemWidth + CAROUSEL.itemMargin) },
+              GBL.SPEED_MOVE,
+              "easeOutSine",
+              function () {
+                CAROUSEL.moved();
+              }
+            );
+          } else {
+            CAROUSEL.actualItem++;
+            CAROUSEL.container.animate(
+              { left: "-=" + (CAROUSEL.itemWidth + CAROUSEL.itemMargin) },
+              GBL.SPEED_MOVE,
+              "easeOutSine",
+              function () {
+                CAROUSEL.moved();
+              }
+            );
+          }
+        }
+      },
+
+      moved: function () {
+        CAROUSEL.limits();
+        CAROUSEL.moving = false;
+        if (!CAROUSEL.hovered) {
+          CAROUSEL.automate();
+        }
+      },
+    };
+
+    CAROUSEL.init();
+  </script>
+  <body>
+    <div class="carousel">
+      <div>
+        <ul>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 1"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 2"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 3"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 4"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 5"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 6"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 7"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 8"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+          <li>
+            <a title="Ver más" href="#"
+              ><img
+                src="http://placehold.it/350x150"
+                alt="Texto de la imagen 9"
+                width="380"
+                height="285"
+            /></a>
+          </li>
+        </ul>
+      </div>
+      <ol>
+        <li class="prev">
+          <button type="button" title="Ver anteriores" value="prev">
+            <span>Anteriores</span>
+          </button>
+        </li>
+        <li class="next">
+          <button type="button" title="Ver siguientes" value="next">
+            <span>Siguientes</span>
+          </button>
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>

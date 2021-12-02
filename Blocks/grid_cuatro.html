@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid cuatro</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --squeared-away: #f79c7a;
+      }
+      .wrap-grid4 {
+        overflow: hidden;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas: "big big img1 img2" "big big img3 img4";
+        grid-gap: 15px;
+      }
+
+      .item-grid4 img {
+        width: 360px;
+      }
+      .item-grid4:nth-child(1) {
+        grid-area: big;
+        height: 410px;
+      }
+      .item-grid4:nth-child(1) img {
+        width: 550px;
+      }
+      .item-grid4:nth-child(2) {
+        grid-area: img1;
+        height: 200px;
+      }
+      .item-grid4:nth-child(3) {
+        grid-area: img2;
+        height: 200px;
+      }
+      .item-grid4:nth-child(4) {
+        grid-area: img3;
+        height: 200px;
+      }
+      .item-grid4:nth-child(5) {
+        grid-area: img4;
+        height: 200px;
+      }
+      .zoom-img {
+        display: block;
+        overflow: hidden;
+        transition: transform 5s; /* smoother zoom */
+      }
+      .zoom-img:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .desc-grid {
+        text-align: center;
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+        margin-top: -3px;
+      }
+      @media (max-width: 767px) {
+        .wrap-grid4 {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: "big big" "img1 img2" "img3 img4";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-grid4">
+        <div class="item-grid4">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-ropa-cama.jpg?rand=1633100884"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="item-grid4">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/sabanas.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/categorias-cama-sabanas-4-oct.jpg?rand=1633100884"
+              />
+            </div>
+            <p class="desc-grid">sábanas</p>
+          </a>
+        </div>
+        <div class="item-grid4">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama/duvets.html"
+            target="_self"
+          >
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/categorias-cama-duvets-4-oct.jpg?rand=1633100884"
+              />
+            </div>
+            <p class="desc-grid">duvets</p>
+          </a>
+        </div>
+        <div class="item-grid4">
+          <a href="" target="_self">
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/categorias-cama-edredon-4-oct.jpg?rand=1633100884"
+              />
+            </div>
+            <p class="desc-grid">edredones</p>
+          </a>
+        </div>
+        <div class="item-grid4">
+          <a href="" target="_self">
+            <div class="zoom-img">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/categorias-cama-edredon-4-oct.jpg?rand=1633100884"
+              />
+            </div>
+            <p class="desc-grid">cobijas, frazadas y mantas</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

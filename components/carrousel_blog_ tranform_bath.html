@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>carrousel Bed Bad</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+  <style>
+    a {
+      text-decoration: none;
+    }
+  .controls {
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.2);
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+
+  .controls:hover {
+    background-color: rgba(0,0,0,.5);
+  }
+  .itemc {
+    width: 33.33%;
+    height: auto;
+    float: left;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s all;
+    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+  }
+  .cont {
+    position: absolute;
+    width: 1100px;
+    margin-top: 190px;
+  }
+  .tapa {
+    width: 100%;
+    transition: .9s all;
+  }
+  .itemc img {
+    width: 50%;
+    margin-top: 20px;
+  }
+  .itemc:hover {
+    margin-top: -5px;
+  }
+  .carrousel {
+    width: 100%;
+    margin: auto;
+    height: auto;
+    overflow:hidden;
+    text-align: center;
+    line-height: 1;
+  }
+  .carousel-price {
+    font: 300 25px/0.5 Effra,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 900;
+    color: #000;
+  }
+  .carousel-des {
+    font-size: 12px;
+    line-height: 1;
+    font-family:Effra,Helvetica,Arial,sans-serif ;
+    color: #000;
+    padding: 0 5%;
+  }
+  .carosuel-raiting {
+    color:#1377C9;
+    margin-top: 2%;
+    font-size: 22px;
+  }
+  /*Star component*/
+  .container-star {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .clip-star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    float: left;
+  }
+  .active {
+    background: #1377C9;
+  }
+  .disable {
+    background: rgb(237, 237, 237);
+  }
+  .num-star {
+    font-size: 15px;
+    float: left;
+    margin-left: 2%;
+  }
+  .mobile-slider {
+      display: none;
+    }
+
+    #container {
+      width: 500px;
+      margin: auto !important;
+      display: block;
+      height: 500px;
+      position: relative;
+      list-style-type: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .product {
+      display: none;
+      background: #fff;
+      color: #fff;
+      padding: 20px;
+      width: 360px;
+      height: 360px;
+      top: 50px;
+      left: 50px;
+      position: absolute;
+      cursor: hand;
+    }
+    .rotate-left {
+      transform: rotate(30deg) scale(0.8);
+      transition: 1s;
+      margin-left: 400px;
+      cursor: e-resize;
+      opacity: 0;
+      z-index: 10;
+    }
+    .rotate-right {
+      transform: rotate(-30deg) scale(0.8);
+      transition: 1s;
+      opacity: 0;
+      margin-left: -400px;
+      cursor: w-resize;
+      z-index: 10;
+    }
+  @media (max-width: 991px) { 
+    .itemc {
+      width: 100%;
+    }
+    .mobile-slider {
+      display: block;
+    }
+    .mobile-img {
+      margin: 0 20% !important;
+    }
+    .container-star {
+      margin: 0 25%;
+    }
+    .itemc img {
+      width: 30%;
+    }
+      
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+
+    $(".product").on("swiperight",function(){
+      $(this).addClass('rotate-left').delay(700).fadeOut(1);
+      $('.product').find('.status').remove();
+        
+      if ( $(this).is(':last-child') ) {
+        $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+      } else {
+          $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
+      }
+    });  
+
+    $(".product").on("swipeleft",function(){
+    $(this).addClass('rotate-right').delay(700).fadeOut(1);
+    $('.product').find('.status').remove();
+
+    if ( $(this).is(':last-child') ) {
+    $('.product:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+    } else {
+        $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
+    } 
+    });
+
+});
+
+  </script>
+</head>
+<body>
+  <!-- crea una zona zen -->
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/catalog/product/view/id/89084/s/contenedor-haventm-daylesford-color-gris-pomez/category/5702/" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-23-06-19_udb20204b-p_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 500.00</p>
+          <p class="carousel-des">Contenedor Haven™ Daylesford color gris pómez</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">80</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/bote-de-basura-haventm-daylesford-color-gris.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-24-04-12_udb20187b-g_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$740.00</p>
+          <p class="carousel-des">Bote de basura Haven™ Daylesford color gris</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">300</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/jabonera-haventm-daylesford-color-gris.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-23-04-57_udb20198b_g_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$220.00</p>
+          <p class="carousel-des">Jabonera Haven™ Daylesford color gris</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">450</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Añade un aroma elegante -->
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/difusor-de-aceites-esenciales-sparoom-soothing-snooze-69635944.html" target="_self">
+          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-10-07-13-18_soothingsnooze_on_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$1,169.00</p>
+          <p class="carousel-des">Difusor SpaRoom® Soothing Snooze</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">80</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/difusor-de-varillas-woodwickr-redwood.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/74685111262c?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$629.00</p>
+          <p class="carousel-des">Difusor de varillas WoodWick® Redwood</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">300</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/difusor-de-varillas-woodwickr-fireside-chico.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/44734016782920p?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$419.00</p>
+          <p class="carousel-des">Difusor de varillas WoodWick®, Fireside chico</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">450</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- nutre tu mente -->
+
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/purificador-ionizador-y-ozonizador-portatil-2-en-1-clean-trust-69686567.html" target="_self">
+          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69686567.jpg?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$1,699.00</p>
+          <p class="carousel-des">Purificador ionizador y ozonizador portátil Clean Trust</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">120</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/bocina-bluetooth-iworld-en-blanco-69337666.html" target="_self">
+          <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69337666-2.jpg?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 399.00</p>
+          <p class="carousel-des">Bocina bluetooth iWorld® en blanco</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">400</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/lampara-led-de-clip-steren-69694173.html" target="_self">
+          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69694173.jpg?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 259.00</p>
+          <p class="carousel-des">Lámpara LED de clip Steren®</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="num-star">500</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- consiente a tu piel -->
+
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="itemc">
+        <a href="https://www.bedbathandbeyond.com.mx/limpiador-facial-sonico-true-glow-conairr-69677383.html" target="_self">
+          <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69677383.jpg?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$599.00</p>
+          <p class="carousel-des">Limpiador facial sónico True Glow Conair®</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">120</div>
+          </div>
+        </a>
+      </div>
+      <div class="itemc">
+        <a href="https://www.bedbathandbeyond.com.mx/set-de-cuidado-de-la-piel-baylis-and-harding-aroma-rosas-7-piezas-69626736.html" target="_self">
+          <img src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69626736.jpg?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$1,199.00</p>
+          <p class="carousel-des">Set de cuidado de la piel Baylis & Harding aroma rosas, 7 piezas</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">200</div>
+          </div>
+        </a>
+      </div>
+      <div class="itemc">
+        <a href="https://www.bedbathandbeyond.com.mx/tienda/dia-de-las-madres-bedbath/499/barra-aromatica-de-burbujas-para-bano-69490319.html" target="_self">
+          <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/69490319.jpg?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ $79.00</p>
+          <p class="carousel-des">Barra aromática de burbujas para baño Bomb Cosmetics® Cherry Shower Mix</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="num-star">500</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+    <!-- Tratame suavemente -->
+
+    <div class="carrousel desktop-slider">
+      <div class="tapa" id="move">
+        <div class="itemc">
+          <a href="https://www.bedbathandbeyond.com.mx/toalla-para-manos-haven-waffle-and-terry-color-gris-claro-69619387.html" target="_self">
+            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-05-08-11_greydownhand_imageset?$imagePLP$&hei=700&wid=700">
+            <p class="carousel-price">$ 400.00</p>
+            <p class="carousel-des">Toalla para manos Haven™ Waffle & Terry color gris claro</p>
+            <div class="container-star">
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star disable"></div>
+              <div class="clip-star disable"></div>
+              <div class="num-star">120</div>
+            </div>
+          </a>
+        </div>
+        <div class="itemc">
+          <a href="https://www.bedbathandbeyond.com.mx/toalla-de-bano-haven-de-algodon-turco-color-lila-marmol-69627514.html" target="_self">
+            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-19-14-41_ll_122620_haven_turkish_0494_2_imageset?$imagePLP$&hei=700&wid=700">
+            <p class="carousel-price">$ 1,050.00</p>
+            <p class="carousel-des">Toalla de baño Haven™ color lila mármol</p>
+            <div class="container-star">
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star disable"></div>
+              <div class="clip-star disable"></div>
+              <div class="clip-star disable"></div>
+              <div class="num-star">200</div>
+            </div>
+          </a>
+        </div>
+        <div class="itemc">
+          <a href="https://www.bedbathandbeyond.com.mx/toalla-de-medio-bano-haven-terry-color-gris-niebla-69630694.html" target="_self">
+            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-12-20-01_846756062332_1_imageset?$imagePLP$&hei=700&wid=700">
+            <p class="carousel-price">$ 320.00</p>
+            <p class="carousel-des">Toalla para manos Haven™ Terry color gris niebla</p>
+            <div class="container-star">
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="num-star">500</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Que sea cómodo -->
+
+    <div class="carrousel desktop-slider">
+      <div class="tapa" id="move">
+        <div class="itemc">
+          <a href="https://www.bedbathandbeyond.com.mx/banco-madera-teca-haven-69537793.html" target="_self">
+            <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-05-14-05-56_Stool_imageset?$imagePLP$&hei=700&wid=700">
+            <p class="carousel-price">$2,440.00</p>
+            <p class="carousel-des">Banco de madera de teca Haven™</p>
+            <div class="container-star">
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star disable"></div>
+              <div class="clip-star disable"></div>
+              <div class="num-star">120</div>
+            </div>
+          </a>
+        </div>
+        <div class="itemc">
+          <a href="https://www.bedbathandbeyond.com.mx/bata-de-bano-grande-extragrande-haven-waffle-69624845.html" target="_self">
+            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-03-15-56_846756061304_1_imageset?$imagePLP$&hei=700&wid=700">
+            <p class="carousel-price">$1,800.00</p>
+            <p class="carousel-des">Bata de baño grande/extragrande Haven™ Waffle</p>
+            <div class="container-star">
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star disable"></div>
+              <div class="clip-star disable"></div>
+              <div class="clip-star disable"></div>
+              <div class="num-star">200</div>
+            </div>
+          </a>
+        </div>
+        <div class="itemc">
+          <a href="https://www.bedbathandbeyond.com.mx/pantuflas-grandes-haven-criss-cross-color-blanco-brillante-69623412.html" target="_self">
+            <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-28-05-35_brightwhite?$imagePLP$&hei=700&wid=700">
+            <p class="carousel-price">$400.00</p>
+            <p class="carousel-des">Pantuflas grandes Haven™ Criss Cross color blanco brillante</p>
+            <div class="container-star">
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="clip-star active"></div>
+              <div class="num-star">500</div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>

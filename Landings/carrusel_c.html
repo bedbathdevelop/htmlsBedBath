@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<style>
+  a {
+    text-decoration: none;
+  }
+  section {
+    margin-bottom: 16px;
+  }
+  img {
+    max-width: 100%;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+  }
+  p,
+  a {
+    font-family: "Effra", "Montserrat-Regular", "Helvetica", Arial, sans-serif;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  /*Products Carrousel*/
+  .carrousel-products {
+    width: 100%;
+    margin: auto;
+    height: 500px;
+    overflow: hidden;
+    text-align: center;
+    line-height: 1;
+  }
+  .carousel-price {
+    font: 300 25px/0.5 Effra, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight: 900;
+    color: #000;
+  }
+  .carousel-des {
+    font-size: 12px;
+    line-height: 1;
+    font-family: Effra, Helvetica, Arial, sans-serif;
+    color: #000;
+    padding: 0 50px;
+  }
+  .carosuel-raiting {
+    color: #1377c9;
+    margin-top: 2%;
+    font-size: 22px;
+  }
+  /*Star component*/
+  .item-start {
+    width: 300px;
+    height: auto;
+    float: left;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s all;
+    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+  }
+  .cont {
+    position: absolute;
+    width: 1100px;
+    margin-top: 190px;
+  }
+  .tapa {
+    width: 100%;
+    transition: 0.9s all;
+    margin-top: -40px;
+  }
+  .item-start img {
+    width: 50%;
+    margin-top: 20px;
+    height: auto;
+  }
+  .item-start:hover {
+    margin-top: -5px;
+  }
+
+  .container-star {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .enablestar {
+            background:#194e8a;
+        }
+  .clip-star {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    float: left;
+  }
+    .btn-prod {
+        background-color: #117dcf;
+        color: #fff;
+        text-align: center;
+        padding: 4px;
+        margin: 22px 28%;
+        font-size: 13px;
+        width: 100px;
+        text-align: center;
+        border-radius: 5px;
+    }
+  .active {
+    background: #1377c9;
+  }
+  .disable {
+    background: rgb(237, 237, 237);
+  }
+  .num-star {
+    font-size: 15px;
+    float: left;
+    margin-left: 2%;
+  }
+  /*Carrousel Products*/
+  .slider--prod {
+    background: white;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+
+  .slider--prod:before,
+  .slider--prod:after {
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .slider--prod::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider--prod::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide--track {
+    animation: scroll 15s linear infinite;
+    display: flex;
+    width: calc(250px * 6);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 2));
+    }
+  }
+
+  .slide--track--big {
+    animation: scrollbig 15s linear infinite;
+    display: flex;
+    width: calc(250px * 6);
+  }
+
+  @keyframes scrollbig {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 6));
+    }
+  }
+  .slide--card {
+    height: 100px;
+    width: 250px;
+    padding: 0 50px;
+  }
+</style>
+
+<html>
+  <body>
+    <!-- Carrousel TOP 5 -->
+    <section>
+      <h2 class="title-font">
+        <span>Top productos </span>
+      </h2>
+
+      <div class="slider--prod">
+        <div class="slide--track--big">
+          <!-- Product 1 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/silla-plegable-de-acero-swimways-kelsyus-con-techo-color-azul-rey.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/135418862106870p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$1,899.00</p>
+                <p class="carousel-des">
+                  Silla plegable de acero SwimWays Kelsyus con techo color azul
+                  rey
+                </p>
+                <p class="carousel-des">SKU#:62106870</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/camastro-de-acero-destination-summer-color-gris.html"
+                target="_self"
+              >
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444700004713__P_imageset?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$1,229.00</p>
+                <p class="carousel-des">
+                  Camastro de acero Destination Summer color gris
+                </p>
+                <p class="carousel-des">SKU#:69135415</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product  3-->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/silla-para-campamento-de-poliester-margaritaviller-color-verde-azul.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/163332962207195p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$699.00</p>
+                <p class="carousel-des">
+                  Silla para campamento de poliéster Margaritaville® color
+                  verde/azul
+                </p>
+                <p class="carousel-des">SKU#:69627619</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product  4-->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/flotador-brillante-para-alberca-de-plastico-pool-candy.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/151744363596304p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$499.00</p>
+                <p class="carousel-des">
+                  Flotador brillante para alberca de plástico Pool Candy
+                </p>
+                <p class="carousel-des">SKU#:63596304</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 5 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/toalla-de-playa-de-algodon-turco-wamsuttar-a-rayas-color-aqua.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d2.scene7.com/is/image/BedBathandBeyond/302080668724092p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$599.00</p>
+                <p class="carousel-des">
+                  Toalla de playa de algodón turco Wamsutta® a rayas color aqua
+                </p>
+                <p class="carousel-des">SKU#:68724092</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 6 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/tienda/20-dias-soleados-dias-felices/muebles-y-sombrillas/sombrilla-para-patio-de-aluminio-destination-summer-3-35-m-color-natural.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/188759817682369p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$3,339.00</p>
+                <p class="carousel-des">
+                  Sombrilla para patio de aluminio Destination Summer, 3.35 m
+                  color natural
+                </p>
+                <p class="carousel-des">SKU#:17682369</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 7 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/pinzas-para-toalla-de-plastico-boca-clipsr-con-forma-de-sandalias-2-piezas.html"
+                target="_self"
+              >
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/69518145320026p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$179.00</p>
+                <p class="carousel-des">
+                  Pinzas para toalla de plástico Boca Clips® con forma de
+                  sandalias, 2 piezas
+                </p>
+                <p class="carousel-des">SKU#:42723868</p>
+                <div class="container-star">
+                  <div class="clip-star enable"></div>
+                  <div class="clip-star enable"></div>
+                  <div class="clip-star enable"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 8-->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/lampara-de-flor-led-running-con-hojuelas-de-plata-69695740.html"
+                target="_self"
+              >
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69695740.jpg?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$999.00</p>
+                <p class="carousel-des">
+                  Lámpara de flor LED Running® con hojuelas de plata
+                </p>
+                <p class="carousel-des">SKU#:69695740</p>
+                <div class="container-star">
+                  <div class="clip-star enable"></div>
+                  <div class="clip-star enable"></div>
+                  <div class="clip-star enable"></div>
+                  <div class="clip-star disable"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 9 -->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/cojin-decorativo-cuadrado-de-poliester-destination-summer-a-rayas-de-43-18-cm-multicolor.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/246372166736363p?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$178.00</p>
+                <p class="carousel-des">
+                  Cojín decorativo cuadrado de poliéster Destination Summer a
+                  rayas de 43.18 cm multicolor
+                </p>
+                <p class="carousel-des">SKU#:66736363</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product  10-->
+          <div class="slide--card">
+            <div class="item-start">
+              <div id="heart"></div>
+              <a
+                href="https://www.bedbathandbeyond.com.mx/silla-plegable-de-acero-destination-summer-color-verde-salvia.html"
+                target="_self"
+              >
+                <img
+                  src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-06-14-25_69606918?$imagePLP$&hei=700&wid=700"
+                />
+                <p class="carousel-price text-red">$869.00</p>
+                <p class="carousel-des">
+                  Silla plegable de acero Destination Summer color verde salvia
+                </p>
+                <p class="carousel-des">SKU#:69606918</p>
+                <div class="container-star">
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star enablestar"></div>
+                  <div class="clip-star disable"></div>
+                </div>
+                <div class="btn-prod">ver ahora</div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bloque squared away</title>
+    <style>
+      .page-title-wrapper {
+        display: none !important;
+      }
+      a {
+        text-decoration: none;
+      }
+
+      #banner_header {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/banner-internoSA.jpg?rand=1631732209");
+        width: 100%;
+        height: 300px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+      .bg_blue {
+        background-color: #fa896a;
+      }
+      .category_contain {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 10px;
+        flex-flow: row;
+      }
+      .category_item {
+        width: 120px;
+        height: 160px;
+        margin: 0 10px;
+        text-align: center;
+        font-weight: 600;
+      }
+      .category_item img {
+        width: 100px;
+        height: 100px;
+        box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+        border: 2px solid #fa896a;
+      }
+      /*Zoom Animation*/
+      #containerimgc {
+        display: inline-block;
+        overflow: hidden;
+        position: relative;
+      }
+      #containerimgc img {
+        display: block;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      #containerimgc:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      /*Responsive */
+      @media (max-width: 767px) {
+        #banner_header {
+          background-size: contain;
+          height: 100px;
+        }
+
+        .category_item {
+          width: 80px;
+          height: auto;
+          margin: 24px 2px;
+          text-align: center;
+          font-weight: 600;
+          font-size: 11px;
+          line-height: 1;
+        }
+        .category_item img {
+          width: 60px;
+          height: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="mainbanner">
+      <div id="banner_header"></div>
+    </section>
+    <section>
+      <div class="category_contain">
+        <div id="containerimgc" class="category_item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion.html"
+            target="_self"
+          >
+            <img
+              src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-18-15-20_5558-12806_imageset?$imagePLP$&hei=300&wid=260"
+              alt="squared away Bed Bath and Beyond"
+            />
+            <p>almacenamiento y organzación</p>
+          </a>
+        </div>
+        <div id="containerimgc" class="category_item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/closet.html"
+            target="_self"
+          >
+            <img
+              src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-22-12-34_444800424114_imageset?$imagePLP$&hei=300&wid=260"
+              alt="squared away Bed Bath and Beyond"
+            />
+            <p>clóset</p>
+          </a>
+        </div>
+        <div id="containerimgc" class="category_item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/lavanderia.html"
+            target="_self"
+          >
+            <img
+              src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-29-02-13_444800421601_imageset?$imagePLP$&hei=300&wid=260"
+              alt=""
+            />
+            <p>lavandería</p>
+          </a>
+        </div>
+        <div id="containerimgc" class="category_item">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/marcas/squared-away/almacenamiento-y-organizacion/bano.html"
+            target="_self"
+          >
+            <img
+              src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-04-04-15_444800401610_4_imageset?$imagePLP$&hei=300&wid=260"
+              alt=""
+            />
+            <p>baño</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

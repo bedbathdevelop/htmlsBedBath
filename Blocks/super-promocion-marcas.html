@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+
+		#promo{
+			width: 100%;
+			height: 300px;
+			overflow: hidden;
+		}
+		.container-waves {
+			position:relative;
+			text-align:center;
+			background: linear-gradient(60deg, rgba(29,66,121,1) 0%, rgba(40,100,170,1) 100%);
+			color:white;
+
+		}
+
+		.inner-wave {
+			height:32vh;
+			width:100%;
+			margin: 0;
+			padding: 0;
+		}
+
+		.flex { /*Flexbox for containers*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+		}
+
+		.waves {
+			position:relative;
+			width: 100%;
+			height:15vh;
+			margin-bottom:-7px; /*Fix for safari gap*/
+			min-height:100px;
+			max-height:150px;
+		}
+
+		.content-wave {
+			position:relative;
+			height:20vh;
+			text-align:center;
+			background-color: white;
+		}
+		.text-sb{
+			width: 100%;
+			position: absolute;
+			top:150px;
+			font-weight: 900;
+			font-size: 32px;
+		}
+		.logo_bed {
+			width: 250px;
+			height: auto;
+			overflow: auto;
+		}
+
+		.container-text-promo p {
+			font-family: 900;
+			font-size: 25px;
+		}
+
+		.logo_hotsale {
+			width: 200px;
+			position: absolute;
+			top:20px;
+			right: 100px;
+		}
+
+		/* Animation */
+
+		.parallax > use {
+		animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+		}
+		.parallax > use:nth-child(1) {
+		animation-delay: -2s;
+		animation-duration: 7s;
+		}
+		.parallax > use:nth-child(2) {
+		animation-delay: -3s;
+		animation-duration: 10s;
+		}
+		.parallax > use:nth-child(3) {
+		animation-delay: -4s;
+		animation-duration: 13s;
+		}
+		.parallax > use:nth-child(4) {
+		animation-delay: -5s;
+		animation-duration: 20s;
+		}
+		@keyframes move-forever {
+		0% {
+		transform: translate3d(-90px,0,0);
+		}
+		100% { 
+			transform: translate3d(85px,0,0);
+		}
+		}
+		/*Shrinking for mobile*/
+		@media (max-width: 768px) {
+		.waves {
+			height:40px;
+			min-height:40px;
+		}
+		.content-wave {
+			height:30vh;
+		}
+		h1 {
+			font-size:24px;
+		}
+		}
+/*
+	==============================================
+	tossing
+	==============================================
+	*/
+
+	.tossing{
+		animation-name: tossing;
+		-webkit-animation-name: tossing;	
+
+		animation-duration: 2.5s;	
+		-webkit-animation-duration: 2.5s;
+
+		animation-iteration-count: infinite;
+		-webkit-animation-iteration-count: infinite;
+	}
+
+	@keyframes tossing {
+		0% {
+			transform: rotate(-4deg);	
+		}
+		50% {
+			transform: rotate(4deg);
+		}
+		100% {
+			transform: rotate(-4deg);	
+		}						
+	}
+
+	@-webkit-keyframes tossing {
+		0% {
+			-webkit-transform: rotate(-4deg);	
+		}
+		50% {
+			-webkit-transform: rotate(4deg);
+		}
+		100% {
+			-webkit-transform: rotate(-4deg);	
+		}				
+	}
+
+	/*Text animation*/
+
+	h1.main, p.demos {
+		-webkit-animation-delay: 18s;
+		-moz-animation-delay: 18s;
+		-ms-animation-delay: 18s;
+		animation-delay: 18s;
+	}
+	.sp-container {
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 300px;
+		z-index: 0;
+	}
+	.sp-content {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		left: 0px;
+		top: 0px;
+		z-index: 1000;
+	}
+	.sp-container h2 {
+		position: absolute;
+		top: 55%;
+		line-height: 100px;
+		height: 90px;
+		margin-top: -50px;
+		font-size: 40px;
+		width: 100%;
+		text-align: center;
+		color: transparent;
+		-webkit-animation: blurFadeInOut 3s ease-in backwards;
+		-moz-animation: blurFadeInOut 3s ease-in backwards;
+		-ms-animation: blurFadeInOut 3s ease-in backwards;
+		animation: blurFadeInOut 3s ease-in backwards ;
+	}
+	.img_person{
+		width: 400px;
+		position: absolute;
+		top:5px;
+		left: 20px;
+	}
+	.title-promo {
+		font-size: 38px;
+		font-weight: 900;
+		margin-top: 10px;
+		animation: fadeIn 3s;
+		color: #ecc70c; 
+		-webkit-animation: fadeIn 5s ease-in backwards;
+		-moz-animation: fadeIn 5s ease-in backwards;
+		-o-animation: fadeIn 5s ease-in backwards;
+		-ms-animation: fadeIn 5s ease-in backwards;
+		-webkit-animation-delay: 3s;
+		-moz-animation-delay: 3s;
+		-ms-animation-delay: 3s;
+		animation-delay: 3s;
+		line-height: 1;
+		font-family: "Effra-Light","Trebuchet MS",Arial,sans-serif;
+	}
+	@keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+		}
+
+		@-moz-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+		}
+
+		@-webkit-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+		}
+
+		@-o-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+		}
+
+		@-ms-keyframes fadeIn {
+		0% {opacity:0;}
+		100% {opacity:1;}
+		}
+
+		.sp-container h2.frame-1 {
+			-webkit-animation-delay: 0s;
+			-moz-animation-delay: 0s;
+			-ms-animation-delay: 0s;
+			animation-delay: 0s;
+		}
+		.sp-container h2.frame-2 {
+			-webkit-animation-delay: 3s;
+			-moz-animation-delay: 3s;
+			-ms-animation-delay: 3s;
+			animation-delay: 3s;
+		}
+		.sp-container h2.frame-3 {
+			-webkit-animation-delay: 6s;
+			-moz-animation-delay: 6s;
+			-ms-animation-delay: 6s;
+			animation-delay: 6s;
+		}
+		.sp-container h2.frame-4 {
+			font-size: 100px;
+			-webkit-animation-delay: 9s;
+			-moz-animation-delay: 9s;
+			-ms-animation-delay: 9s;
+			animation-delay: 9s;
+		}
+		
+		.sp-container h2.frame-5 {
+			-webkit-animation-delay: 12s;
+			-moz-animation-delay: 12s;
+			-ms-animation-delay: 12s;
+			animation-delay: 12s;
+			animation: none;
+			color: transparent;
+			text-shadow: 0px 0px 1px #fff;
+		}
+		.sp-container h2.frame-5 span {
+			-webkit-animation: blurFadeIn 3s ease-in 12s backwards;
+			-moz-animation: blurFadeIn 1s ease-in 12s backwards;
+			-ms-animation: blurFadeIn 3s ease-in 12s backwards;
+			animation: blurFadeIn 3s ease-in 12s backwards;
+			color: transparent;
+			text-shadow: 0px 0px 1px #fff;
+		}
+		.sp-container h2.frame-5 span:nth-child(2) {
+			-webkit-animation-delay: 13s;
+			-moz-animation-delay: 13s;
+			-ms-animation-delay: 13s;
+			animation-delay: 13s;
+		}
+		.sp-container h2.frame-5 span:nth-child(3) {
+			-webkit-animation-delay: 14s;
+			-moz-animation-delay: 14s;
+			-ms-animation-delay: 14s;
+			animation-delay: 14s;
+		}
+
+		@-webkit-keyframes blurFadeInOut {
+			0% {
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-webkit-transform: scale(1.3);
+			}
+			20%, 75% {
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-webkit-transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				text-shadow: 0px 0px 50px #fff;
+				-webkit-transform: scale(0);
+			}
+		}
+		@-webkit-keyframes blurFadeIn {
+			0% {
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-webkit-transform: scale(1.3);
+			}
+			50% {
+				opacity: 0.5;
+				text-shadow: 0px 0px 10px #fff;
+				-webkit-transform: scale(1.1);
+			}
+			100% {
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-webkit-transform: scale(1);
+		}
+		}
+		@-webkit-keyframes fadeInBack {
+			0% {
+				opacity: 0;
+				-webkit-transform: scale(0);
+			}
+			50% {
+				opacity: 0.4;
+				-webkit-transform: scale(2);
+			}
+			100% {
+				opacity: 0.2;
+				-webkit-transform: scale(5);
+			}
+		}
+		@-webkit-keyframes fadeInRotate {
+			0% {
+				opacity: 0;
+				-webkit-transform: scale(0) rotate(360deg);
+			}
+			100% {
+				opacity: 1;
+				-webkit-transform: scale(1) rotate(0deg);
+			}
+		}
+		/**/
+
+		@-moz-keyframes blurFadeInOut {
+			0% {
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-moz-transform: scale(1.3);
+			}
+			20%, 75% {
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-moz-transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				text-shadow: 0px 0px 50px #fff;
+				-moz-transform: scale(0);
+			}
+		}
+		@-moz-keyframes blurFadeIn {
+			0% {
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				-moz-transform: scale(1.3);
+			}
+			100% {
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				-moz-transform: scale(1);
+			}
+		}
+
+		@-moz-keyframes fadeInBack {
+			0% {
+				opacity: 0;
+				-moz-transform: scale(0);
+			}
+			50% {
+				opacity: 0.4;
+				-moz-transform: scale(2);
+			}
+			100% {
+				opacity: 0.2;
+				-moz-transform: scale(5);
+			}
+		}
+
+		@-moz-keyframes fadeInRotate {
+			0% {
+				opacity: 0;
+				-moz-transform: scale(0) rotate(360deg);
+			}
+			100% {
+				opacity: 1;
+				-moz-transform: scale(1) rotate(0deg);
+			}
+		}
+		/**/
+
+		@keyframes blurFadeInOut {
+			0% {
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				transform: scale(1.3);
+			}
+			20%, 75% {
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				transform: scale(1);
+			}
+			100% {
+				opacity: 0;
+				text-shadow: 0px 0px 50px #fff;
+				transform: scale(0);
+			}
+		}
+		@keyframes blurFadeIn {
+			0% {
+				opacity: 0;
+				text-shadow: 0px 0px 40px #fff;
+				transform: scale(1.3);
+			}
+			50% {
+				opacity: 0.5;
+				text-shadow: 0px 0px 10px #fff;
+				transform: scale(1.1);
+			}
+			100% {
+				opacity: 1;
+				text-shadow: 0px 0px 1px #fff;
+				transform: scale(1);
+			}
+		}
+		@keyframes fadeInBack {
+			0% {
+				opacity: 0;
+				transform: scale(0);
+			}
+			50% {
+				opacity: 0.4;
+				transform: scale(2);
+			}
+			100% {
+				opacity: 0.2;
+				transform: scale(5);
+			}
+		}
+		@keyframes fadeInRotate {
+			0% {
+				opacity: 0;
+				transform: scale(0) rotate(360deg);
+			}
+			100% {
+				opacity: 1;
+				transform: scale(1) rotate(0deg);
+			}
+		}
+
+		/*
+		==============================================
+		slideUp
+		==============================================
+		*/
+
+		.slideUp{
+			animation-name: slideUp;
+			-webkit-animation-name: slideUp;	
+			animation-duration: 1s;	
+			-webkit-animation-duration: 1s;
+			animation-timing-function: ease;	
+			-webkit-animation-timing-function: ease;
+			visibility: visible !important;			
+		}
+
+		@keyframes slideUp {
+			0% {
+				transform: translateY(100%);
+			}	
+			100% {
+				transform: translateY(0%);
+			}	
+		}
+
+		@-webkit-keyframes slideUp {
+			0% {
+				-webkit-transform: translateY(100%);
+			}		
+			100% {
+				-webkit-transform: translateY(0%);
+			}	
+		}
+
+		@media (max-width: 991px) { 
+			.title-promo {
+				font-size: 30px;
+				margin-top: 22px;
+			}
+			.logo_hotsale {
+				width: 80px;
+				position: absolute;
+				top: 29px;
+				right: 10px;
+			}
+			#promo{
+				height: 400px;
+			}
+			.inner-wave{
+				height: 42vh;
+			}
+			.img_person {
+				width: 230px;
+				top: 130px;
+				left: 20px;
+			}
+			.logo_hotsale {
+				top:179px;
+			}
+			.logo_bed {
+				width: 200px;
+			}
+		}
+
+		/*categorias*/
+		.col-25 {
+            width: 25%;
+        }
+		.list-grid {
+            padding: 1em 0;
+            list-style: none;
+            display: inline-flex;
+            min-width: 100%;
+            justify-content: space-evenly;
+        }
+        .list-grid .col-2 {
+            min-width: 16.6666%;
+            text-align: center;
+        }
+		
+
+        .list-grid .col-2 .items-center {
+            border: 2px solid #fff;
+			width: 200px;
+    		height: 210px; 
+			text-align: center;
+			justify-content: center;
+			vertical-align: center;
+			position: relative;
+			border: 3px solid #DA1623;
+			animation: rounder2 2s linear 2s infinite;
+        }
+        .list-grid .col-2:hover .items-center {
+            border: 6px solid #DA1623;
+        }
+		.img-rouned {
+			position: absolute;
+			z-index: 1;
+			top: 14px;
+			left: 11px;
+			width: 180px;
+			height: auto;
+		}
+
+		@keyframes rounder2 {
+			0% {
+				border: 3px solid  #C71919;
+			}
+
+			100% {
+				border: 3px solid  #DA1623;
+			}
+		}
+
+		#categorycard {
+			padding: 0 15%;
+			margin-top: -64px;
+		}
+		.categoriestitle {
+			font-weight: 900;
+			text-decoration: none;
+			color:#1a4e8a;
+		}
+
+		@media (max-width: 991px) {
+			.list-grid {
+				display: inline-block;
+			}
+			.col-2 {
+				float: left;
+				width: 33%;
+				min-height: 180px;
+			}
+			#categorycard {
+				padding: 0 2%;
+				margin-top: -124px;
+			}
+			.list-grid .col-2 .items-center {
+				width: 100px;
+				height: 100px;
+			}
+			.img-rouned {
+				position: absolute;
+				z-index: 1;
+				border-radius: 50%;
+				top: 4px;
+				left: 4px;
+				width: 90px;
+				height: 90px;
+			}
+		}
+		#containerimg img {
+			display: block;
+			transition: transform .4s;   /* smoother zoom */
+		}
+		#containerimg:hover img {
+			transform: scale(1.1);
+			transform-origin: 50% 50%;
+		}
+		.title-inside{
+			position: absolute;
+			top:0;
+			left: 0;
+			right: 0;
+			font-size: 25px;
+			font-weight: 900;
+			color: #1a4e8a;
+			z-index: 1;
+		}
+</style>   
+ 
+<body>
+	<section id="promo">
+		<div class="container-waves">
+			<!--Content before waves-->
+			<div class="inner-wave flex">
+				<img src="https://assets.hotsale.com.mx/public/hotsale-mx/imgs/hot-sale-2021.svg" class="logo_hotsale tossing" />
+				<img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/hotsale/image-1-1.png?rand=1621355108" class="img_person slideUp" />
+				<div class="sp-container">
+					<div class="sp-content">
+					  <h2 class="frame-1">
+						<img src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/hotsale/logo_bb_b_blanco.png" class="logo_bed" />
+					  </h2>
+					</div>
+					<div class="title-promo"> descuentos <br> por marca</div>
+				  </div>
+			</div>
+			<!--Waves Container-->
+			<div>
+				<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+				viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+				<defs>
+				<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+				</defs>
+				<g class="parallax">
+					<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+					<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+					<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+					<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+				</g>
+			</svg>
+			</div>
+			<!--Waves end-->
+		</div>  
+	</section>
+	<!-- Cateogorias descuentos -->
+	<section>
+		<div id="categorycard" class="content-inline-flex column">
+			<ul class="list-grid">
+				<li class="col-2">
+					<a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara.html">
+						<div class="inner-anchor">
+							<div id="containerimg" class="items-center">
+								<img class="img-rouned"  alt=""
+								src="//b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C02-5v2-CAT-1-DSK_Nestwell?$content$">
+								<p class="title-inside">Haven™</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="col-2">
+					<a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html">
+						<div class="inner-anchor">
+							<div id="containerimg" class="items-center">
+								<img class="img-rouned" alt=""
+								src="//b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C02-5v2-CAT-1-DSK_Nestwell?$content$">
+								<p class="title-inside">Nestwell™</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="col-2">
+					<a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano.html">
+						<div class="inner-anchor">
+							<div  id="containerimg" class="items-center">
+								<img class="img-rouned" alt=""
+								src="//b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C02-5v2-CAT-1-DSK_Nestwell?$content$">
+								<p class="title-inside">Bee & Willow Home™</p>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li class="col-2">
+					<a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion.html">
+						<div class="inner-anchor">
+							<div id="containerimg" class="items-center">
+								<img  class="img-rouned" alt=""
+								src="//b3h2.scene7.com/is/image/BedBathandBeyond/US-BrandAPlus-LP-C02-5v2-CAT-1-DSK_Nestwell?$content$">
+								<p class="title-inside">WAMSUTTA™</p>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div> 
+	</section>
+	
+</html>

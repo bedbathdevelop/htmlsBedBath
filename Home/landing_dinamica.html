@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinámica BB</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+      }
+      .wrap-banner {
+        height: 400px;
+        background-color: var(--azul-bbb-claro);
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px 0;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+      }
+      .wrap-banner .item-banner {
+        width: 40%;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-banner .item-banner:nth-child(1) {
+        text-align: left;
+        padding: 60px;
+      }
+      .wrap-funcion {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 50px;
+      }
+      .wrap-funcion div {
+        width: 50%;
+        font-family: var(--font-bedbath);
+      }
+      .wrap-funcion:nth-child(2) {
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-inside-function {
+        padding: 40px;
+      }
+      .img-help {
+        width: 60%;
+      }
+      #premios {
+        background-color: var(--azul-bbb-medio);
+        text-align: center;
+        justify-content: center;
+        padding: 10px 0;
+        color: #fff;
+        font-family: var(--font-bedbath);
+      }
+      .wrap-premios {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px 0;
+        justify-content: center;
+        text-align: center;
+      }
+      .item-premio {
+        width: 25%;
+        margin: 0 10px;
+      }
+      .item-premio img {
+        width: 100%;
+      }
+      iframe {
+        border-width: 0;
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+      }
+      .headerContainer.contentContainer {
+        display: none;
+      }
+      .headerContainer {
+        display: none;
+      }
+      button {
+        background-color: var(--azul-bbb-medio);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section>
+      <div id="header" class="wrap-banner">
+        <div class="item-banner">
+          <h2>¡Gana con BB&B!</h2>
+          <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry.
+          </p>
+        </div>
+        <div class="item-banner">
+          <!-- Begin Mailchimp Signup Form -->
+          <link
+            href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css"
+            rel="stylesheet"
+            type="text/css"
+          />
+          <style type="text/css">
+            #mc_embed_signup {
+              background: #fff;
+              clear: left;
+              font: 14px Helvetica, Arial, sans-serif;
+            }
+            /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+          </style>
+          <div id="mc_embed_signup">
+            <form
+              action="https://gmail.us3.list-manage.com/subscribe/post?u=9d79b8d4c6f05cdb3f0025096&amp;id=df2e1fdb45"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
+              <div id="mc_embed_signup_scroll">
+                <div class="indicates-required">
+                  <span class="asterisk">*</span> indicates required
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-EMAIL"
+                    >email <span class="asterisk">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    value=""
+                    name="EMAIL"
+                    class="required email"
+                    id="mce-EMAIL"
+                  />
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-FNAME">Nombre </label>
+                  <input
+                    type="text"
+                    value=""
+                    name="FNAME"
+                    class=""
+                    id="mce-FNAME"
+                  />
+                </div>
+                <div class="mc-field-group">
+                  <label for="mce-MMERGE7"
+                    >ticket <span class="asterisk">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    value=""
+                    name="MMERGE7"
+                    class="required"
+                    id="mce-MMERGE7"
+                  />
+                </div>
+                <div id="mce-responses" class="clear">
+                  <div
+                    class="response"
+                    id="mce-error-response"
+                    style="display: none"
+                  ></div>
+                  <div
+                    class="response"
+                    id="mce-success-response"
+                    style="display: none"
+                  ></div>
+                </div>
+                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div
+                  style="position: absolute; left: -5000px"
+                  aria-hidden="true"
+                >
+                  <input
+                    type="text"
+                    name="b_9d79b8d4c6f05cdb3f0025096_df2e1fdb45"
+                    tabindex="-1"
+                    value=""
+                  />
+                </div>
+                <div class="clear">
+                  <input
+                    type="submit"
+                    value="enviar"
+                    name="enviar"
+                    id="mc-embedded-subscribe"
+                    class="button"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <script
+            type="text/javascript"
+            src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+          ></script>
+          <script type="text/javascript">
+            (function ($) {
+              window.fnames = new Array();
+              window.ftypes = new Array();
+              fnames[0] = "EMAIL";
+              ftypes[0] = "email";
+              fnames[1] = "FNAME";
+              ftypes[1] = "text";
+              fnames[2] = "LNAME";
+              ftypes[2] = "text";
+              fnames[3] = "ADDRESS";
+              ftypes[3] = "address";
+              fnames[4] = "PHONE";
+              ftypes[4] = "phone";
+              fnames[5] = "BIRTHDAY";
+              ftypes[5] = "birthday";
+              fnames[6] = "MMERGE6";
+              ftypes[6] = "imageurl";
+              fnames[7] = "MMERGE7";
+              ftypes[7] = "text";
+            })(jQuery);
+            var $mcj = jQuery.noConflict(true);
+          </script>
+          <!--End mc_embed_signup-->
+        </div>
+      </div>
+    </section>
+    <!-- ¿Cómo funciona? -->
+    <section id="comofunciona">
+      <div id="header" class="wrap-funcion">
+        <div>
+          <h2>¿Cómo funciona?</h2>
+          <div class="wrap-inside-function">
+            <p>
+              1 Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+            <p>
+              2 Lorem Ipsum has been the industry's standard dummy text ever
+              since the 1500s.
+            </p>
+            <p>3 Lorem Ipsum has been the industry's standard dummy.</p>
+          </div>
+        </div>
+        <div>
+          <img
+            src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW29-FY21-0912-0918-WEB-HP-C15-12-V2-4-1?$content$&wid=675"
+            alt="estilos"
+            class="img-help"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Premios -->
+    <section id="premios">
+      <h2>premios</h2>
+      <div id="header" class="wrap-premios">
+        <div class="item-premio">
+          <img
+            src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW29-FY21-0912-0918-WEB-HP-C15-12-V2-7-1?$content$&wid=675"
+          />
+          <p>premio 1</p>
+        </div>
+        <div class="item-premio">
+          <img
+            src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW29-FY21-0912-0918-WEB-HP-C15-12-V2-8-1?$content$&wid=675"
+          />
+          <p>premio 2</p>
+        </div>
+        <div class="item-premio">
+          <img
+            src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW29-FY21-0912-0918-WEB-HP-C15-12-V2-7-1?$content$&wid=675"
+          />
+          <p>premio 3</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div>
+        <h2>
+          Descargar
+          <a
+            href="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-mobile-citibanamex-6-septiembre.jpg"
+            download
+            >Download
+          </a>
+          <a
+            href="path/to/file.ext"
+            download
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Download File
+          </a>
+        </h2>
+      </div>
+    </section>
+
+    <!-- Preguntas -->
+    <section id="preguntas">
+      <div id="header" class="wrap-preguntas"></div>
+    </section>
+    <!-- Terminos y condiciones -->
+    <section id="terminos">
+      <div id="header" class="wrap-terminos"></div>
+    </section>
+  </body>
+</html>

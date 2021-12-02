@@ -1,0 +1,2230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Categorías</title>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --gray-filter: #636567;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+      }
+      body.catalog-category-view #maincontent .columns,
+      body.catalogsearch-result-index #maincontent .columns {
+        display: none !important;
+      }
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none !important;
+      }
+      .page-title-wrapper {
+        display: none !important;
+      }
+      .wrap-category {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        padding: 40px 0;
+      }
+      .item-cat {
+        width: 120px;
+        height: 140px;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+      }
+      .item-cat a p {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-size: 11px;
+      }
+      .alimentosimg {
+        width: 100px !important;
+        height: 100px !important;
+      }
+      .item-cat .container-cat {
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        justify-content: center;
+        display: block;
+        border: 2px solid #fff;
+        border-radius: 50%;
+      }
+      .item-cat .container-cat:hover {
+        border: 2px solid var(--azul-bbb-medio);
+      }
+      .container-cat img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin: 0 auto;
+      }
+      .wrap-not {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+      }
+      #wrapper {
+        perspective: 800px;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        font-size: 4vw;
+      }
+      ul {
+        list-style: none;
+        justify-content: center;
+      }
+
+      @media (min-width: 600px) {
+        #wrapper {
+          font-size: 7vw;
+        }
+      }
+
+      @media (min-width: 1000px) {
+        #wrapper {
+          font-size: 2vw;
+        }
+      }
+
+      .item-not {
+        width: 35%;
+        height: 200px;
+        background-color: var(--azul-bbb-claro);
+        margin: 10px;
+        padding: 50px;
+      }
+      .item-not .contorno {
+        width: 100%;
+        height: 100%;
+        border: 15px solid var(--azul-bbb-medio);
+        background-color: #fff;
+      }
+      .title-not {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        padding-top: 30px;
+        font-size: 5.1rem;
+      }
+      #cat {
+        text-align: center;
+      }
+      .wrap-categoria {
+        overflow: hidden;
+        padding-bottom: 140px;
+      }
+      .item-categoria {
+        padding: 10px;
+        display: flex;
+        overflow: hidden;
+        flex-wrap: wrap;
+        position: relative;
+        margin: 20px 0;
+        border-bottom: 2px solid #c9c9c9;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-categoriam {
+        border-bottom: 2px solid #c9c9c9;
+      }
+      .item-subcat {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        width: 100%;
+      }
+      .item-subcat.small {
+        flex-basis: 30%;
+      }
+      .item-subcat.big {
+        flex-basis: 70%;
+        text-align: left;
+        position: relative;
+      }
+      .wrap-descripcion {
+        overflow: hidden;
+        text-align: center;
+        position: relative;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .wrap-descripcion h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        justify-content: center;
+      }
+      .wrap-minicat {
+        overflow: hidden;
+        margin-top: 10px;
+      }
+      .wrap-minicat img {
+        width: 160px;
+        height: 160px;
+      }
+
+      .btn-cat {
+        background-color: var(--azul-bbb-medio);
+        bottom: 2px;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 10px;
+        width: 200px;
+        margin: 0 auto;
+        font-size: 15px;
+        font-family: var(--font-bedbath);
+      }
+      ul.inside {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 2 0px;
+      }
+      ul.inside li {
+        flex: 1 1 auto;
+        margin: 0 5px;
+      }
+      .descripcion {
+        text-align: center;
+        font-family: var(--font-bedbath);
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: var(--azul-bbb-medio);
+      }
+      .btn-cat.rigth {
+        right: 20px;
+      }
+      .btn-cat.left {
+        left: 20px;
+      }
+      .wrap-minicat {
+        display: block;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      .wrap-minicat:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .img-main {
+        width: 300px;
+        padding-top: 10%;
+      }
+      .bottom {
+        position: fixed;
+        bottom: 0;
+        z-index: 1;
+        background-color: #fff;
+        padding: 0;
+        left: 0;
+      }
+      .medium {
+        width: 80px;
+        height: 90px;
+      }
+      .bg-bloque {
+        overflow: hidden;
+        width: 1200px;
+        height: 300px;
+        position: relative;
+      }
+      .bg-bloque.recamara {
+        background: url("https://www.bedbathandbeyond.com.mx/media/recamara.jpg?rand=1632751884");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.bano {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/bano-despues.jpg?rand=1624632732");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.decoracion {
+        background: url("https://www.bedbathandbeyond.com.mx/media/decoracion.jpg?rand=1632754238");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.ninos {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ninos.jpeg?rand=1632930992");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.jardines {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/jardin/Terraza_v1.jpeg?rand=1620138895");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.tecnologia {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/tech.jpeg?rand=1632931540");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.organizacion {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/org.jpeg?rand=1632930992");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.mascotas {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/maletas.jpeg?rand=1632930946");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.muebles {
+        background: url("https://www.bedbathandbeyond.com.mx/media/muebles.jpg?rand=1632754561");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.comolovio {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-como-lo-viste-en-tv-5-jul.jpg?rand=1625237412");
+        background-position: center;
+        background-size: contain;
+      }
+      .bg-bloque.mesa {
+        background: url("https://www.bedbathandbeyond.com.mx/media/mesa.jpg?rand=1632755562");
+        background-position: center;
+        background-size: cover;
+      }
+      .bg-bloque.cocina {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/cocina.jpg?rand=1632929334");
+        background-position: center;
+        background-size: cover;
+        margin-top: 40px;
+      }
+      .bg-bloque.cuidado {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/imagen-principal.jpg?rand=1627327168");
+        background-position: center;
+        background-size: cover;
+        margin-top: 40px;
+      }
+      .wrap-minibloque {
+        background-color: rgba(255, 255, 255, 0.7);
+        width: 400px;
+        position: absolute;
+        top: 20px;
+        left: 50px;
+        text-align: center;
+        justify-content: center;
+      }
+      .wrap-minibloque h2 {
+        font-size: 2.3rem;
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+      }
+      .wrap-minibloque p {
+        font-family: var(--font-bedbath);
+        color: #fff;
+        background-color: var(--azul-bbb-medio);
+        border-radius: 5px;
+        padding: 5px 0;
+        margin: 20px 40px;
+      }
+      .wrap-minibloque p:hover {
+        background-color: var(--azul-bbb-button);
+      }
+      @media (max-width: 767px) {
+        .item-not {
+          width: 100%;
+          height: 100px;
+        }
+        .title-not {
+          font-size: 22px;
+          padding-top: 10px;
+        }
+        .item-cat {
+          width: 60px;
+          height: 80px;
+          margin: 0 3px;
+        }
+        .item-cat .container-cat {
+          width: 60px;
+          height: 60px;
+        }
+        .container-cat img {
+          width: 60px;
+          height: 60px;
+        }
+        .item-cat a p {
+          font-size: 7px;
+          margin-top: -4px;
+        }
+        .item-subcat.small {
+          flex-basis: 100%;
+        }
+        .item-subcat.big {
+          flex-basis: 100%;
+        }
+        .alimentosimg {
+          width: 60px !important;
+          height: 60px !important;
+        }
+        ul.inside {
+          margin-left: -20px;
+        }
+        ul.inside li {
+          margin: 10px 5px;
+          flex: 100px;
+          width: 100px;
+        }
+        .desktop {
+          display: none !important;
+        }
+        .mobile {
+          display: block !important;
+        }
+        .descripcion {
+          font-size: 10px;
+        }
+        .wrap-minicat img {
+          height: 100px;
+        }
+        .bg-bloque {
+          width: 370px;
+          height: 200px;
+        }
+        .wrap-minibloque {
+          width: 200px;
+          top: 10px;
+          left: 0px;
+        }
+        .bg-bloque.comolovio {
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        .bg-bloque.comolovio .wrap-minibloque {
+          display: none;
+        }
+      }
+    </style>
+    <!--<script>
+      window.onload = function () {
+        const barraCat = document.getElementById("catMain");
+        console.log("b", barraCat);
+        window.addEventListener("scroll", (event) => {
+          console.log("Scrolling...", window.scrollY);
+
+          if (window.scrollY > 20) {
+            barraCat.classList.add("bottom");
+          } else {
+            barraCat.classList.remove("bottom");
+          }
+        });
+      };
+    </script>-->
+  </head>
+  <body>
+    <section id="cat">
+      <h2 class="title-not">te invitamos a conocer nuestras categorías</h2>
+      <div id="catMain" class="wrap-category">
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#recamara" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/fundas-edredones314x314.jpg?$content$&wid=330&hei=330"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>recámara</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#cocina" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/kitchen10.jpg?rand=1606782832"
+                alt="cocina bedbathandbeyond"
+              />
+            </div>
+            <p>cocina</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#bano" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/FEO_BBB_Homepage_10.31_C02.jpeg?rand=1626205208"
+                alt="baño bedbathandbeyond"
+              />
+            </div>
+            <p>baño</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#organizacion" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/storage-_-org10.jpg?rand=1606782832"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>organización y limpieza</p>
+          </a>
+        </div>
+
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#mesa" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/9394616109592p?$imagePLP$&hei=700&wid=700"
+                alt="cuidado-personal"
+              />
+            </div>
+            <p>mesa y bar</p></a
+          >
+        </div>
+
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#cuidado" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/health-_-beauty10.jpg?rand=1606782832"
+                alt="cuidado-personal"
+              />
+            </div>
+            <p>cuidado personal</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#decoracion" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-12-17-01-19_444800401511_imageset?$imagePLP$&hei=700&wid=700"
+                alt="decoracion bedbathandbeyond"
+              />
+            </div>
+            <p>decoración</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#viajesymascotas" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/smart-home10.jpg?rand=1606782832"
+                alt="mascotas viajes y más bedbathandbeyond"
+              />
+            </div>
+            <p>mascotas viajes y más</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#muebles" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home-2/furniture10.jpg?rand=1606782832"
+                alt="muebles bedbathandbeyond"
+              />
+            </div>
+            <p>muebles</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat small mobile">
+          <a href="#ninos" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69740539.jpg?$imagePLP$&hei=300&wid=260"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>niños y bebés</p>
+          </a>
+        </div>
+
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#jardines" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-10-29-03-05_444800351885-444800351908-444800351922_imageset"
+                alt="recamara bedbathandbeyond"
+              />
+            </div>
+            <p>jardines y exteriores</p>
+          </a>
+        </div>
+        <!-- item cat -->
+        <div class="item-cat">
+          <a href="#alimentos" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69618837.png?$imagePLP$&hei=300&wid=260"
+                alt="alimentos y bebidas bedbathandbeyond"
+                class="alimentosimg"
+              />
+            </div>
+            <p>alimentos y bebidas</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="#tecnologia" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69614469-2.jpg?$imagePLP$&hei=300&wid=260"
+                alt="alimentos y bebidas bedbathandbeyond"
+                class="alimentosimg"
+              />
+            </div>
+            <p>tecnología</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="#tv" target="_self">
+            <div class="container-cat">
+              <img
+                src="https://mcprod.bedbathandbeyond.com.mx/media//nacionales/46034902965.jpg?$imagePLP$&hei=300&wid=260"
+                alt="alimentos y bebidas bedbathandbeyond"
+                class="alimentosimg"
+              />
+            </div>
+            <p>como lo vio en TV</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categorias -->
+    <section>
+      <div class="wrap-categoria">
+        <!-- Recamara -->
+        <div id="recamara" class="item-categoriam">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/recamara.html"
+              target="_self"
+            >
+              <div class="bg-bloque recamara">
+                <div class="wrap-minibloque">
+                  <h2>recámara</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat big">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/ropa-de-cama.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">ropa de cama</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/almohadas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/almohadas.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">almohadas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/cojines.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/cojines.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cojines</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/colchonetas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/colchonetas.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">colchonetas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/fundas-y-protectores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/Recamara/fundas-protectores.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">fundas y protectores</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/muebles.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/284947068092771p?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">muebles</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cocina -->
+        <div id="cocina" class="item-categoriam">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html"
+              target="_self"
+            >
+              <div class="bg-bloque cocina">
+                <div class="wrap-minibloque">
+                  <h2>cocina</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat big">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/utensilios-de-cocina.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Bloque/utensilios314x314.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">utensilios</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/electrodomesticos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Bloque/electrodom314.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">electrodomésticos</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocina/baterias-de-cocina.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Bloque/baterias314.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">baterías de cocina</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/organizacion-de-cocina.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Bloque/orgacocina314.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">organización</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/filtros-y-botellas-para-agua.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Bloque/filtros-y-botellas-314.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">filtros para agua</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/muebles.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://b3h2.scene7.com/is/image/BedBathandBeyond/193374006683_imageset?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">muebles para cocina</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bano -->
+        <div id="bano" class="item-categoria">
+          <div class="item-subcat small">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/bano.html"
+              target="_self"
+            >
+              <div class="bg-bloque bano">
+                <div class="wrap-minibloque">
+                  <h2>baño</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/bano/accesorios-para-bano.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/accesorios-bano.jpg?rand=1624632732"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">accesorios para baño</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/bano/tapetes-para-bano.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/tapetes.jpg?rand=16246327320"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">tapetes para baño</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/bano/toallas-para-bano.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/toallas.jpg?rand=1621975695"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">toallas para baño</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/bano/regadera-y-tina.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/cortinas.jpg"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">regadera y tina</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/bano/muebles-para-bano.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/muebles.jpg?rand=1621978456"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">muebles para baño</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/bano/organizacion-y-limpieza.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/bano/canasta_para_ba_o.jpg"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">organización y limpieza</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Organización y limpieza -->
+        <div id="organizacion" class="item-categoriam">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html"
+              target="_self"
+            >
+              <div class="bg-bloque organizacion">
+                <div class="wrap-minibloque">
+                  <h2>organización y limpieza</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat small mobile">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/SA-home-solucion-almacenamiento.jpg?rand=1631891377"
+                alt="bedbathandbeyond"
+                class="img-main"
+              />
+              <div class="btn-cat">ver toda la categoría</div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/organizadores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/bolsa_para_ropa.jpg"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">organizadores</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/limpieza.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/trapeador_de_piso.jpg"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">limpieza</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/liquidos-de-limpieza.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizacion_2.jpg?rand=1623790884"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">líquidos de limpieza</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/zapatera.jpg"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">muebles para organización</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cuidado personal -->
+        <div id="cuidado" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal.html"
+              target="_self"
+            >
+              <div class="bg-bloque cuidado">
+                <div class="wrap-minibloque">
+                  <h2>cuidado personal</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/cuidado-del-cabello.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/cuidado-cabello.jpg?rand=1627327168"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cuidado del cabello</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/cuidado-dental.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/cuidado-dental.jpg?rand=1627327168"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cuidado dental</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/salud-y-belleza.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/salud.jpg?rand=1627327168"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">salud</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/cuidado-facial-y-corporal.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/cuidado-piel.jpg?rand=1627327168"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cuidado de la piel</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/descanso.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/descanso.jpg?rand=1627327168"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">descanso</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/belleza.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/cuidadopersonal/belleza.jpg?rand=1627327168"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">belleza</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/spa.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/spa_1.jpg?rand=1627327870"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">spa</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- decoración -->
+        <div id="decoracion" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/decoracion.html"
+              target="_self"
+            >
+              <div class="bg-bloque decoracion">
+                <div class="wrap-minibloque">
+                  <h2>decoración</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cortinas-y-accesorios-para-ventanas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-cortinas-deco-sept.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cortinas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cojines.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-cojines-sept.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cojines</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/tapetes-para-el-hogar/tapetes-decorativos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-tapetes-decorat-sept.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">tapetes decorativos</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cuadros-y-marcos/cuadros-decorativos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/cat-deco-cuadros-sept.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cuadros</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/cuadros-y-marcos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-deco-pared.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">decoración de pared</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/iluminacion.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-iluminacion.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">iluminación</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/velas-y-difusores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-velas.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">velas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/portarretratos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-catportarretratos.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">portarretratos</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/floreros-y-macetas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-maceta.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">floreros y macetas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/follaje-artificial.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-follaje.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">follaje artificial</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/difusores-y-aceites-esenciales.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-catdifusor.jpg?rand=1630943347"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">difusores y aceites</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/decoracion/otros-articulos-decorativos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/decoracion/top-cat-otros.jpg?rand=1630939319"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">otros artículos</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!--  Mascotas y Viajes -->
+        <div id="viajesymascotas" class="item-categoriam">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas.html"
+              target="_self"
+            >
+              <div class="bg-bloque mascotas">
+                <div class="wrap-minibloque">
+                  <h2>mascotas, viajes y más</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat big">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas/mascotas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/Sin_ti_tulo.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">mascotas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas/viajes.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/viajar.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">viajes</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas/accesorios-para-auto.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/21633440204376p?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">accesorios para auto</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mesa -->
+        <div id="recamara" class="item-categoriam">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/recamara.html"
+              target="_self"
+            >
+              <div class="bg-bloque mesa">
+                <div class="wrap-minibloque">
+                  <h2>mesa</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat big">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/vajillas.jpg?$content$&wid=330&hei=330"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/vajillas.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">vajillas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/copas-y-decantadores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/cristaleria.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">copas y decantadores</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/recamara/cojines.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/cocina/vasos_1.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">vasos y tarros</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/mesa/cuberteria.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/cuberteria.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cubertería</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa/servicio-de-mesa.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/servicio_de_mesa.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">servicio de mesa</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/mesa/vinos-y-cervezas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/cocteleria.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">bar</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/mesa/manteleria.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/314x314/manteleria.jpg?$content$&wid=330&hei=330"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">mantelería</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- niños y bebes -->
+        <div id="ninos" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes.html"
+              target="_self"
+            >
+              <div class="bg-bloque ninos">
+                <div class="wrap-minibloque">
+                  <h2>niños y bebes</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/accesorios.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69595187.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">accesorios</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/juguetes.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-06-15-13-44_StarBelly_Puppy_Product_imageset?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">juguetes</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/juegos-de-mesa.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://mcprod.bedbathandbeyond.com.mx/media//nacionales/843479116755.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">juegos de mesa</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/mobiliario.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://mcprod.bedbathandbeyond.com.mx/media/nacionales/7290005562167.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">mobiliario</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/seguridad.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/40239442578253p?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">seguridad</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/hora-de-comer.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//wysiwyg/home-2/69699661.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">hora de comer</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/hora-de-ba-o.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/150766963668360p?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">hora del baño</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/hora-de-dormir.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/33391235436287m?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">hora de dormir</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!--  Muebles -->
+        <div id="muebles" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar.html"
+              target="_self"
+            >
+              <div class="bg-bloque muebles">
+                <div class="wrap-minibloque">
+                  <h2>muebles</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/tocadores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-tocadores.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">tocadores</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/mesas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-mesa.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">mesas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/percheros.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-percheros.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">percheros</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/carritos-de-servicio.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-carritos.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">carritos de servicio</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/sillas-y-sillones.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-sillas.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">sillas y sillones</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/buros.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-buro.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">buros</p>
+                    </div>
+                  </a>
+                </li>
+
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/bancas-y-bancos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-bancos.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">bancos y bancas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/fundas-protectoras.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-fundas.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">fundas y protectores</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/accesorios-para-muebles.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-accesorios-muebles.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">accesorios para muebles</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/escaleras.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-escaleras.jpg?rand=1631292757"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">escaleras</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- jardines y exteriores -->
+        <div id="jardines" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores.html"
+              target="_self"
+            >
+              <div class="bg-bloque jardines">
+                <div class="wrap-minibloque">
+                  <h2>jardines y exteriores</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/decoracion-de-jardin-y-exteriores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/jardin/US_FW15_FY21_0606_0612_WEB_L1_Outdoor_C15_12_V3_3.jpg?rand=1623862744"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">decoración</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/asadores-y-parrillas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/jardin/US_FW15_FY21_0606_0612_WEB_L1_Outdoor_C15_12_V3_4.jpg?rand=1623862744"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">asadores y parrillas</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/articulos-de-jardin.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/jardin/US_FW15_FY21_0606_0612_WEB_L1_Outdoor_C15_12_V2_3.jpg?rand=1623865630"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">artículos de jardín</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/playa-y-alberca.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/jardin/CA-FW11-FY21-0509-0515-WEB-L1-Outdoor-C15-12-V3-7.jpg?rand=1623865630"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">playa y alberca</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/muebles-de-jardin-y-cojines.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/jardin/US_FW15_FY21_0606_0612_WEB_L1_Outdoor_C15_12_V2_1.jpg?rand=1623865630"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">muebles de jardín</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!--  Alimentos y Bebidas -->
+        <div id="alimentos" class="item-categoria">
+          <div class="item-subcat small">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas.html"
+              target="_self"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69618837.png?$imagePLP$&hei=300&wid=260"
+                alt="bedbathandbeyond"
+                class="img-main"
+              />
+              <div class="btn-cat">ver toda la categoría</div>
+            </a>
+          </div>
+          <div class="item-subcat big">
+            <div class="wrap-descripcion">
+              <h2>alimentos y bebidas</h2>
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas/dulces-y-snacks.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/69421464.png?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">dulces y snacks</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas/cafe.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/67960989.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">café</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas/condimentos.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69620930.png?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">condimentos</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- como lo vio en TV-->
+        <div id="tv" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v.html"
+              target="_self"
+            >
+              <div class="bg-bloque comolovio">
+                <div class="wrap-minibloque">
+                  <h2>como lo vio en TV</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/cocina.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69612563.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cocina</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/cuidado-personal.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/40604060.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">cuidado personal</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/decoracion.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/28844341355152p%20?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">decoración</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/jardin-y-exteriores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-05-13-13-44_XT301WMC_IMG_RGB_3000_imageset?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">jardín y exteriores</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/juguete.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-06-15-13-44_StarBelly_Puppy_Product_imageset?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">juguetes</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/mascotas-viajes-y-mas.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/57133243500758p?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">mascotas, viajes y más</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/muebles.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/68101042442769p?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">muebles</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/organizacion-y-limpieza.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://mcprod.bedbathandbeyond.com.mx/media//nacionales/46034902965.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">organización y limpieza</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/recamara.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/lf_263827567502417p_imageset?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">recámara</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/como-lo-vio-en-t-v/tecnologia.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/67209170.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">tecnología</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!--  Tecnología-->
+        <div id="tecnologia" class="item-categoria">
+          <div class="item-subcat">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/tecnologia.html"
+              target="_self"
+            >
+              <div class="bg-bloque tecnologia">
+                <div class="wrap-minibloque">
+                  <h2>tecnología</h2>
+                  <p>ver categoría</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="item-subcat">
+            <div class="wrap-descripcion">
+              <ul class="inside">
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/hogar-inteligente.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69688983.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">hogar inteligente</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/iluminacion-y-energia.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/69490451.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">iluminación y energía</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/ventiladores-y-calefactores.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69686570.jpg?$imagePLP$&hei=700&wid=700"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">calefacción y ventilación</p>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/productos/tecnologia/entretenimiento.html"
+                    target="_self"
+                  >
+                    <div class="wrap-minicat">
+                      <img
+                        src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69771753.jpg?$imagePLP$&hei=300&wid=260"
+                        alt="categoria"
+                      />
+                      <p class="descripcion">entretenimiento</p>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

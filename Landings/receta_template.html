@@ -1,0 +1,221 @@
+<style>
+  .title-recipe-main{
+    font-weight: 900 !important;
+    font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+    text-align: center;
+    font-size: 5rem;
+  }
+  .recipe-information {
+    display: flex;
+    flex-flow: row;
+    overflow: hidden;
+    text-align: center;
+    justify-content: center;
+    margin: 0 40px;
+  }
+  .decription-recipe h3 {
+    color: #1a4e8a;
+    text-align: center;
+    font-weight: 900;
+  }
+  .recipe-information div {
+    width: 33.33%;
+  }
+  .item-information {
+    overflow: hidden;
+    position: relative;
+  }
+  .item-information img {
+    width: 30px;
+    height: 30px;
+  }
+  .item-information span {
+    position: absolute;
+    top: 0px;
+    right: 15px;
+    color: #1a4e8a;
+    font-weight: 900;
+    font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+    font-size: 3.5rem;
+  }
+  .item-information p {
+    line-height: 1;
+    font-weight: 900;
+    color: #002854;
+    margin-top: -2px;
+    font-size: 22px;
+  }
+  .slider--prod {
+    background: white;
+    height: 400px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: 90%;
+  }
+
+  .slider--prod:before,
+  .slider--prod:after {
+    content: "";
+    height: 100px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  .slider--prod::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  .slider--prod::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide--track {
+    animation: scroll 8s linear infinite;
+    display: flex;
+    width: calc(250px * 5);
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-250px * 3));
+    }
+  }
+
+  .slide--card {
+    height: 100px;
+    width: 250px;
+  }
+  /*Star component*/
+  .item-start {
+    height: auto;
+    width: 200px;
+    float: left;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s all;
+    overflow: hidden;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+  }
+  .item-start img {
+    width: 100px;
+  }
+  .carousel-price {
+    font: 300 20px/0.5 Effra, Helvetica, Arial, sans-serif;
+    text-align: center;
+    font-weight: 900;
+    color: #000;
+  }
+  .carousel-des {
+    width: 200px;
+    font-size: 12px;
+    line-height: 1;
+    font-family: Effra, Helvetica, Arial, sans-serif;
+    color: #000;
+    padding: 0 5%;
+  }
+  .carosuel-raiting {
+    color: #1377c9;
+    margin-top: 2%;
+    font-size: 22px;
+  }
+  .btn-prod {
+    background-color: #117dcf;
+    color: #fff;
+    text-align: center;
+    padding: 4px;
+    margin: 22px auto;
+    font-size: 13px;
+    width: 100px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  .btn-prod:hover {
+    background-color: #fff;
+    color: #117dcf;
+    border: 2px solid #117dcf;
+  }
+  .container-star {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+  }
+  .clip-star {
+    clip-path: polygon(
+      50% 0%,
+      61% 35%,
+      98% 35%,
+      68% 57%,
+      79% 91%,
+      50% 70%,
+      21% 91%,
+      32% 57%,
+      2% 35%,
+      39% 35%
+    );
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    float: left;
+  }
+
+  .disable {
+    background: rgb(237, 237, 237);
+  }
+
+  .num-star {
+    font-size: 15px;
+    float: left;
+    margin-left: 2%;
+  }
+  /*Shine Animation*/
+  .shine {
+    animation-name: glitter;
+    animation-iteration-count: infinite;
+  }
+
+  .star-1 {
+    transform-origin: 102.14px 87.09px;
+    animation-duration: 3.5s;
+  }
+
+  .star-2 {
+    transform-origin: 219.47px 205.7px;
+    animation-duration: 4s;
+  }
+
+  .star-3 {
+    transform-origin: 404.11px 35.05px;
+    animation-duration: 2.5s;
+  }
+
+  .star-4 {
+    transform-origin: 54.43px 393.81px;
+    animation-duration: 2.5s;
+  }
+
+  .star-5 {
+    transform-origin: 374.42px 271.34px;
+    animation-duration: 3s;
+  }
+  .enablestar {
+    background: #194e8a;
+  }
+</style>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Squared Grid</title>
+    <style>
+      :root {
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --first-color: #f79c7a;
+        --second-color: #dd818c;
+        --third-color: #b17195;
+        --four-color: #7d668f;
+        --five-color: #dc6a9b;
+      }
+      .wrap-grid-squared {
+        background-color: var(--first-color);
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+          "image1 image2 image3"
+          "text1 image4 image3";
+        text-align: center;
+        grid-gap: 10px;
+        padding: 10px;
+      }
+      .item-grid-squared {
+        background-color: #fff;
+      }
+      .wrap-text-grid {
+        color: #fff;
+        text-align: left;
+        padding: 20px;
+        font-size: 1.4rem;
+        font-family: var(--font-bedbath);
+        text-align: left;
+        justify-content: center;
+      }
+      .wrap-text-grid-b {
+        color: var(--squeared-away);
+        text-align: left;
+        padding: 20px;
+        font-size: 1.4rem;
+        font-family: var(--font-bedbath);
+        text-align: center;
+        justify-content: center;
+      }
+      .item-grid-squared:nth-child(1) {
+        grid-area: image1;
+        height: 300px;
+        background-color: var(--second-color);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .item-grid-squared:nth-child(2) {
+        grid-area: image2;
+        height: 200px;
+        background-color: var(--third-color);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .item-grid-squared:nth-child(3) {
+        grid-area: image3;
+        height: 520px;
+        background-color: var(--five-color);
+        color: #fff;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .item-grid-squared:nth-child(4) {
+        grid-area: text1;
+        height: 200px;
+        background-color: var(--squeared-away);
+        color: #fff;
+      }
+      .item-grid-squared:nth-child(5) {
+        grid-area: image4;
+        margin-top: -100px;
+        background-color: var(--four-color);
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .bgmove {
+        visibility: visible !important;
+        animation-fill-mode: forwards;
+        animation: gridChange 12s ease infinite;
+        -webkit-animation: gridChange 12s ease infinite;
+      }
+      .square_logo {
+        width: 250px;
+      }
+      @keyframes gridChange {
+        0% {
+          grid-template-areas:
+            "image1 image2 image3"
+            "text1 image4 image3";
+        }
+        25% {
+          grid-template-areas:
+            "image2 image1 image3"
+            "image4 text1 image3";
+        }
+        50% {
+          grid-template-areas:
+            "image3 image1 image2"
+            "image3 text1 image4";
+        }
+        75% {
+          grid-template-areas:
+            "image1 image3 image2"
+            "text1 image3 image4";
+        }
+        100% {
+          grid-template-areas:
+            "image1 image2 image3"
+            "text1 image4 image3";
+        }
+      }
+      @-webkit-keyframes gridChange {
+        0% {
+          grid-template-areas:
+            "image1 image2 image3"
+            "text1 image4 image3";
+        }
+        25% {
+          grid-template-areas:
+            "image2 image1 image3"
+            "image4 text1 image3";
+        }
+        50% {
+          grid-template-areas:
+            "image3 image1 image2"
+            "image3 text1 image4";
+        }
+        75% {
+          grid-template-areas:
+            "image1 image3 image2"
+            "text1 image3 image4";
+        }
+        100% {
+          grid-template-areas:
+            "image1 image2 image3"
+            "text1 image4 image3";
+        }
+      }
+      @media (max-width: 767px) {
+        .square_logo {
+          width: 100px;
+        }
+        .wrap-text-grid {
+          font-size: 1rem;
+          margin-top: -10px;
+          text-align: center;
+          padding: 10px 5px;
+        }
+        .item-grid-squared:nth-child(3) {
+          height: 190px;
+        }
+        .wrap-grid-squared {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "image3 image3"
+            "image1 image4"
+            "image2 image2"
+            "text1 text1";
+        }
+        .wrap-text-grid-b {
+          font-size: 0.8rem;
+          padding: 10px;
+          height: 100px;
+        }
+        .item-grid-squared:nth-child(5) {
+          margin-top: 0;
+          background-size: cover;
+        }
+        .item-grid-squared:nth-child(1) {
+          margin-top: 0;
+          background-size: cover;
+          height: 120px;
+        }
+        .item-grid-squared:nth-child(2) {
+          margin-top: 0;
+          background-size: cover;
+          height: 150px;
+          width: 100%;
+        }
+        .item-grid-squared:nth-child(4) {
+          height: 70px;
+        }
+        @keyframes gridChange {
+          0% {
+            grid-template-areas:
+              "image3 image3"
+              "image1 image4"
+              "image2 image2"
+              "text1 text1";
+          }
+          25% {
+            grid-template-areas:
+              "image2 image2"
+              "image1 image4"
+              "image3 image3"
+              "text1 text1";
+          }
+          50% {
+            grid-template-areas:
+              "text1 text1"
+              "image2 image2"
+              "image1 image4"
+              "image3 image3";
+          }
+          75% {
+            grid-template-areas:
+              "text1 text1"
+              "image2 image2"
+              "image3 image3"
+              "image1 image4";
+          }
+          100% {
+            grid-template-areas:
+              "image3 image3"
+              "text1 text1"
+              "image2 image2"
+              "image1 image4";
+          }
+        }
+        @-webkit-keyframes gridChange {
+          0% {
+            grid-template-areas:
+              "image3 image3"
+              "image1 image4"
+              "image2 image2"
+              "text1 text1";
+          }
+          25% {
+            grid-template-areas:
+              "image2 image2"
+              "image1 image4"
+              "image3 image3"
+              "text1 text1";
+          }
+          50% {
+            grid-template-areas:
+              "text1 text1"
+              "image2 image2"
+              "image1 image4"
+              "image3 image3";
+          }
+          75% {
+            grid-template-areas:
+              "text1 text1"
+              "image2 image2"
+              "image3 image3"
+              "image1 image4";
+          }
+          100% {
+            grid-template-areas:
+              "image3 image3"
+              "text1 text1"
+              "image2 image2"
+              "image1 image4";
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-grid-squared bgmove">
+        <div class="item-grid-squared"></div>
+        <div class="item-grid-squared"></div>
+        <div class="item-grid-squared">
+          <div class="wrap-text-grid-b">
+            <h2>Carina González</h2>
+            <p>front end</p>
+          </div>
+        </div>
+        <div class="item-grid-squared">
+          <p class="wrap-text-grid">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s,
+          </p>
+        </div>
+        <div class="item-grid-squared"></div>
+      </div>
+    </section>
+  </body>
+</html>

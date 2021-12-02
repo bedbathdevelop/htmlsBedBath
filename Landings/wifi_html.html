@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bed Bath and Beyond Wifi</title>
+    <style>
+      * {
+        margin: 0 auto;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        color: #fff;
+        background-color: #1c5994;
+      }
+      a {
+        text-decoration: none;
+      }
+      .wrap-container {
+        background-color: #1c5994;
+        width: 100%;
+        height: 100%;
+      }
+      .wrap-grid {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        height: 700px;
+      }
+      .bg_blue {
+        background-color: #1c5994;
+      }
+      #button-login {
+        background-color: #0492eb !important;
+        border: 3px solid #002854 !important;
+        font-size: 12px !important;
+      }
+      #oper-section-outer {
+        margin-top: -150px !important;
+      }
+      #img1 {
+        animation-delay: 5s;
+        -webkit-animation-delay: 5s;
+        animation: changeimage 5s infinite;
+        opacity: 0;
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+      }
+
+      #img2 {
+        width: 60%;
+        position: absolute;
+        z-index: 1;
+        top: 5%;
+        right: 20%;
+        animation-delay: 50s;
+        -webkit-animation-delay: 50s;
+        animation: changeimage2 10s infinite;
+        opacity: 0;
+        margin-top: 45%;
+      }
+      #img3 {
+        animation-delay: 25s;
+        -webkit-animation-delay: 25s;
+        animation: changeimage3 15s infinite;
+        opacity: 0;
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        bottom: 0%;
+        left: 20%;
+      }
+      #img4 {
+        animation-delay: 25s;
+        -webkit-animation-delay: 25s;
+        animation: changeimage4 5s infinite;
+        opacity: 0;
+        width: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 5%;
+        left: 20%;
+      }
+      #img5 {
+        animation-delay: 5s;
+        -webkit-animation-delay: 5s;
+        animation: changeimage5 10s infinite;
+        opacity: 0;
+        width: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 40%;
+        left: 0%;
+      }
+      #img6 {
+        animation-delay: 6s;
+        -webkit-animation-delay: 6s;
+        animation: changeimage3 15s infinite;
+        opacity: 0;
+        width: 30%;
+        position: absolute;
+        z-index: 1;
+        top: 80%;
+        right: 0%;
+      }
+
+      @-webkit-keyframes changeimage {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage2 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage2 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage3 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage3 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage4 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage4 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage5 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage5 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .item-grid {
+        width: 33.333%;
+      }
+      .logo {
+        margin: 80px 0 40px;
+      }
+      .logo img {
+        width: 250px;
+        height: auto;
+        margin: 60px 0 0 0;
+      }
+      .logo p {
+        font-size: 22px;
+      }
+      .logo h2 {
+        background-color: #f52b42;
+        width: 280px;
+        padding: 10px;
+        font-size: 40px;
+      }
+      .mini-text {
+        color: #fff;
+        font-size: 12px;
+        margin: 20px 0;
+      }
+      .wrap-input {
+        padding: 5px;
+        color: #fff;
+      }
+      .wrap-input label {
+        padding: 10px 0;
+      }
+      .wrap-slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgba(28, 89, 148, 0.5);
+      }
+      .img_small {
+        outline: 100px solid rgba(64, 143, 204, 0.5) !important;
+        outline-offset: -100px;
+      }
+      input[type="password"] {
+        width: 280px;
+        padding: 10px 0;
+        background-color: #fff;
+        border-radius: 5px;
+        border: 2px solid #002854;
+        cursor: pointer;
+        text-align: center;
+        color: #1a4e8a;
+      }
+      input[type="submit"] {
+        width: 280px;
+        padding: 10px 0;
+        border-radius: 5px;
+        border: 4px solid #002854;
+        cursor: pointer;
+        background-color: #147bd1;
+        color: #fff;
+      }
+      input[type="submit"]:hover {
+        background-color: #002854;
+      }
+      .hihgligth {
+        color: #002854;
+        font-size: 30px;
+      }
+      @media screen and (max-width: 767px) {
+        .item-grid {
+          width: 100%;
+        }
+        .logo h2 {
+          width: 200px;
+          font-size: 25px;
+        }
+        .logo img {
+          width: 200px;
+          margin: 20px 0 0 0;
+        }
+        .logo p {
+          font-size: 18px;
+        }
+        .logo {
+          margin: 20px 0 40px;
+        }
+        .wrap-container-form {
+          height: 420px;
+          overflow: hidden;
+        }
+        .wrap-slide {
+          height: 50px;
+        }
+        #img6 {
+          top: 10%;
+          width: 20%;
+        }
+        #img4 {
+          width: 40%;
+          left: 35%;
+        }
+        #img5 {
+          width: 20%;
+        }
+        #img1 {
+          width: 25%;
+        }
+        #img3 {
+          bottom: 20%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap-container">
+        <div class="overlay">
+          <div class="wrap-grid">
+            <div class="item-grid">
+              <div class="wrap-slide">
+                <img
+                  id="img4"
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/wifi/family_1.jpeg?rand=1627484108"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img5"
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ropa-para-cama_5_jul.jpg?rand=1625237412"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img6"
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/wifi/house_1.jpeg?rand=1627484108"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+              </div>
+            </div>
+            <div class="item-grid wrap-container-form">
+              <div class="logo">
+                <h2>Bienvenido</h2>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/logo/websites/1/logo_bb_b_blanco.png"
+                  alt="bedbathandbeyond"
+                />
+                <p>El hogar que <span class="hihgligth">tú</span> eliges</p>
+              </div>
+              <form action="">
+                <div class="wrap-input">
+                  <input type="password" id="email" name="email" />
+                </div>
+                <div class="mini-text">
+                  <input type="checkbox" id="scales" name="scales" />
+                  <label for="terminos">Acepto términos y condiciones</label>
+                </div>
+                <input type="submit" value="Enviar" />
+              </form>
+            </div>
+            <div class="item-grid">
+              <div class="wrap-slide">
+                <img
+                  id="img1"
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/wifi/house_2.jpeg?rand=1627484108"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img2"
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/wifi/pexels-photo-3755514.jpeg?rand=1627484108"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img3"
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/wifi/house_3.jpeg?rand=1627484108"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

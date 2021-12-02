@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Banners grid</title>
+
+    <style>
+      .wrap-bannersBB {
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 15% 15% 35% 35%;
+        grid-template-areas:
+          "banner1 banner1 banner2 banner2"
+          "banner3 banner3 banner3 banner4";
+        grid-gap: 15px;
+      }
+      .item-bannerm {
+        height: 200px;
+      }
+      .item-bannerm:nth-child(1) {
+        grid-area: banner1;
+        background-color: thistle;
+      }
+      .item-bannerm:nth-child(2) {
+        grid-area: banner2;
+        background-color: violet;
+      }
+      .item-bannerm:nth-child(3) {
+        grid-area: banner3;
+        background-color: burlywood;
+      }
+      .item-bannerm:nth-child(4) {
+        grid-area: banner4;
+        background-color: blueviolet;
+      }
+      .banner-move {
+        visibility: visible !important;
+        animation-fill-mode: forwards;
+        animation: bannerMove 12s ease infinite;
+        -webkit-animation: bannerMove 15s ease infinite;
+      }
+      .ban-img1 {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-voltti-due-4-oct.jpg?rand=1633100884");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+      }
+
+      @keyframes bannerMove {
+        0% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+        25% {
+          grid-template-areas:
+            "banner4 banner4 banner1 banner1"
+            "banner2 banner2 banner2 banner3";
+        }
+        50% {
+          grid-template-areas:
+            "banner3 banner3 banner4 banner4"
+            "banner1 banner1 banner1 banner2";
+        }
+        75% {
+          grid-template-areas:
+            "banner2 banner2 banner3 banner3"
+            "banner4 banner4 banner4 banner1";
+        }
+        100% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+      }
+      @-webkit-keyframes bannerMove {
+        0% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+        25% {
+          grid-template-areas:
+            "banner4 banner4 banner1 banner1"
+            "banner2 banner2 banner2 banner3";
+        }
+        50% {
+          grid-template-areas:
+            "banner3 banner3 banner4 banner4"
+            "banner1 banner1 banner1 banner2";
+        }
+        75% {
+          grid-template-areas:
+            "banner2 banner2 banner3 banner3"
+            "banner4 banner4 banner4 banner1";
+        }
+        100% {
+          grid-template-areas:
+            "banner1 banner1 banner2 banner2"
+            "banner3 banner3 banner3 banner4";
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="banners">
+      <div class="wrap-bannersBB banner-move">
+        <div class="item-bannerm">
+          <a href="" target="_self">
+            <div class="ban-img1"></div>
+          </a>
+        </div>
+        <div class="item-bannerm">
+          <a href="" target="_self">
+            <div class="ban-img2"></div>
+          </a>
+        </div>
+        <div class="item-bannerm">
+          <a href="" target="_self">
+            <div class="ban-img3"></div>
+          </a>
+        </div>
+        <div class="item-bannerm">
+          <a href="" target="_self">
+            <div class="ban-img4"></div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

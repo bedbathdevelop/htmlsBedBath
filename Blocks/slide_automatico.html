@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slide automatico</title>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+          * {
+            box-sizing: border-box;
+          }
+          body {
+            font-family: Verdana, sans-serif;
+          }
+          .myBrands {
+            display: none;
+          }
+          img {
+            vertical-align: middle;
+          }
+
+          .slideshow-brand {
+            max-width: 1000px;
+            position: relative;
+            margin: auto;
+          }
+
+          /* Caption text */
+          .btn-get {
+            background-color: #147bd1;
+            color: #fff;
+            width: 300px;
+            text-align: center;
+            position: absolute;
+            z-index: 1;
+            bottom: 20px;
+            left: 60px;
+            padding: 10px 5px;
+            border-radius: 10px;
+          }
+
+          /* The dots/bullets/indicators */
+          .dot-brand {
+            height: 15px;
+            width: 15px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            display: none;
+          }
+
+          /* On smaller screens, decrease text size */
+          @media only screen and (max-width: 300px) {
+            .text {
+              font-size: 11px;
+            }
+          }
+
+          .slideBrands {
+            animation-name: slideBrands;
+            -webkit-animation-name: slideBrands;
+
+            animation-duration: 2s;
+            -webkit-animation-duration: 2s;
+
+            animation-timing-function: ease;
+            -webkit-animation-timing-function: ease;
+
+            visibility: visible !important;
+          }
+
+          @keyframes slideBrands {
+            0% {
+              filter: blur(5px);
+              transform: translateY(-100%);
+            }
+            100% {
+              transform: translateY(0%);
+            }
+          }
+
+          @-webkit-keyframes slideBrands {
+            0% {
+              filter: blur(5px);
+              -webkit-transform: translateY(-100%);
+            }
+            100% {
+              -webkit-transform: translateY(0%);
+            }
+          }
+
+          .upButton {
+            animation-name: upButton;
+            -webkit-animation-name: upButton;
+
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+
+            animation-timing-function: ease;
+            -webkit-animation-timing-function: ease;
+
+            visibility: visible !important;
+          }
+
+          @keyframes upButton {
+            0% {
+              opacity: 0.3;
+              transform: translateY(100%);
+            }
+            100% {
+              opacity: 1;
+              transform: translateY(0%);
+            }
+          }
+
+          @-webkit-keyframes upButton {
+            0% {
+              opacity: 0.3;
+              -webkit-transform: translateY(100%);
+            }
+            100% {
+              opacity: 1;
+              -webkit-transform: translateY(0%);
+            }
+          }
+        </style>
+      </head>
+      <body>
+        <div class="slideshow-brand">
+          <a href="" target="_self">
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ba_haven.jpg?rand=1623168888"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/nest-banner-bano.jpg?rand=1624632732"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/banner-marcas-bee-willow.jpg?rand=1630076963"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ugg-banner-bano.jpg?rand=1624632732"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/SE2-bano.jpg?rand=1623168486"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-secciones-generales-our-table2.jpeg?rand=1626056952"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+            <div class="myBrands slideBrands">
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/banner-interno-wild-sage_1_.jpeg?rand=162881807"
+                style="width: 100%"
+              />
+              <div class="btn-get upButton">comprar marcas esclusivas</div>
+            </div>
+          </a>
+        </div>
+        <br />
+
+        <div style="text-align: center">
+          <span class="dot-brand"></span>
+          <span class="dot-brand"></span>
+          <span class="dot-brand"></span>
+          <span class="dot-brand"></span>
+          <span class="dot-brand"></span>
+          <span class="dot-brand"></span>
+          <span class="dot-brand"></span>
+        </div>
+
+        <script>
+          var indexE = 0;
+          exclusiveBrands();
+
+          function exclusiveBrands() {
+            var i;
+            var slides = document.getElementsByClassName("myBrands");
+            var dots = document.getElementsByClassName("dot-brand");
+            for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";
+            }
+            indexE++;
+            if (indexE > slides.length) {
+              indexE = 1;
+            }
+            for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[indexE - 1].style.display = "block";
+            dots[indexE - 1].className += " active";
+            setTimeout(exclusiveBrands, 4000); // Change image every 2 seconds
+          }
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

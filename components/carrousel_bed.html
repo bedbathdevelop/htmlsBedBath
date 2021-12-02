@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  </head>
+  <style>
+    .list__reset {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    .carrousel__container {
+      overflow: hidden;
+      height: 200px;
+      position: relative;
+    }
+
+    .carrousel__list {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .buttons__list {
+      display: flex;
+    }
+
+    .carrousel__list__item {
+      color: white;
+      width: 100%;
+      flex-grow: 0;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+    }
+    #nextbed__btn {
+      position: absolute;
+      right: 0;
+    }
+    #prevbed__btn {
+      position: absolute;
+      left: 0;
+    }
+    #nextbed__btn,
+    #prevbed__btn {
+      border: 0;
+      width: 20px;
+      height: 20px;
+      top: 45%;
+      border-radius: 50%;
+      background-color: transparent;
+    }
+    #nextbed__btn img,
+    #prevbed__btn img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .img_slide_m {
+      height: 200px;
+    }
+    .bg1 {
+      background-image: linear-gradient(to right, #fff 0%, #99e0fe 50%);
+    }
+    .bg2 {
+      background-color: #0483e4;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      class Carrousel {
+        constructor(
+          carrouselListEl,
+          arrowLeftBtnEl,
+          arrowRightBtnEl,
+          autoPlay = false,
+          time
+        ) {
+          this.carrouselListEl = carrouselListEl;
+          this.arrowLeftBtnEl = arrowLeftBtnEl;
+          this.arrowRightBtnEl = arrowRightBtnEl;
+          this.autoPlay = autoPlay;
+          this.time = time;
+          this.itemCount = 0;
+          this.setCarrouselWidth = this.setCarrouselWidth(
+            this.getNumberOfListItems()
+          );
+          this.applyArrowsFunctionality = this.applyArrowsFunctionality();
+          this.autoPlayInterval;
+          this.applyAutoSlide = this.applyAutoSlide();
+        }
+
+        getNumberOfListItems() {
+          if (this.carrouselListEl !== null)
+            return this.carrouselListEl.childElementCount;
+        }
+
+        setCarrouselWidth(numberOfListItems) {
+          if (this.carrouselListEl !== null)
+            this.carrouselListEl.style.width = numberOfListItems * 100 + "%";
+        }
+
+        moveList() {
+          this.carrouselListEl.style.transition = "transform .45s ease";
+          this.carrouselListEl.style.transform =
+            "translateX(" +
+            -1 * this.itemCount * (100 / this.getNumberOfListItems()) +
+            "%)";
+        }
+
+        forwards() {
+          this.itemCount++;
+          if (this.itemCount > this.getNumberOfListItems() - 1) {
+            this.itemCount = 0;
+          }
+          this.moveList();
+        }
+
+        backwards() {
+          this.itemCount--;
+          if (this.itemCount < 0) {
+            this.itemCount = this.getNumberOfListItems() - 1;
+          }
+          this.moveList();
+        }
+
+        applyArrowsFunctionality() {
+          if (this.arrowLeftBtnEl !== null) {
+            this.arrowLeftBtnEl.addEventListener("click", () => {
+              this.backwards();
+            });
+          }
+
+          if (this.arrowRightBtnEl !== null) {
+            this.arrowRightBtnEl.addEventListener("click", () => {
+              this.forwards();
+            });
+          }
+        }
+
+        autoSlide() {
+          this.autoPlayInterval = setInterval(
+            this.forwards.bind(this),
+            this.time
+          );
+        }
+
+        stopAutoSlide() {
+          clearInterval(this.autoPlayInterval);
+        }
+
+        applyAutoSlide() {
+          if (this.autoPlay === true) {
+            this.autoSlide();
+
+            this.carrouselListEl.addEventListener("mouseenter", () => {
+              this.stopAutoSlide();
+            });
+
+            this.carrouselListEl.addEventListener("mouseleave", () => {
+              this.autoSlide();
+            });
+          }
+        }
+      }
+
+      const carrouselList = document.getElementById("carrousel__list"),
+        prevBtn = document.getElementById("prevbed__btn"),
+        nextBtn = document.getElementById("nextbed__btn"),
+        carr = new Carrousel(carrouselList, prevBtn, nextBtn, true, 3000);
+    };
+  </script>
+  <body>
+    <section id="carrousel_big">
+      <div class="carrousel__container">
+        <ul class="list__reset carrousel__list" id="carrousel__list">
+          <li class="carrousel__list__item bg1">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/tienda/alergias.html"
+              target="_self"
+            >
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-alergia-8-jul_1.jpg?rand=1625667837"
+                  alt=""
+                  class="img_slide_m"
+                />
+              </div>
+            </a>
+          </li>
+          <li class="carrousel__list__item bg2">
+            <a href="" target="_self">
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/banner-wweb-ninja-3-jul.jpg?rand=1625705445"
+                  alt=""
+                  class="img_slide_m"
+                />
+              </div>
+            </a>
+          </li>
+        </ul>
+        <button id="prevbed__btn">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/left-arrow_2__1.png?rand=1625668693"
+            class="arrow_special"
+          />
+        </button>
+        <button id="nextbed__btn">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/right-arrow_1__1.png?rand=1625668693"
+            class="arrow_special"
+          />
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

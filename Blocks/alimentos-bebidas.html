@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>niños y bebés</title>
+  </head>
+  <style>
+    :root {
+      --azul-bbb-strong: #002854;
+      --azul-bbb-medio: #1a4e8a;
+      --azul-bbb-claro: #daeaf4;
+      --azul-bbb-boton: #147bd1;
+      --rojo: #f52b42;
+      --primary-font: Effra, Helvetica, Arial, sans-serif;
+      --secondary-font: Termina Headline, sans-serif;
+    }
+    a {
+      text-decoration: none;
+    }
+    .wrap-function {
+      width: 100%;
+      text-align: center;
+    }
+    .wrap-fun {
+      overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .wrap-fun .item-function {
+      width: 14%;
+      overflow: hidden;
+      justify-content: center;
+      text-align: center;
+      margin: 10px;
+    }
+
+    .wrap-img {
+      width: 120px;
+      height: 120px;
+      text-align: center;
+      justify-content: center;
+      position: relative;
+      display: flex;
+      border: 2px solid #fff;
+      overflow: hidden;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+    .wrap-img:hover {
+      border: 2px solid var(--azul-bbb-medio);
+    }
+
+    .figure--moon {
+      width: 80px;
+      height: 80px;
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 0px;
+      right: auto;
+      z-index: 0;
+    }
+    .figure--circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      right: auto;
+      z-index: 0;
+    }
+    .figure--cono {
+      width: 0px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-left: 50px solid transparent;
+      border-top: 80px solid var(--azul-bbb-claro);
+      -moz-border-radius: 50%;
+      -webkit-border-radius: 50%;
+      border-radius: 50%;
+      position: absolute;
+      top: 15px;
+      left: 0px;
+      right: auto;
+      z-index: 0;
+    }
+    .figure--rombo {
+      width: 50px;
+      height: 100px;
+
+      -webkit-transform: rotate(45deg);
+      -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      -o-transform: rotate(45deg);
+      transform: rotate(45deg);
+      top: 15px;
+      left: 0px;
+      right: auto;
+      z-index: 0;
+    }
+    .wrap-img img {
+      width: 120px;
+      position: absolute;
+      top: 0;
+      left: auto;
+      right: auto;
+      z-index: 1;
+    }
+    .description--img {
+      color: var(--azul-bbb-medio);
+      font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      font-weight: 900;
+      padding: 0 10px;
+      font-size: 12px;
+      line-height: 1;
+    }
+    /*Estrella*/
+    .figure--star {
+      margin: 40px auto;
+      position: relative;
+      display: block;
+      color: var(--azul-bbb-claro);
+      background: transparent;
+      width: 0px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid var(--azul-bbb-claro);
+      border-left: 50px solid transparent;
+      -moz-transform: rotate(35deg);
+      -webkit-transform: rotate(35deg);
+      -ms-transform: rotate(35deg);
+      -o-transform: rotate(35deg);
+    }
+    .figure--star::before {
+      border-bottom: 40px solid var(--azul-bbb-claro);
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      position: absolute;
+      height: 0;
+      width: 0;
+      top: -25px;
+      left: -35px;
+      display: block;
+      content: "";
+      -webkit-transform: rotate(-35deg);
+      -moz-transform: rotate(-35deg);
+      -ms-transform: rotate(-35deg);
+      -o-transform: rotate(-35deg);
+    }
+    .figure--star::after {
+      position: absolute;
+      display: block;
+      color: var(--azul-bbb-claro);
+      top: 3px;
+      left: -55px;
+      width: 0px;
+      height: 0px;
+      border-right: 50px solid transparent;
+      border-bottom: 35px solid var(--azul-bbb-claro);
+      border-left: 50px solid transparent;
+      -webkit-transform: rotate(-70deg);
+      -moz-transform: rotate(-70deg);
+      -ms-transform: rotate(-70deg);
+      -o-transform: rotate(-70deg);
+      content: "";
+    }
+    .figure--star-12 {
+      background: var(--azul-bbb-claro);
+      width: 70px;
+      height: 70px;
+      position: relative;
+      text-align: center;
+      margin-top: 20px;
+    }
+    .figure--star-12::before,
+    .figure--star-12:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 70px;
+      width: 70px;
+      background: var(--azul-bbb-claro);
+    }
+    .figure--star-12::before {
+      -webkit-transform: rotate(30deg);
+      -moz-transform: rotate(30deg);
+      -ms-transform: rotate(30deg);
+      -o-transform: rotate(30deg);
+    }
+    .figure--star-12::after {
+      -webkit-transform: rotate(60deg);
+      -moz-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+      -o-transform: rotate(60deg);
+    }
+    .describre-cat {
+      color: #1a4e8a !important;
+      font-family: var(--secondary-font);
+    }
+    @media (max-width: 767px) {
+      .wrap-fun .item-function {
+        width: 33.33%;
+      }
+      .wrap-img {
+        width: 80px;
+        height: 80px;
+      }
+      .wrap-img img {
+        width: 60px;
+      }
+      .figure--rombo {
+        width: 40px;
+        height: 80px;
+      }
+      .figure--circle {
+        width: 60px;
+        height: 60px;
+      }
+      .figure--moon {
+        width: 60px;
+        height: 60px;
+        left: -20px;
+      }
+      .figure--star {
+        border-right: 30px solid transparent;
+        border-bottom: 15px solid var(--azul-bbb-claro);
+      }
+      .figure--star::before {
+        border-right: 30px solid transparent;
+        border-bottom: 15px solid var(--azul-bbb-claro);
+        border-left: 30px solid transparent;
+        top: -10px;
+        left: -45px;
+      }
+      .figure--star::after {
+        border-right: 30px solid transparent;
+        border-bottom: 15px solid var(--azul-bbb-claro);
+        border-left: 30px solid transparent;
+        top: -5px;
+        left: -35px;
+      }
+      .figure--cono {
+        width: 0px;
+        height: 0px;
+        border-right: 30px solid transparent;
+        border-left: 30px solid transparent;
+        border-top: 50px solid var(--azul-bbb-claro);
+        -moz-border-radius: 50%;
+        -webkit-border-radius: 50%;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        right: auto;
+        z-index: 0;
+      }
+      .figure--star-12 {
+        background: var(--azul-bbb-claro);
+        width: 50px;
+        height: 50px;
+      }
+      .figure--star-12::before,
+      .figure--star-12:after {
+        height: 50px;
+        width: 50px;
+      }
+    }
+  </style>
+  <body>
+    <section id="comofunciona">
+      <div class="wrap-function">
+        <div class="wrap-fun">
+          <!-- Item 1-->
+          <div class="item-function">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas/dulces-y-snacks.html"
+              target="_self"
+            >
+              <div class="wrap-img">
+                <div class="figure--moon"></div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/69421464.png?$imagePLP$&hei=300&wid=260"
+                  alt="credit card"
+                />
+              </div>
+              <div class="describre-cat">dulces y snacks</div>
+            </a>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="item-function">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas/cafe.html"
+              target="_self"
+            >
+              <div class="wrap-img">
+                <div class="figure--circle"></div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/temporada/cafe_molido_1.jpg"
+                  alt="credit card"
+                />
+              </div>
+              <div class="describre-cat">café</div>
+            </a>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="item-function">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/productos/alimentos-y-bebidas/condimentos.html"
+              target="_self"
+            >
+              <div class="wrap-img">
+                <div class="figure--rombo"></div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69620929.jpg?$imagePLP$&hei=300&wid=260"
+                  alt="credit card"
+                />
+              </div>
+              <div class="describre-cat">condimentos</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="root.css" />
+    <title>banner_rigth</title>
+    <style>
+      .wrap__two__components {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        text-align: center;
+        justify-content: center;
+      }
+      .item__two__components {
+        overflow: hidden;
+        flex: 0 0 40%;
+      }
+      .item__two__components p {
+        font: 300 15px/ 1 Effra, Helvetica, Arial, sans-serif;
+        color: #000;
+      }
+      @media (max-width: 800px) {
+        .wrap__two__components {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="wrap__two__components">
+        <div class="item__two__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="bg_bf">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/US-FW35-FY21-11_2-WEB-C15_12_v1-1-1.jpg?rand=1637882334"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">árboles de navidad y guirnaldas</p>
+            </div>
+          </a>
+        </div>
+        <div class="item__two__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="bg_bf">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/US-FW35-FY21-11_2-WEB-C15_12_v1-2-1.jpg?rand=1637882334"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">decoración de exteriores</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

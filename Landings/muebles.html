@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muebles</title>
+    <style>
+      :root {
+        --wild-sage-color: #706fae;
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+      }
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+      section {
+        margin-bottom: 60px;
+        overflow: hidden;
+      }
+      h2 {
+          color:var(--azul-bbb-medio);
+          font-family: var(--font-bedbath);
+      }
+      .wrap-banner {
+        width: 100%;
+        height: 350px;
+        overflow: hidden;
+        /*background-color: wheat;*/
+      }
+      .wrap-categories {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-cat {
+        text-align: center;
+        overflow: hidden;
+        margin: 10px;
+      }
+      .item-cat div {
+        width: 200px;
+        height: 200px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+      .item-cat div img {
+        width: 190px;
+        height: 190px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 1px solid transparent;
+        transition: transform 1s; /* smoother zoom */
+      }
+      .item-cat div img:hover {
+        border: 1px solid var(--azul-bbb-medio);
+        transform: scale(0.9);
+        transform-origin: 50% 50%;
+      }
+      .wrap-cuarto{
+          display: grid;
+          grid-template-columns: 25% 25% 25% 25%;
+          overflow: hidden;
+      }
+      .item-cuarto{
+          display: flex;
+          height: auto;
+          justify-content: center;
+          text-align: center;
+          overflow: hidden;
+          margin: 10px;
+      }
+      .item-cuarto p {
+          line-height: 1;
+      }
+      .item-cuarto .subtitle{
+          font-family: var(--font-bedbath);
+          color: var(--azul-bbb-medio);
+          margin-top: 20px;
+          font-size: 1.7rem;
+      }
+      .item-cuarto div img {
+          width: 100%;
+          height: 300px;
+          height: auto;
+          transition: transform 0.5s; /* smoother zoom */
+      }
+      .zoomimg:hover img {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .zoomimgb{
+        transition: transform 2s; /* smoother zoom */
+      }
+      .zoomimgb:hover img{
+        transform: scale(0.9);
+        transform-origin: 50% 50%;
+      }
+      .wrap_carrusel_bb {
+        width: 2000px;
+        overflow: hidden;
+        display: flex;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        overflow-x: hidden;
+      }
+      .item_desc_carrusel {
+        font-size: 1.3rem;
+        line-height: 1.1;
+        padding: 1px 0;
+        color: #1a4e8a;
+        margin-top: 25px;
+      }
+      .item_desc_carrusel span {
+        color: #002854;
+      }
+      .item_carrusel_bb {
+        width: 200px;
+        height: 260px;
+        margin: 0 5px;
+        padding: 5px;
+        overflow: hidden;
+        border: 1px solid #daeaf4;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.2rem var(--white);
+      }
+      .bg_bb {
+        background-color: #daeaf4;
+        border: 3px solid #002854;
+        color: #002854;
+        line-height: 1;
+      }
+      .bg_item {
+        background-color: grey;
+      }
+      .btn_ir_compra {
+        width: 93%;
+        height: auto;
+        background: #117dcf;
+        color: #fff;
+        text-align: center;
+        padding: 6px 5px;
+        border-radius: 5px;
+        font-size: 12px;
+        box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.5rem var(--white);
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        border: 2px solid transparent;
+      }
+      .btn_ir_compra:hover {
+        background: #fff;
+        color: #117dcf;
+        border: 2px solid #117dcf;
+      }
+      .precio_carrusel {
+        text-align: center;
+        margin: 5px 0;
+        color: #002854;
+        font-weight: 900;
+        font-size: 1.2rem;
+        margin-top: 15px;
+        font-family: var(--font-bedbath);
+      }
+      .disccount {
+        color: #da0000;
+      }
+      .container_img_carrusel {
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+        position: relative;
+      }
+      .container_img_carrusel img {
+        width: 100%;
+        height: auto;
+      }
+      .item_carrusel_bb h3 {
+        font-size: 0.8rem;
+        color: #da0000;
+        font-weight: 900;
+        line-height: 1;
+      }
+      .item_carrusel_bb h2 {
+        font-size: 1.8rem;
+        margin-top: -10px;
+        font-weight: 900;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      .wrap-info-carrusel {
+        padding: 5px 0 0 0;
+        position: relative;
+      }
+      .wrap-info-carrusel div {
+        width: 50%;
+        font-size: 10px;
+        float: left;
+        overflow: hidden;
+        height: 15px;
+      }
+      .wrap-cat-carrusel {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+      .wrap-cat-carrusel img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 1;
+        top: -18px;
+        right: 0;
+      }
+      .container-star {
+        overflow: hidden;
+        display: flex;
+        text-align: left;
+        justify-content: center;
+      }
+      .clip-star {
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        display: inline-block;
+        height: 12px;
+        width: 12px;
+        float: left;
+      }
+      .disable {
+        background: rgb(237, 237, 237);
+      }
+
+      .star-1 {
+        transform-origin: 102.14px 87.09px;
+        animation-duration: 3.5s;
+      }
+
+      .star-2 {
+        transform-origin: 219.47px 205.7px;
+        animation-duration: 4s;
+      }
+
+      .star-3 {
+        transform-origin: 404.11px 35.05px;
+        animation-duration: 2.5s;
+      }
+
+      .star-4 {
+        transform-origin: 54.43px 393.81px;
+        animation-duration: 2.5s;
+      }
+
+      .star-5 {
+        transform-origin: 374.42px 271.34px;
+        animation-duration: 3s;
+      }
+      .enablestar {
+        background: rgb(255, 224, 0);
+      }
+
+      .container_slide_cards {
+        width: 100%;
+        max-width: calc(200px * 5 + 30px * 5 + 30px);
+        margin: 20px auto;
+        overflow: hidden;
+        text-align: center;
+      }
+      .slider_mas_comprados {
+        width: 100%; /* card * 4 + margin * 4 */
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        height: 300px;
+      }
+      .slider_top {
+        width: 100%; /* card * 4 + margin * 4 */
+        position: relative;
+        padding-left: 15px;
+        padding-right: 15px;
+        display: flex;
+        justify-content: flex-start;
+        overflow: hidden;
+        height: 350px;
+        margin-top: 40px;
+      }
+
+      .slides_mas_comprados {
+        display: flex;
+        flex-shrink: 0;
+        transition: all 0.5s;
+        overflow-x: hidden;
+      }
+      .slides_top {
+        display: flex;
+        flex-shrink: 0;
+        transition: all 0.5s;
+        overflow-x: hidden;
+      }
+      .slides_mas_comprados .slide_mas_comprados {
+        flex-basis: 1;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 260px;
+        margin: 0 5px;
+        text-align: left;
+        border: 1px solid #daeaf4;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.2rem var(--white);
+      }
+      .slides_top .slide_top {
+        flex-basis: 1;
+        flex-shrink: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 160px;
+        height: 260px;
+        margin: 0 5px;
+        text-align: left;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 15px;
+        box-shadow: 0.2rem 0.2rem 0.2rem var(--greyLight-2),
+          -0.2rem -0.2rem 0.2rem var(--white);
+      }
+      .slides_mas_comprados .slide_mas_comprados:hover {
+        border: 1px solid #117dcf;
+      }
+
+      .slider_top .btn-prev,
+      .slider_top .btn-next {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: var(--input-gray);
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        border: 1px solid var(--input-gray);
+        font-weight: 900;
+        display: none;
+      }
+
+      .slider_mas_comprados .btn-prev_mc,
+      .slider_mas_comprados .btn-next_mc {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        background: #117dcf;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 2;
+        border: 1px solid #117dcf;
+      }
+      .slider_mas_comprados .btn-prev_mc {
+        left: 0px;
+      }
+      .slider_top .btn-prev {
+        left: 0px;
+      }
+      .slider_top .btn-next {
+        right: 40px;
+      }
+      .slider_mas_comprados .btn-next_mc {
+        right: 40px;
+      }
+      .slider_top .btn-prev:after,
+      .slider_top .btn-next:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+      .slider_mas_comprados .btn-prev_mc:after,
+      .slider_mas_comprados .btn-next_mc:after {
+        content: "";
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-top: 1px solid #fff;
+        border-right: 1px solid #fff;
+      }
+      .slider_top .btn-prev:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(-135deg) translate(100%, -100%);
+      }
+      .slider_mas_comprados .btn-prev_mc:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(-135deg) translate(100%, -100%);
+      }
+      .slider_top .btn-next:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(45deg) translate(-25%, 50%);
+      }
+      .slider_mas_comprados .btn-next_mc:after {
+        left: 50%;
+        top: 50%;
+        transform-origin: top right;
+        transform: rotate(45deg) translate(-25%, 50%);
+      }
+      #topCategorias,
+      #compraPorCuarto,
+      #masParaTi,
+      #teRecomendamos{
+          text-align: center;
+      }
+
+      #masParaTi{
+        margin-top: -50px;
+      }
+
+      /*Rollover Image*/
+      .main-container {
+        width: 140px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
+        background-color: #fff;
+      }
+      .main-container img {
+        width: 140px;
+      }
+
+      .main-container .hidden-child {
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        -webkit-transition: opacity 1s ease-in-out;
+        -moz-transition: opacity 1s ease-in-out;
+        -o-transition: opacity 1s ease-in-out;
+        transition: opacity 1s ease-in-out;
+        background-color: #fff;
+        height: 160px;
+      }
+
+      .main-container:hover .hidden-child {
+        visibility: visible;
+        position: absolute;
+        top: 0;
+      }
+      .wrap-masparati {
+          text-align: center;
+          justify-content: center;
+          overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+      }
+      .item-masparati {
+        text-align: center;
+        width: 45%;
+        margin: 10px;
+        justify-content: center;
+      }
+      .item-masparati p{
+         font-family: var(--font-bedbath);
+      }
+      .item-masparati div img {
+          width: 100%;
+          height: 300px;
+      }
+      .wrap-recomendamos{
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          text-align: center;
+          justify-content: center;
+      }
+      .item-recomendacion{
+          overflow: hidden;
+          width: 25%;
+          border:1px solid var(--input-gray);
+          margin:10px;
+          border-radius: 10px;
+          display: block;
+          padding: 10px;
+      }
+      .describe{
+          padding: 0 20px;
+      }
+      .item-recomendacion div:nth-child(1) {
+          width: 30%;
+          float: left;
+      }
+      .item-recomendacion div:nth-child(1) img {
+          width: 100px;
+          height: auto;
+      }
+      .item-recomendacion div:nth-child(2) {
+        width: 50%;
+        float: left;
+        text-align: center;
+        vertical-align: middle;
+        padding-top: 23px;
+        padding-left: 15px;
+        text-align: center;
+        color:var(--azul-bbb-medio);
+        font-weight:900;
+        font-family: var(--font-bedbath);
+      }
+      .item-recomendacion:hover{
+          border: 1px solid var(--azul-bbb-button);
+      }
+      .wrap-instagram{
+          width: 100%;
+          overflow: hidden;
+          display: flex;
+      }
+      .item-insta{
+        margin: 0 10px;
+        height: auto;
+      }
+      .item-insta .img-ins{
+          width: 100%;
+          height: auto;
+      }
+      .Header{
+          display: none;
+      }
+      .item-insta{
+          position: relative;
+          transition: transform 3s;
+      }
+      .insta-icon{
+          position: absolute;
+          z-index: 1;
+          top: 10px;
+          left: 10px;
+          width: 30px;
+          height: 30px;
+      }
+      .item-post{
+          position: absolute;
+          z-index: 1;
+          background-color: rgba(0,0,0,0.5);
+          width: 100%;
+          height: 100%;
+          top:0;
+          left: 0;
+          text-align: center;
+          justify-content: center;
+          padding-top: 120px;
+          color: #fff;
+          font-family: var(--font-bedbath);
+          display: none;
+      }
+      .item-insta:hover .item-post{
+          display: block;
+      }
+
+      /*slider animacion*/
+      .container_bb{
+          padding: 20px;
+      }
+      .slideRight{
+        animation-name: slideRight;
+        -webkit-animation-name: slideRight;	
+        animation-duration: 4s;	
+        -webkit-animation-duration: 4s;
+        animation-timing-function: ease-in-out;	
+        -webkit-animation-timing-function: ease-in-out;		
+        visibility: visible !important;	
+        /*animation-iteration-count:infinite;*/
+        animation-fill-mode: forwards
+    }
+
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100%);
+        }		
+        100% {
+            transform: translateX(50%);
+        }	
+    }
+
+    @-webkit-keyframes slideRight {
+        0% {
+            -webkit-transform: translateX(-50%);
+        }		
+        100% {
+            -webkit-transform: translateX(100%);
+        }
+    }
+
+    @keyframes slideyThing {
+            from {background-position:-700px}
+            to {background-position:700px}
+        }
+
+        #gradient {
+            width:500px;
+            text-align:center;
+            background:linear-gradient(100deg,var(--azul-bbb-medio),var(--azul-bbb-button),var(--azul-bbb-medio));
+            opacity:1;
+            color:transparent;
+            -webkit-background-clip:text;
+            font-size:60px;
+            animation:slideyThing 3s infinite linear;
+            position:absolute;
+            top:65%;
+            left:30%;
+            margin-left:-350px;
+            margin-top:-150px;
+            font-weight: 900;
+            font-family: var(--font-bedbath);
+            line-height: 1;
+        }
+        #sliderr{
+          height:350px;
+          width:520px;
+          position:absolute;
+          right: 10%;
+          overflow:hidden;
+        }
+		#list{
+			height:350px;
+			width:2020px;
+			position:absolute;
+			background-color:transparent;
+			animation:pass 10s infinite;
+			top:10px;
+		}
+		.img-slide{
+			height:350px;
+			width:auto;
+
+		}
+		#img1{
+			float:left;
+		}
+		@keyframes pass{
+			from{right:0px;}
+			50%{right:-1615px;}
+			100%{right:0px;}
+		}
+    #banner {
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/muebles/bg_muebles.jpeg?rand=1630591685');
+        position: relative;
+    }
+
+    /*Responsive */
+    @media (max-width: 991px) {
+      .wrap-banner{
+        height: 500px;
+      }
+      #sliderr{
+        height: 380px;
+        width: 300px;
+      }
+      #gradient{
+        top: 80%;
+        left: 30%;
+        margin-left: -180px;
+        margin-top: 0px;
+        font-size: 30px;
+      }
+      .item-cat div img{
+        width: 120px;
+        height: 120px;
+      }
+      .item-cat div{
+        width: 120px;
+        height: 120px;
+      }
+      .wrap-cuarto{
+        grid-template-columns: 50% 50%;
+      }
+      .item-cuarto .subtitle{
+        font-size: 1.3rem;
+        margin-top: 0;
+      }
+      .item-masparati div img{
+        height: auto;
+      }
+      .item-masparati p{
+        font-size: 0.7rem;
+      }
+      .item-recomendacion{
+        width: 25%;
+        margin: 5px;
+      }
+      .item-recomendacion div:nth-child(1),
+      .item-recomendacion div:nth-child(2){
+          width: 100%;
+      }
+      .item-recomendacion div:nth-child(2){
+        padding: 10px 0;
+        font-size: 12px;
+      }
+      #instagram h2 {
+        font-size: 18px;
+      }
+      #insta {
+        overflow: auto;
+        white-space: nowrap;
+      }
+      .wrap-instagram{
+        overflow: scroll;
+        width: 800px;
+      }
+      .precio_carrusel {
+        font-size: 1rem;
+      }
+      #carrusel-slides{
+        margin-top: 50px;
+      }
+      .slider_top{
+        height: 400px;
+      }
+      #carrusel{
+        overflow: auto;
+      }
+      .container_slide_cards{
+        margin: 0 auto;
+      }
+      .slider_top{
+        margin-top: -40px;
+      }
+      .item-masparati{
+        width: 40%;
+        margin: 5px;
+      }
+      #masParaTi{
+        margin-top: -100px;
+      }
+      .item-recomendacion{
+        margin: 5px 2px;
+      }
+    }
+    </style>
+  </head>
+  <body>
+    <!-- Top banner-->
+    <section id="banner">
+      <div class="wrap-banner">
+          <p id="gradient" class="textmuebles slideRight">muebles<br>solo en BB&B</p>
+            <div id="sliderr">
+                <div id="list">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/imagenes-principal1.jpg?rand=1631292757" id="img1" class="img-slide">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/imagenes-principal2.jpg?rand=1631292757" id="img2" class="img-slide">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/imagenes-principal4.jpg?rand=1631292757" id="img3" class="img-slide">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/imagenes-principal3.jpg?rand=1631292757" id="img4" class="img-slide">
+                </div>
+            </div>
+      </div>
+    </section>
+    <!-- Top categorias-->
+    <section id="topCategorias">
+        <h2>categorías</h2>
+      <div class="wrap-categories">
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/tocadores.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-tocadores.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>tocadores</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/mesas.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-mesa.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>mesas</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/percheros.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-percheros.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>percheros</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/carritos-de-servicio.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-carritos.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>carritos de servicio</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/sillas-bancos-y-sillones.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-sillas.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>sillas y sillones</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/buros.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-buro.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>buros</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/bancas-y-bancos.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-bancos.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>bancos y bancas</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/fundas-protectoras.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-fundas.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>fundas y protectoras</p>
+          </a>
+        </div>
+        <div class="item-cat">
+          <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/accesorios-para-muebles.html" target="_self">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-accesorios-muebles.jpg?rand=1631292757"
+                alt=""
+              />
+            </div>
+            <p>accesorios para muebles</p>
+          </a>
+        </div>
+        <div class="item-cat">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/escaleras.html" target="_self">
+              <div>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/categori_as-escaleras.jpg?rand=1631292757"
+                  alt=""
+                />
+              </div>
+              <p>escaleras</p>
+            </a>
+          </div>
+      </div>
+    </section>
+
+    <!--  Shop by room -->
+    <section id="compraPorCuarto">
+        <h2>compra por habitación </h2>
+      <div class="wrap-cuarto">
+        <div class="item-cuarto">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/muebles.html" target="_self" />
+                <div class="zoomimg">
+                    <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/cate-espacio-recamara.jpg?rand=1631292757"
+                    alt="cuarto"
+                    />
+                </div>
+                <p class="subtitle">recámara</p>
+            </a>
+        </div>
+        <div class="item-cuarto">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/bano/muebles-para-bano.html" target="_self" />
+                <div class="zoomimg">
+                    <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/cate-espacio-bano.jpg?rand=1631292757"
+                    alt="cuarto"
+                    />
+                </div>
+                <p class="subtitle">baño</p>
+            </a>
+        </div>
+        <div class="item-cuarto">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/muebles.html" target="_self" />
+                <div class="zoomimg">
+                    <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/cate-espacio-cocina.jpg?rand=1631292757"
+                    alt="cuarto"
+                    />
+                </div>
+                <p class="subtitle">cocina</p>
+            </a>
+        </div>
+        <div class="item-cuarto">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/muebles-de-jardin-y-cojines.html" target="_self" />
+                <div class="zoomimg">
+                    <img
+                    src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/cate-espacio-jardin.jpg?rand=1631292757"
+                    alt="cuarto"
+                    />
+                </div>
+                <p class="subtitle">jardín</p>
+            </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    <section id="topCompras">
+      <div class="wrap-topcompras">
+        <div class="container_slide_cards">
+            <h2>top productos</h2>
+            <div id="carrusel" class="slider_top">
+                <div id="carrusel-slides" class="slides_top">
+                <!-- Slide 1 -->
+                    <div class="slide_top item_desc_carrusel">      
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/banco-para-tocador-de-acrilico-derayr-en-tono-perla.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/88590246961495p?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/88590246961495p__1?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                                <img
+                                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150"
+                                loading="lazy"
+                                />
+                            </div>
+                            </div>
+                            <div class="item_desc_carrusel">
+                                Banco para tocador de acrílico Deray® en tono perla
+                            </div>
+                            <div class="precio_carrusel">$3,569.00</div>
+                            <div class="star_wrap"></div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="slide_top item_desc_carrusel">      
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/carrito-de-servicio-modern-farmhouse-en-gris.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/262305961360426p?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/262305961360426p__1?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                                <img
+                                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150"
+                                loading="lazy"
+                                />
+                            </div>
+                            </div>
+                            <div class="item_desc_carrusel">
+                                Carrito de servicio Modern Farmhouse en gris
+                            </div>
+                            <div class="precio_carrusel">$3,679.00 </div>
+                            <div class="star_wrap"></div>
+                        </div>
+                        </a>
+                    </div>
+                    <!-- Slide 1 -->
+                    <div class="slide_top item_desc_carrusel">      
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/otomana-simply-essentialtm-de-38-1-cm-color-rosa-blush.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-12-07-11-46_444800406028jpg_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                        <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-12-07-11-46_444800406028_2jpg?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                                <img
+                                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150"
+                                loading="lazy"
+                                />
+                            </div>
+                            </div>
+                            <div class="item_desc_carrusel">
+                                Otomana Simply Essential™ de 38.1 cm color rosa blush
+                            </div>
+                            <div class="precio_carrusel">$470.00 </div>
+                            <div class="star_wrap"></div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="slide_top item_desc_carrusel">      
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/banco-de-bar-maderarte-modelo-pok-en-gris-claro-66960706.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/66960706_1.jpg?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/66960706.jpg?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                                <img
+                                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150"
+                                loading="lazy"
+                                />
+                            </div>
+                            </div>
+                            <div class="item_desc_carrusel">
+                                Banco de bar Maderarte modelo Pok en gris claro
+                            </div>
+                            <div class="precio_carrusel">$2,999.00</div>
+                            <div class="star_wrap"></div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="slide_top item_desc_carrusel">      
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/juego-banca-2-bancos-otomanes-color-gris-69579389.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800233426_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                        <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/444800233426_imageset?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                                <img
+                                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150"
+                                loading="lazy"
+                                />
+                            </div>
+                            </div>
+                            <div class="item_desc_carrusel">
+                                Juego de banca con 2 bancos otomanes color gris
+                            </div>
+                            <div class="precio_carrusel">$3,499.00</div>
+                            <div class="star_wrap"></div>
+                        </div>
+                        </a>
+                    </div>
+
+                    <!-- Slide 1 -->
+                    <div class="slide_top item_desc_carrusel">      
+                        <a
+                        href="https://www.bedbathandbeyond.com.mx/silla-para-barra-de-cocina-bee-willowtm-home-66-04-cm-en-blanco.html"
+                        target="_self"
+                        >
+                        <div class="container_bb">
+                            <div class="container_img_carrusel">
+                                <div class="main-container">
+                                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/253554867340323p?$imagePLP$&hei=700&wid=700" loading="lazy"/>   
+                                    <div class="hidden-child">
+                                        <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/253554867340323p__1?$imagePLP$&hei=700&wid=700" loading="lazy"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wrap-info-carrusel">
+                            <div class="container-star">
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star enablestar"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            <div class="wrap-cat-carrusel">
+                                <img
+                                src="https://b3h2.scene7.com/is/image/BedBathandBeyond/CA-FY21-WEB-LP-Clearance-C02-3-10%20furniture?$content$&wid=150&hei=150"
+                                loading="lazy"
+                                />
+                            </div>
+                            </div>
+                            <div class="item_desc_carrusel">
+                                Silla para barra de cocina, Bee & Willow™ Home 66.04 cm en blanco
+                            </div>
+                            <div class="precio_carrusel">$2,799.00
+                            </div>
+                            <div class="star_wrap"></div>
+                        </div>
+                        </a>
+                    </div>     
+      
+                </div>
+                <button class="btn-prev">
+                <button class="btn-next">
+            </div>
+        </div>
+      </div>
+    </section>
+    <section id="masParaTi">
+        <h2>más para ti</h2>
+      <div class="wrap-masparati">
+        <div class="item-masparati">
+            <a href="https://www.bedbathandbeyond.com.mx/marcas/wild-sage/muebles.html" target="_self">
+                <div class="zoomimgb">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/mas-para-ti-tendencias.jpg?rand=1631292757" alt="" />
+                </div>
+                <p>explora las últimas tendencias</p>
+            </a>
+        </div>
+        <div class="item-masparati">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/mesas.html" target="_self">
+            <div class="zoomimgb">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/mas-para-ti-mesa.jpg?rand=1631292757" alt="" />
+            </div>
+            <p>¿cuál es tu estilo al seleccionar una mesa?</p>
+            </a>
+        </div>
+        <div class="item-masparati">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar/bancas-y-bancos.html" target="_self" >
+                <div class="zoomimgb">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/mas-para-ti-espacios-reducidos.jpg?rand=1631292757" alt="" />
+                </div>
+                <p>muebles para espacios reducidos</p>
+            </a>
+        </div>
+        <div class="item-masparati">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/jardines-y-exteriores/muebles-de-jardin-y-cojines.html" target="_self" >
+               <div class="zoomimgb">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/muebles/mas-para-ti-exteriores.jpg?rand=1631292757" alt="" />
+                </div>
+                <p>muebles para exteriores</p>
+            </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TE RECOMENDAMOS -->
+    <section id="teRecomendamos">
+        <h2>muebles para organización</h2>
+      <div class="wrap-recomendamos">
+          <div class="item-recomendacion">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/estantes.html" target="_self">
+              <div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/mueble_multiusos.jpg" alt=""/>
+              </div>
+              <div class="describe">estantes</div>
+            </a>
+          </div>
+          <div class="item-recomendacion">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/closets-y-racks.html" target="_self">
+              <div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/rack_para_ropa.jpg" alt=""/>
+              </div>
+              <div>clósets y racks</div>
+            </a>
+          </div>
+          <div class="item-recomendacion">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/bolsas-y-carritos-para-compras.html" target="_self">
+              <div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/carrito_de_compra.jpg" alt=""/>
+              </div>
+              <div>bolsas y carritos para compras</div>
+            </a>
+          </div>
+          <div class="item-recomendacion">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/perchero.html" target="_self">
+              <div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/perchero_para_puerta.jpg" alt=""/>
+              </div>
+              <div>percheros</div>
+            </a>
+          </div>
+          <div class="item-recomendacion">
+            <a href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/zapatera.html" target="_self">
+              <div>
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/categories/organizacion-y-limpieza/zapatera.jpg" alt=""/>
+              </div>
+              <div>zapateras</div>
+            </a>
+          </div>
+      </div>
+    </section>
+    
+    <!--INSTAGRAM-->
+    <section id="instagram">
+        <h2>siguenos en #bedbathandbeyondmexico</h2>
+      <div id="insta">
+      <div class="wrap-instagram">
+          <div class="item-insta">
+            <a href="https://www.instagram.com/p/CTSc05eNcZP/" target="_blank">
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/instagram_1_.png?rand=1630527628" class="insta-icon" alt="" />
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/240997424_574167700430965_5259464491700729844_n.jpeg?rand=1630527066" alt="BedBathandBeyond Insta" class="img-ins" />
+                <div class="item-post">ver post</div>
+            </a>
+          </div> 
+        <div class="item-insta">
+            <a href="https://www.instagram.com/p/CS7fZ-btTRf/" target="_blank">
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/instagram_1_.png?rand=1630527628" class="insta-icon" alt="" />
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/240222311_563020534832278_7778248897169931443_n.jpeg?rand=1630527066" alt="BedBathandBeyond Insta" class="img-ins"/>
+                <div class="item-post">ver post</div>  
+            </a>
+        </div>
+          <div class="item-insta">
+            <a href="https://www.instagram.com/p/CTANqwALt1a/" target="_blank">
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/instagram_1_.png?rand=1630527628" class="insta-icon" alt="" />
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/240591216_214092257347491_6846076021127427623_n.jpeg?rand=1630527066" alt="BedBathandBeyond Insta" class="img-ins"/>
+                <div class="item-post">ver post</div> 
+            </a> 
+          </div>
+          <div class="item-insta">
+            <a href="https://www.instagram.com/p/CTDjUnglyCL/" target="_blank">
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/instagram_1_.png?rand=1630527628" class="insta-icon" alt="" />
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/240648432_137337541852294_8046296409605047707_n.jpeg?rand=1630527066" alt="BedBathandBeyond Insta" class="img-ins"/>
+                <div class="item-post">ver post</div>  
+            </a>
+          </div>
+          <div class="item-insta">
+            <a href="https://www.instagram.com/p/CS4RbtDsFIO/" target="_blank">
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/instagram_1_.png?rand=1630527628" class="insta-icon" alt="" />
+                <img src="https://www.bedbathandbeyond.com.mx/media/muebles/240114735_380653227023571_7868125775651528607_n.jpeg?rand=1630527066" alt="BedBathandBeyond Insta" class="img-ins"/>
+                <div class="item-post">ver post</div>  
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </body>
+</html>

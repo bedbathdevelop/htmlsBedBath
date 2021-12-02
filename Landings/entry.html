@@ -1,0 +1,1611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script type="text/javascript" src="../../js/libs/jquery-0a3a4d5cf2.min.js"></script>
+<script type="text/javascript" src="../../js/libs/slick-94d3404fc6.min.js"></script>
+<script type="text/javascript" src="../../js/libs/jsencrypt-ab652bccd2.min.js"></script>
+<script type="text/javascript" src="../../js/libs/aes-11c5114e2a.min.js"></script>
+<html id="html" xmlns="http://www.w3.org/1999/xhtml"  style="height: 100%">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="../../theme/lib/css/tp-bf88315347.adapter.css" type="text/css" />
+    <link rel="stylesheet" href="../../theme/lib/css/tp-5b1007df37.portal.only.css" media="screen" type="text/css" />
+    <link rel="stylesheet" href="../../theme/lib/css/slick-83816e87c1.css" type="text/css" />
+    <style>
+      * {
+        margin: 0 auto;
+        font-family: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        color: #fff;
+        background-color: #1c5994;
+      }
+      a {
+        text-decoration: none;
+      }
+      #oper-section-cnt.hotspot{
+          margin-top: -350px !important;
+      }
+      #login-form .input-wrapper{
+        background: #fff  !important;
+      }
+
+      #oper-section-cnt.hotspot{
+        background-color: #1c5994 !important;
+      }
+      #login-form .user-input input {
+          width: 100% !important;
+      }
+      #terms-text{
+        color: #fff !important;
+        font-size: 12px !important;
+      }
+      .wrap-container {
+        background-color: #1c5994;
+        width: 100%;
+        height: 100%;
+      }
+      .wrap-grid {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: center;
+        height: 700px;
+      }
+      .bg_blue {
+        background-color: #1c5994;
+      }
+
+      #img1 {
+        animation-delay: 5s;
+        -webkit-animation-delay: 5s;
+        animation: changeimage 5s infinite;
+        opacity: 0;
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+      }
+
+      #img2 {
+        width: 60%;
+        position: absolute;
+        z-index: 1;
+        top: 5%;
+        right: 20%;
+        animation-delay: 50s;
+        -webkit-animation-delay: 50s;
+        animation: changeimage2 10s infinite;
+        opacity: 0;
+        margin-top: 45%;
+      }
+      #img3 {
+        animation-delay: 25s;
+        -webkit-animation-delay: 25s;
+        animation: changeimage3 15s infinite;
+        opacity: 0;
+        width: 40%;
+        position: absolute;
+        z-index: 1;
+        bottom: 0%;
+        left: 20%;
+      }
+      #img4 {
+        animation-delay: 25s;
+        -webkit-animation-delay: 25s;
+        animation: changeimage4 5s infinite;
+        opacity: 0;
+        width: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 5%;
+        left: 20%;
+      }
+      #img5 {
+        animation-delay: 5s;
+        -webkit-animation-delay: 5s;
+        animation: changeimage5 10s infinite;
+        opacity: 0;
+        width: 50%;
+        position: absolute;
+        z-index: 1;
+        top: 40%;
+        left: 0%;
+      }
+      #img6 {
+        animation-delay: 6s;
+        -webkit-animation-delay: 6s;
+        animation: changeimage3 15s infinite;
+        opacity: 0;
+        width: 30%;
+        position: absolute;
+        z-index: 1;
+        top: 80%;
+        right: 0%;
+      }
+
+      @-webkit-keyframes changeimage {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage2 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage2 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage3 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage3 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage4 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage4 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @-webkit-keyframes changeimage5 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      @keyframes changeimage5 {
+        0% {
+          opacity: 0;
+        }
+        50% {
+          opacity: 1;
+        }
+      }
+      .item-grid {
+        width: 33.333%;
+      }
+      .logo {
+        margin: 40px 0 40px;
+      }
+      .logo img {
+        width: 200px;
+        height: auto;
+        margin: 20px 0 0 0;
+      }
+      .logo p {
+        font-size: 18px;
+      }
+      .logo h2 {
+        background-color: #f52b42;
+        width: 280px;
+        padding: 10px;
+        font-size: 40px;
+      }
+      .mini-text {
+        color: #fff;
+        font-size: 12px;
+        margin: 20px 0;
+      }
+      .wrap-input {
+        padding: 5px;
+        color: #fff;
+      }
+      .wrap-input label {
+        padding: 10px 0;
+      }
+      .wrap-slide {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: rgba(28, 89, 148, 0.5);
+      }
+      .img_small {
+        /*outline: 100px solid rgba(64, 143, 204, 0.5) !important;
+        outline-offset: -100px;*/
+      }
+      input[type="password"] {
+        width: 280px;
+        padding: 10px 0;
+        background-color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        color: #1a4e8a;
+      }
+      input[type="submit"] {
+        width: 280px;
+        padding: 10px 0;
+        border-radius: 5px;
+        border: 4px solid #002854;
+        cursor: pointer;
+        background-color: #147bd1;
+        color: #fff;
+      }
+      input[type="submit"]:hover {
+        background-color: #002854;
+      }
+      .hihgligth {
+        color: #002854;
+        font-size: 20px;
+      }
+      @media screen and (max-width: 767px) {
+        .item-grid {
+          width: 100%;
+        }
+        .logo h2 {
+          width: 200px;
+          font-size: 25px;
+        }
+        .logo img {
+          width: 150px !important;
+          margin: 10px 0 0 0 !important;
+        }
+        .logo p {
+          font-size: 16px !important;
+        }
+        .logo {
+          margin: 0 !important;
+        }
+        .wrap-container-form {
+          height: 420px;
+          overflow: hidden;
+        }
+        .wrap-slide {
+          height: 200px;
+        }
+        #img6 {
+          top: 10%;
+          width: 20%;
+        }
+        #img4 {
+          width: 40%;
+          left: 35%;
+        }
+        #img5 {
+          width: 20%;
+        }
+        #img1 {
+          width: 25%;
+        }
+        #img3 {
+          bottom: 20%;
+        }
+        #oper-section-cnt.hotspot{
+            margin-top: 0px !important;
+        }
+        #oper-section{
+            margin-top: -200px !important;
+        }
+
+      }
+        #oper-hint {
+            background: url('../../theme/img/portal/portal-icon.png') 4px -47px no-repeat;
+        }
+
+        #phone-wrapper {
+            width: 460px;
+            margin: 0 0 0 -230px;
+            left: 50%;
+            position: relative;
+            overflow: visible;
+        }
+
+        .input-mask {
+            filter: alpha(opacity=30);
+        }
+
+        .input-wrapper input {
+            background: url('../../theme/img/portal/icon.png') -1150px 0px no-repeat; /*hack: transparent occurs bug */
+        }
+
+        #term-checkbox-wrap .icon {
+            background-image: url('../../theme/img/portal/termsDisable.png');
+        }
+
+        input:checked+#term-checkbox-wrap .icon {
+            background-image: url('../../theme/img/portal/termsEnable.png');
+        }
+
+        #term-checkbox-wrap .icon:after {
+            display: none;
+        }
+
+        input:checked+#term-checkbox-wrap .icon:after {
+            display: none;
+        }
+
+        #term-agreement {
+            display: inline;
+            width: 0;
+            height: 0;
+            outline: none;
+            margin-right: -10px;
+        }
+
+        #term-content-wrapper {
+            filter: alpha(opacity=60);
+        }
+
+    </style>
+    <title>Portal Authorization</title>
+</head>
+<body class="portal">
+<section>
+      <div class="wrap-container">
+        <div class="overlay">
+          <div class="wrap-grid">
+            <div class="item-grid">
+              <div class="wrap-slide">
+                <img
+                  id="img4"
+                  src="/theme/img/portal/family_1.jpeg"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img5"
+                  src="/theme/img/portal/ropa-para-cama_5_jul.jpg"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img6"
+                  src="/theme/img/portal/house_1.jpeg"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+              </div>
+            </div>
+            <div class="item-grid wrap-container-form">
+              <div class="logo">
+                <h2>Bienvenido</h2>
+                <center><img
+                  src="/theme/img/portal/logo_bb_b_blanco.png"
+                  alt="bedbathandbeyond"
+                /></center>
+                <p>El hogar que <span class="hihgligth">tú</span> eliges</p>
+              </div>
+          <div id="oper-section-outer">
+                <div id="oper-section-inner" class="middle">
+                    <div id="hotspot-section" style="display: none;">
+                        <select id="hotspot-selector">
+                        </select>
+                        <span id="hotspot-type">Voucher Access</span>
+                    </div>
+
+                    <div id="oper-section-cnt" class="hotspot">
+                        <div id="oper-section">
+                            <div id="access-title"></div>
+                            <div id="input-area">
+                                <form id="login-form">
+                                    <div id="input-voucher" class="user-input" style="display: none;">
+                                        <div class="input-mask"></div>
+                                        <div class="input-wrapper">
+                                            <input id="voucherCode" name="voucherCode" class="border" type="text" placeholder="Voucher Code" style="color: rgb(0, 0, 0);">
+                                        </div>
+                                    </div>
+                                    <div id="input-user" class="user-input" style="display: none;">
+                                        <div class="input-mask"></div>
+                                        <div class="input-wrapper">
+                                            <input id="username" name="username" class="border" type="text" placeholder="Username " style="color: rgb(0, 0, 0);">
+                                        </div>
+                                    </div>
+                                    <div id="input-password" class="user-input" style="display: none;">
+                                        <div class="input-mask"></div>
+                                        <div class="input-wrapper">
+                                            <center><input id="password" name="password" class="border" type="password" placeholder="Password" style="color: rgb(0, 0, 0);"></center>
+                                        </div>
+                                    </div>
+                                    <div id="input-simple" class="user-input" style="display: block; background-color: rgb(255, 255, 255); border-width: 1px; border-style: solid;">
+                                        <div class="input-mask"></div>
+                                        <div class="input-wrapper">
+                                            <input id="simplePassword" name="simplePassword" class="border" type="password" placeholder="Password" style="color: rgb(0, 0, 0);">
+                                        </div>
+                                    </div>
+                                    <div id="input-phone-num" class="user-input" style="display: none;">
+                                        <div class="input-mask"></div>
+                                        <div class="input-wrapper">
+                                            <select id="country-code">
+                                                <option value="+93">Afghanistan(+93)</option>
+                                                <option value="+355">Albania(+355)</option>
+                                                <option value="+213">Algeria(+213)</option>
+                                                <option value="+1684">American Samoa(+1684)</option>
+                                                <option value="+376">Andorra(+376)</option>
+                                                <option value="+244">Angola(+244)</option>
+                                                <option value="+1264">Anguilla(+1264)</option>
+                                                <option value="+1268">Antigua and Barbuda(+1268)</option>
+                                                <option value="+54">Argentina(+54)</option>
+                                                <option value="+374">Armenia(+374)</option>
+                                                <option value="+297">Aruba(+297)</option>
+                                                <option value="+247">Ascension(+247)</option>
+                                                <option value="+61">Australia/Cocos/Christmas Island(+61)</option>
+                                                <option value="+43">Austria(+43)</option>
+                                                <option value="+994">Azerbaijan(+994)</option>
+                                                <option value="+1">Bahamas(+1)</option>
+                                                <option value="+973">Bahrain(+973)</option>
+                                                <option value="+880">Bangladesh(+880)</option>
+                                                <option value="+1246">Barbados(+1246)</option>
+                                                <option value="+375">Belarus(+375)</option>
+                                                <option value="+32">Belgium(+32)</option>
+                                                <option value="+501">Belize(+501)</option>
+                                                <option value="+229">Benin(+229)</option>
+                                                <option value="+1441">Bermuda(+1441)</option>
+                                                <option value="+975">Bhutan(+975)</option>
+                                                <option value="+591">Bolivia(+591)</option>
+                                                <option value="+387">Bosnia and Herzegovina(+387)</option>
+                                                <option value="+267">Botswana(+267)</option>
+                                                <option value="+55">Brazil(+55)</option>
+                                                <option value="+673">Brunei(+673)</option>
+                                                <option value="+359">Bulgaria(+359)</option>
+                                                <option value="+226">Burkina Faso(+226)</option>
+                                                <option value="+257">Burundi(+257)</option>
+                                                <option value="+855">Cambodia(+855)</option>
+                                                <option value="+237">Cameroon(+237)</option>
+                                                <option value="+1">Canada(+1)</option>
+                                                <option value="+3491">Canary Islands(+3491)</option>
+                                                <option value="+238">Cape Verde(+238)</option>
+                                                <option value="+1345">Cayman Islands(+1345)</option>
+                                                <option value="+236">Central Africa(+236)</option>
+                                                <option value="+235">Chad(+235)</option>
+                                                <option value="+56">Chile(+56)</option>
+                                                <option value="+86">China(+86)</option>
+                                                <option value="+57">Colombia(+57)</option>
+                                                <option value="+269">Comoros(+269)</option>
+                                                <option value="+242">Congo(+242)</option>
+                                                <option value="+243">Congo, Dem Rep(+243)</option>
+                                                <option value="+682">Cook Islands(+682)</option>
+                                                <option value="+506">Costa Rica(+506)</option>
+                                                <option value="+385">Croatia(+385)</option>
+                                                <option value="+53">Cuba(+53)</option>
+                                                <option value="+357">Cyprus(+357)</option>
+                                                <option value="+420">Czech Republic(+420)</option>
+                                                <option value="+45">Denmark(+45)</option>
+                                                <option value="+253">Djibouti(+253)</option>
+                                                <option value="+1767">Dominica(+1767)</option>
+                                                <option value="+1809">Dominican Republic(+1809)</option>
+                                                <option value="+1809201">Dominican Republic(+1809201)</option>
+                                                <option value="+670">East Timor(+670)</option>
+                                                <option value="+593">Ecuador(+593)</option>
+                                                <option value="+20">Egypt(+20)</option>
+                                                <option value="+503">El Salvador(+503)</option>
+                                                <option value="+240">Equatorial Guinea(+240)</option>
+                                                <option value="+291">Eritrea(+291)</option>
+                                                <option value="+372">Estonia(+372)</option>
+                                                <option value="+251">Ethiopia(+251)</option>
+                                                <option value="+500">Falkland Islands(+500)</option>
+                                                <option value="+298">Faroe Islands(+298)</option>
+                                                <option value="+679">Fiji(+679)</option>
+                                                <option value="+358">Finland/Aland Islands(+358)</option>
+                                                <option value="+33">France(+33)</option>
+                                                <option value="+594">French Guiana(+594)</option>
+                                                <option value="+689">French Polynesia(+689)</option>
+                                                <option value="+241">Gabon(+241)</option>
+                                                <option value="+220">Gambia(+220)</option>
+                                                <option value="+995">Georgia(+995)</option>
+                                                <option value="+49">Germany(+49)</option>
+                                                <option value="+233">Ghana(+233)</option>
+                                                <option value="+350">Gibraltar(+350)</option>
+                                                <option value="+30">Greece(+30)</option>
+                                                <option value="+299">Greenland(+299)</option>
+                                                <option value="+1473">Grenada(+1473)</option>
+                                                <option value="+590">Guadeloupe(+590)</option>
+                                                <option value="+1671">Guam(+1671)</option>
+                                                <option value="+502">Guatemala(+502)</option>
+                                                <option value="+224">Guinea(+224)</option>
+                                                <option value="+245">Guinea-Bissau(+245)</option>
+                                                <option value="+592">Guyana(+592)</option>
+                                                <option value="+509">Haiti(+509)</option>
+                                                <option value="+504">Honduras(+504)</option>
+                                                <option value="+852">Hong Kong(+852)</option>
+                                                <option value="+36">Hungary(+36)</option>
+                                                <option value="+354">Iceland(+354)</option>
+                                                <option value="+91">India(+91)</option>
+                                                <option value="+62">Indonesia(+62)</option>
+                                                <option value="+98">Iran(+98)</option>
+                                                <option value="+964">Iraq(+964)</option>
+                                                <option value="+353">Ireland(+353)</option>
+                                                <option value="+972">Israel(+972)</option>
+                                                <option value="+39">Italy(+39)</option>
+                                                <option value="+225">Ivory Coast(+225)</option>
+                                                <option value="+1876">Jamaica(+1876)</option>
+                                                <option value="+81">Japan(+81)</option>
+                                                <option value="+962">Jordan(+962)</option>
+                                                <option value="+254">Kenya(+254)</option>
+                                                <option value="+850">Korea Dem People's Rep(+850)</option>
+                                                <option value="+82">Korea Republic of(+82)</option>
+                                                <option value="+883">Kosovo(+883)</option>
+                                                <option value="+965">Kuwait(+965)</option>
+                                                <option value="+996">Kyrgyzstan(+996)</option>
+                                                <option value="+856">Laos PDR(+856)</option>
+                                                <option value="+371">Latvia(+371)</option>
+                                                <option value="+961">Lebanon(+961)</option>
+                                                <option value="+266">Lesotho(+266)</option>
+                                                <option value="+231">Liberia(+231)</option>
+                                                <option value="+218">Libya(+218)</option>
+                                                <option value="+423">Liechtenstein(+423)</option>
+                                                <option value="+370">Lithuania(+370)</option>
+                                                <option value="+352">Luxembourg(+352)</option>
+                                                <option value="+853">Macau(+853)</option>
+                                                <option value="+389">Macedonia(+389)</option>
+                                                <option value="+261">Madagascar(+261)</option>
+                                                <option value="+265">Malawi(+265)</option>
+                                                <option value="+60">Malaysia(+60)</option>
+                                                <option value="+960">Maldives(+960)</option>
+                                                <option value="+223">Mali(+223)</option>
+                                                <option value="+356">Malta(+356)</option>
+                                                <option value="+692">Marshall Islands(+692)</option>
+                                                <option value="+596">Martinique(+596)</option>
+                                                <option value="+222">Mauritania(+222)</option>
+                                                <option value="+230">Mauritius(+230)</option>
+                                                <option value="+52">Mexico(+52)</option>
+                                                <option value="+691">Micronesia(+691)</option>
+                                                <option value="+373">Moldova(+373)</option>
+                                                <option value="+377">Monaco(+377)</option>
+                                                <option value="+976">Mongolia(+976)</option>
+                                                <option value="+382">Montenegro(+382)</option>
+                                                <option value="+1664">Montserrat(+1664)</option>
+                                                <option value="+212">Morocco/Western Sahara(+212)</option>
+                                                <option value="+258">Mozambique(+258)</option>
+                                                <option value="+95">Myanmar(+95)</option>
+                                                <option value="+264">Namibia(+264)</option>
+                                                <option value="+977">Nepal(+977)</option>
+                                                <option value="+599">Netherlands Antilles(+599)</option>
+                                                <option value="+31">Netherlands(+31)</option>
+                                                <option value="+687">New Caledonia(+687)</option>
+                                                <option value="+64">New Zealand(+64)</option>
+                                                <option value="+505">Nicaragua(+505)</option>
+                                                <option value="+227">Niger(+227)</option>
+                                                <option value="+234">Nigeria(+234)</option>
+                                                <option value="+1670">Northern Mariana Islands(+1670)</option>
+                                                <option value="+47">Norway(+47)</option>
+                                                <option value="+968">Oman(+968)</option>
+                                                <option value="+92">Pakistan(+92)</option>
+                                                <option value="+680">Palau(+680)</option>
+                                                <option value="+970">Palestinian Territory(+970)</option>
+                                                <option value="+507">Panama(+507)</option>
+                                                <option value="+675">Papua New Guinea(+675)</option>
+                                                <option value="+595">Paraguay(+595)</option>
+                                                <option value="+51">Peru(+51)</option>
+                                                <option value="+63">Philippines(+63)</option>
+                                                <option value="+48">Poland(+48)</option>
+                                                <option value="+351">Portugal(+351)</option>
+                                                <option value="+1787">Puerto Rico(+1787)</option>
+                                                <option value="+974">Qatar(+974)</option>
+                                                <option value="+262">Reunion/Mayotte(+262)</option>
+                                                <option value="+40">Romania(+40)</option>
+                                                <option value="+7">Russia/Kazakhstan(+7)</option>
+                                                <option value="+250">Rwanda(+250)</option>
+                                                <option value="+685">Samoa(+685)</option>
+                                                <option value="+378">San Marino(+378)</option>
+                                                <option value="+239">Sao Tome and Principe(+239)</option>
+                                                <option value="+966">Saudi Arabia(+966)</option>
+                                                <option value="+221">Senegal(+221)</option>
+                                                <option value="+381">Serbia(+381)</option>
+                                                <option value="+248">Seychelles(+248)</option>
+                                                <option value="+232">Sierra Leone(+232)</option>
+                                                <option value="+65">Singapore(+65)</option>
+                                                <option value="+421">Slovakia(+421)</option>
+                                                <option value="+386">Slovenia(+386)</option>
+                                                <option value="+677">Solomon Islands(+677)</option>
+                                                <option value="+252">Somalia(+252)</option>
+                                                <option value="+27">South Africa(+27)</option>
+                                                <option value="+211">South Sudan(+211)</option>
+                                                <option value="+34">Spain(+34)</option>
+                                                <option value="+94">Sri Lanka(+94)</option>
+                                                <option value="+1869">St Kitts and Nevis(+1869)</option>
+                                                <option value="+1758">St Lucia(+1758)</option>
+                                                <option value="+508">St Pierre and Miquelon(+508)</option>
+                                                <option value="+1784">St Vincent Grenadines(+1784)</option>
+                                                <option value="+249">Sudan(+249)</option>
+                                                <option value="+597">Suriname(+597)</option>
+                                                <option value="+268">Swaziland(+268)</option>
+                                                <option value="+46">Sweden(+46)</option>
+                                                <option value="+41">Switzerland(+41)</option>
+                                                <option value="+963">Syria(+963)</option>
+                                                <option value="+886">Taiwan(+886)</option>
+                                                <option value="+992">Tajikistan(+992)</option>
+                                                <option value="+255">Tanzania(+255)</option>
+                                                <option value="+66">Thailand(+66)</option>
+                                                <option value="+228">Togo(+228)</option>
+                                                <option value="+676">Tonga(+676)</option>
+                                                <option value="+1868">Trinidad and Tobago(+1868)</option>
+                                                <option value="+216">Tunisia(+216)</option>
+                                                <option value="+90">Turkey(+90)</option>
+                                                <option value="+90">Turkish Republic of Northern Cyprus(+90)</option>
+                                                <option value="+993">Turkmenistan(+993)</option>
+                                                <option value="+1649">Turks and Caicos Islands(+1649)</option>
+                                                <option value="+688">Tuvalu(+688)</option>
+                                                <option value="+256">Uganda(+256)</option>
+                                                <option value="+380">Ukraine(+380)</option>
+                                                <option value="+971">United Arab Emirates(+971)</option>
+                                                <option value="+44">United Kingdom(+44)</option>
+                                                <option value="+1" selected="selected">United States(+1)</option>
+                                                <option value="+598">Uruguay(+598)</option>
+                                                <option value="+998">Uzbekistan(+998)</option>
+                                                <option value="+678">Vanuatu(+678)</option>
+                                                <option value="+379">Vatican City(+379)</option>
+                                                <option value="+58">Venezuela(+58)</option>
+                                                <option value="+84">Vietnam(+84)</option>
+                                                <option value="+1284">Virgin Islands, British(+1284)</option>
+                                                <option value="+1340">Virgin Islands, U.S.(+1340)</option>
+                                                <option value="+967">Yemen(+967)</option>
+                                                <option value="+260">Zambia(+260)</option>
+                                                <option value="+263">Zimbabwe(+263)</option>
+                                            </select>
+                                            <span id="area-code" style="background-color: rgb(4, 146, 235); color: rgb(255, 255, 255);">+1</span>
+                                            <input id="phone-number" name="phone-number" type="text" placeholder="Phone Number" style="color: rgb(0, 0, 0);">
+                                        </div>
+                                    </div>
+                                    <div id="input-verify-code" class="user-input" style="display: none;">
+                                        <div class="input-mask"></div>
+                                        <div class="input-wrapper">
+                                            <input id="verify-code" name="verify-code" type="text" placeholder="Verification Code" style="color: rgb(0, 0, 0);">
+                                            <div id="get-code-outer"><div id="get-code-container" style="background-color: rgb(4, 146, 235);"><span id="get-code" style="color: rgb(255, 255, 255);">Send</span></div></div>
+                                        </div>
+                                    </div>
+                                    <div style="display:none"><input name="clientMac" id="cMac" style="color: rgb(0, 0, 0);"></div>
+                                    <div style="display:none"><input name="radiusSvrIp" id="radiusServerIp" style="color: rgb(0, 0, 0);"></div>
+                                </form>
+                            </div>
+                            <div id="hint-area" style="display: none;">
+                                <div id="oper-hint">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div id="button-area">
+                                <a id="button-facebook" href="javascript:void(0);" style="display: none; color: rgb(255, 255, 255); opacity: 0.3;" class="disabled">Facebook</a>
+                                <a id="button-login" href="javascript:void(0);" style="background-color: rgb(4, 146, 235); color: rgb(255, 255, 255); opacity: 0.3;">Log In</a>
+                            </div>
+                            <div id="term-area">
+                                <div id="term-area-inner">
+                                    <label id="term-area-label" for="term-agreement">
+                                        <input type="checkbox" id="term-agreement" name="agreeEnable" style="color: rgb(0, 0, 0);">
+                                        <div id="term-checkbox-wrap">
+                                            <div class="icon" style="border-color: rgb(4, 146, 235);"></div>
+                                        </div>
+                                    </label>
+                                    <span id="terms-text">I agree to the <a style="color: rgb(4, 146, 235);">Terms of Service</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="item-grid">
+              <div class="wrap-slide">
+                <img
+                  id="img1"
+                  src="/theme/img/portal/house_2.jpeg"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img2"
+                  src="/theme/img/portal/pexels-photo-3755514.jpeg"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+                <img
+                  id="img3"
+                  src="/theme/img/portal/house_3.jpeg"
+                  alt="Bed Bath & Beyond"
+                  class="img_small"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+</div>
+</body>
+</html>
+<script type="text/javascript">
+    $.getScript = function(url, callback, cache) {
+        return $.ajax({type: 'GET', url: url, success: callback, dataType: 'script', ifModified: true, cache: cache === undefined? true : cache, async: false});
+    };
+    var data = {};
+    var globalConfig = {};
+    //var backgroundUrlDefault= "/theme/img/portal/background.png";
+    var logoUrlDefault      = "/theme/img/portal/portalLogo_picture@2x.png";
+    var submitUrl;
+    var redirectUrlOrg;
+    var aesKey;
+    var rsaEncrypt;
+
+    var clientMac = getQueryStringKey("cid");
+    var apMac = getQueryStringKey("ap");
+    var gatewayMac = getQueryStringKey("gateway") || undefined;
+    var ssidName = getQueryStringKey("ssid") || undefined;
+    var radioId = !!getQueryStringKey("rid")? Number(getQueryStringKey("rid")) : undefined;
+    var vid = !!getQueryStringKey("vid")? Number(getQueryStringKey("vid")) : undefined;
+    var originUrl = getQueryStringKey("u");
+    var previewSite = getQueryStringKey("previewSite");
+    var error = getQueryStringKey("error");
+    var t = getQueryStringKey("t");
+
+    var facebookUrl = !!apMac? ('/portal/fbwifi/forward?clientMac='+encodeURIComponent(clientMac)+'&apMac='+encodeURIComponent(apMac)+'&ssidName='+encodeURIComponent(ssidName)+'&radioId='+encodeURIComponent(radioId)+'&originUrl='+encodeURIComponent(originUrl))
+        : ('/portal/fbwifi/forward?clientMac='+encodeURIComponent(clientMac)+'&gatewayMac='+encodeURIComponent(gatewayMac)+'&vid='+encodeURIComponent(vid)+'&originUrl='+encodeURIComponent(originUrl));
+
+    var isCommited;
+    var imgTop = 0;
+    var isPhone = true;
+    var languageMap = ["", "en_US", "", "cs_CZ", "de_DE", "da_DK", "el_GR", "fr_FR", "es_ES", "nl_NL", "it_IT", "pl_PL", "pt_PT", "ru_RU", "sv_SE","tr_TR", "ar_SA", "ja_JP", "zh_TW"];
+    var lan = {
+        locale: "en_US",
+        URL_LAN_CHECK: "../../data/lan.json",
+        DEFAULT_LAN_TYPE: "en_US",
+        URL_JS: "../../locale/lan-1623410816435/%LAN_TYPE%/lan.js",
+        URL_ERR: "../../locale/lan-1623410816435/%LAN_TYPE%/err.js",
+        URL_CSS: "../../locale/lan-1623410816435/%LAN_TYPE%/lan.css",
+        URL_HELP: "../../locale/lan-1623410816435/%LAN_TYPE%/help.js"
+    };
+    var hotspotMap = {
+        3: "Voucher Access",
+        5: "Local User Access",
+        6: "SMS Access",
+        7: "Social Media Account Access",
+        8: "RADIUS Access"
+    };
+    var key;
+    var iv;
+
+    isPhone = isMobile();
+    function isMobile(){
+        var u = navigator.userAgent;
+        if(u.indexOf('iPad') > -1)return false;
+        return !!u.match(/AppleWebKit.*Mobile/) || !!u.match(/Windows Phone/) || !!u.match(/Android/) || !!u.match(/MQQBrowser/);
+    }
+    function addKey(url) {
+        if (url.indexOf('?') === -1) {
+            url += '?key=' + aesKey;
+        } else {
+            url += '&key=' + aesKey;
+        }
+        return url;
+    }
+
+    function toRgbString(hex, opacity) {
+        if (!hex || !opacity) {
+            return null
+        }
+        var shorthandRegex = /^#?([a-f\d])([a-f\d])([a-f\d])$/i;
+        hex = hex.replace(shorthandRegex, function(m, r, g, b) {
+            return r + r + g + g + b + b;
+        });
+        var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        var obj = result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16),
+            a: parseInt(opacity || 100)/100
+        } : null;
+        if (!obj) {
+            return null
+        }
+        return (obj.a === 1) ?
+            "rgb("  + Math.round(obj.r) + ", " + Math.round(obj.g) + ", " + Math.round(obj.b) + ")" :
+            "rgba(" + Math.round(obj.r) + ", " + Math.round(obj.g) + ", " + Math.round(obj.b) + ", " + obj.a + ")";
+    }
+    function getQueryStringKey (key) {
+        return getQueryStringAsObject()[key];
+    }
+    function getQueryStringAsObject () {
+        var b, cv, e, k, ma, sk, v, r = {},
+            d = function (v) { return decodeURIComponent(v); }, //# d(ecode) the v(alue)
+            q = window.location.search.substring(1), //# suggested: q = decodeURIComponent(window.location.search.substring(1)),
+            s = /([^&;=]+)=?([^&;]*)/g //# original regex that does not allow for ; as a delimiter:   /([^&=]+)=?([^&]*)/g
+        ;
+
+        //# ma(make array) out of the v(alue)
+        ma = function(v) {
+            //# If the passed v(alue) hasn't been setup as an object
+            if (typeof v != "object") {
+                //# Grab the cv(current value) then setup the v(alue) as an object
+                cv = v;
+                v = {};
+                v.length = 0;
+
+                //# If there was a cv(current value), .push it into the new v(alue)'s array
+                //#     NOTE: This may or may not be 100% logical to do... but it's better than loosing the original value
+                if (cv) { Array.prototype.push.call(v, cv); }
+            }
+            return v;
+        };
+
+        //# While we still have key-value e(ntries) from the q(uerystring) via the s(earch regex)...
+        while (e = s.exec(q)) { //# while((e = s.exec(q)) !== null) {
+            //# Collect the open b(racket) location (if any) then set the d(ecoded) v(alue) from the above split key-value e(ntry)
+            b = e[1].indexOf("[");
+            v = d(e[2]);
+
+            //# As long as this is NOT a hash[]-style key-value e(ntry)
+            if (b < 0) { //# b == "-1"
+                //# d(ecode) the simple k(ey)
+                k = d(e[1]);
+
+                //# If the k(ey) already exists
+                if (r[k]) {
+                    //# ma(make array) out of the k(ey) then .push the v(alue) into the k(ey)'s array in the r(eturn value)
+                    r[k] = ma(r[k]);
+                    Array.prototype.push.call(r[k], v);
+                }
+                //# Else this is a new k(ey), so just add the k(ey)/v(alue) into the r(eturn value)
+                else {
+                    r[k] = v;
+                }
+            }
+            //# Else we've got ourselves a hash[]-style key-value e(ntry)
+            else {
+                //# Collect the d(ecoded) k(ey) and the d(ecoded) sk(sub-key) based on the b(racket) locations
+                k = d(e[1].slice(0, b));
+                sk = d(e[1].slice(b + 1, e[1].indexOf("]", b)));
+
+                //# ma(make array) out of the k(ey)
+                r[k] = ma(r[k]);
+
+                //# If we have a sk(sub-key), plug the v(alue) into it
+                if (sk) { r[k][sk] = v; }
+                //# Else .push the v(alue) into the k(ey)'s array
+                else { Array.prototype.push.call(r[k], v); }
+            }
+        }
+
+        //# Return the r(eturn value)
+        return r;
+    }
+
+    function parseErrorCode (err) {
+        var code = ((err.errorCode+'').substr(0,1) == 'e') ? err.errorCode : ('e' + Math.abs(err.errorCode))    ;
+        return code;
+    }
+
+    function randomString (len) {
+        len = len || 16;
+        var $chars = 'ABCDEFGHJKMNPQRSTWXYZabcdefhijkmnprstwxyz2345678';
+        var maxPos = $chars.length;
+        var pwd = '';
+        for (var i = 0; i < len; i++) {
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        }
+        return pwd;
+    }
+
+    function encryptASE (data) {
+        var keyString = CryptoJS.enc.Utf8.parse(key);
+        var ivString = CryptoJS.enc.Utf8.parse(iv);
+        var ciphertext = CryptoJS.AES.encrypt(data, keyString, {
+            iv: ivString,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7
+        });
+        return ciphertext;
+    }
+
+    function setkey (callback) {
+        key = randomString();
+        iv = randomString();
+        rsaEncrypt = new JSEncrypt();
+        $.ajax({
+            url: '/portal/pubKey',
+            type: 'GET',
+            contentType: "application/json",
+            dataType: "json",
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            },
+            async: false,
+            success: function (res) {
+                data = res.result;
+                rsaEncrypt.setPublicKey(data.key);
+                aesKey = encodeURIComponent(rsaEncrypt.encrypt(key + iv));
+                !!callback && callback();
+            }
+        });
+    }
+    setkey();
+
+    function initLanguage (index, callback) {
+        var lanType;
+        var naviLan = navigator.language.replace("-", "_");
+        for (var i=0;i<languageMap.length;i++) {
+            if (naviLan === languageMap[i] || new RegExp(naviLan + "_[A-Za-z]*$").test(languageMap[i])) {
+                lanType = languageMap[i];
+            }
+        }
+        lanType = lanType || languageMap[index] || lan.DEFAULT_LAN_TYPE;
+
+        var URL_JS = lan.URL_JS.replace("%LAN_TYPE%", lanType);
+        // var URL_ERR = lan.URL_ERR.replace("%LAN_TYPE%", lanType);
+        // var URL_CSS = lan.URL_CSS.replace("%LAN_TYPE%", lanType);
+
+        $.getScript(URL_JS,undefined, true);
+        // $.getScript(URL_ERR,undefined, true);
+
+        $("#hotspot-type").html($.su.CHAR.PORTAL_ENTRY.VOUCHER_ACCESS);
+        hotspotMap = {
+            3: $.su.CHAR.PORTAL_ENTRY.VOUCHER_ACCESS,
+            5: $.su.CHAR.PORTAL_ENTRY.LOCAL_USER_ACCESS,
+            6: $.su.CHAR.PORTAL_ENTRY.SMS,
+            8: $.su.CHAR.PORTAL_ENTRY.RADIUS_ACCESS
+        };
+        $("#get-code").html($.su.CHAR.PORTAL_ENTRY.SEND);
+        $("#button-login").html($.su.CHAR.PORTAL_ENTRY.LOGIN);
+        $("#voucherCode").attr("placeholder", $.su.CHAR.PORTAL_ENTRY.VOUCHER_CODE);
+        $("#username").attr("placeholder", $.su.CHAR.PORTAL_ENTRY.USERNAME);
+        $("#password").attr("placeholder", $.su.CHAR.PORTAL_ENTRY.PASSWORD);
+        $("#simplePassword").attr("placeholder", $.su.CHAR.PORTAL_ENTRY.PASSWORD);
+        $("#phone-number").attr("placeholder", $.su.CHAR.PORTAL_ENTRY.PHONE_NUM);
+        $("#verify-code").attr("placeholder", $.su.CHAR.PORTAL_ENTRY.VERIFY_CODE);
+        $("#term-header").html($.su.CHAR.PORTAL_ENTRY.TERM_SERVICE);
+        $("#terms-text").html($.su.CHAR.PORTAL_ENTRY.AGREE_TERM_SERVICE);
+    }
+
+    $.ajax({
+        url: '/portal/getPortalPageSetting',
+        type: "POST",
+        contentType: "application/json",
+        dataType: "json",
+        data: JSON.stringify({
+            "clientMac": clientMac,
+            "apMac": apMac,
+            "gatewayMac": gatewayMac,
+            "ssidName": ssidName,
+            "radioId": radioId,
+            "vid": vid,
+            "originUrl": originUrl
+        }),
+        error: function (XMLHttpRequest, textStatus, errorThrown) {
+            alert(errorThrown);
+        },
+        success: function (res) {
+            data = res.result;
+            submitUrl           = "/portal/auth";
+            redirectUrlOrg      = "/portal/success";
+            initLanguage(data.portalCustomize.defaultLanguage);
+
+            var landingUrl  = data.landingUrl || redirectUrlOrg;
+
+            logoUrlDefault = (data.backgroundMode != "2"?"../../theme/img/portal/portalLogo_picture@2x.png":"../../theme/img/portal/portalLogo_solid@2x.png");
+            isCommited          = false;
+            var useDefaultLogo = !data.portalCustomize.logoPictureUrl || data.portalCustomize.logoPictureUrl.indexOf("/theme/img/portal/") !== -1;
+            globalConfig = {
+                authType: data.authType,
+                hotspotTypes: !!data.hotspot && data.hotspot.enabledTypes || [],
+                backgroundUrl : data.portalCustomize.backgroundPictureUrl || backgroundUrlDefault,
+                backgroundMode: data.portalCustomize.background,/* 'bgd','color' */
+                backgroundColor : data.portalCustomize.backgroundColor,
+                error         : data.error || 'ok',
+                errorHint     : data.errorHint,
+                logoDisplay   : data.portalCustomize.logoDisplay,
+                logoUrl       : data.portalCustomize.logoPictureUrl || logoUrlDefault,
+                logoPosition  : data.portalCustomize.logoPosition,
+                welcomeEnable : data.portalCustomize.welcomeEnable,
+                welcomeInfo   : data.portalCustomize.welcomeInformation || "",
+                welcomeColor  : data.portalCustomize.welcomeEnable?toRgbString(data.portalCustomize.welcomeTextColor, data.portalCustomize.welcomeTextOpacity):null,
+                copyrightEnable: data.portalCustomize.copyrightEnable,
+                copyright     : data.portalCustomize.copyright || "",
+                copyrightColor: data.portalCustomize.copyrightEnable?toRgbString(data.portalCustomize.copyrightTextColor, data.portalCustomize.copyrightTextOpacity):null,
+                termsEnable   : data.portalCustomize.termsOfServiceEnable,
+                termInfo      : data.portalCustomize.termsOfService || "",
+                inputBoxColor:  toRgbString(data.portalCustomize.inputBoxColor,data.portalCustomize.inputBoxOpacity),
+                inputBoxTextColor:  toRgbString(data.portalCustomize.inputTextColor,data.portalCustomize.inputTextOpacity),
+                buttonPosition: data.portalCustomize.buttonPosition,
+                buttonColor   : toRgbString(data.portalCustomize.buttonColor, data.portalCustomize.buttonOpacity),
+                buttonTextColor   : toRgbString(data.portalCustomize.buttonTextColor, data.portalCustomize.buttonTextOpacity),
+                adEnable      : !!data.portalCustomize.advertisement && data.portalCustomize.advertisement.enable,
+                adPictureIdList : !!data.portalCustomize.advertisement && data.portalCustomize.advertisement.pictureUrls,
+                adDurationTime : !!data.portalCustomize.advertisement && data.portalCustomize.advertisement.totalDuration,
+                adPictureCarouselInterval : !!data.portalCustomize.advertisement && data.portalCustomize.advertisement.pictureInterval,
+                allowSkip     : !!data.portalCustomize.advertisement && data.portalCustomize.advertisement.skipEnable,
+                countryCode   : !!data.sms && data.sms.countryCode || 1
+            };
+
+            function pageConfigParse(){
+                var html = '';
+                if (res.errorCode === 0){
+                    $("#hint-area").css("display", "none");
+                } else{
+                    $("#hint-area").css("display", "block");
+                    $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY[parseErrorCode(res)];
+                }
+
+                $("#hotspot-section").hide();
+                $("#input-voucher").hide();
+                $("#input-user").hide();
+                $("#input-password").hide();
+                $("#input-simple").hide();
+                $("#input-phone-num").hide();
+                $("#input-verify-code").hide();
+                $("#button-facebook").hide();
+                switch (globalConfig.authType){
+                    case 0:
+                        !!globalConfig.termsEnable ?
+                            $("#oper-section-cnt").removeClass("hotspot").addClass("hotspot") : $("#oper-section-cnt").removeClass("hotspot");
+                        window.authType = 0;
+                        break;
+                    case 1:
+                        $("#input-simple").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        !!globalConfig.termsEnable ?
+                            $("#oper-section-cnt").removeClass("hotspot").addClass("hotspot") : $("#oper-section-cnt").removeClass("hotspot");
+                        $("#access-title").html();
+                        window.authType = 1;
+                        break;
+                    case 2:
+                        $("#oper-section-cnt").addClass("hotspot");
+                        hotspotChang(2);
+                        window.authType = 2;
+                        break;
+                    case 7:
+                        $("#oper-section-cnt").removeClass("hotspot").addClass("hotspot");
+                        $("#button-facebook").show();
+                        $("#button-facebook").on("click", function () {
+                            if(!$(this).hasClass("disabled")){
+                                window.location.href = facebookUrl;
+                            }
+                        });
+                        $("#button-login").hide();
+                        $("#access-title").html($.su.CHAR.PORTAL_ENTRY.SOCIAL_MEDIA);
+                        window.authType = 7;
+                        break;
+                    case 11:
+                        if (globalConfig.hotspotTypes.length >1) {
+                            $("#hotspot-section").show();
+                        }
+                        $("#oper-section-cnt").addClass("hotspot");
+                        var options = "";
+                        for (var i=0;i<globalConfig.hotspotTypes.length;i++) {
+                            options += '<option value="'+globalConfig.hotspotTypes[i]+'">'+hotspotMap[globalConfig.hotspotTypes[i]]+'</option>';
+                        }
+                        $("#hotspot-selector").append(options);
+                        hotspotChang(globalConfig.hotspotTypes[0]);
+                        $('#hotspot-type').text(hotspotMap[globalConfig.hotspotTypes[0]]);
+                        window.authType = globalConfig.hotspotTypes[0];
+                        break;
+                }
+                if(globalConfig.backgroundMode != "2") {
+                    $("#phone-wrapper").css("background", "none");
+                    $("#terms-text").css("color", "#212121");
+                    $("#bg-image").hide();
+                    $("#phone-wrapper").css("backgroundColor", globalConfig.backgroundColor)
+
+                    $("body").css("backgroundColor", globalConfig.backgroundColor);
+                }
+                $("#logo-src").css("display", globalConfig.logoDisplay ? "block" : "none")
+                    .attr("src", globalConfig.logoUrl).addClass(useDefaultLogo ? "default":"");
+
+                var logoClass = (globalConfig.logoPosition == 1? "top":globalConfig.logoPosition == 2? "middle": "bottom");
+                $("#logo-image").addClass(logoClass);
+
+                $("#logo-welcome .title").text(globalConfig.welcomeInfo);
+                $("#logo-welcome").css("color", globalConfig.welcomeColor);
+                $("#term-content").text(globalConfig.termInfo);
+                $("#copyright").text(globalConfig.copyright);
+                $("#copyright").css("color", globalConfig.copyrightColor);
+
+                if (globalConfig.termsEnable === "true" || globalConfig.termsEnable === true) {
+                    $("#term-area").show();
+                } else {
+                    $("#term-area").hide();
+                }
+                $("#bg-image").css({
+                    "background": "url(\""+globalConfig.backgroundUrl+"\") no-repeat",
+                    "background-size": "cover"
+                });
+                $("#area-code").css({
+                    "backgroundColor": globalConfig.buttonColor,
+                    "color": globalConfig.buttonTextColor
+                });
+                $("#get-code-container").css("backgroundColor", globalConfig.buttonColor);
+                $("#get-code").css("color", globalConfig.buttonTextColor);
+                $("#terms-text a").css("color", globalConfig.buttonColor);
+                $("#button-login").css({
+                    "backgroundColor": globalConfig.buttonColor,
+                    "color": globalConfig.buttonTextColor,
+                    "opacity": globalConfig.termsEnable? 0.3 : 1
+                });
+                $("#button-facebook").css({
+                    "color": globalConfig.buttonTextColor,
+                    "opacity": globalConfig.termsEnable? 0.3 : 1
+                }).addClass(globalConfig.termsEnable? "disabled" : "");
+                $("#term-checkbox-wrap .icon").css("border-color", globalConfig.buttonColor);
+                $("input").css("color", globalConfig.inputBoxTextColor);
+                var buttonClass = (globalConfig.buttonPosition == 1? "top":globalConfig.buttonPosition == 2? "middle": "bottom");
+                $("#oper-section-inner").addClass(buttonClass);
+            }
+
+            function getLength(str) {
+                var r = /[^\x00-\xff]/g;
+                var s = '' + str;
+                return s.replace(r, "mm").length;
+            }
+
+            function handleSubmit(){
+                var submitData = {};
+                var checkbox = $("#term-agreement");
+
+                if (this.className == 'disabled'){
+                    return;
+                }
+                if (globalConfig.termsEnable && !checkbox.prop("checked")) {
+                    return;
+                }
+                submitData['authType'] = window.authType;
+                switch (window.authType){
+                    case 3:
+                        submitData['voucherCode'] = $("#input-voucher").find("input")[0].value;
+                        break;
+                    case 5:
+                        submitData['localuser'] = $("#input-user").find("input")[0].value;
+                        submitData['localuserPsw'] = $("#input-password").find("input")[0].value;
+                        break;
+                    case 1:
+                        submitData['simplePassword'] = $("#input-simple").find("input")[0].value;
+                        break;
+                    case 0:
+                        break;
+                    case 6:
+                        submitData['phone'] = $("#country-code").val() + $("#phone-number").val();
+                        submitData['code'] = $("#verify-code").val();
+                        break;
+                    case 2:
+                    case 8:
+                        submitData['username'] = $("#input-user").find("input")[0].value;
+                        submitData['password'] = $("#input-password").find("input")[0].value;
+                        break;
+                    default:
+                        break;
+                }
+                redirectUrlOrg = landingUrl;
+
+                if(isCommited == false){
+                    submitData['clientMac'] = clientMac;
+                    submitData['apMac'] = apMac;
+                    submitData['gatewayMac'] = gatewayMac;
+                    submitData['ssidName'] = ssidName;
+                    submitData['radioId'] = radioId;
+                    submitData['vid'] = vid;
+                    //RADIUS
+                    if(window.authType == 2 || window.authType == 8){
+                        submitUrl = "/portal/radius/auth";
+                        submitData['authType'] = window.authType;
+                        if (getLength($("#input-user").find("input")[0].value) > 128) {
+                            $("#hint-area").show();
+                            $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY.USERNAME_TIP;
+                            return ;
+                        }
+                        if (getLength($("#input-password").find("input")[0].value) > 128) {
+                            $("#hint-area").show();
+                            $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY.PASSWORD_TIP;
+                            return ;
+                        }
+                    } else {
+                        submitData['originUrl'] = originUrl;
+                    }
+                    function doAuth () {
+                        var time = 2;
+                        var redirectInterval;
+                        $.ajax({
+                            url: addKey(submitUrl),
+                            type:"POST",
+                            data: encryptASE(JSON.stringify(submitData)).toString(),
+                            dataType:"json",
+                            contentType: "text/plain",
+                            error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                $("#hint-area").show();
+                                $("#oper-hint").find("span")[0].innerHTML = errorThrown;
+                            },
+                            success:function(data){
+                                if(data){
+                                    if(data.errorCode === 0) {
+                                        isCommited = true;
+                                        $("#hint-area").hide();
+                                        $("#redirect-content").html($.su.CHAR.PORTAL_ENTRY.REDIRECTING.replace("%x%", time));
+                                        $("#redirect-mask").css("display", "table");
+                                        $("#html").css("overflow", "hidden");
+                                        $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY[parseErrorCode(data)];
+                                        redirectInterval = setInterval(function () {
+                                            $("#redirect-content").html($.su.CHAR.PORTAL_ENTRY.REDIRECTING.replace("%x%", --time));
+                                            if (time === 0) {
+                                                clearInterval(redirectInterval);
+                                                window.location.href = redirectUrlOrg;
+                                            }
+                                        }, 1000);
+                                    } else if (data.errorCode === -41528) {//update public key because of timeout
+                                        setkey(doAuth);
+                                    } else if (data.errorCode === -41532) {
+                                        if (data.result) {
+                                            $("#limit-mask").css("display", "table");
+                                            $("#limit-icon").css({
+                                                "background": "url(\"../../theme/img/portal/invalidCode.png\") no-repeat",
+                                                "background-size": "cover"
+                                            });
+                                            $("#limit-title").html(data.result.trafficLimitFrequency === 0 ?
+                                                $.su.CHAR.PORTAL_ENTRY.INVALID_VOUCHER:
+                                                $.su.CHAR.PORTAL_ENTRY.DATA_LIMIT_TIP
+                                            );
+                                            $("#limit-content").html($.su.CHAR.PORTAL_ENTRY["DATA_LIMIT_CONTENT" + data.result.trafficLimitFrequency]
+                                                .replace("%XXX%", data.result.trafficLimit));
+                                        }
+                                    } else if (data.errorCode === -41531) {
+                                        if (data.result) {
+                                            $("#limit-mask").css("display", "table");
+                                            $("#limit-icon").css({
+                                                "background": "url(\"../../theme/img/portal/invalidAccount.png\") no-repeat",
+                                                "background-size": "cover"
+                                            });
+                                            $("#limit-title").html(data.result.trafficLimitFrequency === 0 ?
+                                                $.su.CHAR.PORTAL_ENTRY.INVALID_ACCOUNT:
+                                                $.su.CHAR.PORTAL_ENTRY.DATA_LIMIT_TIP);
+                                            $("#limit-content").html($.su.CHAR.PORTAL_ENTRY["DATA_LIMIT_CONTENT" + data.result.trafficLimitFrequency]
+                                                .replace("%XXX%", data.result.trafficLimit));
+                                        }
+                                    } else{
+                                        $("#hint-area").show();
+                                        $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY[parseErrorCode(data)];
+                                    }
+                                }
+                            }
+                        });
+                    }
+                    doAuth();
+                }else{
+                    $("#hint-area").show();
+                    $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY.ALREADY_SUBMITTED;
+                }
+            }
+
+            function hotspotChang (type) {
+                $("#input-voucher").hide();
+                $("#input-user").hide();
+                $("#input-password").hide();
+                $("#input-phone-num").hide();
+                $("#input-verify-code").hide();
+                $("#button-facebook").hide();
+                $("#button-login").show();
+                switch (Number(type)) {
+                    case 3:
+                        $("#input-voucher").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#access-title").html($.su.CHAR.PORTAL_ENTRY.VOUCHER_ACCESS);
+                        window.authType = 3;
+                        break;
+                    case 5:
+                        $("#input-user").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#input-password").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#access-title").html($.su.CHAR.PORTAL_ENTRY.LOCAL_USER_ACCESS);
+                        window.authType = 5;
+                        break;
+                    case 2:
+                        $("#input-user").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#input-password").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#access-title").html($.su.CHAR.PORTAL_ENTRY.RADIUS_ACCESS);
+                        window.authType = 2;
+                        break;
+                    case 8:
+                        $("#input-user").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#input-password").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor,
+                            "borderWidth": "1px",
+                            "borderStyle": "solid"
+                        });
+                        $("#access-title").html($.su.CHAR.PORTAL_ENTRY.RADIUS_ACCESS);
+                        window.authType = 8;
+                        break;
+                    case 6:
+                        $("#input-phone-num").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor
+                        });
+                        $("#input-verify-code").css({
+                            "display": "block",
+                            "backgroundColor": globalConfig.inputBoxColor
+                        });
+                        $("#access-title").html($.su.CHAR.PORTAL_ENTRY.SMS);
+                        window.authType = 6;
+                        break;
+                }
+            }
+
+            $(document).ready(function(){
+                if (isPhone) {
+                    $("#main-content").css("width", "100%");
+                    $("#term-content-wrapper").css("max-width", document.documentElement.clientWidth + "px");
+                    $("#redirect-content-wrapper").css("max-width", document.documentElement.clientWidth + "px");
+                    $("#limit-content-wrapper").css("max-width", document.documentElement.clientWidth + "px");
+                } else {
+                    $("#main-content").css("width", $("#phone-wrapper").height() * 0.6);
+                    $("#term-content-wrapper").css("max-width", $("#phone-wrapper").height() * 0.6);
+                    $("#redirect-content-wrapper").css("max-width", $("#phone-wrapper").height() * 0.6);
+                    $("#limit-content-wrapper").css("max-width", $("#phone-wrapper").height() * 0.6);
+                }
+                $("#term-content").css("max-height", document.documentElement.clientHeight * 0.8 + "px");
+                $("#redirect-content").css("max-height", document.documentElement.clientHeight * 0.8 + "px");
+                $("#limit-content").css("max-height", document.documentElement.clientHeight * 0.8 + "px");
+
+                var options =  $("#country-code")[0];
+                globalConfig.countryCode = "+" + parseInt(globalConfig.countryCode, 10);
+                for(var i = 0,len = options.length; i < len; i++){
+                    if(options[i].value == globalConfig.countryCode){
+                        options[i].selected = true;
+                        break;
+                    }
+                }
+                var selectIndex = $("#country-code")[0].selectedIndex;
+                $('#area-code').text(options[selectIndex].value)
+            });
+            $(document).ready(function (){
+                $("#hotspot-selector").on("change", function () {
+                    var obj = $("#hotspot-selector")[0];
+                    var opt = obj.options[obj.selectedIndex];
+                    $('#hotspot-type').text(opt.innerText);
+                    hotspotChang(opt.value);
+                });
+                $("#button-login").on("click", handleSubmit);
+                $("#input-area").on("keyup", function (ev) {
+                    var e = ev || window.event,
+                            input = e.target || e.srcElement;
+                    if (input.tagName == 'INPUT' && e.keyCode == 13){
+                        handleSubmit();
+                    }
+                })
+                $("#country-code").on("change", function () {
+                    var obj = $("#country-code")[0];
+                    var opt = obj.options[obj.selectedIndex];
+                    $('#area-code').text(opt.value);
+                });
+                $("#get-code-container").on("click", function(){
+                    var count = 60;
+                    var that = this;
+                    if($(this).hasClass("disabled")){
+                        return;
+                    } else {
+                        var phoneNum = $("#phone-number").val();
+                        var intervalId;
+                        if(!/^\d+$/g.test(phoneNum)){
+                            $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY.INVALID_PHONE;
+                            $("#hint-area").show();
+                            return;
+                        }
+                        $(this).addClass("disabled");
+                        function sendSmsAuthCode () {
+                            $.ajax(addKey("/portal/sendSmsAuthCode"),{
+                                type:"POST",
+                                dataType: "json",
+                                data:encryptASE(JSON.stringify({
+                                    clientMac: clientMac,
+                                    apMac: apMac,
+                                    gatewayMac: gatewayMac,
+                                    ssidName: ssidName,
+                                    radioId: radioId,
+                                    vid: vid,
+                                    phone: $("#country-code")[0].value + phoneNum
+                                })).toString(),
+                                contentType: "text/plain",
+                                success:function(data){
+                                    $("#hint-area").show();
+                                    if(data.errorCode !== 0){
+                                        if (data.errorCode === -41528) {//update public key because of timeout
+                                            setkey(sendSmsAuthCode);
+                                        } else {
+                                            $(that).removeClass("disabled").text("Get Code");
+                                            $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY[parseErrorCode(data)];
+                                            clearInterval(intervalId);
+                                        }
+                                    } else {
+                                        $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY.SMS_SENT_SUCCESS;
+                                    }
+                                },
+                                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                                    $("#hint-area").show();
+                                    $("#oper-hint").find("span")[0].innerHTML = errorThrown;
+                                },
+                            });
+                        }
+                        sendSmsAuthCode();
+                        $("#hint-area").show();
+                        $("#oper-hint").find("span")[0].innerHTML = $.su.CHAR.PORTAL_ENTRY.SMS_SENDING;
+
+                        $(that).text(count + " s");
+                        intervalId = setInterval(function() {
+                            count--;
+                            if(count > 0){
+                                $(that).text(count + " s");
+                            } else {
+                                $(that).removeClass("disabled").text("Get Code");
+                                clearInterval(intervalId);
+                            }
+                        },1000)
+                    }
+                });
+                $("#terms-text a").on("click", function(e) {
+                    $("#term-mask").css("display", "table");
+                    $("#html").css("overflow", "hidden");
+                });
+                $("#term-footer").on("click", function (e) {
+                    $("#term-mask").hide();
+                    $("#html").css("overflow", "auto");
+                })
+                $("#limit-button").on("click", function (e) {
+                    $("#limit-mask").hide();
+                })
+                $("#term-agreement").on("change", function(ev) {
+                    var e = ev || window.event;
+                    var checkbox = e.target || e.srcElement;
+                    if (checkbox.checked) {
+                        $("#button-login").css("opacity", 1);
+                        $("#button-facebook").css("opacity", 1).removeClass("disabled");
+                    } else {
+                        $("#button-login").css("opacity", 0.3);
+                        $("#button-facebook").css("opacity", 0.3).removeClass("disabled").addClass("disabled");
+                    }
+                });
+                $("#bg-image").on("load",function() {
+                    $("#term-content").css("max-height", document.documentElement.clientHeight * 0.8 + "px");
+                });
+                $(window).on("resize",function(){
+                    if (isPhone) {
+                        $("#main-content").css("width", "100%");
+                        $("#term-content-wrapper").css("max-width", document.documentElement.clientWidth + "px");
+                        $("#limit-content-wrapper").css("max-width", document.documentElement.clientWidth + "px");
+                    } else {
+                        $("#main-content").css("width", $("#phone-wrapper").height() * 0.6);
+                        $("#term-content-wrapper").css("max-width", $("#phone-wrapper").height() * 0.6);
+                        $("#limit-content-wrapper").css("max-width", $("#phone-wrapper").height() * 0.6);
+                    }
+                    $("#term-content").css("max-height", document.documentElement.clientHeight * 0.8 + "px");
+                    $("#limit-content").css("max-height", document.documentElement.clientHeight * 0.8 + "px");
+                });
+                pageConfigParse();
+                if(globalConfig.adEnable == "true" || globalConfig.adEnable === true) {
+                    $(document).ready(function(){
+                        var $adImgCtn = $("#advertisment-wrapper .slider-wrap");
+                        var inHTML = "";
+                        for(var i = 0;i < globalConfig.adPictureIdList.length;i++){
+                            inHTML += '<div class="img-ctn"><img src="' + globalConfig.adPictureIdList[i] + '" alt="" /></div>';
+                        }
+                        $adImgCtn.append(inHTML);
+
+                        $("#advertisment-wrapper .slider-wrap img").on("load",function(){
+                            var that = this;
+                            var windowSize = {
+                                width: $("#advertisment-wrapper")[0].clientWidth,
+                                height: $("#advertisment-wrapper")[0].clientHeight
+                            };
+                            var windowRatio = windowSize.width / windowSize.height,
+                                    imageRatio = this.width / this.height,
+                                    imageType = imageRatio >= windowRatio?'fat':'slim';
+                            if(imageType == "slim"){
+                                that.height = windowSize.height;
+                            } else {
+                                that.width = windowSize.width;
+                            }
+                        });
+                        $("#advertisment-wrapper .slider-wrap").slick({
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                            arrows: false,
+                            dots: true,
+                            appendDots: "#slider-dots-wrap",
+                            autoplay:true,
+                            autoplaySpeed: globalConfig.adPictureCarouselInterval*1000 || 1000,
+                            pauseOnHover : false,
+                            pauseOnFocus : false
+                        });
+                        var skipHTML = "<div id=\"skip-wrapper\"><span id=\"skip-time\"><span id=\"skip-time-second\"></span><span id=\"skip-time-s\">s</span></span><span id=\"skip-line\"></span><span id=\"skip-text\">"+$.su.CHAR.PORTAL_ENTRY.SKIP+"</span></div>";
+                        $adImgCtn.append(skipHTML);
+                        var advDurtime = parseInt(globalConfig.adDurationTime);
+                        var sliderTimeFunc = function(){
+                            $("#skip-time-second")[0].innerHTML = advDurtime;
+                            if(advDurtime > 0){
+                                advDurtime--;
+                            } else {
+                                clearInterval(sliderTimeId);
+                                $("#advertisment-wrapper").hide();
+                            }
+                        }
+                        sliderTimeFunc();
+                        var sliderTimeId = setInterval(sliderTimeFunc, 1000);
+
+                        if( globalConfig.allowSkip == 1 ){
+                            $("#skip-text").on("click", function () {
+                                clearInterval(sliderTimeId);
+                                $("#advertisment-wrapper").hide();
+                            })
+                        } else {
+                            $("#skip-line").hide();
+                            $("#skip-text").hide();
+                            $("#skip-wrapper").css("width", "60px");
+                        }
+                    });
+                } else {
+                    $("#advertisment-wrapper").hide();
+                }
+            });
+        }
+    });
+</script>
+
+

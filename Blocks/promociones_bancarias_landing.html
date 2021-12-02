@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Promociones Bancarias</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-boton: #147bd1;
+        --rojo: #f52b42;
+      }
+      .wrap-credit-card{
+        background:url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/bg.jpg?rand=1628029721');
+        width: 98%;
+        height: 250px;
+        overflow: hidden;
+        -webkit-box-shadow: 0px 0px 5px 0px rgb(222 209 222);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(222,209,222,1);
+        box-shadow: 0px 0px 5px 0px rgb(222 209 222);
+        border-radius: 5px;
+        position: relative;
+        padding: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .title{
+          color:var(--azul-bbb-medio);
+          font-weight: 900;
+          font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+          margin-left: 25px;
+      }
+      .desktop{
+          display: block
+      }
+      .mobile {
+          display: none;
+      }
+      .img-card{
+          position: absolute;
+          top: 10px;
+          right: 20%;
+          width: 100px;
+      }
+      .slide-wrapper {
+            width: auto;
+            -webkit-animation: slide 8s ease infinite;
+            overflow: hidden;
+            position: absolute;
+            top:10%;
+            left: 80%;
+        }
+
+        .slide {
+            float: left;
+            height: 510px;
+            width: 408px;
+        }
+        .slide img{
+            width: 100px;
+        }
+        @-webkit-keyframes slide {
+            20% {
+                margin-right: 0px;
+            }
+            30% {
+                margin-left: -108px;
+            }
+            50% {
+                margin-left: -108px;
+            }
+            60% {
+                margin-left: -216px;
+            }
+            70% {
+                margin-left: -216px;
+            }
+            80% {
+                margin-left: -84px;
+            }
+            90% {
+                margin-left: -84px;
+            }
+        }
+        #comofunciona{
+            margin-top: 60px;
+        }
+        .wrap-function{
+            width: 100%;
+            text-align: center;
+        }
+        .wrap-fun{
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .wrap-fun .item-function {
+            width: 20%;
+            overflow: hidden;
+            justify-content: center;
+            text-align: center;
+        }
+        .wrap-img{
+            width: 100%;
+            height: 150px;
+            text-align: center;
+            justify-content: center;
+            position: relative;
+            display: flex;
+        }
+        .figure--moon{
+            width: 80px;
+            height: 80px;
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            -moz-box-shadow: 30px 10px 0 var(--azul-bbb-claro);
+            -webkit-box-shadow: 30px 10px 0 var(--azul-bbb-claro);
+            box-shadow: 30px 10px 0 var(--azul-bbb-claro); 
+            position: absolute;
+            top: 2px;
+            left: 55px;
+            right: auto;
+            z-index: 0;
+        }
+        .figure--cono{
+            width: 0px;
+            height: 0px;
+            border-right: 50px solid transparent;
+            border-left: 50px solid transparent;
+            border-top: 80px solid var(--azul-bbb-claro);
+            -moz-border-radius: 50%;
+            -webkit-border-radius: 50%;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            left: 85px;
+            right: auto;
+            z-index: 0
+        }
+        .figure--rombo{
+            width: 50px; 
+            height: 100px; 
+            background: var(--azul-bbb-claro);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+            top: 15px;
+            left: 85px;
+            right: auto;
+            z-index: 0
+        }
+        .wrap-img img {
+            width: 90px;
+            padding-top: 10px;
+            position: absolute;
+            top: 0;
+            left: auto;
+            right: auto;
+            z-index: 1;
+        }
+        .description--img{
+            color: var( --azul-bbb-medio);
+            font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+            font-weight: 900;
+            padding: 0 10px;
+            font-size:12px;
+            line-height: 1;
+        }
+        #bannerCard{
+            margin-top: 60px;
+        }
+
+        .wrap-detail{
+            overflow: hidden;
+            font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+            width: 500px;
+            margin-top: 50px;
+        }
+        @media (max-width: 991px) {
+            .desktop{
+                display: none
+            }
+            .mobile{
+                display: block;
+            }
+            .wrap-fun .item-function{
+                width: 50%;
+            }
+            .figure--moon{
+                left: 5px;
+            }
+            .figure--cono{
+                left: 25px;
+            }
+            .description--img{
+                margin-top: -20px;
+                padding: 0 5px;
+                font-size: 13px
+            }
+            .wrap-fun .item-function{
+                margin-top: 25px;
+            }
+            .wrap-credit-card{
+                margin-left: 10px;
+                width: 90%;
+            }
+            .wrap-detail{
+                width: 80%;
+                margin-top: 30px;
+            }
+            .wrap-img img{
+                width: 70px;
+                top: 10px;
+            }
+            
+        }
+    </style>
+  </head>
+  <body>
+    <!-- Credit -->
+    <section id="bannerCard">
+        <div class="banner-img mobile"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/meses_SI_mobile.jpg?rand=1628085406" alt="MSI Bed Bath and Beyond">
+        </div>
+    </section> 
+
+    <!-- banner -->
+    <section id="detailCredit">
+      <div class="wrap-credit-card">
+          <h2 class="title">MESES SIN INTERESES</h2>
+        <ul class="wrap-detail">
+          <li>Mínimo de compra <b>$1,300</b> - 13 MSI</li>
+          <li>
+            Las bancos participantes son
+            <b
+              >CITIBANAMEX (Aplican restricciones - Consulta tu banco para detalles sobre tu
+            tarjeta)
+          </li>
+        </ul>
+        <!-- <div class="slide-wrapper">
+            <div class="slide">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ecommerce.png?rand=1628023026" alt="MSI Bed Bath"  class="slider_img" />
+            </div>
+            <div class="slide">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ecommerce_1.png?rand=1628023415"  class="slider_img" />
+            </div>
+            <div class="slide">
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/ecommerce_2.png?rand=1628023415"  class="slider_img" />
+            </div>
+        </div>-->
+      </div>
+    </section>
+
+    <!-- banner -->
+    <section id="bannerCard">
+        <div class="banner-img desktop figure">
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-citi-13-jul_1.jpg?rand=1626209848" alt="MSI Bed Bath and Beyond">
+        </div>
+        <div class="banner-img mobile"> 
+            <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-citi-13-jul.jpg?rand=1626209806" alt="MSI Bed Bath and Beyond">
+        </div>
+    </section> 
+    
+
+    <section id="comofunciona">
+        <div class="wrap-function">
+            <h2 class="title">¿CÓMO FUNCIONA?</h2>
+
+            <div class="wrap-fun">
+                <!-- Item 1-->
+                <div class="item-function">
+                    <div class="wrap-img">
+                        <div class="figure--moon"></div>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/login.png?rand=1628026264" alt="credit card" /> 
+                    </div>
+                    <div class="description--img">Inicia sesión con tu cuenta o como invitado</div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="item-function">
+                    <div class="wrap-img">
+                        <div class="figure--cono"></div>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/online-shopping.png?rand=1628031476" alt="credit card" /> 
+                    </div>
+                    <div class="description--img">Agrega productos a tu carrito y acumula un mínimo de compra de $1,300</div>
+                </div>
+
+
+                <!-- Item 3 -->
+                <div class="item-function">
+                    <div class="wrap-img">
+                        <div class="figure--rombo"></div>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/credit-card.png?rand=1628031476" alt="credit card" /> 
+                    </div>
+                    <div class="description--img">Ingresa tus datos bancarios</div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="item-function">
+                    <div class="wrap-img">
+                        <div class="figure--moon"></div>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/mobile-shopping.png?rand=1628098972" alt="credit card" /> 
+                    </div>
+                    <div class="description--img">Elige tus mensualidades antes de realizar tu pago</div>
+                </div>
+
+
+                <!-- Item 5 -->
+                <div class="item-function">
+                    <div class="wrap-img">
+                        <div class="figure--cono"></div>
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/shopping-cart.png?rand=1628031476" alt="credit card" /> 
+                    </div>
+                    <div class="description--img">Finaliza tu compra</div>
+                </div>
+            </div>
+
+        </div>
+      </section>
+  </body>
+</html>

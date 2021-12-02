@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid four</title>
+    <style>
+      .wrap-four-grid {
+        overflow: hidden;
+        display: grid;
+        width: 100%;
+        height: auto;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-areas:
+          "gridm1 gridm1 gridm2 gridm4"
+          "gridm1 gridm1 gridm3 gridm4";
+        grid-gap: 20px;
+      }
+      .item-four-grid {
+        overflow: hidden;
+      }
+      .item-four-grid:nth-child(1) {
+        grid-area: gridm1;
+        background-color: bisque;
+        height: 400px;
+      }
+      .item-four-grid:nth-child(1) img {
+        width: 100%;
+      }
+      .item-four-grid:nth-child(2) {
+        grid-area: gridm2;
+        background-color: blueviolet;
+        height: 190px;
+      }
+      .item-four-grid:nth-child(2) img {
+        width: 100%;
+      }
+      .item-four-grid:nth-child(3) {
+        grid-area: gridm3;
+        background-color: brown;
+        height: 190px;
+      }
+      .item-four-grid:nth-child(3) img {
+        width: 100%;
+      }
+      .item-four-grid:nth-child(4) {
+        grid-area: gridm4;
+        background-color: cadetblue;
+        height: 400px;
+      }
+      .item-four-grid:nth-child(4) img {
+        width: 100%;
+      }
+
+      @media (max-width: 767px) {
+        .wrap-four-grid {
+          overflow: hidden;
+          display: grid;
+          width: 100%;
+          height: auto;
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas:
+            "gridm1 gridm4"
+            "gridm2 gridm3";
+          grid-gap: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap-four-grid">
+      <div class="item-four-grid">
+        <img
+          src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW35_FY21_1025_1035_WEB_HP_C15_12_V1_1-1?$content$&wid=945"
+        />
+      </div>
+      <div class="item-four-grid">
+        <img
+          src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/accesorios-bano-18-oct_1.jpg?rand=1634306634"
+        />
+      </div>
+      <div class="item-four-grid">
+        <img
+          src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US_FW35_FY21_1025_1035_WEB_HP_C15_12_V1_1-1?$content$&wid=945"
+        />
+      </div>
+      <div class="item-four-grid">
+        <img
+          src="https://b3h2.scene7.com/is/image/BedBathandBeyond/US-FW32-FY21-1004-1102-WEB-C15-12-V2-2-1?$content$&wid=675"
+        />
+      </div>
+    </div>
+  </body>
+</html>

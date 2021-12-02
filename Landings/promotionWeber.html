@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Promotion weber</title>
+    <style>
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      p {
+        font-size: 15px;
+      }
+      .title-main {
+        color: #1a4e8a;
+        width: 100%;
+        padding: 20px 0;
+        text-align: left;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        font-size: 34px;
+      }
+      .bg-red {
+        background-color: red;
+        height: 50px;
+      }
+      .bg-blue {
+        background-color: royalblue;
+        height: 100px;
+      }
+      .wrap-flex {
+        -ms-box-orient: horizontal;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -moz-flex;
+        display: -webkit-flex;
+        display: flex;
+
+        margin: 0;
+        padding: 0;
+        background-color: #f6f6f5;
+      }
+      .btn-store {
+        background-color: #ed1c23;
+        border: 2px solid #ed1c23;
+        color: #fff;
+        padding: 15px 10px;
+        text-align: center;
+        border-radius: 5px;
+        width: 200px;
+        margin-top: 20px;
+        margin-left: 150px;
+      }
+      .btn-store:hover {
+        background-color: #fff;
+        color: #ed1c23;
+      }
+      .container-text {
+        padding: 20px;
+        text-align: center;
+      }
+      .flex1 {
+        flex: 1 1 10em;
+      }
+      .flex2 {
+        flex: 2 2 10em;
+      }
+      .img-map {
+        width: 100%;
+        height: auto;
+      }
+      #description {
+        text-align: center;
+        margin-top: 10px;
+      }
+      .btn-bb {
+        background-color: #117dcf;
+        color: #fff;
+        font-size: 18px;
+        width: 400px;
+        padding: 10px 10px;
+        padding: 10px 10px;
+        border-radius: 5px;
+        margin-top: 20px;
+      }
+      .btn-bb:hover {
+        background-color: #fff;
+        border: 2px solid #117dcf;
+        color: #117dcf;
+      }
+      .container-description {
+        display: block;
+        justify-content: center;
+        text-align: center;
+        overflow: hidden;
+        border-style: double double double;
+        padding: 40px 0;
+        background-color: #f6f6f5;
+      }
+      .container-description h2 {
+        font-size: 55px;
+      }
+      .container-btn {
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+      }
+      .container-desc {
+        overflow: hidden;
+      }
+      .container-text h3 {
+        margin-top: 60px;
+        font-size: 25px;
+        padding: 0 20%;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-high {
+        font-size: 18px;
+      }
+
+      /*Responsive */
+      @media (max-width: 991px) {
+        .title-main{
+          font-size: 24px;
+        }
+        .container-description h2{
+          font-size: 30px;
+        }
+        .btn-bb {
+          width: 300px;
+        }
+        .wrap-flex {
+          display: block;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-site">
+      <section id="introduction">
+        <h2 class="title-main">
+          Weber quiere que seas un experto en la parrilla y con Bed Bath &
+          Beyond puedes ganar acceso al taller de Grill Academy, ¡gratis!
+        </h2>
+        <p class="text-high text-center">
+          Solo tienes que comprar un mínimo de <b>$5,000</b> en productos Weber en
+          tienda o en línea, enviar tu ticket de compra a la <b>Grill Academy</b> que
+          prefieras, y te darán una clase presencial completamente gratis.
+        </p>
+      </section>
+
+      <section id="map">
+        <div class="wrap-flex">
+          <div class="item-flex flex2">
+            <div class="container-text">
+              <h3>¡Hay 20 academias en México!</h3>
+              <a
+                href="https://www.weber.com/MX/es/buscador-tiendas/"
+                target="_blank"
+              >
+                <p class="btn-store">Visitar Grill Academy</p>
+              </a>
+            </div>
+          </div>
+          <div class="item-flex flex2">
+            <a
+              href="https://www.weber.com/MX/es/buscador-tiendas/"
+              target="_blank"
+            >
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Screen_Shot_2021-06-17_at_8.16.11.png?rand=1623937053"
+                alt="weber"
+                class="img-map"
+              />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="description">
+        <div class="container-description">
+          <h2>¡Y aún hay más!</h2>
+          <p class="text-high">
+            En la compra de cualquier producto <b>Weber</b>, podrás tener acceso a un
+            taller virtual el <b>próximo 3 de julio a las 12 pm</b>.
+          </p>
+          <p class="text-high">
+            Apresúrate, porque solo es válido en compras hechas del 16 al 30 de
+            junio de 2021
+          </p>
+
+          <div class="container-btn">
+            <a
+              href="https://www.bedbathandbeyond.com.mx/marcas/weber.html"
+              target="_self"
+            >
+              <p class="btn-bb">ver productos</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

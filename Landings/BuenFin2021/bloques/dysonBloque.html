@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dyson</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+        --squeared-away: #f79c7a;
+      }
+      a {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      .container-products {
+        overflow: hidden;
+        display: grid;
+        width: 100%;
+        grid-template-columns: 33.33% 16% 16% 16% 16%;
+        grid-template-areas:
+          "itembig itema itemb itemc itemd"
+          "itembig iteme itemf itemg itemh";
+        border-radius: 10px;
+        text-align: center;
+        justify-content: center;
+      }
+      .item-products {
+        overflow: hidden;
+        border: 1px solid rgb(233 233 233);
+        padding: 5px;
+      }
+      .item-products:nth-child(1) {
+        grid-area: itembig;
+        height: 432px;
+      }
+      .item-products:nth-child(2) {
+        grid-area: itema;
+        height: 210px;
+      }
+      .item-products:nth-child(3) {
+        grid-area: itemb;
+        height: 210px;
+      }
+      .item-products:nth-child(4) {
+        grid-area: itemc;
+        height: 210px;
+      }
+      .item-products:nth-child(5) {
+        grid-area: itemd;
+        height: 210px;
+      }
+      .item-products:nth-child(6) {
+        grid-area: iteme;
+        height: 210px;
+      }
+      .item-products:nth-child(7) {
+        grid-area: itemf;
+        height: 210px;
+      }
+      .item-products:nth-child(8) {
+        grid-area: itemg;
+        height: 210px;
+      }
+      .item-products:nth-child(9) {
+        grid-area: itemh;
+        height: 210px;
+      }
+      .item-products .wrap-products {
+        overflow: hidden;
+        padding: 0 2px;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+      }
+      .item-products .wrap-products img {
+        overflow: hidden;
+        height: 120px;
+      }
+      .wrap-products .credit-card {
+        color: #fff;
+        font-family: var(--secondary-font);
+        font-size: 10px;
+        background-color: var(--azul-bbb-medio);
+        padding: 2px 4px;
+      }
+      .wrap-products p {
+        font: 300 11px / 1 Effra, Helvetica, Arial, sans-serif;
+      }
+      .wrap-products p:nth-child(4) {
+        color: var(--azul-bbb-medio);
+        font-family: var(--secondary-font);
+        font-size: 11px;
+      }
+      .wrap-products p:nth-child(5) {
+        color: #000;
+        font-family: var(--secondary-font);
+        font-size: 13px;
+        text-align: center;
+        width: 98%;
+      }
+
+      .btn--products {
+        background-color: var(--azul-bbb-button);
+        font-family: var(--secondary-font);
+        width: 90%;
+        text-align: center;
+        color: #fff;
+        font-size: 12px;
+        padding: 10px 5px;
+        border-radius: 5px;
+        display: block;
+        position: absolute;
+        margin-top: 72%;
+      }
+      .wrap-products {
+        overflow: hidden;
+        transition: 0.8s;
+      }
+      .wrap-products:hover .wrap--btn {
+        background-color: rgba(255, 255, 255, 0.6);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        justify-content: center;
+        display: flex;
+      }
+      .wrap-products:hover .btn--products {
+        display: block;
+      }
+      .icon-gift {
+        width: 30px !important;
+        height: 30px !important;
+        position: absolute;
+        right: 10px;
+        top: 0;
+      }
+      .wrap-meses {
+        overflow: hidden;
+        display: flex;
+        border-radius: 5px;
+        padding: 0;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-meses img {
+        width: 15px !important;
+        height: 15px !important;
+        margin: 1px 2px;
+      }
+      .wrap-gift {
+        width: 90px;
+        height: 90px;
+        overflow: hidden;
+        display: block;
+        position: absolute;
+        text-align: center;
+        justify-content: center;
+        top: 40%;
+        right: 0;
+        display: flex;
+      }
+      .wrap-gift img {
+        left: 40px;
+      }
+      .wrap-gift p {
+        font-size: 10px;
+        margin: 30px 0;
+        padding: 0 5px;
+        left: 40px;
+        margin-left: 20px;
+        line-height: 1;
+        color: var(--azul-bbb-medio);
+      }
+      .slide_dyson {
+        display: none;
+      }
+      .bannerMain {
+        overflow: hidden;
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        display: flex;
+      }
+      .bannerMain img {
+        width: 100%;
+      }
+      .container-star {
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        margin: 0 auto;
+        text-align: center;
+        justify-content: center;
+      }
+      .clip-star {
+        clip-path: polygon(
+          50% 0%,
+          61% 35%,
+          98% 35%,
+          68% 57%,
+          79% 91%,
+          50% 70%,
+          21% 91%,
+          32% 57%,
+          2% 35%,
+          39% 35%
+        );
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        float: left;
+      }
+      .bluestar {
+        background: var(--azul-bbb-medio);
+      }
+      .tossing {
+        animation-name: tossing;
+        -webkit-animation-name: tossing;
+
+        animation-duration: 2.5s;
+        -webkit-animation-duration: 2.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes tossing {
+        0% {
+          transform: rotate(-4deg);
+        }
+        50% {
+          transform: rotate(4deg);
+        }
+        100% {
+          transform: rotate(-4deg);
+        }
+      }
+
+      @-webkit-keyframes tossing {
+        0% {
+          -webkit-transform: rotate(-4deg);
+        }
+        50% {
+          -webkit-transform: rotate(4deg);
+        }
+        100% {
+          -webkit-transform: rotate(-4deg);
+        }
+      }
+      .leyenda--grid {
+        position: absolute;
+        top: 25%;
+        left: 0%;
+        right: 0%;
+        z-index: 1;
+        text-align: center;
+        font-family: var(--font-bedbath);
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 2rem;
+        background-color: var(--azul-bbb-medio);
+      }
+      .red {
+        background-color: #f52b42;
+        padding: 0 10px;
+      }
+      .red-2 {
+        background-color: #f52b42;
+        padding: 0 1px;
+      }
+      @media (max-width: 767px) {
+        .container-products {
+          overflow: hidden;
+          display: grid;
+          width: 100%;
+          grid-template-columns: 25% 25% 25% 25%;
+          grid-template-areas:
+            "itembig itembig itembig itembig"
+            "itema itemb itemc itemd"
+            "iteme itemf itemg itemh"
+            "iteme itemf itemg itemh";
+          border-radius: 10px;
+          text-align: center;
+          justify-content: center;
+        }
+        .item-products .wrap-products img {
+          height: 80px;
+        }
+        .wrap-products .credit-card {
+          padding: 0;
+        }
+        .item-products:nth-child(1) {
+          grid-area: itembig;
+          height: 332px;
+        }
+
+        .wrap-products .credit-card {
+          font-size: 8px;
+        }
+        .wrap-products p:nth-child(5) {
+          font-size: 11px;
+          line-height: 1;
+        }
+        .clip-star {
+          width: 10px;
+          height: 10px;
+        }
+        .bannerMain img {
+          width: 80%;
+        }
+        .leyenda--grid {
+          bottom: 5%;
+        }
+        .wrap-meses img {
+          display: none;
+        }
+        .wrap-gift p {
+          font-size: 8px;
+        }
+        .item-products:nth-child(2) {
+          grid-area: itema;
+          height: 190px;
+        }
+        .item-products:nth-child(3) {
+          grid-area: itemb;
+          height: 190px;
+        }
+        .item-products:nth-child(4) {
+          grid-area: itemc;
+          height: 190px;
+        }
+        .item-products:nth-child(5) {
+          grid-area: itemd;
+          height: 190px;
+        }
+        .item-products:nth-child(6) {
+          grid-area: iteme;
+          height: 190px;
+        }
+        .item-products:nth-child(7) {
+          grid-area: itemf;
+          height: 190px;
+        }
+        .item-products:nth-child(8) {
+          grid-area: itemg;
+          height: 190px;
+        }
+        .item-products:nth-child(9) {
+          grid-area: itemh;
+          height: 190px;
+        }
+        .icon-gift {
+          width: 25px !important;
+          height: 25px !important;
+        }
+        .wrap-gift p {
+          display: none;
+        }
+        .wrap-gift {
+          top: 0;
+          left: -40px !important;
+        }
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        let indexGrid = 1;
+        let timer_mini;
+
+        function promoGrid() {
+          var i;
+          slides_grid = document.getElementsByClassName("slide_dyson");
+          dots_grid = document.getElementsByClassName("dot--slided");
+
+          for (i = 0; i < slides_grid.length; i++) {
+            slides_grid[i].style.display = "none";
+          }
+
+          indexGrid++;
+          if (indexGrid > slides_grid.length) {
+            indexGrid = 1;
+          }
+          for (i = 0; i < dots_grid.length; i++) {
+            dots_grid[i].className = dots_grid[i].className.replace(
+              " active",
+              ""
+            );
+          }
+          slides_grid[indexGrid - 1].style.display = "block";
+          dots_grid[indexGrid - 1].className += " active";
+          timer_mini = setTimeout(promoGrid, 3000);
+        }
+
+        promoGrid();
+      };
+    </script>
+  </head>
+  <body>
+    <section id="Dyson">
+      <div class="container-products">
+        <!-- item product Main -->
+        <div class="item-products">
+          <a href="" target="_self">
+            <div class="bannerMain">
+              <div class="slide_dyson">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/Dyson_b.jpg?rand=1636579720"
+                  alt="Dyson Bed Bath and Beyond"
+                />
+                <p class="leyenda--grid">
+                  ¡tiene un <span class="red">regalo para ti</span>!
+                </p>
+              </div>
+              <div class="slide_dyson">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/DYSON_C.jpg?rand=1636581686"
+                  alt="Dyson Bed Bath and Beyond"
+                />
+                <p class="leyenda--grid">
+                  ¡aprovecha <span class="red">hasta 18 MSI</span>!
+                </p>
+              </div>
+              <div class="slide_dyson">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/DYSON_D.jpg?rand=1636581686"
+                  alt="Dyson Bed Bath and Beyond"
+                />
+                <p class="leyenda--grid">
+                  ¡tiene un <span class="red">regalo para ti</span>!
+                </p>
+              </div>
+              <div class="slide_dyson">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/DYSON_A.jpg?rand=1636581686"
+                  alt="Dyson Bed Bath and Beyond"
+                />
+                <p class="leyenda--grid">
+                  ¡aprovecha <span class="red">hasta 18 MSI</span>!
+                </p>
+              </div>
+            </div>
+            <div style="text-align: center">
+              <span class="dot--slided"></span>
+              <span class="dot--slided"></span>
+              <span class="dot--slided"></span>
+              <span class="dot--slided"></span>
+            </div>
+          </a>
+        </div>
+        <!-- item product  -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/secadora-cabello-dyson-supersonic-69685228.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685228.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Secadora de cabello Dyson Supersonic</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- item product -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/rizadora-de-cabello-dyson-airwrap-con-estuche-de-viaje-69746940.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69746940.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Rizadora de cabello Dyson Airwrap™ con estuche de viaje</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- item product -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/alaciadora-cabello-dyson-corrale-69685227.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685227.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Alaciadora para cabello Dyson Corrale</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- item product -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229_1.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Estilizador de cabello Dyson Airwrap™ Complete</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- item product -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/purificador-de-aire-dyson-pure-cool-tp03-69685016.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685016_5.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Purificador de aire Dyson™ Pure Cool TP03</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- item product -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/aspiradora-inalambrica-dyson-absolute-v11tm.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685018.jpg?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Aspiradora inalámbrica Dyson Absolute V11™</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <!-- item product -->
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/aspiradora-sin-cable-dyson-v11-outsize.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/367274669519711p?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Aspiradora sin cable Dyson V11 Outsize</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item-products">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/aspiradora-sin-cable-dyson-v8tm-absolute.html"
+            target="_self"
+          >
+            <div class="wrap-products">
+              <div class="wrap-gift">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/gift-box.png?rand=1636560148"
+                  class="icon-gift tossing"
+                />
+                <p>incluye regalo sorpresa</p>
+              </div>
+              <picture>
+                <img
+                  src="https://b3h2.scene7.com/is/image/BedBathandBeyond/93155547034303p?$imagePLP$&hei=700&wid=700"
+                  alt="Buen fin Dyson Bed Bath and Beyond"
+                  class=""
+                />
+              </picture>
+
+              <div class="container-star">
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star bluestar"></div>
+                <div class="clip-star disable"></div>
+              </div>
+              <div class="wrap-meses">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/credit-cards.png?rand=1636560498"
+                  alt="credit card"
+                />
+                <p class="credit-card">
+                  hasta <span class="red-2">18 meses</span> sin intereses
+                </p>
+              </div>
+              <p>Aspiradora sin cable Dyson V8™ Absolute</p>
+              <div class="wrap--btn">
+                <p class="btn--products">ver producto</p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+    body {
+        /*background: #E8EBF3;*/
+    }
+    a {
+        text-decoration: none;
+    }
+    p {
+        font-size: 18px;
+    }
+    .container-center {
+        width: 100%;
+        height: auto;
+        display: block;
+        justify-content: center;
+        text-align: center;
+    }
+    .bg-mesa-regalos {
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/bg_directory-hero-listas-boda.jpeg?rand=1623190989');
+        width: 100%;
+        height: 200px;
+    }
+    .mesaderegalosa{
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/screen_2x.jpg?rand=1623191937');
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    /*Base*/
+    .container-complete {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+    .col-50 {
+        width: 50%;
+        height: auto;
+        float: left;
+        overflow: hidden;
+    }
+    .btn-bed{
+        border:2px solid #117dcf;
+        color:#117dcf;
+        background-color: #fff;
+        width: 300px;
+        height: auto;
+        text-align: center;
+        padding: 5px;
+        border-radius: 5px;
+        font-weight: 900;
+        font-size: 22px;
+        margin-top: 30px;
+    }
+    .btn-bed:hover {
+        background-color:#117dcf;
+        color: #fff;
+    }
+    .line{
+        padding: 20px;
+        color: #1a4e8a;
+        font-weight: 900;
+        width: 70%;
+        border-top: 3px solid #1a4e8a;
+        text-align: center;
+        margin-left: 100px;
+        margin-top: 70px;
+        position: absolute;
+    }
+    .center-all {
+        text-align: center;
+        justify-content: center;
+        display: flex;
+    }
+    .bg-tarjeta-b {
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/tarjetaatras.jpg?rand=1623254162');
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 400px;
+    }
+    .bg-tarjeta-d{
+        background-color: #ffdbd2;
+        height: 300px;
+        width: 400px;
+    }
+    .bg-tarjeta {
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/tarjetaatras.jpg?rand=1623254162');
+        background-repeat: no-repeat;
+        height: 500px;
+        width: 400px;
+    }
+    .container-tarjeta {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 600px;
+        padding: 40px 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    #informacion-container{
+        margin-top: 70px;
+    }
+    .container-tarjeta-b {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 300px;
+        padding: 40px 10px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+    }
+    .bg-tarjeta-c {
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/tarjetaatras.jpg?rand=1623254162');
+        background-repeat: no-repeat;
+        height: 500px;
+        width: 430px;
+    }
+    .gira-10{
+        -webkit-transform: rotate(10deg);  /* to support Safari and Android browser */
+        -ms-transform: rotate(-10deg);      /* to support IE 9 */
+        transform: rotate(-10deg);
+        position: absolute;
+        z-index: 1;
+        top:0;
+        left: 50px;
+    }
+    @keyframes tossing10 {
+            0% {
+                transform: rotate(-4deg);	
+            }
+            50% {
+                transform: rotate(4deg);
+            }
+            100% {
+                transform: rotate(-4deg);	
+            }						
+        }
+
+        @-webkit-keyframes tossing {
+            0% {
+                -webkit-transform: rotate(-4deg);	
+            }
+            50% {
+                -webkit-transform: rotate(4deg);
+            }
+            100% {
+                -webkit-transform: rotate(-4deg);	
+            }				
+        }
+    .gira-20{
+        -webkit-transform: rotate(-10deg);  /* to support Safari and Android browser */
+        -ms-transform: rotate(10deg);      /* to support IE 9 */
+        transform: rotate(10deg);
+        position: absolute;
+        z-index: 1;
+        top:0;
+        left: 50px;
+        animation-name: tossing10;
+	    -webkit-animation-name: tossing10;	
+        animation-duration: 2.5s;	
+        -webkit-animation-duration: 2.5s;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+    }
+    .container-text{
+        margin-top: 150px;
+        padding: 0 20px;
+        text-align: left;
+    }
+    .container-text-b {
+        margin-top: 30px;
+        text-align: left;
+    }
+    .img-over {
+        position: absolute;
+        z-index: 2;
+        width: 50%;
+        top: 40px;
+        left: 100px;
+    }
+    .img-over-b{
+        position: absolute;
+        z-index: 2;
+        width: 70%;
+        top: 40px;
+        left: 80px;
+    }
+    .container-line {
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        justify-content: center;
+        padding: 20px;
+    }
+    .linelarge {
+        color:#1a4e8a;
+        width: 100%;
+        height: 2px;
+        border: 3px solid #1a4e8a;
+        background-color: #1a4e8a;
+    }
+    .icon-img {
+        width: 80px;
+        height: auto;
+        padding-top: 40px;
+    }
+    .col-25{
+        width: 25%;
+        float: left;
+        height: 270px;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        position: relative;
+    }
+    .circle-image {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        background-color: #ffdbd2;
+        /*background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/tarjetaatras.jpg?rand=1623254162');*/
+        margin: 10px 20px;
+        -webkit-box-shadow: 5px 5px 15px 5px #adadad;
+        box-shadow: 5px 5px 15px 5px #adadad;
+    }
+    .circle-image:hover {
+        background-image: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/tarjetaatras.jpg?rand=1623254162');
+    }
+    .description-item{
+        color: #1a4e8a;
+        position: absolute;
+        bottom: 0;
+        font-size: 14px;
+        padding: 5px 30px;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    }
+    .num{
+        position: absolute;
+        font-weight: 900;
+        font-size: 22px;
+        color: #1a4e8a;
+        text-align: center;
+        left: 50%;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+    }
+</style>
+</script>
+</head>
+<body>
+<!-- Banner principal-->
+<div id="mesaderegalos">
+    <section>
+        <h1 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount">
+            <span class="base" data-ui-id="page-title-wrapper">Mesa de regalos</span>
+        </h1>
+    </section>
+
+    <!-- Mesa de regalos -->
+    <section>
+        <div class="container-complete">
+            <div class="col-50 center-all">
+                <div class="container-text">
+                        <h2>¡Crea tu mesa de regalos y celebra a lo grande!</h2>
+                        <p> Puedes indicar qué productos quieres que se entreguen al terminar tu evento y cuáles deseas tener lo antes posible.</p>
+                        <a href="" target="_self">
+                            <p class="btn-bed">Crear mesa de regalos</p>
+                        </a>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="container-tarjeta">
+                    <div class="bg-tarjeta gira-10"></div>
+                    <div class="bg-tarjeta gira-20"></div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/r10_2x_liverpool-mesa-regalos-_1.jpeg?rand=1623274807" class="img-over"/>
+                </div>
+            </div>
+
+        </div>
+    </section>
+<!-- Como funciona -->
+    <section>
+        <h2 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount">
+            <span class="base" data-ui-id="page-title-wrapper">¿Cómo crear tu mesa?</span>
+        </h2>
+        <h3 class="page-title" id="page-title-heading" aria-labelledby="page-title-heading toolbar-amount">
+            <span class="base" data-ui-id="page-title-wrapper">Es muy fácil y rápido, sólo sigue estos pasos:</span>
+        </h3>
+        <div class="container-line">
+            <p class="line"></p>
+            <div class="col-25">
+                <div class="circle-image">
+                    <p class="num">1</p>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/pc.png?rand=1623256848"  class="icon-img" />
+       
+                </div>
+                <p class="description-item">Regístrate y selecciona el tipo de evento para tu <b>Mesa de Regalo</b></p>
+            </div>
+            <div class="col-25">
+                <div class="circle-image">
+                    <p class="num">2</p>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/search.png?rand=1623257526" class="icon-img"/>
+                </div>
+                <p class="description-item">Elige los productos que <b>más te gusten</b></p>
+            </div>
+            <div class="col-25">
+                <div class="circle-image">
+                    <p class="num">3</p>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/smartphone_1_.png?rand=1623257526" class="icon-img"/>
+                </div>
+                <p class="description-item">Comparte con todos tus invitados tu <b>Mesa de Regalo</b></p>
+            </div>
+            <div class="col-25">
+                <div class="circle-image">
+                    <p class="num">4</p>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/gifts.png?rand=1623257526" class="icon-img"/>
+                </div>
+                <p class="description-item">Recibe y disfruta de tus regalos y bonificación en <b>Tarjeta de Regalo</b></p>
+            </div>
+
+        </div>
+    </section>
+
+    <!--Información-->
+    <section id="informacion-container">
+        <div class="container-complete">
+            <div class="col-50">
+                <div class="container-tarjeta-b">
+                    <div class="bg-tarjeta-d gira-10"></div>
+                    <div class="bg-tarjeta-b gira-20"></div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/banner-crear-mesa-regalos-1.jpg?rand=1623274976" class="img-over-b"/>
+                </div>
+            </div>
+            <div class="col-50 center-all">
+                <div class="container-text-b">
+                        <h2>Abre tu Mesa de Regalo</h2>
+                        <p> Para cualquier evento especial: Boda, cumpleaños, open house...</p>
+                        <a href="" target="_self">
+                            <p class="btn-mesade">Crear mesa de regalos</p>
+                        </a>
+                </div>
+        </div>
+
+        <div class="container-complete">
+            <div class="col-50 center-all">
+                <div class="container-text-b">
+                        <h2>Puedes crearla en línea</h2>
+                        <p>o en cualquiera de nuestras tiendas físicas</p>
+                        <a href="" target="_self">
+                            <p class="btn-mesade">crear tienda</p>
+                        </a>
+                        <a href="" target="_self">
+                            <p class="btn-mesade">ver tiendas</p>
+                        </a>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="container-tarjeta-b">
+                    <div class="bg-tarjeta-d gira-20"></div>
+                    <div class="bg-tarjeta-b gira-10"></div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/screen_2x.jpeg?rand=1623277101" class="img-over-b"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-complete">
+            <div class="col-50">
+                <div class="container-tarjeta-b">
+                    <div class="bg-tarjeta-d gira-10"></div>
+                    <div class="bg-tarjeta-b gira-20"></div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Dise_o_sin_t_tulo_2_.png?rand=1623277101" class="img-over-b"/>
+                </div>
+            </div>
+            <div class="col-50 center-all">
+                <div class="container-text-b">
+                        <h2>Bonificación en Tarjeta de Regalo</h2>
+                        <p> ¡Todos tus regalos te darán el 15% de su valor en una Tarjeta de Regalo!</p>
+                        <p>** Aplican restricciones.</p>
+                        <a href="" target="_self">
+                            <p>Crear mesa de regalos</p>
+                        </a>
+                </div>
+           
+            </div>
+        </div>
+
+        <div class="container-complete">
+            <div class="col-50 center-all">
+                <div class="container-text">
+                        <h2>Te ayudamos en todo momento</h2>
+                        <p>Un asesor experto estará para asistirte en todo el proceso de tu evento de Mesa de Regalos</p>
+                </div>
+            </div>
+            <div class="col-50">
+                <div class="container-tarjeta-b">
+                    <div class="bg-tarjeta-d gira-10"></div>
+                    <div class="bg-tarjeta-b gira-20"></div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/mesa-de-regalos/banner-asesor-1.jpg?rand=1623274976" class="img-over-b"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-complete">
+            <div class="col-50">
+                <div class="container-tarjeta-b">
+                    <div class="bg-tarjeta-d gira-10"></div>
+                    <div class="bg-tarjeta-b gira-20"></div>
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Dise_o_sin_t_tulo_2_.png?rand=1623277101" class="img-over-b"/>
+                </div>
+            </div>
+            <div class="col-50 center-all">
+                <div class="container-text-b">
+                        <h2>Recibe notificaciones.</h2>
+                        <p>Llegan al momento que tus invitados elijan un regalo para ti.</p>
+                        <p>** Aplican restricciones.</p>
+                        <a href="" target="_self">
+                            <p>Crear mesa de regalos</p>
+                        </a>
+                </div>
+           
+            </div>
+        </div>
+    </section>
+</div>
+
+
+</body>
+</html>

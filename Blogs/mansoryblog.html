@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mansory Blog</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --primary-font: Effra, Helvetica, Arial, sans-serif;
+        --secondary-font: Termina Headline, sans-serif;
+      }
+      a  {
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: none;
+      }
+      .wrap-mansory {
+        display: grid;
+        overflow: hidden;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+      }
+      #imgDay {
+        width: 1000px;
+        height: auto;
+      }
+      .item-grid {
+        overflow: hidden;
+        border: 1px solid var(--azul-bbb-strong);
+        text-align: left;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .item-grid .wrap-item {
+        overflow: hidden;
+      }
+      .wrap-img {
+        width: 100%;
+        height: 160px;
+        overflow: hidden;
+        position: relative;
+      }
+      .wrap-img img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.5s; /* smoother zoom */
+      }
+      .wrap-img img:hover {
+        transform: scale(1.1);
+        transform-origin: 50% 50%;
+      }
+      .wrap-cat {
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: -10px;
+      }
+      .wrap-cat p {
+        height: auto;
+        padding: 5px 10px;
+        font-weight: 900;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-size: 10px;
+        border-radius: 10px;
+        border: 1px solid #efefef;
+        width: auto;
+        text-align: center;
+        background-color: var(--azul-bbb-claro);
+        margin: 5px 2px;
+      }
+      .wrap-cat p:hover {
+        background-color: var(--azul-bbb-button);
+        color: #fff !important;
+      }
+      .wrap-description {
+        overflow: hidden;
+      }
+      .wrap-description h2 {
+        font-weight: 900;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        font-size: 1.6rem;
+        padding: 0 5px;
+        border-radius: 5px;
+        width: auto;
+        text-align: left;
+      }
+      .wrap-description .description {
+        color: #424242;
+        font-size: 1.8rem;
+        line-height: 1;
+        padding: 5px;
+        border-radius: 5px;
+        width: auto;
+        text-align: left;
+      }
+
+      .wrap-description .date-txt {
+        font-size: 10px;
+        color: #000;
+        text-align: left;
+      }
+      .wrap-description p:nth-child(4) {
+        padding: 0 10px;
+        color: #000;
+        font-family: var(--secondary-font);
+      }
+      .wrap-description p:nth-child(5) {
+        padding: 10px 6px;
+        text-align: center;
+        border: 2px solid var(--azul-bbb-claro);
+        background-color: var(--azul-bbb-button);
+        color: #fff;
+        border-radius: 5px;
+        width: 150px;
+      }
+      .wrap-description p:nth-child(5):hover {
+        border: 2px solid var(--azul-bbb-button);
+        color: var(--azul-bbb-button);
+        background-color: var(--azul-bbb-claro);
+      }
+
+      .wrap-postday {
+        overflow: hidden;
+        width: 100%;
+        height: 300px;
+        padding: 40px 0;
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        background: var(--azul-bbb-claro);
+        background-position: center;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .wrap-post-description {
+        overflow: hidden;
+        text-align: center;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.8);
+        margin: 0 auto;
+        top: 20%;
+        left: 0;
+        right: 0;
+        width: 50%;
+        padding: 20px;
+        justify-content: center;
+        display: block;
+        border-radius: 5px;
+      }
+      .border-high {
+        border: 1px solid var(--azul-bbb-medio) !important;
+      }
+      .wrap-post-description h2 {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-strong);
+        font-size: 3.5rem;
+      }
+      #descDay {
+        font-family: var(--font-bedbath);
+        color: var(--azul-bbb-medio);
+        text-align: center;
+        justify-content: center;
+      }
+      .btn-post-day {
+        padding: 10px;
+        text-align: center;
+        border: 2px solid var(--azul-bbb-claro);
+        background-color: var(--azul-bbb-button);
+        color: #fff;
+        border-radius: 5px;
+        width: 100px;
+        font-size: 1rem;
+        font-family: var(--font-bedbath);
+        margin: 0 auto;
+      }
+      .btn-post-day:hover {
+        border: 2px solid var(--azul-bbb-button);
+        color: var(--azul-bbb-button);
+        background-color: var(--azul-bbb-claro);
+      }
+      #lastPost {
+        margin-top: 60px;
+        overflow: hidden;
+      }
+      #dateDay {
+        font-size: 1.2rem;
+        font-family: var(--font-bedbath);
+        color: #000;
+        margin-top: -10px;
+      }
+      .subtitles {
+        font-weight: 900;
+        font-family: var(--font-bedbath);
+        text-align: center;
+        color: var(--azul-bbb-strong);
+      }
+      @media (max-width: 767px) {
+        .wrap-mansory {
+          grid-template-columns: 1fr 1fr 1fr;
+        }
+        .wrap-img {
+          height: 140px;
+        }
+      }
+      @media (max-width: 767px) {
+        .wrap-post-description {
+          top: 10%;
+        }
+        .wrap-post-description h2 {
+          font-size: 2.5rem;
+        }
+        #descDay {
+          font-size: 1.2rem;
+        }
+        #imgDay {
+          width: 100%;
+          height: 300px;
+        }
+        .wrap-mansory {
+          grid-template-columns: 1fr 1fr;
+        }
+        .wrap-img {
+          height: 120px;
+        }
+        .wrap-description h2 {
+          font-size: 1.3rem;
+          margin-top: -1px;
+        }
+        .wrap-description .description {
+          font-size: 1.3rem;
+          line-height: 1;
+        }
+        .wrap-description p:nth-child(5) {
+          padding: 4px 6px;
+          width: 90%;
+        }
+      }
+    </style>
+    <script>
+      //catetogorias
+
+      const datacat = [
+        {
+          id: 1,
+          name: "recámara",
+          link: "https://www.bedbathandbeyond.com.mx/productos/recamara.html",
+        },
+        {
+          id: 2,
+          name: "cocina",
+          link: "https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html",
+        },
+        {
+          id: 3,
+          name: "baño",
+          link: "https://www.bedbathandbeyond.com.mx/productos/bano.html",
+        },
+        {
+          id: 4,
+          name: "mesa y bar",
+          link: "https://www.bedbathandbeyond.com.mx/productos/mesa.html",
+        },
+        {
+          id: 5,
+          name: "organización y limpieza",
+          link: "https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html",
+        },
+        {
+          id: 6,
+          name: "decoración",
+          link: "https://www.bedbathandbeyond.com.mx/productos/decoracion.html",
+        },
+        {
+          id: 7,
+          name: "organización y limpieza",
+          link: "https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html",
+        },
+        {
+          id: 8,
+          name: "muebles",
+          link: "https://www.bedbathandbeyond.com.mx/productos/muebles-para-el-hogar.html",
+        },
+      ];
+      //Post
+      const post = [
+        {
+          id: 1,
+          title: "Ideas para organizar tu clóset",
+          category: ["organización"],
+          description:
+            "¿Tu clóset está hecho un caos? ¿Tu ropa está desorganizada? ¿Tus zapatos están por todos lados?",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/wysiwyg/organizacion/organizaci_n_del_cl_set.jpg",
+          link: "https://www.bedbathandbeyond.com.mx/ideas-para-organizar-tu-closet",
+          kindpost: 1,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 2,
+          title: "Cómo lograr que tu cama parezca de revista",
+          category: ["recámara"],
+          description:
+            "Vestir la cama es todo un arte, pero para muchos de nosotros se ha convertido sólo en parte de nuestra rutina diaria...",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/wysiwyg/blog_cama_perfecta_03.jpg",
+          link: "https://www.bedbathandbeyond.com.mx/como-lograr-que-tu-cama-parezca-de-revista",
+          kindpost: 0,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 3,
+          title:
+            "VELAS, el accesorio que cierra con broche de oro tu decoración ",
+          category: ["decoración"],
+          description:
+            "VELAS, el accesorio que cierra con broche de oro tu decoración",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/wysiwyg/Varios_tama_os_LISTO.jpg",
+          link: "https://www.bedbathandbeyond.com.mx/velas-el-accesorio-que-cierra-con-broche-de-oro-tu-decoracion?___store=default",
+          kindpost: 0,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 4,
+          title: "bienvenido a la comodidad de nestwell",
+          category: ["recámara"],
+          description:
+            "nestwell está hecho con un estilo relajado y comodidad para todos los días.",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/blog/nestwell_blog.jpg?rand=1625839538",
+          link: "https://www.bedbathandbeyond.com.mx/consejos-de-nuestra-experta-en-descanso",
+          kindpost: 2,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 5,
+          title: "squared-away,soluciones para un hogar bien ordenado",
+          category: ["organización"],
+          description:
+            "artículos inteligentes y accesibles que te ayudarán a tener tu hogar organizado, armonioso y feliz",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/wysiwyg/squaredaway/imagen-closet-acomoda-y-arregla.jpg?rand=1625839538",
+          link: "https://www.bedbathandbeyond.com.mx/squared-away",
+          kindpost: 2,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 6,
+          title: "disfruta de un oasis de serenidad con haven",
+          category: ["baño"],
+          description:
+            "nuestros amigos diseñadores de Decorist comparten sencillas ideas para crear un spa en casa.",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/blog/haven_blog.jpg?rand=1625839538",
+          link: "https://www.bedbathandbeyond.com.mx/lleva-el-spa-a-tu-hogar-con-haven",
+          kindpost: 2,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 7,
+          title: "Conoce Wild Sage y plasma tu historia",
+          category: ["baño", "recámara", "decoración"],
+          description:
+            "creada con la idea de que cada artículo en tu hogar debería proyectar una parte de ti.",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/wysiwyg/WildSage/banner-desbordando-ideas_1.jpg?rand=1625839538",
+          link: "https://www.bedbathandbeyond.com.mx/crea-tu-propio-hogar-y-ve-a-la-universidad-mas-feliz",
+          kindpost: 2,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 8,
+          title: "¡alineación de superestrellas! simply essential",
+          category: ["cocina", "recámara", "baño"],
+          description:
+            "esta colección está hecha para las tareas de todos los días.",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/wysiwyg/simplessential/Picture1.jpg",
+          link: "https://www.bedbathandbeyond.com.mx/top-articulos-que-debes-tener-de-simply-essential",
+          kindpost: 2,
+          date: "Octubre 6,2021",
+        },
+        {
+          id: 9,
+          title: "todos a la mesa con Our table",
+          category: ["cocina", "recámara", "baño"],
+          description: "comienza con comida. Termina con amor.",
+          imgurl:
+            "https://www.bedbathandbeyond.com.mx/media/blog/OUR_TABLE.jpg?rand=1625837535",
+          link: "https://www.bedbathandbeyond.com.mx/our-table",
+          kindpost: 2,
+          date: "Octubre 6,2021",
+        },
+      ];
+      //Create items
+      window.onload = () => {
+        for (const [key, value] of Object.entries(post)) {
+          if (value.kindpost !== 1) {
+            //Container card
+            var item = document.createElement("div");
+            item.id = `item${key}`;
+            item.className =
+              value.kindpost === 2 ? "item-grid border-high" : "item-grid";
+            document.getElementById("Mansory").appendChild(item);
+
+            //link post
+            var link = document.createElement("a");
+            link.id = `link${key}`;
+            link.href = `${value.link}`;
+            document.getElementById(item.id).appendChild(link);
+
+            //wrap item
+            var wrapitem = document.createElement("div");
+            wrapitem.id = `wrap${key}`;
+            wrapitem.className = "wrap-item";
+            document.getElementById(link.id).appendChild(wrapitem);
+
+            //wrap image
+            var wrapimg = document.createElement("div");
+            wrapimg.id = `wrapimg${key}`;
+            wrapimg.className = "wrap-img";
+            document.getElementById(wrapitem.id).appendChild(wrapimg);
+
+            //img
+            var imgpost = document.createElement("img");
+            imgpost.id = `img${key}`;
+            imgpost.src = `${value.imgurl}`;
+            imgpost.alt = `${value.title}`;
+            document.getElementById(wrapimg.id).appendChild(imgpost);
+
+            //description
+            var wrapdesc = document.createElement("div");
+            wrapdesc.id = `description${key}`;
+            wrapdesc.className = "wrap-description";
+            document.getElementById(wrapitem.id).appendChild(wrapdesc);
+
+            var titlepost = document.createElement("h2");
+            titlepost.id = `title${key}`;
+            titlepost.innerHTML = `${value.title}`;
+            document.getElementById(wrapdesc.id).appendChild(titlepost);
+
+            var wrapcat = document.createElement("div");
+            wrapcat.id = `wrap-cat${key}`;
+            wrapcat.className = "wrap-cat";
+            document.getElementById(wrapdesc.id).appendChild(wrapcat);
+
+            for (const cat of value.category) {
+              var findlink = datacat.find((element) => element.name === cat);
+              var category = document.createElement("p");
+              category.id = `${key}_${cat}`;
+              document.getElementById(wrapcat.id).appendChild(category);
+
+              var linkcat = document.createElement("a");
+              linkcat.id = `link${key}${cat}`;
+              linkcat.target = "_blank";
+              linkcat.href = findlink
+                ? `${findlink.link}`
+                : "https://www.bedbathandbeyond.com.mx/blog";
+              linkcat.innerHTML = `${cat}`;
+              document.getElementById(category.id).appendChild(linkcat);
+            }
+
+            var textdescribe = document.createElement("p");
+            textdescribe.id = `textdesc${key}`;
+            textdescribe.innerHTML = `${value.description}`;
+            textdescribe.className = "description";
+            document.getElementById(wrapdesc.id).appendChild(textdescribe);
+
+            var date = document.createElement("p");
+            date.id = `date${key}`;
+            date.innerHTML = `${value.date}`;
+            date.className = "date-txt";
+            document.getElementById(wrapdesc.id).appendChild(date);
+
+            var btn = document.createElement("p");
+            btn.id = `btn${key}`;
+            btn.innerHTML = "ver más";
+            document.getElementById(wrapdesc.id).appendChild(btn);
+          } else if (value.kindpost === 1) {
+            const imgPost = document.getElementById("imgDay");
+            const titlePost = document.getElementById("titleDay");
+            const descPost = document.getElementById("descDay");
+            const linkDay = document.getElementById("linkDay");
+            const postDay = document.getElementById("postDay");
+            const dateDay = document.getElementById("dateDay");
+
+            if (imgPost) {
+              imgPost.src = `${value.imgurl}`;
+              postDay.style.backgroundImage = `url(${value.imgurl})`;
+              titlePost.innerHTML = `${value.title}`;
+              dateDay.innerHTML = `${value.date}`;
+              descDay.innerHTML = `${value.description}`;
+              linkDay.href = `${value.link}`;
+            }
+          }
+        }
+      };
+    </script>
+
+    <script>
+      //facebook
+      (function (d, s, id) {
+        console.log(d, s, id);
+        var js,
+          fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s);
+        js.id = id;
+        js.src =
+          "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      })(document, "script", "facebook-jssdk");
+    </script>
+
+    <!-- Your share button code -->
+    <div
+      class="fb-share-button"
+      data-href="https://www.bedbathandbeyond.com.mx/blog"
+      data-layout="button_count"
+    ></div>
+
+    <meta
+      property="og:url"
+      content="https://www.bedbathandbeyond.com.mx/landing-test"
+    />
+    <meta property="og:type" content="Bed Bath and Beyond México" />
+    <meta property="og:title" content="Bed Bath and Beyond México" />
+    <meta property="og:description" content="Bed Bath and Beyond México" />
+    <meta
+      property="og:image"
+      content="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Varios_tama_os_LISTO.jpg"
+    />
+  </head>
+  <body>
+    <!-- Main Post -->
+    <section>
+      <div id="postDay" class="wrap-postday">
+        <a id="linkDay" href="" target="_self">
+          <img id="imgDay" src="" />
+          <div class="wrap-post-description">
+            <h2 id="titleDay"></h2>
+            <p id="dateDay"></p>
+            <p id="descDay"></p>
+            <p class="btn-post-day">leer más</p>
+            <div id="fb-root"></div>
+          </div>
+        </a>
+      </div>
+    </section>
+    <!-- Post -->
+    <section id="lastPost">
+      <h2 class="subtitles">lo más reciente</h2>
+      <div id="Mansory" class="wrap-mansory"></div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+     <style>
+         .imgsize{
+             width: 400px;
+             height: auto;
+         }
+         #cf {
+            position:relative;
+            height:281px;
+            width:450px;
+            margin:0 auto;
+            }
+
+            #cf img {
+            position:absolute;
+            left:0;
+            -webkit-transition: opacity 1s ease-in-out;
+            -moz-transition: opacity 1s ease-in-out;
+            -o-transition: opacity 1s ease-in-out;
+            transition: opacity 1s ease-in-out;
+            
+            }
+
+            #cf img.top:hover {
+            opacity:0;
+            }
+
+            @keyframes cf4FadeInOut {
+                0% {
+                    opacity:1;
+                }
+                17% {
+                    opacity:1;
+                }
+                25% {
+                    opacity:0;
+                }
+                92% {
+                    opacity:0;
+                }
+                100% {
+                    opacity:1;
+                }
+                }
+
+                #cf4a img:nth-of-type(1) {
+                animation-delay: 6s;
+                }
+                #cf4a img:nth-of-type(2) {
+                animation-delay: 4s;
+                }
+                #cf4a img:nth-of-type(3) {
+                animation-delay: 2s;
+                }
+                #cf4a img:nth-of-type(4) {
+                animation-delay: 0;
+}
+    </style>
+
+<header>
+
+</header>
+   
+<html>
+    <body>
+        <div id="cf">
+            <img class="bottom imgsize" src="https://www.bedbathandbeyond.com.mx/media/nacionales/67890682-2_1.jpeg?$imagePLP$&hei=700&wid=700" />
+            <img class="top imgsize" src="https://www.bedbathandbeyond.com.mx/media/nacionales/67890682-9_1.jpeg?$imagePLP$&hei=700&wid=700" />
+          </div>
+    </body>
+</html>

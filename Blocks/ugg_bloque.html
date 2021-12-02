@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .page-title-wrapper {
+			display: none !important;
+		}
+        #banner_header{
+            background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/bano/ugg-banner-bano.jpg?rand=1624632732');
+            width: 100%;
+            height: 300px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .bg_blue{
+            background-color: #b3bac1;
+        }
+        .category_contain{
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; 
+            margin-top: 10px;
+            flex-flow: row;
+        }
+        .category_item{
+            width: 120px;
+            height: 160px;
+            margin: 0 10px;
+            text-align: center;
+            font-weight: 600;
+        }
+        .category_item img {
+            width: 100px;
+            height: 100px;
+            box-shadow: rgb(99 99 99 / 20%) 0px 2px 8px 0px;
+            border: 2px solid #b3bac1;
+        }
+           /*Zoom Animation*/
+    #containerimgc {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+    }
+    #containerimgc img {
+      display: block;
+      transition: transform 0.5s; /* smoother zoom */
+    }
+    #containerimgc:hover img {
+      transform: scale(1.1);
+      transform-origin: 50% 50%;
+    }
+          /*Responsive */
+    @media (max-width: 767px) {
+        #banner_header{
+            background-size: contain;
+            height: 100px;
+        }
+    
+        .category_item {
+            width: 80px;
+            height: auto;
+            margin: 24px 2px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 11px;
+            line-height: 1
+        }
+        .category_item img {
+            width: 60px;
+            height: 60px;
+        } 
+    }
+    </style>   
+ 
+<body>
+    <section id="mainbanner">
+        <div id="banner_header"></div>
+    </section>
+    <section>
+        <div class="category_contain">
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg/bano.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-01-27-10-12_morgan_lotiondispenser_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>baño</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg/decoracion.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-10-14-35_tessablackout_charcoal_windowpanel_lifestyle_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>decoración</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg/mascotas-viajes-y-mas.html" target="_self">
+                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-16-14-05_unecktravel_charcoal_pillow_silo_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>mascotas viajes y más</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg/organizacion.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/22107285200263m?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>organización</p>
+                </a>
+            </div>
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg/recamara.html" target="_self">
+                    <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/357581769497714p?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>recámara</p>
+                </a>
+            </div> 
+            <div id="containerimgc" class="category_item">
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/ugg/tecnologia.html" target="_self">
+                    <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-11-15-19_miley_lap_pouf_sil_imageset?$imagePLP$&hei=300&wid=260" alt="" />
+                    <p>tecnología</p>
+                </a>
+            </div>            
+        </div>
+    </section>
+
+</body>
+	
+</html>

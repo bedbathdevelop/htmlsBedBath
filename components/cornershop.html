@@ -1,0 +1,277 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cornershop</title>
+</head>
+<style>
+    a {
+        text-decoration: none;
+    }
+    .wrap-flex{
+        display: flex;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+    }
+    .logo_corner{
+        width: 300px;
+    }
+    .wrap-corner{
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+    }
+    .item-corner{
+        width: 50%;
+        height: 200px;
+        text-align: center;
+        justify-content: center;
+        display: block;
+    }
+    .item-corner h2 {
+        padding-top: 30px;
+        color: #1a4e8a;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+        font-size: 2.8rem !important;
+    }
+    .high_text{
+        color: #ff0026  !important;
+    }
+    .bg1{
+        background-color: tomato;
+    }
+    .wrap-function{
+        display: flex;
+        flex-wrap: wrap;
+        overflow: hidden;
+        width: 100%;
+
+    }
+    .item-function{
+        border: 1px solid #e6e2e2;
+        padding: 10px;
+        width: 20%;
+        margin: 10px 10px;
+        border-radius: 5px;
+    }
+    .number-tab{
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 32px;
+        width: 84px;
+        height: 84px;
+        line-height: 84px;
+        font-size: 42px;
+        font-weight: 500;
+        border-radius: 8px;
+        color: white;
+        text-align: center;
+        font-weight: 900;
+    }
+    .color-red{
+        border: 2px solid #ff000e;
+        background: #ff0a17
+    }
+    .color-yellow{
+        border: 2px solid #f58900;
+        background: #ff8f00;
+    }
+    .color-green {
+        border: 2px solid #00d44e;
+        background: #00de52;
+    }
+    .color-blue {
+        border: 2px solid #1a4e8a;
+        background: #1a4e8a
+    }
+    .wrap-logo{
+        background-color: #1a4e8a;
+        width: 100px;
+        height: 100px;
+        display: inline-flex;
+        border-radius: .5rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        margin-bottom: 1.5rem;
+    }
+    .wrap-logo img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+    #banner-corner{
+        overflow: hidden;
+        width: 100%;
+        height: auto;
+        position: relative;
+        background: #efedeb;
+    }
+    #banner-corner .subtitle{
+        position: absolute;
+        top: 80px;
+        right: 110px;
+        position: absolute;
+        z-index: 1;
+        color: #ff0026;
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+        width: 600px;
+        height: auto;
+        font-size: 2.6rem;
+        line-height: 1;
+    }
+    .btn-corner{
+        background: #FF404C;
+        color: #fff;
+        min-width: 140px;
+        display: inline-flex;
+        letter-spacing: 0.02em;
+        text-decoration: none;
+        font-size: 1.5rem;
+        font-weight: 600;
+        box-shadow: inset 0px 0px 0px 1px transparent;
+        outline: none;
+        border: none;
+        font-family: inherit;
+        border-radius: .5rem;
+        padding: 0.5rem 1rem;
+        transition: box-shadow .2s ease-out;
+        margin: 0rem 1rem;
+        box-sizing: border-box;
+        text-align: center;
+        justify-content: center;
+    }
+    .btn-corner:hover{
+        background: #117dcf;
+    }
+    .subttile{
+        font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+        font-size: 16px;
+        color:#1a4e8a;
+        text-align: center;
+    }
+    .description{
+        font-size: 13px;
+    }
+    @media (max-width: 991px) { 
+        .item-corner{
+            width: 100%;
+            flex-wrap: wrap;
+        }
+        .item-corner h2{
+            font-size: 2rem !important;
+            padding: 30px 10px;
+        }
+        #banner-corner .subtitle{
+            top: 50px;
+            right: 10px;
+            position: absolute;
+            z-index: 1;
+            color: #ff0026;
+            font-family: "Termina-Bold","Trebuchet MS",Arial,sans-serif !important;
+            width: 240px;
+            height: auto;
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+        .number-tab{
+            width: 54px;
+            height: 54px;
+            line-height: 1;
+        }
+        .item-function {
+            border: 1px solid #e6e2e2;
+            padding: 10px;
+            width: 40%;
+            margin: 10px 3px;
+            border-radius: 5px;
+        }
+        .wrap-flex{
+            display: block !important;
+        }
+        .item-corner{
+            height: 160px !important;
+        }
+        #banner-corner {
+            height: 200px;
+            position: relative;
+            background: #efedeb;
+        }
+    }
+</style>
+<body>
+<section>
+    <div class="wrap-corner">
+        <p><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/1c86bfb3-cab0-4255-99bf-24c5488d888a-1613139590958.png?rand=1626656673" alt="Cornershop BedBathandBeyond"  class="logo_corner"/></p>
+        <div class="wrap-flex">
+            <div class="item-corner">
+                <h2>Tus pedidos en Bed Bath & Beyond en la puerta de tu casa en <span class="high_text"> 60 minutos </span>con Cornershop.</h2>
+            </div>
+            <div class="item-corner">
+                <div class="wrap-logo">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/logo_bb_b_blanco.png?rand=1626658528" alt="bedbath" />
+                </div><br>
+                <a href="https://web.cornershopapp.com/store/3393/featured?_ga=2.147222263.1742147673.1626655834-2120055844.1626210089&_gl=1*uxiadz*_ga*MjEyMDA1NTg0NC4xNjI2MjEwMDg5*_ga_GLLJJH6JCR*MTYyNjY1NTgzMy4yLjEuMTYyNjY1NzQxMS4w*_ga_E1NRR06VLJ*MTYyNjY1NTg0Ny4yLjEuMTYyNjY1NzQxMS4w" target="_blank">
+                    <div class="btn-corner">Abrir en Cornershop</div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Banner -->
+<section id="banner-corner">
+    <p><img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/Dise_o_sin_t_tulo_25_.jpg?rand=1626657308" alt="image"></p>
+    <p class="subtitle">Cornershop lleva tus pedidos de Bed Bath & Beyond hasta la comodidad de tu hogar en el lugar que mejor te convenga.</p>
+</section>
+
+<!-- Cómo funciona-->
+<section>
+    <div class="wrap-function">
+        <div class="item-function">
+            <div class="number-tab color-red">1</div>
+            <h2 class="subttile">Descarga la aplicación de Cornershop en tu celular.</h2>
+            <p class="description"> Necesitas crear una cuenta Cornershop con tu nombre, dirección, teléfono y método de pago.</p>
+        </div>
+        <div class="item-function">
+            <div class="number-tab color-yellow">2</div>
+            <h2 class="subttile">Dependiendo de tu dirección, podrás ver si hay un Bed Bath & Beyond cercano.</h2>
+            <p class="description"> Nos encontramos en Ciudad de México y Área Metropolitana, Metepec, Cuernavaca, Morelia, Guadalajara y Puebla.</p>
+        </div>
+        <div class="item-function">
+            <div class="number-tab color-green">3</div>
+            <h2 class="subttile">Ahora puedrás explorar los diferentes pasillos</h2>
+            <p class="description">También puedes usar la barra de búsqueda para agregar los productos a tu carrito. Encuentra los mismos precios que en la tienda física.</p>
+        </div>
+        <div class="item-function">
+            <div class="number-tab color-blue">4</div>
+            <h2 class="subttile">Si das clic en tu carrito</h2>
+            <p class="description">Podrás ver los detalles de tu pedido como el listado de productos, cantidades y precio. Cuando hayas agregado todos los productos, selecciona el botón ‘Hacer pedido’, el cual aparece debajo de tu lista de productos. Elige el horario de entrega.</p>
+        </div>
+        <div class="item-function">
+            <div class="number-tab color-red">5</div>
+            <h2 class="subttile">Se te pedirá confirmar el monto y método de pago</h2>
+            <p class="description">Y recibirás un email de confirmación sobre tu pedido. Un Shopper hará las compras por ti y llevará tu pedido a la dirección que hayas ingresado.</p>
+        </div>
+        <div class="item-function"> 
+            <div class="number-tab color-yellow">6</div>
+            <h2 class="subttile">Puedes revisar el status de tu pedido dentro de la app o en web.</h2>
+            <p class="description"> Por ejemplo, puedes saber si el Shopper asignado ya está en la tienda, pagando, camino a tu casa, o si ya llegó.</p>
+        </div>
+        <div class="item-function">
+            <div class="number-tab color-green">7</div>
+            <h2 class="subttile">El Shopper te llamará si uno de los productos no está disponible</h2>
+            <p class="description">Para ofrecerte posibles reemplazos, o simplemente para saber si deseas agregar algo que hayas olvidado o que recordaste a última hora. También el Shopper podría llamarte si necesitamos información adicional para encontrar tu dirección.</p>
+        </div>
+        <div class="item-function">
+            <div class="number-tab color-blue">8</div>
+            <h2 class="subttile">Listo</h2>
+            <p class="description"> ¿Cómo vas a aprovechar tu nuevo tiempo libre?</p>
+        </div>
+    </div>
+</section>
+</body>
+</html>

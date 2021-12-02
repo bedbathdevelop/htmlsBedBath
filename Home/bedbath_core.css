@@ -1,0 +1,21 @@
+.btn-ver{
+    background-color: #fa3a3d;
+    color:#f3ff03;
+    font-weight: 600;
+    font-size: 20px;
+    border:4px solid #881410;
+    padding: 5px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    margin-left: 100px;
+}
+.btn-ver:hover{
+    background-color: #1a4e8a;
+    color:#fff;
+    font-weight: 600;
+    font-size: 20px;
+    border:2px solid #002855;
+    padding: 5px;
+    border-radius: 5px;
+}

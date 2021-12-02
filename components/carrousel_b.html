@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>carrousel Bed Bad</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+  <style>
+    a {
+      text-decoration: none;
+    }
+  .controls {
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: rgba(0,0,0,.2);
+  }
+  .left {
+    float: left;
+  }
+  .right {
+    float: right;
+  }
+
+  .controls:hover {
+    background-color: rgba(0,0,0,.5);
+  }
+  .item {
+    width: 33.33%;
+    height: 200px;
+    float: left;
+    color: #fff;
+    font-size: 40px;
+    text-align: center;
+    padding-top: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s all;
+    /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+  }
+  .cont {
+    position: absolute;
+    width: 1100px;
+    margin-top: 190px;
+  }
+  .tapa {
+    width: 100%;
+    transition: .9s all;
+  }
+  .item img {
+    width: 50%;
+    margin-top: 20px;
+  }
+  .item:hover {
+    margin-top: -5px;
+  }
+
+  /*Products Carrousel*/
+  .carrousel {
+    width: 100%;
+    margin: auto;
+    height: 450px;
+    overflow:hidden;
+    text-align: center;
+    line-height: 1;
+  }
+  .carousel-price {
+    font: 300 25px/0.5 Effra,Helvetica,Arial,sans-serif;
+    text-align: center;
+    font-weight: 900;
+    color: #000;
+  }
+  .carousel-des {
+    font-size: 12px;
+    line-height: 1;
+    font-family:Effra,Helvetica,Arial,sans-serif ;
+    color: #000;
+    padding: 0 5%;
+  }
+  .carosuel-raiting {
+    color:#1377C9;
+    margin-top: 2%;
+    font-size: 22px;
+  }
+  /*Star component*/
+  .container-star {
+    width: 100%;
+    overflow: hidden;
+    display: inline-block;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .clip-star {
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    float: left;
+  }
+  .active {
+    background: #1377C9;
+  }
+  .disable {
+    background: rgb(237, 237, 237);
+  }
+  .num-star {
+    font-size: 15px;
+    float: left;
+    margin-left: 2%;
+  }
+  .mobile-slider {
+      display: none;
+    }
+
+    #container {
+      width: 500px;
+      margin: auto !important;
+      display: block;
+      height: 500px;
+      position: relative;
+      list-style-type: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    .product {
+      display: none;
+      background: #fff;
+      color: #fff;
+      padding: 20px;
+      width: 360px;
+      height: 360px;
+      top: 50px;
+      left: 50px;
+      position: absolute;
+      cursor: hand;
+    }
+    .rotate-left {
+      transform: rotate(30deg) scale(0.8);
+      transition: 1s;
+      margin-left: 400px;
+      cursor: e-resize;
+      opacity: 0;
+      z-index: 10;
+    }
+    .rotate-right {
+      transform: rotate(-30deg) scale(0.8);
+      transition: 1s;
+      opacity: 0;
+      margin-left: -400px;
+      cursor: w-resize;
+      z-index: 10;
+    }
+  @media (max-width: 991px) { 
+    .desktop-slider {
+      display: none;
+    }
+    .mobile-slider {
+      display: block;
+    }
+    .mobile-img {
+      margin: 0 20% !important;
+    }
+      
+  }
+  </style>
+  <script>
+  $(document).ready(function(){
+
+    $(".product").on("swiperight",function(){
+      $(this).addClass('rotate-left').delay(700).fadeOut(1);
+      $('.product').find('.status').remove();
+        
+      if ( $(this).is(':last-child') ) {
+        $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+      } else {
+          $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
+      }
+    });  
+
+    $(".product").on("swipeleft",function(){
+    $(this).addClass('rotate-right').delay(700).fadeOut(1);
+    $('.product').find('.status').remove();
+
+    if ( $(this).is(':last-child') ) {
+    $('.product:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
+    } else {
+        $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
+    } 
+    });
+
+});
+
+  </script>
+</head>
+<body>
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/espejo-antiempanante-con-led-blanco-69597639.html" target="_self">
+          <img src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-07-07-16-52_primary_zwtar20s_oblique_w_squeegee_imageset">
+          <p class="carousel-price">$1,170.00</p>
+          <p class="carousel-des">Espejo antiempañante Haven™ con luces LED, 22.86 x 17.78 cm en blanco</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">80</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/cepillo-de-madera-haventm-de-teca-para-pies-2-en-1.html" target="_self">
+          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/444800350543_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 400.00</p>
+          <p class="carousel-des">Cepillo de madera Haven™ de teca para pies 2 en 1</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">300</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/tapete-bano-haven-wave-color-gris-niebla-69627619.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/105082860436290p?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 500.00</p>
+          <p class="carousel-des">Tapete para baño Haven™ Wave color gris niebla</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">450</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mira Abajo -->
+
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/ganchos-para-cortina-de-bano-haven-color-cromado-69644516.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-11-09-01-11_jr-hook04_02_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 300.00</p>
+          <p class="carousel-des">Ganchos para cortina de baño Haven™ color cromado</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">120</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/cortina-haven-escondido-1-82-x-1-82-m-cafe-69496841.html" target="_self">
+          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/373624069496841p?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 1,000.00</p>
+          <p class="carousel-des">Cortina de baño Haven™ Escondido de 1.82 x 1.82 m en café pardo</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">400</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/bata-para-bano-grande-extragrande-haven-waffle-color-gris-roca-69624847.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-03-15-56_846756061328_1_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 1,800.00</p>
+          <p class="carousel-des">Bata de baño grande/extragrande Haven™ Waffle color gris roca</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="num-star">500</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- Pequeños detalles hacen la diferencia-->
+
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/tapete-para-bano-haven-terry-de-algodon-organico-color-indigo-69630721.html" target="_self">
+          <img src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2021-02-12-20-01_846756062516_1_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 500.00</p>
+          <p class="carousel-des">Tapete para baño Haven™ Terry color índigo</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">120</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/bata-de-bano-grande-extragrande-haven-waffle-69624845.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-03-15-56_846756061304_1_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 1,800.00</p>
+          <p class="carousel-des">Bata de baño grande/extragrande Haven™ Waffle</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">400</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/pantuflas-extra-grandes-haven-criss-cross-color-blanco-brillante-69623413.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-09-28-05-35_brightwhite?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 400.00</p>
+          <p class="carousel-des">Pantuflas extra grandes Haven™ Criss Cross color blanco brillante</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="num-star">500</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Las Toallas -->
+
+  <div class="carrousel desktop-slider">
+    <div class="tapa" id="move">
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/toalla-para-manos-haven-waffle-and-terry-color-gris-claro-69619387.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-05-08-11_greydownhand_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 400.00</p>
+          <p class="carousel-des">Toalla para manos Haven™ Waffle & Terry color gris claro</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">120</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/toalla-de-bano-haven-de-algodon-turco-color-lila-marmol-69627514.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-03-19-14-41_ll_122620_haven_turkish_0494_2_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 1,050.00</p>
+          <p class="carousel-des">Toalla de baño Haven™ color lila mármol</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="clip-star disable"></div>
+            <div class="num-star">200</div>
+          </div>
+        </a>
+      </div>
+      <div class="item">
+        <a href="https://www.bedbathandbeyond.com.mx/toalla-de-medio-bano-haven-terry-color-gris-niebla-69630694.html" target="_self">
+          <img src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2021-02-12-20-01_846756062332_1_imageset?$imagePLP$&hei=700&wid=700">
+          <p class="carousel-price">$ 320.00</p>
+          <p class="carousel-des">Toalla para manos Haven™ Terry color gris niebla</p>
+          <div class="container-star">
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="clip-star active"></div>
+            <div class="num-star">500</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

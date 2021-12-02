@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contador</title>
+    <style>
+    .container--timer {
+        margin: 0 auto;
+        text-align: center;
+        line-height: 1;
+        overflow: hidden;
+        text-align: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        color:#fff;
+        padding: 10px 0 10px 0;
+        background-color: #002854; /*background*/
+      }
+      .ofertitle--main {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        width: 90%;
+        font-size: 1.5rem !important;
+        padding: 20px 10%;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        margin-top: 10px;
+        color:#fff !important;
+        line-height: 1.2 !important;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .text-right {
+        text-align: left;
+      }
+      .color-bed {
+        color: #117dcf;
+      }
+      .color-red-bed {
+        font-weight: 900;
+        color: #f52b42;
+      }
+      .ofertitle--main-m,
+      .ofertitle-m {
+        display: none;
+      }
+      .daydiv {
+        width: auto;
+        height: 60px;
+        float: left;
+        font-size: 30px;
+        font-weight: 900;
+        padding: 0px 5px;
+        margin: 2px;
+        text-align: center;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        background-color: #fff;
+        border: 2px solid #cdcfd0;
+        border-radius: 5px;
+      }
+      .daydiv span {
+        font-weight: 900;
+        font-size: 25px;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      .timer--complete {
+        overflow: hidden;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        justify-content: center;
+        background-color: var(--azul-bbb-strong);
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(222, 209, 222, 1);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(222, 209, 222, 1);
+        box-shadow: 0px 0px 5px 0px rgba(222, 209, 222, 1);
+      }
+      .item--timer:nth-child(1) {
+        width: 30%;
+        overflow: hidden;
+        text-align: right;
+      }
+      .item--timer:nth-child(2) {
+        width: 30%;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        padding-top: 8px;
+      }
+      .item--timer:nth-child(3) {
+        width: 40%;
+        overflow: hidden;
+        text-align: left;
+      }
+      .dots-clock {
+        font-weight: 900;
+        margin-top: 20px;
+        font-size: 30px;
+      }
+      .num-high {
+        font-weight: 900;
+        padding: 0 10px;
+        margin-top: 10px;
+        color: #002854;
+      }
+      .btn--timmer {
+        color: #147bd1;
+        border: 4px solid #147bd1;
+        border-radius: 5px;
+        width: 200px;
+        padding: 10px 0;
+        margin-top: 25px;
+        font-family: "Effra", "Montserrat-Regular", "Helvetica", Arial,
+          sans-serif;
+        font-weight: 900;
+      }
+      .btn--timmer:hover {
+        background-color: #147bd1;
+        color: #fff;
+      }
+      .text-days {
+        font-size: 12px;
+        margin-top: -5px;
+        color: var(--aniversario-azul) !important;
+      }
+      .message {
+        font-size: 4rem;
+        display: none;
+        padding: 1rem;
+      }
+
+      .emoji {
+        padding: 0 0.25rem;
+      }
+
+      .floating {
+        animation-name: floating;
+        -webkit-animation-name: floating;
+
+        animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes floating {
+        0% {
+          transform: translateY(0%);
+        }
+        50% {
+          transform: translateY(8%);
+        }
+        100% {
+          transform: translateY(0%);
+        }
+      }
+
+      @-webkit-keyframes floating {
+        0% {
+          -webkit-transform: translateY(0%);
+        }
+        50% {
+          -webkit-transform: translateY(8%);
+        }
+        100% {
+          -webkit-transform: translateY(0%);
+        }
+      } 
+    </style>
+
+    <script>
+/*funcionalidad, modifica la fecha con un día posterior al threshold*/
+        (function () {
+            const second = 1000,
+                    minute = second * 60,
+                    hour = minute * 60,
+                    day = hour * 24;
+
+            let birthday = "Nov 30, 2021 00:00:00",
+                countDown = new Date(birthday).getTime(),
+                x = setInterval(function() {    
+
+                    let now = new Date().getTime(),
+                        distance = countDown - now;
+
+                    document.getElementById("days").innerText = Math.floor(distance / (day)),
+                    document.getElementById("hours").innerText = Math.floor((distance % (day)) / (hour)),
+                    document.getElementById("minutes").innerText = Math.floor((distance % (hour)) / (minute)),
+                    document.getElementById("seconds").innerText = Math.floor((distance % (minute)) / second);
+
+                    //do something later when date is reached
+                    if (distance < 0) {
+                    let headline = document.getElementById("headline"),
+                        countdown = document.getElementById("countdown"),
+                        content = document.getElementById("contentcomment");
+
+                    headline.innerText = "Oferta lista";
+                    countdown.style.display = "none";
+                    content.style.display = "block";
+
+                    clearInterval(x);
+                    }
+                    //seconds
+                    }, 0)
+    }());
+    </script>
+  </head>
+  <body>
+
+            <!-- COUNTDOWN -->
+            <section id="countdonw">
+                <div class="container--timer">
+                  <div class="timer--complete">
+                      <div class="item--timer">
+                        <h3 class="ofertitle--main"><span class="text__cyber">¡que no te ganen!</span> quedan</h3>
+                      </div>
+                      <div class="item--timer">
+                        <div class="daydiv">
+                          <p id="days" class="num-high"></p><p class="text-days">DÍAS</p>
+                        </div> 
+                        <div class="daydiv">
+                          <p id="hours" class="num-high"></p><p class="text-days">HORAS</p>
+                        </div>
+                        <div class="daydiv">
+                          <p id="minutes" class="num-high"></p><p class="text-days">MIN</p>
+                        </div>
+                        <div class="daydiv">
+                          <p id="seconds" class="num-high"></p><p class="text-days">SEG</p>
+                        </div>
+                      </div>
+                      <div class="item--timer">
+                        <h3 class="ofertitle--main second--text"><span>para que termine <span class="text__cyber">cyberweekend</span></h3>
+                      </div>
+                  </div>
+              
+                  <div class="message">
+                      <div id="contentcomment">
+                          <span class="emoji">:)</span>
+                          <span class="emoji">:)</span>
+                          <span class="emoji">:)</span>
+                      </div>
+                  </div>
+                </div>
+              </section>
+              <!-- FIN COUNTDOWN -->
+  </body>
+</html>

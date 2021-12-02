@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+
+    <style>
+      .page-title-wrapper {
+        display: none !important;
+      }
+      .wrap-pride {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .container_pride {
+        width: 100%;
+        height: 150px;
+      }
+      .container_pride .color {
+        height: 10px;
+      }
+      .container-btn-bed {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        height: 60px;
+      }
+      .btn-bed .img-arrow {
+        width: 50px;
+        height: auto;
+        position: absolute;
+        right: 10px;
+      }
+      .color div {
+        height: 10px;
+        width: 0;
+      }
+      .red {
+        background: #f25774;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+      }
+
+      .orange {
+        background: #ffb65b;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.1s;
+      }
+
+      .yellow {
+        background: #fdda74;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.2s;
+      }
+
+      .green {
+        background: #4cbe5d;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.3s;
+      }
+
+      .blue {
+        background: #4080ff;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.4s;
+      }
+
+      .purple {
+        background: #7b64c0;
+        animation-name: slide;
+        animation-duration: 4.5s;
+        animation-iteration-count: infinite;
+        animation-delay: 0.5s;
+      }
+
+      @keyframes slide {
+        10% {
+          width: 0;
+          float: left;
+        }
+        37% {
+          width: 100%;
+          float: left;
+        }
+        63% {
+          width: 100%;
+          float: right;
+        }
+        90% {
+          width: 0;
+          float: right;
+        }
+      }
+      #categorias {
+        overflow: hidden;
+        position: relative;
+        height: 50px;
+      }
+      .title {
+        position: absolute;
+        right: 5%;
+        color: #fff;
+        bottom: 2%;
+        font-size: 45px;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      @media (max-width: 991px) {
+        #categoryPride {
+          position: absolute;
+          top: 0;
+          overflow: scroll;
+        }
+        .circle-item {
+          width: 60px;
+          height: 60px;
+        }
+        .flex-item {
+          width: 80px;
+          height: 80px;
+          font-size: 10px;
+          margin: 5px 1px;
+        }
+        .circle-item img {
+          width: 60px;
+          height: 60px;
+        }
+        #categorias {
+          margin-top: -10px;
+          height: 50px;
+        }
+        .title {
+          font-size: 15px;
+        }
+        .btn-bed .img-arrow {
+          width: 30px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <a
+        href="https://www.bedbathandbeyond.com.mx/tienda/pride-day.html"
+        target="_self"
+      >
+        <div class="wrap-pride">
+          <img
+            src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-pride-25jun_1_.jpeg"
+            alt="Pride BedBathandBeyond"
+          />
+          <p class="title">cocina</p>
+        </div>
+      </a>
+    </section>
+    <section id="categorias">
+      <div class="container_pride">
+        <div class="color">
+          <div class="red"></div>
+        </div>
+        <div class="color">
+          <div class="orange"></div>
+        </div>
+        <div class="color">
+          <div class="yellow"></div>
+        </div>
+        <div class="color">
+          <div class="green"></div>
+        </div>
+        <div class="color">
+          <div class="blue"></div>
+        </div>
+        <div class="color">
+          <div class="purple"></div>
+        </div>
+      </div>
+    </section>
+    <section class="container-btn-bed">
+      <a
+        href="https://www.bedbathandbeyond.com.mx/tienda/pride-day.html"
+        target="_self"
+      >
+        <div class="btn-bed">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/back-arrow.png?rand=1621466458"
+            class="img-arrow"
+          />
+        </div>
+      </a>
+    </section>
+  </body>
+</html>

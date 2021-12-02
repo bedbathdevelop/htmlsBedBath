@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid 5 elementos</title>
+
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --haven: #90a996;
+        --nestwell: #94adc1;
+        --simply: #1a4e8a;
+        --ugg: #b2bbc0;
+        --ourtable: #ea971e;
+        --wildsage: #706fae;
+      }
+      .wrap-five {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 50% 25% 25%;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "mainphoto cocina zapateras"
+          "mainphoto percheros closets";
+        column-gap: 10px;
+      }
+      .item-five {
+        height: 300px;
+        overflow: hidden;
+        text-align: center;
+        font-family: var(--font-bedbath);
+        position: relative;
+      }
+      .item-five p {
+        color: var(--azul-bbb-strong);
+        font-size: 1rem;
+        line-height: 1;
+        margin-top: 1px;
+      }
+      .item-five .img-grid {
+        height: 250px;
+      }
+      .item-five:nth-child(1) {
+        grid-area: mainphoto;
+        height: 560px;
+        background-image: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-home-organizacion-6-sept.jpg?rand=1630613237");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: background 1s;
+      }
+      .item-five:nth-child(1):hover {
+        background-size: 120%;
+        background-position: left;
+      }
+      .item-five:nth-child(2) {
+        grid-area: cocina;
+      }
+      .item-five:nth-child(2) .img-grid {
+        background-image: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-orga-cocina-home-6-sept.jpg?rand=1630613237");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: background 1s;
+      }
+      .item-five:nth-child(2) .img-grid:hover {
+        background-size: 120%;
+        background-position: left;
+      }
+      .item-five:nth-child(3) {
+        grid-area: zapateras;
+      }
+      .item-five:nth-child(3) .img-grid {
+        background-image: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-orga-zapateras-home-6-sept.jpg?rand=1630613237");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: background 1s;
+      }
+      .item-five:nth-child(3) .img-grid:hover {
+        background-size: 120%;
+        background-position: left;
+      }
+      .item-five:nth-child(4) {
+        grid-area: percheros;
+      }
+      .item-five:nth-child(4) .img-grid {
+        background-image: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-orga-percheros-home-6-sept.jpg?rand=1630613237");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: background 1s;
+      }
+      .item-five:nth-child(4) .img-grid:hover {
+        background-size: 120%;
+        background-position: left;
+      }
+      .item-five:nth-child(5) {
+        grid-area: closets;
+      }
+      .item-five:nth-child(5) .img-grid {
+        grid-area: closets;
+        background-image: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-orga-closet-rack-home-6-sept.jpg?rand=1630613237");
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: background 1s;
+      }
+      .item-five:nth-child(5) .img-grid:hover {
+        background-size: 120%;
+        background-position: left;
+      }
+      .img-grid {
+        width: 100%;
+        overflow: hidden;
+      }
+      .img-grid img {
+        width: 100%;
+        height: auto;
+      }
+      .hotspot {
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        vertical-align: middle;
+        position: relative;
+      }
+      .hotspot .hot {
+        background-color: #fff;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        -webkit-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 2px 1px 5px 0px rgba(0, 0, 0, 0.75);
+        vertical-align: middle;
+        position: absolute;
+        top: 11px;
+      }
+
+      .pulse {
+        animation-name: pulse;
+        -webkit-animation-name: pulse;
+
+        animation-duration: 1.5s;
+        -webkit-animation-duration: 1.5s;
+
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(0.9);
+          opacity: 0.7;
+        }
+        50% {
+          transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          transform: scale(0.9);
+          opacity: 0.7;
+        }
+      }
+
+      @-webkit-keyframes pulse {
+        0% {
+          -webkit-transform: scale(0.95);
+          opacity: 0.7;
+        }
+        50% {
+          -webkit-transform: scale(1);
+          opacity: 1;
+        }
+        100% {
+          -webkit-transform: scale(0.95);
+          opacity: 0.7;
+        }
+      }
+      .description {
+        background-color: #fff;
+        width: 260px;
+        overflow: hidden;
+        border-radius: 10px;
+        padding: 5px 20px 5px 10px;
+        position: absolute;
+      }
+      .description-a {
+        width: 30%;
+        float: left;
+      }
+      .description-b {
+        width: 60%;
+        font-size: 12px;
+        float: left;
+        text-align: left;
+        line-height: 1;
+        padding-left: 20px;
+      }
+      .description-b p:nth-child(2) {
+        color: var(--aniversario-azul);
+      }
+      #hotspotA {
+        top: 150px;
+        left: 250px;
+        transition: transform 2s;
+      }
+      #commentA {
+        display: none;
+        top: 40%;
+        left: 30%;
+      }
+      #hotspotA:hover + #commentA {
+        display: block;
+      }
+      .frase {
+        background-color: #147bd1;
+        color: #fff;
+        padding: 10px;
+        width: auto;
+        font-size: 2.4rem;
+        bottom: 10%;
+        position: absolute;
+        text-align: left;
+        padding: 20px;
+      }
+
+      #hotspotB {
+        top: 60px;
+        left: 50px;
+        transition: transform 2s;
+      }
+      #commentB {
+        display: none;
+        top: 45%;
+        left: 10%;
+      }
+      #hotspotB:hover + #commentB {
+        display: block;
+      }
+      #hotspotC {
+        top: 60px;
+        left: 150px;
+        transition: transform 2s;
+      }
+      #commentC {
+        display: none;
+        top: 45%;
+        left: 10%;
+      }
+      #hotspotC:hover + #commentC {
+        display: block;
+      }
+      #hotspotD {
+        top: 60px;
+        left: 60px;
+        transition: transform 2s;
+      }
+      #commentD {
+        display: none;
+        top: 45%;
+        left: 10%;
+      }
+      #hotspotD:hover + #commentD {
+        display: block;
+      }
+      #hotspotE {
+        top: 60px;
+        left: 60px;
+        transition: transform 2s;
+      }
+      #commentE {
+        display: none;
+        top: 45%;
+        left: 10%;
+      }
+      #hotspotE:hover + #commentE {
+        display: block;
+      }
+      .wrap-complete {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      @media (max-width: 991px) {
+        .wrap-five {
+          width: 100%;
+          height: auto;
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: auto;
+          grid-template-areas:
+            "mainphoto mainphoto"
+            "cocina zapateras"
+            "percheros closets";
+          column-gap: 10px;
+        }
+      }
+      /*Responsive */
+      @media (max-width: 991px) {
+        .frase {
+          font-size: 1.4rem;
+        }
+        .item-five:nth-child(1) {
+          margin: 10px 0;
+          height: 260px;
+        }
+        #hotspotA {
+          top: 50px;
+          left: 150px;
+        }
+        #hotspotC {
+          top: 30px;
+          left: 50px;
+        }
+        #commentA {
+          display: block;
+          width: 50% !important;
+        }
+        #commentC,
+        #commentB,
+        #commentD,
+        #commentE {
+          display: none;
+          top: 35%;
+          left: 5%;
+        }
+        .description {
+          width: 80%;
+          padding: 5px;
+        }
+        .description-a {
+          width: 40%;
+        }
+        .description-b p {
+          color: var(--azul-bbb-strong);
+          font-size: 0.7rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section id="organizacion">
+      <div class="wrap-five">
+        <div class="item-five">
+          <div class="frase">¡organiza tu hogar!</div>
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/organizadores/cestos-y-canastas.html"
+            target="_self"
+          >
+            <div class="wrap-complete">
+              <div class="img-grid">
+                <div id="hotspotA" class="hotspot">
+                  <div class="hot pulse"></div>
+                </div>
+                <div id="commentA" class="description">
+                  <div class="description-a">
+                    <img
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/159160664120850p?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="description-b">
+                    <p>
+                      Canasta chica multiusos de plástico Starplast color gris
+                    </p>
+                    <p class="discount">$58.00 &#8594;</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="item-five">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/organizacion-de-cocina.html"
+            target="_self"
+          >
+            <div class="wrap-complete">
+              <div class="img-grid">
+                <div id="hotspotB" class="hotspot">
+                  <div class="hot pulse"></div>
+                </div>
+                <div id="commentB" class="description">
+                  <div class="description-a">
+                    <img
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-23-19-00_078915064509_imageset?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="description-b">
+                    <p>
+                      Contenedores de alimentos de acrílico Prepworks® ProKeeper
+                    </p>
+                    <p class="discount">$1,399.00 &#8594;</p>
+                  </div>
+                </div>
+              </div>
+              <p>organización de cocina</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-five">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/organizacion-de-cocina.html"
+            target="_self"
+          >
+            <div class="wrap-complete">
+              <div class="img-grid">
+                <a
+                  href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/zapatera.html"
+                  target="_self"
+                >
+                  <div id="hotspotC" class="hotspot">
+                    <div class="hot pulse"></div>
+                  </div>
+                  <div id="commentC" class="description">
+                    <div class="description-a">
+                      <img
+                        src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-12-28-14-31_430139_2_imageset?$imagePLP$&hei=700&wid=700"
+                        alt=""
+                      />
+                    </div>
+                    <div class="description-b">
+                      <p>
+                        Zapatera aglomerada Simply Essential™ apilable color
+                        blanco
+                      </p>
+                      <p class="discount">$500.00 &#8594;</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <p>zapateras</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-five">
+          <a
+            href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/organizacion-de-cocina.html"
+            target="_self"
+          >
+            <div class="wrap-complete">
+              <div class="img-grid">
+                <a
+                  href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/perchero.html"
+                  target="_self"
+                >
+                  <div id="hotspotD" class="hotspot">
+                    <div class="hot pulse"></div>
+                  </div>
+                  <div id="commentD" class="description">
+                    <div class="description-a">
+                      <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/83734245752681p?$imagePLP$&hei=700&wid=700"
+                        alt=""
+                      />
+                    </div>
+                    <div class="description-b">
+                      <p>
+                        Perchero de metal Studio 3B™ plegable para puerta color
+                        plateado
+                      </p>
+                      <p class="discount">$420.00 &#8594;</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <p>percheros</p>
+            </div>
+          </a>
+        </div>
+        <div class="item-five">
+          <a href="" target="_self">
+            <div class="img-grid">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/muebles/closets-y-racks.html"
+                target="_self"
+              >
+                <div id="hotspotE" class="hotspot">
+                  <div class="hot pulse"></div>
+                </div>
+                <div id="commentE" class="description">
+                  <div class="description-a">
+                    <img
+                      src="https://s7d2.scene7.com/is/image/BedBathandBeyond/256317967339938p__2?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="description-b">
+                    <p>
+                      Organizador de metal Relaxed Living® ajustable para clóset
+                    </p>
+                    <p class="discount">$848.00 &#8594;</p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <p>closets y racks</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

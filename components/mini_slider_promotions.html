@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <style>
+      main {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .controls {
+        padding: 10px;
+      }
+
+      .slides-container {
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        flex: 1;
+      }
+
+      .slide {
+        position: absolute;
+        font-size: 90px;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100vw;
+      }
+
+      .slides-inner {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var slideDelay = 1.5;
+        var slideDuration = 0.3;
+
+        var slides = document.querySelectorAll(".slide");
+        var prevButton = document.querySelector("#prevButton");
+        var nextButton = document.querySelector("#nextButton");
+
+        for (var i = 0; i < slides.length; i++) {
+          TweenLite.set(slides[i], {
+            backgroundColor: Math.random() * 0xffffff,
+            xPercent: i * 100,
+          });
+        }
+
+        var wrap = wrapPartial(-100, (slides.length - 1) * 100);
+        var timer = TweenLite.delayedCall(slideDelay, autoPlay);
+        var animation = null;
+
+        prevButton.addEventListener("click", function () {
+          animateSlides(100);
+        });
+
+        nextButton.addEventListener("click", function () {
+          animateSlides(-100);
+        });
+
+        function animateSlides(delta) {
+          animation = TweenMax.to(slides, slideDuration, {
+            xPercent: function (i, target) {
+              return (
+                Math.round(target._gsTransform.xPercent / 100) * 100 + delta
+              );
+            },
+            modifiers: {
+              xPercent: wrap,
+            },
+            onComplete: restartTimer,
+          });
+        }
+
+        function autoPlay() {
+          if (!animation) {
+            animateSlides(-100);
+          }
+        }
+
+        function restartTimer() {
+          if (animation === this) {
+            animation = null;
+            timer.restart(true);
+          }
+        }
+
+        function wrapPartial(min, max) {
+          var r = max - min;
+          return function (value) {
+            var v = value - min;
+            return ((r + (v % r)) % r) + min;
+          };
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="controls">
+        <button id="prevButton">Prev</button>
+        <button id="nextButton">Next</button>
+      </div>
+
+      <div class="slides-container">
+        <div class="slides-inner">
+          <div class="slide">1</div>
+          <div class="slide">2</div>
+          <div class="slide">3</div>
+          <div class="slide">4</div>
+          <div class="slide">5</div>
+          <div class="slide">6</div>
+          <div class="slide">7</div>
+          <div class="slide">8</div>
+          <div class="slide">9</div>
+          <div class="slide">10</div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,254 @@
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --azul-bbb-strong: #002854;
+    --azul-bbb-medio: #1a4e8a;
+    --azul-bbb-claro: #daeaf4;
+    --azul-bbb-button: #147bd1;
+    --bg-gray: #f2f2f2;
+    --txt-gray: #595959;
+    --input-gray: #d4d3d3;
+    --gray-filter: #636567;
+    --rojo: #f52b42;
+    --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+}
+.placeholder-search {
+    display: none;
+    top: 45px;
+    right: 0;
+    width: 100% !important;
+    height: 310px;
+    background-color: #fff;
+    border: 2px solid var(--bg-gray);
+    z-index: 2;
+    border-radius: 5px;
+    margin-top: 2px;
+    -webkit-box-shadow: 10px 10px 5px -9px rgb(204 204 204);
+    -moz-box-shadow: 10px 10px 5px -9px rgba(204, 204, 204, 1);
+    box-shadow: 10px 10px 5px -9px rgb(204 204 204);
+    overflow-y: scroll;
+    position: fixed;
+    z-index: 9;
+    width: 600px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 5px;
+}
+.item-price-bb {
+    width: 100%;
+    height: auto;
+    display: flex;
+    text-align: left;
+    justify-content: left;
+    color: var(--azul-bbb-medio);
+}
+.item-price-bb p {
+    margin: 10px 0;
+    font-family: var(--font-bedbath);
+    font-size: 16px;
+    line-height: 1;
+}
+.pricestandar {
+    color: var(--azul-bbb-medio);
+    font: 600 14px/1.2 Effra, Helvetica, Arial, sans-serif;
+}
+.disccount {
+    color: var(--rojo) !important;
+    font: 600 14px/1.2 Effra, Helvetica, Arial, sans-serif;
+}
+.item-price-bb .nonprice {
+    font-size: 8px;
+    color: var(--txt-gray);
+    text-decoration: line-through;
+    padding-top: 5px;
+    margin-left: 10px;
+    font: 600 12px/1 Effra, Helvetica, Arial, sans-serif;
+}
+
+#searchNow {
+    width: 28%;
+    height: auto;
+    overflow: hidden;
+    background-color: rgb(248, 248, 248);
+    border-radius: 5px;
+    border-right: 2px solid #d4d3d3;
+    float: left;
+}
+#searchNow ul li a {
+    color:var(--azul-bbb-medio) !important;
+}
+#searchNow ul li a:hover {
+    color:var(--azul-bbb-button) !important;
+}
+ .header .block-search .search-autocomplete ul {
+    background-color: #f8f8f8 !important;
+ }
+ .search-autocomplete ul li:hover, .search-autocomplete ul li.selected{
+    background-color: #f8f8f8 !important;
+ }
+ .search-autocomplete ul:not(:empty){
+     border:none  !important;
+     background: #ffffff !important;
+ }
+#searchResultV {
+    width: 60%;
+    height: auto;
+    overflow-y: scroll;
+    background-color: #fff;
+    border-radius: 5px;
+    float: left;
+    padding: 5px 0px 5px 10px;
+}
+.item-placeholder {
+    padding: 10px 5px;
+}
+.item-result-search {
+    width: 100%;
+    overflow: hidden;
+    display: block;
+    flex-wrap: wrap;
+    border-bottom: 2px solid var(--input-gray);
+    text-align: left;
+    justify-content: left;
+    padding: 2px 0;
+}
+.item-result-search a div:nth-child(1) {
+    width: 15%;
+    float: left;
+}
+.item-result-search div:nth-child(1) img {
+    width: 60px;
+    height: auto;
+}
+.item-result-search a div:nth-child(2) {
+    width: 70%;
+    float: left;
+    font: 300 13px/1 Effra, Helvetica, Arial, sans-serif;
+    color: #000;
+    margin-top: 5px;
+    padding-left: 10px;
+}
+.item-result-search:hover {
+    background-color: var(--azul-bbb-claro);
+}
+.search-price-bb {
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    display: flex;
+    margin-top: -2px !important;
+}
+.search-price-bb p{
+    padding: 0 9px;
+    color: var(--azul-bbb-medio);
+}
+.search-price-bb div {
+    font-size: 22px;
+}
+.search-price-bb .nonprice {
+    font-size: 8px;
+    color: var(--txt-gray);
+    text-decoration: line-through;
+    padding-top: 2px;
+    margin-left: 10px;
+    font: 600 12px/1 Effra, Helvetica, Arial, sans-serif;
+}
+.item-placeholder h4 {
+    font-family: var(--font-bedbath);
+    color: var(--azul-bbb-strong);
+    font-size: 12px;
+    text-align: left;
+}
+.list-result {
+    line-height: 1;
+    font: 300 14px/1 Effra, Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+.list-result:hover {
+    text-decoration: underline;
+}
+.list-result span {
+    color: var(--azul-bbb-button);
+    border-radius: 2px;
+    padding: 0 5px;
+}
+.wrap-search input:hover .placehoder-search {
+    display: block;
+}
+.coincide {
+    color: var(--azul-bbb-button);
+    font-weight: 600;
+}
+.search-autocomplete{
+    background-color: #fff !important;
+    border-radius: 5px;
+    z-index: 9 !important;
+    -webkit-box-shadow: -1px 7px 5px 0px rgba(230,230,230,1);
+    -moz-box-shadow: -1px 7px 5px 0px rgba(230,230,230,1);
+    box-shadow: -1px 7px 5px 0px rgba(230,230,230,1);
+}
+.search-autocomplete ul li{
+    padding: 5px 0px 5px 10px !important;
+    line-height: 1.4;
+}
+@media (max-width: 1024px) {  
+    #searchNow{
+        width: 100%;
+        height: auto;
+        padding: 5px 0; 
+    }
+    #searchResultV{
+        width: 100%;
+    }
+}
+@media (max-width: 767px) { 
+    #searchNow {
+        width: 100%;
+        height: auto;
+        padding: 5px 0;
+    }
+    #search_autocomplete{
+        width: 85% !important;
+    }
+    #searchResultV{
+        width: 100%;
+    }
+}
+
+/*load*/
+.wrap-filter{
+    position: relative;
+}
+#disableFilter{
+    position: absolute;
+    z-index: 2;
+    text-outline: 0;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    background-color: rgba(0,0,0,0.1);
+    display: none;
+}
+.loadplp{
+    position:absolute;
+    top:5%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    width:100px;
+    height:100px;
+    display: none;
+  }
+  .loadplp hr{border:0;margin:0;width:40%;height:40%;position:absolute;border-radius:50%;animation:spin 2s ease infinite}
+  
+  .loadplp :first-child{background:var(--azul-bbb-button);animation-delay:-1.5s}
+  .loadplp :nth-child(2){background:var(--azul-bbb-medio);animation-delay:-1s}
+  .loadplp :nth-child(3){background:var(--azul-bbb-button);animation-delay:-0.5s}
+  .loadplp :last-child{background:var(--azul-bbb-medio)}
+  
+  @keyframes spin{
+    0%,100%{transform:translate(0)}
+    25%{transform:translate(160%)}
+    50%{transform:translate(160%, 160%)}
+    75%{transform:translate(0, 160%)}
+  }

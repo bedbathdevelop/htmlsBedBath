@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Ourtable</title>
+    <style>
+        #gridOurtable{
+            width: 100%;
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 25% 25% 25% 25%;
+            column-gap: 2px;
+            row-gap:  2px;
+            text-align: center;
+            justify-content: center;
+        }
+        .item-grid-our img {
+            width: 200px;
+            height: 200px;
+        }
+        .item-a {
+            grid-column-end: span 2;
+            background: url('https://www.bedbathandbeyond.com.mx/media/wysiwyg/banner-secciones-generales-our-table2.jpeg?rand=1626454038');
+            background-size: contain;
+            background-repeat: no-repeat;
+           background-color: #e9971f
+;
+
+        }
+        @media (max-width: 991px) { 
+            #gridOurtable{ 
+                grid-template-columns: 25% 25% 25%; 
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="gridOurtable">
+        <div class="item-grid-our item-a">
+            <a href="" target="_self">
+
+            </a>
+        </div>
+        <div class="item-grid-our item-b">
+            <a href="" target="_self">
+                <img src="https://www.bedbathandbeyond.com.mx/media/ot_baterias_19_jul.jpg?rand=1626448557" alt="our table">
+            </a>
+        </div>
+        <div class="item-grid-our item-c">
+            <a href="" target="_self">
+                <img src="https://www.bedbathandbeyond.com.mx/media/ot_horno_19_jul.jpg?rand=1626448557" alt="our table">
+            </a>
+        </div>
+        <div class="item-grid-our item-d">
+            <a href="" target="_self">
+                <img src="https://www.bedbathandbeyond.com.mx/media/ot_mesa_19_jul.jpg?rand=1626448557" alt="our table">
+            </a>
+        </div>
+        <div class="item-grid-our item-e">
+            <a href="" target="_self">
+                <img src="https://www.bedbathandbeyond.com.mx/media/ot_utensilios_19_jul.jpg?rand=1626448557" alt="our table">
+            </a>
+        </div>
+        <div class="item-grid-our item-f">
+            <a href="" target="_self">
+                <img src="https://www.bedbathandbeyond.com.mx/media/ot_textiles_19_jul.jpg?rand=1626448557" alt="our table">
+            </a>
+        </div>
+        <div class="item-grid-our item-g">
+            <a href="" target="_self">
+                <img src="https://www.bedbathandbeyond.com.mx/media/ot_manteles19_jul.jpg?rand=1626448557" alt="our table">
+            </a>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

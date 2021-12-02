@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+  </head>
+  <style>
+    .list__reset_mini {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0;
+    }
+
+    .carrousel__container_mini {
+      overflow: hidden;
+      height: 95px;
+      position: relative;
+    }
+
+    .carrousel__list_mini {
+      display: flex;
+      overflow: hidden;
+    }
+
+    .carrousel__list__item_mini {
+      color: white;
+      width: 100%;
+      flex-grow: 0;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2em;
+    }
+    #nextbed__btn {
+      position: absolute;
+      right: 0;
+    }
+    #prevbed__btn {
+      position: absolute;
+      left: 0;
+    }
+    #nextbed__btn,
+    #prevbed__btn {
+      border: 0;
+      width: 20px;
+      height: 20px;
+      top: 45%;
+      border-radius: 50%;
+      background-color: transparent;
+    }
+    #nextbed__btn img,
+    #prevbed__btn img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+    .img_slide_mini {
+      width: 100%;
+      height: auto;
+    }
+    .bg1 {
+      background-image: linear-gradient(to right, #fff 0%, #99e0fe 50%);
+    }
+    .bg2 {
+      background-color: #000049;
+    }
+  </style>
+  <script>
+    window.onload = function () {
+      class Carrousel {
+        constructor(
+          carrouselListEl,
+          arrowLeftBtnEl,
+          arrowRightBtnEl,
+          autoPlay = false,
+          time,
+        ) {
+          this.carrouselListEl = carrouselListEl;
+          this.arrowLeftBtnEl = arrowLeftBtnEl;
+          this.arrowRightBtnEl = arrowRightBtnEl;
+          this.time = time;
+          this.autoPlay = autoPlay;
+          this.itemCount = 0;
+          this.setCarrouselWidth = this.setCarrouselWidth(
+            this.getNumberOfListItems()
+          );
+          this.applyArrowsFunctionality = this.applyArrowsFunctionality();
+          this.autoPlayInterval;
+          this.applyAutoSlide = this.applyAutoSlide();
+        }
+
+        getNumberOfListItems() {
+          if (this.carrouselListEl !== null)
+            return this.carrouselListEl.childElementCount;
+        }
+
+        setCarrouselWidth(numberOfListItems) {
+          if (this.carrouselListEl !== null)
+            this.carrouselListEl.style.width = numberOfListItems * 100 + "%";
+        }
+
+        moveList() {
+          this.carrouselListEl.style.transition = "transform .45s ease";
+          this.carrouselListEl.style.transform =
+            "translateX(" +
+            -1 * this.itemCount * (100 / this.getNumberOfListItems()) +
+            "%)";
+        }
+
+        forwards() {
+          this.itemCount++;
+          if (this.itemCount > this.getNumberOfListItems() - 1) {
+            this.itemCount = 0;
+          }
+          this.moveList();
+        }
+
+        backwards() {
+          this.itemCount--;
+          if (this.itemCount < 0) {
+            this.itemCount = this.getNumberOfListItems() - 1;
+          }
+          this.moveList();
+        }
+
+        applyArrowsFunctionality() {
+          if (this.arrowLeftBtnEl !== null) {
+            this.arrowLeftBtnEl.addEventListener("click", () => {
+              this.backwards();
+            });
+          }
+
+          if (this.arrowRightBtnEl !== null) {
+            this.arrowRightBtnEl.addEventListener("click", () => {
+              this.forwards();
+            });
+          }
+        }
+
+        autoSlide() {
+          this.autoPlayInterval = setInterval(this.forwards.bind(this), this.time);
+        }
+
+        stopAutoSlide() {
+          clearInterval(this.autoPlayInterval);
+        }
+
+        applyAutoSlide() {
+          if (this.autoPlay === true) {
+            this.autoSlide();
+
+            this.carrouselListEl.addEventListener("mouseenter", () => {
+              this.stopAutoSlide();
+            });
+
+            this.carrouselListEl.addEventListener("mouseleave", () => {
+              this.autoSlide();
+            });
+          }
+        }
+      }
+
+      const carrouselList = document.getElementById("carrousel__list_mini"),
+        prevBtn = document.getElementById("prevbed__btn_mini"),
+        nextBtn = document.getElementById("nextbed__btn_mini"),
+        carr = new Carrousel(carrouselList, prevBtn, nextBtn, true,2000);
+    };
+  </script>
+  <body>
+    <section id="carrousel_big">
+      <div class="carrousel__container_mini">
+        <ul
+          class="list__reset_mini carrousel__list_mini"
+          id="carrousel__list_mini"
+        >
+          <li class="carrousel__list__item_mini bg1">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Dise_o_sin_t_tulo_9_.jpg?rand=1625706982"
+                alt=""
+                class="img_slide_mini"
+              />
+            </div>
+          </li>
+          <li class="carrousel__list__item_mini bg2">
+            <div>
+              <img
+                src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/Dise_o_sin_t_tulo_10_.jpg?rand=1625706982"
+                alt=""
+                class="img_slide_mini"
+              />
+            </div>
+          </li>
+        </ul>
+        <button id="prevbed__btn_mini">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/left-arrow_2__1.png?rand=1625668693"
+            class="arrow_special_mini"
+          />
+        </button>
+        <button id="nextbed__btn_mini">
+          <img
+            src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/right-arrow_1__1.png?rand=1625668693"
+            class="arrow_specia_mini"
+          />
+        </button>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top compras</title>
+
+    <style>
+      .grid-container-product {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 5px;
+        padding: 10px;
+      }
+
+      .grid-container-product > div {
+        background-color: rgba(255, 255, 255, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+
+      .item1-product {
+        grid-row-end: span 5;
+        overflow: hidden;
+        position: relative;
+        padding: 0 10px !important;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+      .wrap-week {
+        width: 400px;
+      }
+      .wrap-week h2 {
+        color: #1a4e8a;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+        line-height: 1;
+      }
+      .wrap-prod-top {
+        display: flex;
+        overflow: hidden;
+        font-size: 12px;
+        border: 1px solid #daeaf4;
+        border-radius: 5px;
+        line-height: 1;
+      }
+      .precio-prod{
+          font-size: 22px;
+      }
+      .category-text {
+        color: #fff;
+        background-color: #cb002d;
+        width: 100px;
+        text-align: center;
+        border-radius: 5px;
+        text-decoration: none;
+        padding: 1px;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+      .wrap-img-prod img {
+        width: 120px;
+        padding: 10px;
+      }
+      .wrap-des-prod {
+        text-align: left;
+        color: #1a4e8a;
+      }
+      .img-prod-week {
+        vertical-align: middle;
+        max-width: 300px;
+      }
+      /* Position the image container (needed to position the left and right arrows) */
+      .container-week {
+        position: relative;
+      }
+
+      /* Hide the images by default */
+      .slide-product {
+        display: none;
+      }
+      .efectolupa { cursor: pointer; }
+
+        .efectolupa img:hover {
+            filter: brightness(50%);
+            -webkit-filter: brightness(50%);
+        }
+
+        .efectolupa:after {
+            content: '\f002';
+            position: relative;
+            color: #ccc;
+            width: 30px;
+            height: 30px;
+            bottom: 59px;
+            left: 458px; 
+            font-family: FontAwesome;
+            font-style: normal;
+            opacity: 0.8;
+            font-size: 18px;
+        }
+      /* Next & previous buttons */
+      .prev-product,
+      .next-product {
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 10px;
+        color: #1a4e8a;
+        font-weight: bold;
+        font-size: 20px;
+        user-select: none;
+        -webkit-user-select: none;
+        background-color: #daeaf4;
+      }
+      .prev-product {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .next-product {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      .prev-product:hover,
+      .next-product:hover {
+        background-color: #daeaf4;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+      .cursor {
+        cursor: pointer;
+      }
+      /* Container for image text */
+      .caption-container {
+        text-align: center;
+        padding: 2px 10px;
+        color: #1a4e8a;
+        font-size: 1rem;
+        font-family: "Termina Headline", "Montserrat-Bold", sans-serif;
+      }
+
+      .row-product:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
+
+      /* Six columns side by side */
+      .column-product {
+        float: left;
+        width: 16%;
+        border:1px solid #eee;
+      }
+
+      /* Add a transparency effect for thumnbail images */
+      .demo-product {
+        opacity: 0.6;
+      }
+
+      .active-product,
+      .demo-product:hover {
+        opacity: 1;
+      }
+
+      .rating {
+        width: auto;
+        margin: 0;
+        position: relative;
+        display: inline-flex;
+        flex-direction: row-reverse;
+      }
+      .rating__star {
+        /*     content: '+'; */
+        display: inline-block;
+        font-family: FontAwesome;
+        font-size: 11px;
+        color: #1a4e8a;
+        fill: #1a4e8a;
+        cursor: pointer;
+        width: 10px;
+        height: 10px;
+        line-height: 35px;
+        text-align: center;
+      }
+      .rating__star-check ~ .rating__star,
+      .rating__star-check {
+        content: "";
+        fill: #fbb202;
+      }
+      .rating__input {
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        margin: 0;
+        cursor: pointer;
+        opacity: 0;
+        z-index: 5;
+      }
+      .rating__input:checked ~ .rating__star,
+      .rating__input:hover ~ .rating__star {
+        fill: #fbb202;
+      }
+      .rating__input:nth-of-type(1) {
+        right: 0;
+      }
+      .rating__input:nth-of-type(2) {
+        right: 35px;
+      }
+      .rating__input:nth-of-type(3) {
+        right: 70px;
+      }
+      .rating__input:nth-of-type(4) {
+        right: 105px;
+      }
+      .rating__input:nth-of-type(5) {
+        right: 140px;
+      }
+      /*responsive*/
+      @media (max-width: 991px) {
+        .grid-container {
+          display: grid;
+          grid-template-columns: auto;
+          grid-gap: 5px;
+          background-color: #2196f3;
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <script>
+      var slidebuy = 1;
+      var b;
+      window.onload = function () {
+        showSlidesMas(slidebuy);
+      };
+
+      function showSlidesMas(n) {
+        var slides = document.getElementsByClassName("slide-product");
+        var dots = document.getElementsByClassName("demo-product");
+        var captionText = document.getElementById("caption-product");
+        console.log("captionText", captionText);
+        if (n > slides.length) {
+            slidebuy = 1;
+        }
+        if (n < 1) {
+            slidebuy = slides.length;
+        }
+        for (b = 0; b < slides.length; b++) {
+          slides[b].style.display = "none";
+        }
+        for (b = 0; b < dots.length; b++) {
+          dots[b].className = dots[b].className.replace(" active-product", "");
+        }
+        slides[slidebuy - 1].style.display = "block";
+        dots[slidebuy - 1].className += " active-product";
+        captionText.innerHTML = dots[slidebuy - 1].alt;
+      }
+      function plusSlides(n) {
+        showSlidesMas((slidebuy += n));
+      }
+
+      function currentSlide(n) {
+        showSlidesMas((slidebuy = n));
+      }
+    </script>
+  </head>
+  <body>
+    <section>
+      <div class="grid-container-product">
+        <div class="item1-product">
+          <div class="wrap-week">
+            <h2>consentidos de la semana</h2>
+            <div>
+              <div class="container-week">
+                <div class="slide-product">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/contenedor-de-alimentos-de-plastico-oxo-good-gripsr-pop-rectangular-de-2-55-l.html"
+                    target="_self"
+                  >
+                    <img
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/164549763762488p?$imagePLP$&hei=700&wid=700"
+                      class="img-prod-week"
+                    />
+                  </a>
+                </div>
+
+                <div class="slide-product">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/bote-de-basura-de-acero-inoxidable-cepillado-simplehumanr-rectangular-45-l.html"
+                    target="_self"
+                  >
+                    <img
+                      src="https://s7d2.scene7.com/is/image/BedBathandBeyond/58224243934645p?$imagePLP$&hei=700&wid=700"
+                      class="img-prod-week"
+                    />
+                  </a>
+                </div>
+
+                <div class="slide-product">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/organizador-de-platos-de-acero-salttm-mediano-color-blanco.html"
+                    target="_self"
+                  >
+                    <img
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/76031245809941p?$imagePLP$&hei=700&wid=700"
+                      class="img-prod-week"
+                    />
+                  </a>
+                </div>
+
+                <div class="slide-product">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/cuchillo-mondador-j-a-henckels-international-kitchen-elements-de-8-89-cm-color-variable-62130981.html"
+                    target="_self"
+                  >
+                    <img
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/35886171735_1_spec2017-08-10-15-42-49_imageset?$imagePLP$&hei=700&wid=700"
+                      class="img-prod-week"
+                    />
+                  </a>
+                </div>
+
+                <div class="slide-product">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/purificador-de-aire-de-plastico-pure-hot-cool-link-hp03-dyson.html"
+                    target="_self"
+                  >
+                    <img
+                      src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685017.jpg?$imagePLP$&hei=700&wid=700"
+                      class="img-prod-week"
+                    />
+                  </a>
+                </div>
+
+                <div class="slide-product">
+                  <a
+                    href="https://www.bedbathandbeyond.com.mx/escurridor-para-trastes-de-acero-inoxidable-simplehumanr-compact-color-gris69581126.html"
+                  >
+                    <img
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-05-28-04-44_838810021751_imageset?$imagePLP$&hei=700&wid=700"
+                      class="img-prod-week"
+                    />
+                  </a>
+                </div>
+
+                <a class="prev-product" onclick="plusSlides(-1)">❮</a>
+                <a class="next-product" onclick="plusSlides(1)">❯</a>
+
+                <div class="caption-container">
+                  <p id="caption-product"></p>
+                </div>
+
+                <div class="row-product">
+                  <div class="column-product">
+                    <img
+                      class="demo-product cursor"
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/164549763762488p?$imagePLP$&hei=700&wid=700"
+                      style="width: 100%"
+                      onclick="currentSlide(1)"
+                      alt="Contenedor de alimentos de plástico OXO Good Grips® POP rectangular de 2.55 L"
+                    />
+                  </div>
+                  <div class="column-product">
+                    <img
+                      class="demo-product cursor"
+                      src="https://s7d2.scene7.com/is/image/BedBathandBeyond/58224243934645p?$imagePLP$&hei=700&wid=700"
+                      style="width: 100%"
+                      onclick="currentSlide(2)"
+                      alt="Bote de basura de acero inoxidable cepillado Simplehuman®, rectangular, 45 L"
+                    />
+                  </div>
+                  <div class="column-product">
+                    <img
+                      class="demo-product cursor"
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/76031245809941p?$imagePLP$&hei=700&wid=700"
+                      style="width: 100%"
+                      onclick="currentSlide(3)"
+                      alt="Organizador de platos de acero SALT™ mediano color blanco"
+                    />
+                  </div>
+                  <div class="column-product">
+                    <img
+                      class="demo-product cursor"
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/35886171735_1_spec2017-08-10-15-42-49_imageset?$imagePLP$&hei=700&wid=700"
+                      style="width: 100%"
+                      onclick="currentSlide(4)"
+                      alt="Cuchillo mondador J.A. Henckels International Kitchen Elements color variable"
+                    />
+                  </div>
+                  <div class="column-product">
+                    <img
+                      class="demo-product cursor"
+                      src="https://www.bedbathandbeyond.com.mx/media//nacionales/nacionales2/69685017.jpg?$imagePLP$&hei=700&wid=700"
+                      style="width: 100%"
+                      onclick="currentSlide(5)"
+                      alt="Purificador de aire de plástico Pure Hot+Cool Link HP03 Dyson"
+                    />
+                  </div>
+                  <div class="column-product">
+                    <img
+                      class="demo-product cursor"
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/2020-05-28-04-44_838810021751_imageset?$imagePLP$&hei=700&wid=700"
+                      style="width: 100%"
+                      onclick="currentSlide(6)"
+                      alt="Escurridor para trastes de acero inoxidable simplehuman® Compact color gris"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="item-product">
+        <a href="https://www.bedbathandbeyond.com.mx/vaso-alto-de-acrilico-destination-summer.html" target="_self">
+          <div class="wrap-prod-top">
+            <div class="wrap-img-prod">
+              <img
+                src="https://s7d1.scene7.com/is/image/BedBathandBeyond/109214046966087p?$imagePLP$&hei=700&wid=700"
+                alt=""
+                class="efectolupa"
+              />
+            </div>
+            <div class="wrap-des-prod">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/liquidacion.html"
+                target="_self"
+                ><p class="category-text">zona outlet</p></a>
+              <h2>Vaso alto de acrílico Destination Summer</h2>
+              <div class="rating">
+                <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                <svg class="rating__star rating__star-check">
+                  <use xlink:href="#star"></use>
+                </svg>
+                <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                <svg class="rating__star"><use xlink:href="#star"></use></svg>
+              </div>
+              <!--  svg -->
+                <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                    <defs>
+                    <symbol id="star" viewBox="0 0 26 28">
+                        <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                    </symbol>
+                    </defs>
+                </svg>
+              <p>SKU# 46966087</p>
+              <p class="precio-prod disscount">$143.20</p>
+            </div>
+          </div>
+        </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/dispensadores-de-jabon-de-acero-inoxidable-home-zone-con-sensor-set-de-2.html" target="_self">
+                <div class="wrap-prod-top">
+                    <div class="wrap-img-prod">
+                        <img
+                        src="https://s7d2.scene7.com/is/image/BedBathandBeyond/2020-06-28-22-45_889526387730_01_imageset?$imagePLP$&hei=700&wid=700"
+                        alt=""
+                        />
+                    </div>
+                    <div class="wrap-des-prod">   
+                        <p class="category-text">zona outlet</p>
+                        <h2>Dispensadores de jabón de acero inoxidable Home Zone con sensor, Set de 2</h2>
+                        <div class="rating">
+                        <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                        <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                        <svg class="rating__star rating__star-check">
+                            <use xlink:href="#star"></use>
+                        </svg>
+                        <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                        <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                        </div>
+                        <!--  svg -->
+                        <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                            <defs>
+                            <symbol id="star" viewBox="0 0 26 28">
+                                <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                            </symbol>
+                            </defs>
+                        </svg>
+                        <p>SKU# 69595656</p>
+                        <p class="precio-prod disscount">$479.40</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/colchoneta-individual-de-algodon-wamsuttar-con-tecnologia-de-doble-soporte-color-blanco.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://s7d2.scene7.com/is/image/BedBathandBeyond/23179155230889m?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                    <p class="category-text">zona outlet</p>
+                    <h2>Colchoneta individual de algodón Wamsutta® con tecnología de doble soporte color blanco</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 65981788</p>
+                    <p class="precio-prod disscount">$1,329.30 </p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/edredon-king-de-algodon-the-seasons-collectionr-extra-calido.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/7890223286872m?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                    <p class="category-text">zona outlet</p>
+                    <h2>Edredón king de algodón The Seasons Collection®, extra cálido</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 45487927</p>
+                    <p class="precio-prod disscount">$6,535.20</p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/cubiertos-de-acero-inoxidable-ginkgo-lafayette-henckels-set-de-45-piezas.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/46162812381441p?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                    <p class="category-text">zona outlet</p>
+                    <h2>Cubiertos de acero inoxidable Ginkgo Lafayette Henckels, Set de 45 piezas</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 12381441</p>
+                    <p class="precio-prod disscount">$1,798.30</p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/colchoneta-king-de-memory-foam-therapedicrdeluxe-de-7-62-cm.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://s7d1.scene7.com/is/image/BedBathandBeyond/109214046966087p?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                   <p class="category-text">zona outlet</p>
+                    <h2>Colchoneta king de memory foam Therapedic®Deluxe de 7.62 cm</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 62599290</p>
+                    <p class="precio-prod disscount">$5,147.40</p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/edredon-matrimonial-queen-de-algodon-wamsuttarplumas-de-ganso.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/2020-06-29-15-38_FOLDEDcomforter_imageset?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                    <p class="category-text">zona outlet</p>
+                    <h2>Edredón matrimonial/queen de algodón Wamsutta®plumas de ganso</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 46966087</p>
+                    <p class="precio-prod disscount">$143.20</p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="hhttps://www.bedbathandbeyond.com.mx/ganchos-aterciopelados-para-trajes-de-plastico-org-slimline-color-blanco-set-de-50-pzas.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://s7d2.scene7.com/is/image/BedBathandBeyond/127326761622746p%20?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                    <p class="category-text">zona outlet</p>
+                    <h2>Ganchos aterciopelados para trajes de plástico ORG Slimline color blanco, Set de 50 pzas</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 61622746</p>
+                    <p class="precio-prod disscount">$489.30 </p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/contenedor-para-cereal-de-plastico-progressivetm-prokeeper.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://b3h2.scene7.com/is/image/BedBathandBeyond/130451561959057p?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                   <p class="category-text">zona outlet</p>
+                    <h2>Contenedor para cereal de plástico Progressive™ ProKeepe</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 61959057</p>
+                    <p class="precio-prod disscount">$343.20</p>
+                  </div>
+                </div>
+              </a>
+        </div>
+        <div class="item-product">
+            <a href="https://www.bedbathandbeyond.com.mx/edredon-matrimonial-queen-de-poliester-uggr-devon-color-blanco.html" target="_self">
+                <div class="wrap-prod-top">
+                  <div class="wrap-img-prod">
+                    <img
+                      src="https://s7d2.scene7.com/is/image/BedBathandBeyond/lf_35876385467783m_imageset?$imagePLP$&hei=700&wid=700"
+                      alt=""
+                    />
+                  </div>
+                  <div class="wrap-des-prod">
+                    <p class="category-text">zona outlet</p>
+                    <h2>Edredón matrimonial/queen de poliéster UGG® Devon color blanco</h2>
+                    <div class="rating">
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star rating__star-check">
+                        <use xlink:href="#star"></use>
+                      </svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                      <svg class="rating__star"><use xlink:href="#star"></use></svg>
+                    </div>
+                    <!--  svg -->
+                      <svg  aria-hidden="true" xmlns="http://www.w3.org/2000/svg" style="display: none">
+                          <defs>
+                          <symbol id="star" viewBox="0 0 26 28">
+                              <path d="M26 10.109c0 .281-.203.547-.406.75l-5.672 5.531 1.344 7.812c.016.109.016.203.016.313 0 .406-.187.781-.641.781a1.27 1.27 0 0 1-.625-.187L13 21.422l-7.016 3.687c-.203.109-.406.187-.625.187-.453 0-.656-.375-.656-.781 0-.109.016-.203.031-.313l1.344-7.812L.39 10.859c-.187-.203-.391-.469-.391-.75 0-.469.484-.656.875-.719l7.844-1.141 3.516-7.109c.141-.297.406-.641.766-.641s.625.344.766.641l3.516 7.109 7.844 1.141c.375.063.875.25.875.719z"/>
+                          </symbol>
+                          </defs>
+                      </svg>
+                    <p>SKU# 69504909</p>
+                    <p class="precio-prod disscount">$1,439.20
+                    </p>
+                  </div>
+                </div>
+              </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

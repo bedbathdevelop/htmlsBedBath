@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Room Designer</title>
+  </head>
+  <style>
+    #roomDesigner {
+      overflow: hidden;
+
+    }
+    .image-room {
+      width: 1200px;
+      height: auto;
+    }
+    #container {
+    perspective: 30px;
+    }
+
+    #inner {
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.2);
+    }
+
+    #imageRoom{
+      background-image: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/baseImage.png?rand=1627392418");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: 1200px;
+      height: 700px;
+      cursor: move;
+      --x: 0px;
+      --y: 0px;
+      background-size: 1000px;
+      background-position: var(--x) var(--y);
+      border: 1px solid white;
+      }
+      .module {
+        --x: 0px;
+        --y: 0px;
+        background-image: url(https://images.unsplash.com/photo-1499162526249-f5b8b9ba9923?ixlib=rb-0.3.5&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ&s=865bf5c0b77ceb22e88de9fd41c5a671);
+        background-size: 1000px;
+        background-position: var(--x) var(--y);
+        width: 300px;
+        height: 300px;
+        border: 1px solid white;
+      }
+    #container:hover .demo-overlay {
+     opacity: 1;
+    }
+
+
+    .demo-overlay svg {
+        display: block;
+        margin: 0 auto;
+        fill: white;
+    }
+
+  </style>
+
+<script>
+  window.onload=function() {
+    const el = document.querySelector("#module");
+    console.log("e",el)
+    el.addEventListener("mousemove", (e) => {
+      el.style.setProperty('--x', -e.offsetX + "px");
+      el.style.setProperty('--y', -e.offsetY + "px");
+    });
+  }
+</script>
+  <body>
+    <section id="roomDesigner">
+     <!-- <img
+        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/chair.jpeg?rand=1627392418"
+        alt="components_a"
+        class="image-chair"
+      />-->
+      <div id="container">
+        <div id="inner">
+          <div class="demo-img">
+            <div class="demo-overlay">
+              <div class="module" id="module">
+  
+              </div>
+            </div>
+          </div>
+        </div>
+        </div
+    </section>
+  </body>
+</html>

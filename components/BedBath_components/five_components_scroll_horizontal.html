@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="root.css" />
+    <title>banner_4items</title>
+    <style>
+      .wrap__four__components {
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        gap: 10px;
+      }
+      .item__four__components {
+        overflow: hidden;
+        flex: 0 0 20%;
+      }
+      .item__four__components p {
+        font: 300 17px/ 1 Effra, Helvetica, Arial, sans-serif;
+        color: #000;
+      }
+      .item__four__components .wrap .img_component {
+        overflow: hidden;
+      }
+      .item__four__components .wrap .img_component img {
+        width: 90%;
+      }
+      @media (max-width: 800px) {
+        .container_scroll_elements {
+          width: 100%;
+          overflow-x: scroll;
+          padding: 0 10px;
+        }
+        .wrap__four__components {
+          width: 1000px; /*calculo depende de la cantidad de componentes*/
+        }
+        .item__four__components .wrap .img_component img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container_scroll_elements">
+      <div class="wrap__four__components">
+        <div class="item__four__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="img_component">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/navidad-cocina.jpg?rand=1637081349"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">cocina</p>
+            </div>
+          </a>
+        </div>
+        <div class="item__four__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="img_component">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/navidad-mesa.jpg?rand=1637081349"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">mesa</p>
+            </div>
+          </a>
+        </div>
+        <div class="item__four__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="img_component">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/navidad-arboles-guirnaldas.jpg?rand=1637081349"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">árboles y guirnaldas</p>
+            </div>
+          </a>
+        </div>
+        <div class="item__four__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="img_component">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/navidad-ban_o.jpg?rand=1637081349"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">baño</p>
+            </div>
+          </a>
+        </div>
+        <div class="item__four__components">
+          <a href="" target="_self">
+            <div class="wrap">
+              <picture class="img_component">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/navidad-decoracion.jpg?rand=1637081349"
+                  alt="BedBathandBeyond"
+                />
+              </picture>
+              <p class="description">decoración interiores</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

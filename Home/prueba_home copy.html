@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<header>
+    <style>
+        /*Colores*/
+        .bg-naranja {
+            background: rgb(238, 227, 212);
+        }
+        .bg-verde {
+            background: #c5d3cb;
+        }
+        .bg-verde-strong {
+            background: #85ab97;
+        }
+        .txt-red {
+            color: #c00000;
+        }
+        .txt-red:hover {
+            background-color: #c00000;
+            color: #fff;
+            padding: 0 2%;
+        }
+        .txt-blue {
+            color: #214f7a;
+        }
+        /*Padding*/
+        .pd-2 {
+            padding: 1%;
+        }
+        /*Home Categories*/
+        .cat-home-img {
+            width: 90%;
+        }
+        /*align*/
+        .txt-center {
+            text-align: center;
+        }
+        section {
+            margin-bottom: 16px;
+        }
+        img {
+            max-width: 100%;
+        }
+        h1,h2,h3,h4,h5 {
+            font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        }
+        p,a {
+           font-family: 'Effra','Montserrat-Regular','Helvetica',Arial,sans-serif
+        }
+        a:hover{
+            text-decoration: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        .title-font {
+            color:#002855;
+            width: 100%;
+            padding-top: 1rem;
+            padding-bottom: 0rem;
+            font: Termina Headline,sans-serif;
+            text-align: center;
+            font-family: 'Termina Headline','Montserrat-Bold',sans-serif;
+        }
+        .flex-container{
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .col-50 {
+            padding:10px; 
+            width: 50%;
+        }
+        .col-30 {
+            width: 30%;
+        }
+        .square {
+            border: 5px solid #1a4e8a;
+            display: inline-flex; 
+            width: 100%; 
+            align-items: center;
+        }
+        
+        .square h2 {
+            width:120%;
+            text-align: center;
+            font-weight: bolder;
+            color: #1a4e8a;
+            font-size: 25px;
+        }
+        .square span {
+            width: 30%;
+            padding: 10px;
+        }
+        .text-square {
+            padding-top: 1rem;
+            padding-bottom: .5rem;
+            width: 100%;
+            text-align: center;
+        }
+        .text-square p {
+            font-size: 18px;
+            color: #000;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        .call-to {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .banner-top {
+            background: #ed2837;
+            display: flex;
+            flex-direction: column;
+            align-items: center;padding: 2em;
+        }
+        .white-bkg {
+            background: #fff; 
+            color: #ed2837;
+            font-size: 20px;
+            padding: 0 10px;
+        }
+        .banner-top h4 {
+            color: #fff;
+            margin: 60px 0;
+            font-size: 60px;
+        }
+        .banner-top span {
+            background: #fff;
+            color:#1a4e8a;
+            padding: 0 10px;
+        }
+        .p-center {
+            font-size: 14px;
+            line-height: 14px;
+            padding: 2em;
+            text-align: center;
+        }
+        .photo-banner {
+            position: relative;
+            width:100%;
+            height: 495px;
+            background-size: 100%; 
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        .col-40 {
+            background:rgba(255,255,255,0.6);
+            width: 40%;
+            padding: 1.5%;
+            position: absolute;
+            bottom: 2.5rem;
+        }
+        .col-40.right {
+            right: 1em;
+        }
+        .col-40.left {
+            left: 1em;
+        }
+        .col-40.bottom {
+            top: 90%;
+        }
+        .col-40.top {
+            top: 1em;
+        }
+        .col-40.center {
+            left: 50%;
+            margin-left: -25%;
+        }
+        .center-elements {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;    
+        }
+        .button-blue {
+            box-shadow: none;
+            color: #fff;
+            border-color: #1377c9;
+            border-style: none;
+            background-color: #1377c9;
+            text-decoration: none;
+            width: auto;
+            padding: 10px; 
+            border-radius: 5px;
+        }
+        .content-color {
+            padding: 0px;
+        }
+        .content-inline-flex {
+            display: inline-flex;
+            width: 100%;
+        }
+        .product-card {
+            background: #;
+            margin: 5px;
+        }
+        .card-col-50 {
+            width: 50%;
+        }
+        .col-25 {
+            width: 25%;
+        }
+        .product-p-bold {
+            padding: 0 0 0 1em;
+            font-weight: bold;
+            font-size: 16px;
+            text-align: left;
+            min-width: 100%;
+            color: #002855;
+            padding-bottom: 0;
+        }
+        .card-description{
+            padding: 0 0 0 1em;
+            text-align: left;
+            min-width: 100%;
+            color: #000;
+        }
+        .list-grid {
+            padding: 1em 0;
+            list-style: none;
+            display: inline-flex;
+            min-width: 100%;
+            justify-content: space-evenly;
+        }
+        .list-grid .col-2 {
+            min-width: 16.6666%
+            text-align: center;
+        }
+        .list-grid .col-2 .items-center {
+            border: 2px solid #fff;
+            border-radius: 50%;
+        }
+        .list-grid .col-2:hover .items-center {
+            border: 2px solid #1377c9;
+        }
+        .slider {
+            font-size: 15px;
+            text-align: center;
+        }
+        body .slider {
+            max-width: 1200px;
+            margin: 0 auto 0px auto;
+        }
+        .slider-for {
+            font-size: 15px;
+            text-align: center;
+        }
+        .categoriestitle {
+            width: 100%;
+            text-align: center;
+            color: #000;
+            font-size: 25px;
+            font-weight: 900;
+        }
+        .img-rouned{
+            border-radius: 50%;
+        }
+        .column{
+            flex-direction: column;
+        }
+        .center-text-elements{
+            color: #1A4E8A;
+            font-size: 34px;
+            line-height: 1em;
+            font-family: 'Montserrat-Bold',Arial, sans-serif;
+        }
+        .first-section {
+            margin-top: 0;
+            padding-top: 0px;
+        }
+        .banner-img.desktop {
+            display: flex;
+        }
+        .banner-img.mobile {
+            display: none;
+        }
+        .figure {
+            position: relative;
+        }
+        .figure::before {
+            position: absolute;
+            top: 0;
+            left: -115%;
+            z-index: 2;
+            display: block;
+            content: '';
+            width: 100%;
+            height: 100%;
+            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
+            -webkit-transform: skewX(-25deg);
+            transform: skewX(-25deg);
+        }
+        .figure:hover::before {
+            -webkit-animation: shine .5s;
+            animation: shine .5s;
+        }
+        @-webkit-keyframes shine {
+            100% {
+                left: 25%;
+            }
+        }
+        @keyframes shine {
+            100% {
+                left: 25%;
+            }
+        }
+        @media (max-width: 991px) {
+            .cms-home .page-main {
+                padding: 0;
+            }
+            section {
+                margin-left: -10px;
+                margin-right: -10px;
+            }
+            .banner-img.desktop {
+                display: none;
+            }
+            .banner-img.mobile{
+                display: block!important;
+            }
+            .first-section {
+                padding-top: 0px;
+            }
+            .first-section .col-50 {
+                width: 90%;
+            }
+            .title-font {
+                font-size: 30px;
+            }
+            .content-inline-flex.column-m,
+            .flex-container.column-m {
+                flex-direction: column;
+            }
+            .m-block .content-inline-flex {
+                display: inline-block;
+            }
+            .m-block .content-inline-flex .product-card.col-25{
+                width: 47%;
+                float: left;
+            }
+            .product-p-bold {
+                padding: 8px;
+                font-size: 14px;
+            }
+            .card-description{
+                padding: 0 0 0 8px;
+            }
+            .banner-top {
+                height: 70vh;
+            }
+            .banner-top .white-bkg{
+                margin-top: 30%;
+            }
+            .photo-banner{
+                background-size: cover;
+            }
+            .col-40.right,
+            .col-40.left {
+                left: auto;
+                right: auto;
+                width: 80%;
+            }
+            .photo-banner {
+                display: flex;
+                justify-content: center;
+            }
+            .list-grid {
+                display: inline-block;
+            }
+            .col-2 {
+                float: left;
+                width: 33%;
+                min-height: 180px;
+            }
+            .col-cat-home {
+                float: left;
+                width: 28%;
+                min-height: 180px;
+                margin: 0 2%;
+            }
+            .scrolled {
+                display: flex!important;
+                flex-flow: row;
+                overflow-x: auto;
+                margin-left: 0.5%;
+            }
+            .scrolled.four {
+                width: 990px;
+                overflow: scroll;
+            }
+            .scrolled.three {
+                width: 730px;
+                overflow: scroll;
+            }
+            .conten-scroll {
+                overflow: auto;
+            }
+            .scrolled .product-card {
+                max-width: 240px;
+            }
+        }
+        @media (max-width: 767px) {
+            img {
+                width: 100%;
+            }
+            .square span{
+                width: 40%;
+                padding: 0;
+            }
+        }
+        /*Zoom Animation*/
+        #containerimg {
+            display: inline-block;
+            margin: 5px;
+            overflow: hidden;  
+        }
+        #containerimg img {
+            display: block;
+            transition: transform .5s;   /* smoother zoom */
+        }
+        #containerimg:hover img {
+            transform: scale(1.1);
+            transform-origin: 50% 50%;
+        }
+        /*Bubbles Animation*/
+        #background-wrap {
+            position: relative;
+            height: auto;
+            overflow: hidden;
+        }
+        /* KEYFRAMES */
+
+        @-webkit-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+
+        @-moz-keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+
+        @keyframes animateBubble {
+            0% {
+                margin-top: 1000px;
+            }
+            100% {
+                margin-top: -100%;
+            }
+        }
+
+        @-webkit-keyframes sideWays { 
+            0% { 
+                margin-left:0px;
+            }
+            100% { 
+                margin-left:50px;
+            }
+        }
+
+        @-moz-keyframes sideWays { 
+            0% { 
+                margin-left:0px;
+            }
+            100% { 
+                margin-left:50px;
+            }
+        }
+
+        @keyframes sideWays { 
+            0% { 
+                margin-left:0px;
+            }
+            100% { 
+                margin-left:50px;
+            }
+        }
+
+        /* ANIMATIONS */
+
+        .x1 {
+            -webkit-animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            -moz-animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            animation: animateBubble 15s linear infinite, sideWays 2s ease-in-out infinite alternate;
+            
+            left: -5%;
+            top: 5%;
+            
+            -webkit-transform: scale(0.6);
+            -moz-transform: scale(0.6);
+            transform: scale(0.6);
+        }
+
+        .x2 {
+                -webkit-animation: animateBubble 10s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 0s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                animation: animateBubble 10s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                
+                left: 5%;
+                top: 80%;
+                
+                -webkit-transform: scale(0.4);
+                -moz-transform: scale(0.4);
+                transform: scale(0.4);
+            }
+
+            .x3 {
+                -webkit-animation: animateBubble 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                animation: animateBubble 18s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                
+                left: 10%;
+                top: 40%;
+                
+                -webkit-transform: scale(0.7);
+                -moz-transform: scale(0.7);
+                transform: scale(0.7);
+            }
+
+            .x4 {
+                -webkit-animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+                animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+                
+                left: 20%;
+                top: 0;
+                
+                -webkit-transform: scale(0.3);
+                -moz-transform: scale(0.3);
+                transform: scale(0.3);
+            }
+
+            .x5 {
+                -webkit-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                
+                left: 30%;
+                top: 50%;
+                
+                -webkit-transform: scale(0.5);
+                -moz-transform: scale(0.5);
+                transform: scale(0.5);
+            }
+
+            .x6 {
+                -webkit-animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                animation: animateBubble 11s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                
+                left: 50%;
+                top: 0;
+                
+                -webkit-transform: scale(0.8);
+                -moz-transform: scale(0.8);
+                transform: scale(0.8);
+            }
+
+            .x7 {
+                -webkit-animation: animateBubble 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                animation: animateBubble 10s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                
+                left: 65%;
+                top: 70%;
+                
+                -webkit-transform: scale(0.4);
+                -moz-transform: scale(0.4);
+                transform: scale(0.4);
+            }
+
+            .x8 {
+                -webkit-animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+                animation: animateBubble 12s linear infinite, sideWays 3s ease-in-out infinite alternate;
+                
+                left: 80%;
+                top: 10%;
+                
+                -webkit-transform: scale(0.3);
+                -moz-transform: scale(0.3);
+                transform: scale(0.3);
+            }
+
+            .x9 {
+                -webkit-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                animation: animateBubble 19s linear infinite, sideWays 4s ease-in-out infinite alternate;
+                
+                left: 90%;
+                top: 50%;
+                
+                -webkit-transform: scale(0.6);
+                -moz-transform: scale(0.6);
+                transform: scale(0.6);
+            }
+
+            .x10 {
+                -webkit-animation: animateBubble 16s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                -moz-animation: animateBubble 16s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                animation: animateBubble 16s linear infinite, sideWays 2s ease-in-out infinite alternate;
+                
+                left: 80%;
+                top: 80%;
+                
+                -webkit-transform: scale(0.3);
+                -moz-transform: scale(0.3);
+                transform: scale(0.3);
+            }
+
+            /* OBJECTS */
+
+            .bubble {
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                
+                -webkit-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+                -moz-box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+                box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2), inset 0px 10px 30px 5px rgba(255, 255, 255, 1);
+                
+                height: 100px;
+                position: absolute;
+                width: 100px;
+            }
+
+            .bubble:after {
+                background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%); /* FF3.6+ */
+                background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,0.5)), color-stop(70%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+                background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* Chrome10+,Safari5.1+ */
+                background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* Opera 12+ */
+                background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* IE10+ */
+                background: radial-gradient(ellipse at center,  rgba(255,255,255,0.5) 0%,rgba(255,255,255,0) 70%); /* W3C */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#80ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                border-radius: 50%;
+                
+                -webkit-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+                -moz-box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+                box-shadow: inset 0 20px 30px rgba(255, 255, 255, 0.3);
+                
+                content: "";
+                height: 180px;
+                left: 10px;
+                position: absolute;
+                width: 180px;
+            }
+
+
+            figure.snip0019 {
+                font-family: 'Raleway', Arial, sans-serif;
+                color: #fff;
+                position: relative;
+                overflow: hidden;
+                margin: 10px;
+                min-width: 220px;
+                max-width: 310px;
+                max-height: 220px;
+                width: 100%;
+                background: #000000;
+                text-align: center;
+            }
+            figure.snip0019 * {
+                -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+            }
+            figure.snip0019 img {
+                opacity: 1;
+                width: 100%;
+                -webkit-transition: opacity 0.35s;
+                transition: opacity 0.35s;
+            }
+            figure.snip0019 figcaption {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-align: left;
+            }
+            figure.snip0019 figcaption > div {
+                float: left;
+                height: 100%;
+                overflow: hidden;
+                width: 50%;
+                position: relative;
+            }
+                figure.snip0019 figcaption::before {
+                position: absolute;
+                top: 50%;
+                bottom: 50%;
+                left: 50%;
+                width: 2px;
+                content: '';
+                opacity: 0;
+                background-color: rgba(255, 255, 255, 0);
+                -webkit-transition: all 0.4s;
+                transition: all 0.4s;
+                -webkit-transition-delay: 0.6s;
+                transition-delay: 0.6s;
+                }
+                figure.snip0019 h2,
+                figure.snip0019 p {
+                margin: 0;
+                padding: 20px;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+                left: 0;
+                -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+                transition: opacity 0.45s,-webkit-transform 0.45s,-moz-transform 0.45s,-o-transform 0.45s,transform 0.45s;
+                }
+                figure.snip0019 h2 {
+                text-align: right;
+                display: inline-block;
+                word-spacing: -0.1em;
+                font-weight: 300;
+                text-transform: uppercase;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                -webkit-transform: translate3d(50%, 0%, 0);
+                transform: translate3d(50%, 0%, 0);
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+                }
+                figure.snip0019 h2 span {
+                font-weight: 800;
+                }
+                figure.snip0019 p {
+                display: block;
+                bottom: 0;
+                text-align: left;
+                font-weight: 300;
+                top: 0%;
+                color: #000;
+                background: #ffffff;
+                -webkit-transform: translate3d(-50%, 0%, 0);
+                transform: translate3d(-50%, 0%, 0);
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+                }
+                figure.snip0019 a {
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                position: absolute;
+                color: #ffffff;
+                }
+                figure.snip0019:hover img {
+                opacity: 0.7;
+                }
+                figure.snip0019:hover figcaption h2,
+                figure.snip0019:hover figcaption p {
+                -webkit-transform: translate3d(0%, 0%, 0);
+                transform: translate3d(0%, 0%, 0);
+                -webkit-transition-delay: 0.3s;
+                transition-delay: 0.3s;
+                }
+                figure.snip0019:hover figcaption h2 {
+                opacity: 1;
+                }
+                figure.snip0019:hover figcaption p {
+                opacity: 1;
+                }
+                figure.snip0019:hover figcaption::before {
+                background: #ffffff;
+                top: 0px;
+                bottom: 0px;
+                opacity: 1;
+                -webkit-transition-delay: 0s;
+                transition-delay: 0s;
+                }
+
+
+
+        </style>
+</header>
+   
+<html>
+    <body>
+        <section class="first-section">
+            <div class="slider slider-for">
+             <p>envío <strong>GRATIS</strong> en pedidos mayores a <strong>$599</strong></p2>
+            </div>
+            <section>
+                <div class="flex-container column-m">
+                    <div class="col-50">
+                        <a href="https://www.bedbathandbeyond.com.mx/compra-en-linea-recoge-en-tienda">
+                            <div class="square">
+                                <h2>¡entrega segura y sin contacto!</h2>
+                                <span>
+                                    <img src="/media/wysiwyg/home-2/curbside.jpg"/>
+                                </span>
+                            </div>
+                            <div class="text-square">
+                                <p>Compra en línea y recoge en tienda</p>
+                                <span class="call-to"><span style="color:#1377C9;font-weight:600">Consulta aquí</span></span>
+                            </div>
+                        </a>
+                    </div>
+                <div class="col-50">
+                    <a href="https://www.bedbathandbeyond.com.mx/seccion-de-compras-vip">
+                        <div class="square">
+                            <h2>¡agenda tu cita VIP!</h2>
+                            <span>
+                                <img src="/media/wysiwyg/home-2/agenda-tu-cita.jpg">
+                            </span>
+                        </div>
+                    <div class="text-square">
+                        <p>Agenda tu cita</p>
+                        <span class="call-to"><span style="color:#1377C9;font-weight:600">
+                        Reserva aquí
+                        </span>
+                    </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- Promotion Mom -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/dia-de-las-madres" target="_self">
+                    <div class="banner-img desktop figure"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-top-desktop-madre-30-ab.jpg?rand=1619617552" alt="Feliz día de las Madres BedBathandBeyond">
+                    </div>
+                    <div class="banner-img mobile figure" style="display: none;"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-top--madres-mobile-30-ab.jpg?rand=1619617552" alt="Feliz día de las Madres BedBathandBeyond">
+                    </div> 
+                </a>
+            </section>
+            
+            <!-- CATEGORIAS--> 
+            <section>
+                <div class="content-inline-flex bg-naranja pd-2">
+                    <ul class="list-grid">
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/mesa.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-mesa-30-ab.jpg?rand=1619622938"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-mesa-30-ab.jpg?rand=1619622938">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span><span class="txt-blue"> mesa</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas/electrodomesticos.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-electr-30-ab.jpg"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-electr-30-ab.jpg">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span><span class="txt-blue"><br>electrodomesticos</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara/ropa-de-cama.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-cama-30-ab.jpg"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-cama-30-ab.jpg">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span><span class="txt-blue">cama</span></p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-limpieza.jpg?rand=1619614632"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-limpieza.jpg?rand=1619614632">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span><span class="txt-blue"> limpieza</span</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar/cortinas-y-accesorios-para-ventanas.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-cortinas-30-ab.jpg?rand=1619614632"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-cortinas-30-ab.jpg?rand=1619614632">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span><span class="txt-blue"> cortinas</span</p>
+                                </div>
+                            </a>
+                        </li>   
+                    </ul>
+                </div>
+            </section>
+            <!-- MOM CATEGORIES--> 
+            <section>
+                <div class="bg-verde-strong">
+                    <img src="https://mcprod.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/header-dia-relajacion-desktop-30-ab.jpg" alt="un día de relajación para Mamá" />
+                </div>
+                <figure class="snip0019">
+                    <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-spa-30-ab.jpg?rand=1619614632" alt="sample11"/>
+                    <figcaption>
+                        <div><h2>What <span>state</span> do you live in?</h2></div>
+                        <div><p>Denial. Miss Wormwood: I don't suppose I can argue with that.</p></div>
+                        <a href="#"></a>
+                    </figcaption>			
+                </figure>
+
+                <div class="content-inline-flex bg-verde pd-2">
+                    <ul class="list-grid">
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/spa-y-masajeadores.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-spa-30-ab.jpg?rand=1619614632"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-spa-30-ab.jpg?rand=1619614632"
+                                        alt="Día de las madres BedBathandBeyond">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span> en spa y baño</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal/salud-y-belleza.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-belleza-30-ab.jpg?rand=1619614632"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-belleza-30-ab.jpg?rand=1619614632"
+                                        alt="Día de las madres BedBathandBeyond">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span> en belleza</p>
+                                </div>
+                            </a>
+                        </li>
+                        <li class="col-cat-home">
+                            <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar/velas-y-difusores.html">
+                                <div class="inner-anchor">
+                                    <div id="containerimg" class="txt-center">
+                                        <img class="cat-home-img" alt="haven"
+                                        srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-velas-30-ab.jpg?rand=1619614632"
+                                        src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/categorias-mama-velas-30-ab.jpg?rand=1619614632"
+                                        alt="Día de las madres BedBathandBeyond">
+                                    </div>
+                                    <p class="categoriestitle"><span class="txt-red">-20%</span> en velas</p>
+                                </div>
+                            </a>
+                        </li> 
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Promotion Kids -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/productos/ninos-y-bebes/juegos-y-juguetes.html" target="_self">
+                    <div id="background-wrap" class="banner-img desktop"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-desktop-nino-30-ab.jpg?rand=1619617552" alt="¡Cosiente a los pequeños! Feliz día del niño bedbathandbeyond">
+                        <div class="bubble x1"></div>
+                        <div class="bubble x2"></div>
+                        <div class="bubble x3"></div>
+                        <div class="bubble x4"></div>
+                        <div class="bubble x5"></div>
+                        <div class="bubble x6"></div>
+                        <div class="bubble x7"></div>
+                        <div class="bubble x8"></div>
+                        <div class="bubble x9"></div>
+                        <div class="bubble x10"></div>
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-mobile-nino-30-ab.jpg?rand=1619617552" alt="¡Cosiente a los pequeños! Feliz día del niño bedbathandbeyond">
+                    </div> 
+                </a>
+            </section>
+
+            <!-- Promotion Jose Ra -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/tienda/recomendado-por.html " target="_self">
+                    <div class="banner-img desktop"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-desktop-josera-30ab.jpg?rand=1619617552" alt="JoséRa Castillo BedBathandBeyond">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-mobile-josera-30-ab.jpg?rand=1619617552" alt="JoséRa Castillo BedBathandBeyond">
+                    </div> 
+                </a>
+            </section>
+
+            <!-- Promotion Chefman -->
+            <section>
+                <a href="" target="_self">
+                    <div class="banner-img desktop"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-top-chefman-30-ab.jpg?rand=1619617552" alt="15% en productos Chefman bedbathandbeyond">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-top-chefman-mobile-30-ab.jpg?rand=1619617552" alt="15% en productos Chefman bedbathandbeyond">
+                    </div> 
+                </a>
+            </section>
+
+            
+            <section>
+                <a href="#">
+                    <div class="banner-img desktop"> 
+                        <img src="media/wysiwyg/home-2/header-descuentos-desktop-16-ab.jpg" alt="Descuentos imperdibles bedbathandbeyond Oster">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/header-mobile-descuentos-16-ab.jpg" alt="Descuentos imperdibles bedbathandbeyond Koblenz Hoover">
+                    </div>
+                </a>
+            </section>
+            
+            <section>
+                <div class="content-color" style="background: rgb(222, 235, 247);"> 
+                    <h2 class="title-font">
+                        <span></span>
+                    </h2>
+                    <div class="content-inline-flex column-m">
+                        <div class="product-card card-col-50">
+                            <a href="https://www.bedbathandbeyond.com.mx/marcas/oster/electrodomesticos.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/68535278-oster-16-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span class="txt-red">15% menos</span> <span>en productos seleccionados Oster</span></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-50">
+                            <a href="https://www.bedbathandbeyond.com.mx/tienda/koblenz-hoover.html">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/66371625-hoover-y-koblenz-16-ab.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold"><span class="txt-red">20%</span> en aspiradoras Koblenz  y Hoover</p>
+                                </div>
+                            </a>
+                    </div>
+                </div>
+            </section>
+            
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/tienda/door-busters.html">
+                    <div class="banner-img desktop"> 
+                        <img src="media/wysiwyg/home-2/banner-desktop-door-b-26-ab.jpg">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-mobile-doorb-26-ab.jpg">
+                    </div>
+                </a>
+            </section>
+
+           <!-- Promotion estilos de sillas y bancos -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/productos/muebles/muebles-para-el-hogar/sillas-bancos-y-sillones.html">
+                    <div class="banner-img desktop"> 
+                        <img src="media/wysiwyg/home-2/banner-desktop-sillas-y-bancos.jpg" alt="estilos de sillas y bancos para todos los gustos bedbathandbeyond">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-mobile-sillas-y-bancos.jpg">
+                    </div>
+                </a>
+            </section>
+
+            <!-- Promotion Planchas seleccionadas -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/marcas/oster/planchas.html">
+                    <div class="banner-img desktop"> 
+                        <img src="media/wysiwyg/home-2/oster-desktop-16-ab-.jpg" alt="25% en planchas bedbathandbeyond">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/oster-mobile-16-ab.jpg"  alt="25% en planchas bedbathandbeyond">
+                    </div>
+                </a>
+            </section>
+
+        <!-- Promotion Voltti -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/productos/recamara/colchonetas.html">
+                    <div class="banner-img desktop"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-desktop-voltti-30-ab.jpg?rand=1619617552" alt="todos los colchones con descuentos bedbathandbeyond">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/abriltreinta/banner-mobile-voltti-30-ab.jpg?rand=1619617552" alt="todos los colchones con descuentos bedbathandbeyond">
+                    </div>
+                </a>
+            </section>
+
+            
+        <!-- Promotion Liquidacion -->
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/liquidacion.html">
+                    <div class="banner-img desktop"> 
+                        <img src="media/wysiwyg/home-2/spot-the-dot-desktop-13-ab.jpg"  alt="Cientos de productos con descuentos BedBathandBeyond">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-mobile-spot-13-ab.jpg" alt="Cientos de productos con descuentos BedBathandBeyond">
+                    </div>
+                </a>
+            </section>
+            
+            <!-- Promotion Quedata en casa -->
+            
+            <section>
+                <a href="https://www.bedbathandbeyond.com.mx/quedate-en-casa.html">
+                    <div class="banner-img desktop"> 
+                        <img src="media/wysiwyg/home-2/banner-quedate-en-casa3-desk.jpg">
+                    </div>
+                    <div class="banner-img mobile" style="display: none;"> 
+                        <img src="/media/wysiwyg/home-2/banner-quedate-en-casa3-mobile.jpg">
+                    </div>
+                </a>
+            </section>
+            
+            <!--  Nuestros aliados -->
+            <section>
+                <div class="content-color" style="background: rgb(237, 237, 237);">
+                    <h2 class="title-font">
+                        <span>nuestros aliados</span>
+                    </h2>
+                    <div class="content-inline-flex column-m">
+                        <div class="product-card card-col-50">
+                            <a href="https://www.officemax.com.mx/">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/aliados-omax1feb.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold">office max</p>
+                                    <p class="card-description"></p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="product-card card-col-50">
+                            <a href="https://www.instagram.com/healthyboutiq/">
+                                <img class="holdImg"
+                                src="/media/wysiwyg/home-2/aliados-healthy-1-feb.jpg"
+                                style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold">healthy boutique</p>
+                                    <p class="card-description"></p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--  Estamos para ayudarte -->
+            <section>
+                <h2 class="title-font">
+                    <span>estamos para ayudarte</span>
+                </h2>
+            <div class="conten-scroll">
+                <div class="content-inline-flex scrolled three">
+                    <div class="product-card col-33">
+                        <a href="https://www.bedbathandbeyond.com.mx/mesa-de-regalos/mas-informacion.html">
+                        <img class="holdImg"
+                            src="/media/wysiwyg/home-2/mesa-de-regalos.jpg"
+                            style="--aspect-height:400;--aspect-width:400" />
+                        <div class="card-info">
+                            <p class="product-p-bold">mesa de regalo</p>
+                            <p class="card-description">un regalo para cada ocasión</p>
+                        </div>
+                        </a>
+                    </div>
+                <div class="product-card col-33">
+                    <a href="https://www.bedbathandbeyond.com.mx/igualacion-de-precios">
+                        <img class="holdImg"
+                        src="/media/wysiwyg/home-2/igualamos-precio.jpg"
+                        style="--aspect-height:400;--aspect-width:400" />
+                    <div class="card-info">
+                        <p class="product-p-bold">igualamos precio</p>
+                        <p class="card-description">¿encontraste un precio más bajo? ¡te lo igualamos!</p>
+                    </div>
+                    </a>
+                </div>
+                <div class="product-card col-33">
+                    <a href="https://www.bedbathandbeyond.com.mx/seccion-de-compras-vip">
+                        <img class="holdImg"
+                        src="/media/wysiwyg/home-2/whats.jpg"
+                                        style="--aspect-height:400;--aspect-width:400" />
+                                <div class="card-info">
+                                    <p class="product-p-bold">contáctanos por whatsapp</p>
+                                    <p class="card-description">encúentra el número de tu tienda más cercana aquí</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div>
+                    <h2 class="title-font">
+                        <span>categorías</span>
+                    </h2>
+                    <div class="content-inline-flex column">
+                        <ul class="list-grid">
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/recamara.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/Bedding.jpg">
+                                        </div>
+                                        <p class="categoriestitle">recámara</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/categoria-cocinas.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/kitchen10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">cocina</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/bano.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/bath10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">baño</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/decoracion-categorias.jpg">
+                                        </div>
+                                        <p class="categoriestitle">decoración</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cuidado-personal.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/health-_-beauty10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">cuidado personal</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/decoracion/decoracion-del-hogar.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/Curtains-_-window.jpg">
+                                        </div>
+                                        <p class="categoriestitle">decoración del Hogar</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="list-grid">
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/mascotas-viajes-y-mas.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/smart-home10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">mascotas, viajes y más</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/muebles/muebles-para-el-hogar.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/furniture10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">muebles</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/storage-_-org10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">organización y limpieza</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/cocina/mesa.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/dinning10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">mesa</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/productos/organizacion-y-limpieza/limpieza/aspiradoras.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/vacuums10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">aspiradoras</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="col-2">
+                                <a class="list-anchor" href="https://www.bedbathandbeyond.com.mx/liquidacion.html">
+                                    <div class="inner-anchor">
+                                        <div class="items-center">
+                                            <img class="img-rouned" alt=""
+                                            src="/media/wysiwyg/home-2/zona-outlet10.jpg?rand=1606782832">
+                                        </div>
+                                        <p class="categoriestitle">zona outlet</p>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>         
+    </body>
+</html>

@@ -1,0 +1,371 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        .slider--prod {
+            background: white;
+            height: 400px;
+            margin: auto;
+            overflow:hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .slider--prod:before,
+        .slider--prod:after{
+                content: "";
+                height: 100px;
+                position: absolute;
+                width: 200px;
+                z-index: 2;
+        }
+
+        .slider--prod::after{
+                right: 0;
+                top: 0;
+                transform: rotateZ(180deg);
+            }
+
+        .slider--prod::before{
+                left: 0;
+                top: 0;
+            }
+            
+        .slide--track {
+            animation: scroll 40s linear infinite;
+            display: flex;
+            width: calc(250px * 14);
+        }
+        .slide--track:hover {
+            animation: scroll 0s linear infinite;
+            display: flex;
+            width: calc(250px * 14);
+        }
+        
+        .slide--card {
+            height: 100px;
+            width: 250px;
+        }
+
+        @keyframes scroll {
+                0% { transform: translateX(0); }
+                100% { transform: translateX(calc(-250px * 7))}
+            }
+
+        /*products and stars*/
+        /*Star component*/
+        /*Products Carrousel*/
+        .carrousel-products {
+                width: 100%;
+                margin: auto;
+                height: 450px;
+                overflow:hidden;
+                text-align: center;
+                line-height: 1;
+            }
+            .carousel-price {
+                font: 300 25px/0.5 Effra,Helvetica,Arial,sans-serif;
+                text-align: center;
+                font-weight: 900;
+                color: #000;
+            }
+            .carousel-des {
+                font-size: 12px;
+                line-height: 1;
+                font-family:Effra,Helvetica,Arial,sans-serif ;
+                color: #000;
+                padding: 0 5%;
+            }
+            .carosuel-raiting {
+                color:#1377C9;
+                margin-top: 2%;
+                font-size: 22px;
+            }
+        .item-start {
+            /*width: 33.33%;*/
+            height: 200px;
+            float: left;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            padding-top: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 1s all;
+            /*box-shadow: 0 9px 10px rgba(6,6,7,.3);*/
+        }
+        .cont {
+            position: absolute;
+            width: 1100px;
+            margin-top: 190px;
+        }
+        .tapa {
+            width: 100%;
+            transition: .9s all;
+            margin-top: -40px;
+        }
+        .item-start img {
+            width: auto;
+            margin-top: 20px;
+            height: 150px;
+        }
+        .item-start:hover {
+            margin-top: -5px;
+        }
+
+        .container-star {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            margin: 0 auto;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .clip-star {
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            display: inline-block;
+            height: 20px;
+            width: 20px;
+            float: left;
+        }
+
+        .disable {
+            background: rgb(237, 237, 237);
+        }
+
+        .num-star {
+            font-size: 15px;
+            float: left;
+            margin-left: 2%;
+        }
+        .enable {
+                background: #1377C9;
+        }
+
+        /*Shine Animation*/
+        .shine {
+            animation-name: glitter;
+            animation-iteration-count: infinite;
+        
+        }
+
+        .star-1 {
+            transform-origin: 102.14px 87.09px;
+            animation-duration: 3.5s;
+        }
+
+        .star-2 {
+            transform-origin: 219.47px 205.7px;
+            animation-duration: 4s;
+        }
+
+        .star-3 {
+            transform-origin: 404.11px 35.05px;
+            animation-duration: 2.5s;
+        }
+
+        .star-4 {
+            transform-origin: 54.43px 393.81px;
+            animation-duration: 2.5s;
+        }
+
+        .star-5 {
+            transform-origin: 374.42px 271.34px;
+            animation-duration: 3s;
+        }
+
+
+        </style>
+
+
+    </head>
+    <body>
+        <div class="slider--prod">
+            <div class="slide--track">
+                <!-- Product 1 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                          <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                          <p class="carousel-price">$13,999.00</p>
+                          <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                          <p class="carousel-des">SKU#:69685229</p>
+                          <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                          </div>
+                        </a>
+                      </div>
+                </div>
+                <div class="slide--card">
+                    <!-- Product 2 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$13,999.00</p>
+                            <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                            <p class="carousel-des">SKU#:69685229</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$13,999.00</p>
+                            <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                            <p class="carousel-des">SKU#:69685229</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 4 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                        <p class="carousel-price">$13,999.00</p>
+                        <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                        <p class="carousel-des">SKU#:69685229</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+    
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 3 -->
+                <div class="slide--card">
+                    <div class="item-start">
+                        <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                        <p class="carousel-price">$13,999.00</p>
+                        <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                        <p class="carousel-des">SKU#:69685229</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+                <div class="slide--card">
+                <!-- Product 3 -->
+                    <div class="slide--card">
+                        <div class="item-start">
+                            <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$13,999.00</p>
+                            <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                            <p class="carousel-des">SKU#:69685229</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="slide--card">
+                       <!-- Product 3 -->
+                       <div class="slide--card">
+                        <div class="item-start">
+                            <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$13,999.00</p>
+                            <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                            <p class="carousel-des">SKU#:69685229</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slide--card">
+                       <!-- Product 3 -->
+                       <div class="slide--card">
+                        <div class="item-start">
+                            <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                            <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                            <p class="carousel-price">$13,999.00</p>
+                            <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                            <p class="carousel-des">SKU#:69685229</p>
+                            <div class="container-star">
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star enable"></div>
+                                <div class="clip-star disable"></div>
+                                <div class="clip-star disable"></div>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="slide--card">
+                    <!-- Product 3 -->
+                    <div class="slide--card">
+                    <div class="item-start">
+                        <a href="https://www.bedbathandbeyond.com.mx/estilizador-dyson-airwrap-complete-69685229.html" target="_self">
+                        <img src="https://www.bedbathandbeyond.com.mx/media/nacionales/nacionales2/69685229.jpg?$imagePLP$&hei=300&wid=260">
+                        <p class="carousel-price">$13,999.00</p>
+                        <p class="carousel-des">Estilizador Dyson Airwrap™ Complete</p>
+                        <p class="carousel-des">SKU#:69685229</p>
+                        <div class="container-star">
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star enable"></div>
+                            <div class="clip-star disable"></div>
+                            <div class="clip-star disable"></div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

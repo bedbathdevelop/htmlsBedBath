@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hogar Inteligente</title>
+    <style>
+      .carousel {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .carousel.carousel--with-overflow {
+        overflow: visible;
+      }
+      @media (min-width: 768px) {
+        .carousel.carousel--with-overflow {
+          width: calc(100% - 50px);
+          margin: 0 auto;
+        }
+      }
+      .carousel__slide-wrapper {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        left: 0;
+        top: 0;
+      }
+      .carousel__slide {
+        flex: 0 0 33.333%;
+        transition: transform 0.3s ease;
+      }
+      @media (max-width: 768px) {
+        .carousel__slide {
+          flex: 0 0 100%;
+          transform: translateX(-100%);
+        }
+      }
+
+      .carousel--four-cols .carousel__slide {
+        flex: 0 0 25%;
+      }
+
+      .carousel__slide-inner {
+        margin: 0 15px;
+        box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .carousel__navigation--left,
+      .carousel__navigation--right {
+        background-color: slateblue;
+        color: white;
+        min-height: 48px;
+        width: 48px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        z-index: 2;
+        cursor: pointer;
+      }
+      .carousel__navigation--left {
+        left: 0;
+      }
+      .carousel__navigation--right {
+        right: 0;
+      }
+      .img_slide_c {
+        width: 100%;
+        height: auto;
+      }
+      .bg_1 {
+        background: url("https://www.bedbathandbeyond.com.mx/media/wysiwyg/Candado_e.jpg?rand=1632505687");
+        background-size: contain;
+        width: 100%;
+        height: auto;
+      }
+    </style>
+    <script>
+      window.onload = function () {
+        var carousel,
+          carouselSlideWrapper,
+          allSlides,
+          activeElementIndex,
+          firstElement,
+          lastElement,
+          rightButton,
+          leftButton,
+          slideActive,
+          translateX,
+          autoselectValue,
+          manualSelectValue,
+          manualMultipleSelectValue;
+
+        carousel = document.querySelector(".carousel");
+        carouselSlideWrapper = carousel.querySelector(
+          ".carousel__slide-wrapper"
+        );
+        rightButton = carousel.querySelector(".carousel__navigation--right");
+        leftButton = carousel.querySelector(".carousel__navigation--left");
+        slideActive = carousel.querySelector(".carousel__slide.active");
+        translateX = 0;
+        allSlides = carousel.querySelectorAll(".carousel__slide");
+        autoselectValue = carousel.dataset.autoselect;
+        manualSelectValue = carousel.dataset.manualSelect;
+        manualMultipleSelectValue = carousel.dataset.manualMultipleSelect;
+
+        function autoselect() {
+          if (autoselectValue) {
+            allSlides.forEach(function (element, index) {
+              if (element.classList.contains("active")) {
+                element.classList.add("selected");
+              }
+            });
+          }
+          //Turn on Move Carrusel
+          setInterval(movePlay, 3000);
+        }
+
+        autoselect();
+
+        function recalcScena() {
+          allSlides = carousel.querySelectorAll(".carousel__slide");
+          allSlides.forEach(function (element, index) {
+            if (element.classList.contains("active")) {
+              activeElementIndex = index;
+            }
+            firstElement = allSlides[0];
+            beforeLastElement = allSlides[allSlides.length - 2];
+            lastElement = allSlides[allSlides.length - 1];
+          });
+        }
+
+        recalcScena();
+        relocateSlides();
+        function relocateSlides() {
+          if (activeElementIndex === 1) {
+            carouselSlideWrapper.insertBefore(lastElement, allSlides[0]);
+          } else if (activeElementIndex === 0) {
+            carouselSlideWrapper.insertBefore(lastElement, allSlides[0]);
+            if (window.innerWidth >= 768) {
+              carouselSlideWrapper.insertBefore(
+                beforeLastElement,
+                allSlides[0]
+              );
+              translateX = -100;
+              moveSlides();
+            }
+          } else if (activeElementIndex >= allSlides.length - 2) {
+            carouselSlideWrapper.appendChild(firstElement);
+          }
+        }
+
+        //mover las diapositivas
+        function moveSlides() {
+          for (var i = 0; i < allSlides.length; i++) {
+            allSlides[i].style.transform = "translateX(" + translateX + "%)";
+          }
+        }
+
+        //mover las diapositivas
+        function movePlay() {
+          if (!!carousel.dataset.infinite) {
+            slideActive.classList.remove("active");
+            slideActive.nextElementSibling.classList.add("active");
+            slideActive = slideActive.nextElementSibling;
+            recalcScena();
+            relocateSlides();
+          }
+
+          if (autoselectValue == "true") {
+            allSlides.forEach.call(allSlides, function (elem) {
+              if (elem !== this) {
+                elem.classList.remove("selected");
+              }
+            });
+            autoselect();
+          }
+
+          if (activeElementIndex < allSlides.length - 2) {
+            translateX -= 100;
+          }
+
+          moveSlides();
+        }
+
+        rightButton.addEventListener("click", function () {
+          /* avanzar el carrusel */
+          if (!!carousel.dataset.infinite) {
+            slideActive.classList.remove("active");
+            slideActive.nextElementSibling.classList.add("active");
+            slideActive = slideActive.nextElementSibling;
+            recalcScena();
+            relocateSlides();
+          }
+
+          if (autoselectValue == "true") {
+            allSlides.forEach.call(allSlides, function (elem) {
+              if (elem !== this) {
+                elem.classList.remove("selected");
+              }
+            });
+            autoselect();
+          }
+
+          if (activeElementIndex < allSlides.length - 2) {
+            translateX -= 100;
+          }
+
+          moveSlides();
+        });
+
+        leftButton.addEventListener("click", function () {
+          /* retroceder el carrusel */
+          if (!!carousel.dataset.infinite) {
+            slideActive.classList.remove("active");
+            slideActive.previousElementSibling.classList.add("active");
+            slideActive = slideActive.previousElementSibling;
+            recalcScena();
+            relocateSlides();
+          }
+
+          if (autoselectValue == "true") {
+            allSlides.forEach.call(allSlides, function (elem) {
+              if (elem !== this) {
+                elem.classList.remove("selected");
+              }
+            });
+            autoselect();
+          }
+
+          if (activeElementIndex > 1) {
+            translateX += 100;
+          }
+
+          moveSlides();
+        });
+
+        allSlides.forEach(function (elem) {
+          elem.addEventListener("click", function (e) {
+            if (manualMultipleSelectValue == "true") {
+              e.currentTarget.classList.toggle("selected");
+            } else if (manualSelectValue == "true") {
+              var selectedSlide = carousel.querySelector(".selected");
+              if (!!selectedSlide && selectedSlide !== e.currentTarget) {
+                selectedSlide.classList.remove("selected");
+                e.currentTarget.classList.add("selected");
+              } else {
+                e.currentTarget.classList.toggle("selected");
+              }
+            }
+          });
+        });
+      };
+    </script>
+  </head>
+  <body>
+    <section>
+      <div
+        class="carousel carousel--with-overflow"
+        data-infinite="true"
+        data-autoselect="false"
+        data-manual-select="true"
+        data-manual-multiple-select="false"
+      >
+        <div class="carousel__slide-wrapper">
+          <div class="carousel__slide a active">
+            <div class="carousel__slide-inner">
+              <a href="" target="_self">
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-voltti-1-oct.jpg?rand=1633376920"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="carousel__slide b">
+            <div class="carousel__slide-inner">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/tienda/toallas.html"
+                target="_self"
+              >
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-toallas-1oct.jpg?rand=1633029394"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="carousel__slide c">
+            <div class="carousel__slide-inner">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/tienda/dia-del-cafe.html"
+                target="_self"
+              >
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-desk-cafe-1-oct.jpg?rand=1633100884"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="carousel__slide e">
+            <div class="carousel__slide-inner">
+              <a
+                href="https://www.bedbathandbeyond.com.mx/marcas/nespresso.html"
+                target="_self"
+              >
+                <img
+                  src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/home/banner-nespresso-desk4-oct.jpg?rand=1633100884"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="carousel__navigation--left">
+          <span><</span>
+        </div>
+        <div class="carousel__navigation--right">
+          <span>></span>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paypal</title>
+    <style>
+      :root {
+        --azul-bbb-strong: #002854;
+        --azul-bbb-medio: #1a4e8a;
+        --azul-bbb-claro: #daeaf4;
+        --azul-bbb-button: #147bd1;
+        --aniversario-azul: #1a4c8a;
+        --bg-gray: #f2f2f2;
+        --txt-gray: #595959;
+        --input-gray: #d4d3d3;
+        --rojo: #f52b42;
+        --font-bedbath: "Termina-Bold", "Trebuchet MS", Arial, sans-serif !important;
+        --amarillo: #f4be40;
+      }
+      body .page-wrapper .page-header .header .block-search .block.block-content .minisearch .field.search .label{
+        position: absolute;
+        left: 65px;
+        top: 12px;
+      }
+      .desktop {
+        display: block;
+      }
+      .mobile {
+        display: none;
+      }
+      .wrap-paypal {
+        overflow: hidden;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+      }
+      #funcionalidad {
+        overflow: hidden;
+        text-align: center;
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+        background: url("https://www.bedbathandbeyond.com.mx/media/background_paypal.png?rand=1631033595");
+
+        width: 100%;
+        height: auto;
+      }
+      #banner {
+        text-align: center;
+      }
+      #banner h2 {
+        color: var(--azul-bbb-medio);
+        font-family: var(--font-bedbath);
+      }
+      .wrap-detalle {
+        text-align: left;
+        padding: 0px 20%;
+      }
+      .wrap-detalle p {
+        font-weight: 300;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+      }
+      .wrap-detalle h2 {
+          text-align: center;
+      }
+      .wrap-detalle .text-detail {
+        font-weight: 300;
+        font-size: 15px;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .wrap-detalle .text-detail span {
+        font-weight: 900;
+      }
+      .dot {
+        overflow: hidden;
+        height: auto;
+        font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .dot p:nth-child(2) {
+        padding: 10px 20px;
+        font-size: 1.4em;
+        width: 80%;
+        line-height: 1;
+      }
+      .dot p:nth-child(2) span {
+        font-weight: 900;
+      }
+      .circle-number {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        text-align: center;
+        justify-content: center;
+        background-color: var(--azul-bbb-medio);
+        color: var(--amarillo);
+        font-size: 2.3em;
+      }
+      .wrap-bancos{
+          overflow: hidden;
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          margin-top: 60px;
+          padding: 0 20px;
+          justify-content: center;
+          text-align: center;
+      }
+      .wrap-bancos .item-banco {
+          border:1px solid #f2f2f2;
+          text-align: center;
+          color: var(--azul-bbb-medio);
+          font-family: var(--font-bedbath);
+          border-radius: 10px;
+          margin: 10px;
+          width: 23%;
+      }
+      #bancos{
+          margin-top: 60px;
+          text-align: center;
+      }
+      #bancos h2 {
+          color:var(--azul-bbb-medio);
+          font-family: var(--font-bedbath);
+      }
+      .wrap-detail{
+          overflow:hidden;
+          padding: 20px 40px;
+          font-size: 1.2em;
+          font-family: Effra, Helvetica, Arial, sans-serif;
+        font-weight: 300;
+      }
+      .wrap-detail span {
+          font-weight: 900;
+          color: var(--font-bedbath);
+      }
+      .wrap-text-b {
+          margin-top: 20px;
+      }
+      .icon-cupon{
+        width: 80px;
+      }
+      /*Responsive */
+      @media (max-width: 991px) {
+        .desktop {
+          display: none;
+        }
+        .mobile {
+          display: block;
+        }
+        #banner h2{
+            font-size: 1.8rem;
+        }
+        .wrap-detalle{
+            padding: 0px 10%;
+        }
+        .circle-number{
+            font-size: 1.4em;
+        }
+        .dot p:nth-child(2){
+            padding: 0;
+            font-size: 1.2em;
+            width: 100%;
+        }
+        #funcionalidad{
+            background-size: contain;
+        }
+        .wrap-bancos{
+            margin-left: -20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Banner -->
+    <section id="banner">
+      <h2>OBTÉN HASTA $400 EN CUPONES AL PAGAR CON PAYPAL A MESES SIN INTERESES DURANTE EL BUEN FIN</h2>
+      <div class="wrap-paypal">
+        <picture>
+          <source media="(max-width: 799px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/banner-mobile-paypal-bf2.jpg?rand=1636058311">
+          <source media="(min-width: 800px)" srcset="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/banner-desk-paypal-bf2.jpg?rand=1636058311">
+          <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/banner-desk-paypal-bf2.jpg?rand=1636058311" alt="BedBathandBeyond">
+        </picture>
+      </div>
+    </section>
+
+    <!-- como funciona -->
+    <section id="funcionalidad">
+      <div class="wrap-detalle">
+        <h2>Para poder participar en esta Promoción y obtener el carácter de “Participante” se deberá cumplir con los siguientes requisitos:</h2>
+        <p>
+          <b>a)</b> Tener una cuenta PayPal en México, libre de limitaciones o restricciones, de conformidad con los términos de las “Condiciones de Uso de los Servicios de PayPal” disponibles en <b>https://www.paypal.com/mx/webapps/mpp/ua/useragreement-full</b>.
+        </p>
+        <p>
+          <b>b)</b> Ser mayor de edad a la fecha de la Promoción. 
+        </p>
+        <p>
+          <b>c)</b> Para participar en la Promoción, el Participante deberá hacer al menos una compra mínima de <b>$2500 MXN a 3, 6, 9 o 12 meses sin intereses con PayPal</b> dentro del Periodo de Vigencia de la Promoción en Bed Bath and Beyond México.
+        </p>
+        <p>
+          <b>d)</b> Cumplir con las mecánicas, requisitos y condiciones aquí contenidas. Cualquier participación que incumpla los presentes términos o se encuentre fuera del Plazo de Vigencia, no será tomada en cuenta como parte de esta Promoción y quedará excluida de cualquier beneficio que pudiere llegar a obtener derivado de ésta.
+        </p>
+
+        </p>
+        <div class="wrap-text-b">
+            <div class="dot">
+            <p class="circle-number">*</p>
+              <p>
+                Cupón de <b>$200 MXN</b> al realizar una compra a meses sin intereses.  El número de cupones estará limitado a <b>19,000 cupones</b>. 
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cupon-200_1.png?rand=1636059340" alt="cupones" class="icon-cupon" />
+              </p>
+            </div>
+
+            <div class="dot">
+            <p class="circle-number">*</p>
+              <p>
+                Cupón de <b>$300 MXN</b> al realizar dos compras a meses sin intereses. El número de cupones estará limitado a <b>3,000 cupones</b>. 
+                <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cupon-300_1.png?rand=1636059340" alt="cupones" class="icon-cupon" />
+              </p>
+            </div>
+
+            <div class="dot">
+                <p class="circle-number">*</p>
+                <p>
+                  Cupón de <b>$400 MXN</b> al realizar tres o más compras a meses sin intereses. El número de cupones estará limitado a <b>2,500 cupones</b>. 
+                  <img src="https://www.bedbathandbeyond.com.mx/media/wysiwyg/buenfin/cupon-400-v1_1.png?rand=1636059340" alt="cupones" class="icon-cupon" />
+                </p>
+            </div>
+
+
+          </div>
+      </div>
+      <div class="linea"></div>
+      <div class="wrap-bancos"></div>
+    </section>
+
+
+    <section>
+        <div class="wrap-detail">
+          *** Las compras elegibles a meses sin intereses que se hagan con tarjetas Citibanamex obtendrán un incremento de 50% en el monto del cupón correspondiente; es decir, $300 MXN en vez de $200 por realizar una compra elegible a meses sin intereses o $450 MXN en vez de $300 por realizar dos compras elegibles a meses sin intereses o $600 MXN en vez de $400 por realizar tres o más compras elegibles a meses sin intereses.
+
+        </div>
+
+    </section>
+  </body>
+</html>
